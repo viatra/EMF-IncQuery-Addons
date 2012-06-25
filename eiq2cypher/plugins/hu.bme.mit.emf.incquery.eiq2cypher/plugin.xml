@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.viatra2.emf.incquery.tooling.category"
+            id="hu.bme.mit.emf.incquery.generatecypher.pattern"
+            name="Generate Cypher Query">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.viatra2.emf.incquery.tooling.gui.navigator.popup?after=additions">
+         <command
+               commandId="hu.bme.mit.emf.incquery.generatecypher.pattern"
+               style="push">
+         </command>
+      </menuContribution>
+      
+      
+      
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="hu.bme.mit.emf.incquery.generatecypher.internal.GenerateCypherExecutableExtensionFactory:hu.bme.mit.emf.incquery.generatecypher.handlers.GenerateCypherModel"
+            commandId="hu.bme.mit.emf.incquery.generatecypher.pattern">
+         <activeWhen>
+            <reference
+                  definitionId="org.eclipse.viatra2.patternlanguage.emf.file">
+            </reference>
+         </activeWhen>
+      </handler>
+   </extension>
+
+</plugin>
