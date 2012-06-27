@@ -11,10 +11,10 @@ eiq2cypher implementation
 -------------------------
 
 The eiq2cypher plug-in is implemented using the Xtend2 (http://www.eclipse.org/xtend/) language. In the implementation we used only the following constructs of the Cypher language:
-* START: The starting points of the query.
-* MATCH: Define patterns (nodes, undirected and directed edges) in the graph. The intermediate nodes of a path are anonymous nodes denoted with ().
-* WHERE: Boolean expression. Currently only arithmetic comparisons are supported. 
-* RETURN: The return values are the parameters of the IncQuery pattern.
+* `START`: The starting points of the query.
+* `MATCH`: Define patterns (nodes, undirected and directed edges) in the graph. The intermediate nodes of a path are anonymous nodes denoted with ().
+* `WHERE`: Boolean expression. Currently only arithmetic comparisons are supported. 
+* `RETURN`: The return values are the parameters of the IncQuery pattern.
 
 Example
 -------
