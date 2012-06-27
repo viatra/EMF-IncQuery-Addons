@@ -30,9 +30,10 @@ public class GenerateCypherModel extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		String messagePrefix = "[CYPHER_QUERY_GENERATOR] ";
-
-		System.out.println(messagePrefix + "Execution started...");
+		// turn logging on or off
+		logging = true;
+		
+		log("Execution started...");
 		
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 		// Selection should contain only a single eiq file - enforced by
@@ -61,13 +62,22 @@ public class GenerateCypherModel extends AbstractHandler {
 		fsa.setOutputConfigurations(outputs);				
 		Transform trf = new Transform(); 
 		try {
-			System.out.println(messagePrefix + "Generating Cypher query...");
+			log("Generating Cypher query...");
 			trf.doGenerate(resource, fsa);
 		} catch (Exception E) {
 			E.printStackTrace();
 		}
 		
-		System.out.println(messagePrefix  + "Done.");        
+		log("Done.");        
 		return null;
+	}
+	
+	boolean logging = true;
+	static String messagePrefix = "[CYPHER_QUERY_GENERATOR] ";
+	
+	void log(String message) {
+		if (logging) {
+			System.out.println(messagePrefix + message);
+		}
 	}
 }

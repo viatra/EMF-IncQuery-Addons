@@ -41,11 +41,11 @@ class Transform implements IGenerator {
 				// invoking query
 				fsa.generateFile("query_" + r.name + ".cypher", r.compile)
 			} catch (Exception e) {
-				e.printStackTrace();
+				e.printStackTrace()
 			}
 		}
 	}
-	
+
 	int tempCounter;
 	HashMap<String, String> hm
 	ArrayList<String> matchClauseMatches
@@ -95,10 +95,11 @@ class Transform implements IGenerator {
 			}
 		]
 		
-		startClause(p) + 
-		matchClause(p).toString() +
-		whereClause(p).toString() +
-		returnClause(p).toString()
+		return
+			startClause(p).toString() + 
+			matchClause(p).toString() +
+			whereClause(p).toString() +
+			returnClause(p).toString()
 	}
 	
 	def String formatOperand(EObject xExpression) {
@@ -155,7 +156,8 @@ class Transform implements IGenerator {
 			var outputName = ""
 			if (refname instanceof EAttribute) {
 				if (depth == 1) {
-					outputName = src + "." + name
+					outputName = src + "." + dst 
+					hm.put(dst, outputName)					
 					return "" // no match here 
 				} else {
 					tempCounter = tempCounter + 1
