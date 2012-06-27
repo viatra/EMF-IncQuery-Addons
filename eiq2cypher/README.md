@@ -21,6 +21,8 @@ Example
 
 The example is based on the School introductory example (http://viatra.inf.mit.bme.hu/incquery/new/examples/school). The following pattern lists all schools and their subjects:
 
+EMF-IncQuery pattern:
+
     import "http://school.ecore"
 
     pattern schools(Sch, Subject) = {
@@ -28,6 +30,8 @@ The example is based on the School introductory example (http://viatra.inf.mit.b
         School.teachers.courses.subject(Sch, Subject); 
     }
 
+Generated Cypher code:
+    
     START
         Sch=node:__types__(className="School")
     MATCH
