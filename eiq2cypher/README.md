@@ -21,24 +21,20 @@ Example
 
 The example is based on the School introductory example (http://viatra.inf.mit.bme.hu/incquery/new/examples/school). The following pattern lists all schools and their subjects:
 
-`
-import "http://school.ecore"
+    import "http://school.ecore"
 
-pattern schools(Sch, Subject) = {
-	School(Sch);
-	School.teachers.courses.subject(Sch, Subject); 
-}
-`
+    pattern schools(Sch, Subject) = {
+        School(Sch);
+        School.teachers.courses.subject(Sch, Subject); 
+    }
 
-`
-START
-	Sch=node:__types__(className="School")
-MATCH
-	(Sch)-[teachers]->()-[courses]->()-[subject]->(Temp1)
-WHERE 1 = 1 
-RETURN
-	Sch, Temp1.subject
-`
+    START
+        Sch=node:__types__(className="School")
+    MATCH
+        (Sch)-[teachers]->()-[courses]->()-[subject]->(Temp1)
+    WHERE 1 = 1 
+    RETURN
+        Sch, Temp1.subject
 
 Run the `hu.bme.mit.emf.incquery.generatecypher` project as an Eclipse application. In the launched Eclipse application import any EMF-IncQuery project. Right click on the `.eiq` file and choose EMF-IncQuery > Generate Cypher query. A `.cypher` file will appear for each pattern in the `src-gen` folder.
 
