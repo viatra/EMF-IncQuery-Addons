@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMF-IncQuery Collections Alternatives
+Bundle-SymbolicName: hu.bme.mit.incquery.collections.alternatives
+Bundle-Version: 0.7.0.qualifier
+Bundle-Activator: hu.bme.mit.incquery.collections.alternatives.Activator
+Bundle-Vendor: Istvan Rath / Budapest University of Technology and Economics
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.incquery.runtime.rete;bundle-version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/apache/commons-collections-3.2.1.jar,
+ lib/fastutil/fastutil-6.5.1.jar,
+ lib/gs/gs-collections-2.0.0.jar,
+ lib/gs/gs-collections-api-2.0.0.jar,
+ lib/hppc-0.4.2/hppc-0.4.2.jar,
+ lib/javolution/javolution-core-java-6.0.0-20121118.173323-5.jar,
+ lib/trove/trove-3.0.3.jar,
+ .
