@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="org.eclipse.incquery.querybasedviewers.viewcategory"
+            name="EIQ Viewer">
+      </category>
+      <view
+            category="org.eclipse.incquery.querybasedviewers.viewcategory"
+            class="org.eclipse.incquery.querybasedviewers.zest.ZestView"
+            id="org.eclipse.incquery.querybasedviewers.zest"
+            name="Zest"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               closeable="true"
+               id="org.eclipse.incquery.querybasedviewers.zest"
+               minimized="false"
+               moveable="true"
+               relationship="stack"
+               relative="org.eclipse.ui.editorss"
+               showTitle="true"
+               standalone="true"
+               visible="false">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+			id="org.eclipse.incquery.querybasedviewers.command.loadmodel"
+            name="Load Model For EIQ Viewer">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
+         <menu
+               id="eiqviewer"
+               label="EIQ Viewer">
+            <command
+                  commandId="org.eclipse.incquery.querybasedviewers.command.loadmodel"
+                  tooltip="Loads the model.">
+            </command>
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="activeEditor">
+                  <instanceof
+                        value="org.eclipse.emf.edit.domain.IEditingDomainProvider">
+                  </instanceof>
+               </with>
+            </visibleWhen>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="org.eclipse.incquery.querybasedviewers.activedomaineditor">
+         <with
+               variable="activeEditor">
+            <instanceof
+                  value="org.eclipse.emf.edit.domain.IEditingDomainProvider">
+            </instanceof>
+         </with>
+      </definition>
+      <definition
+            id="org.eclipse.incquery.querybasedviewers.activepatterneditor">
+         <with
+               variable="activeEditorId">
+            <equals
+                  value="org.eclipse.incquery.patternlanguage.emf.EMFPatternLanguage">
+            </equals>
+         </with>
+      </definition>
+   </extension>
+    <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.eclipse.incquery.querybasedviewers.handlers.LoadModelHandler"
+            commandId="org.eclipse.incquery.querybasedviewers.command.loadmodel">
+         <activeWhen>
+            <reference
+                  definitionId="org.eclipse.incquery.querybasedviewers.activedomaineditor">
+            </reference>
+         </activeWhen>
+      </handler>
+   </extension>
+  
+
+</plugin>
