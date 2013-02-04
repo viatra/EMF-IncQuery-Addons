@@ -17,18 +17,19 @@ import org.eclipse.gef4.zest.layouts.LayoutAlgorithm;
 import org.eclipse.gef4.zest.layouts.algorithms.TreeLayoutAlgorithm;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.patternregistry.util.PatternRegistry;
+import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.viewers.runtime.IncQueryViewerSupport;
 import org.eclipse.incquery.viewers.runtime.model.Edge;
 import org.eclipse.incquery.viewers.runtime.model.Item;
 import org.eclipse.incquery.viewers.runtime.model.ViewerDataModel;
 import org.eclipse.incquery.viewers.runtime.zest.IncQueryGraphViewers;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;
@@ -52,6 +53,7 @@ public class ZestView extends ViewPart implements IZoomableWorkbenchPart, ISelec
 
     private ListViewer listViewer;
 	private GraphViewer zestviewer;
+    private TreeViewer treeViewer;
 	private ResourceSet resourceSet;
 
 	public static ZestView getInstance() {
@@ -86,6 +88,11 @@ public class ZestView extends ViewPart implements IZoomableWorkbenchPart, ISelec
         listTab.setText("List");
         listViewer = new ListViewer(folder);
         listTab.setControl(listViewer.getControl());
+        // Tree Viewer
+        CTabItem treeTab = new CTabItem(folder, SWT.NONE);
+        treeTab.setText("Tree");
+        treeViewer = new TreeViewer(folder);
+        treeTab.setControl(treeViewer.getControl());
         // Graph Viewer
         CTabItem zestTab = new CTabItem(folder, SWT.NONE);
         zestTab.setText("Graph");
@@ -164,6 +171,7 @@ public class ZestView extends ViewPart implements IZoomableWorkbenchPart, ISelec
 
             ViewerDataModel viewmodel = new ViewerDataModel(resourceSet, patterns);
             IncQueryViewerSupport.bind(listViewer, viewmodel);
+            IncQueryViewerSupport.bind(treeViewer, viewmodel);
             IncQueryGraphViewers.bind(zestviewer, viewmodel);
 		}
 	}
