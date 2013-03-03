@@ -16,10 +16,12 @@ import javax.naming.OperationNotSupportedException;
  * 
  */
 public class ComplexEventPattern extends AbstractEventPattern {
+	private ComplexOperator operator;
 	
-	public ComplexEventPattern(List<IEventPattern> compositionEventPatterns) {
+	public ComplexEventPattern(List<IEventPattern> compositionEventPatterns, ComplexOperator operator) {
 		super();
-		compositionEvents = compositionEventPatterns;
+		this.compositionEvents = compositionEventPatterns;
+		this.operator = operator;
 	}
 	
 	public void addCompositionEventPattern(IEventPattern compositionEventPattern) {
@@ -36,5 +38,9 @@ public class ComplexEventPattern extends AbstractEventPattern {
 			return true;
 		}
 		return false;
+	}
+	
+	public ComplexOperator getOperator() {
+		return operator;
 	}
 }
