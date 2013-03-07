@@ -12,7 +12,9 @@ package hu.bme.mit.incquery.querymetrics;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -85,7 +87,23 @@ public class ModelOnlyMetrics {
 	}
 
 
+	/**
+	 * #node-types
+	 * Apples and Oranges 
+	 */
+	public static int calcCountTypes(IncQueryEngine engine) throws IncQueryException {
+		return getAllUsedEClasses(engine).size();
+	}
+	private static Set<EClass> getAllUsedEClasses(IncQueryEngine engine) throws IncQueryException {
+		Set<EClass> allEClasses = new HashSet<EClass>();
+		final Collection<EObject> allEObjects = getAllEObjects(engine);
+		for (EObject eObject : allEObjects) {
+			allEClasses.add(eObject.eClass());
+		}
+		return allEClasses;
+	}
 	
+
 	public static enum EdgeType {E_REFERENCE, E_ATTRIBUTE, E_STRUCTURAL_FEATURE}
 	/**
 	 * kifok
@@ -123,7 +141,7 @@ public class ModelOnlyMetrics {
 	public static int countInDegree(IncQueryEngine engine, Object value) throws IncQueryException {
 		final NavigationHelper baseIndex = engine.getBaseIndex();
 		if (!baseIndex.isInWildcardMode()) throw new IllegalStateException("works only in wildcard mode");
-		
+
 		int result = baseIndex.findByAttributeValue(value).size();
 		if (value instanceof EObject) {
 			result += baseIndex.getInverseReferences((EObject)value).size();

@@ -12,8 +12,6 @@ package hu.bme.mit.incquery.querymetrics;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -63,17 +61,32 @@ public class QueryOnModelMetrics {
 	/**
 	 * saját query difficulty: ln(SZUM<minden_felsorolható_constraintre>(#illeszkedések) / #minta_illeszkedések)
      * korrekció: #illeszkedések + 1 mindenhol 
+     * prekondíció: a minta nem diszjunktív
 	 */
-	public static Map<PatternBody, Double> calcMetric(Pattern patt, IncQueryEngine engine) throws IncQueryException {
-		Map<PatternBody, Double> results = new HashMap<PatternBody, Double>(); 
+	public static double calcRelativeGabenMetric(Pattern patt, IncQueryEngine engine) throws IncQueryException {
+		final EList<PatternBody> bodies = patt.getBodies();
+		if (bodies.size() > 1) 
+			throw new IllegalArgumentException();
 		
 		final int countMatches = calcCountMatches(patt, engine);
 		double base = -Math.log(nonZero(countMatches));
 				
+		return base + calcAbsoluteGabenMetric(patt, engine);
+	}
+
+	/**
+	 * saját query difficulty: ln(SZUM<minden_felsorolható_constraintre>(#illeszkedések))
+     * korrekció: #illeszkedések + 1 mindenhol 
+	 * diszjunktív mintára max body
+	 */
+	public static double calcAbsoluteGabenMetric(Pattern patt, IncQueryEngine engine) throws IncQueryException {
+		double max = Double.MIN_VALUE;
+				
 		final NavigationHelper baseIndex = engine.getBaseIndex();
 		final EList<PatternBody> bodies = patt.getBodies();
+
 		for (PatternBody patternBody : bodies) {
-			double acc = base;
+			double acc = 0.0;
 			
 			final EList<Constraint> constraints = patternBody.getConstraints();
 			for (Constraint constraint : constraints) {
@@ -126,13 +139,14 @@ public class QueryOnModelMetrics {
 				}
 			}
 			
-			results.put(patternBody, acc);
+			if (max < acc) max = acc;
 		}
 		
-		return results;
+		return max;
 		
 	}
-
+	
+	
 	private static double nonZero(final int count) {
 		return 1.0 + count; // guaranteed to be an overestimate of the Varró metric (adjusted with match set and logarithmically)
 		// return count == 0 ? 1 : count;
