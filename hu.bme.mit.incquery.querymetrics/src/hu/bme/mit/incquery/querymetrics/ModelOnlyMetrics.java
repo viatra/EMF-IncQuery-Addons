@@ -11,6 +11,7 @@
 package hu.bme.mit.incquery.querymetrics;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
@@ -74,9 +75,12 @@ public class ModelOnlyMetrics {
 	private static Collection<EObject> getAllEObjects(IncQueryEngine engine)
 			throws IncQueryException {
 		final NavigationHelper baseIndex = engine.getBaseIndex();
-		assert(baseIndex.isInWildcardMode());
 		
-		final Collection<EObject> eObjects = baseIndex.getAllInstances(EcorePackage.eINSTANCE.getEObject());
+		final EClass eObject = EcorePackage.eINSTANCE.getEObject();
+		if (!baseIndex.isInWildcardMode()) 
+			baseIndex.registerEClasses(Collections.singleton(eObject));
+		final Collection<EObject> eObjects = baseIndex.getAllInstances(eObject);
+		
 		return eObjects;
 	}
 
@@ -118,7 +122,7 @@ public class ModelOnlyMetrics {
 	 */
 	public static int countInDegree(IncQueryEngine engine, Object value) throws IncQueryException {
 		final NavigationHelper baseIndex = engine.getBaseIndex();
-		assert(baseIndex.isInWildcardMode());
+		if (!baseIndex.isInWildcardMode()) throw new IllegalStateException("works only in wildcard mode");
 		
 		int result = baseIndex.findByAttributeValue(value).size();
 		if (value instanceof EObject) {
