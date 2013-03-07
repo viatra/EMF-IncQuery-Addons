@@ -37,13 +37,11 @@ public class QueryOnlyMetrics {
 			for (Constraint constraint : constraints) {
 				if (constraint instanceof PatternCompositionConstraint) {
 					final PatternCompositionConstraint compo = (PatternCompositionConstraint) constraint;
-					if (compo.isNegative()) {
-						final PatternCall call = compo.getCall();
-						final Pattern patternRef = call.getPatternRef();
-						
-						final int auxResult = 1 + nestedNacDepth(patternRef);
-						if (auxResult > result) result = auxResult;
-					}	
+					final PatternCall call = compo.getCall();
+					final Pattern patternRef = call.getPatternRef();
+					
+					final int auxResult = nestedNacDepth(patternRef) + (compo.isNegative() ? 1 : 0);
+					if (auxResult > result) result = auxResult;
 				}
 			}
 		}

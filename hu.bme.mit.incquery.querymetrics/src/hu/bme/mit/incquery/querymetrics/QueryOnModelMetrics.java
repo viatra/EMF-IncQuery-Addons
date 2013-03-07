@@ -59,7 +59,7 @@ public class QueryOnModelMetrics {
 	}
 
 	/**
-	 * saját query difficulty: ln(SZUM<minden_felsorolható_constraintre>(#illeszkedések) / #minta_illeszkedések)
+	 * saját query difficulty: ln(PROD<minden_felsorolható_constraintre>(#illeszkedések) / #minta_illeszkedések)
      * korrekció: #illeszkedések + 1 mindenhol 
      * prekondíció: a minta nem diszjunktív
 	 */
@@ -69,13 +69,12 @@ public class QueryOnModelMetrics {
 			throw new IllegalArgumentException();
 		
 		final int countMatches = calcCountMatches(patt, engine);
-		double base = -Math.log(nonZero(countMatches));
 				
-		return base + calcAbsoluteGabenMetric(patt, engine);
+		return calcAbsoluteGabenMetric(patt, engine) - Math.log(nonZero(countMatches));
 	}
 
 	/**
-	 * saját query difficulty: ln(SZUM<minden_felsorolható_constraintre>(#illeszkedések))
+	 * saját query difficulty: ln(PROD<minden_felsorolható_constraintre>(#illeszkedések))
      * korrekció: #illeszkedések + 1 mindenhol 
 	 * diszjunktív mintára max body
 	 */

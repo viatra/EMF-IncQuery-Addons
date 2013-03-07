@@ -142,9 +142,11 @@ public class ModelOnlyMetrics {
 		final NavigationHelper baseIndex = engine.getBaseIndex();
 		if (!baseIndex.isInWildcardMode()) throw new IllegalStateException("works only in wildcard mode");
 
-		int result = baseIndex.findByAttributeValue(value).size();
+		int result = 0;
 		if (value instanceof EObject) {
 			result += baseIndex.getInverseReferences((EObject)value).size();
+		} else {
+			result += baseIndex.findByAttributeValue(value).size();
 		}
 		return result;
 	}
