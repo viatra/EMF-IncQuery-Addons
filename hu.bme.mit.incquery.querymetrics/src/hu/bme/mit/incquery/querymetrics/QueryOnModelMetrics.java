@@ -12,6 +12,8 @@ package hu.bme.mit.incquery.querymetrics;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -32,10 +34,16 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.PatternBody;
 import org.eclipse.incquery.patternlanguage.patternLanguage.PatternCall;
 import org.eclipse.incquery.patternlanguage.patternLanguage.PatternCompositionConstraint;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Type;
+import org.eclipse.incquery.patternlanguage.patternLanguage.ValueReference;
+import org.eclipse.incquery.patternlanguage.patternLanguage.Variable;
+import org.eclipse.incquery.patternlanguage.patternLanguage.VariableReference;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.base.api.NavigationHelper;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.MatcherFactoryRegistry;
+
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
 
 /**
  * @author Bergmann Gabor
@@ -58,35 +66,44 @@ public class QueryOnModelMetrics {
 		return countMatches / (countTriples + 1.0);
 	}
 
+
 	/**
 	 * saját query difficulty: ln(PROD<minden_felsorolható_constraintre>(#illeszkedések) / #minta_illeszkedések)
      * korrekció: #illeszkedések + 1 mindenhol 
-     * prekondíció: a minta nem diszjunktív
+     * nevező csak akkor szerepel, ha relative == true
+	 * diszjunktív minta relative esetben tiltott, egyébként max body számít
+	 * TODO filterRedundants minta + inference
 	 */
-	public static double calcRelativeGabenMetric(Pattern patt, IncQueryEngine engine) throws IncQueryException {
-		final EList<PatternBody> bodies = patt.getBodies();
-		if (bodies.size() > 1) 
-			throw new IllegalArgumentException();
-		
-		final int countMatches = calcCountMatches(patt, engine);
-				
-		return calcAbsoluteGabenMetric(patt, engine) - Math.log(nonZero(countMatches));
+	public static double calcGabenMetricWithAllDependencies(Set<Pattern> userQueries, IncQueryEngine engine, boolean relative, boolean filterRedundants) throws IncQueryException {
+		double acc = 0.0;
+		final Set<Pattern> withAllDependencies = QueryOnlyMetrics.withAllDependencies(userQueries);
+		for (Pattern pattern : withAllDependencies) {
+			acc += calcGabenMetric(pattern, engine, relative, filterRedundants);
+		}
+		return acc;
 	}
 
 	/**
 	 * saját query difficulty: ln(PROD<minden_felsorolható_constraintre>(#illeszkedések))
      * korrekció: #illeszkedések + 1 mindenhol 
-	 * diszjunktív mintára max body
+     * nevező csak akkor szerepel, ha relative == true
+	 * diszjunktív minta relative esetben tiltott, egyébként max body számít
+	 * TODO filterRedundants minta + inference
 	 */
-	public static double calcAbsoluteGabenMetric(Pattern patt, IncQueryEngine engine) throws IncQueryException {
+	public static double calcGabenMetric(Pattern patt, IncQueryEngine engine, boolean relative, boolean filterRedundants) throws IncQueryException {
+		final EList<PatternBody> bodies = patt.getBodies();
+		if (relative && bodies.size() > 1) 
+			throw new IllegalArgumentException();
+		
 		double max = Double.MIN_VALUE;
 				
 		final NavigationHelper baseIndex = engine.getBaseIndex();
-		final EList<PatternBody> bodies = patt.getBodies();
 
 		for (PatternBody patternBody : bodies) {
 			double acc = 0.0;
 			
+			final Multimap<Variable,EClassifier> deferredClassifiers = HashMultimap.create();
+			final Multimap<Variable,EClassifier> inferredClassifiers = HashMultimap.create();
 			final EList<Constraint> constraints = patternBody.getConstraints();
 			for (Constraint constraint : constraints) {
 				if (constraint instanceof PatternCompositionConstraint) {
@@ -102,22 +119,12 @@ public class QueryOnModelMetrics {
 						}
 					}				
 				} else if (constraint instanceof EClassifierConstraint) {
-					final EntityType type = ((EClassifierConstraint) constraint).getType();
+					final EClassifierConstraint classifierConstraint = (EClassifierConstraint) constraint;
+					final Variable variable = classifierConstraint.getVar().getVariable();
+					final EntityType type = classifierConstraint.getType();
 					if (type instanceof ClassType) {
 						final EClassifier classifier = ((ClassType) type).getClassname();
-						if (classifier instanceof EClass) {
-							final EClass clazz = (EClass)classifier;
-							if (!baseIndex.isInWildcardMode()) 
-								baseIndex.registerEClasses(Collections.singleton(clazz));
-							final int count = baseIndex.getAllInstances(clazz).size();
-							acc += Math.log(nonZero(count));
-						} else if (classifier instanceof EDataType) {
-							final EDataType datatType = (EDataType)classifier;
-							if (!baseIndex.isInWildcardMode()) 
-								baseIndex.registerEDataTypes(Collections.singleton(datatType));
-							final int count = baseIndex.getDataTypeInstances(datatType).size();
-							acc += Math.log(nonZero(count));
-						} else throw new UnsupportedOperationException("unknown classifier type in ClassType: " + classifier.getClass().getSimpleName());	
+						deferredClassifiers.put(variable, classifier);
 					} else throw new UnsupportedOperationException("unknown entity type " + type.toString());	
 				} else if (constraint instanceof PathExpressionConstraint) {
 					final PathExpressionHead head = ((PathExpressionConstraint) constraint).getHead();
@@ -133,18 +140,65 @@ public class QueryOnModelMetrics {
 								count += baseIndex.getFeatureTargets(source, feature).size();
 							}
 							acc += Math.log(nonZero(count));
+							
+							// inference
+							if (tail == head.getTail()) {
+								final Variable variable = head.getSrc().getVariable();
+								final EClass eContainingClass = feature.getEContainingClass();
+								inferredClassifiers.put(variable, eContainingClass);
+								final EList<EClass> eAllSuperTypes = eContainingClass.getEAllSuperTypes();
+								for (EClass superType : eAllSuperTypes) {
+									inferredClassifiers.put(variable, superType);
+								}
+							}
+							if (tail.getTail() == null) {
+								final ValueReference dst = head.getDst();
+								if (dst instanceof VariableReference) {
+									final Variable variable = ((VariableReference) dst).getVariable();
+									final EClassifier eType = feature.getEType();
+									inferredClassifiers.put(variable, eType);
+									if (eType instanceof EClass) for (EClass superType : ((EClass) eType).getEAllSuperTypes()) {
+										inferredClassifiers.put(variable, superType);
+									}
+
+								}
+							}
 						} else throw new UnsupportedOperationException("unknown path expression feature type: " + type.getClass().getSimpleName());
 					}
 				}
 			}
 			
+			for (Entry<Variable,EClassifier> entry : deferredClassifiers.entries()) {
+				final Variable variable = entry.getKey();
+				final EClassifier classifier = entry.getValue();
+				if (filterRedundants && inferredClassifiers.containsEntry(variable, classifier)) continue;
+				if (classifier instanceof EClass) {
+					final EClass clazz = (EClass)classifier;
+					if (!baseIndex.isInWildcardMode()) 
+						baseIndex.registerEClasses(Collections.singleton(clazz));
+					final int count = baseIndex.getAllInstances(clazz).size();
+					acc += Math.log(nonZero(count));
+				} else if (classifier instanceof EDataType) {
+					final EDataType datatType = (EDataType)classifier;
+					if (!baseIndex.isInWildcardMode()) 
+						baseIndex.registerEDataTypes(Collections.singleton(datatType));
+					final int count = baseIndex.getDataTypeInstances(datatType).size();
+					acc += Math.log(nonZero(count));
+				} else throw new UnsupportedOperationException("unknown classifier type in ClassType: " + classifier.getClass().getSimpleName());	
+			}
+			
+			
+			
 			if (max < acc) max = acc;
 		}
 		
-		return max;
+		if (relative) {
+			final int countMatches = calcCountMatches(patt, engine);
+			double base = -Math.log(nonZero(countMatches));
+			return base + max;
+		} else return max;
 		
 	}
-	
 	
 	private static double nonZero(final int count) {
 		return 1.0 + count; // guaranteed to be an overestimate of the Varró metric (adjusted with match set and logarithmically)

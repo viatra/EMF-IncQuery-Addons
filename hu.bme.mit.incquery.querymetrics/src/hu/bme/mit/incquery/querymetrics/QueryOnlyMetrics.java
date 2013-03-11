@@ -10,10 +10,16 @@
  *******************************************************************************/
 package hu.bme.mit.incquery.querymetrics;
 
+import java.util.ArrayDeque;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.incquery.patternlanguage.patternLanguage.CheckConstraint;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Constraint;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
@@ -84,4 +90,23 @@ public class QueryOnlyMetrics {
 		}
 		return results;
 	}	
+	
+	public static Set<Pattern> withAllDependencies(Set<Pattern> userQueries) {
+		Set<Pattern> result = new HashSet<Pattern>(userQueries);
+		Queue<Pattern> todo = new ArrayDeque<Pattern>(userQueries);
+
+		while(!todo.isEmpty()) {
+			final Pattern pattern = todo.poll();
+			final TreeIterator<EObject> eAllContents = pattern.eAllContents();
+			while (eAllContents.hasNext()) {
+				final EObject next = eAllContents.next();
+				if (next instanceof PatternCall) {
+					final Pattern called = ((PatternCall) next).getPatternRef();
+					if (result.add(called)) 
+						todo.add(called);
+				}
+			}
+		}
+		return result;
+	}
 }
