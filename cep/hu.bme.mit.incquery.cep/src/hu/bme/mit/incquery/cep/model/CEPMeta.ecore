@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cep" nsURI="cep.meta" nsPrefix="hu.bme.mit.incquery.cep.emf.metamodel">
+  <eClassifiers xsi:type="ecore:EClass" name="EventProcessingModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventPatterns" upperBound="-1"
+        eType="#//AbstractEventPattern" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractEventPattern" abstract="true">
+    <eOperations name="match" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="event" lowerBound="1" eType="#//Event"/>
+    </eOperations>
+    <eOperations name="isRecognized" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compositionEvents" upperBound="-1"
+        eType="#//AbstractEventPattern" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicEventPattern" eSuperTypes="#//AbstractEventPattern">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+        <eTypeArguments>
+          <eUpperBound eClassifier="#//Event"/>
+        </eTypeArguments>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexEventPattern" eSuperTypes="#//AbstractEventPattern">
+    <eOperations name="addCompositionEventPattern" lowerBound="1">
+      <eParameters name="compositionEventPattern" lowerBound="1" eType="#//AbstractEventPattern"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="#//ComplexOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timewindow" eType="#//Timewindow"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ComplexOperator">
+    <eLiterals name="ORDERED"/>
+    <eLiterals name="ORDERED_T" value="1"/>
+    <eLiterals name="UNORDERED" value="2"/>
+    <eLiterals name="UNORDERED_T" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventSource" eType="#//IEventSource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IEventSource" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Timewindow">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,7 +1,7 @@
 package hu.bme.mit.incquery.cep.tests.testcase1.events;
 
-import hu.bme.mit.incquery.cep.eventmodel.Event;
-import hu.bme.mit.incquery.cep.eventmodel.IEventSource;
+import hu.bme.mit.obsolete.incquery.cep.eventmodel.Event;
+import hu.bme.mit.obsolete.incquery.cep.eventmodel.IEventSource;
 
 public class B extends Event {
 	
