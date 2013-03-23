@@ -3,10 +3,17 @@
 package hu.bme.mit.incquery.metamodels.internalsm.util;
 
 import hu.bme.mit.incquery.metamodels.internalsm.*;
+import hu.bme.mit.incquery.metamodels.internalsm.FinalState;
+import hu.bme.mit.incquery.metamodels.internalsm.Guard;
+import hu.bme.mit.incquery.metamodels.internalsm.InitState;
+import hu.bme.mit.incquery.metamodels.internalsm.InternalsmPackage;
+import hu.bme.mit.incquery.metamodels.internalsm.State;
+import hu.bme.mit.incquery.metamodels.internalsm.StateMachine;
+import hu.bme.mit.incquery.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.metamodels.internalsm.TrapState;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 
 /**
@@ -105,6 +112,12 @@ public class InternalsmSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case InternalsmPackage.STATE_MACHINE: {
+				StateMachine stateMachine = (StateMachine)theEObject;
+				T result = caseStateMachine(stateMachine);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -196,6 +209,21 @@ public class InternalsmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTrapState(TrapState object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>State Machine</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>State Machine</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStateMachine(StateMachine object) {
 		return null;
 	}
 

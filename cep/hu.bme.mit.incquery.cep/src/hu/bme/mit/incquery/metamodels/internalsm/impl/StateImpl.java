@@ -9,14 +9,10 @@ import hu.bme.mit.incquery.metamodels.internalsm.Transition;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -81,7 +77,7 @@ public class StateImpl extends EObjectImpl implements State {
 	 */
 	public EList<Transition> getOutTransitions() {
 		if (outTransitions == null) {
-			outTransitions = new EObjectWithInverseResolvingEList.ManyInverse<Transition>(Transition.class, this, InternalsmPackage.STATE__OUT_TRANSITIONS, InternalsmPackage.TRANSITION__IN_STATES);
+			outTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, InternalsmPackage.STATE__OUT_TRANSITIONS, InternalsmPackage.TRANSITION__IN_STATE);
 		}
 		return outTransitions;
 	}
@@ -93,7 +89,7 @@ public class StateImpl extends EObjectImpl implements State {
 	 */
 	public EList<Transition> getInTransitions() {
 		if (inTransitions == null) {
-			inTransitions = new EObjectWithInverseResolvingEList.ManyInverse<Transition>(Transition.class, this, InternalsmPackage.STATE__IN_TRANSITIONS, InternalsmPackage.TRANSITION__OUT_STATES);
+			inTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, InternalsmPackage.STATE__IN_TRANSITIONS, InternalsmPackage.TRANSITION__OUT_STATE);
 		}
 		return inTransitions;
 	}

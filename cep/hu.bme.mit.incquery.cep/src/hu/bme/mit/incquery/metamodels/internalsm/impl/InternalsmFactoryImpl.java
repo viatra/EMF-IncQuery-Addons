@@ -3,13 +3,20 @@
 package hu.bme.mit.incquery.metamodels.internalsm.impl;
 
 import hu.bme.mit.incquery.metamodels.internalsm.*;
+import hu.bme.mit.incquery.metamodels.internalsm.FinalState;
+import hu.bme.mit.incquery.metamodels.internalsm.Guard;
+import hu.bme.mit.incquery.metamodels.internalsm.InitState;
+import hu.bme.mit.incquery.metamodels.internalsm.InternalsmFactory;
+import hu.bme.mit.incquery.metamodels.internalsm.InternalsmPackage;
+import hu.bme.mit.incquery.metamodels.internalsm.State;
+import hu.bme.mit.incquery.metamodels.internalsm.StateMachine;
+import hu.bme.mit.incquery.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.metamodels.internalsm.TrapState;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
@@ -62,6 +69,7 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 			case InternalsmPackage.FINAL_STATE: return createFinalState();
 			case InternalsmPackage.INIT_STATE: return createInitState();
 			case InternalsmPackage.TRAP_STATE: return createTrapState();
+			case InternalsmPackage.STATE_MACHINE: return createStateMachine();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -125,6 +133,16 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 	public TrapState createTrapState() {
 		TrapStateImpl trapState = new TrapStateImpl();
 		return trapState;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StateMachine createStateMachine() {
+		StateMachineImpl stateMachine = new StateMachineImpl();
+		return stateMachine;
 	}
 
 	/**

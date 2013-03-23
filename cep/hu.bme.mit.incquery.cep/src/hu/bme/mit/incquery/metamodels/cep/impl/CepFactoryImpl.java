@@ -3,14 +3,20 @@
 package hu.bme.mit.incquery.metamodels.cep.impl;
 
 import hu.bme.mit.incquery.metamodels.cep.*;
+import hu.bme.mit.incquery.metamodels.cep.AtomicEventPattern;
+import hu.bme.mit.incquery.metamodels.cep.CepFactory;
+import hu.bme.mit.incquery.metamodels.cep.CepPackage;
+import hu.bme.mit.incquery.metamodels.cep.ComplexEventPattern;
+import hu.bme.mit.incquery.metamodels.cep.ComplexOperator;
+import hu.bme.mit.incquery.metamodels.cep.Event;
+import hu.bme.mit.incquery.metamodels.cep.ManagedPatternRepository;
+import hu.bme.mit.incquery.metamodels.cep.Timewindow;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
@@ -57,7 +63,7 @@ public class CepFactoryImpl extends EFactoryImpl implements CepFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CepPackage.EVENT_PROCESSING_MODEL: return createEventProcessingModel();
+			case CepPackage.MANAGED_PATTERN_REPOSITORY: return createManagedPatternRepository();
 			case CepPackage.ATOMIC_EVENT_PATTERN: return createAtomicEventPattern();
 			case CepPackage.COMPLEX_EVENT_PATTERN: return createComplexEventPattern();
 			case CepPackage.EVENT: return createEvent();
@@ -102,9 +108,9 @@ public class CepFactoryImpl extends EFactoryImpl implements CepFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventProcessingModel createEventProcessingModel() {
-		EventProcessingModelImpl eventProcessingModel = new EventProcessingModelImpl();
-		return eventProcessingModel;
+	public ManagedPatternRepository createManagedPatternRepository() {
+		ManagedPatternRepositoryImpl managedPatternRepository = new ManagedPatternRepositoryImpl();
+		return managedPatternRepository;
 	}
 
 	/**

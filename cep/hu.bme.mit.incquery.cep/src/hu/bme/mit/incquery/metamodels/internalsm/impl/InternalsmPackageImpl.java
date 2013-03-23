@@ -3,22 +3,22 @@
 package hu.bme.mit.incquery.metamodels.internalsm.impl;
 
 import hu.bme.mit.incquery.metamodels.cep.CepPackage;
-
 import hu.bme.mit.incquery.metamodels.cep.impl.CepPackageImpl;
-
 import hu.bme.mit.incquery.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.metamodels.internalsm.InitState;
 import hu.bme.mit.incquery.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.metamodels.internalsm.State;
+import hu.bme.mit.incquery.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.metamodels.internalsm.TrapState;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -69,6 +69,13 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * @generated
 	 */
 	private EClass trapStateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stateMachineEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -177,7 +184,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransition_InStates() {
+	public EReference getTransition_InState() {
 		return (EReference)transitionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -195,7 +202,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransition_OutStates() {
+	public EReference getTransition_OutState() {
 		return (EReference)transitionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -213,8 +220,8 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getGuard_Event() {
-		return (EReference)guardEClass.getEStructuralFeatures().get(0);
+	public EAttribute getGuard_EventType() {
+		return (EAttribute)guardEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -242,6 +249,33 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 */
 	public EClass getTrapState() {
 		return trapStateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStateMachine() {
+		return stateMachineEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStateMachine_States() {
+		return (EReference)stateMachineEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStateMachine_CurrentState() {
+		return (EReference)stateMachineEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -277,18 +311,22 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		createEReference(stateEClass, STATE__IN_TRANSITIONS);
 
 		transitionEClass = createEClass(TRANSITION);
-		createEReference(transitionEClass, TRANSITION__IN_STATES);
+		createEReference(transitionEClass, TRANSITION__IN_STATE);
 		createEReference(transitionEClass, TRANSITION__GUARD);
-		createEReference(transitionEClass, TRANSITION__OUT_STATES);
+		createEReference(transitionEClass, TRANSITION__OUT_STATE);
 
 		guardEClass = createEClass(GUARD);
-		createEReference(guardEClass, GUARD__EVENT);
+		createEAttribute(guardEClass, GUARD__EVENT_TYPE);
 
 		finalStateEClass = createEClass(FINAL_STATE);
 
 		initStateEClass = createEClass(INIT_STATE);
 
 		trapStateEClass = createEClass(TRAP_STATE);
+
+		stateMachineEClass = createEClass(STATE_MACHINE);
+		createEReference(stateMachineEClass, STATE_MACHINE__STATES);
+		createEReference(stateMachineEClass, STATE_MACHINE__CURRENT_STATE);
 	}
 
 	/**
@@ -328,22 +366,31 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getState_OutTransitions(), this.getTransition(), this.getTransition_InStates(), "outTransitions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_InTransitions(), this.getTransition(), this.getTransition_OutStates(), "inTransitions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_OutTransitions(), this.getTransition(), this.getTransition_InState(), "outTransitions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_InTransitions(), this.getTransition(), this.getTransition_OutState(), "inTransitions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTransition_InStates(), this.getState(), this.getState_OutTransitions(), "inStates", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_InState(), this.getState(), this.getState_OutTransitions(), "inState", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Guard(), this.getGuard(), null, "guard", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTransition_OutStates(), this.getState(), this.getState_InTransitions(), "outStates", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_OutState(), this.getState(), this.getState_InTransitions(), "outState", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(guardEClass, Guard.class, "Guard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGuard_Event(), theCepPackage.getEvent(), null, "event", null, 1, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEJavaClass());
+		EGenericType g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		EGenericType g3 = createEGenericType(theCepPackage.getEvent());
+		g2.setEUpperBound(g3);
+		initEAttribute(getGuard_EventType(), g1, "eventType", null, 0, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(finalStateEClass, FinalState.class, "FinalState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(initStateEClass, InitState.class, "InitState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(trapStateEClass, TrapState.class, "TrapState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(stateMachineEClass, StateMachine.class, "StateMachine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStateMachine_States(), this.getState(), null, "states", null, 0, -1, StateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStateMachine_CurrentState(), this.getState(), null, "currentState", null, 1, 1, StateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

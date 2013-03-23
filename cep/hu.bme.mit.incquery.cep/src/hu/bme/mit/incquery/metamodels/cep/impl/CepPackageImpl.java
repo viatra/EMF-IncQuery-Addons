@@ -9,12 +9,10 @@ import hu.bme.mit.incquery.metamodels.cep.CepPackage;
 import hu.bme.mit.incquery.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.metamodels.cep.Event;
-import hu.bme.mit.incquery.metamodels.cep.EventProcessingModel;
 import hu.bme.mit.incquery.metamodels.cep.IEventSource;
+import hu.bme.mit.incquery.metamodels.cep.ManagedPatternRepository;
 import hu.bme.mit.incquery.metamodels.cep.Timewindow;
-
 import hu.bme.mit.incquery.metamodels.internalsm.InternalsmPackage;
-
 import hu.bme.mit.incquery.metamodels.internalsm.impl.InternalsmPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -24,7 +22,6 @@ import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -39,57 +36,57 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass eventProcessingModelEClass = null;
-
+	private EClass managedPatternRepositoryEClass = null;
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass abstractEventPatternEClass = null;
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass atomicEventPatternEClass = null;
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass complexEventPatternEClass = null;
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass eventEClass = null;
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass iEventSourceEClass = null;
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass timewindowEClass = null;
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EEnum complexOperatorEEnum = null;
-
+	
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -108,14 +105,14 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	private CepPackageImpl() {
 		super(eNS_URI, CepFactory.eINSTANCE);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private static boolean isInited = false;
-
+	
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
@@ -155,49 +152,53 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		EPackage.Registry.INSTANCE.put(CepPackage.eNS_URI, theCepPackage);
 		return theCepPackage;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEventProcessingModel() {
-		return eventProcessingModelEClass;
+	@Override
+	public EClass getManagedPatternRepository() {
+		return managedPatternRepositoryEClass;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEventProcessingModel_EventPatterns() {
-		return (EReference)eventProcessingModelEClass.getEStructuralFeatures().get(0);
+	@Override
+	public EReference getManagedPatternRepository_EventPatterns() {
+		return (EReference)managedPatternRepositoryEClass.getEStructuralFeatures().get(0);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractEventPattern() {
 		return abstractEventPatternEClass;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractEventPattern_CompositionEvents() {
 		return (EReference)abstractEventPatternEClass.getEStructuralFeatures().get(0);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractEventPattern_CurrentState() {
+	public EReference getAbstractEventPattern_StateMachine() {
 		return (EReference)abstractEventPatternEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -206,134 +207,148 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAtomicEventPattern() {
 		return atomicEventPatternEClass;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAtomicEventPattern_Type() {
 		return (EAttribute)atomicEventPatternEClass.getEStructuralFeatures().get(0);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComplexEventPattern() {
 		return complexEventPatternEClass;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComplexEventPattern_Operator() {
 		return (EAttribute)complexEventPatternEClass.getEStructuralFeatures().get(0);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComplexEventPattern_Timewindow() {
 		return (EReference)complexEventPatternEClass.getEStructuralFeatures().get(1);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEvent() {
 		return eventEClass;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEvent_Id() {
 		return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEvent_Timestamp() {
 		return (EAttribute)eventEClass.getEStructuralFeatures().get(1);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEvent_EventSource() {
 		return (EReference)eventEClass.getEStructuralFeatures().get(2);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIEventSource() {
 		return iEventSourceEClass;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTimewindow() {
 		return timewindowEClass;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTimewindow_Length() {
 		return (EAttribute)timewindowEClass.getEStructuralFeatures().get(0);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getComplexOperator() {
 		return complexOperatorEEnum;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CepFactory getCepFactory() {
 		return (CepFactory)getEFactoryInstance();
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private boolean isCreated = false;
-
+	
 	/**
 	 * Creates the meta-model objects for the package.  This method is
 	 * guarded to have no affect on any invocation but its first.
@@ -346,12 +361,12 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		eventProcessingModelEClass = createEClass(EVENT_PROCESSING_MODEL);
-		createEReference(eventProcessingModelEClass, EVENT_PROCESSING_MODEL__EVENT_PATTERNS);
+		managedPatternRepositoryEClass = createEClass(MANAGED_PATTERN_REPOSITORY);
+		createEReference(managedPatternRepositoryEClass, MANAGED_PATTERN_REPOSITORY__EVENT_PATTERNS);
 
 		abstractEventPatternEClass = createEClass(ABSTRACT_EVENT_PATTERN);
 		createEReference(abstractEventPatternEClass, ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS);
-		createEReference(abstractEventPatternEClass, ABSTRACT_EVENT_PATTERN__CURRENT_STATE);
+		createEReference(abstractEventPatternEClass, ABSTRACT_EVENT_PATTERN__STATE_MACHINE);
 
 		atomicEventPatternEClass = createEClass(ATOMIC_EVENT_PATTERN);
 		createEAttribute(atomicEventPatternEClass, ATOMIC_EVENT_PATTERN__TYPE);
@@ -373,14 +388,14 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		// Create enums
 		complexOperatorEEnum = createEEnum(COMPLEX_OPERATOR);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private boolean isInitialized = false;
-
+	
 	/**
 	 * Complete the initialization of the package and its meta-model.  This
 	 * method is guarded to have no affect on any invocation but its first.
@@ -409,12 +424,12 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		complexEventPatternEClass.getESuperTypes().add(this.getAbstractEventPattern());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(eventProcessingModelEClass, EventProcessingModel.class, "EventProcessingModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEventProcessingModel_EventPatterns(), this.getAbstractEventPattern(), null, "eventPatterns", null, 0, -1, EventProcessingModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(managedPatternRepositoryEClass, ManagedPatternRepository.class, "ManagedPatternRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getManagedPatternRepository_EventPatterns(), this.getAbstractEventPattern(), null, "eventPatterns", null, 0, -1, ManagedPatternRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractEventPatternEClass, AbstractEventPattern.class, "AbstractEventPattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAbstractEventPattern_CompositionEvents(), this.getAbstractEventPattern(), null, "compositionEvents", null, 0, -1, AbstractEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractEventPattern_CurrentState(), theInternalsmPackage.getState(), null, "currentState", null, 1, 1, AbstractEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractEventPattern_StateMachine(), theInternalsmPackage.getStateMachine(), null, "stateMachine", null, 1, 1, AbstractEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(abstractEventPatternEClass, ecorePackage.getEBoolean(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEvent(), "event", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -456,5 +471,5 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		// Create resource
 		createResource(eNS_URI);
 	}
-
-} //CepPackageImpl
+	
+} // CepPackageImpl

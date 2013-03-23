@@ -3,10 +3,17 @@
 package hu.bme.mit.incquery.metamodels.cep.util;
 
 import hu.bme.mit.incquery.metamodels.cep.*;
+import hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern;
+import hu.bme.mit.incquery.metamodels.cep.AtomicEventPattern;
+import hu.bme.mit.incquery.metamodels.cep.CepPackage;
+import hu.bme.mit.incquery.metamodels.cep.ComplexEventPattern;
+import hu.bme.mit.incquery.metamodels.cep.Event;
+import hu.bme.mit.incquery.metamodels.cep.IEventSource;
+import hu.bme.mit.incquery.metamodels.cep.ManagedPatternRepository;
+import hu.bme.mit.incquery.metamodels.cep.Timewindow;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 
 /**
@@ -66,9 +73,9 @@ public class CepSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CepPackage.EVENT_PROCESSING_MODEL: {
-				EventProcessingModel eventProcessingModel = (EventProcessingModel)theEObject;
-				T result = caseEventProcessingModel(eventProcessingModel);
+			case CepPackage.MANAGED_PATTERN_REPOSITORY: {
+				ManagedPatternRepository managedPatternRepository = (ManagedPatternRepository)theEObject;
+				T result = caseManagedPatternRepository(managedPatternRepository);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -115,17 +122,17 @@ public class CepSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Event Processing Model</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Managed Pattern Repository</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Event Processing Model</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Managed Pattern Repository</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEventProcessingModel(EventProcessingModel object) {
+	public T caseManagedPatternRepository(ManagedPatternRepository object) {
 		return null;
 	}
 

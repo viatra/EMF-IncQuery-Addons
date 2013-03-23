@@ -2,10 +2,9 @@
  */
 package hu.bme.mit.incquery.metamodels.cep;
 
-import hu.bme.mit.incquery.metamodels.internalsm.State;
+import hu.bme.mit.incquery.metamodels.internalsm.StateMachine;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern#getCompositionEvents <em>Composition Events</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern#getCurrentState <em>Current State</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern#getStateMachine <em>State Machine</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,33 +40,33 @@ public interface AbstractEventPattern extends EObject {
 	 * @generated
 	 */
 	EList<AbstractEventPattern> getCompositionEvents();
-
+	
 	/**
-	 * Returns the value of the '<em><b>Current State</b></em>' reference.
+	 * Returns the value of the '<em><b>State Machine</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Current State</em>' reference isn't clear,
+	 * If the meaning of the '<em>State Machine</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Current State</em>' reference.
-	 * @see #setCurrentState(State)
-	 * @see hu.bme.mit.incquery.metamodels.cep.CepPackage#getAbstractEventPattern_CurrentState()
+	 * @return the value of the '<em>State Machine</em>' reference.
+	 * @see #setStateMachine(StateMachine)
+	 * @see hu.bme.mit.incquery.metamodels.cep.CepPackage#getAbstractEventPattern_StateMachine()
 	 * @model required="true"
 	 * @generated
 	 */
-	State getCurrentState();
-
+	StateMachine getStateMachine();
+	
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern#getCurrentState <em>Current State</em>}' reference.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern#getStateMachine <em>State Machine</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Current State</em>' reference.
-	 * @see #getCurrentState()
+	 * @param value the new value of the '<em>State Machine</em>' reference.
+	 * @see #getStateMachine()
 	 * @generated
 	 */
-	void setCurrentState(State value);
-
+	void setStateMachine(StateMachine value);
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75,7 +74,7 @@ public interface AbstractEventPattern extends EObject {
 	 * @generated
 	 */
 	boolean match(Event event);
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,5 +82,5 @@ public interface AbstractEventPattern extends EObject {
 	 * @generated
 	 */
 	boolean isRecognized();
-
+	
 } // AbstractEventPattern

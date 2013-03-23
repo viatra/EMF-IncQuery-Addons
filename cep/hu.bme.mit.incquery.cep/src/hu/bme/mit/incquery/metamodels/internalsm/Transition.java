@@ -3,7 +3,6 @@
 package hu.bme.mit.incquery.metamodels.internalsm;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,9 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getInStates <em>In States</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getInState <em>In State</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getGuard <em>Guard</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getOutStates <em>Out States</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getOutState <em>Out State</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,22 +25,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Transition extends EObject {
 	/**
-	 * Returns the value of the '<em><b>In States</b></em>' reference list.
-	 * The list contents are of type {@link hu.bme.mit.incquery.metamodels.internalsm.State}.
+	 * Returns the value of the '<em><b>In State</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.metamodels.internalsm.State#getOutTransitions <em>Out Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>In States</em>' reference list isn't clear,
+	 * If the meaning of the '<em>In State</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>In States</em>' reference list.
-	 * @see hu.bme.mit.incquery.metamodels.internalsm.InternalsmPackage#getTransition_InStates()
+	 * @return the value of the '<em>In State</em>' reference.
+	 * @see #setInState(State)
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.InternalsmPackage#getTransition_InState()
 	 * @see hu.bme.mit.incquery.metamodels.internalsm.State#getOutTransitions
-	 * @model opposite="outTransitions"
+	 * @model opposite="outTransitions" required="true"
 	 * @generated
 	 */
-	EList<State> getInStates();
+	State getInState();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getInState <em>In State</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>In State</em>' reference.
+	 * @see #getInState()
+	 * @generated
+	 */
+	void setInState(State value);
 
 	/**
 	 * Returns the value of the '<em><b>Guard</b></em>' reference.
@@ -70,21 +79,31 @@ public interface Transition extends EObject {
 	void setGuard(Guard value);
 
 	/**
-	 * Returns the value of the '<em><b>Out States</b></em>' reference list.
-	 * The list contents are of type {@link hu.bme.mit.incquery.metamodels.internalsm.State}.
+	 * Returns the value of the '<em><b>Out State</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.metamodels.internalsm.State#getInTransitions <em>In Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Out States</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Out State</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Out States</em>' reference list.
-	 * @see hu.bme.mit.incquery.metamodels.internalsm.InternalsmPackage#getTransition_OutStates()
+	 * @return the value of the '<em>Out State</em>' reference.
+	 * @see #setOutState(State)
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.InternalsmPackage#getTransition_OutState()
 	 * @see hu.bme.mit.incquery.metamodels.internalsm.State#getInTransitions
-	 * @model opposite="inTransitions"
+	 * @model opposite="inTransitions" required="true"
 	 * @generated
 	 */
-	EList<State> getOutStates();
+	State getOutState();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getOutState <em>Out State</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Out State</em>' reference.
+	 * @see #getOutState()
+	 * @generated
+	 */
+	void setOutState(State value);
 
 } // Transition

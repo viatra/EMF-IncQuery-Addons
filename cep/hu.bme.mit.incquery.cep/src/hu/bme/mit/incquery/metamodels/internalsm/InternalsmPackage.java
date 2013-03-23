@@ -2,6 +2,7 @@
  */
 package hu.bme.mit.incquery.metamodels.internalsm;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -102,13 +103,13 @@ public interface InternalsmPackage extends EPackage {
 	int TRANSITION = 1;
 
 	/**
-	 * The feature id for the '<em><b>In States</b></em>' reference list.
+	 * The feature id for the '<em><b>In State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__IN_STATES = 0;
+	int TRANSITION__IN_STATE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' reference.
@@ -120,13 +121,13 @@ public interface InternalsmPackage extends EPackage {
 	int TRANSITION__GUARD = 1;
 
 	/**
-	 * The feature id for the '<em><b>Out States</b></em>' reference list.
+	 * The feature id for the '<em><b>Out State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__OUT_STATES = 2;
+	int TRANSITION__OUT_STATE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -148,13 +149,13 @@ public interface InternalsmPackage extends EPackage {
 	int GUARD = 2;
 
 	/**
-	 * The feature id for the '<em><b>Event</b></em>' reference.
+	 * The feature id for the '<em><b>Event Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUARD__EVENT = 0;
+	int GUARD__EVENT_TYPE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Guard</em>' class.
@@ -278,6 +279,44 @@ public interface InternalsmPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link hu.bme.mit.incquery.metamodels.internalsm.impl.StateMachineImpl <em>State Machine</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.impl.StateMachineImpl
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.impl.InternalsmPackageImpl#getStateMachine()
+	 * @generated
+	 */
+	int STATE_MACHINE = 6;
+
+	/**
+	 * The feature id for the '<em><b>States</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MACHINE__STATES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Current State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MACHINE__CURRENT_STATE = 1;
+
+	/**
+	 * The number of structural features of the '<em>State Machine</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MACHINE_FEATURE_COUNT = 2;
+
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.metamodels.internalsm.State <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -320,15 +359,15 @@ public interface InternalsmPackage extends EPackage {
 	EClass getTransition();
 
 	/**
-	 * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getInStates <em>In States</em>}'.
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getInState <em>In State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>In States</em>'.
-	 * @see hu.bme.mit.incquery.metamodels.internalsm.Transition#getInStates()
+	 * @return the meta object for the reference '<em>In State</em>'.
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.Transition#getInState()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getTransition_InStates();
+	EReference getTransition_InState();
 
 	/**
 	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getGuard <em>Guard</em>}'.
@@ -342,15 +381,15 @@ public interface InternalsmPackage extends EPackage {
 	EReference getTransition_Guard();
 
 	/**
-	 * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getOutStates <em>Out States</em>}'.
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getOutState <em>Out State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Out States</em>'.
-	 * @see hu.bme.mit.incquery.metamodels.internalsm.Transition#getOutStates()
+	 * @return the meta object for the reference '<em>Out State</em>'.
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.Transition#getOutState()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getTransition_OutStates();
+	EReference getTransition_OutState();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.metamodels.internalsm.Guard <em>Guard</em>}'.
@@ -363,15 +402,15 @@ public interface InternalsmPackage extends EPackage {
 	EClass getGuard();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.metamodels.internalsm.Guard#getEvent <em>Event</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.metamodels.internalsm.Guard#getEventType <em>Event Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Event</em>'.
-	 * @see hu.bme.mit.incquery.metamodels.internalsm.Guard#getEvent()
+	 * @return the meta object for the attribute '<em>Event Type</em>'.
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.Guard#getEventType()
 	 * @see #getGuard()
 	 * @generated
 	 */
-	EReference getGuard_Event();
+	EAttribute getGuard_EventType();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.metamodels.internalsm.FinalState <em>Final State</em>}'.
@@ -402,6 +441,38 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTrapState();
+
+	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.metamodels.internalsm.StateMachine <em>State Machine</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>State Machine</em>'.
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.StateMachine
+	 * @generated
+	 */
+	EClass getStateMachine();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.metamodels.internalsm.StateMachine#getStates <em>States</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>States</em>'.
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.StateMachine#getStates()
+	 * @see #getStateMachine()
+	 * @generated
+	 */
+	EReference getStateMachine_States();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.metamodels.internalsm.StateMachine#getCurrentState <em>Current State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Current State</em>'.
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.StateMachine#getCurrentState()
+	 * @see #getStateMachine()
+	 * @generated
+	 */
+	EReference getStateMachine_CurrentState();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -462,12 +533,12 @@ public interface InternalsmPackage extends EPackage {
 		EClass TRANSITION = eINSTANCE.getTransition();
 
 		/**
-		 * The meta object literal for the '<em><b>In States</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>In State</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSITION__IN_STATES = eINSTANCE.getTransition_InStates();
+		EReference TRANSITION__IN_STATE = eINSTANCE.getTransition_InState();
 
 		/**
 		 * The meta object literal for the '<em><b>Guard</b></em>' reference feature.
@@ -478,12 +549,12 @@ public interface InternalsmPackage extends EPackage {
 		EReference TRANSITION__GUARD = eINSTANCE.getTransition_Guard();
 
 		/**
-		 * The meta object literal for the '<em><b>Out States</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Out State</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSITION__OUT_STATES = eINSTANCE.getTransition_OutStates();
+		EReference TRANSITION__OUT_STATE = eINSTANCE.getTransition_OutState();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.metamodels.internalsm.impl.GuardImpl <em>Guard</em>}' class.
@@ -496,12 +567,12 @@ public interface InternalsmPackage extends EPackage {
 		EClass GUARD = eINSTANCE.getGuard();
 
 		/**
-		 * The meta object literal for the '<em><b>Event</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Event Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GUARD__EVENT = eINSTANCE.getGuard_Event();
+		EAttribute GUARD__EVENT_TYPE = eINSTANCE.getGuard_EventType();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.metamodels.internalsm.impl.FinalStateImpl <em>Final State</em>}' class.
@@ -532,6 +603,32 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRAP_STATE = eINSTANCE.getTrapState();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.metamodels.internalsm.impl.StateMachineImpl <em>State Machine</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.incquery.metamodels.internalsm.impl.StateMachineImpl
+		 * @see hu.bme.mit.incquery.metamodels.internalsm.impl.InternalsmPackageImpl#getStateMachine()
+		 * @generated
+		 */
+		EClass STATE_MACHINE = eINSTANCE.getStateMachine();
+
+		/**
+		 * The meta object literal for the '<em><b>States</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE_MACHINE__STATES = eINSTANCE.getStateMachine_States();
+
+		/**
+		 * The meta object literal for the '<em><b>Current State</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE_MACHINE__CURRENT_STATE = eINSTANCE.getStateMachine_CurrentState();
 
 	}
 

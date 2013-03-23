@@ -3,12 +3,18 @@
 package hu.bme.mit.incquery.metamodels.internalsm.util;
 
 import hu.bme.mit.incquery.metamodels.internalsm.*;
+import hu.bme.mit.incquery.metamodels.internalsm.FinalState;
+import hu.bme.mit.incquery.metamodels.internalsm.Guard;
+import hu.bme.mit.incquery.metamodels.internalsm.InitState;
+import hu.bme.mit.incquery.metamodels.internalsm.InternalsmPackage;
+import hu.bme.mit.incquery.metamodels.internalsm.State;
+import hu.bme.mit.incquery.metamodels.internalsm.StateMachine;
+import hu.bme.mit.incquery.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.metamodels.internalsm.TrapState;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -90,6 +96,10 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTrapState(TrapState object) {
 				return createTrapStateAdapter();
+			}
+			@Override
+			public Adapter caseStateMachine(StateMachine object) {
+				return createStateMachineAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -192,6 +202,20 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTrapStateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.metamodels.internalsm.StateMachine <em>State Machine</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.StateMachine
+	 * @generated
+	 */
+	public Adapter createStateMachineAdapter() {
 		return null;
 	}
 

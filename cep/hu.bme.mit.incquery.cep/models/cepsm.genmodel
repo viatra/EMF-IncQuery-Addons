@@ -13,12 +13,12 @@
       <genEnumLiterals ecoreEnumLiteral="CEPMeta.ecore#//ComplexOperator/UNORDERED"/>
       <genEnumLiterals ecoreEnumLiteral="CEPMeta.ecore#//ComplexOperator/UNORDERED_T"/>
     </genEnums>
-    <genClasses ecoreClass="CEPMeta.ecore#//EventProcessingModel">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//EventProcessingModel/eventPatterns"/>
+    <genClasses ecoreClass="CEPMeta.ecore#//ManagedPatternRepository">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//ManagedPatternRepository/eventPatterns"/>
     </genClasses>
     <genClasses image="false" ecoreClass="CEPMeta.ecore#//AbstractEventPattern">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//AbstractEventPattern/compositionEvents"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//AbstractEventPattern/currentState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//AbstractEventPattern/stateMachine"/>
       <genOperations ecoreOperation="CEPMeta.ecore#//AbstractEventPattern/match">
         <genParameters ecoreParameter="CEPMeta.ecore#//AbstractEventPattern/match/event"/>
       </genOperations>
@@ -51,15 +51,19 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/inTransitions"/>
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//Transition">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Transition/inStates"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Transition/inState"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Transition/guard"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Transition/outStates"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Transition/outState"/>
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//Guard">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Guard/event"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//Guard/eventType"/>
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//FinalState"/>
     <genClasses ecoreClass="InternalSM.ecore#//InitState"/>
     <genClasses ecoreClass="InternalSM.ecore#//TrapState"/>
+    <genClasses ecoreClass="InternalSM.ecore#//StateMachine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//StateMachine/states"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//StateMachine/currentState"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

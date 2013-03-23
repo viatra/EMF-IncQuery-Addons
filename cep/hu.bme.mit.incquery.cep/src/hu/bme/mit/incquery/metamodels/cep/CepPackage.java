@@ -57,14 +57,14 @@ public interface CepPackage extends EPackage {
 	CepPackage eINSTANCE = hu.bme.mit.incquery.metamodels.cep.impl.CepPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link hu.bme.mit.incquery.metamodels.cep.impl.EventProcessingModelImpl <em>Event Processing Model</em>}' class.
+	 * The meta object id for the '{@link hu.bme.mit.incquery.metamodels.cep.impl.ManagedPatternRepositoryImpl <em>Managed Pattern Repository</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.incquery.metamodels.cep.impl.EventProcessingModelImpl
-	 * @see hu.bme.mit.incquery.metamodels.cep.impl.CepPackageImpl#getEventProcessingModel()
+	 * @see hu.bme.mit.incquery.metamodels.cep.impl.ManagedPatternRepositoryImpl
+	 * @see hu.bme.mit.incquery.metamodels.cep.impl.CepPackageImpl#getManagedPatternRepository()
 	 * @generated
 	 */
-	int EVENT_PROCESSING_MODEL = 0;
+	int MANAGED_PATTERN_REPOSITORY = 0;
 
 	/**
 	 * The feature id for the '<em><b>Event Patterns</b></em>' containment reference list.
@@ -73,16 +73,16 @@ public interface CepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_PROCESSING_MODEL__EVENT_PATTERNS = 0;
+	int MANAGED_PATTERN_REPOSITORY__EVENT_PATTERNS = 0;
 
 	/**
-	 * The number of structural features of the '<em>Event Processing Model</em>' class.
+	 * The number of structural features of the '<em>Managed Pattern Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_PROCESSING_MODEL_FEATURE_COUNT = 1;
+	int MANAGED_PATTERN_REPOSITORY_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.metamodels.cep.impl.AbstractEventPatternImpl <em>Abstract Event Pattern</em>}' class.
@@ -104,13 +104,13 @@ public interface CepPackage extends EPackage {
 	int ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Current State</b></em>' reference.
+	 * The feature id for the '<em><b>State Machine</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_EVENT_PATTERN__CURRENT_STATE = 1;
+	int ABSTRACT_EVENT_PATTERN__STATE_MACHINE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Event Pattern</em>' class.
@@ -141,13 +141,13 @@ public interface CepPackage extends EPackage {
 	int ATOMIC_EVENT_PATTERN__COMPOSITION_EVENTS = ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS;
 
 	/**
-	 * The feature id for the '<em><b>Current State</b></em>' reference.
+	 * The feature id for the '<em><b>State Machine</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_EVENT_PATTERN__CURRENT_STATE = ABSTRACT_EVENT_PATTERN__CURRENT_STATE;
+	int ATOMIC_EVENT_PATTERN__STATE_MACHINE = ABSTRACT_EVENT_PATTERN__STATE_MACHINE;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -187,13 +187,13 @@ public interface CepPackage extends EPackage {
 	int COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS = ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS;
 
 	/**
-	 * The feature id for the '<em><b>Current State</b></em>' reference.
+	 * The feature id for the '<em><b>State Machine</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_EVENT_PATTERN__CURRENT_STATE = ABSTRACT_EVENT_PATTERN__CURRENT_STATE;
+	int COMPLEX_EVENT_PATTERN__STATE_MACHINE = ABSTRACT_EVENT_PATTERN__STATE_MACHINE;
 
 	/**
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -327,25 +327,25 @@ public interface CepPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link hu.bme.mit.incquery.metamodels.cep.EventProcessingModel <em>Event Processing Model</em>}'.
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.metamodels.cep.ManagedPatternRepository <em>Managed Pattern Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Event Processing Model</em>'.
-	 * @see hu.bme.mit.incquery.metamodels.cep.EventProcessingModel
+	 * @return the meta object for class '<em>Managed Pattern Repository</em>'.
+	 * @see hu.bme.mit.incquery.metamodels.cep.ManagedPatternRepository
 	 * @generated
 	 */
-	EClass getEventProcessingModel();
+	EClass getManagedPatternRepository();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.metamodels.cep.EventProcessingModel#getEventPatterns <em>Event Patterns</em>}'.
+	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.metamodels.cep.ManagedPatternRepository#getEventPatterns <em>Event Patterns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Event Patterns</em>'.
-	 * @see hu.bme.mit.incquery.metamodels.cep.EventProcessingModel#getEventPatterns()
-	 * @see #getEventProcessingModel()
+	 * @see hu.bme.mit.incquery.metamodels.cep.ManagedPatternRepository#getEventPatterns()
+	 * @see #getManagedPatternRepository()
 	 * @generated
 	 */
-	EReference getEventProcessingModel_EventPatterns();
+	EReference getManagedPatternRepository_EventPatterns();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern <em>Abstract Event Pattern</em>}'.
@@ -369,15 +369,15 @@ public interface CepPackage extends EPackage {
 	EReference getAbstractEventPattern_CompositionEvents();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern#getCurrentState <em>Current State</em>}'.
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern#getStateMachine <em>State Machine</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Current State</em>'.
-	 * @see hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern#getCurrentState()
+	 * @return the meta object for the reference '<em>State Machine</em>'.
+	 * @see hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern#getStateMachine()
 	 * @see #getAbstractEventPattern()
 	 * @generated
 	 */
-	EReference getAbstractEventPattern_CurrentState();
+	EReference getAbstractEventPattern_StateMachine();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.metamodels.cep.AtomicEventPattern <em>Atomic Event Pattern</em>}'.
@@ -539,14 +539,14 @@ public interface CepPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link hu.bme.mit.incquery.metamodels.cep.impl.EventProcessingModelImpl <em>Event Processing Model</em>}' class.
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.metamodels.cep.impl.ManagedPatternRepositoryImpl <em>Managed Pattern Repository</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.bme.mit.incquery.metamodels.cep.impl.EventProcessingModelImpl
-		 * @see hu.bme.mit.incquery.metamodels.cep.impl.CepPackageImpl#getEventProcessingModel()
+		 * @see hu.bme.mit.incquery.metamodels.cep.impl.ManagedPatternRepositoryImpl
+		 * @see hu.bme.mit.incquery.metamodels.cep.impl.CepPackageImpl#getManagedPatternRepository()
 		 * @generated
 		 */
-		EClass EVENT_PROCESSING_MODEL = eINSTANCE.getEventProcessingModel();
+		EClass MANAGED_PATTERN_REPOSITORY = eINSTANCE.getManagedPatternRepository();
 
 		/**
 		 * The meta object literal for the '<em><b>Event Patterns</b></em>' containment reference list feature.
@@ -554,7 +554,7 @@ public interface CepPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EVENT_PROCESSING_MODEL__EVENT_PATTERNS = eINSTANCE.getEventProcessingModel_EventPatterns();
+		EReference MANAGED_PATTERN_REPOSITORY__EVENT_PATTERNS = eINSTANCE.getManagedPatternRepository_EventPatterns();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.metamodels.cep.impl.AbstractEventPatternImpl <em>Abstract Event Pattern</em>}' class.
@@ -575,12 +575,12 @@ public interface CepPackage extends EPackage {
 		EReference ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS = eINSTANCE.getAbstractEventPattern_CompositionEvents();
 
 		/**
-		 * The meta object literal for the '<em><b>Current State</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>State Machine</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_EVENT_PATTERN__CURRENT_STATE = eINSTANCE.getAbstractEventPattern_CurrentState();
+		EReference ABSTRACT_EVENT_PATTERN__STATE_MACHINE = eINSTANCE.getAbstractEventPattern_StateMachine();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.metamodels.cep.impl.AtomicEventPatternImpl <em>Atomic Event Pattern</em>}' class.

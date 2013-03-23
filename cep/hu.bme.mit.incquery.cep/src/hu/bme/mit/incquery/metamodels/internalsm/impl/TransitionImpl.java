@@ -11,15 +11,11 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -30,9 +26,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.metamodels.internalsm.impl.TransitionImpl#getInStates <em>In States</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.metamodels.internalsm.impl.TransitionImpl#getInState <em>In State</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.metamodels.internalsm.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.metamodels.internalsm.impl.TransitionImpl#getOutStates <em>Out States</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.metamodels.internalsm.impl.TransitionImpl#getOutState <em>Out State</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,14 +36,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class TransitionImpl extends EObjectImpl implements Transition {
 	/**
-	 * The cached value of the '{@link #getInStates() <em>In States</em>}' reference list.
+	 * The cached value of the '{@link #getInState() <em>In State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInStates()
+	 * @see #getInState()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<State> inStates;
+	protected State inState;
 
 	/**
 	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' reference.
@@ -60,14 +56,14 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	protected Guard guard;
 
 	/**
-	 * The cached value of the '{@link #getOutStates() <em>Out States</em>}' reference list.
+	 * The cached value of the '{@link #getOutState() <em>Out State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOutStates()
+	 * @see #getOutState()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<State> outStates;
+	protected State outState;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,11 +89,59 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<State> getInStates() {
-		if (inStates == null) {
-			inStates = new EObjectWithInverseResolvingEList.ManyInverse<State>(State.class, this, InternalsmPackage.TRANSITION__IN_STATES, InternalsmPackage.STATE__OUT_TRANSITIONS);
+	public State getInState() {
+		if (inState != null && inState.eIsProxy()) {
+			InternalEObject oldInState = (InternalEObject)inState;
+			inState = (State)eResolveProxy(oldInState);
+			if (inState != oldInState) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InternalsmPackage.TRANSITION__IN_STATE, oldInState, inState));
+			}
 		}
-		return inStates;
+		return inState;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public State basicGetInState() {
+		return inState;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetInState(State newInState, NotificationChain msgs) {
+		State oldInState = inState;
+		inState = newInState;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.TRANSITION__IN_STATE, oldInState, newInState);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInState(State newInState) {
+		if (newInState != inState) {
+			NotificationChain msgs = null;
+			if (inState != null)
+				msgs = ((InternalEObject)inState).eInverseRemove(this, InternalsmPackage.STATE__OUT_TRANSITIONS, State.class, msgs);
+			if (newInState != null)
+				msgs = ((InternalEObject)newInState).eInverseAdd(this, InternalsmPackage.STATE__OUT_TRANSITIONS, State.class, msgs);
+			msgs = basicSetInState(newInState, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.TRANSITION__IN_STATE, newInState, newInState));
 	}
 
 	/**
@@ -143,11 +187,59 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<State> getOutStates() {
-		if (outStates == null) {
-			outStates = new EObjectWithInverseResolvingEList.ManyInverse<State>(State.class, this, InternalsmPackage.TRANSITION__OUT_STATES, InternalsmPackage.STATE__IN_TRANSITIONS);
+	public State getOutState() {
+		if (outState != null && outState.eIsProxy()) {
+			InternalEObject oldOutState = (InternalEObject)outState;
+			outState = (State)eResolveProxy(oldOutState);
+			if (outState != oldOutState) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InternalsmPackage.TRANSITION__OUT_STATE, oldOutState, outState));
+			}
 		}
-		return outStates;
+		return outState;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public State basicGetOutState() {
+		return outState;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOutState(State newOutState, NotificationChain msgs) {
+		State oldOutState = outState;
+		outState = newOutState;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.TRANSITION__OUT_STATE, oldOutState, newOutState);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOutState(State newOutState) {
+		if (newOutState != outState) {
+			NotificationChain msgs = null;
+			if (outState != null)
+				msgs = ((InternalEObject)outState).eInverseRemove(this, InternalsmPackage.STATE__IN_TRANSITIONS, State.class, msgs);
+			if (newOutState != null)
+				msgs = ((InternalEObject)newOutState).eInverseAdd(this, InternalsmPackage.STATE__IN_TRANSITIONS, State.class, msgs);
+			msgs = basicSetOutState(newOutState, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.TRANSITION__OUT_STATE, newOutState, newOutState));
 	}
 
 	/**
@@ -159,10 +251,14 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InternalsmPackage.TRANSITION__IN_STATES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInStates()).basicAdd(otherEnd, msgs);
-			case InternalsmPackage.TRANSITION__OUT_STATES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutStates()).basicAdd(otherEnd, msgs);
+			case InternalsmPackage.TRANSITION__IN_STATE:
+				if (inState != null)
+					msgs = ((InternalEObject)inState).eInverseRemove(this, InternalsmPackage.STATE__OUT_TRANSITIONS, State.class, msgs);
+				return basicSetInState((State)otherEnd, msgs);
+			case InternalsmPackage.TRANSITION__OUT_STATE:
+				if (outState != null)
+					msgs = ((InternalEObject)outState).eInverseRemove(this, InternalsmPackage.STATE__IN_TRANSITIONS, State.class, msgs);
+				return basicSetOutState((State)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -175,10 +271,10 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InternalsmPackage.TRANSITION__IN_STATES:
-				return ((InternalEList<?>)getInStates()).basicRemove(otherEnd, msgs);
-			case InternalsmPackage.TRANSITION__OUT_STATES:
-				return ((InternalEList<?>)getOutStates()).basicRemove(otherEnd, msgs);
+			case InternalsmPackage.TRANSITION__IN_STATE:
+				return basicSetInState(null, msgs);
+			case InternalsmPackage.TRANSITION__OUT_STATE:
+				return basicSetOutState(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -191,13 +287,15 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InternalsmPackage.TRANSITION__IN_STATES:
-				return getInStates();
+			case InternalsmPackage.TRANSITION__IN_STATE:
+				if (resolve) return getInState();
+				return basicGetInState();
 			case InternalsmPackage.TRANSITION__GUARD:
 				if (resolve) return getGuard();
 				return basicGetGuard();
-			case InternalsmPackage.TRANSITION__OUT_STATES:
-				return getOutStates();
+			case InternalsmPackage.TRANSITION__OUT_STATE:
+				if (resolve) return getOutState();
+				return basicGetOutState();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,16 +309,14 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InternalsmPackage.TRANSITION__IN_STATES:
-				getInStates().clear();
-				getInStates().addAll((Collection<? extends State>)newValue);
+			case InternalsmPackage.TRANSITION__IN_STATE:
+				setInState((State)newValue);
 				return;
 			case InternalsmPackage.TRANSITION__GUARD:
 				setGuard((Guard)newValue);
 				return;
-			case InternalsmPackage.TRANSITION__OUT_STATES:
-				getOutStates().clear();
-				getOutStates().addAll((Collection<? extends State>)newValue);
+			case InternalsmPackage.TRANSITION__OUT_STATE:
+				setOutState((State)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -234,14 +330,14 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InternalsmPackage.TRANSITION__IN_STATES:
-				getInStates().clear();
+			case InternalsmPackage.TRANSITION__IN_STATE:
+				setInState((State)null);
 				return;
 			case InternalsmPackage.TRANSITION__GUARD:
 				setGuard((Guard)null);
 				return;
-			case InternalsmPackage.TRANSITION__OUT_STATES:
-				getOutStates().clear();
+			case InternalsmPackage.TRANSITION__OUT_STATE:
+				setOutState((State)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -255,12 +351,12 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InternalsmPackage.TRANSITION__IN_STATES:
-				return inStates != null && !inStates.isEmpty();
+			case InternalsmPackage.TRANSITION__IN_STATE:
+				return inState != null;
 			case InternalsmPackage.TRANSITION__GUARD:
 				return guard != null;
-			case InternalsmPackage.TRANSITION__OUT_STATES:
-				return outStates != null && !outStates.isEmpty();
+			case InternalsmPackage.TRANSITION__OUT_STATE:
+				return outState != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -168,8 +168,8 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Usyu64d3EeKiq63i-b7hwA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_Usyu4Yd3EeKiq63i-b7hwA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="CEPMeta.ecore#//EventProcessingModel"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Usyu4od3EeKiq63i-b7hwA" x="250" y="-125"/>
+    <element xmi:type="ecore:EClass" href="CEPMeta.ecore#//ManagedPatternRepository"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Usyu4od3EeKiq63i-b7hwA" x="235" y="-120"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_hD-ooYdkEeKiq63i-b7hwA"/>
   <element xmi:type="ecore:EPackage" href="CEPMeta.ecore#/"/>
@@ -240,7 +240,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_X4WE4Yd3EeKiq63i-b7hwA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_X4WE4od3EeKiq63i-b7hwA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="CEPMeta.ecore#//EventProcessingModel/eventPatterns"/>
+    <element xmi:type="ecore:EReference" href="CEPMeta.ecore#//ManagedPatternRepository/eventPatterns"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_X4WE44d3EeKiq63i-b7hwA" points="[-2, 21, 65, -315]$[60, 330, 127, -6]"/>
   </edges>
 </notation:Diagram>

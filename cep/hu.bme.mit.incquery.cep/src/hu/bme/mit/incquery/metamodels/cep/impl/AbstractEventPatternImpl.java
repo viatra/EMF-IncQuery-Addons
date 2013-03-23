@@ -5,22 +5,17 @@ package hu.bme.mit.incquery.metamodels.cep.impl;
 import hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern;
 import hu.bme.mit.incquery.metamodels.cep.CepPackage;
 import hu.bme.mit.incquery.metamodels.cep.Event;
-
-import hu.bme.mit.incquery.metamodels.internalsm.State;
+import hu.bme.mit.incquery.metamodels.internalsm.StateMachine;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.metamodels.cep.impl.AbstractEventPatternImpl#getCompositionEvents <em>Composition Events</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.metamodels.cep.impl.AbstractEventPatternImpl#getCurrentState <em>Current State</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.metamodels.cep.impl.AbstractEventPatternImpl#getStateMachine <em>State Machine</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,14 +45,14 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	protected EList<AbstractEventPattern> compositionEvents;
 
 	/**
-	 * The cached value of the '{@link #getCurrentState() <em>Current State</em>}' reference.
+	 * The cached value of the '{@link #getStateMachine() <em>State Machine</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCurrentState()
+	 * @see #getStateMachine()
 	 * @generated
 	 * @ordered
 	 */
-	protected State currentState;
+	protected StateMachine stateMachine;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,16 +90,16 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State getCurrentState() {
-		if (currentState != null && currentState.eIsProxy()) {
-			InternalEObject oldCurrentState = (InternalEObject)currentState;
-			currentState = (State)eResolveProxy(oldCurrentState);
-			if (currentState != oldCurrentState) {
+	public StateMachine getStateMachine() {
+		if (stateMachine != null && stateMachine.eIsProxy()) {
+			InternalEObject oldStateMachine = (InternalEObject)stateMachine;
+			stateMachine = (StateMachine)eResolveProxy(oldStateMachine);
+			if (stateMachine != oldStateMachine) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CepPackage.ABSTRACT_EVENT_PATTERN__CURRENT_STATE, oldCurrentState, currentState));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE, oldStateMachine, stateMachine));
 			}
 		}
-		return currentState;
+		return stateMachine;
 	}
 
 	/**
@@ -112,8 +107,8 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State basicGetCurrentState() {
-		return currentState;
+	public StateMachine basicGetStateMachine() {
+		return stateMachine;
 	}
 
 	/**
@@ -121,11 +116,11 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCurrentState(State newCurrentState) {
-		State oldCurrentState = currentState;
-		currentState = newCurrentState;
+	public void setStateMachine(StateMachine newStateMachine) {
+		StateMachine oldStateMachine = stateMachine;
+		stateMachine = newStateMachine;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CepPackage.ABSTRACT_EVENT_PATTERN__CURRENT_STATE, oldCurrentState, currentState));
+			eNotify(new ENotificationImpl(this, Notification.SET, CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE, oldStateMachine, stateMachine));
 	}
 
 	/**
@@ -174,9 +169,9 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 		switch (featureID) {
 			case CepPackage.ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS:
 				return getCompositionEvents();
-			case CepPackage.ABSTRACT_EVENT_PATTERN__CURRENT_STATE:
-				if (resolve) return getCurrentState();
-				return basicGetCurrentState();
+			case CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE:
+				if (resolve) return getStateMachine();
+				return basicGetStateMachine();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -194,8 +189,8 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 				getCompositionEvents().clear();
 				getCompositionEvents().addAll((Collection<? extends AbstractEventPattern>)newValue);
 				return;
-			case CepPackage.ABSTRACT_EVENT_PATTERN__CURRENT_STATE:
-				setCurrentState((State)newValue);
+			case CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE:
+				setStateMachine((StateMachine)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -212,8 +207,8 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 			case CepPackage.ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS:
 				getCompositionEvents().clear();
 				return;
-			case CepPackage.ABSTRACT_EVENT_PATTERN__CURRENT_STATE:
-				setCurrentState((State)null);
+			case CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE:
+				setStateMachine((StateMachine)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -229,8 +224,8 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 		switch (featureID) {
 			case CepPackage.ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS:
 				return compositionEvents != null && !compositionEvents.isEmpty();
-			case CepPackage.ABSTRACT_EVENT_PATTERN__CURRENT_STATE:
-				return currentState != null;
+			case CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE:
+				return stateMachine != null;
 		}
 		return super.eIsSet(featureID);
 	}

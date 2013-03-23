@@ -3,7 +3,6 @@
 package hu.bme.mit.incquery.metamodels.internalsm;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -27,7 +26,7 @@ public interface State extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Out Transitions</b></em>' reference list.
 	 * The list contents are of type {@link hu.bme.mit.incquery.metamodels.internalsm.Transition}.
-	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getInStates <em>In States</em>}'.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getInState <em>In State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Out Transitions</em>' reference list isn't clear,
@@ -36,8 +35,8 @@ public interface State extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Out Transitions</em>' reference list.
 	 * @see hu.bme.mit.incquery.metamodels.internalsm.InternalsmPackage#getState_OutTransitions()
-	 * @see hu.bme.mit.incquery.metamodels.internalsm.Transition#getInStates
-	 * @model opposite="inStates"
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.Transition#getInState
+	 * @model opposite="inState"
 	 * @generated
 	 */
 	EList<Transition> getOutTransitions();
@@ -45,7 +44,7 @@ public interface State extends EObject {
 	/**
 	 * Returns the value of the '<em><b>In Transitions</b></em>' reference list.
 	 * The list contents are of type {@link hu.bme.mit.incquery.metamodels.internalsm.Transition}.
-	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getOutStates <em>Out States</em>}'.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.metamodels.internalsm.Transition#getOutState <em>Out State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>In Transitions</em>' reference list isn't clear,
@@ -54,8 +53,8 @@ public interface State extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>In Transitions</em>' reference list.
 	 * @see hu.bme.mit.incquery.metamodels.internalsm.InternalsmPackage#getState_InTransitions()
-	 * @see hu.bme.mit.incquery.metamodels.internalsm.Transition#getOutStates
-	 * @model opposite="outStates"
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.Transition#getOutState
+	 * @model opposite="outState"
 	 * @generated
 	 */
 	EList<Transition> getInTransitions();

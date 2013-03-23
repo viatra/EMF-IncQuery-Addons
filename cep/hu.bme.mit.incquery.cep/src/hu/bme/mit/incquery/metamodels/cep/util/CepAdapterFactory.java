@@ -3,12 +3,18 @@
 package hu.bme.mit.incquery.metamodels.cep.util;
 
 import hu.bme.mit.incquery.metamodels.cep.*;
+import hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern;
+import hu.bme.mit.incquery.metamodels.cep.AtomicEventPattern;
+import hu.bme.mit.incquery.metamodels.cep.CepPackage;
+import hu.bme.mit.incquery.metamodels.cep.ComplexEventPattern;
+import hu.bme.mit.incquery.metamodels.cep.Event;
+import hu.bme.mit.incquery.metamodels.cep.IEventSource;
+import hu.bme.mit.incquery.metamodels.cep.ManagedPatternRepository;
+import hu.bme.mit.incquery.metamodels.cep.Timewindow;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -68,8 +74,8 @@ public class CepAdapterFactory extends AdapterFactoryImpl {
 	protected CepSwitch<Adapter> modelSwitch =
 		new CepSwitch<Adapter>() {
 			@Override
-			public Adapter caseEventProcessingModel(EventProcessingModel object) {
-				return createEventProcessingModelAdapter();
+			public Adapter caseManagedPatternRepository(ManagedPatternRepository object) {
+				return createManagedPatternRepositoryAdapter();
 			}
 			@Override
 			public Adapter caseAbstractEventPattern(AbstractEventPattern object) {
@@ -116,16 +122,16 @@ public class CepAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.metamodels.cep.EventProcessingModel <em>Event Processing Model</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.metamodels.cep.ManagedPatternRepository <em>Managed Pattern Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.bme.mit.incquery.metamodels.cep.EventProcessingModel
+	 * @see hu.bme.mit.incquery.metamodels.cep.ManagedPatternRepository
 	 * @generated
 	 */
-	public Adapter createEventProcessingModelAdapter() {
+	public Adapter createManagedPatternRepositoryAdapter() {
 		return null;
 	}
 

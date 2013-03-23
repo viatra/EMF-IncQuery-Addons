@@ -7,9 +7,7 @@ import hu.bme.mit.incquery.metamodels.cep.CepPackage;
 import hu.bme.mit.incquery.metamodels.cep.Event;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

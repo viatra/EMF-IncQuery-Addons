@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep;
+package hu.bme.mit.incquery.cep.internal;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;

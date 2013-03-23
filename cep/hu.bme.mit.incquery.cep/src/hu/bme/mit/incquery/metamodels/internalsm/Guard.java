@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.metamodels.internalsm.Guard#getEvent <em>Event</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.metamodels.internalsm.Guard#getEventType <em>Event Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Guard extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Event</b></em>' reference.
+	 * Returns the value of the '<em><b>Event Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Event</em>' reference isn't clear,
+	 * If the meaning of the '<em>Event Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Event</em>' reference.
-	 * @see #setEvent(Event)
-	 * @see hu.bme.mit.incquery.metamodels.internalsm.InternalsmPackage#getGuard_Event()
-	 * @model required="true"
+	 * @return the value of the '<em>Event Type</em>' attribute.
+	 * @see #setEventType(Class)
+	 * @see hu.bme.mit.incquery.metamodels.internalsm.InternalsmPackage#getGuard_EventType()
+	 * @model
 	 * @generated
 	 */
-	Event getEvent();
+	Class<? extends Event> getEventType();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.metamodels.internalsm.Guard#getEvent <em>Event</em>}' reference.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.metamodels.internalsm.Guard#getEventType <em>Event Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Event</em>' reference.
-	 * @see #getEvent()
+	 * @param value the new value of the '<em>Event Type</em>' attribute.
+	 * @see #getEventType()
 	 * @generated
 	 */
-	void setEvent(Event value);
+	void setEventType(Class<? extends Event> value);
 
 } // Guard
