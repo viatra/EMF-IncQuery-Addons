@@ -1,9 +1,9 @@
 package hu.bme.mit.incquery.cep.tests.testcaseEmf.patterns;
 
-import hu.bme.mit.incquery.cep.model.cep.AbstractEventPattern;
-import hu.bme.mit.incquery.cep.model.cep.CepPackage;
-import hu.bme.mit.incquery.cep.model.cep.ComplexOperator;
-import hu.bme.mit.incquery.cep.model.cep.impl.ComplexEventPatternImpl;
+import hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern;
+import hu.bme.mit.incquery.metamodels.cep.CepPackage;
+import hu.bme.mit.incquery.metamodels.cep.ComplexOperator;
+import hu.bme.mit.incquery.metamodels.cep.impl.ComplexEventPatternImpl;
 
 import java.util.List;
 

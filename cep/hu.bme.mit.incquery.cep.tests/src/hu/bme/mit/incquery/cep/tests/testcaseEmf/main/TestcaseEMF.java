@@ -1,7 +1,7 @@
 package hu.bme.mit.incquery.cep.tests.testcaseEmf.main;
 
-import hu.bme.mit.incquery.cep.model.cep.AbstractEventPattern;
-import hu.bme.mit.incquery.cep.model.cep.IEventSource;
+import hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern;
+import hu.bme.mit.incquery.metamodels.cep.IEventSource;
 import hu.bme.mit.incquery.cep.runtime.EventModelManager;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.tests.testcaseEmf.events.A;

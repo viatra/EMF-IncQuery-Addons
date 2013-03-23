@@ -1,9 +1,9 @@
 package hu.bme.mit.incquery.cep.runtime;
 
-import hu.bme.mit.incquery.cep.model.cep.AbstractEventPattern;
-import hu.bme.mit.incquery.cep.model.cep.CepFactory;
-import hu.bme.mit.incquery.cep.model.cep.Event;
-import hu.bme.mit.incquery.cep.model.cep.EventProcessingModel;
+import hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern;
+import hu.bme.mit.incquery.metamodels.cep.CepFactory;
+import hu.bme.mit.incquery.metamodels.cep.Event;
+import hu.bme.mit.incquery.metamodels.cep.EventProcessingModel;
 
 import java.util.List;
 

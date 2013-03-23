@@ -1,6 +1,6 @@
 package hu.bme.mit.incquery.cep.runtime;
 
-import hu.bme.mit.incquery.cep.model.cep.Event;
+import hu.bme.mit.incquery.metamodels.cep.Event;
 import hu.bme.mit.obsolete.incquery.cep.runtime.EventPatternRegistry;
 
 import java.util.Queue;
