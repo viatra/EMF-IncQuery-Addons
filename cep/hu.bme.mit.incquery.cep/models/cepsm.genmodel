@@ -13,13 +13,13 @@
       <genEnumLiterals ecoreEnumLiteral="CEPMeta.ecore#//ComplexOperator/UNORDERED"/>
       <genEnumLiterals ecoreEnumLiteral="CEPMeta.ecore#//ComplexOperator/UNORDERED_T"/>
     </genEnums>
-    <genClasses image="false" ecoreClass="CEPMeta.ecore#//AbstractEventPattern">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//AbstractEventPattern/compositionEvents"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//AbstractEventPattern/stateMachine"/>
-      <genOperations ecoreOperation="CEPMeta.ecore#//AbstractEventPattern/match">
-        <genParameters ecoreParameter="CEPMeta.ecore#//AbstractEventPattern/match/event"/>
+    <genClasses image="false" ecoreClass="CEPMeta.ecore#//EventPattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//EventPattern/compositionEvents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//EventPattern/stateMachines"/>
+      <genOperations ecoreOperation="CEPMeta.ecore#//EventPattern/match">
+        <genParameters ecoreParameter="CEPMeta.ecore#//EventPattern/match/event"/>
       </genOperations>
-      <genOperations ecoreOperation="CEPMeta.ecore#//AbstractEventPattern/isRecognized"/>
+      <genOperations ecoreOperation="CEPMeta.ecore#//EventPattern/isRecognized"/>
     </genClasses>
     <genClasses ecoreClass="CEPMeta.ecore#//AtomicEventPattern">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CEPMeta.ecore#//AtomicEventPattern/type"/>

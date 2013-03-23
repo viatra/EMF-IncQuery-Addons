@@ -2,9 +2,9 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.cep.impl;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
+import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
@@ -22,24 +22,23 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Abstract Event Pattern</b></em>'.
+ * An implementation of the model object '<em><b>Event Pattern</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.AbstractEventPatternImpl#getCompositionEvents <em>Composition Events</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.AbstractEventPatternImpl#getStateMachine <em>State Machine</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getCompositionEvents <em>Composition Events</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getStateMachines <em>State Machines</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class AbstractEventPatternImpl extends EObjectImpl implements AbstractEventPattern {
+public abstract class EventPatternImpl extends EObjectImpl implements EventPattern {
 	/**
 	 * The cached value of the '{@link #getCompositionEvents() <em>Composition Events</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -48,24 +47,24 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AbstractEventPattern> compositionEvents;
+	protected EList<EventPattern> compositionEvents;
 
 	/**
-	 * The cached value of the '{@link #getStateMachine() <em>State Machine</em>}' reference list.
+	 * The cached value of the '{@link #getStateMachines() <em>State Machines</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStateMachine()
+	 * @see #getStateMachines()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<StateMachine> stateMachine;
+	protected EList<StateMachine> stateMachines;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AbstractEventPatternImpl() {
+	protected EventPatternImpl() {
 		super();
 	}
 
@@ -76,7 +75,7 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CepPackage.Literals.ABSTRACT_EVENT_PATTERN;
+		return CepPackage.Literals.EVENT_PATTERN;
 	}
 
 	/**
@@ -84,9 +83,9 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AbstractEventPattern> getCompositionEvents() {
+	public EList<EventPattern> getCompositionEvents() {
 		if (compositionEvents == null) {
-			compositionEvents = new EObjectContainmentEList<AbstractEventPattern>(AbstractEventPattern.class, this, CepPackage.ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS);
+			compositionEvents = new EObjectContainmentEList<EventPattern>(EventPattern.class, this, CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS);
 		}
 		return compositionEvents;
 	}
@@ -96,11 +95,11 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<StateMachine> getStateMachine() {
-		if (stateMachine == null) {
-			stateMachine = new EObjectWithInverseResolvingEList<StateMachine>(StateMachine.class, this, CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE, InternalsmPackage.STATE_MACHINE__EVENT_PATTERN);
+	public EList<StateMachine> getStateMachines() {
+		if (stateMachines == null) {
+			stateMachines = new EObjectWithInverseResolvingEList<StateMachine>(StateMachine.class, this, CepPackage.EVENT_PATTERN__STATE_MACHINES, InternalsmPackage.STATE_MACHINE__EVENT_PATTERN);
 		}
-		return stateMachine;
+		return stateMachines;
 	}
 
 	/**
@@ -134,8 +133,8 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStateMachine()).basicAdd(otherEnd, msgs);
+			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStateMachines()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -148,10 +147,10 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CepPackage.ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS:
+			case CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS:
 				return ((InternalEList<?>)getCompositionEvents()).basicRemove(otherEnd, msgs);
-			case CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE:
-				return ((InternalEList<?>)getStateMachine()).basicRemove(otherEnd, msgs);
+			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
+				return ((InternalEList<?>)getStateMachines()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -164,10 +163,10 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CepPackage.ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS:
+			case CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS:
 				return getCompositionEvents();
-			case CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE:
-				return getStateMachine();
+			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
+				return getStateMachines();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -181,13 +180,13 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CepPackage.ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS:
+			case CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS:
 				getCompositionEvents().clear();
-				getCompositionEvents().addAll((Collection<? extends AbstractEventPattern>)newValue);
+				getCompositionEvents().addAll((Collection<? extends EventPattern>)newValue);
 				return;
-			case CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE:
-				getStateMachine().clear();
-				getStateMachine().addAll((Collection<? extends StateMachine>)newValue);
+			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
+				getStateMachines().clear();
+				getStateMachines().addAll((Collection<? extends StateMachine>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -201,11 +200,11 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CepPackage.ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS:
+			case CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS:
 				getCompositionEvents().clear();
 				return;
-			case CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE:
-				getStateMachine().clear();
+			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
+				getStateMachines().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -219,12 +218,12 @@ public abstract class AbstractEventPatternImpl extends EObjectImpl implements Ab
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CepPackage.ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS:
+			case CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS:
 				return compositionEvents != null && !compositionEvents.isEmpty();
-			case CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE:
-				return stateMachine != null && !stateMachine.isEmpty();
+			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
+				return stateMachines != null && !stateMachines.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //AbstractEventPatternImpl
+} //EventPatternImpl

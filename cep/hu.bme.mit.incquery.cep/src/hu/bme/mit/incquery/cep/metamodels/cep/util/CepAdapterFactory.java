@@ -68,8 +68,8 @@ public class CepAdapterFactory extends AdapterFactoryImpl {
 	protected CepSwitch<Adapter> modelSwitch =
 		new CepSwitch<Adapter>() {
 			@Override
-			public Adapter caseAbstractEventPattern(AbstractEventPattern object) {
-				return createAbstractEventPatternAdapter();
+			public Adapter caseEventPattern(EventPattern object) {
+				return createEventPatternAdapter();
 			}
 			@Override
 			public Adapter caseAtomicEventPattern(AtomicEventPattern object) {
@@ -112,16 +112,16 @@ public class CepAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern <em>Abstract Event Pattern</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern <em>Event Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.EventPattern
 	 * @generated
 	 */
-	public Adapter createAbstractEventPatternAdapter() {
+	public Adapter createEventPatternAdapter() {
 		return null;
 	}
 

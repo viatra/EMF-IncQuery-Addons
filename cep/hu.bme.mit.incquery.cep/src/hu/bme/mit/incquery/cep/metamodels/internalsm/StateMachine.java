@@ -2,7 +2,8 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern;
+import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -70,7 +71,7 @@ public interface StateMachine extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Event Pattern</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern#getStateMachine <em>State Machine</em>}'.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines <em>State Machines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Event Pattern</em>' reference isn't clear,
@@ -78,13 +79,13 @@ public interface StateMachine extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Event Pattern</em>' reference.
-	 * @see #setEventPattern(AbstractEventPattern)
+	 * @see #setEventPattern(EventPattern)
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getStateMachine_EventPattern()
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern#getStateMachine
-	 * @model opposite="stateMachine" required="true"
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines
+	 * @model opposite="stateMachines" required="true"
 	 * @generated
 	 */
-	AbstractEventPattern getEventPattern();
+	EventPattern getEventPattern();
 
 	/**
 	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern <em>Event Pattern</em>}' reference.
@@ -94,6 +95,6 @@ public interface StateMachine extends EObject {
 	 * @see #getEventPattern()
 	 * @generated
 	 */
-	void setEventPattern(AbstractEventPattern value);
+	void setEventPattern(EventPattern value);
 
 } // StateMachine

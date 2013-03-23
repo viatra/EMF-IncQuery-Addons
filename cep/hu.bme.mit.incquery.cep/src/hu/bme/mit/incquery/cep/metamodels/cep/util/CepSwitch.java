@@ -66,23 +66,23 @@ public class CepSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CepPackage.ABSTRACT_EVENT_PATTERN: {
-				AbstractEventPattern abstractEventPattern = (AbstractEventPattern)theEObject;
-				T result = caseAbstractEventPattern(abstractEventPattern);
+			case CepPackage.EVENT_PATTERN: {
+				EventPattern eventPattern = (EventPattern)theEObject;
+				T result = caseEventPattern(eventPattern);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CepPackage.ATOMIC_EVENT_PATTERN: {
 				AtomicEventPattern atomicEventPattern = (AtomicEventPattern)theEObject;
 				T result = caseAtomicEventPattern(atomicEventPattern);
-				if (result == null) result = caseAbstractEventPattern(atomicEventPattern);
+				if (result == null) result = caseEventPattern(atomicEventPattern);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CepPackage.COMPLEX_EVENT_PATTERN: {
 				ComplexEventPattern complexEventPattern = (ComplexEventPattern)theEObject;
 				T result = caseComplexEventPattern(complexEventPattern);
-				if (result == null) result = caseAbstractEventPattern(complexEventPattern);
+				if (result == null) result = caseEventPattern(complexEventPattern);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -109,17 +109,17 @@ public class CepSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract Event Pattern</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Event Pattern</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract Event Pattern</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Event Pattern</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAbstractEventPattern(AbstractEventPattern object) {
+	public T caseEventPattern(EventPattern object) {
 		return null;
 	}
 

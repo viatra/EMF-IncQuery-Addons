@@ -19,7 +19,7 @@ package hu.bme.mit.incquery.cep.metamodels.cep;
  * @model
  * @generated
  */
-public interface AtomicEventPattern extends AbstractEventPattern {
+public interface AtomicEventPattern extends EventPattern {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->

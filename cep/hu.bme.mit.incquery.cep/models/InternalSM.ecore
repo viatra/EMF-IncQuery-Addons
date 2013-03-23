@@ -32,7 +32,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentState" lowerBound="1"
         eType="#//State"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventPattern" lowerBound="1"
-        eType="ecore:EClass CEPMeta.ecore#//AbstractEventPattern" eOpposite="CEPMeta.ecore#//AbstractEventPattern/stateMachine"/>
+        eType="ecore:EClass CEPMeta.ecore#//EventPattern" eOpposite="CEPMeta.ecore#//EventPattern/stateMachines"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InternalExecutionModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachines" upperBound="-1"

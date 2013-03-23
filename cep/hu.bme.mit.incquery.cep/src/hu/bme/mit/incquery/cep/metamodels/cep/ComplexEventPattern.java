@@ -20,7 +20,7 @@ package hu.bme.mit.incquery.cep.metamodels.cep;
  * @model
  * @generated
  */
-public interface ComplexEventPattern extends AbstractEventPattern {
+public interface ComplexEventPattern extends EventPattern {
 	/**
 	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
 	 * The literals are from the enumeration {@link hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator}.
@@ -82,6 +82,6 @@ public interface ComplexEventPattern extends AbstractEventPattern {
 	 * @model compositionEventPatternRequired="true"
 	 * @generated
 	 */
-	void addCompositionEventPattern(AbstractEventPattern compositionEventPattern);
+	void addCompositionEventPattern(EventPattern compositionEventPattern);
 
 } // ComplexEventPattern

@@ -2,8 +2,9 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
+import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
+
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
@@ -68,7 +69,7 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractEventPattern eventPattern;
+	protected EventPattern eventPattern;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -144,10 +145,10 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractEventPattern getEventPattern() {
+	public EventPattern getEventPattern() {
 		if (eventPattern != null && eventPattern.eIsProxy()) {
 			InternalEObject oldEventPattern = (InternalEObject)eventPattern;
-			eventPattern = (AbstractEventPattern)eResolveProxy(oldEventPattern);
+			eventPattern = (EventPattern)eResolveProxy(oldEventPattern);
 			if (eventPattern != oldEventPattern) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InternalsmPackage.STATE_MACHINE__EVENT_PATTERN, oldEventPattern, eventPattern));
@@ -161,7 +162,7 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractEventPattern basicGetEventPattern() {
+	public EventPattern basicGetEventPattern() {
 		return eventPattern;
 	}
 
@@ -170,8 +171,8 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEventPattern(AbstractEventPattern newEventPattern, NotificationChain msgs) {
-		AbstractEventPattern oldEventPattern = eventPattern;
+	public NotificationChain basicSetEventPattern(EventPattern newEventPattern, NotificationChain msgs) {
+		EventPattern oldEventPattern = eventPattern;
 		eventPattern = newEventPattern;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE_MACHINE__EVENT_PATTERN, oldEventPattern, newEventPattern);
@@ -185,13 +186,13 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEventPattern(AbstractEventPattern newEventPattern) {
+	public void setEventPattern(EventPattern newEventPattern) {
 		if (newEventPattern != eventPattern) {
 			NotificationChain msgs = null;
 			if (eventPattern != null)
-				msgs = ((InternalEObject)eventPattern).eInverseRemove(this, CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE, AbstractEventPattern.class, msgs);
+				msgs = ((InternalEObject)eventPattern).eInverseRemove(this, CepPackage.EVENT_PATTERN__STATE_MACHINES, EventPattern.class, msgs);
 			if (newEventPattern != null)
-				msgs = ((InternalEObject)newEventPattern).eInverseAdd(this, CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE, AbstractEventPattern.class, msgs);
+				msgs = ((InternalEObject)newEventPattern).eInverseAdd(this, CepPackage.EVENT_PATTERN__STATE_MACHINES, EventPattern.class, msgs);
 			msgs = basicSetEventPattern(newEventPattern, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -209,8 +210,8 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 		switch (featureID) {
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
 				if (eventPattern != null)
-					msgs = ((InternalEObject)eventPattern).eInverseRemove(this, CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE, AbstractEventPattern.class, msgs);
-				return basicSetEventPattern((AbstractEventPattern)otherEnd, msgs);
+					msgs = ((InternalEObject)eventPattern).eInverseRemove(this, CepPackage.EVENT_PATTERN__STATE_MACHINES, EventPattern.class, msgs);
+				return basicSetEventPattern((EventPattern)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -268,7 +269,7 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 				setCurrentState((State)newValue);
 				return;
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
-				setEventPattern((AbstractEventPattern)newValue);
+				setEventPattern((EventPattern)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -289,7 +290,7 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 				setCurrentState((State)null);
 				return;
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
-				setEventPattern((AbstractEventPattern)null);
+				setEventPattern((EventPattern)null);
 				return;
 		}
 		super.eUnset(featureID);

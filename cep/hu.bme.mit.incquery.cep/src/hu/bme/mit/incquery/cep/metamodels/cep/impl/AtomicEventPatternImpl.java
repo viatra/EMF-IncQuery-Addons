@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class AtomicEventPatternImpl extends AbstractEventPatternImpl implements AtomicEventPattern {
+public class AtomicEventPatternImpl extends EventPatternImpl implements AtomicEventPattern {
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->

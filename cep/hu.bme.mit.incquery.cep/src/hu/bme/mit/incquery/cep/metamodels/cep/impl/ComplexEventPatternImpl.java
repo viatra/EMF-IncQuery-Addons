@@ -2,10 +2,10 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.cep.impl;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
+import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ComplexEventPatternImpl extends AbstractEventPatternImpl implements ComplexEventPattern {
+public class ComplexEventPatternImpl extends EventPatternImpl implements ComplexEventPattern {
 	/**
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -149,7 +149,7 @@ public class ComplexEventPatternImpl extends AbstractEventPatternImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addCompositionEventPattern(AbstractEventPattern compositionEventPattern) {
+	public void addCompositionEventPattern(EventPattern compositionEventPattern) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

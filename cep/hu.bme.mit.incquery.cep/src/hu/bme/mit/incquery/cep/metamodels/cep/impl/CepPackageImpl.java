@@ -2,13 +2,13 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.cep.impl;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.CepFactory;
 import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
+import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 
@@ -38,7 +38,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass abstractEventPatternEClass = null;
+	private EClass eventPatternEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,8 +153,8 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAbstractEventPattern() {
-		return abstractEventPatternEClass;
+	public EClass getEventPattern() {
+		return eventPatternEClass;
 	}
 
 	/**
@@ -162,8 +162,8 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractEventPattern_CompositionEvents() {
-		return (EReference)abstractEventPatternEClass.getEStructuralFeatures().get(0);
+	public EReference getEventPattern_CompositionEvents() {
+		return (EReference)eventPatternEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -171,8 +171,8 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractEventPattern_StateMachine() {
-		return (EReference)abstractEventPatternEClass.getEStructuralFeatures().get(1);
+	public EReference getEventPattern_StateMachines() {
+		return (EReference)eventPatternEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -320,9 +320,9 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		abstractEventPatternEClass = createEClass(ABSTRACT_EVENT_PATTERN);
-		createEReference(abstractEventPatternEClass, ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS);
-		createEReference(abstractEventPatternEClass, ABSTRACT_EVENT_PATTERN__STATE_MACHINE);
+		eventPatternEClass = createEClass(EVENT_PATTERN);
+		createEReference(eventPatternEClass, EVENT_PATTERN__COMPOSITION_EVENTS);
+		createEReference(eventPatternEClass, EVENT_PATTERN__STATE_MACHINES);
 
 		atomicEventPatternEClass = createEClass(ATOMIC_EVENT_PATTERN);
 		createEAttribute(atomicEventPatternEClass, ATOMIC_EVENT_PATTERN__TYPE);
@@ -376,18 +376,18 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		atomicEventPatternEClass.getESuperTypes().add(this.getAbstractEventPattern());
-		complexEventPatternEClass.getESuperTypes().add(this.getAbstractEventPattern());
+		atomicEventPatternEClass.getESuperTypes().add(this.getEventPattern());
+		complexEventPatternEClass.getESuperTypes().add(this.getEventPattern());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(abstractEventPatternEClass, AbstractEventPattern.class, "AbstractEventPattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbstractEventPattern_CompositionEvents(), this.getAbstractEventPattern(), null, "compositionEvents", null, 0, -1, AbstractEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractEventPattern_StateMachine(), theInternalsmPackage.getStateMachine(), theInternalsmPackage.getStateMachine_EventPattern(), "stateMachine", null, 0, -1, AbstractEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(eventPatternEClass, EventPattern.class, "EventPattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEventPattern_CompositionEvents(), this.getEventPattern(), null, "compositionEvents", null, 0, -1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEventPattern_StateMachines(), theInternalsmPackage.getStateMachine(), theInternalsmPackage.getStateMachine_EventPattern(), "stateMachines", null, 1, -1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = addEOperation(abstractEventPatternEClass, ecorePackage.getEBoolean(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(eventPatternEClass, ecorePackage.getEBoolean(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEvent(), "event", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(abstractEventPatternEClass, ecorePackage.getEBoolean(), "isRecognized", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(eventPatternEClass, ecorePackage.getEBoolean(), "isRecognized", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(atomicEventPatternEClass, AtomicEventPattern.class, "AtomicEventPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		EGenericType g1 = createEGenericType(ecorePackage.getEJavaClass());
@@ -402,7 +402,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		initEReference(getComplexEventPattern_Timewindow(), this.getTimewindow(), null, "timewindow", null, 0, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(complexEventPatternEClass, null, "addCompositionEventPattern", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getAbstractEventPattern(), "compositionEventPattern", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEventPattern(), "compositionEventPattern", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEvent_Id(), ecorePackage.getEString(), "id", null, 1, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -10,25 +10,25 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Abstract Event Pattern</b></em>'.
+ * A representation of the model object '<em><b>Event Pattern</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern#getCompositionEvents <em>Composition Events</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern#getStateMachine <em>State Machine</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getCompositionEvents <em>Composition Events</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines <em>State Machines</em>}</li>
  * </ul>
  * </p>
  *
- * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getAbstractEventPattern()
+ * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getEventPattern()
  * @model abstract="true"
  * @generated
  */
-public interface AbstractEventPattern extends EObject {
+public interface EventPattern extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Composition Events</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern}.
+	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Composition Events</em>' containment reference list isn't clear,
@@ -36,29 +36,29 @@ public interface AbstractEventPattern extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Composition Events</em>' containment reference list.
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getAbstractEventPattern_CompositionEvents()
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getEventPattern_CompositionEvents()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<AbstractEventPattern> getCompositionEvents();
+	EList<EventPattern> getCompositionEvents();
 
 	/**
-	 * Returns the value of the '<em><b>State Machine</b></em>' reference list.
+	 * Returns the value of the '<em><b>State Machines</b></em>' reference list.
 	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine}.
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern <em>Event Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>State Machine</em>' reference list isn't clear,
+	 * If the meaning of the '<em>State Machines</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>State Machine</em>' reference list.
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getAbstractEventPattern_StateMachine()
+	 * @return the value of the '<em>State Machines</em>' reference list.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getEventPattern_StateMachines()
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern
-	 * @model opposite="eventPattern"
+	 * @model opposite="eventPattern" required="true"
 	 * @generated
 	 */
-	EList<StateMachine> getStateMachine();
+	EList<StateMachine> getStateMachines();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,4 +76,4 @@ public interface AbstractEventPattern extends EObject {
 	 */
 	boolean isRecognized();
 
-} // AbstractEventPattern
+} // EventPattern
