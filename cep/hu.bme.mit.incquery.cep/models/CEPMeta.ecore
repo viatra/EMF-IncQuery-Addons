@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cep" nsURI="cep.meta" nsPrefix="hu.bme.mit.incquery.metamodels">
-  <eClassifiers xsi:type="ecore:EClass" name="ManagedPatternRepository">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eventPatterns" upperBound="-1"
-        eType="#//AbstractEventPattern" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractEventPattern" abstract="true">
     <eOperations name="match" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="event" lowerBound="1" eType="#//Event"/>
@@ -12,8 +8,8 @@
     <eOperations name="isRecognized" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compositionEvents" upperBound="-1"
         eType="#//AbstractEventPattern" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachine" lowerBound="1"
-        eType="ecore:EClass InternalSM.ecore#//StateMachine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachine" upperBound="-1"
+        eType="ecore:EClass InternalSM.ecore#//StateMachine" eOpposite="InternalSM.ecore#//StateMachine/eventPattern"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicEventPattern" eSuperTypes="#//AbstractEventPattern">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1">

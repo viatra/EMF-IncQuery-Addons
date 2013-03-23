@@ -13,9 +13,6 @@
       <genEnumLiterals ecoreEnumLiteral="CEPMeta.ecore#//ComplexOperator/UNORDERED"/>
       <genEnumLiterals ecoreEnumLiteral="CEPMeta.ecore#//ComplexOperator/UNORDERED_T"/>
     </genEnums>
-    <genClasses ecoreClass="CEPMeta.ecore#//ManagedPatternRepository">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//ManagedPatternRepository/eventPatterns"/>
-    </genClasses>
     <genClasses image="false" ecoreClass="CEPMeta.ecore#//AbstractEventPattern">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//AbstractEventPattern/compositionEvents"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//AbstractEventPattern/stateMachine"/>
@@ -64,6 +61,10 @@
     <genClasses ecoreClass="InternalSM.ecore#//StateMachine">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//StateMachine/states"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//StateMachine/currentState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//StateMachine/eventPattern"/>
+    </genClasses>
+    <genClasses ecoreClass="InternalSM.ecore#//InternalExecutionModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//InternalExecutionModel/stateMachines"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

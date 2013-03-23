@@ -63,6 +63,7 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 			case InternalsmPackage.INIT_STATE: return createInitState();
 			case InternalsmPackage.TRAP_STATE: return createTrapState();
 			case InternalsmPackage.STATE_MACHINE: return createStateMachine();
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL: return createInternalExecutionModel();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -136,6 +137,16 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 	public StateMachine createStateMachine() {
 		StateMachineImpl stateMachine = new StateMachineImpl();
 		return stateMachine;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InternalExecutionModel createInternalExecutionModel() {
+		InternalExecutionModelImpl internalExecutionModel = new InternalExecutionModelImpl();
+		return internalExecutionModel;
 	}
 
 	/**

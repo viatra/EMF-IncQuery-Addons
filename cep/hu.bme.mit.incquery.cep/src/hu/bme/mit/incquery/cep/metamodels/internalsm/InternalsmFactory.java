@@ -85,6 +85,15 @@ public interface InternalsmFactory extends EFactory {
 	StateMachine createStateMachine();
 
 	/**
+	 * Returns a new object of class '<em>Internal Execution Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Internal Execution Model</em>'.
+	 * @generated
+	 */
+	InternalExecutionModel createInternalExecutionModel();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

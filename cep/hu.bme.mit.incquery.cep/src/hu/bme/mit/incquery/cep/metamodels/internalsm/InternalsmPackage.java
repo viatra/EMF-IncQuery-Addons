@@ -306,13 +306,50 @@ public interface InternalsmPackage extends EPackage {
 	int STATE_MACHINE__CURRENT_STATE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Event Pattern</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MACHINE__EVENT_PATTERN = 2;
+
+	/**
 	 * The number of structural features of the '<em>State Machine</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE_FEATURE_COUNT = 2;
+	int STATE_MACHINE_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl <em>Internal Execution Model</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getInternalExecutionModel()
+	 * @generated
+	 */
+	int INTERNAL_EXECUTION_MODEL = 7;
+
+	/**
+	 * The feature id for the '<em><b>State Machines</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_EXECUTION_MODEL__STATE_MACHINES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Internal Execution Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_EXECUTION_MODEL_FEATURE_COUNT = 1;
 
 
 	/**
@@ -474,6 +511,38 @@ public interface InternalsmPackage extends EPackage {
 	EReference getStateMachine_CurrentState();
 
 	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern <em>Event Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Event Pattern</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern()
+	 * @see #getStateMachine()
+	 * @generated
+	 */
+	EReference getStateMachine_EventPattern();
+
+	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel <em>Internal Execution Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Internal Execution Model</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel
+	 * @generated
+	 */
+	EClass getInternalExecutionModel();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getStateMachines <em>State Machines</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>State Machines</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getStateMachines()
+	 * @see #getInternalExecutionModel()
+	 * @generated
+	 */
+	EReference getInternalExecutionModel_StateMachines();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -628,6 +697,32 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE_MACHINE__CURRENT_STATE = eINSTANCE.getStateMachine_CurrentState();
+
+		/**
+		 * The meta object literal for the '<em><b>Event Pattern</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE_MACHINE__EVENT_PATTERN = eINSTANCE.getStateMachine_EventPattern();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl <em>Internal Execution Model</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getInternalExecutionModel()
+		 * @generated
+		 */
+		EClass INTERNAL_EXECUTION_MODEL = eINSTANCE.getInternalExecutionModel();
+
+		/**
+		 * The meta object literal for the '<em><b>State Machines</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERNAL_EXECUTION_MODEL__STATE_MACHINES = eINSTANCE.getInternalExecutionModel_StateMachines();
 
 	}
 

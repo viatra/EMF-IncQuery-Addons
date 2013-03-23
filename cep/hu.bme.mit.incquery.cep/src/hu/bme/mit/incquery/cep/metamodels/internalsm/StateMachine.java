@@ -2,6 +2,7 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -16,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getStates <em>States</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getCurrentState <em>Current State</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern <em>Event Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,5 +67,33 @@ public interface StateMachine extends EObject {
 	 * @generated
 	 */
 	void setCurrentState(State value);
+
+	/**
+	 * Returns the value of the '<em><b>Event Pattern</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern#getStateMachine <em>State Machine</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Event Pattern</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Event Pattern</em>' reference.
+	 * @see #setEventPattern(AbstractEventPattern)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getStateMachine_EventPattern()
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern#getStateMachine
+	 * @model opposite="stateMachine" required="true"
+	 * @generated
+	 */
+	AbstractEventPattern getEventPattern();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern <em>Event Pattern</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Event Pattern</em>' reference.
+	 * @see #getEventPattern()
+	 * @generated
+	 */
+	void setEventPattern(AbstractEventPattern value);
 
 } // StateMachine

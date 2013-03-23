@@ -96,6 +96,10 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 				return createStateMachineAdapter();
 			}
 			@Override
+			public Adapter caseInternalExecutionModel(InternalExecutionModel object) {
+				return createInternalExecutionModelAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -210,6 +214,20 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStateMachineAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel <em>Internal Execution Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel
+	 * @generated
+	 */
+	public Adapter createInternalExecutionModelAdapter() {
 		return null;
 	}
 

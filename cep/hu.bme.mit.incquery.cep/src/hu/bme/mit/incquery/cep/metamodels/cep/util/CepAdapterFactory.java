@@ -68,10 +68,6 @@ public class CepAdapterFactory extends AdapterFactoryImpl {
 	protected CepSwitch<Adapter> modelSwitch =
 		new CepSwitch<Adapter>() {
 			@Override
-			public Adapter caseManagedPatternRepository(ManagedPatternRepository object) {
-				return createManagedPatternRepositoryAdapter();
-			}
-			@Override
 			public Adapter caseAbstractEventPattern(AbstractEventPattern object) {
 				return createAbstractEventPatternAdapter();
 			}
@@ -114,20 +110,6 @@ public class CepAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.metamodels.cep.ManagedPatternRepository <em>Managed Pattern Repository</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.ManagedPatternRepository
-	 * @generated
-	 */
-	public Adapter createManagedPatternRepositoryAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern <em>Abstract Event Pattern</em>}'.

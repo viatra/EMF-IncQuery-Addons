@@ -57,7 +57,6 @@ public class CepFactoryImpl extends EFactoryImpl implements CepFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CepPackage.MANAGED_PATTERN_REPOSITORY: return createManagedPatternRepository();
 			case CepPackage.ATOMIC_EVENT_PATTERN: return createAtomicEventPattern();
 			case CepPackage.COMPLEX_EVENT_PATTERN: return createComplexEventPattern();
 			case CepPackage.EVENT: return createEvent();
@@ -95,16 +94,6 @@ public class CepFactoryImpl extends EFactoryImpl implements CepFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ManagedPatternRepository createManagedPatternRepository() {
-		ManagedPatternRepositoryImpl managedPatternRepository = new ManagedPatternRepositoryImpl();
-		return managedPatternRepository;
 	}
 
 	/**

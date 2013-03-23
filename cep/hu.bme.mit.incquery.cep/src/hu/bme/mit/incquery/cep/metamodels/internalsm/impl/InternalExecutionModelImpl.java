@@ -1,10 +1,10 @@
 /**
  */
-package hu.bme.mit.incquery.cep.metamodels.cep.impl;
+package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern;
-import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
-import hu.bme.mit.incquery.cep.metamodels.cep.ManagedPatternRepository;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 
 import java.util.Collection;
 
@@ -22,34 +22,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Managed Pattern Repository</b></em>'.
+ * An implementation of the model object '<em><b>Internal Execution Model</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.ManagedPatternRepositoryImpl#getEventPatterns <em>Event Patterns</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl#getStateMachines <em>State Machines</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ManagedPatternRepositoryImpl extends EObjectImpl implements ManagedPatternRepository {
+public class InternalExecutionModelImpl extends EObjectImpl implements InternalExecutionModel {
 	/**
-	 * The cached value of the '{@link #getEventPatterns() <em>Event Patterns</em>}' containment reference list.
+	 * The cached value of the '{@link #getStateMachines() <em>State Machines</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEventPatterns()
+	 * @see #getStateMachines()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AbstractEventPattern> eventPatterns;
+	protected EList<StateMachine> stateMachines;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ManagedPatternRepositoryImpl() {
+	protected InternalExecutionModelImpl() {
 		super();
 	}
 
@@ -60,7 +60,7 @@ public class ManagedPatternRepositoryImpl extends EObjectImpl implements Managed
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CepPackage.Literals.MANAGED_PATTERN_REPOSITORY;
+		return InternalsmPackage.Literals.INTERNAL_EXECUTION_MODEL;
 	}
 
 	/**
@@ -68,11 +68,11 @@ public class ManagedPatternRepositoryImpl extends EObjectImpl implements Managed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AbstractEventPattern> getEventPatterns() {
-		if (eventPatterns == null) {
-			eventPatterns = new EObjectContainmentEList<AbstractEventPattern>(AbstractEventPattern.class, this, CepPackage.MANAGED_PATTERN_REPOSITORY__EVENT_PATTERNS);
+	public EList<StateMachine> getStateMachines() {
+		if (stateMachines == null) {
+			stateMachines = new EObjectContainmentEList<StateMachine>(StateMachine.class, this, InternalsmPackage.INTERNAL_EXECUTION_MODEL__STATE_MACHINES);
 		}
-		return eventPatterns;
+		return stateMachines;
 	}
 
 	/**
@@ -83,8 +83,8 @@ public class ManagedPatternRepositoryImpl extends EObjectImpl implements Managed
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CepPackage.MANAGED_PATTERN_REPOSITORY__EVENT_PATTERNS:
-				return ((InternalEList<?>)getEventPatterns()).basicRemove(otherEnd, msgs);
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__STATE_MACHINES:
+				return ((InternalEList<?>)getStateMachines()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -97,8 +97,8 @@ public class ManagedPatternRepositoryImpl extends EObjectImpl implements Managed
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CepPackage.MANAGED_PATTERN_REPOSITORY__EVENT_PATTERNS:
-				return getEventPatterns();
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__STATE_MACHINES:
+				return getStateMachines();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,9 +112,9 @@ public class ManagedPatternRepositoryImpl extends EObjectImpl implements Managed
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CepPackage.MANAGED_PATTERN_REPOSITORY__EVENT_PATTERNS:
-				getEventPatterns().clear();
-				getEventPatterns().addAll((Collection<? extends AbstractEventPattern>)newValue);
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__STATE_MACHINES:
+				getStateMachines().clear();
+				getStateMachines().addAll((Collection<? extends StateMachine>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -128,8 +128,8 @@ public class ManagedPatternRepositoryImpl extends EObjectImpl implements Managed
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CepPackage.MANAGED_PATTERN_REPOSITORY__EVENT_PATTERNS:
-				getEventPatterns().clear();
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__STATE_MACHINES:
+				getStateMachines().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -143,10 +143,10 @@ public class ManagedPatternRepositoryImpl extends EObjectImpl implements Managed
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CepPackage.MANAGED_PATTERN_REPOSITORY__EVENT_PATTERNS:
-				return eventPatterns != null && !eventPatterns.isEmpty();
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__STATE_MACHINES:
+				return stateMachines != null && !stateMachines.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ManagedPatternRepositoryImpl
+} //InternalExecutionModelImpl

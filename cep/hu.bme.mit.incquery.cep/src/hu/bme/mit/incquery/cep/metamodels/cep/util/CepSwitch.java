@@ -66,12 +66,6 @@ public class CepSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CepPackage.MANAGED_PATTERN_REPOSITORY: {
-				ManagedPatternRepository managedPatternRepository = (ManagedPatternRepository)theEObject;
-				T result = caseManagedPatternRepository(managedPatternRepository);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CepPackage.ABSTRACT_EVENT_PATTERN: {
 				AbstractEventPattern abstractEventPattern = (AbstractEventPattern)theEObject;
 				T result = caseAbstractEventPattern(abstractEventPattern);
@@ -112,21 +106,6 @@ public class CepSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Managed Pattern Repository</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Managed Pattern Repository</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseManagedPatternRepository(ManagedPatternRepository object) {
-		return null;
 	}
 
 	/**

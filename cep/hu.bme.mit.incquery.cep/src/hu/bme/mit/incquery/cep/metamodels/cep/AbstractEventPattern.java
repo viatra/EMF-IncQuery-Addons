@@ -43,30 +43,22 @@ public interface AbstractEventPattern extends EObject {
 	EList<AbstractEventPattern> getCompositionEvents();
 
 	/**
-	 * Returns the value of the '<em><b>State Machine</b></em>' reference.
+	 * Returns the value of the '<em><b>State Machine</b></em>' reference list.
+	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine}.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern <em>Event Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>State Machine</em>' reference isn't clear,
+	 * If the meaning of the '<em>State Machine</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>State Machine</em>' reference.
-	 * @see #setStateMachine(StateMachine)
+	 * @return the value of the '<em>State Machine</em>' reference list.
 	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getAbstractEventPattern_StateMachine()
-	 * @model required="true"
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern
+	 * @model opposite="eventPattern"
 	 * @generated
 	 */
-	StateMachine getStateMachine();
-
-	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern#getStateMachine <em>State Machine</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>State Machine</em>' reference.
-	 * @see #getStateMachine()
-	 * @generated
-	 */
-	void setStateMachine(StateMachine value);
+	EList<StateMachine> getStateMachine();
 
 	/**
 	 * <!-- begin-user-doc -->

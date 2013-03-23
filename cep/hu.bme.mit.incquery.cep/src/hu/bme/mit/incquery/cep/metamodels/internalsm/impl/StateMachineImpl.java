@@ -2,6 +2,8 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern;
+import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
@@ -31,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateMachineImpl#getStates <em>States</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateMachineImpl#getCurrentState <em>Current State</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateMachineImpl#getEventPattern <em>Event Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,6 +59,16 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * @ordered
 	 */
 	protected State currentState;
+
+	/**
+	 * The cached value of the '{@link #getEventPattern() <em>Event Pattern</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventPattern()
+	 * @generated
+	 * @ordered
+	 */
+	protected AbstractEventPattern eventPattern;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,11 +144,89 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public AbstractEventPattern getEventPattern() {
+		if (eventPattern != null && eventPattern.eIsProxy()) {
+			InternalEObject oldEventPattern = (InternalEObject)eventPattern;
+			eventPattern = (AbstractEventPattern)eResolveProxy(oldEventPattern);
+			if (eventPattern != oldEventPattern) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InternalsmPackage.STATE_MACHINE__EVENT_PATTERN, oldEventPattern, eventPattern));
+			}
+		}
+		return eventPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AbstractEventPattern basicGetEventPattern() {
+		return eventPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEventPattern(AbstractEventPattern newEventPattern, NotificationChain msgs) {
+		AbstractEventPattern oldEventPattern = eventPattern;
+		eventPattern = newEventPattern;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE_MACHINE__EVENT_PATTERN, oldEventPattern, newEventPattern);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEventPattern(AbstractEventPattern newEventPattern) {
+		if (newEventPattern != eventPattern) {
+			NotificationChain msgs = null;
+			if (eventPattern != null)
+				msgs = ((InternalEObject)eventPattern).eInverseRemove(this, CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE, AbstractEventPattern.class, msgs);
+			if (newEventPattern != null)
+				msgs = ((InternalEObject)newEventPattern).eInverseAdd(this, CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE, AbstractEventPattern.class, msgs);
+			msgs = basicSetEventPattern(newEventPattern, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE_MACHINE__EVENT_PATTERN, newEventPattern, newEventPattern));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
+				if (eventPattern != null)
+					msgs = ((InternalEObject)eventPattern).eInverseRemove(this, CepPackage.ABSTRACT_EVENT_PATTERN__STATE_MACHINE, AbstractEventPattern.class, msgs);
+				return basicSetEventPattern((AbstractEventPattern)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case InternalsmPackage.STATE_MACHINE__STATES:
 				return ((InternalEList<?>)getStates()).basicRemove(otherEnd, msgs);
+			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
+				return basicSetEventPattern(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -153,6 +244,9 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 			case InternalsmPackage.STATE_MACHINE__CURRENT_STATE:
 				if (resolve) return getCurrentState();
 				return basicGetCurrentState();
+			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
+				if (resolve) return getEventPattern();
+				return basicGetEventPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -173,6 +267,9 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 			case InternalsmPackage.STATE_MACHINE__CURRENT_STATE:
 				setCurrentState((State)newValue);
 				return;
+			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
+				setEventPattern((AbstractEventPattern)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -191,6 +288,9 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 			case InternalsmPackage.STATE_MACHINE__CURRENT_STATE:
 				setCurrentState((State)null);
 				return;
+			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
+				setEventPattern((AbstractEventPattern)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -207,6 +307,8 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 				return states != null && !states.isEmpty();
 			case InternalsmPackage.STATE_MACHINE__CURRENT_STATE:
 				return currentState != null;
+			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
+				return eventPattern != null;
 		}
 		return super.eIsSet(featureID);
 	}

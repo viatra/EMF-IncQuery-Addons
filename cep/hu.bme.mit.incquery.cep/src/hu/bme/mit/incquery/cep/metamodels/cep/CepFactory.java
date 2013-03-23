@@ -22,15 +22,6 @@ public interface CepFactory extends EFactory {
 	CepFactory eINSTANCE = hu.bme.mit.incquery.cep.metamodels.cep.impl.CepFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Managed Pattern Repository</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Managed Pattern Repository</em>'.
-	 * @generated
-	 */
-	ManagedPatternRepository createManagedPatternRepository();
-
-	/**
 	 * Returns a new object of class '<em>Atomic Event Pattern</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

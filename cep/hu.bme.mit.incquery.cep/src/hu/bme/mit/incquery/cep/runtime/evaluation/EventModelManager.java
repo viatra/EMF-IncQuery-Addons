@@ -1,18 +1,17 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation;
 
-import hu.bme.mit.incquery.cep.runtime.EventQueue;
-import hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.CepFactory;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
-import hu.bme.mit.incquery.cep.metamodels.cep.ManagedPatternRepository;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.cep.runtime.EventQueue;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
@@ -20,12 +19,12 @@ import org.eclipse.emf.common.notify.impl.AdapterImpl;
 
 public class EventModelManager {
 	private static EventModelManager instance;
-	private ManagedPatternRepository model;
+	private InternalExecutionModel model;
 	private final CepFactory CEP_FACTORY = CepFactory.eINSTANCE;
 	private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
 	
 	private EventModelManager() {
-		this.model = CEP_FACTORY.createManagedPatternRepository();
+		this.model = SM_FACTORY.createInternalExecutionModel();
 		
 		Adapter adapter = new AdapterImpl() {
 			@Override
@@ -48,16 +47,16 @@ public class EventModelManager {
 		return instance;
 	}
 	
-	public ManagedPatternRepository getModel() {
+	public InternalExecutionModel getModel() {
 		return model;
 	}
 	
 	private void evaluateOnInternalSM(Event event) {
 		// TODO invoke IncQuery: fire all rules
-		for (AbstractEventPattern ep : model.getEventPatterns()) {
-			for (Transition t : ep.getStateMachine().getCurrentState().getOutTransitions()) {
+		for (StateMachine sm : model.getStateMachines()) {
+			for (Transition t : sm.getCurrentState().getOutTransitions()) {
 				if (SMUtils.isEnabled(t, event)) {
-					SMUtils.fireTransition(ep, t);
+					SMUtils.fireTransition(sm, t);
 				}
 			}
 		}
@@ -65,9 +64,9 @@ public class EventModelManager {
 	}
 	
 	private void executeRecognizedPatterns() {
-		for (AbstractEventPattern ep : model.getEventPatterns()) {
-			if (ep.getStateMachine().getCurrentState() instanceof FinalState) {
-				System.out.println("CEP: PATTERN " + ep.getClass().getSimpleName() + " RECOGNIZED");
+		for (StateMachine sm : model.getStateMachines()) {
+			if (sm.getCurrentState() instanceof FinalState) {
+				System.out.println("CEP: PATTERN " + sm.getEventPattern().getClass().getSimpleName() + " RECOGNIZED");
 			}
 		}
 	}
@@ -92,8 +91,8 @@ public class EventModelManager {
 		
 		sm.setCurrentState(initState);
 		
-		pattern.setStateMachine(sm);
+		sm.setEventPattern(pattern);
 		
-		model.getEventPatterns().add(pattern);
+		model.getStateMachines().add(sm);
 	}
 }

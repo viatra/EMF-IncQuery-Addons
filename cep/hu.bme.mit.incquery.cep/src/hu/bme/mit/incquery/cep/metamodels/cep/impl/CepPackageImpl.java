@@ -10,7 +10,6 @@ import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
-import hu.bme.mit.incquery.cep.metamodels.cep.ManagedPatternRepository;
 import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
@@ -34,13 +33,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class CepPackageImpl extends EPackageImpl implements CepPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass managedPatternRepositoryEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -154,24 +146,6 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(CepPackage.eNS_URI, theCepPackage);
 		return theCepPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getManagedPatternRepository() {
-		return managedPatternRepositoryEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getManagedPatternRepository_EventPatterns() {
-		return (EReference)managedPatternRepositoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -346,9 +320,6 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		managedPatternRepositoryEClass = createEClass(MANAGED_PATTERN_REPOSITORY);
-		createEReference(managedPatternRepositoryEClass, MANAGED_PATTERN_REPOSITORY__EVENT_PATTERNS);
-
 		abstractEventPatternEClass = createEClass(ABSTRACT_EVENT_PATTERN);
 		createEReference(abstractEventPatternEClass, ABSTRACT_EVENT_PATTERN__COMPOSITION_EVENTS);
 		createEReference(abstractEventPatternEClass, ABSTRACT_EVENT_PATTERN__STATE_MACHINE);
@@ -409,12 +380,9 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		complexEventPatternEClass.getESuperTypes().add(this.getAbstractEventPattern());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(managedPatternRepositoryEClass, ManagedPatternRepository.class, "ManagedPatternRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getManagedPatternRepository_EventPatterns(), this.getAbstractEventPattern(), null, "eventPatterns", null, 0, -1, ManagedPatternRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(abstractEventPatternEClass, AbstractEventPattern.class, "AbstractEventPattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAbstractEventPattern_CompositionEvents(), this.getAbstractEventPattern(), null, "compositionEvents", null, 0, -1, AbstractEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractEventPattern_StateMachine(), theInternalsmPackage.getStateMachine(), null, "stateMachine", null, 1, 1, AbstractEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractEventPattern_StateMachine(), theInternalsmPackage.getStateMachine(), theInternalsmPackage.getStateMachine_EventPattern(), "stateMachine", null, 0, -1, AbstractEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(abstractEventPatternEClass, ecorePackage.getEBoolean(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEvent(), "event", 1, 1, IS_UNIQUE, IS_ORDERED);
