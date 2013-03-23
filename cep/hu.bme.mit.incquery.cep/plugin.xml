@@ -5,12 +5,15 @@
 -->
 
 <plugin>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <package
-            uri="cep.meta"
-            class="hu.bme.mit.incquery.cep.eventmodel.emf.cep.CepPackage"
-            genModel="src/hu/bme/mit/incquery/cep/eventmodel/emf/cep.genmodel"/>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri="cep.meta"
+            class="hu.bme.mit.incquery.cep.metamodels.cep.CepPackage"
+            genModel="models/cepsm.genmodel"/>
+	<package
+            uri="sm.meta"
+            class="hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage"
+            genModel="models/cepsm.genmodel"/>
    </extension>
 
 </plugin>

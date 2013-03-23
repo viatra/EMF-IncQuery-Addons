@@ -1,13 +1,13 @@
 package hu.bme.mit.incquery.cep.tests.testcaseSm.main;
 
-import hu.bme.mit.incquery.cep.runtime.EventModelManager;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
+import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.A;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.B;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.C;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.ABC_Pattern;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.APattern;
-import hu.bme.mit.incquery.metamodels.cep.IEventSource;
+import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 
 import org.junit.After;
 import org.junit.Before;

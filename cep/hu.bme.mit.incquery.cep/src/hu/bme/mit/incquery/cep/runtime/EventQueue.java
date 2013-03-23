@@ -1,7 +1,6 @@
 package hu.bme.mit.incquery.cep.runtime;
 
-import hu.bme.mit.incquery.metamodels.cep.Event;
-import hu.bme.mit.obsolete.incquery.cep.runtime.EventPatternRegistry;
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;

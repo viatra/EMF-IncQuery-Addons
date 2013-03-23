@@ -5,7 +5,7 @@
     copyrightFields="false">
   <foreignModel>CEPMeta.ecore</foreignModel>
   <foreignModel>InternalSM.ecore</foreignModel>
-  <genPackages prefix="Cep" basePackage="hu.bme.mit.incquery.metamodels" disposableProviderFactory="true"
+  <genPackages prefix="Cep" basePackage="hu.bme.mit.incquery.cep.metamodels" disposableProviderFactory="true"
       ecorePackage="CEPMeta.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="CEPMeta.ecore#//ComplexOperator">
       <genEnumLiterals ecoreEnumLiteral="CEPMeta.ecore#//ComplexOperator/ORDERED"/>
@@ -44,8 +44,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CEPMeta.ecore#//Timewindow/length"/>
     </genClasses>
   </genPackages>
-  <genPackages prefix="Internalsm" basePackage="hu.bme.mit.incquery.metamodels" disposableProviderFactory="true"
-      ecorePackage="InternalSM.ecore#/">
+  <genPackages prefix="Internalsm" basePackage="hu.bme.mit.incquery.cep.metamodels"
+      disposableProviderFactory="true" ecorePackage="InternalSM.ecore#/">
     <genClasses ecoreClass="InternalSM.ecore#//State">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/outTransitions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/inTransitions"/>

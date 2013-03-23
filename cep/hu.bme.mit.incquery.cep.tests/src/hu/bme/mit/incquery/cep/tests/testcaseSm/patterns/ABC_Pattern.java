@@ -3,10 +3,10 @@ package hu.bme.mit.incquery.cep.tests.testcaseSm.patterns;
 import java.util.ArrayList;
 import java.util.List;
 
-import hu.bme.mit.incquery.metamodels.cep.AbstractEventPattern;
-import hu.bme.mit.incquery.metamodels.cep.CepPackage;
-import hu.bme.mit.incquery.metamodels.cep.ComplexOperator;
-import hu.bme.mit.incquery.metamodels.cep.impl.ComplexEventPatternImpl;
+import hu.bme.mit.incquery.cep.metamodels.cep.AbstractEventPattern;
+import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
+import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
+import hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl;
 
 public class ABC_Pattern extends ComplexEventPatternImpl {
 	public ABC_Pattern() {
