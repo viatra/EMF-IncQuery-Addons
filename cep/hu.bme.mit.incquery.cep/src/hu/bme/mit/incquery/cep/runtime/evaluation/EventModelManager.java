@@ -66,13 +66,17 @@ public class EventModelManager {
 	}
 	
 	private void executeRecognizedPatterns() {
-		Iterator<StateMachine> iterator = model.getStateMachines().iterator();
-		while (iterator.hasNext()) {
-			StateMachine sm = iterator.next();
+		List<StateMachine> smToDelete = new ArrayList<StateMachine>();
+		
+		for (StateMachine sm : model.getStateMachines()) {
 			if (sm.getCurrentState() instanceof FinalState) {
 				System.out.println("\nCEP: PATTERN " + sm.getEventPattern().getClass().getSimpleName() + " RECOGNIZED");
-				model.getStateMachines().remove(sm);
+				smToDelete.add(sm);
 			}
+		}
+		
+		for (StateMachine stateMachine : smToDelete) {
+			model.getStateMachines().remove(stateMachine);
 		}
 	}
 	
