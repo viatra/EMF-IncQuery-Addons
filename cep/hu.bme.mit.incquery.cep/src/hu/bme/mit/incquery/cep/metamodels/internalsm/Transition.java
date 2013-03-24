@@ -12,9 +12,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getInState <em>In State</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPreState <em>Pre State</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getGuard <em>Guard</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getOutState <em>Out State</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPostState <em>Post State</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,32 +24,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Transition extends EObject {
 	/**
-	 * Returns the value of the '<em><b>In State</b></em>' reference.
+	 * Returns the value of the '<em><b>Pre State</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getOutTransitions <em>Out Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>In State</em>' reference isn't clear,
+	 * If the meaning of the '<em>Pre State</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>In State</em>' reference.
-	 * @see #setInState(State)
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getTransition_InState()
+	 * @return the value of the '<em>Pre State</em>' reference.
+	 * @see #setPreState(State)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getTransition_PreState()
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.State#getOutTransitions
 	 * @model opposite="outTransitions" required="true"
 	 * @generated
 	 */
-	State getInState();
+	State getPreState();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getInState <em>In State</em>}' reference.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPreState <em>Pre State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>In State</em>' reference.
-	 * @see #getInState()
+	 * @param value the new value of the '<em>Pre State</em>' reference.
+	 * @see #getPreState()
 	 * @generated
 	 */
-	void setInState(State value);
+	void setPreState(State value);
 
 	/**
 	 * Returns the value of the '<em><b>Guard</b></em>' reference.
@@ -78,31 +78,31 @@ public interface Transition extends EObject {
 	void setGuard(Guard value);
 
 	/**
-	 * Returns the value of the '<em><b>Out State</b></em>' reference.
+	 * Returns the value of the '<em><b>Post State</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getInTransitions <em>In Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Out State</em>' reference isn't clear,
+	 * If the meaning of the '<em>Post State</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Out State</em>' reference.
-	 * @see #setOutState(State)
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getTransition_OutState()
+	 * @return the value of the '<em>Post State</em>' reference.
+	 * @see #setPostState(State)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getTransition_PostState()
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.State#getInTransitions
 	 * @model opposite="inTransitions" required="true"
 	 * @generated
 	 */
-	State getOutState();
+	State getPostState();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getOutState <em>Out State</em>}' reference.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPostState <em>Post State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Out State</em>' reference.
-	 * @see #getOutState()
+	 * @param value the new value of the '<em>Post State</em>' reference.
+	 * @see #getPostState()
 	 * @generated
 	 */
-	void setOutState(State value);
+	void setPostState(State value);
 
 } // Transition

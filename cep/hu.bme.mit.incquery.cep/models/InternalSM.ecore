@@ -3,15 +3,15 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="internalsm" nsURI="sm.meta" nsPrefix="hu.bme.mit.incquery.metamodels">
   <eClassifiers xsi:type="ecore:EClass" name="State">
     <eStructuralFeatures xsi:type="ecore:EReference" name="outTransitions" upperBound="-1"
-        eType="#//Transition" eOpposite="#//Transition/inState"/>
+        eType="#//Transition" eOpposite="#//Transition/preState"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inTransitions" upperBound="-1"
-        eType="#//Transition" eOpposite="#//Transition/outState"/>
+        eType="#//Transition" eOpposite="#//Transition/postState"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inState" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preState" lowerBound="1"
         eType="#//State" eOpposite="#//State/outTransitions"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="#//Guard"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outState" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="postState" lowerBound="1"
         eType="#//State" eOpposite="#//State/inTransitions"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Guard">
@@ -22,6 +22,7 @@
         </eTypeArguments>
       </eGenericType>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timewindow" eType="ecore:EClass CEPMeta.ecore#//Timewindow"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="#//State"/>
   <eClassifiers xsi:type="ecore:EClass" name="InitState" eSuperTypes="#//State"/>

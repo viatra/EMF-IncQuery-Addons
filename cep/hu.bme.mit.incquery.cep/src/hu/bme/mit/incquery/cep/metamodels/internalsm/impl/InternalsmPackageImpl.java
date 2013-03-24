@@ -195,7 +195,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransition_InState() {
+	public EReference getTransition_PreState() {
 		return (EReference)transitionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -213,7 +213,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransition_OutState() {
+	public EReference getTransition_PostState() {
 		return (EReference)transitionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -233,6 +233,15 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 */
 	public EAttribute getGuard_EventType() {
 		return (EAttribute)guardEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGuard_Timewindow() {
+		return (EReference)guardEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -349,12 +358,13 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		createEReference(stateEClass, STATE__IN_TRANSITIONS);
 
 		transitionEClass = createEClass(TRANSITION);
-		createEReference(transitionEClass, TRANSITION__IN_STATE);
+		createEReference(transitionEClass, TRANSITION__PRE_STATE);
 		createEReference(transitionEClass, TRANSITION__GUARD);
-		createEReference(transitionEClass, TRANSITION__OUT_STATE);
+		createEReference(transitionEClass, TRANSITION__POST_STATE);
 
 		guardEClass = createEClass(GUARD);
 		createEAttribute(guardEClass, GUARD__EVENT_TYPE);
+		createEReference(guardEClass, GUARD__TIMEWINDOW);
 
 		finalStateEClass = createEClass(FINAL_STATE);
 
@@ -408,13 +418,13 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getState_OutTransitions(), this.getTransition(), this.getTransition_InState(), "outTransitions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_InTransitions(), this.getTransition(), this.getTransition_OutState(), "inTransitions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_OutTransitions(), this.getTransition(), this.getTransition_PreState(), "outTransitions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_InTransitions(), this.getTransition(), this.getTransition_PostState(), "inTransitions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTransition_InState(), this.getState(), this.getState_OutTransitions(), "inState", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_PreState(), this.getState(), this.getState_OutTransitions(), "preState", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Guard(), this.getGuard(), null, "guard", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTransition_OutState(), this.getState(), this.getState_InTransitions(), "outState", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_PostState(), this.getState(), this.getState_InTransitions(), "postState", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(guardEClass, Guard.class, "Guard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		EGenericType g1 = createEGenericType(ecorePackage.getEJavaClass());
@@ -423,6 +433,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		EGenericType g3 = createEGenericType(theCepPackage.getEvent());
 		g2.setEUpperBound(g3);
 		initEAttribute(getGuard_EventType(), g1, "eventType", null, 0, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGuard_Timewindow(), theCepPackage.getTimewindow(), null, "timewindow", null, 0, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(finalStateEClass, FinalState.class, "FinalState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

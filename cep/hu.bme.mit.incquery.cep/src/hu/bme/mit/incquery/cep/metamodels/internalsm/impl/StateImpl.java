@@ -81,7 +81,7 @@ public class StateImpl extends EObjectImpl implements State {
 	 */
 	public EList<Transition> getOutTransitions() {
 		if (outTransitions == null) {
-			outTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, InternalsmPackage.STATE__OUT_TRANSITIONS, InternalsmPackage.TRANSITION__IN_STATE);
+			outTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, InternalsmPackage.STATE__OUT_TRANSITIONS, InternalsmPackage.TRANSITION__PRE_STATE);
 		}
 		return outTransitions;
 	}
@@ -93,7 +93,7 @@ public class StateImpl extends EObjectImpl implements State {
 	 */
 	public EList<Transition> getInTransitions() {
 		if (inTransitions == null) {
-			inTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, InternalsmPackage.STATE__IN_TRANSITIONS, InternalsmPackage.TRANSITION__OUT_STATE);
+			inTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, InternalsmPackage.STATE__IN_TRANSITIONS, InternalsmPackage.TRANSITION__POST_STATE);
 		}
 		return inTransitions;
 	}

@@ -103,13 +103,13 @@ public interface InternalsmPackage extends EPackage {
 	int TRANSITION = 1;
 
 	/**
-	 * The feature id for the '<em><b>In State</b></em>' reference.
+	 * The feature id for the '<em><b>Pre State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__IN_STATE = 0;
+	int TRANSITION__PRE_STATE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' reference.
@@ -121,13 +121,13 @@ public interface InternalsmPackage extends EPackage {
 	int TRANSITION__GUARD = 1;
 
 	/**
-	 * The feature id for the '<em><b>Out State</b></em>' reference.
+	 * The feature id for the '<em><b>Post State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__OUT_STATE = 2;
+	int TRANSITION__POST_STATE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -158,13 +158,22 @@ public interface InternalsmPackage extends EPackage {
 	int GUARD__EVENT_TYPE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Timewindow</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARD__TIMEWINDOW = 1;
+
+	/**
 	 * The number of structural features of the '<em>Guard</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUARD_FEATURE_COUNT = 1;
+	int GUARD_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.FinalStateImpl <em>Final State</em>}' class.
@@ -395,15 +404,15 @@ public interface InternalsmPackage extends EPackage {
 	EClass getTransition();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getInState <em>In State</em>}'.
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPreState <em>Pre State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>In State</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getInState()
+	 * @return the meta object for the reference '<em>Pre State</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPreState()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getTransition_InState();
+	EReference getTransition_PreState();
 
 	/**
 	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getGuard <em>Guard</em>}'.
@@ -417,15 +426,15 @@ public interface InternalsmPackage extends EPackage {
 	EReference getTransition_Guard();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getOutState <em>Out State</em>}'.
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPostState <em>Post State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Out State</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getOutState()
+	 * @return the meta object for the reference '<em>Post State</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPostState()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getTransition_OutState();
+	EReference getTransition_PostState();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard <em>Guard</em>}'.
@@ -447,6 +456,17 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getGuard_EventType();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimewindow <em>Timewindow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Timewindow</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimewindow()
+	 * @see #getGuard()
+	 * @generated
+	 */
+	EReference getGuard_Timewindow();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState <em>Final State</em>}'.
@@ -601,12 +621,12 @@ public interface InternalsmPackage extends EPackage {
 		EClass TRANSITION = eINSTANCE.getTransition();
 
 		/**
-		 * The meta object literal for the '<em><b>In State</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Pre State</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSITION__IN_STATE = eINSTANCE.getTransition_InState();
+		EReference TRANSITION__PRE_STATE = eINSTANCE.getTransition_PreState();
 
 		/**
 		 * The meta object literal for the '<em><b>Guard</b></em>' reference feature.
@@ -617,12 +637,12 @@ public interface InternalsmPackage extends EPackage {
 		EReference TRANSITION__GUARD = eINSTANCE.getTransition_Guard();
 
 		/**
-		 * The meta object literal for the '<em><b>Out State</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Post State</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSITION__OUT_STATE = eINSTANCE.getTransition_OutState();
+		EReference TRANSITION__POST_STATE = eINSTANCE.getTransition_PostState();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.GuardImpl <em>Guard</em>}' class.
@@ -641,6 +661,14 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GUARD__EVENT_TYPE = eINSTANCE.getGuard_EventType();
+
+		/**
+		 * The meta object literal for the '<em><b>Timewindow</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GUARD__TIMEWINDOW = eINSTANCE.getGuard_Timewindow();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.FinalStateImpl <em>Final State</em>}' class.

@@ -180,6 +180,15 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEventPattern_Id() {
+		return (EAttribute)eventPatternEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAtomicEventPattern() {
 		return atomicEventPatternEClass;
 	}
@@ -323,6 +332,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		eventPatternEClass = createEClass(EVENT_PATTERN);
 		createEReference(eventPatternEClass, EVENT_PATTERN__COMPOSITION_EVENTS);
 		createEReference(eventPatternEClass, EVENT_PATTERN__STATE_MACHINES);
+		createEAttribute(eventPatternEClass, EVENT_PATTERN__ID);
 
 		atomicEventPatternEClass = createEClass(ATOMIC_EVENT_PATTERN);
 		createEAttribute(atomicEventPatternEClass, ATOMIC_EVENT_PATTERN__TYPE);
@@ -383,6 +393,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		initEClass(eventPatternEClass, EventPattern.class, "EventPattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEventPattern_CompositionEvents(), this.getEventPattern(), null, "compositionEvents", null, 0, -1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEventPattern_StateMachines(), theInternalsmPackage.getStateMachine(), theInternalsmPackage.getStateMachine_EventPattern(), "stateMachines", null, 1, -1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEventPattern_Id(), ecorePackage.getEString(), "id", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(eventPatternEClass, ecorePackage.getEBoolean(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEvent(), "event", 1, 1, IS_UNIQUE, IS_ORDERED);

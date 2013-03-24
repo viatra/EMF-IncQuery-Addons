@@ -3,6 +3,7 @@
 package hu.bme.mit.incquery.cep.metamodels.internalsm;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
+import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getEventType <em>Event Type</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimewindow <em>Timewindow</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,5 +50,31 @@ public interface Guard extends EObject {
 	 * @generated
 	 */
 	void setEventType(Class<? extends Event> value);
+
+	/**
+	 * Returns the value of the '<em><b>Timewindow</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Timewindow</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Timewindow</em>' reference.
+	 * @see #setTimewindow(Timewindow)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getGuard_Timewindow()
+	 * @model
+	 * @generated
+	 */
+	Timewindow getTimewindow();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimewindow <em>Timewindow</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Timewindow</em>' reference.
+	 * @see #getTimewindow()
+	 * @generated
+	 */
+	void setTimewindow(Timewindow value);
 
 } // Guard
