@@ -2,10 +2,6 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cep" nsURI="cep.meta" nsPrefix="hu.bme.mit.incquery.metamodels">
   <eClassifiers xsi:type="ecore:EClass" name="EventPattern" abstract="true">
-    <eOperations name="match" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="event" lowerBound="1" eType="#//Event"/>
-    </eOperations>
-    <eOperations name="isRecognized" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compositionEvents" upperBound="-1"
         eType="#//EventPattern" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachines" lowerBound="1"

@@ -8,5 +8,6 @@ public class A extends EventImpl {
 	public A(IEventSource eventSource) {
 		super();
 		setEventSource(eventSource);
+		setId("hu.bme.mit.incquery.cep.tests.testcaseSm.events.A");
 	}
 }

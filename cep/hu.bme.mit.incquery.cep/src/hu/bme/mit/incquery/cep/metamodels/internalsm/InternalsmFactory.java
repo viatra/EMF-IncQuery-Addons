@@ -94,6 +94,15 @@ public interface InternalsmFactory extends EFactory {
 	InternalExecutionModel createInternalExecutionModel();
 
 	/**
+	 * Returns a new object of class '<em>Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Action</em>'.
+	 * @generated
+	 */
+	Action createAction();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

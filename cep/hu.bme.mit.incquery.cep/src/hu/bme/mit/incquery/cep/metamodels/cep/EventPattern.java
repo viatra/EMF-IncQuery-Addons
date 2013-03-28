@@ -87,20 +87,4 @@ public interface EventPattern extends EObject {
 	 */
 	void setId(String value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model eventRequired="true"
-	 * @generated
-	 */
-	boolean match(Event event);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	boolean isRecognized();
-
 } // EventPattern

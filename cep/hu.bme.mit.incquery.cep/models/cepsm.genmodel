@@ -17,10 +17,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//EventPattern/compositionEvents"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//EventPattern/stateMachines"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CEPMeta.ecore#//EventPattern/id"/>
-      <genOperations ecoreOperation="CEPMeta.ecore#//EventPattern/match">
-        <genParameters ecoreParameter="CEPMeta.ecore#//EventPattern/match/event"/>
-      </genOperations>
-      <genOperations ecoreOperation="CEPMeta.ecore#//EventPattern/isRecognized"/>
     </genClasses>
     <genClasses ecoreClass="CEPMeta.ecore#//AtomicEventPattern">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CEPMeta.ecore#//AtomicEventPattern/type"/>
@@ -47,6 +43,7 @@
     <genClasses ecoreClass="InternalSM.ecore#//State">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/outTransitions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/inTransitions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//State/label"/>
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//Transition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Transition/preState"/>
@@ -57,7 +54,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//Guard/eventType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Guard/timewindow"/>
     </genClasses>
-    <genClasses ecoreClass="InternalSM.ecore#//FinalState"/>
+    <genClasses ecoreClass="InternalSM.ecore#//FinalState">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//FinalState/actions"/>
+    </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//InitState"/>
     <genClasses ecoreClass="InternalSM.ecore#//TrapState"/>
     <genClasses ecoreClass="InternalSM.ecore#//StateMachine">
@@ -67,6 +66,9 @@
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//InternalExecutionModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//InternalExecutionModel/stateMachines"/>
+    </genClasses>
+    <genClasses ecoreClass="InternalSM.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//Action/msgToLog"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

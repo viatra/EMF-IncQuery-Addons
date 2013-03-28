@@ -16,5 +16,6 @@ public class BC_Pattern extends ComplexEventPatternImpl {
 		atomicEventPatternsForCP.add(new BPattern());
 		atomicEventPatternsForCP.add(new CPattern());
 		eSet(CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS, atomicEventPatternsForCP);
+		setId("BCPattern");
 	}
 }

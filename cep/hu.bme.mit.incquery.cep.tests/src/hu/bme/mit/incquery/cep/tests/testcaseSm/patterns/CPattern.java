@@ -7,5 +7,6 @@ public class CPattern extends AtomicEventPatternImpl {
 	public CPattern() {
 		super();
 		setType(C.class);
+		setId("CPattern");
 	}
 }

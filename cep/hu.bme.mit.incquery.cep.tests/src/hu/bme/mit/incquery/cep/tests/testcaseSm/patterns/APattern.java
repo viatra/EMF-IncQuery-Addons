@@ -8,5 +8,6 @@ public class APattern extends AtomicEventPatternImpl {
 	public APattern() {
 		super();
 		setType(A.class);
+		setId("APattern");
 	}
 }

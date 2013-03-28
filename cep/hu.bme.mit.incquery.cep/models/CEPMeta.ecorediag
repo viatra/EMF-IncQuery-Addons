@@ -12,14 +12,6 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_lrQSs5R-EeKJ-IAR0t4eRA"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_lrQStJR-EeKJ-IAR0t4eRA" type="5002">
-      <children xmi:type="notation:Node" xmi:id="_lrSH4JR-EeKJ-IAR0t4eRA" type="2002">
-        <element xmi:type="ecore:EOperation" href="CEPMeta.ecore#//EventPattern/match"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_lrSH4ZR-EeKJ-IAR0t4eRA"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_lrSu8JR-EeKJ-IAR0t4eRA" type="2002">
-        <element xmi:type="ecore:EOperation" href="CEPMeta.ecore#//EventPattern/isRecognized"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_lrSu8ZR-EeKJ-IAR0t4eRA"/>
-      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_lrQStZR-EeKJ-IAR0t4eRA"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_lrQStpR-EeKJ-IAR0t4eRA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_lrQSt5R-EeKJ-IAR0t4eRA"/>
@@ -121,7 +113,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_lrXncZR-EeKJ-IAR0t4eRA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="CEPMeta.ecore#//Event"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lrXncpR-EeKJ-IAR0t4eRA" x="687" y="432"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lrXncpR-EeKJ-IAR0t4eRA" x="162" y="497"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_lrYOhJR-EeKJ-IAR0t4eRA" type="1001">
     <children xmi:type="notation:Node" xmi:id="_lrY1kJR-EeKJ-IAR0t4eRA" type="4001"/>
@@ -137,7 +129,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_lrYOhZR-EeKJ-IAR0t4eRA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="CEPMeta.ecore#//IEventSource"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lrYOhpR-EeKJ-IAR0t4eRA" x="705" y="265"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lrYOhpR-EeKJ-IAR0t4eRA" x="180" y="330"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_lrY1mZR-EeKJ-IAR0t4eRA" type="1001">
     <children xmi:type="notation:Node" xmi:id="_lrY1nJR-EeKJ-IAR0t4eRA" type="4001"/>
@@ -171,7 +163,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_lrbR0ZR-EeKJ-IAR0t4eRA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_lrbR0pR-EeKJ-IAR0t4eRA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="CEPMeta.ecore#//EventPattern/compositionEvents"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lrbR05R-EeKJ-IAR0t4eRA" points="[6, 0, 90, -20]$[154, 0, 238, -20]$[154, 25, 238, 5]$[6, 25, 90, 5]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lrbR05R-EeKJ-IAR0t4eRA" points="[4, 0, 50, -14]$[179, 0, 225, -14]$[179, 21, 225, 7]$[4, 21, 50, 7]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_spVfIJR-EeKJ-IAR0t4eRA" id="(0.967032967032967,0.20588235294117646)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_lrcf8pR-EeKJ-IAR0t4eRA" type="3003" source="_lrSu8pR-EeKJ-IAR0t4eRA" target="_lrOdgJR-EeKJ-IAR0t4eRA">

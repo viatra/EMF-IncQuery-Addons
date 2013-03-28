@@ -395,11 +395,6 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		initEReference(getEventPattern_StateMachines(), theInternalsmPackage.getStateMachine(), theInternalsmPackage.getStateMachine_EventPattern(), "stateMachines", null, 1, -1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEventPattern_Id(), ecorePackage.getEString(), "id", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = addEOperation(eventPatternEClass, ecorePackage.getEBoolean(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getEvent(), "event", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(eventPatternEClass, ecorePackage.getEBoolean(), "isRecognized", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(atomicEventPatternEClass, AtomicEventPattern.class, "AtomicEventPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		EGenericType g1 = createEGenericType(ecorePackage.getEJavaClass());
 		EGenericType g2 = createEGenericType();
@@ -412,7 +407,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		initEAttribute(getComplexEventPattern_Operator(), this.getComplexOperator(), "operator", null, 1, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComplexEventPattern_Timewindow(), this.getTimewindow(), null, "timewindow", null, 0, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(complexEventPatternEClass, null, "addCompositionEventPattern", 1, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(complexEventPatternEClass, null, "addCompositionEventPattern", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEventPattern(), "compositionEventPattern", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

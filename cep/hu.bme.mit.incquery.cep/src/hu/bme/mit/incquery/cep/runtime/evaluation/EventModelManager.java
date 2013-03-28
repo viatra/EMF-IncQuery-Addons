@@ -3,6 +3,7 @@ package hu.bme.mit.incquery.cep.runtime.evaluation;
 import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.Action;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
@@ -14,7 +15,6 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -35,7 +35,7 @@ public class EventModelManager {
 				Object newValue = notification.getNewValue();
 				if (newValue instanceof Event) {
 					Event event = (Event) newValue;
-					System.err.println("DIAG: Event " + event.getClass().getSimpleName() + " captured...");
+					System.err.println("DIAG: Event " + event.getClass().getName() + " captured...");
 					evaluateOnInternalSM(event);
 				}
 			}
@@ -54,6 +54,9 @@ public class EventModelManager {
 		return model;
 	}
 	
+	/**
+	 * TODO this shall be replaced with the IncQuery
+	 */
 	private void evaluateOnInternalSM(Event event) {
 		for (StateMachine sm : model.getStateMachines()) {
 			for (Transition t : sm.getCurrentState().getOutTransitions()) {
@@ -70,7 +73,7 @@ public class EventModelManager {
 		
 		for (StateMachine sm : model.getStateMachines()) {
 			if (sm.getCurrentState() instanceof FinalState) {
-				System.out.println("\nCEP: PATTERN " + sm.getEventPattern().getClass().getSimpleName() + " RECOGNIZED");
+				System.out.println(((FinalState) sm.getCurrentState()).getActions().get(0).getMsgToLog());
 				smToDelete.add(sm);
 			}
 		}
@@ -80,10 +83,39 @@ public class EventModelManager {
 		}
 	}
 	
+	public void buildStateMachine(AtomicEventPattern pattern) {
+		StateMachine sm = SM_FACTORY.createStateMachine();
+		InitState initState = SM_FACTORY.createInitState();
+		FinalState finalState = SM_FACTORY.createFinalState();
+		
+		Action action = SM_FACTORY.createAction();
+		action.setMsgToLog("CEP: Event pattern " + pattern.getId() + " recognized");
+		finalState.getActions().add(action);
+		
+		Transition t1 = SM_FACTORY.createTransition();
+		Guard g1 = SM_FACTORY.createGuard();
+		g1.setEventType(pattern.getType());
+		t1.setGuard(g1);
+		
+		t1.setPostState(finalState);
+		
+		initState.getOutTransitions().add(t1);
+		
+		sm.setCurrentState(initState);
+		
+		sm.setEventPattern(pattern);
+		
+		model.getStateMachines().add(sm);
+	}
+	
 	public void buildStateMachine(ComplexEventPattern pattern) {
 		StateMachine sm = SM_FACTORY.createStateMachine();
 		InitState initState = SM_FACTORY.createInitState();
 		FinalState finalState = SM_FACTORY.createFinalState();
+		
+		Action action = SM_FACTORY.createAction();
+		action.setMsgToLog("CEP: Event pattern " + pattern.getId() + " recognized");
+		finalState.getActions().add(action);
 		
 		// only for ORDERED w/o timewin
 		List<AtomicEventPattern> atomicEventPatterns = SMUtils.flattenComplexPatterns(pattern);
@@ -118,6 +150,7 @@ public class EventModelManager {
 		
 		model.getStateMachines().add(sm);
 	}
+	
 	private Transition createTransition(State preState, State postState, Guard guard) {
 		Transition t = SM_FACTORY.createTransition();
 		t.setGuard(guard);
@@ -135,26 +168,5 @@ public class EventModelManager {
 		Guard g = SM_FACTORY.createGuard();
 		g.setEventType(atomicEventPattern.getType());
 		return g;
-	}
-	
-	public void buildStateMachine(AtomicEventPattern pattern) {
-		StateMachine sm = SM_FACTORY.createStateMachine();
-		InitState initState = SM_FACTORY.createInitState();
-		FinalState finalState = SM_FACTORY.createFinalState();
-		
-		Transition t1 = SM_FACTORY.createTransition();
-		Guard g1 = SM_FACTORY.createGuard();
-		g1.setEventType(pattern.getType());
-		t1.setGuard(g1);
-		
-		t1.setPostState(finalState);
-		
-		initState.getOutTransitions().add(t1);
-		
-		sm.setCurrentState(initState);
-		
-		sm.setEventPattern(pattern);
-		
-		model.getStateMachines().add(sm);
 	}
 }

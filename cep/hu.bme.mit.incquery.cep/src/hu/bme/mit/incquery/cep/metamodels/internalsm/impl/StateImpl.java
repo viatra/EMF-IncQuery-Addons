@@ -8,6 +8,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getOutTransitions <em>Out Transitions</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getInTransitions <em>In Transitions</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getLabel <em>Label</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +57,26 @@ public class StateImpl extends EObjectImpl implements State {
 	 * @ordered
 	 */
 	protected EList<Transition> inTransitions;
+
+	/**
+	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLabel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LABEL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLabel()
+	 * @generated
+	 * @ordered
+	 */
+	protected String label = LABEL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,6 +126,27 @@ public class StateImpl extends EObjectImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getLabel() {
+		return label;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLabel(String newLabel) {
+		String oldLabel = label;
+		label = newLabel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE__LABEL, oldLabel, label));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -143,6 +187,8 @@ public class StateImpl extends EObjectImpl implements State {
 				return getOutTransitions();
 			case InternalsmPackage.STATE__IN_TRANSITIONS:
 				return getInTransitions();
+			case InternalsmPackage.STATE__LABEL:
+				return getLabel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,6 +210,9 @@ public class StateImpl extends EObjectImpl implements State {
 				getInTransitions().clear();
 				getInTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
+			case InternalsmPackage.STATE__LABEL:
+				setLabel((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -182,6 +231,9 @@ public class StateImpl extends EObjectImpl implements State {
 			case InternalsmPackage.STATE__IN_TRANSITIONS:
 				getInTransitions().clear();
 				return;
+			case InternalsmPackage.STATE__LABEL:
+				setLabel(LABEL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -198,8 +250,26 @@ public class StateImpl extends EObjectImpl implements State {
 				return outTransitions != null && !outTransitions.isEmpty();
 			case InternalsmPackage.STATE__IN_TRANSITIONS:
 				return inTransitions != null && !inTransitions.isEmpty();
+			case InternalsmPackage.STATE__LABEL:
+				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (label: ");
+		result.append(label);
+		result.append(')');
+		return result.toString();
 	}
 
 } //StateImpl

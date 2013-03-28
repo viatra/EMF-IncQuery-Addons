@@ -3,7 +3,6 @@
 package hu.bme.mit.incquery.cep.metamodels.cep.impl;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
-import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
@@ -144,28 +143,6 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 		id = newId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CepPackage.EVENT_PATTERN__ID, oldId, id));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean match(Event event) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isRecognized() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

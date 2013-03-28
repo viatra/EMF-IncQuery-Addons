@@ -6,6 +6,7 @@ import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.CepPackageImpl;
 
+import hu.bme.mit.incquery.cep.metamodels.internalsm.Action;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
@@ -87,6 +88,13 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * @generated
 	 */
 	private EClass internalExecutionModelEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass actionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -186,6 +194,15 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getState_Label() {
+		return (EAttribute)stateEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTransition() {
 		return transitionEClass;
 	}
@@ -251,6 +268,15 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 */
 	public EClass getFinalState() {
 		return finalStateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFinalState_Actions() {
+		return (EReference)finalStateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -330,6 +356,24 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAction() {
+		return actionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAction_MsgToLog() {
+		return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public InternalsmFactory getInternalsmFactory() {
 		return (InternalsmFactory)getEFactoryInstance();
 	}
@@ -356,6 +400,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		stateEClass = createEClass(STATE);
 		createEReference(stateEClass, STATE__OUT_TRANSITIONS);
 		createEReference(stateEClass, STATE__IN_TRANSITIONS);
+		createEAttribute(stateEClass, STATE__LABEL);
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__PRE_STATE);
@@ -367,6 +412,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		createEReference(guardEClass, GUARD__TIMEWINDOW);
 
 		finalStateEClass = createEClass(FINAL_STATE);
+		createEReference(finalStateEClass, FINAL_STATE__ACTIONS);
 
 		initStateEClass = createEClass(INIT_STATE);
 
@@ -379,6 +425,9 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 
 		internalExecutionModelEClass = createEClass(INTERNAL_EXECUTION_MODEL);
 		createEReference(internalExecutionModelEClass, INTERNAL_EXECUTION_MODEL__STATE_MACHINES);
+
+		actionEClass = createEClass(ACTION);
+		createEAttribute(actionEClass, ACTION__MSG_TO_LOG);
 	}
 
 	/**
@@ -420,6 +469,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getState_OutTransitions(), this.getTransition(), this.getTransition_PreState(), "outTransitions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_InTransitions(), this.getTransition(), this.getTransition_PostState(), "inTransitions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getState_Label(), ecorePackage.getEString(), "label", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransition_PreState(), this.getState(), this.getState_OutTransitions(), "preState", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -436,6 +486,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		initEReference(getGuard_Timewindow(), theCepPackage.getTimewindow(), null, "timewindow", null, 0, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(finalStateEClass, FinalState.class, "FinalState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFinalState_Actions(), this.getAction(), null, "actions", null, 0, -1, FinalState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(initStateEClass, InitState.class, "InitState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -448,6 +499,9 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 
 		initEClass(internalExecutionModelEClass, InternalExecutionModel.class, "InternalExecutionModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInternalExecutionModel_StateMachines(), this.getStateMachine(), null, "stateMachines", null, 0, -1, InternalExecutionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAction_MsgToLog(), ecorePackage.getEString(), "msgToLog", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

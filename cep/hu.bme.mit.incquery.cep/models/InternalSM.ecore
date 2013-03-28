@@ -6,6 +6,7 @@
         eType="#//Transition" eOpposite="#//Transition/preState"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inTransitions" upperBound="-1"
         eType="#//Transition" eOpposite="#//Transition/postState"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="preState" lowerBound="1"
@@ -24,7 +25,10 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timewindow" eType="ecore:EClass CEPMeta.ecore#//Timewindow"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="#//State"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="#//State">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="#//Action"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InitState" eSuperTypes="#//State"/>
   <eClassifiers xsi:type="ecore:EClass" name="TrapState" eSuperTypes="#//State"/>
   <eClassifiers xsi:type="ecore:EClass" name="StateMachine">
@@ -38,5 +42,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="InternalExecutionModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachines" upperBound="-1"
         eType="#//StateMachine" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgToLog" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

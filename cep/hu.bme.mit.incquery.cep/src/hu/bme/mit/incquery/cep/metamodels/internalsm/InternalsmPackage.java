@@ -84,13 +84,22 @@ public interface InternalsmPackage extends EPackage {
 	int STATE__IN_TRANSITIONS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__LABEL = 2;
+
+	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = 2;
+	int STATE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TransitionImpl <em>Transition</em>}' class.
@@ -204,13 +213,31 @@ public interface InternalsmPackage extends EPackage {
 	int FINAL_STATE__IN_TRANSITIONS = STATE__IN_TRANSITIONS;
 
 	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STATE__LABEL = STATE__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Actions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STATE__ACTIONS = STATE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Final State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FINAL_STATE_FEATURE_COUNT = STATE_FEATURE_COUNT + 0;
+	int FINAL_STATE_FEATURE_COUNT = STATE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InitStateImpl <em>Init State</em>}' class.
@@ -239,6 +266,15 @@ public interface InternalsmPackage extends EPackage {
 	 * @ordered
 	 */
 	int INIT_STATE__IN_TRANSITIONS = STATE__IN_TRANSITIONS;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INIT_STATE__LABEL = STATE__LABEL;
 
 	/**
 	 * The number of structural features of the '<em>Init State</em>' class.
@@ -276,6 +312,15 @@ public interface InternalsmPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRAP_STATE__IN_TRANSITIONS = STATE__IN_TRANSITIONS;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAP_STATE__LABEL = STATE__LABEL;
 
 	/**
 	 * The number of structural features of the '<em>Trap State</em>' class.
@@ -360,6 +405,34 @@ public interface InternalsmPackage extends EPackage {
 	 */
 	int INTERNAL_EXECUTION_MODEL_FEATURE_COUNT = 1;
 
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.ActionImpl <em>Action</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.ActionImpl
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getAction()
+	 * @generated
+	 */
+	int ACTION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Msg To Log</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__MSG_TO_LOG = 0;
+
+	/**
+	 * The number of structural features of the '<em>Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_FEATURE_COUNT = 1;
+
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State <em>State</em>}'.
@@ -392,6 +465,17 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getState_InTransitions();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getLabel <em>Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Label</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.State#getLabel()
+	 * @see #getState()
+	 * @generated
+	 */
+	EAttribute getState_Label();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition <em>Transition</em>}'.
@@ -479,6 +563,17 @@ public interface InternalsmPackage extends EPackage {
 	EClass getFinalState();
 
 	/**
+	 * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState#getActions <em>Actions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Actions</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState#getActions()
+	 * @see #getFinalState()
+	 * @generated
+	 */
+	EReference getFinalState_Actions();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InitState <em>Init State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -563,6 +658,27 @@ public interface InternalsmPackage extends EPackage {
 	EReference getInternalExecutionModel_StateMachines();
 
 	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Action <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Action</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Action
+	 * @generated
+	 */
+	EClass getAction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Action#getMsgToLog <em>Msg To Log</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Msg To Log</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Action#getMsgToLog()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EAttribute getAction_MsgToLog();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -609,6 +725,14 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE__IN_TRANSITIONS = eINSTANCE.getState_InTransitions();
+
+		/**
+		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATE__LABEL = eINSTANCE.getState_Label();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TransitionImpl <em>Transition</em>}' class.
@@ -681,6 +805,14 @@ public interface InternalsmPackage extends EPackage {
 		EClass FINAL_STATE = eINSTANCE.getFinalState();
 
 		/**
+		 * The meta object literal for the '<em><b>Actions</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FINAL_STATE__ACTIONS = eINSTANCE.getFinalState_Actions();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InitStateImpl <em>Init State</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -751,6 +883,24 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTERNAL_EXECUTION_MODEL__STATE_MACHINES = eINSTANCE.getInternalExecutionModel_StateMachines();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.ActionImpl <em>Action</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.ActionImpl
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getAction()
+		 * @generated
+		 */
+		EClass ACTION = eINSTANCE.getAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Msg To Log</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION__MSG_TO_LOG = eINSTANCE.getAction_MsgToLog();
 
 	}
 

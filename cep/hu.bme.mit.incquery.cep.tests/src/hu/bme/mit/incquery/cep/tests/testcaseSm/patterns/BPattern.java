@@ -7,5 +7,6 @@ public class BPattern extends AtomicEventPatternImpl {
 	public BPattern() {
 		super();
 		setType(B.class);
+		setId("BPattern");
 	}
 }
