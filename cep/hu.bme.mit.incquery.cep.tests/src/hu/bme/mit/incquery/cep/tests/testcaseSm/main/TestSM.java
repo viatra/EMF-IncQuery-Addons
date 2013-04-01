@@ -10,12 +10,10 @@ import hu.bme.mit.incquery.cep.tests.testcaseSm.events.C;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.ABC_Pattern;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.APattern;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.BC_Pattern;
-import hu.bme.mit.incquery.cep.tests.testcasesmqueries.cevent.CEventMatch;
 import hu.bme.mit.incquery.cep.tests.testcasesmqueries.finishedstatemachine.FinishedStateMachineMatch;
 
 import java.util.Map;
 
-import org.apache.log4j.Level;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -73,9 +71,9 @@ public class TestSM {
 		
 		IncQueryEngine engine = EngineManager.getInstance().getIncQueryEngine(resourceSet);
 		RuleEngine ruleEngine = EventDrivenVM.createRuleEngine(engine);
-		engine.getLogger().setLevel(Level.DEBUG);
+		// engine.getLogger().setLevel(Level.DEBUG);
 		
-		RuleSpecification<CEventMatch> spec = RulesAndJobs.getIntance().getCEventRule();
+		RuleSpecification<FinishedStateMachineMatch> spec = RulesAndJobs.getIntance().getFinishedStateMachineRule();
 		
 		ruleEngine.addRule(spec);
 		
@@ -88,19 +86,19 @@ public class TestSM {
 		modelManager.buildStateMachine(bcPattern);
 		
 		eventQueue.push(new B(source));
-		for (Activation<CEventMatch> activation : ruleEngine.getActivations(spec)) {
+		for (Activation<FinishedStateMachineMatch> activation : ruleEngine.getActivations(spec)) {
 			activation.fire(ctx);
 		}
 		Thread.sleep(1000l);
 		
 		eventQueue.push(new C(source));
-		for (Activation<CEventMatch> activation : ruleEngine.getActivations(spec)) {
+		for (Activation<FinishedStateMachineMatch> activation : ruleEngine.getActivations(spec)) {
 			activation.fire(ctx);
 		}
 		Thread.sleep(1000l);
 		
 		eventQueue.push(new A(source));
-		for (Activation<CEventMatch> activation : ruleEngine.getActivations(spec)) {
+		for (Activation<FinishedStateMachineMatch> activation : ruleEngine.getActivations(spec)) {
 			activation.fire(ctx);
 		}
 		Thread.sleep(1000l);

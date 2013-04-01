@@ -23,6 +23,7 @@ public final class SMUtils {
 		}
 		return false;
 	}
+	
 	public static boolean timedout(Transition transition, Long recordedTime) {
 		Timewindow timewindow = transition.getGuard().getTimewindow();
 		if (timewindow == null) {
