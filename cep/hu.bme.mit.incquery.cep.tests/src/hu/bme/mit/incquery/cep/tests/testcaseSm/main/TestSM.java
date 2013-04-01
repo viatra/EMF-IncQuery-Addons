@@ -1,35 +1,37 @@
 package hu.bme.mit.incquery.cep.tests.testcaseSm.main;
 
-import java.util.Collection;
-import java.util.Map;
-
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
+import hu.bme.mit.incquery.cep.tests.jobs.RulesAndJobs;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.A;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.B;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.C;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.ABC_Pattern;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.APattern;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.BC_Pattern;
-import hu.bme.mit.incquery.cep.tests.testcasesmqueries.event.EventMatch;
+import hu.bme.mit.incquery.cep.tests.testcasesmqueries.cevent.CEventMatch;
+import hu.bme.mit.incquery.cep.tests.testcasesmqueries.finishedstatemachine.FinishedStateMachineMatch;
 
+import java.util.Map;
+
+import org.apache.log4j.Level;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.incquery.runtime.api.EngineManager;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
+import org.eclipse.incquery.runtime.evm.api.Activation;
+import org.eclipse.incquery.runtime.evm.api.Context;
+import org.eclipse.incquery.runtime.evm.api.EventDrivenVM;
+import org.eclipse.incquery.runtime.evm.api.RuleEngine;
+import org.eclipse.incquery.runtime.evm.api.RuleSpecification;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.extensibility.MatcherFactoryRegistry;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 public class TestSM {
 	EventQueue eventQueue;
@@ -55,33 +57,29 @@ public class TestSM {
 		bcPattern = null;
 	}
 	
-	// commented code is related to the generated queries
 	@Test
 	public void test() throws InterruptedException, IncQueryException {
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("cep", new XMIResourceFactoryImpl());
 		
-		ResourceSet rs = new ResourceSetImpl();
-		Resource r = rs.createResource(URI.createURI("cep/sm.cep"));
+		ResourceSet resourceSet = new ResourceSetImpl();
+		Resource smModelResource = resourceSet.createResource(URI.createURI("cep/sm.cep"));
 		
-		if (r == null) {
-			System.out.println("null resource");
+		if (smModelResource == null) {
+			System.err.println("null resource");
 		}
-		r.getContents().add(modelManager.getModel());
+		smModelResource.getContents().add(modelManager.getModel());
 		
-		IncQueryEngine engine = EngineManager.getInstance().getIncQueryEngine(rs);
-		if (engine == null) {
-			System.out.println("null engine");
-		}
+		IncQueryEngine engine = EngineManager.getInstance().getIncQueryEngine(resourceSet);
+		RuleEngine ruleEngine = EventDrivenVM.createRuleEngine(engine);
+		engine.getLogger().setLevel(Level.DEBUG);
 		
-		IMatcherFactory mf = MatcherFactoryRegistry
-				.getMatcherFactory("hu.bme.mit.incquery.cep.tests.testcasesmqueries.event");
+		RuleSpecification<CEventMatch> spec = RulesAndJobs.getIntance().getCEventRule();
 		
-		if (mf == null) {
-			System.out.println("null matcher factory");
-		}
-		IncQueryMatcher matcher = mf.getMatcher(engine);
+		ruleEngine.addRule(spec);
+		
+		Context ctx = Context.create();
 		
 		System.err.println("DIAG: Test starting.\n");
 		Thread.sleep(1000l);
@@ -90,21 +88,23 @@ public class TestSM {
 		modelManager.buildStateMachine(bcPattern);
 		
 		eventQueue.push(new B(source));
-		check(matcher);
+		for (Activation<CEventMatch> activation : ruleEngine.getActivations(spec)) {
+			activation.fire(ctx);
+		}
 		Thread.sleep(1000l);
+		
 		eventQueue.push(new C(source));
-		check(matcher);
+		for (Activation<CEventMatch> activation : ruleEngine.getActivations(spec)) {
+			activation.fire(ctx);
+		}
 		Thread.sleep(1000l);
+		
 		eventQueue.push(new A(source));
-		check(matcher);
+		for (Activation<CEventMatch> activation : ruleEngine.getActivations(spec)) {
+			activation.fire(ctx);
+		}
 		Thread.sleep(1000l);
 		
 		System.err.println("\nDIAG: Test finished.");
-	}
-	private void check(IncQueryMatcher matcher) {
-		Collection<IPatternMatch> matches = matcher.getAllMatches();
-		for (IPatternMatch match : matches) {
-			System.out.println("IQ: " + match.prettyPrint());
-		}
 	}
 }

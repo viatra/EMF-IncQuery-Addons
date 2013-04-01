@@ -1,0 +1,23 @@
+package hu.bme.mit.incquery.cep.tests.testcasesmqueries
+
+import "cep.meta"
+import "sm.meta"
+import "http://www.eclipse.org/emf/2002/Ecore"
+uses hu.bme.mit.incquery.cep.runtime.evaluation.*
+
+pattern finishedStateMachine(sm : StateMachine) {
+	StateMachine.currentState.label(sm, stateLabel);
+	check((stateLabel as String).contains("final"));
+}
+
+pattern enabledTransition(t:Transition){
+	InternalExecutionModel.latestEvent(model, event);
+	Event.id(event, eventId);
+	Transition.guard.eventType(t, eventGuardType);
+	check((eventGuardType.canonicalName as String).equalsIgnoreCase(eventId));
+}
+
+pattern CEvent(event:Event){
+	Event.id(event, eventId);
+	check(eventId.equalsIgnoreCase("hu.bme.mit.incquery.cep.tests.testcaseSm.events.C"));
+}

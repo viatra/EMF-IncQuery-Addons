@@ -42,6 +42,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="InternalExecutionModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachines" upperBound="-1"
         eType="#//StateMachine" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="latestEvent" eType="ecore:EClass CEPMeta.ecore#//Event"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgToLog" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

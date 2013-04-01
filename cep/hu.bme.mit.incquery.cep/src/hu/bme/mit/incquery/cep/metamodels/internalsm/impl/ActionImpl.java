@@ -6,6 +6,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.Action;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -34,6 +35,7 @@ public class ActionImpl extends EObjectImpl implements Action {
 	 * @ordered
 	 */
 	protected static final String MSG_TO_LOG_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getMsgToLog() <em>Msg To Log</em>}' attribute.
 	 * <!-- begin-user-doc -->

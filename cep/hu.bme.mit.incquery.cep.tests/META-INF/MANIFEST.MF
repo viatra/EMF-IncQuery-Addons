@@ -1,12 +1,17 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: CEP Tests
-Bundle-SymbolicName: hu.bme.mit.incquery.cep.tests
-Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: Budapest University of Technology and Economics, Fault Tolerant Systems Research Group
+Bundle-Name: hu.bme.mit.incquery.cep.tests
+Bundle-SymbolicName: hu.bme.mit.incquery.cep.tests;singleton:=true
+Bundle-Version: 0.0.1.qualifier
 Fragment-Host: hu.bme.mit.incquery.cep;bundle-version="1.0.0"
+Export-Package: hu.bme.mit.incquery.cep.tests.testcasesmqueries.cevent,
+ hu.bme.mit.incquery.cep.tests.testcasesmqueries.enabledtransition,
+ hu.bme.mit.incquery.cep.tests.testcasesmqueries.finishedstatemachine
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.emf.transaction,
+ org.eclipse.incquery.runtime,
+ org.eclipse.xtext.xbase.lib,
+ hu.bme.mit.incquery.cep,
+ org.junit;bundle-version="4.10.0",
+ org.eclipse.incquery.runtime.evm;bundle-version="0.7.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.junit,
- org.eclipse.emf.ecore;bundle-version="2.8.1",
- org.eclipse.incquery.runtime.evm;bundle-version="0.7.0",
- org.eclipse.incquery.runtime;bundle-version="0.7.0"

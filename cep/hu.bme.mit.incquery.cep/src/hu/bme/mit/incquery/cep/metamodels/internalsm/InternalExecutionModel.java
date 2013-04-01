@@ -2,6 +2,8 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -15,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getStateMachines <em>State Machines</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getLatestEvent <em>Latest Event</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,5 +41,31 @@ public interface InternalExecutionModel extends EObject {
 	 * @generated
 	 */
 	EList<StateMachine> getStateMachines();
+
+	/**
+	 * Returns the value of the '<em><b>Latest Event</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Latest Event</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Latest Event</em>' containment reference.
+	 * @see #setLatestEvent(Event)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getInternalExecutionModel_LatestEvent()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Event getLatestEvent();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getLatestEvent <em>Latest Event</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Latest Event</em>' containment reference.
+	 * @see #getLatestEvent()
+	 * @generated
+	 */
+	void setLatestEvent(Event value);
 
 } // InternalExecutionModel

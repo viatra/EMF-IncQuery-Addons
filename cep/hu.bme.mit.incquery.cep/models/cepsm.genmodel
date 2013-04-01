@@ -66,6 +66,7 @@
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//InternalExecutionModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//InternalExecutionModel/stateMachines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//InternalExecutionModel/latestEvent"/>
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//Action/msgToLog"/>

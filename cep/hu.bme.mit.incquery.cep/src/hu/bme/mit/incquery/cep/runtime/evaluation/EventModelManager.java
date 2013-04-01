@@ -35,8 +35,11 @@ public class EventModelManager {
 				Object newValue = notification.getNewValue();
 				if (newValue instanceof Event) {
 					Event event = (Event) newValue;
+					refreshModel(event);
 					System.err.println("DIAG: Event " + event.getClass().getName() + " captured...");
-					evaluateOnInternalSM(event);
+					System.out.println("MODEL: LatestEvent: " + model.getLatestEvent().getId());
+					evaluateOnInternalSM();
+					// executeRecognizedPatterns();
 				}
 			}
 		};
@@ -54,13 +57,17 @@ public class EventModelManager {
 		return model;
 	}
 	
+	private void refreshModel(Event event) {
+		model.setLatestEvent(event);
+	}
+	
 	/**
 	 * TODO this shall be replaced with the IncQuery
 	 */
-	private void evaluateOnInternalSM(Event event) {
+	private void evaluateOnInternalSM() {
 		for (StateMachine sm : model.getStateMachines()) {
 			for (Transition t : sm.getCurrentState().getOutTransitions()) {
-				if (SMUtils.isEnabled(t, event)) {
+				if (SMUtils.isEnabled(t, model.getLatestEvent())) {
 					SMUtils.fireTransition(sm, t);
 				}
 			}
@@ -87,9 +94,10 @@ public class EventModelManager {
 		StateMachine sm = SM_FACTORY.createStateMachine();
 		InitState initState = SM_FACTORY.createInitState();
 		FinalState finalState = SM_FACTORY.createFinalState();
+		finalState.setLabel("final");
 		
 		Action action = SM_FACTORY.createAction();
-		action.setMsgToLog("CEP: Event pattern " + pattern.getId() + " recognized");
+		action.setMsgToLog("\t\tCEP: Event pattern " + pattern.getId() + " recognized");
 		finalState.getActions().add(action);
 		
 		Transition t1 = SM_FACTORY.createTransition();
@@ -112,9 +120,10 @@ public class EventModelManager {
 		StateMachine sm = SM_FACTORY.createStateMachine();
 		InitState initState = SM_FACTORY.createInitState();
 		FinalState finalState = SM_FACTORY.createFinalState();
+		finalState.setLabel("final");
 		
 		Action action = SM_FACTORY.createAction();
-		action.setMsgToLog("CEP: Event pattern " + pattern.getId() + " recognized");
+		action.setMsgToLog("\t\tCEP: Event pattern " + pattern.getId() + " recognized");
 		finalState.getActions().add(action);
 		
 		// only for ORDERED w/o timewin

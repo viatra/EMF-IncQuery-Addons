@@ -9,19 +9,21 @@ import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 
 public final class SMUtils {
 	
 	public static boolean isEnabled(Transition transition, Event event) {
-		if (transition.getGuard().getEventType().equals(event.getClass())) {
+		// if (transition.getGuard().getEventType().equals(event.getClass())) {
+		if (transition.getGuard().getEventType().getCanonicalName().equalsIgnoreCase(event.getId())) {
 			return true;
 		}
 		return false;
 	}
-	
-	private static boolean timedout(Transition transition, Long recordedTime) {
+	public static boolean timedout(Transition transition, Long recordedTime) {
 		Timewindow timewindow = transition.getGuard().getTimewindow();
 		if (timewindow == null) {
 			return false;
@@ -31,6 +33,14 @@ public final class SMUtils {
 		}
 		return true;
 	}
+	
+	public static boolean isFinal(State state) {
+		if (state instanceof FinalState) {
+			return true;
+		}
+		return false;
+	}
+	
 	public static void fireTransition(StateMachine sm, Transition t) {
 		sm.setCurrentState(t.getPostState());
 	}

@@ -356,6 +356,15 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getInternalExecutionModel_LatestEvent() {
+		return (EReference)internalExecutionModelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAction() {
 		return actionEClass;
 	}
@@ -425,6 +434,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 
 		internalExecutionModelEClass = createEClass(INTERNAL_EXECUTION_MODEL);
 		createEReference(internalExecutionModelEClass, INTERNAL_EXECUTION_MODEL__STATE_MACHINES);
+		createEReference(internalExecutionModelEClass, INTERNAL_EXECUTION_MODEL__LATEST_EVENT);
 
 		actionEClass = createEClass(ACTION);
 		createEAttribute(actionEClass, ACTION__MSG_TO_LOG);
@@ -499,6 +509,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 
 		initEClass(internalExecutionModelEClass, InternalExecutionModel.class, "InternalExecutionModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInternalExecutionModel_StateMachines(), this.getStateMachine(), null, "stateMachines", null, 0, -1, InternalExecutionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInternalExecutionModel_LatestEvent(), theCepPackage.getEvent(), null, "latestEvent", null, 0, 1, InternalExecutionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAction_MsgToLog(), ecorePackage.getEString(), "msgToLog", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

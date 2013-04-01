@@ -397,13 +397,22 @@ public interface InternalsmPackage extends EPackage {
 	int INTERNAL_EXECUTION_MODEL__STATE_MACHINES = 0;
 
 	/**
+	 * The feature id for the '<em><b>Latest Event</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_EXECUTION_MODEL__LATEST_EVENT = 1;
+
+	/**
 	 * The number of structural features of the '<em>Internal Execution Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_EXECUTION_MODEL_FEATURE_COUNT = 1;
+	int INTERNAL_EXECUTION_MODEL_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.ActionImpl <em>Action</em>}' class.
@@ -658,6 +667,17 @@ public interface InternalsmPackage extends EPackage {
 	EReference getInternalExecutionModel_StateMachines();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getLatestEvent <em>Latest Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Latest Event</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getLatestEvent()
+	 * @see #getInternalExecutionModel()
+	 * @generated
+	 */
+	EReference getInternalExecutionModel_LatestEvent();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Action <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -883,6 +903,14 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTERNAL_EXECUTION_MODEL__STATE_MACHINES = eINSTANCE.getInternalExecutionModel_StateMachines();
+
+		/**
+		 * The meta object literal for the '<em><b>Latest Event</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERNAL_EXECUTION_MODEL__LATEST_EVENT = eINSTANCE.getInternalExecutionModel_LatestEvent();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.ActionImpl <em>Action</em>}' class.

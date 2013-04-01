@@ -1,12 +1,12 @@
 package hu.bme.mit.incquery.cep.tests.testcaseSm.patterns;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BC_Pattern extends ComplexEventPatternImpl {
 	public BC_Pattern() {

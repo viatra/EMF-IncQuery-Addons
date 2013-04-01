@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Action extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Msg To Log</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -47,4 +46,5 @@ public interface Action extends EObject {
 	 * @generated
 	 */
 	void setMsgToLog(String value);
+
 } // Action
