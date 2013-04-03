@@ -12,8 +12,9 @@ For example codes see the test plugin: hu.bme.mit.incquery.cep.tests.
 TODO
 ----
 * change the multi-reference relationship between State and Transition types to EFeatureMaps
+* make sure model is loaded appropriately
 * integrate with VIATRA EVM
- * replace the evaluation logic in the EventModelManager with the generated IQ code
+ * replace the evaluation logic in the EventModelManager with the generated IQ code (this will require modifications in the current architecture)
  * elaborate the execution chain of complex event patterns (atomic event from the source model --> atomic pattern on the CEP layer --> EVM rule --> modify the internal SM model -->... )
  * negotiate the interfaces used between the CEP layer and the EVM
 * handle ordered case with time windows
