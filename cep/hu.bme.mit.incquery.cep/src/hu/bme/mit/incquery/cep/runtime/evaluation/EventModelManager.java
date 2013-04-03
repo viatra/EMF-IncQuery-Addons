@@ -37,8 +37,9 @@ public class EventModelManager {
 					Event event = (Event) newValue;
 					refreshModel(event);
 					System.err.println("DIAG: Event " + event.getClass().getName() + " captured...");
-					System.out.println("MODEL: LatestEvent: " + model.getLatestEvent().getId());
-					evaluateOnInternalSM();
+					// System.out.println("MODEL: LatestEvent: " +
+					// model.getLatestEvent().getId());
+					// evaluateOnInternalSM();
 					// executeRecognizedPatterns();
 				}
 			}
@@ -64,16 +65,16 @@ public class EventModelManager {
 	/**
 	 * TODO this shall be replaced with the IncQuery
 	 */
-	private void evaluateOnInternalSM() {
-		for (StateMachine sm : model.getStateMachines()) {
-			for (Transition t : sm.getCurrentState().getOutTransitions()) {
-				if (SMUtils.isEnabled(t, model.getLatestEvent())) {
-					SMUtils.fireTransition(sm, t);
-				}
-			}
-		}
-		executeRecognizedPatterns();
-	}
+	// private void evaluateOnInternalSM() {
+	// for (StateMachine sm : model.getStateMachines()) {
+	// for (Transition t : sm.getCurrentState().getOutTransitions()) {
+	// if (SMUtils.isEnabled(t, model.getLatestEvent())) {
+	// SMUtils.fireTransition(sm, t);
+	// }
+	// }
+	// }
+	// // executeRecognizedPatterns();
+	// }
 	
 	private void executeRecognizedPatterns() {
 		List<StateMachine> smToDelete = new ArrayList<StateMachine>();
@@ -95,6 +96,9 @@ public class EventModelManager {
 		InitState initState = SM_FACTORY.createInitState();
 		FinalState finalState = SM_FACTORY.createFinalState();
 		finalState.setLabel("final");
+		
+		sm.getStates().add(initState);
+		sm.getStates().add(finalState);
 		
 		Action action = SM_FACTORY.createAction();
 		action.setMsgToLog("\t\tCEP: Event pattern " + pattern.getId() + " recognized");
@@ -154,12 +158,15 @@ public class EventModelManager {
 			}
 		}
 		
+		sm.getStates().addAll(states);
+		
 		sm.setCurrentState(initState);
 		sm.setEventPattern(pattern);
 		
 		model.getStateMachines().add(sm);
+		// model.getStateMachines().get(model.getStateMachines().size() -
+		// 1).getStates().addAll(states);
 	}
-	
 	private Transition createTransition(State preState, State postState, Guard guard) {
 		Transition t = SM_FACTORY.createTransition();
 		t.setGuard(guard);

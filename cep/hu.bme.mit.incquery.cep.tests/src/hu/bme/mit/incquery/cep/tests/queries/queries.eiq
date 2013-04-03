@@ -6,52 +6,16 @@ import "http://www.eclipse.org/emf/2002/Ecore"
 uses hu.bme.mit.incquery.cep.runtime.evaluation.*
 
 pattern finishedStateMachine(sm) {
-	StateMachine.currentState(sm, cs);
-	0 == count find outTransitionFromState(cs);
-}
-
-pattern stateLabel(s, l){
-	find state(s);
-	State.label(s, l);
-}
-
-pattern currentState(sm, cs){
-	find stateMachine(sm);
-	find state(cs);
-	StateMachine.currentState(sm, cs);
-}
-
-
-pattern postState(t) {
-	find transition(t);
-	find state(ps);
-	Transition.postState(t, ps);
-}
-
-pattern stateMachine(sm) {
-	StateMachine(sm);
-}
-
-pattern transition(t) {
-	Transition(t);
-}
-
-pattern event(e) {
-	Event(e);
-}
-
-pattern state(s) {
-	State(s);
-}
-
-pattern outTransitionFromState(s) {
-	find transition(t);
-	find state(s);
-	State.outTransitions(s, t);
+	StateMachine.currentState.label(sm, stateLabel);
+	check(stateLabel.equalsIgnoreCase("final"));
 }
 
 pattern latestEvent(e) {
 	InternalExecutionModel.latestEvent(_, e);
+}
+
+pattern transition(t) {
+	Transition(t);
 }
 
 pattern enabledTransition(t) {

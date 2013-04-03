@@ -1,5 +1,6 @@
 package hu.bme.mit.incquery.cep.tests.jobs;
 
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
@@ -9,6 +10,8 @@ import hu.bme.mit.incquery.cep.tests.testcasesmqueries.enabledtransition.Enabled
 import hu.bme.mit.incquery.cep.tests.testcasesmqueries.enabledtransition.EnabledTransitionMatcher;
 import hu.bme.mit.incquery.cep.tests.testcasesmqueries.finishedstatemachine.FinishedStateMachineMatch;
 import hu.bme.mit.incquery.cep.tests.testcasesmqueries.finishedstatemachine.FinishedStateMachineMatcher;
+import hu.bme.mit.incquery.cep.tests.testcasesmqueries.transition.TransitionMatch;
+import hu.bme.mit.incquery.cep.tests.testcasesmqueries.transition.TransitionMatcher;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -40,7 +43,12 @@ public class RulesAndJobs {
 			
 			@Override
 			public void process(FinishedStateMachineMatch match) {
-				System.out.println("IQ: " + match.getSm().getEventPattern().getId() + " MATCHED!");
+				StateMachine sm = match.getSm();
+				System.out.println("IQ: " + sm.getEventPattern().getId() + " MATCHED!");
+				if (sm.eContainer() instanceof InternalExecutionModel) {
+					InternalExecutionModel model = (InternalExecutionModel) sm.eContainer();
+					model.getStateMachines().remove(sm);
+				}
 			}
 		};
 		
@@ -48,7 +56,7 @@ public class RulesAndJobs {
 		jobs.add(new StatelessJob<FinishedStateMachineMatch>(ActivationState.APPEARED, processor));
 		
 		SimpleMatcherRuleSpecification<FinishedStateMachineMatch, IncQueryMatcher<FinishedStateMachineMatch>> spec = new SimpleMatcherRuleSpecification(
-				FinishedStateMachineMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
+				FinishedStateMachineMatcher.factory(), DefaultActivationLifeCycle.DEFAULT_NO_UPDATE, jobs);
 		
 		return spec;
 	}
@@ -59,6 +67,9 @@ public class RulesAndJobs {
 			@Override
 			public void process(EnabledTransitionMatch match) {
 				Transition t = match.getT();
+				System.out.println("IQ: enabled transition: " + t.getPreState().getClass().getCanonicalName() + "->"
+						+ t.getPostState().getClass().getCanonicalName());
+				
 				if (t.getPreState().eContainer() instanceof StateMachine) {
 					StateMachine sm = (StateMachine) t.getPreState().eContainer();
 					SMUtils.fireTransition(sm, t);
@@ -70,7 +81,25 @@ public class RulesAndJobs {
 		jobs.add(new StatelessJob<EnabledTransitionMatch>(ActivationState.APPEARED, processor));
 		
 		SimpleMatcherRuleSpecification<EnabledTransitionMatch, IncQueryMatcher<EnabledTransitionMatch>> spec = new SimpleMatcherRuleSpecification(
-				EnabledTransitionMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
+				EnabledTransitionMatcher.factory(), DefaultActivationLifeCycle.DEFAULT_NO_UPDATE, jobs);
+		
+		return spec;
+	}
+	public RuleSpecification<TransitionMatch> getTransitionRule() throws IncQueryException {
+		IMatchProcessor<TransitionMatch> processor = new IMatchProcessor<TransitionMatch>() {
+			
+			@Override
+			public void process(TransitionMatch match) {
+				System.out.println("IQ:  transition");
+				Transition t = match.getT();
+			}
+		};
+		
+		Set<Job<TransitionMatch>> jobs = new HashSet<Job<TransitionMatch>>();
+		jobs.add(new StatelessJob<TransitionMatch>(ActivationState.APPEARED, processor));
+		
+		SimpleMatcherRuleSpecification<TransitionMatch, IncQueryMatcher<TransitionMatch>> spec = new SimpleMatcherRuleSpecification(
+				TransitionMatcher.factory(), DefaultActivationLifeCycle.DEFAULT_NO_UPDATE, jobs);
 		
 		return spec;
 	}
@@ -88,7 +117,7 @@ public class RulesAndJobs {
 		jobs.add(new StatelessJob<CEventMatch>(ActivationState.APPEARED, processor));
 		
 		SimpleMatcherRuleSpecification<CEventMatch, IncQueryMatcher<CEventMatch>> spec = new SimpleMatcherRuleSpecification(
-				CEventMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
+				CEventMatcher.factory(), DefaultActivationLifeCycle.DEFAULT_NO_UPDATE, jobs);
 		
 		return spec;
 	}

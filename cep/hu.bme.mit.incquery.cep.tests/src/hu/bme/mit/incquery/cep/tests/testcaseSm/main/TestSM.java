@@ -1,6 +1,9 @@
 package hu.bme.mit.incquery.cep.tests.testcaseSm.main;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
 import hu.bme.mit.incquery.cep.tests.jobs.RulesAndJobs;
@@ -10,13 +13,11 @@ import hu.bme.mit.incquery.cep.tests.testcaseSm.events.C;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.ABC_Pattern;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.APattern;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.BC_Pattern;
-import hu.bme.mit.incquery.cep.tests.testcasesmqueries.cevent.CEventMatch;
 import hu.bme.mit.incquery.cep.tests.testcasesmqueries.enabledtransition.EnabledTransitionMatch;
 import hu.bme.mit.incquery.cep.tests.testcasesmqueries.finishedstatemachine.FinishedStateMachineMatch;
 
 import java.util.Map;
 
-import org.apache.log4j.Level;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -60,6 +61,9 @@ public class TestSM {
 	
 	@Test
 	public void test() throws InterruptedException, IncQueryException {
+		modelManager.buildStateMachine(aPattern);
+		modelManager.buildStateMachine(bcPattern);
+		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("cep", new XMIResourceFactoryImpl());
@@ -72,36 +76,67 @@ public class TestSM {
 		}
 		smModelResource.getContents().add(modelManager.getModel());
 		
+		// TODO this nested for-cycle can be removed after the State--Transition
+		// relationship is replaced with a FeatureMap
+		for (StateMachine sm : modelManager.getModel().getStateMachines()) {
+			for (State s : sm.getStates()) {
+				for (Transition to : s.getOutTransitions()) {
+					smModelResource.getContents().add(to);
+				}
+				for (Transition ti : s.getInTransitions()) {
+					smModelResource.getContents().add(ti);
+				}
+			}
+		}
+		
 		IncQueryEngine engine = EngineManager.getInstance().getIncQueryEngine(resourceSet);
 		RuleEngine ruleEngine = EventDrivenVM.createRuleEngine(engine);
-		engine.getLogger().setLevel(Level.DEBUG);
+		// engine.getLogger().setLevel(Level.DEBUG);
 		
-		RuleSpecification<FinishedStateMachineMatch> spec = RulesAndJobs.getIntance().getFinishedStateMachineRule();
+		RuleSpecification<EnabledTransitionMatch> specEnabledTr = RulesAndJobs.getIntance().getEnabledTransitionsRule();
+		RuleSpecification<FinishedStateMachineMatch> specFinishedSM = RulesAndJobs.getIntance()
+				.getFinishedStateMachineRule();
 		
-		ruleEngine.addRule(spec);
+		ruleEngine.addRule(specEnabledTr);
+		ruleEngine.addRule(specFinishedSM);
 		
 		Context ctx = Context.create();
 		
 		System.err.println("DIAG: Test starting.\n");
 		Thread.sleep(1000l);
 		
-		modelManager.buildStateMachine(aPattern);
-		modelManager.buildStateMachine(bcPattern);
-		
 		eventQueue.push(new B(source));
-		for (Activation<FinishedStateMachineMatch> activation : ruleEngine.getActivations(spec)) {
+		for (Activation<EnabledTransitionMatch> activation : ruleEngine.getActivations(specEnabledTr)) {
+			activation.fire(ctx);
+		}
+		for (Activation<FinishedStateMachineMatch> activation : ruleEngine.getActivations(specFinishedSM)) {
 			activation.fire(ctx);
 		}
 		Thread.sleep(1000l);
 		
 		eventQueue.push(new C(source));
-		for (Activation<FinishedStateMachineMatch> activation : ruleEngine.getActivations(spec)) {
+		for (Activation<EnabledTransitionMatch> activation : ruleEngine.getActivations(specEnabledTr)) {
+			activation.fire(ctx);
+		}
+		for (Activation<FinishedStateMachineMatch> activation : ruleEngine.getActivations(specFinishedSM)) {
 			activation.fire(ctx);
 		}
 		Thread.sleep(1000l);
 		
 		eventQueue.push(new A(source));
-		for (Activation<FinishedStateMachineMatch> activation : ruleEngine.getActivations(spec)) {
+		for (Activation<EnabledTransitionMatch> activation : ruleEngine.getActivations(specEnabledTr)) {
+			activation.fire(ctx);
+		}
+		for (Activation<FinishedStateMachineMatch> activation : ruleEngine.getActivations(specFinishedSM)) {
+			activation.fire(ctx);
+		}
+		Thread.sleep(1000l);
+		
+		eventQueue.push(new C(source));
+		for (Activation<EnabledTransitionMatch> activation : ruleEngine.getActivations(specEnabledTr)) {
+			activation.fire(ctx);
+		}
+		for (Activation<FinishedStateMachineMatch> activation : ruleEngine.getActivations(specFinishedSM)) {
 			activation.fire(ctx);
 		}
 		Thread.sleep(1000l);
