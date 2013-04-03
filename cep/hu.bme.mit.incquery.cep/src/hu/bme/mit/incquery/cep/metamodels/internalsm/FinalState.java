@@ -22,17 +22,17 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface FinalState extends State {
 	/**
-	 * Returns the value of the '<em><b>Actions</b></em>' reference list.
+	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.internalsm.Action}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Actions</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Actions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Actions</em>' reference list.
+	 * @return the value of the '<em>Actions</em>' containment reference list.
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getFinalState_Actions()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Action> getActions();

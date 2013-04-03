@@ -121,7 +121,7 @@ public interface InternalsmPackage extends EPackage {
 	int TRANSITION__PRE_STATE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Guard</b></em>' reference.
+	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -167,7 +167,7 @@ public interface InternalsmPackage extends EPackage {
 	int GUARD__EVENT_TYPE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Timewindow</b></em>' reference.
+	 * The feature id for the '<em><b>Timewindow</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -222,7 +222,7 @@ public interface InternalsmPackage extends EPackage {
 	int FINAL_STATE__LABEL = STATE__LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Actions</b></em>' reference list.
+	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -351,7 +351,7 @@ public interface InternalsmPackage extends EPackage {
 	int STATE_MACHINE__STATES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Current State</b></em>' reference.
+	 * The feature id for the '<em><b>Current State</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -508,10 +508,10 @@ public interface InternalsmPackage extends EPackage {
 	EReference getTransition_PreState();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getGuard <em>Guard</em>}'.
+	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getGuard <em>Guard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Guard</em>'.
+	 * @return the meta object for the containment reference '<em>Guard</em>'.
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getGuard()
 	 * @see #getTransition()
 	 * @generated
@@ -551,10 +551,10 @@ public interface InternalsmPackage extends EPackage {
 	EAttribute getGuard_EventType();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimewindow <em>Timewindow</em>}'.
+	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimewindow <em>Timewindow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Timewindow</em>'.
+	 * @return the meta object for the containment reference '<em>Timewindow</em>'.
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimewindow()
 	 * @see #getGuard()
 	 * @generated
@@ -572,10 +572,10 @@ public interface InternalsmPackage extends EPackage {
 	EClass getFinalState();
 
 	/**
-	 * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState#getActions <em>Actions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState#getActions <em>Actions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Actions</em>'.
+	 * @return the meta object for the containment reference list '<em>Actions</em>'.
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState#getActions()
 	 * @see #getFinalState()
 	 * @generated
@@ -624,10 +624,10 @@ public interface InternalsmPackage extends EPackage {
 	EReference getStateMachine_States();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getCurrentState <em>Current State</em>}'.
+	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getCurrentState <em>Current State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Current State</em>'.
+	 * @return the meta object for the containment reference '<em>Current State</em>'.
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getCurrentState()
 	 * @see #getStateMachine()
 	 * @generated
@@ -773,7 +773,7 @@ public interface InternalsmPackage extends EPackage {
 		EReference TRANSITION__PRE_STATE = eINSTANCE.getTransition_PreState();
 
 		/**
-		 * The meta object literal for the '<em><b>Guard</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Guard</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -807,7 +807,7 @@ public interface InternalsmPackage extends EPackage {
 		EAttribute GUARD__EVENT_TYPE = eINSTANCE.getGuard_EventType();
 
 		/**
-		 * The meta object literal for the '<em><b>Timewindow</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Timewindow</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -825,7 +825,7 @@ public interface InternalsmPackage extends EPackage {
 		EClass FINAL_STATE = eINSTANCE.getFinalState();
 
 		/**
-		 * The meta object literal for the '<em><b>Actions</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Actions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -871,7 +871,7 @@ public interface InternalsmPackage extends EPackage {
 		EReference STATE_MACHINE__STATES = eINSTANCE.getStateMachine_States();
 
 		/**
-		 * The meta object literal for the '<em><b>Current State</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Current State</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

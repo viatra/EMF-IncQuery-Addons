@@ -44,26 +44,26 @@ public interface StateMachine extends EObject {
 	EList<State> getStates();
 
 	/**
-	 * Returns the value of the '<em><b>Current State</b></em>' reference.
+	 * Returns the value of the '<em><b>Current State</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Current State</em>' reference isn't clear,
+	 * If the meaning of the '<em>Current State</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Current State</em>' reference.
+	 * @return the value of the '<em>Current State</em>' containment reference.
 	 * @see #setCurrentState(State)
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getStateMachine_CurrentState()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	State getCurrentState();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getCurrentState <em>Current State</em>}' reference.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getCurrentState <em>Current State</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Current State</em>' reference.
+	 * @param value the new value of the '<em>Current State</em>' containment reference.
 	 * @see #getCurrentState()
 	 * @generated
 	 */

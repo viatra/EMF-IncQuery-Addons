@@ -4,7 +4,9 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 import hu.bme.mit.incquery.cep.tests.testcasesmqueries.cevent.CEventMatch;
+import hu.bme.mit.incquery.cep.tests.testcasesmqueries.cevent.CEventMatcher;
 import hu.bme.mit.incquery.cep.tests.testcasesmqueries.enabledtransition.EnabledTransitionMatch;
+import hu.bme.mit.incquery.cep.tests.testcasesmqueries.enabledtransition.EnabledTransitionMatcher;
 import hu.bme.mit.incquery.cep.tests.testcasesmqueries.finishedstatemachine.FinishedStateMachineMatch;
 import hu.bme.mit.incquery.cep.tests.testcasesmqueries.finishedstatemachine.FinishedStateMachineMatcher;
 
@@ -68,7 +70,7 @@ public class RulesAndJobs {
 		jobs.add(new StatelessJob<EnabledTransitionMatch>(ActivationState.APPEARED, processor));
 		
 		SimpleMatcherRuleSpecification<EnabledTransitionMatch, IncQueryMatcher<EnabledTransitionMatch>> spec = new SimpleMatcherRuleSpecification(
-				FinishedStateMachineMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
+				EnabledTransitionMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
 		
 		return spec;
 	}
@@ -86,7 +88,7 @@ public class RulesAndJobs {
 		jobs.add(new StatelessJob<CEventMatch>(ActivationState.APPEARED, processor));
 		
 		SimpleMatcherRuleSpecification<CEventMatch, IncQueryMatcher<CEventMatch>> spec = new SimpleMatcherRuleSpecification(
-				FinishedStateMachineMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
+				CEventMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
 		
 		return spec;
 	}

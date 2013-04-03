@@ -9,6 +9,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -42,7 +43,7 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	protected Class<? extends Event> eventType;
 
 	/**
-	 * The cached value of the '{@link #getTimewindow() <em>Timewindow</em>}' reference.
+	 * The cached value of the '{@link #getTimewindow() <em>Timewindow</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTimewindow()
@@ -97,14 +98,6 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * @generated
 	 */
 	public Timewindow getTimewindow() {
-		if (timewindow != null && timewindow.eIsProxy()) {
-			InternalEObject oldTimewindow = (InternalEObject)timewindow;
-			timewindow = (Timewindow)eResolveProxy(oldTimewindow);
-			if (timewindow != oldTimewindow) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InternalsmPackage.GUARD__TIMEWINDOW, oldTimewindow, timewindow));
-			}
-		}
 		return timewindow;
 	}
 
@@ -113,8 +106,14 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Timewindow basicGetTimewindow() {
-		return timewindow;
+	public NotificationChain basicSetTimewindow(Timewindow newTimewindow, NotificationChain msgs) {
+		Timewindow oldTimewindow = timewindow;
+		timewindow = newTimewindow;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.GUARD__TIMEWINDOW, oldTimewindow, newTimewindow);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -123,10 +122,31 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * @generated
 	 */
 	public void setTimewindow(Timewindow newTimewindow) {
-		Timewindow oldTimewindow = timewindow;
-		timewindow = newTimewindow;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.GUARD__TIMEWINDOW, oldTimewindow, timewindow));
+		if (newTimewindow != timewindow) {
+			NotificationChain msgs = null;
+			if (timewindow != null)
+				msgs = ((InternalEObject)timewindow).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.GUARD__TIMEWINDOW, null, msgs);
+			if (newTimewindow != null)
+				msgs = ((InternalEObject)newTimewindow).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.GUARD__TIMEWINDOW, null, msgs);
+			msgs = basicSetTimewindow(newTimewindow, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.GUARD__TIMEWINDOW, newTimewindow, newTimewindow));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case InternalsmPackage.GUARD__TIMEWINDOW:
+				return basicSetTimewindow(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -140,8 +160,7 @@ public class GuardImpl extends EObjectImpl implements Guard {
 			case InternalsmPackage.GUARD__EVENT_TYPE:
 				return getEventType();
 			case InternalsmPackage.GUARD__TIMEWINDOW:
-				if (resolve) return getTimewindow();
-				return basicGetTimewindow();
+				return getTimewindow();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

@@ -39,6 +39,7 @@ public interface State extends EObject {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getState_OutTransitions()
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPreState
 	 * @model opposite="preState"
+	 *        extendedMetaData="wildcards='' name=''"
 	 * @generated
 	 */
 	EList<Transition> getOutTransitions();

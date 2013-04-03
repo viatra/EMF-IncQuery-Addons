@@ -3,7 +3,12 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="internalsm" nsURI="sm.meta" nsPrefix="hu.bme.mit.incquery.metamodels">
   <eClassifiers xsi:type="ecore:EClass" name="State">
     <eStructuralFeatures xsi:type="ecore:EReference" name="outTransitions" upperBound="-1"
-        eType="#//Transition" eOpposite="#//Transition/preState"/>
+        eType="#//Transition" eOpposite="#//Transition/preState">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="wildcards" value=""/>
+        <details key="name" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inTransitions" upperBound="-1"
         eType="#//Transition" eOpposite="#//Transition/postState"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -11,7 +16,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="preState" lowerBound="1"
         eType="#//State" eOpposite="#//State/outTransitions"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="#//Guard"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="#//Guard"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="postState" lowerBound="1"
         eType="#//State" eOpposite="#//State/inTransitions"/>
   </eClassifiers>
@@ -23,11 +29,12 @@
         </eTypeArguments>
       </eGenericType>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="timewindow" eType="ecore:EClass CEPMeta.ecore#//Timewindow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timewindow" eType="ecore:EClass CEPMeta.ecore#//Timewindow"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="#//State">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-        eType="#//Action"/>
+        eType="#//Action" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InitState" eSuperTypes="#//State"/>
   <eClassifiers xsi:type="ecore:EClass" name="TrapState" eSuperTypes="#//State"/>
@@ -35,7 +42,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
         eType="#//State" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentState" lowerBound="1"
-        eType="#//State"/>
+        eType="#//State" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventPattern" lowerBound="1"
         eType="ecore:EClass CEPMeta.ecore#//EventPattern" eOpposite="CEPMeta.ecore#//EventPattern/stateMachines"/>
   </eClassifiers>

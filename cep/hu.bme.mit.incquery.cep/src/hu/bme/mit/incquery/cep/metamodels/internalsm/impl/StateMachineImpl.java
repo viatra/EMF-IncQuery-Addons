@@ -52,7 +52,7 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	protected EList<State> states;
 
 	/**
-	 * The cached value of the '{@link #getCurrentState() <em>Current State</em>}' reference.
+	 * The cached value of the '{@link #getCurrentState() <em>Current State</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCurrentState()
@@ -108,14 +108,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * @generated
 	 */
 	public State getCurrentState() {
-		if (currentState != null && currentState.eIsProxy()) {
-			InternalEObject oldCurrentState = (InternalEObject)currentState;
-			currentState = (State)eResolveProxy(oldCurrentState);
-			if (currentState != oldCurrentState) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InternalsmPackage.STATE_MACHINE__CURRENT_STATE, oldCurrentState, currentState));
-			}
-		}
 		return currentState;
 	}
 
@@ -124,8 +116,14 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State basicGetCurrentState() {
-		return currentState;
+	public NotificationChain basicSetCurrentState(State newCurrentState, NotificationChain msgs) {
+		State oldCurrentState = currentState;
+		currentState = newCurrentState;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE_MACHINE__CURRENT_STATE, oldCurrentState, newCurrentState);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -134,10 +132,17 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * @generated
 	 */
 	public void setCurrentState(State newCurrentState) {
-		State oldCurrentState = currentState;
-		currentState = newCurrentState;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE_MACHINE__CURRENT_STATE, oldCurrentState, currentState));
+		if (newCurrentState != currentState) {
+			NotificationChain msgs = null;
+			if (currentState != null)
+				msgs = ((InternalEObject)currentState).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.STATE_MACHINE__CURRENT_STATE, null, msgs);
+			if (newCurrentState != null)
+				msgs = ((InternalEObject)newCurrentState).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.STATE_MACHINE__CURRENT_STATE, null, msgs);
+			msgs = basicSetCurrentState(newCurrentState, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE_MACHINE__CURRENT_STATE, newCurrentState, newCurrentState));
 	}
 
 	/**
@@ -226,6 +231,8 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 		switch (featureID) {
 			case InternalsmPackage.STATE_MACHINE__STATES:
 				return ((InternalEList<?>)getStates()).basicRemove(otherEnd, msgs);
+			case InternalsmPackage.STATE_MACHINE__CURRENT_STATE:
+				return basicSetCurrentState(null, msgs);
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
 				return basicSetEventPattern(null, msgs);
 		}
@@ -243,8 +250,7 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 			case InternalsmPackage.STATE_MACHINE__STATES:
 				return getStates();
 			case InternalsmPackage.STATE_MACHINE__CURRENT_STATE:
-				if (resolve) return getCurrentState();
-				return basicGetCurrentState();
+				return getCurrentState();
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
 				if (resolve) return getEventPattern();
 				return basicGetEventPattern();
