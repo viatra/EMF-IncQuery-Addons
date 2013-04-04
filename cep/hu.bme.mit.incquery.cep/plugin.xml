@@ -1,19 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
-
-<!--
--->
-
 <plugin>
-	<extension point="org.eclipse.emf.ecore.generated_package">
-		<package
-			uri="cep.meta"
-            class="hu.bme.mit.incquery.cep.metamodels.cep.CepPackage"
-            genModel="models/cepsm.genmodel"/>
-	<package
+
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            genModel="models/cepsm.genmodel"
+            uri="cep.meta"
+            class="hu.bme.mit.incquery.cep.metamodels.cep.CepPackage">
+      </package>
+      <package
+            genModel="models/cepsm.genmodel"
             uri="sm.meta"
-            class="hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage"
-            genModel="models/cepsm.genmodel"/>
+            class="hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage">
+      </package>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedStateMachine"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedstatemachine.FinishedStateMachineMatcherFactory$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedStateMachine">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedStateMachine"
+         point="org.eclipse.incquery.runtime.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedstatemachine.FinishedStateMachineEvaluator1_1"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedStateMachine_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.latestEvent"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.latestevent.LatestEventMatcherFactory$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.latestEvent">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.transition"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.transition.TransitionMatcherFactory$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.transition">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledTransition"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledtransition.EnabledTransitionMatcherFactory$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledTransition">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledTransition"
+         point="org.eclipse.incquery.runtime.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledtransition.EnabledTransitionEvaluator1_1"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledTransition_1_1">
+      </evaluator>
    </extension>
 
 </plugin>

@@ -5,5 +5,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="lib/cloning-1.8.5.jar"/>
 	<classpathentry kind="lib" path="lib/objenesis-1.2.jar"/>
+	<classpathentry kind="src" path="src-gen/"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

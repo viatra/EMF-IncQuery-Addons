@@ -3,31 +3,48 @@ package hu.bme.mit.incquery.cep.runtime.evaluation;
 import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.Action;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
+import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
+import hu.bme.mit.incquery.cep.runtime.statemachine.AtomicPatternBuilder;
+import hu.bme.mit.incquery.cep.runtime.statemachine.ComplexPatternBuilder;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.log4j.Level;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.incquery.runtime.api.EngineManager;
+import org.eclipse.incquery.runtime.api.IPatternMatch;
+import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.evm.api.Activation;
+import org.eclipse.incquery.runtime.evm.api.Context;
+import org.eclipse.incquery.runtime.evm.api.EventDrivenVM;
+import org.eclipse.incquery.runtime.evm.api.RuleEngine;
+import org.eclipse.incquery.runtime.evm.api.RuleSpecification;
+import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 public class EventModelManager {
 	private static EventModelManager instance;
 	private InternalExecutionModel model;
+	private IncQueryEngine engine;
+	private RuleEngine ruleEngine;
+	private Context context;
 	private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
 	
-	private EventModelManager() {
-		this.model = SM_FACTORY.createInternalExecutionModel();
+	private EventModelManager(List<EventPattern> eventPatterns) {
+		model = SM_FACTORY.createInternalExecutionModel();
 		
 		Adapter adapter = new AdapterImpl() {
 			@Override
@@ -35,154 +52,83 @@ public class EventModelManager {
 				Object newValue = notification.getNewValue();
 				if (newValue instanceof Event) {
 					Event event = (Event) newValue;
-					refreshModel(event);
 					System.err.println("DIAG: Event " + event.getClass().getName() + " captured...");
-					// System.out.println("MODEL: LatestEvent: " +
-					// model.getLatestEvent().getId());
-					// evaluateOnInternalSM();
-					// executeRecognizedPatterns();
+					refreshModel(event);
+					evaluateRuleSpecifications();
 				}
 			}
 		};
 		EventQueue.getInstance().eAdapters().add(adapter);
+		
+		ComplexPatternBuilder complexBuilder = new ComplexPatternBuilder(model);
+		AtomicPatternBuilder atomicBuilder = new AtomicPatternBuilder(model);
+		
+		for (EventPattern eventPattern : eventPatterns) {
+			if (eventPattern instanceof AtomicEventPattern) {
+				atomicBuilder.buildStateMachine((AtomicEventPattern) eventPattern);
+			}
+			if (eventPattern instanceof ComplexEventPattern) {
+				complexBuilder.buildStateMachine((ComplexEventPattern) eventPattern);
+			}
+		}
+		
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("cep", new XMIResourceFactoryImpl());
+		ResourceSet resourceSet = new ResourceSetImpl();
+		Resource smModelResource = resourceSet.createResource(URI.createURI("cep/sm.cep"));
+		smModelResource.getContents().add(model);
+		
+		// TODO this is required because of the non-containment relationship
+		// between States and Transitions - shall be replaced by feature maps
+		for (StateMachine sm : model.getStateMachines()) {
+			for (State s : sm.getStates()) {
+				for (Transition to : s.getOutTransitions()) {
+					smModelResource.getContents().add(to);
+				}
+				for (Transition ti : s.getInTransitions()) {
+					smModelResource.getContents().add(ti);
+				}
+			}
+		}
+		
+		try {
+			engine = EngineManager.getInstance().getIncQueryEngine(resourceSet);
+			ruleEngine = EventDrivenVM.createRuleEngine(engine);
+			registerModelHandlerRules();
+			engine.getLogger().setLevel(Level.DEBUG);
+			context = Context.create();
+		} catch (IncQueryException e) {
+			// TODO handle error
+			e.printStackTrace();
+		}
+		
 	}
 	
-	public static EventModelManager getInstance() {
+	public static EventModelManager createEventModel(List<EventPattern> eventPatterns) {
 		if (instance == null) {
-			instance = new EventModelManager();
+			instance = new EventModelManager(eventPatterns);
 		}
 		return instance;
 	}
 	
-	public InternalExecutionModel getModel() {
-		return model;
+	public void registerModelHandlerRules() {
+		for (RuleSpecification<? extends IPatternMatch> ruleSpec : ModelHandlerRules.getIntance().getModelHandlers()) {
+			ruleEngine.addRule(ruleSpec);
+		}
+	}
+	
+	private void evaluateRuleSpecifications() {
+		for (Activation<? extends IPatternMatch> activation : ruleEngine.getActivations().values()) {
+			activation.fire(context);
+		}
 	}
 	
 	private void refreshModel(Event event) {
 		model.setLatestEvent(event);
 	}
 	
-	/**
-	 * TODO this shall be replaced with the IncQuery
-	 */
-	// private void evaluateOnInternalSM() {
-	// for (StateMachine sm : model.getStateMachines()) {
-	// for (Transition t : sm.getCurrentState().getOutTransitions()) {
-	// if (SMUtils.isEnabled(t, model.getLatestEvent())) {
-	// SMUtils.fireTransition(sm, t);
-	// }
-	// }
-	// }
-	// // executeRecognizedPatterns();
-	// }
-	
-	private void executeRecognizedPatterns() {
-		List<StateMachine> smToDelete = new ArrayList<StateMachine>();
-		
-		for (StateMachine sm : model.getStateMachines()) {
-			if (sm.getCurrentState() instanceof FinalState) {
-				System.out.println(((FinalState) sm.getCurrentState()).getActions().get(0).getMsgToLog());
-				smToDelete.add(sm);
-			}
-		}
-		
-		for (StateMachine stateMachine : smToDelete) {
-			model.getStateMachines().remove(stateMachine);
-		}
-	}
-	
-	public void buildStateMachine(AtomicEventPattern pattern) {
-		StateMachine sm = SM_FACTORY.createStateMachine();
-		InitState initState = SM_FACTORY.createInitState();
-		FinalState finalState = SM_FACTORY.createFinalState();
-		finalState.setLabel("final");
-		
-		sm.getStates().add(initState);
-		sm.getStates().add(finalState);
-		
-		Action action = SM_FACTORY.createAction();
-		action.setMsgToLog("\t\tCEP: Event pattern " + pattern.getId() + " recognized");
-		finalState.getActions().add(action);
-		
-		Transition t1 = SM_FACTORY.createTransition();
-		Guard g1 = SM_FACTORY.createGuard();
-		g1.setEventType(pattern.getType());
-		t1.setGuard(g1);
-		
-		t1.setPostState(finalState);
-		
-		initState.getOutTransitions().add(t1);
-		
-		sm.setCurrentState(initState);
-		
-		sm.setEventPattern(pattern);
-		
-		model.getStateMachines().add(sm);
-	}
-	
-	public void buildStateMachine(ComplexEventPattern pattern) {
-		StateMachine sm = SM_FACTORY.createStateMachine();
-		InitState initState = SM_FACTORY.createInitState();
-		FinalState finalState = SM_FACTORY.createFinalState();
-		finalState.setLabel("final");
-		
-		Action action = SM_FACTORY.createAction();
-		action.setMsgToLog("\t\tCEP: Event pattern " + pattern.getId() + " recognized");
-		finalState.getActions().add(action);
-		
-		// only for ORDERED w/o timewin
-		List<AtomicEventPattern> atomicEventPatterns = SMUtils.flattenComplexPatterns(pattern);
-		List<State> states = new ArrayList<State>();
-		
-		for (int i = 0; i < atomicEventPatterns.size(); i++) {
-			State latestState = null;
-			
-			if (!states.isEmpty()) {
-				latestState = states.get(states.size() - 1);
-			}
-			
-			State currentState = createState(atomicEventPatterns.get(i));
-			states.add(currentState);
-			
-			if (i == 0) {
-				createTransition(initState, currentState, createEventGuard(atomicEventPatterns.get(i)));
-				continue;
-			}
-			
-			if (i == atomicEventPatterns.size() - 1) {
-				createTransition(latestState, finalState, createEventGuard(atomicEventPatterns.get(i)));
-			}
-			
-			else {
-				createTransition(latestState, currentState, createEventGuard(atomicEventPatterns.get(i)));
-			}
-		}
-		
-		sm.getStates().addAll(states);
-		
-		sm.setCurrentState(initState);
-		sm.setEventPattern(pattern);
-		
-		model.getStateMachines().add(sm);
-		// model.getStateMachines().get(model.getStateMachines().size() -
-		// 1).getStates().addAll(states);
-	}
-	private Transition createTransition(State preState, State postState, Guard guard) {
-		Transition t = SM_FACTORY.createTransition();
-		t.setGuard(guard);
-		t.setPreState(preState);
-		t.setPostState(postState);
-		return t;
-	}
-	
-	private State createState(AtomicEventPattern atomicEventPattern) {
-		State s = SM_FACTORY.createState();
-		return s;
-	}
-	
-	private Guard createEventGuard(AtomicEventPattern atomicEventPattern) {
-		Guard g = SM_FACTORY.createGuard();
-		g.setEventType(atomicEventPattern.getType());
-		return g;
+	public InternalExecutionModel getModel() {
+		return model;
 	}
 }

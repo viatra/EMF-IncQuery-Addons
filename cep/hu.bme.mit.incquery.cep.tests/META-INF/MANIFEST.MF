@@ -4,16 +4,11 @@ Bundle-Name: hu.bme.mit.incquery.cep.tests
 Bundle-SymbolicName: hu.bme.mit.incquery.cep.tests;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Fragment-Host: hu.bme.mit.incquery.cep;bundle-version="1.0.0"
-Export-Package: hu.bme.mit.incquery.cep.tests.testcasesmqueries.cevent,
- hu.bme.mit.incquery.cep.tests.testcasesmqueries.enabledtransition,
- hu.bme.mit.incquery.cep.tests.testcasesmqueries.finishedstatemachine,
- hu.bme.mit.incquery.cep.tests.testcasesmqueries.latestevent,
- hu.bme.mit.incquery.cep.tests.testcasesmqueries.transition
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
  org.eclipse.incquery.runtime,
  org.eclipse.xtext.xbase.lib,
- hu.bme.mit.incquery.cep,
  org.junit;bundle-version="4.10.0",
- org.eclipse.incquery.runtime.evm;bundle-version="0.7.0"
+ org.eclipse.incquery.runtime.evm;bundle-version="0.7.0",
+ org.eclipse.core.databinding;bundle-version="1.4.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
