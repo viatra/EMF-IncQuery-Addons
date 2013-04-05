@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getId <em>Id</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getTypeId <em>Type Id</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getTimestamp <em>Timestamp</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getEventSource <em>Event Source</em>}</li>
  * </ul>
@@ -24,30 +24,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Event extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getEvent_Id()
+	 * @return the value of the '<em>Type Id</em>' attribute.
+	 * @see #setTypeId(String)
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getEvent_TypeId()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getId();
+	String getTypeId();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getTypeId <em>Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
+	 * @param value the new value of the '<em>Type Id</em>' attribute.
+	 * @see #getTypeId()
 	 * @generated
 	 */
-	void setId(String value);
+	void setTypeId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Timestamp</b></em>' attribute.

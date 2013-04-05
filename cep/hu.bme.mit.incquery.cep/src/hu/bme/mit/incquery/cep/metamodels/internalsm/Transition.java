@@ -24,28 +24,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Transition extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Pre State</b></em>' reference.
+	 * Returns the value of the '<em><b>Pre State</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getOutTransitions <em>Out Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Pre State</em>' reference isn't clear,
+	 * If the meaning of the '<em>Pre State</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pre State</em>' reference.
+	 * @return the value of the '<em>Pre State</em>' container reference.
 	 * @see #setPreState(State)
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getTransition_PreState()
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.State#getOutTransitions
-	 * @model opposite="outTransitions" required="true"
+	 * @model opposite="outTransitions" required="true" transient="false"
 	 * @generated
 	 */
 	State getPreState();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPreState <em>Pre State</em>}' reference.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPreState <em>Pre State</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pre State</em>' reference.
+	 * @param value the new value of the '<em>Pre State</em>' container reference.
 	 * @see #getPreState()
 	 * @generated
 	 */

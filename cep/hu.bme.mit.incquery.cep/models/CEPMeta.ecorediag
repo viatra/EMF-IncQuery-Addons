@@ -95,7 +95,7 @@
     <children xmi:type="notation:Node" xmi:id="_lrXnc5R-EeKJ-IAR0t4eRA" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_lrXndJR-EeKJ-IAR0t4eRA" type="5001">
       <children xmi:type="notation:Node" xmi:id="_lrYOgJR-EeKJ-IAR0t4eRA" type="2001">
-        <element xmi:type="ecore:EAttribute" href="CEPMeta.ecore#//Event/id"/>
+        <element xmi:type="ecore:EAttribute" href="CEPMeta.ecore#//Event/typeId"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_lrYOgZR-EeKJ-IAR0t4eRA"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_lrYOgpR-EeKJ-IAR0t4eRA" type="2001">

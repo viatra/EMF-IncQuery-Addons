@@ -4,6 +4,7 @@ package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 
+import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl#getStateMachines <em>State Machines</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl#getLatestEvent <em>Latest Event</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl#getCurrentStateVisitors <em>Current State Visitors</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,6 +60,16 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 	 * @ordered
 	 */
 	protected Event latestEvent;
+
+	/**
+	 * The cached value of the '{@link #getCurrentStateVisitors() <em>Current State Visitors</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrentStateVisitors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CurrentStateVisitor> currentStateVisitors;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,6 +150,18 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<CurrentStateVisitor> getCurrentStateVisitors() {
+		if (currentStateVisitors == null) {
+			currentStateVisitors = new EObjectContainmentEList<CurrentStateVisitor>(CurrentStateVisitor.class, this, InternalsmPackage.INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS);
+		}
+		return currentStateVisitors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -145,6 +169,8 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 				return ((InternalEList<?>)getStateMachines()).basicRemove(otherEnd, msgs);
 			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__LATEST_EVENT:
 				return basicSetLatestEvent(null, msgs);
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS:
+				return ((InternalEList<?>)getCurrentStateVisitors()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -161,6 +187,8 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 				return getStateMachines();
 			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__LATEST_EVENT:
 				return getLatestEvent();
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS:
+				return getCurrentStateVisitors();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -181,6 +209,10 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__LATEST_EVENT:
 				setLatestEvent((Event)newValue);
 				return;
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS:
+				getCurrentStateVisitors().clear();
+				getCurrentStateVisitors().addAll((Collection<? extends CurrentStateVisitor>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -199,6 +231,9 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__LATEST_EVENT:
 				setLatestEvent((Event)null);
 				return;
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS:
+				getCurrentStateVisitors().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -215,6 +250,8 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 				return stateMachines != null && !stateMachines.isEmpty();
 			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__LATEST_EVENT:
 				return latestEvent != null;
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS:
+				return currentStateVisitors != null && !currentStateVisitors.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

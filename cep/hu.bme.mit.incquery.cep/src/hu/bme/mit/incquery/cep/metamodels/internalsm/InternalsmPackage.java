@@ -66,7 +66,7 @@ public interface InternalsmPackage extends EPackage {
 	int STATE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Out Transitions</b></em>' reference list.
+	 * The feature id for the '<em><b>Out Transitions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -93,13 +93,22 @@ public interface InternalsmPackage extends EPackage {
 	int STATE__LABEL = 2;
 
 	/**
+	 * The feature id for the '<em><b>Current Visitors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__CURRENT_VISITORS = 3;
+
+	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = 3;
+	int STATE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TransitionImpl <em>Transition</em>}' class.
@@ -112,7 +121,7 @@ public interface InternalsmPackage extends EPackage {
 	int TRANSITION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Pre State</b></em>' reference.
+	 * The feature id for the '<em><b>Pre State</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -195,7 +204,7 @@ public interface InternalsmPackage extends EPackage {
 	int FINAL_STATE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Out Transitions</b></em>' reference list.
+	 * The feature id for the '<em><b>Out Transitions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -220,6 +229,15 @@ public interface InternalsmPackage extends EPackage {
 	 * @ordered
 	 */
 	int FINAL_STATE__LABEL = STATE__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Current Visitors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STATE__CURRENT_VISITORS = STATE__CURRENT_VISITORS;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -250,7 +268,7 @@ public interface InternalsmPackage extends EPackage {
 	int INIT_STATE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Out Transitions</b></em>' reference list.
+	 * The feature id for the '<em><b>Out Transitions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -277,6 +295,15 @@ public interface InternalsmPackage extends EPackage {
 	int INIT_STATE__LABEL = STATE__LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Current Visitors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INIT_STATE__CURRENT_VISITORS = STATE__CURRENT_VISITORS;
+
+	/**
 	 * The number of structural features of the '<em>Init State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -296,7 +323,7 @@ public interface InternalsmPackage extends EPackage {
 	int TRAP_STATE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Out Transitions</b></em>' reference list.
+	 * The feature id for the '<em><b>Out Transitions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -321,6 +348,15 @@ public interface InternalsmPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRAP_STATE__LABEL = STATE__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Current Visitors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAP_STATE__CURRENT_VISITORS = STATE__CURRENT_VISITORS;
 
 	/**
 	 * The number of structural features of the '<em>Trap State</em>' class.
@@ -351,22 +387,13 @@ public interface InternalsmPackage extends EPackage {
 	int STATE_MACHINE__STATES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Current State</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_MACHINE__CURRENT_STATE = 1;
-
-	/**
 	 * The feature id for the '<em><b>Event Pattern</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE__EVENT_PATTERN = 2;
+	int STATE_MACHINE__EVENT_PATTERN = 1;
 
 	/**
 	 * The number of structural features of the '<em>State Machine</em>' class.
@@ -375,7 +402,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE_FEATURE_COUNT = 3;
+	int STATE_MACHINE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl <em>Internal Execution Model</em>}' class.
@@ -406,13 +433,22 @@ public interface InternalsmPackage extends EPackage {
 	int INTERNAL_EXECUTION_MODEL__LATEST_EVENT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Current State Visitors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Internal Execution Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_EXECUTION_MODEL_FEATURE_COUNT = 2;
+	int INTERNAL_EXECUTION_MODEL_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.ActionImpl <em>Action</em>}' class.
@@ -442,6 +478,34 @@ public interface InternalsmPackage extends EPackage {
 	 */
 	int ACTION_FEATURE_COUNT = 1;
 
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.CurrentStateVisitorImpl <em>Current State Visitor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.CurrentStateVisitorImpl
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getCurrentStateVisitor()
+	 * @generated
+	 */
+	int CURRENT_STATE_VISITOR = 9;
+
+	/**
+	 * The feature id for the '<em><b>Current State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_STATE_VISITOR__CURRENT_STATE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Current State Visitor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_STATE_VISITOR_FEATURE_COUNT = 1;
+
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State <em>State</em>}'.
@@ -454,10 +518,10 @@ public interface InternalsmPackage extends EPackage {
 	EClass getState();
 
 	/**
-	 * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getOutTransitions <em>Out Transitions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getOutTransitions <em>Out Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Out Transitions</em>'.
+	 * @return the meta object for the containment reference list '<em>Out Transitions</em>'.
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.State#getOutTransitions()
 	 * @see #getState()
 	 * @generated
@@ -487,6 +551,17 @@ public interface InternalsmPackage extends EPackage {
 	EAttribute getState_Label();
 
 	/**
+	 * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getCurrentVisitors <em>Current Visitors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Current Visitors</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.State#getCurrentVisitors()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_CurrentVisitors();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -497,10 +572,10 @@ public interface InternalsmPackage extends EPackage {
 	EClass getTransition();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPreState <em>Pre State</em>}'.
+	 * Returns the meta object for the container reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPreState <em>Pre State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Pre State</em>'.
+	 * @return the meta object for the container reference '<em>Pre State</em>'.
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPreState()
 	 * @see #getTransition()
 	 * @generated
@@ -624,17 +699,6 @@ public interface InternalsmPackage extends EPackage {
 	EReference getStateMachine_States();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getCurrentState <em>Current State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Current State</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getCurrentState()
-	 * @see #getStateMachine()
-	 * @generated
-	 */
-	EReference getStateMachine_CurrentState();
-
-	/**
 	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern <em>Event Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -678,6 +742,17 @@ public interface InternalsmPackage extends EPackage {
 	EReference getInternalExecutionModel_LatestEvent();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getCurrentStateVisitors <em>Current State Visitors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Current State Visitors</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getCurrentStateVisitors()
+	 * @see #getInternalExecutionModel()
+	 * @generated
+	 */
+	EReference getInternalExecutionModel_CurrentStateVisitors();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Action <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -697,6 +772,27 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAction_MsgToLog();
+
+	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor <em>Current State Visitor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Current State Visitor</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor
+	 * @generated
+	 */
+	EClass getCurrentStateVisitor();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getCurrentState <em>Current State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Current State</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getCurrentState()
+	 * @see #getCurrentStateVisitor()
+	 * @generated
+	 */
+	EReference getCurrentStateVisitor_CurrentState();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -731,7 +827,7 @@ public interface InternalsmPackage extends EPackage {
 		EClass STATE = eINSTANCE.getState();
 
 		/**
-		 * The meta object literal for the '<em><b>Out Transitions</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Out Transitions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -755,6 +851,14 @@ public interface InternalsmPackage extends EPackage {
 		EAttribute STATE__LABEL = eINSTANCE.getState_Label();
 
 		/**
+		 * The meta object literal for the '<em><b>Current Visitors</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__CURRENT_VISITORS = eINSTANCE.getState_CurrentVisitors();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TransitionImpl <em>Transition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -765,7 +869,7 @@ public interface InternalsmPackage extends EPackage {
 		EClass TRANSITION = eINSTANCE.getTransition();
 
 		/**
-		 * The meta object literal for the '<em><b>Pre State</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Pre State</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -871,14 +975,6 @@ public interface InternalsmPackage extends EPackage {
 		EReference STATE_MACHINE__STATES = eINSTANCE.getStateMachine_States();
 
 		/**
-		 * The meta object literal for the '<em><b>Current State</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STATE_MACHINE__CURRENT_STATE = eINSTANCE.getStateMachine_CurrentState();
-
-		/**
 		 * The meta object literal for the '<em><b>Event Pattern</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -913,6 +1009,14 @@ public interface InternalsmPackage extends EPackage {
 		EReference INTERNAL_EXECUTION_MODEL__LATEST_EVENT = eINSTANCE.getInternalExecutionModel_LatestEvent();
 
 		/**
+		 * The meta object literal for the '<em><b>Current State Visitors</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS = eINSTANCE.getInternalExecutionModel_CurrentStateVisitors();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.ActionImpl <em>Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -929,6 +1033,24 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACTION__MSG_TO_LOG = eINSTANCE.getAction_MsgToLog();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.CurrentStateVisitorImpl <em>Current State Visitor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.CurrentStateVisitorImpl
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getCurrentStateVisitor()
+		 * @generated
+		 */
+		EClass CURRENT_STATE_VISITOR = eINSTANCE.getCurrentStateVisitor();
+
+		/**
+		 * The meta object literal for the '<em><b>Current State</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CURRENT_STATE_VISITOR__CURRENT_STATE = eINSTANCE.getCurrentStateVisitor_CurrentState();
 
 	}
 

@@ -29,12 +29,12 @@ public interface AtomicEventPattern extends EventPattern {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(Class)
+	 * @see #setType(String)
 	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getAtomicEventPattern_Type()
 	 * @model required="true"
 	 * @generated
 	 */
-	Class<? extends Event> getType();
+	String getType();
 
 	/**
 	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern#getType <em>Type</em>}' attribute.
@@ -44,6 +44,6 @@ public interface AtomicEventPattern extends EventPattern {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(Class<? extends Event> value);
+	void setType(String value);
 
 } // AtomicEventPattern

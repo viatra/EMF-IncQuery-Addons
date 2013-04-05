@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="internalsm" nsURI="sm.meta" nsPrefix="hu.bme.mit.incquery.metamodels">
   <eClassifiers xsi:type="ecore:EClass" name="State">
     <eStructuralFeatures xsi:type="ecore:EReference" name="outTransitions" upperBound="-1"
-        eType="#//Transition" eOpposite="#//Transition/preState">
+        eType="#//Transition" containment="true" eOpposite="#//Transition/preState">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="wildcards" value=""/>
         <details key="name" value=""/>
@@ -12,6 +12,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="inTransitions" upperBound="-1"
         eType="#//Transition" eOpposite="#//Transition/postState"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentVisitors" upperBound="-1"
+        eType="#//CurrentStateVisitor" eOpposite="#//CurrentStateVisitor/currentState"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="preState" lowerBound="1"
@@ -22,13 +24,8 @@
         eType="#//State" eOpposite="#//State/inTransitions"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Guard">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventType">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-        <eTypeArguments>
-          <eUpperBound eClassifier="ecore:EClass CEPMeta.ecore#//Event"/>
-        </eTypeArguments>
-      </eGenericType>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventType" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timewindow" eType="ecore:EClass CEPMeta.ecore#//Timewindow"
         containment="true"/>
   </eClassifiers>
@@ -41,8 +38,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="StateMachine">
     <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
         eType="#//State" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="currentState" lowerBound="1"
-        eType="#//State" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventPattern" lowerBound="1"
         eType="ecore:EClass CEPMeta.ecore#//EventPattern" eOpposite="CEPMeta.ecore#//EventPattern/stateMachines"/>
   </eClassifiers>
@@ -51,8 +46,14 @@
         eType="#//StateMachine" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="latestEvent" eType="ecore:EClass CEPMeta.ecore#//Event"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentStateVisitors" upperBound="-1"
+        eType="#//CurrentStateVisitor" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgToLog" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CurrentStateVisitor">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentState" eType="#//State"
+        eOpposite="#//State/currentVisitors"/>
   </eClassifiers>
 </ecore:EPackage>

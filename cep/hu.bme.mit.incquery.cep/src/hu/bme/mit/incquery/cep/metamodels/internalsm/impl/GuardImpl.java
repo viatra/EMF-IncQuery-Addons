@@ -2,7 +2,6 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
@@ -33,6 +32,16 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  */
 public class GuardImpl extends EObjectImpl implements Guard {
 	/**
+	 * The default value of the '{@link #getEventType() <em>Event Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EVENT_TYPE_EDEFAULT = null;
+
+	/**
 	 * The cached value of the '{@link #getEventType() <em>Event Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -40,7 +49,7 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * @generated
 	 * @ordered
 	 */
-	protected Class<? extends Event> eventType;
+	protected String eventType = EVENT_TYPE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTimewindow() <em>Timewindow</em>}' containment reference.
@@ -76,7 +85,7 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Class<? extends Event> getEventType() {
+	public String getEventType() {
 		return eventType;
 	}
 
@@ -85,8 +94,8 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEventType(Class<? extends Event> newEventType) {
-		Class<? extends Event> oldEventType = eventType;
+	public void setEventType(String newEventType) {
+		String oldEventType = eventType;
 		eventType = newEventType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.GUARD__EVENT_TYPE, oldEventType, eventType));
@@ -170,12 +179,11 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case InternalsmPackage.GUARD__EVENT_TYPE:
-				setEventType((Class<? extends Event>)newValue);
+				setEventType((String)newValue);
 				return;
 			case InternalsmPackage.GUARD__TIMEWINDOW:
 				setTimewindow((Timewindow)newValue);
@@ -193,7 +201,7 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case InternalsmPackage.GUARD__EVENT_TYPE:
-				setEventType((Class<? extends Event>)null);
+				setEventType(EVENT_TYPE_EDEFAULT);
 				return;
 			case InternalsmPackage.GUARD__TIMEWINDOW:
 				setTimewindow((Timewindow)null);
@@ -211,7 +219,7 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case InternalsmPackage.GUARD__EVENT_TYPE:
-				return eventType != null;
+				return EVENT_TYPE_EDEFAULT == null ? eventType != null : !EVENT_TYPE_EDEFAULT.equals(eventType);
 			case InternalsmPackage.GUARD__TIMEWINDOW:
 				return timewindow != null;
 		}

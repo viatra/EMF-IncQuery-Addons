@@ -2,7 +2,6 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 
 import org.eclipse.emf.ecore.EObject;
@@ -34,12 +33,12 @@ public interface Guard extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Event Type</em>' attribute.
-	 * @see #setEventType(Class)
+	 * @see #setEventType(String)
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getGuard_EventType()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	Class<? extends Event> getEventType();
+	String getEventType();
 
 	/**
 	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getEventType <em>Event Type</em>}' attribute.
@@ -49,7 +48,7 @@ public interface Guard extends EObject {
 	 * @see #getEventType()
 	 * @generated
 	 */
-	void setEventType(Class<? extends Event> value);
+	void setEventType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Timewindow</b></em>' containment reference.

@@ -33,7 +33,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateMachineImpl#getStates <em>States</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateMachineImpl#getCurrentState <em>Current State</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateMachineImpl#getEventPattern <em>Event Pattern</em>}</li>
  * </ul>
  * </p>
@@ -50,16 +49,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * @ordered
 	 */
 	protected EList<State> states;
-
-	/**
-	 * The cached value of the '{@link #getCurrentState() <em>Current State</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrentState()
-	 * @generated
-	 * @ordered
-	 */
-	protected State currentState;
 
 	/**
 	 * The cached value of the '{@link #getEventPattern() <em>Event Pattern</em>}' reference.
@@ -100,49 +89,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 			states = new EObjectContainmentEList<State>(State.class, this, InternalsmPackage.STATE_MACHINE__STATES);
 		}
 		return states;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public State getCurrentState() {
-		return currentState;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCurrentState(State newCurrentState, NotificationChain msgs) {
-		State oldCurrentState = currentState;
-		currentState = newCurrentState;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE_MACHINE__CURRENT_STATE, oldCurrentState, newCurrentState);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCurrentState(State newCurrentState) {
-		if (newCurrentState != currentState) {
-			NotificationChain msgs = null;
-			if (currentState != null)
-				msgs = ((InternalEObject)currentState).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.STATE_MACHINE__CURRENT_STATE, null, msgs);
-			if (newCurrentState != null)
-				msgs = ((InternalEObject)newCurrentState).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.STATE_MACHINE__CURRENT_STATE, null, msgs);
-			msgs = basicSetCurrentState(newCurrentState, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE_MACHINE__CURRENT_STATE, newCurrentState, newCurrentState));
 	}
 
 	/**
@@ -231,8 +177,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 		switch (featureID) {
 			case InternalsmPackage.STATE_MACHINE__STATES:
 				return ((InternalEList<?>)getStates()).basicRemove(otherEnd, msgs);
-			case InternalsmPackage.STATE_MACHINE__CURRENT_STATE:
-				return basicSetCurrentState(null, msgs);
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
 				return basicSetEventPattern(null, msgs);
 		}
@@ -249,8 +193,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 		switch (featureID) {
 			case InternalsmPackage.STATE_MACHINE__STATES:
 				return getStates();
-			case InternalsmPackage.STATE_MACHINE__CURRENT_STATE:
-				return getCurrentState();
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
 				if (resolve) return getEventPattern();
 				return basicGetEventPattern();
@@ -271,9 +213,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 				getStates().clear();
 				getStates().addAll((Collection<? extends State>)newValue);
 				return;
-			case InternalsmPackage.STATE_MACHINE__CURRENT_STATE:
-				setCurrentState((State)newValue);
-				return;
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
 				setEventPattern((EventPattern)newValue);
 				return;
@@ -292,9 +231,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 			case InternalsmPackage.STATE_MACHINE__STATES:
 				getStates().clear();
 				return;
-			case InternalsmPackage.STATE_MACHINE__CURRENT_STATE:
-				setCurrentState((State)null);
-				return;
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
 				setEventPattern((EventPattern)null);
 				return;
@@ -312,8 +248,6 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 		switch (featureID) {
 			case InternalsmPackage.STATE_MACHINE__STATES:
 				return states != null && !states.isEmpty();
-			case InternalsmPackage.STATE_MACHINE__CURRENT_STATE:
-				return currentState != null;
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
 				return eventPattern != null;
 		}

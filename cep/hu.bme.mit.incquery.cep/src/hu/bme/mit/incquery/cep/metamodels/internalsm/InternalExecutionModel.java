@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getStateMachines <em>State Machines</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getLatestEvent <em>Latest Event</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getCurrentStateVisitors <em>Current State Visitors</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,5 +68,21 @@ public interface InternalExecutionModel extends EObject {
 	 * @generated
 	 */
 	void setLatestEvent(Event value);
+
+	/**
+	 * Returns the value of the '<em><b>Current State Visitors</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Current State Visitors</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Current State Visitors</em>' containment reference list.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getInternalExecutionModel_CurrentStateVisitors()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<CurrentStateVisitor> getCurrentStateVisitors();
 
 } // InternalExecutionModel

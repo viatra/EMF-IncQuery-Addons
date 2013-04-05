@@ -16,6 +16,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Transition</b></em>'.
@@ -32,16 +34,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * @generated
  */
 public class TransitionImpl extends EObjectImpl implements Transition {
-	/**
-	 * The cached value of the '{@link #getPreState() <em>Pre State</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPreState()
-	 * @generated
-	 * @ordered
-	 */
-	protected State preState;
-
 	/**
 	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -87,24 +79,8 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * @generated
 	 */
 	public State getPreState() {
-		if (preState != null && preState.eIsProxy()) {
-			InternalEObject oldPreState = (InternalEObject)preState;
-			preState = (State)eResolveProxy(oldPreState);
-			if (preState != oldPreState) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InternalsmPackage.TRANSITION__PRE_STATE, oldPreState, preState));
-			}
-		}
-		return preState;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public State basicGetPreState() {
-		return preState;
+		if (eContainerFeatureID() != InternalsmPackage.TRANSITION__PRE_STATE) return null;
+		return (State)eContainer();
 	}
 
 	/**
@@ -113,12 +89,7 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * @generated
 	 */
 	public NotificationChain basicSetPreState(State newPreState, NotificationChain msgs) {
-		State oldPreState = preState;
-		preState = newPreState;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.TRANSITION__PRE_STATE, oldPreState, newPreState);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newPreState, InternalsmPackage.TRANSITION__PRE_STATE, msgs);
 		return msgs;
 	}
 
@@ -128,10 +99,12 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * @generated
 	 */
 	public void setPreState(State newPreState) {
-		if (newPreState != preState) {
+		if (newPreState != eInternalContainer() || (eContainerFeatureID() != InternalsmPackage.TRANSITION__PRE_STATE && newPreState != null)) {
+			if (EcoreUtil.isAncestor(this, newPreState))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (preState != null)
-				msgs = ((InternalEObject)preState).eInverseRemove(this, InternalsmPackage.STATE__OUT_TRANSITIONS, State.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPreState != null)
 				msgs = ((InternalEObject)newPreState).eInverseAdd(this, InternalsmPackage.STATE__OUT_TRANSITIONS, State.class, msgs);
 			msgs = basicSetPreState(newPreState, msgs);
@@ -253,8 +226,8 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case InternalsmPackage.TRANSITION__PRE_STATE:
-				if (preState != null)
-					msgs = ((InternalEObject)preState).eInverseRemove(this, InternalsmPackage.STATE__OUT_TRANSITIONS, State.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetPreState((State)otherEnd, msgs);
 			case InternalsmPackage.TRANSITION__POST_STATE:
 				if (postState != null)
@@ -288,11 +261,24 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case InternalsmPackage.TRANSITION__PRE_STATE:
+				return eInternalContainer().eInverseRemove(this, InternalsmPackage.STATE__OUT_TRANSITIONS, State.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case InternalsmPackage.TRANSITION__PRE_STATE:
-				if (resolve) return getPreState();
-				return basicGetPreState();
+				return getPreState();
 			case InternalsmPackage.TRANSITION__GUARD:
 				return getGuard();
 			case InternalsmPackage.TRANSITION__POST_STATE:
@@ -353,7 +339,7 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case InternalsmPackage.TRANSITION__PRE_STATE:
-				return preState != null;
+				return getPreState() != null;
 			case InternalsmPackage.TRANSITION__GUARD:
 				return guard != null;
 			case InternalsmPackage.TRANSITION__POST_STATE:

@@ -4,7 +4,6 @@ package hu.bme.mit.incquery.cep.metamodels.cep.impl;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
-import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -27,6 +26,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class AtomicEventPatternImpl extends EventPatternImpl implements AtomicEventPattern {
 	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TYPE_EDEFAULT = null;
+
+	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,7 +43,7 @@ public class AtomicEventPatternImpl extends EventPatternImpl implements AtomicEv
 	 * @generated
 	 * @ordered
 	 */
-	protected Class<? extends Event> type;
+	protected String type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,7 +69,7 @@ public class AtomicEventPatternImpl extends EventPatternImpl implements AtomicEv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Class<? extends Event> getType() {
+	public String getType() {
 		return type;
 	}
 
@@ -69,8 +78,8 @@ public class AtomicEventPatternImpl extends EventPatternImpl implements AtomicEv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(Class<? extends Event> newType) {
-		Class<? extends Event> oldType = type;
+	public void setType(String newType) {
+		String oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CepPackage.ATOMIC_EVENT_PATTERN__TYPE, oldType, type));
@@ -95,12 +104,11 @@ public class AtomicEventPatternImpl extends EventPatternImpl implements AtomicEv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CepPackage.ATOMIC_EVENT_PATTERN__TYPE:
-				setType((Class<? extends Event>)newValue);
+				setType((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -115,7 +123,7 @@ public class AtomicEventPatternImpl extends EventPatternImpl implements AtomicEv
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CepPackage.ATOMIC_EVENT_PATTERN__TYPE:
-				setType((Class<? extends Event>)null);
+				setType(TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -130,7 +138,7 @@ public class AtomicEventPatternImpl extends EventPatternImpl implements AtomicEv
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CepPackage.ATOMIC_EVENT_PATTERN__TYPE:
-				return type != null;
+				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}

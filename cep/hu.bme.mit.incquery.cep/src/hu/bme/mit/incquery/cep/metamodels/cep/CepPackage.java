@@ -232,13 +232,13 @@ public interface CepPackage extends EPackage {
 	int EVENT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT__ID = 0;
+	int EVENT__TYPE_ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -432,15 +432,15 @@ public interface CepPackage extends EPackage {
 	EClass getEvent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getId <em>Id</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getTypeId <em>Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.Event#getId()
+	 * @return the meta object for the attribute '<em>Type Id</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.Event#getTypeId()
 	 * @see #getEvent()
 	 * @generated
 	 */
-	EAttribute getEvent_Id();
+	EAttribute getEvent_TypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getTimestamp <em>Timestamp</em>}'.
@@ -616,12 +616,12 @@ public interface CepPackage extends EPackage {
 		EClass EVENT = eINSTANCE.getEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Type Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EVENT__ID = eINSTANCE.getEvent_Id();
+		EAttribute EVENT__TYPE_ID = eINSTANCE.getEvent_TypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Timestamp</b></em>' attribute feature.

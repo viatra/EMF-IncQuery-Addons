@@ -2,6 +2,7 @@ package hu.bme.mit.incquery.cep.runtime.statemachine;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Action;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
@@ -38,10 +39,12 @@ public class AtomicPatternBuilder extends AbstractStateMachineBuilder<AtomicEven
 		
 		initState.getOutTransitions().add(t1);
 		
-		sm.setCurrentState(initState);
+		CurrentStateVisitor currentStateVisitor = SM_FACTORY.createCurrentStateVisitor();
+		currentStateVisitor.setCurrentState(initState);
 		
 		sm.setEventPattern(eventPattern);
 		
 		model.getStateMachines().add(sm);
+		model.getCurrentStateVisitors().add(currentStateVisitor);
 	}
 }

@@ -3,9 +3,11 @@ package hu.bme.mit.incquery.cep.runtime.statemachine;
 import java.util.ArrayList;
 import java.util.List;
 
+import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Action;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
@@ -13,7 +15,6 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
-import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 
 public class ComplexPatternBuilder extends AbstractStateMachineBuilder<ComplexEventPattern> {
 	
@@ -35,6 +36,7 @@ public class ComplexPatternBuilder extends AbstractStateMachineBuilder<ComplexEv
 		// only for ORDERED w/o timewin
 		List<AtomicEventPattern> atomicEventPatterns = SMUtils.flattenComplexPatterns(complexEventPattern);
 		List<State> states = new ArrayList<State>();
+		states.add(initState);
 		
 		for (int i = 0; i < atomicEventPatterns.size(); i++) {
 			State latestState = null;
@@ -43,29 +45,27 @@ public class ComplexPatternBuilder extends AbstractStateMachineBuilder<ComplexEv
 				latestState = states.get(states.size() - 1);
 			}
 			
-			State currentState = createState(atomicEventPatterns.get(i));
-			states.add(currentState);
-			
-			if (i == 0) {
-				createTransition(initState, currentState, createEventGuard(atomicEventPatterns.get(i)));
-				continue;
-			}
-			
 			if (i == atomicEventPatterns.size() - 1) {
+				states.add(finalState);
 				createTransition(latestState, finalState, createEventGuard(atomicEventPatterns.get(i)));
 			}
 			
 			else {
+				State currentState = createState(atomicEventPatterns.get(i));
+				states.add(currentState);
 				createTransition(latestState, currentState, createEventGuard(atomicEventPatterns.get(i)));
 			}
+			
 		}
 		
 		sm.getStates().addAll(states);
 		
-		sm.setCurrentState(initState);
+		CurrentStateVisitor currentStateVisitor = SM_FACTORY.createCurrentStateVisitor();
+		currentStateVisitor.setCurrentState(initState);
 		sm.setEventPattern(complexEventPattern);
 		
 		model.getStateMachines().add(sm);
+		model.getCurrentStateVisitors().add(currentStateVisitor);
 	}
 	private Transition createTransition(State preState, State postState, Guard guard) {
 		Transition t = SM_FACTORY.createTransition();

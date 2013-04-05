@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventImpl#getId <em>Id</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventImpl#getTypeId <em>Type Id</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventImpl#getTimestamp <em>Timestamp</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventImpl#getEventSource <em>Event Source</em>}</li>
  * </ul>
@@ -31,24 +31,24 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  */
 public class EventImpl extends EObjectImpl implements Event {
 	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The default value of the '{@link #getTypeId() <em>Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ID_EDEFAULT = null;
+	protected static final String TYPE_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String id = ID_EDEFAULT;
+	protected String typeId = TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTimestamp() <em>Timestamp</em>}' attribute.
@@ -104,8 +104,8 @@ public class EventImpl extends EObjectImpl implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getId() {
-		return id;
+	public String getTypeId() {
+		return typeId;
 	}
 
 	/**
@@ -113,11 +113,11 @@ public class EventImpl extends EObjectImpl implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
+	public void setTypeId(String newTypeId) {
+		String oldTypeId = typeId;
+		typeId = newTypeId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CepPackage.EVENT__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, CepPackage.EVENT__TYPE_ID, oldTypeId, typeId));
 	}
 
 	/**
@@ -187,8 +187,8 @@ public class EventImpl extends EObjectImpl implements Event {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CepPackage.EVENT__ID:
-				return getId();
+			case CepPackage.EVENT__TYPE_ID:
+				return getTypeId();
 			case CepPackage.EVENT__TIMESTAMP:
 				return getTimestamp();
 			case CepPackage.EVENT__EVENT_SOURCE:
@@ -206,8 +206,8 @@ public class EventImpl extends EObjectImpl implements Event {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CepPackage.EVENT__ID:
-				setId((String)newValue);
+			case CepPackage.EVENT__TYPE_ID:
+				setTypeId((String)newValue);
 				return;
 			case CepPackage.EVENT__TIMESTAMP:
 				setTimestamp((Long)newValue);
@@ -227,8 +227,8 @@ public class EventImpl extends EObjectImpl implements Event {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CepPackage.EVENT__ID:
-				setId(ID_EDEFAULT);
+			case CepPackage.EVENT__TYPE_ID:
+				setTypeId(TYPE_ID_EDEFAULT);
 				return;
 			case CepPackage.EVENT__TIMESTAMP:
 				setTimestamp(TIMESTAMP_EDEFAULT);
@@ -248,8 +248,8 @@ public class EventImpl extends EObjectImpl implements Event {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CepPackage.EVENT__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case CepPackage.EVENT__TYPE_ID:
+				return TYPE_ID_EDEFAULT == null ? typeId != null : !TYPE_ID_EDEFAULT.equals(typeId);
 			case CepPackage.EVENT__TIMESTAMP:
 				return timestamp != TIMESTAMP_EDEFAULT;
 			case CepPackage.EVENT__EVENT_SOURCE:
@@ -268,8 +268,8 @@ public class EventImpl extends EObjectImpl implements Event {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (id: ");
-		result.append(id);
+		result.append(" (typeId: ");
+		result.append(typeId);
 		result.append(", timestamp: ");
 		result.append(timestamp);
 		result.append(')');

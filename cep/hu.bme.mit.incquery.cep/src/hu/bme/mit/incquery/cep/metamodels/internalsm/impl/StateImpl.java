@@ -2,6 +2,7 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
+import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
@@ -19,6 +20,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getOutTransitions <em>Out Transitions</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getInTransitions <em>In Transitions</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getCurrentVisitors <em>Current Visitors</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,7 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class StateImpl extends EObjectImpl implements State {
 	/**
-	 * The cached value of the '{@link #getOutTransitions() <em>Out Transitions</em>}' reference list.
+	 * The cached value of the '{@link #getOutTransitions() <em>Out Transitions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOutTransitions()
@@ -79,6 +82,16 @@ public class StateImpl extends EObjectImpl implements State {
 	protected String label = LABEL_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getCurrentVisitors() <em>Current Visitors</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrentVisitors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CurrentStateVisitor> currentVisitors;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -104,7 +117,7 @@ public class StateImpl extends EObjectImpl implements State {
 	 */
 	public EList<Transition> getOutTransitions() {
 		if (outTransitions == null) {
-			outTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, InternalsmPackage.STATE__OUT_TRANSITIONS, InternalsmPackage.TRANSITION__PRE_STATE);
+			outTransitions = new EObjectContainmentWithInverseEList<Transition>(Transition.class, this, InternalsmPackage.STATE__OUT_TRANSITIONS, InternalsmPackage.TRANSITION__PRE_STATE);
 		}
 		return outTransitions;
 	}
@@ -147,6 +160,18 @@ public class StateImpl extends EObjectImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<CurrentStateVisitor> getCurrentVisitors() {
+		if (currentVisitors == null) {
+			currentVisitors = new EObjectWithInverseResolvingEList<CurrentStateVisitor>(CurrentStateVisitor.class, this, InternalsmPackage.STATE__CURRENT_VISITORS, InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE);
+		}
+		return currentVisitors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -155,6 +180,8 @@ public class StateImpl extends EObjectImpl implements State {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutTransitions()).basicAdd(otherEnd, msgs);
 			case InternalsmPackage.STATE__IN_TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInTransitions()).basicAdd(otherEnd, msgs);
+			case InternalsmPackage.STATE__CURRENT_VISITORS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCurrentVisitors()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -171,6 +198,8 @@ public class StateImpl extends EObjectImpl implements State {
 				return ((InternalEList<?>)getOutTransitions()).basicRemove(otherEnd, msgs);
 			case InternalsmPackage.STATE__IN_TRANSITIONS:
 				return ((InternalEList<?>)getInTransitions()).basicRemove(otherEnd, msgs);
+			case InternalsmPackage.STATE__CURRENT_VISITORS:
+				return ((InternalEList<?>)getCurrentVisitors()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -189,6 +218,8 @@ public class StateImpl extends EObjectImpl implements State {
 				return getInTransitions();
 			case InternalsmPackage.STATE__LABEL:
 				return getLabel();
+			case InternalsmPackage.STATE__CURRENT_VISITORS:
+				return getCurrentVisitors();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,6 +244,10 @@ public class StateImpl extends EObjectImpl implements State {
 			case InternalsmPackage.STATE__LABEL:
 				setLabel((String)newValue);
 				return;
+			case InternalsmPackage.STATE__CURRENT_VISITORS:
+				getCurrentVisitors().clear();
+				getCurrentVisitors().addAll((Collection<? extends CurrentStateVisitor>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -234,6 +269,9 @@ public class StateImpl extends EObjectImpl implements State {
 			case InternalsmPackage.STATE__LABEL:
 				setLabel(LABEL_EDEFAULT);
 				return;
+			case InternalsmPackage.STATE__CURRENT_VISITORS:
+				getCurrentVisitors().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -252,6 +290,8 @@ public class StateImpl extends EObjectImpl implements State {
 				return inTransitions != null && !inTransitions.isEmpty();
 			case InternalsmPackage.STATE__LABEL:
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
+			case InternalsmPackage.STATE__CURRENT_VISITORS:
+				return currentVisitors != null && !currentVisitors.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

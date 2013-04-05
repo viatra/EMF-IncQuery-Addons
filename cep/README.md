@@ -11,18 +11,14 @@ For example codes see the test plugin: hu.bme.mit.incquery.cep.tests.
 
 TODO
 ----
-* change the multi-reference relationship between State and Transition types to EFeatureMaps
-* make sure model is loaded appropriately
 * integrate with VIATRA EVM
- * replace the evaluation logic in the EventModelManager with the generated IQ code (this will require modifications in the current architecture)
- * elaborate the execution chain of complex event patterns (atomic event from the source model --> atomic pattern on the CEP layer --> EVM rule --> modify the internal SM model -->... )
  * negotiate the interfaces used between the CEP layer and the EVM
+* facilitate multiple event processing strategies like chronicle, recent, unrestricted
 * handle ordered case with time windows
 * handle unordered case
- * either with hierarchical state machines (preferably),
- * or with generating every execution path of the state machine based on the operational semantics of the language
+ * either with hierarchical state machines,
+ * or with generating every execution path of the state machine based on the operational semantics of the language (preferably)
 * make the EventQueue thread-safe in order to enable higher performance via threading
-* facilitate multiple event processing strategies like chronicle, recent, unrestricted
 * enable definition of custom execution strategies
  * define semantics for that
  * implement the required API (the extension point mechanism could work here perfectly)

@@ -4,9 +4,15 @@ import "cep.meta"
 import "sm.meta"
 uses hu.bme.mit.incquery.cep.runtime.evaluation.*
 
-pattern finishedStateMachine(sm) {
-	StateMachine.currentState.label(sm, stateLabel);
-	check(stateLabel.equalsIgnoreCase("final"));
+pattern finishedStateMachine(sm : StateMachine) {
+	StateMachine.states(sm, state);
+	find finalState(state);
+	CurrentStateVisitor.currentState(_, state);
+}
+
+pattern finalState(s : State) {
+	State.label(s, label);
+	check(label.equalsIgnoreCase("final"));
 }
 
 pattern latestEvent(e) {
@@ -17,10 +23,12 @@ pattern transition(t) {
 	Transition(t);
 }
 
-pattern enabledTransition(t) {
+pattern preState(t, s) {
+	Transition.preState(t, s);
+}
+
+pattern enabledTransition(t : Transition) {
 	find latestEvent(e);
-	find transition(t);
-	Event.id(e, eventId);
-	Transition.guard.eventType(t, eventGuardType);
-	check((eventGuardType.canonicalName as String).equalsIgnoreCase(eventId));
+	Event.typeId(e, eventId);
+	Transition.guard.eventType(t, eventId);
 }

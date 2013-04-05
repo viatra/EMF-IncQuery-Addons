@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getOutTransitions <em>Out Transitions</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getInTransitions <em>In Transitions</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getLabel <em>Label</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getCurrentVisitors <em>Current Visitors</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,19 +27,19 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface State extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Out Transitions</b></em>' reference list.
+	 * Returns the value of the '<em><b>Out Transitions</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition}.
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPreState <em>Pre State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Out Transitions</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Out Transitions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Out Transitions</em>' reference list.
+	 * @return the value of the '<em>Out Transitions</em>' containment reference list.
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getState_OutTransitions()
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Transition#getPreState
-	 * @model opposite="preState"
+	 * @model opposite="preState" containment="true"
 	 *        extendedMetaData="wildcards='' name=''"
 	 * @generated
 	 */
@@ -87,5 +88,23 @@ public interface State extends EObject {
 	 * @generated
 	 */
 	void setLabel(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Current Visitors</b></em>' reference list.
+	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor}.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getCurrentState <em>Current State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Current Visitors</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Current Visitors</em>' reference list.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getState_CurrentVisitors()
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getCurrentState
+	 * @model opposite="currentState"
+	 * @generated
+	 */
+	EList<CurrentStateVisitor> getCurrentVisitors();
 
 } // State

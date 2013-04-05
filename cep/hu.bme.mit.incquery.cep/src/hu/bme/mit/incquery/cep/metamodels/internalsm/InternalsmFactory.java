@@ -103,6 +103,15 @@ public interface InternalsmFactory extends EFactory {
 	Action createAction();
 
 	/**
+	 * Returns a new object of class '<em>Current State Visitor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Current State Visitor</em>'.
+	 * @generated
+	 */
+	CurrentStateVisitor createCurrentStateVisitor();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

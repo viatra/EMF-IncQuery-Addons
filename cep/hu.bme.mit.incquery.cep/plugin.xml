@@ -24,11 +24,19 @@
       </matcher>
    </extension>
    <extension
-         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedStateMachine"
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finalState"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finalstate.FinalStateMatcherFactory$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finalState">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finalState"
          point="org.eclipse.incquery.runtime.xexpressionevaluator">
       <evaluator
-            evaluatorClass="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedstatemachine.FinishedStateMachineEvaluator1_1"
-            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedStateMachine_1_1">
+            evaluatorClass="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finalstate.FinalStateEvaluator1_1"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finalState_1_1">
       </evaluator>
    </extension>
    <extension
@@ -48,20 +56,20 @@
       </matcher>
    </extension>
    <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.preState"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.prestate.PreStateMatcherFactory$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.preState">
+      </matcher>
+   </extension>
+   <extension
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledTransition"
          point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledtransition.EnabledTransitionMatcherFactory$Provider"
             id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledTransition">
       </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledTransition"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledtransition.EnabledTransitionEvaluator1_1"
-            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledTransition_1_1">
-      </evaluator>
    </extension>
 
 </plugin>
