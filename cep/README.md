@@ -13,7 +13,7 @@ TODO
 ----
 * integrate with VIATRA EVM
  * negotiate the interfaces used between the CEP layer and the EVM
-* facilitate multiple event processing strategies like chronicle, recent, unrestricted
+* implement the common event processing strategies: chronicle, recent, unrestricted
 * handle ordered case with time windows
 * handle unordered case
  * either with hierarchical state machines,
