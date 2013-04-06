@@ -9,15 +9,16 @@ Implementation
 The implementation has a dedicated plugin: hu.bme.mit.incquery.cep.
 For example codes see the test plugin: hu.bme.mit.incquery.cep.tests.
 
-TODO
-----
+Roadmap/TODO
+------------
 * implement the common event processing strategies: chronicle, recent, unrestricted
 * handle ordered case with time windows
 * handle unordered case
  * either with hierarchical state machines,
  * or with generating every execution path of the state machine based on the operational semantics of the language (preferably)
-* make the EventQueue thread-safe in order to enable higher performance via threading
+* elaborate the JNect
 * negotiate the interfaces used between the CEP layer and the EVM
+* make the EventQueue thread-safe in order to enable higher performance via threading
 * enable definition of custom execution strategies
  * define semantics for that
  * implement the required API (the extension point mechanism could work here perfectly)
