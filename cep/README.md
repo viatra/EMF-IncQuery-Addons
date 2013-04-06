@@ -16,7 +16,7 @@ Roadmap/TODO
 * handle unordered case
  * either with hierarchical state machines,
  * or with generating every execution path of the state machine based on the operational semantics of the language (preferably)
-* elaborate the JNect
+* elaborate the JNect demo
 * negotiate the interfaces used between the CEP layer and the EVM
 * make the EventQueue thread-safe in order to enable higher performance via threading
 * enable definition of custom execution strategies
