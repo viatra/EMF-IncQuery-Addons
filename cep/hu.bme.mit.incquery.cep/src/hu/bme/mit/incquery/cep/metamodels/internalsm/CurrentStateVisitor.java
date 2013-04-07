@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getCurrentState <em>Current State</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getEventCollection <em>Event Collection</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,5 +49,33 @@ public interface CurrentStateVisitor extends EObject {
 	 * @generated
 	 */
 	void setCurrentState(State value);
+
+	/**
+	 * Returns the value of the '<em><b>Event Collection</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getCurrentStateVisitor <em>Current State Visitor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Event Collection</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Event Collection</em>' containment reference.
+	 * @see #setEventCollection(EventCollection)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getCurrentStateVisitor_EventCollection()
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getCurrentStateVisitor
+	 * @model opposite="currentStateVisitor" containment="true"
+	 * @generated
+	 */
+	EventCollection getEventCollection();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getEventCollection <em>Event Collection</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Event Collection</em>' containment reference.
+	 * @see #getEventCollection()
+	 * @generated
+	 */
+	void setEventCollection(EventCollection value);
 
 } // CurrentStateVisitor

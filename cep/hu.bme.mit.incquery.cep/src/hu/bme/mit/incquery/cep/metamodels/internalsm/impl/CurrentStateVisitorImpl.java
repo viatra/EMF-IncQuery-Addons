@@ -3,6 +3,7 @@
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.CurrentStateVisitorImpl#getCurrentState <em>Current State</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.CurrentStateVisitorImpl#getEventCollection <em>Event Collection</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +40,16 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 	 * @ordered
 	 */
 	protected State currentState;
+
+	/**
+	 * The cached value of the '{@link #getEventCollection() <em>Event Collection</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventCollection()
+	 * @generated
+	 * @ordered
+	 */
+	protected EventCollection eventCollection;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,6 +135,49 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EventCollection getEventCollection() {
+		return eventCollection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEventCollection(EventCollection newEventCollection, NotificationChain msgs) {
+		EventCollection oldEventCollection = eventCollection;
+		eventCollection = newEventCollection;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION, oldEventCollection, newEventCollection);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEventCollection(EventCollection newEventCollection) {
+		if (newEventCollection != eventCollection) {
+			NotificationChain msgs = null;
+			if (eventCollection != null)
+				msgs = ((InternalEObject)eventCollection).eInverseRemove(this, InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR, EventCollection.class, msgs);
+			if (newEventCollection != null)
+				msgs = ((InternalEObject)newEventCollection).eInverseAdd(this, InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR, EventCollection.class, msgs);
+			msgs = basicSetEventCollection(newEventCollection, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION, newEventCollection, newEventCollection));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -130,6 +185,10 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 				if (currentState != null)
 					msgs = ((InternalEObject)currentState).eInverseRemove(this, InternalsmPackage.STATE__CURRENT_VISITORS, State.class, msgs);
 				return basicSetCurrentState((State)otherEnd, msgs);
+			case InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION:
+				if (eventCollection != null)
+					msgs = ((InternalEObject)eventCollection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION, null, msgs);
+				return basicSetEventCollection((EventCollection)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -144,6 +203,8 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 		switch (featureID) {
 			case InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE:
 				return basicSetCurrentState(null, msgs);
+			case InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION:
+				return basicSetEventCollection(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -159,6 +220,8 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 			case InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE:
 				if (resolve) return getCurrentState();
 				return basicGetCurrentState();
+			case InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION:
+				return getEventCollection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -173,6 +236,9 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 		switch (featureID) {
 			case InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE:
 				setCurrentState((State)newValue);
+				return;
+			case InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION:
+				setEventCollection((EventCollection)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,6 +255,9 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 			case InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE:
 				setCurrentState((State)null);
 				return;
+			case InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION:
+				setEventCollection((EventCollection)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,6 +272,8 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 		switch (featureID) {
 			case InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE:
 				return currentState != null;
+			case InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION:
+				return eventCollection != null;
 		}
 		return super.eIsSet(featureID);
 	}

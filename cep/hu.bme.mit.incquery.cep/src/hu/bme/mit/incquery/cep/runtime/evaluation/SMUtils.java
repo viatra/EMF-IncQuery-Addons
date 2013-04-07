@@ -19,8 +19,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import javax.naming.OperationNotSupportedException;
-
 public final class SMUtils {
 	
 	public static boolean isEnabled(Transition transition, Event event) {
@@ -49,35 +47,36 @@ public final class SMUtils {
 	}
 	
 	public static void fireTransition(Transition t, boolean firedFromInitialState) {
+		InternalExecutionModel model = EventModelManager.getInstance().getModel();
+		
 		State nextState = t.getPostState();
 		
-		CopyOnWriteArrayList<CurrentStateVisitor> currentVisitors = new CopyOnWriteArrayList<CurrentStateVisitor>();
-		currentVisitors.addAll(t.getPreState().getCurrentVisitors());
+		// TODO this is where the processing strategy comes in
 		
-		for (CurrentStateVisitor c : currentVisitors) {
-			c.setCurrentState(nextState);
-		}
+		// CopyOnWriteArrayList<CurrentStateVisitor> currentVisitors = new
+		// CopyOnWriteArrayList<CurrentStateVisitor>();
+		// currentVisitors.addAll(t.getPreState().getCurrentVisitors());
+		//
+		// for (CurrentStateVisitor c : currentVisitors) {
+		// c.getEventCollection().addEvent(model.getLatestEvent());
+		// c.setCurrentState(nextState);
+		// }
+		//
+		
+		CurrentStateVisitor cvToMove = t.getPreState().getCurrentVisitors().get(0);
+		cvToMove.getEventCollection().addEvent(model.getLatestEvent());
+		cvToMove.setCurrentState(nextState);
 		
 		if (!firedFromInitialState) {
 			return;
 		}
 		
-		// create new current state visitor
-		try {
-			State initState = t.getPreState();
-			
-			InternalExecutionModel model = EventModelManager.getInstance().getModel();
-			
-			CurrentStateVisitor currentStateVisitor = InternalsmFactory.eINSTANCE.createCurrentStateVisitor();
-			currentStateVisitor.setCurrentState(initState);
-			model.getCurrentStateVisitors().add(currentStateVisitor);
-		} catch (OperationNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		State initState = t.getPreState();
+		
+		CurrentStateVisitor currentStateVisitor = InternalsmFactory.eINSTANCE.createCurrentStateVisitor();
+		currentStateVisitor.setCurrentState(initState);
+		model.getCurrentStateVisitors().add(currentStateVisitor);
+		
 	}
 	
 	// only for patterns using the ORDERED operator without time window

@@ -1,6 +1,10 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledtransition.EnabledTransitionMatch;
@@ -12,6 +16,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -22,6 +27,8 @@ import org.eclipse.incquery.runtime.evm.specific.DefaultActivationLifeCycle;
 import org.eclipse.incquery.runtime.evm.specific.SimpleMatcherRuleSpecification;
 import org.eclipse.incquery.runtime.evm.specific.StatelessJob;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+
+import com.google.common.collect.Multimap;
 
 public class ModelHandlerRules {
 	private static ModelHandlerRules instance;
@@ -58,17 +65,28 @@ public class ModelHandlerRules {
 				StateMachine sm = match.getSm();
 				System.err.println("\tIQ: " + sm.getEventPattern().getId() + " MATCHED!");
 				
-				// for (State s : sm.getStates()) {
-				// if (s instanceof FinalState) {
-				// CopyOnWriteArrayList<CurrentStateVisitor> currentVisitors =
-				// new CopyOnWriteArrayList<CurrentStateVisitor>();
-				// currentVisitors.addAll(s.getCurrentVisitors());
-				// for (CurrentStateVisitor cv : currentVisitors) {
-				// s.getCurrentVisitors().remove(cv);
-				// }
-				// }
-				// }
+				for (State s : sm.getStates()) {
+					if (s instanceof FinalState) {
+						CopyOnWriteArrayList<CurrentStateVisitor> currentVisitors = new CopyOnWriteArrayList<CurrentStateVisitor>();
+						currentVisitors.addAll(s.getCurrentVisitors());
+						for (CurrentStateVisitor cv : currentVisitors) {
+							System.err.println("\tIQ: Events recorded by the CurrentStateVisitor: ");
+							Object recordedEvents = cv.getEventCollection().getRecordedEvents();
+							if (!(recordedEvents instanceof Multimap<?, ?>)) {
+								continue;
+							}
+							Multimap<String, Event> eventMap = (Multimap<String, Event>) cv.getEventCollection()
+									.getRecordedEvents();
+							for (Event event : eventMap.values()) {
+								System.err.println("\t\t" + event.getTypeId());
+							}
+							
+							s.getCurrentVisitors().remove(cv);
+						}
+					}
+				}
 			}
+			
 		};
 		
 		Set<Job<FinishedStateMachineMatch>> jobs = new HashSet<Job<FinishedStateMachineMatch>>();
@@ -78,6 +96,7 @@ public class ModelHandlerRules {
 				FinishedStateMachineMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
 		
 		return spec;
+		
 	}
 	public RuleSpecification<EnabledTransitionMatch> getEnabledTransitionsRule() throws IncQueryException {
 		IMatchProcessor<EnabledTransitionMatch> processor = new IMatchProcessor<EnabledTransitionMatch>() {

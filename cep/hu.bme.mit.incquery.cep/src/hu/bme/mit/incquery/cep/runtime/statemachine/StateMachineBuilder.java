@@ -12,6 +12,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.cep.model.custom.impl.EventCollection2;
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 
 import java.util.ArrayList;
@@ -67,6 +68,7 @@ public class StateMachineBuilder {
 		
 		CurrentStateVisitor currentStateVisitor = SM_FACTORY.createCurrentStateVisitor();
 		currentStateVisitor.setCurrentState(initState);
+		currentStateVisitor.setEventCollection(new EventCollection2());
 		model.getCurrentStateVisitors().add(currentStateVisitor);
 	}
 	private Transition createTransition(State preState, State postState, Guard guard) {

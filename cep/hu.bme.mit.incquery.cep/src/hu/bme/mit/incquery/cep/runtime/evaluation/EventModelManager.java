@@ -10,8 +10,6 @@ import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder;
 import java.util.List;
 import java.util.Map;
 
-import javax.naming.OperationNotSupportedException;
-
 import org.apache.log4j.Level;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
@@ -45,10 +43,7 @@ public class EventModelManager {
 		return instance;
 	}
 	
-	public static EventModelManager getInstance() throws OperationNotSupportedException {
-		if (instance == null) {
-			throw new OperationNotSupportedException();
-		}
+	public static EventModelManager getInstance() {
 		return instance;
 	}
 	

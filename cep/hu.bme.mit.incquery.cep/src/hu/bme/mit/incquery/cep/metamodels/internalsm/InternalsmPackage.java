@@ -498,13 +498,50 @@ public interface InternalsmPackage extends EPackage {
 	int CURRENT_STATE_VISITOR__CURRENT_STATE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Event Collection</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_STATE_VISITOR__EVENT_COLLECTION = 1;
+
+	/**
 	 * The number of structural features of the '<em>Current State Visitor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CURRENT_STATE_VISITOR_FEATURE_COUNT = 1;
+	int CURRENT_STATE_VISITOR_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventCollectionImpl <em>Event Collection</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventCollectionImpl
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getEventCollection()
+	 * @generated
+	 */
+	int EVENT_COLLECTION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Current State Visitor</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_COLLECTION__CURRENT_STATE_VISITOR = 0;
+
+	/**
+	 * The number of structural features of the '<em>Event Collection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_COLLECTION_FEATURE_COUNT = 1;
 
 
 	/**
@@ -795,6 +832,38 @@ public interface InternalsmPackage extends EPackage {
 	EReference getCurrentStateVisitor_CurrentState();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getEventCollection <em>Event Collection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Event Collection</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getEventCollection()
+	 * @see #getCurrentStateVisitor()
+	 * @generated
+	 */
+	EReference getCurrentStateVisitor_EventCollection();
+
+	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection <em>Event Collection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Event Collection</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection
+	 * @generated
+	 */
+	EClass getEventCollection();
+
+	/**
+	 * Returns the meta object for the container reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getCurrentStateVisitor <em>Current State Visitor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Current State Visitor</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getCurrentStateVisitor()
+	 * @see #getEventCollection()
+	 * @generated
+	 */
+	EReference getEventCollection_CurrentStateVisitor();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1051,6 +1120,32 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CURRENT_STATE_VISITOR__CURRENT_STATE = eINSTANCE.getCurrentStateVisitor_CurrentState();
+
+		/**
+		 * The meta object literal for the '<em><b>Event Collection</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CURRENT_STATE_VISITOR__EVENT_COLLECTION = eINSTANCE.getCurrentStateVisitor_EventCollection();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventCollectionImpl <em>Event Collection</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventCollectionImpl
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getEventCollection()
+		 * @generated
+		 */
+		EClass EVENT_COLLECTION = eINSTANCE.getEventCollection();
+
+		/**
+		 * The meta object literal for the '<em><b>Current State Visitor</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EVENT_COLLECTION__CURRENT_STATE_VISITOR = eINSTANCE.getEventCollection_CurrentStateVisitor();
 
 	}
 

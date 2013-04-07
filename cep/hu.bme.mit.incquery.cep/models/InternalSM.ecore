@@ -55,5 +55,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="CurrentStateVisitor">
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentState" eType="#//State"
         eOpposite="#//State/currentVisitors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventCollection" eType="#//EventCollection"
+        containment="true" eOpposite="#//EventCollection/currentStateVisitor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventCollection" abstract="true">
+    <eOperations name="getRecordedEvents" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    <eOperations name="addEvent" lowerBound="1">
+      <eParameters name="event" eType="ecore:EClass CEPMeta.ecore#//Event"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentStateVisitor" lowerBound="1"
+        eType="#//CurrentStateVisitor" eOpposite="#//CurrentStateVisitor/eventCollection"/>
   </eClassifiers>
 </ecore:EPackage>
