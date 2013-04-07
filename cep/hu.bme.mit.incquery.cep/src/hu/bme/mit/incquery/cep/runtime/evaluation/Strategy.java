@@ -10,5 +10,8 @@ package hu.bme.mit.incquery.cep.runtime.evaluation;
 //		the InitState, a new state machine shall be instantiated and initialized.
 //		This behavior could be specified here as well.
 public enum Strategy {
+	/**
+	 * Chronicle is the default behavior of event processing state machines.
+	 */
 	CHRONICLE, RECENT, UNRESTRICTED;
 }

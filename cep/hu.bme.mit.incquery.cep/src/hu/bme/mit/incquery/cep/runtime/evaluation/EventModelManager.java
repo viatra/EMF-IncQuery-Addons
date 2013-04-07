@@ -1,17 +1,16 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
-import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
-import hu.bme.mit.incquery.cep.runtime.statemachine.AtomicPatternBuilder;
-import hu.bme.mit.incquery.cep.runtime.statemachine.ComplexPatternBuilder;
+import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder;
 
 import java.util.List;
 import java.util.Map;
+
+import javax.naming.OperationNotSupportedException;
 
 import org.apache.log4j.Level;
 import org.eclipse.emf.common.notify.Adapter;
@@ -33,12 +32,27 @@ import org.eclipse.incquery.runtime.evm.specific.UpdateCompleteBasedScheduler.Up
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 public class EventModelManager {
+	private static EventModelManager instance;
 	private InternalExecutionModel model;
 	private IncQueryEngine engine;
 	private RuleEngine ruleEngine;
 	private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
 	
-	public EventModelManager(List<EventPattern> eventPatterns) {
+	public static EventModelManager getInstance(List<EventPattern> eventPatterns) {
+		if (instance == null) {
+			instance = new EventModelManager(eventPatterns);
+		}
+		return instance;
+	}
+	
+	public static EventModelManager getInstance() throws OperationNotSupportedException {
+		if (instance == null) {
+			throw new OperationNotSupportedException();
+		}
+		return instance;
+	}
+	
+	private EventModelManager(List<EventPattern> eventPatterns) {
 		model = SM_FACTORY.createInternalExecutionModel();
 		
 		Adapter adapter = new AdapterImpl() {
@@ -54,16 +68,10 @@ public class EventModelManager {
 		};
 		EventQueue.getInstance().eAdapters().add(adapter);
 		
-		ComplexPatternBuilder complexBuilder = new ComplexPatternBuilder(model);
-		AtomicPatternBuilder atomicBuilder = new AtomicPatternBuilder(model);
+		StateMachineBuilder smBuilder = new StateMachineBuilder(model);
 		
 		for (EventPattern eventPattern : eventPatterns) {
-			if (eventPattern instanceof AtomicEventPattern) {
-				atomicBuilder.buildStateMachine((AtomicEventPattern) eventPattern);
-			}
-			if (eventPattern instanceof ComplexEventPattern) {
-				complexBuilder.buildStateMachine((ComplexEventPattern) eventPattern);
-			}
+			smBuilder.buildStateMachine(eventPattern);
 		}
 		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;

@@ -2,6 +2,7 @@ package hu.bme.mit.incquery.cep.runtime.evaluation.queries
 
 import "cep.meta"
 import "sm.meta"
+import "http://www.eclipse.org/emf/2002/Ecore"
 uses hu.bme.mit.incquery.cep.runtime.evaluation.*
 
 pattern finishedStateMachine(sm : StateMachine) {
@@ -27,8 +28,19 @@ pattern preState(t, s) {
 	Transition.preState(t, s);
 }
 
+pattern currentStateVisitor(cv) {
+	CurrentStateVisitor(cv);
+}
+
+pattern isCurrentState(s : State) {
+	State.currentVisitors(s, cv);
+	find currentStateVisitor(cv);
+}
+
 pattern enabledTransition(t : Transition) {
 	find latestEvent(e);
 	Event.typeId(e, eventId);
 	Transition.guard.eventType(t, eventId);
+	Transition.preState(t, preState);
+	find isCurrentState(preState);
 }

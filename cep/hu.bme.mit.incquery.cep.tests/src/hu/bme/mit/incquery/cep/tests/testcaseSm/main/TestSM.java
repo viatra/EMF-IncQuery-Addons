@@ -51,11 +51,11 @@ public class TestSM {
 	public void test() throws InterruptedException, IncQueryException {
 		
 		List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
-		eventPatterns.add(bcPattern);
+		// eventPatterns.add(bcPattern);
 		eventPatterns.add(aPattern);
-		eventPatterns.add(abcPattern);
+		// eventPatterns.add(abcPattern);
 		
-		manager = new EventModelManager(eventPatterns);
+		manager = EventModelManager.getInstance(eventPatterns);
 		
 		System.err.println("DIAG: Test starting.\n");
 		Thread.sleep(1000l);
@@ -63,17 +63,20 @@ public class TestSM {
 		eventQueue.push(new A(source));
 		Thread.sleep(1000l);
 		
-		eventQueue.push(new B(source));
-		Thread.sleep(1000l);
-		
-		eventQueue.push(new C(source));
-		Thread.sleep(1000l);
+		// eventQueue.push(new B(source));
+		// Thread.sleep(1000l);
+		//
+		// eventQueue.push(new C(source));
+		// Thread.sleep(1000l);
 		
 		eventQueue.push(new A(source));
 		Thread.sleep(1000l);
 		
-		eventQueue.push(new C(source));
-		Thread.sleep(1000l);
+		// eventQueue.push(new B(source));
+		// Thread.sleep(1000l);
+		//
+		// eventQueue.push(new C(source));
+		// Thread.sleep(1000l);
 		
 		System.err.println("\nDIAG: Test finished.");
 	}

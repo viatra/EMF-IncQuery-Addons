@@ -1,5 +1,6 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation;
 
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledtransition.EnabledTransitionMatch;
@@ -56,10 +57,16 @@ public class ModelHandlerRules {
 			public void process(FinishedStateMachineMatch match) {
 				StateMachine sm = match.getSm();
 				System.err.println("\tIQ: " + sm.getEventPattern().getId() + " MATCHED!");
-				// if (sm.eContainer() instanceof InternalExecutionModel) {
-				// InternalExecutionModel model = (InternalExecutionModel)
-				// sm.eContainer();
-				// model.getStateMachines().remove(sm);
+				
+				// for (State s : sm.getStates()) {
+				// if (s instanceof FinalState) {
+				// CopyOnWriteArrayList<CurrentStateVisitor> currentVisitors =
+				// new CopyOnWriteArrayList<CurrentStateVisitor>();
+				// currentVisitors.addAll(s.getCurrentVisitors());
+				// for (CurrentStateVisitor cv : currentVisitors) {
+				// s.getCurrentVisitors().remove(cv);
+				// }
+				// }
 				// }
 			}
 		};
@@ -72,7 +79,6 @@ public class ModelHandlerRules {
 		
 		return spec;
 	}
-	
 	public RuleSpecification<EnabledTransitionMatch> getEnabledTransitionsRule() throws IncQueryException {
 		IMatchProcessor<EnabledTransitionMatch> processor = new IMatchProcessor<EnabledTransitionMatch>() {
 			
@@ -82,7 +88,11 @@ public class ModelHandlerRules {
 				StateMachine sm = (StateMachine) t.getPostState().eContainer();
 				System.err.println("\tIQ: enabled transition in SM for pattern "
 						+ sm.getEventPattern().getClass().getSimpleName());
-				SMUtils.fireTransition(t);
+				if (t.getPreState() instanceof InitState) {
+					SMUtils.fireTransition(t, true);
+				} else {
+					SMUtils.fireTransition(t, false);
+				}
 			}
 		};
 		
@@ -90,7 +100,7 @@ public class ModelHandlerRules {
 		jobs.add(new StatelessJob<EnabledTransitionMatch>(ActivationState.APPEARED, processor));
 		
 		SimpleMatcherRuleSpecification<EnabledTransitionMatch, EnabledTransitionMatcher> spec = new SimpleMatcherRuleSpecification<EnabledTransitionMatch, EnabledTransitionMatcher>(
-				EnabledTransitionMatcher.factory(), DefaultActivationLifeCycle.DEFAULT_NO_UPDATE, jobs);
+				EnabledTransitionMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
 		
 		return spec;
 	}

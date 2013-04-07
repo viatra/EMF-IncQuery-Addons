@@ -1,40 +1,43 @@
 package hu.bme.mit.incquery.cep.runtime.statemachine;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
-import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
+import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Action;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 
-public class ComplexPatternBuilder extends AbstractStateMachineBuilder<ComplexEventPattern> {
+import java.util.ArrayList;
+import java.util.List;
+
+public class StateMachineBuilder {
 	
-	public ComplexPatternBuilder(InternalExecutionModel model) {
-		super(model);
+	protected final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
+	protected InternalExecutionModel model;
+	
+	public StateMachineBuilder(InternalExecutionModel model) {
+		this.model = model;
 	}
 	
-	@Override
-	public void buildStateMachine(ComplexEventPattern complexEventPattern) {
+	public void buildStateMachine(EventPattern eventPattern) {
 		StateMachine sm = SM_FACTORY.createStateMachine();
 		InitState initState = SM_FACTORY.createInitState();
 		FinalState finalState = SM_FACTORY.createFinalState();
 		finalState.setLabel("final");
 		
 		Action action = SM_FACTORY.createAction();
-		action.setMsgToLog("\t\tCEP: Event pattern " + complexEventPattern.getId() + " recognized");
+		action.setMsgToLog("\t\tCEP: Event pattern " + eventPattern.getId() + " recognized");
 		finalState.getActions().add(action);
 		
 		// only for ORDERED w/o timewin
-		List<AtomicEventPattern> atomicEventPatterns = SMUtils.flattenComplexPatterns(complexEventPattern);
+		List<AtomicEventPattern> atomicEventPatterns = SMUtils.flattenComplexPatterns(eventPattern);
 		List<State> states = new ArrayList<State>();
 		states.add(initState);
 		
@@ -59,12 +62,11 @@ public class ComplexPatternBuilder extends AbstractStateMachineBuilder<ComplexEv
 		}
 		
 		sm.getStates().addAll(states);
+		sm.setEventPattern(eventPattern);
+		model.getStateMachines().add(sm);
 		
 		CurrentStateVisitor currentStateVisitor = SM_FACTORY.createCurrentStateVisitor();
 		currentStateVisitor.setCurrentState(initState);
-		sm.setEventPattern(complexEventPattern);
-		
-		model.getStateMachines().add(sm);
 		model.getCurrentStateVisitors().add(currentStateVisitor);
 	}
 	private Transition createTransition(State preState, State postState, Guard guard) {
