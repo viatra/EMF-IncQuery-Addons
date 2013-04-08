@@ -2,8 +2,13 @@ package hu.bme.mit.incquery.cep.runtime.evaluation;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
+import hu.bme.mit.incquery.cep.model.custom.impl.EventCollectionWithMultimap;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder;
 
@@ -35,6 +40,7 @@ public class EventModelManager {
 	private IncQueryEngine engine;
 	private RuleEngine ruleEngine;
 	private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
+	private Resource smModelResource;
 	
 	public static EventModelManager getInstance(List<EventPattern> eventPatterns) {
 		if (instance == null) {
@@ -73,7 +79,7 @@ public class EventModelManager {
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("cep", new XMIResourceFactoryImpl());
 		ResourceSet resourceSet = new ResourceSetImpl();
-		Resource smModelResource = resourceSet.createResource(URI.createURI("cep/sm.cep"));
+		smModelResource = resourceSet.createResource(URI.createURI("cep/sm.cep"));
 		smModelResource.getContents().add(model);
 		
 		try {
@@ -97,10 +103,26 @@ public class EventModelManager {
 	}
 	
 	private void refreshModel(Event event) {
+		model.setLatestEvent(null);
+		for (StateMachine sm : model.getStateMachines()) {
+			for (State s : sm.getStates()) {
+				if (s instanceof InitState) {
+					if (s.getCurrentVisitors().isEmpty()) {
+						CurrentStateVisitor cv = SM_FACTORY.createCurrentStateVisitor();
+						cv.setCurrentState(s);
+						cv.setEventCollection(new EventCollectionWithMultimap());
+						model.getCurrentStateVisitors().add(cv);
+					}
+				}
+			}
+		}
 		model.setLatestEvent(event);
 	}
-	
 	public InternalExecutionModel getModel() {
 		return model;
+	}
+	
+	public Resource getSmModelResource() {
+		return smModelResource;
 	}
 }

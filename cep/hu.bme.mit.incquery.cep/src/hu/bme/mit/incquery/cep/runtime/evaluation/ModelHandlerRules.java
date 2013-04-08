@@ -3,7 +3,6 @@ package hu.bme.mit.incquery.cep.runtime.evaluation;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
@@ -98,6 +97,7 @@ public class ModelHandlerRules {
 		return spec;
 		
 	}
+	
 	public RuleSpecification<EnabledTransitionMatch> getEnabledTransitionsRule() throws IncQueryException {
 		IMatchProcessor<EnabledTransitionMatch> processor = new IMatchProcessor<EnabledTransitionMatch>() {
 			
@@ -107,11 +107,7 @@ public class ModelHandlerRules {
 				StateMachine sm = (StateMachine) t.getPostState().eContainer();
 				System.err.println("\tIQ: enabled transition in SM for pattern "
 						+ sm.getEventPattern().getClass().getSimpleName());
-				if (t.getPreState() instanceof InitState) {
-					SMUtils.fireTransition(t, true);
-				} else {
-					SMUtils.fireTransition(t, false);
-				}
+				SMUtils.fireTransition(t);
 			}
 		};
 		

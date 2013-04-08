@@ -53,7 +53,7 @@ public class TestSM {
 		List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
 		eventPatterns.add(bcPattern);
 		eventPatterns.add(aPattern);
-		// eventPatterns.add(abcPattern);
+		eventPatterns.add(abcPattern);
 		
 		manager = EventModelManager.getInstance(eventPatterns);
 		
@@ -72,11 +72,11 @@ public class TestSM {
 		eventQueue.push(new A(source));
 		Thread.sleep(1000l);
 		
-		// eventQueue.push(new B(source));
-		// Thread.sleep(1000l);
-		//
-		// eventQueue.push(new C(source));
-		// Thread.sleep(1000l);
+		eventQueue.push(new B(source));
+		Thread.sleep(1000l);
+		
+		eventQueue.push(new C(source));
+		Thread.sleep(1000l);
 		
 		System.err.println("\nDIAG: Test finished.");
 	}

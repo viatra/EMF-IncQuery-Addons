@@ -9,7 +9,6 @@ import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 
@@ -17,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public final class SMUtils {
 	
@@ -46,9 +44,13 @@ public final class SMUtils {
 		return false;
 	}
 	
-	public static void fireTransition(Transition t, boolean firedFromInitialState) {
-		InternalExecutionModel model = EventModelManager.getInstance().getModel();
+	public static void fireTransition(Transition t) {
+		State preState = t.getPreState();
+		if (preState instanceof FinalState) {
+			return;
+		}
 		
+		InternalExecutionModel model = EventModelManager.getInstance().getModel();
 		State nextState = t.getPostState();
 		
 		// TODO this is where the processing strategy comes in
@@ -66,16 +68,6 @@ public final class SMUtils {
 		CurrentStateVisitor cvToMove = t.getPreState().getCurrentVisitors().get(0);
 		cvToMove.getEventCollection().addEvent(model.getLatestEvent());
 		cvToMove.setCurrentState(nextState);
-		
-		if (!firedFromInitialState) {
-			return;
-		}
-		
-		State initState = t.getPreState();
-		
-		CurrentStateVisitor currentStateVisitor = InternalsmFactory.eINSTANCE.createCurrentStateVisitor();
-		currentStateVisitor.setCurrentState(initState);
-		model.getCurrentStateVisitors().add(currentStateVisitor);
 		
 	}
 	

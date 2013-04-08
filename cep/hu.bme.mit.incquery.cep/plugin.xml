@@ -64,19 +64,11 @@
       </matcher>
    </extension>
    <extension
-         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.currentStateVisitor"
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByCSV"
          point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
-            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.currentstatevisitor.CurrentStateVisitorMatcherFactory$Provider"
-            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.currentStateVisitor">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.isCurrentState"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.iscurrentstate.IsCurrentStateMatcherFactory$Provider"
-            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.isCurrentState">
+            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventhandledbycsv.EventHandledByCSVMatcherFactory$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByCSV">
       </matcher>
    </extension>
    <extension

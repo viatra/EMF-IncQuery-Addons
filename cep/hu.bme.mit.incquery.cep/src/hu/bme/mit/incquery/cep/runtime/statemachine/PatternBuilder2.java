@@ -18,15 +18,17 @@ import java.util.List;
 
 public class PatternBuilder2 {
 	
-	protected final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
-	protected InternalExecutionModel model;
+	private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
+	private InternalExecutionModel model;
+	private List<AtomicEventPattern> flattenedAtomicEventPatterns;
+	private StateMachine sm;
 	
 	public PatternBuilder2(InternalExecutionModel model) {
 		this.model = model;
 	}
 	
 	public void buildStateMachine(ComplexEventPattern eventPattern) {
-		StateMachine sm = SM_FACTORY.createStateMachine();
+		sm = SM_FACTORY.createStateMachine();
 		InitState initState = SM_FACTORY.createInitState();
 		
 		Action action = SM_FACTORY.createAction();
@@ -34,14 +36,15 @@ public class PatternBuilder2 {
 		
 		sm.getStates().add(initState);
 		
-		List<AtomicEventPattern> flattenedAtomicEventPatterns = SMUtils.flattenComplexPatterns(eventPattern);
+		flattenedAtomicEventPatterns = SMUtils.flattenComplexPatterns(eventPattern);
 		List<State> states = new ArrayList<State>();
 		
+		// build initial trace
 		State latestState = initState;
 		
 		for (AtomicEventPattern ep : flattenedAtomicEventPatterns) {
 			if (!ep.equals(flattenedAtomicEventPatterns.get(flattenedAtomicEventPatterns.size() - 1))) {
-				State currentState = createState(ep);
+				State currentState = createState();
 				states.add(currentState);
 				
 				createTransition(latestState, currentState, createEventGuard(ep));
@@ -59,7 +62,29 @@ public class PatternBuilder2 {
 		}
 		
 		sm.getStates().addAll(states);
+		
+		State currentState = getFinalState();
+		while (currentState != initState && !getAvailableAtomicEventPatterns(currentState).isEmpty()) {
+			while (getAvailableAtomicEventPatterns(currentState).isEmpty()) {
+				currentState = stepBack(currentState);
+			}
+			
+			for (String nextEventType : getAvailableAtomicEventPatterns(currentState)) {
+				State nextState = findOrCreateState(currentState, nextEventType);
+				createTransition(currentState, nextState, createEventGuard(nextEventType));
+				currentState = nextState;
+			}
+		}
+		
 		model.getStateMachines().add(sm);
+	}
+	private State findOrCreateState(State state, String nextEventType) {
+		State foundState = findTrace(state, nextEventType);
+		if (foundState != null) {
+			return foundState;
+		}
+		
+		return createState();
 	}
 	
 	private FinalState createFinalState(AtomicEventPattern ep) {
@@ -68,6 +93,45 @@ public class PatternBuilder2 {
 		return finalState;
 	}
 	
+	private FinalState getFinalState() {
+		for (State state : sm.getStates()) {
+			if (state instanceof FinalState) {
+				return (FinalState) state;
+			}
+		}
+		return null;
+	}
+	
+	private State findTrace(State state, String nextEventType) {
+		List<String> events = getUsedAtomicEventPatterns(state);
+		events.add(nextEventType);
+		
+		return null;
+	}
+	private List<String> getUsedAtomicEventPatterns(State state) {
+		List<String> events = new ArrayList<String>();
+		State currentState = state;
+		while (!(currentState instanceof InitState)) {
+			String usedEvent = state.getInTransitions().get(0).getGuard().getEventType();
+			events.add(usedEvent);
+			currentState = state.getInTransitions().get(0).getPreState();
+		}
+		return events;
+	}
+	
+	private List<String> getAvailableAtomicEventPatterns(State state) {
+		List<String> events = new ArrayList<String>();
+		for (AtomicEventPattern ep : flattenedAtomicEventPatterns) {
+			if (!getUsedAtomicEventPatterns(state).contains(ep.getType())) {
+				for (Transition t : state.getOutTransitions()) {
+					if (!t.getGuard().getEventType().equalsIgnoreCase(ep.getType())) {
+						events.add(ep.getType());
+					}
+				}
+			}
+		}
+		return events;
+	}
 	private State stepBack(State state) {
 		return state.getInTransitions().get(0).getPreState();
 	}
@@ -80,7 +144,7 @@ public class PatternBuilder2 {
 		return t;
 	}
 	
-	private State createState(AtomicEventPattern atomicEventPattern) {
+	private State createState() {
 		State s = SM_FACTORY.createState();
 		return s;
 	}
@@ -91,7 +155,9 @@ public class PatternBuilder2 {
 		return g;
 	}
 	
-	private boolean navigateTo(List<AtomicEventPattern> pathElements) {
-		return false;
+	private Guard createEventGuard(String eventType) {
+		Guard g = SM_FACTORY.createGuard();
+		g.setEventType(eventType);
+		return g;
 	}
 }

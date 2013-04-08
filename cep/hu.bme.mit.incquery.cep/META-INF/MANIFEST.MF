@@ -6,11 +6,10 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: hu.bme.mit.incquery.cep.runtime,
- hu.bme.mit.incquery.cep.runtime.evaluation.queries.currentstatevisitor,
  hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledtransition,
+ hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventhandledbycsv,
  hu.bme.mit.incquery.cep.runtime.evaluation.queries.finalstate,
  hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedstatemachine,
- hu.bme.mit.incquery.cep.runtime.evaluation.queries.iscurrentstate,
  hu.bme.mit.incquery.cep.runtime.evaluation.queries.latestevent,
  hu.bme.mit.incquery.cep.runtime.evaluation.queries.prestate,
  hu.bme.mit.incquery.cep.runtime.evaluation.queries.transition

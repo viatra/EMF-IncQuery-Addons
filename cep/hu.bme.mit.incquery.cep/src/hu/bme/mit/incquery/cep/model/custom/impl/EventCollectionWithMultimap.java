@@ -6,7 +6,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventCollectionImpl;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 
-public class EventCollection2 extends EventCollectionImpl {
+public class EventCollectionWithMultimap extends EventCollectionImpl {
 	
 	private Multimap<String, Event> recordedEvents = ArrayListMultimap.create();
 	
