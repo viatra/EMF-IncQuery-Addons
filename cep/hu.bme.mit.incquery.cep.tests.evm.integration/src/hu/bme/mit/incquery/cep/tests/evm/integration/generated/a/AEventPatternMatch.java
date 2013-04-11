@@ -8,6 +8,12 @@ import hu.bme.mit.incquery.cep.runtime.api.IEventPatternMatch;
 public class AEventPatternMatch implements IEventPatternMatch {
 	
 	@Override
+	public EventPattern eventPattern() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
 	public Pattern pattern() {
 		// TODO Auto-generated method stub
 		return null;
@@ -63,12 +69,6 @@ public class AEventPatternMatch implements IEventPatternMatch {
 	
 	@Override
 	public String prettyPrint() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public EventPattern eventPattern() {
 		// TODO Auto-generated method stub
 		return null;
 	}

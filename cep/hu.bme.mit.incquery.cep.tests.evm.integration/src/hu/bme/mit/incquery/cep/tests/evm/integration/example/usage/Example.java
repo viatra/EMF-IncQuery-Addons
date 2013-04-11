@@ -10,6 +10,7 @@ import hu.bme.mit.incquery.cep.runtime.api.IEventPatternMatchProcessor;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedstatemachine.FinishedStateMachineMatch;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedstatemachine.FinishedStateMachineMatcher;
 import hu.bme.mit.incquery.cep.tests.evm.integration.generated.a.AEventPatternMatch;
+import hu.bme.mit.incquery.cep.tests.evm.integration.generated.a.AEventPatternMatcher;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -32,38 +33,16 @@ public class Example {
 			
 			@Override
 			public void process(AEventPatternMatch match) {
-				StateMachine sm = match.getSm();
-				System.err.println("\tIQ: " + sm.getEventPattern().getId() + " MATCHED!");
 				
-				for (State s : sm.getStates()) {
-					if (s instanceof FinalState) {
-						CopyOnWriteArrayList<CurrentStateVisitor> currentVisitors = new CopyOnWriteArrayList<CurrentStateVisitor>();
-						currentVisitors.addAll(s.getCurrentVisitors());
-						for (CurrentStateVisitor cv : currentVisitors) {
-							System.err.println("\tIQ: Events recorded by the CurrentStateVisitor: ");
-							Object recordedEvents = cv.getEventCollection().getRecordedEvents();
-							if (!(recordedEvents instanceof Multimap<?, ?>)) {
-								continue;
-							}
-							Multimap<String, Event> eventMap = (Multimap<String, Event>) cv.getEventCollection()
-									.getRecordedEvents();
-							for (Event event : eventMap.values()) {
-								System.err.println("\t\t" + event.getTypeId());
-							}
-							
-							s.getCurrentVisitors().remove(cv);
-						}
-					}
-				}
 			}
 			
 		};
 		
-		Set<Job<FinishedStateMachineMatch>> jobs = new HashSet<Job<FinishedStateMachineMatch>>();
-		jobs.add(new StatelessJob<FinishedStateMachineMatch>(ActivationState.APPEARED, processor));
+		Set<Job<AEventPatternMatch>> jobs = new HashSet<Job<AEventPatternMatch>>();
+		jobs.add(new StatelessJob<AEventPatternMatch>(ActivationState.APPEARED, processor));
 		
-		SimpleMatcherRuleSpecification<FinishedStateMachineMatch, FinishedStateMachineMatcher> spec = new SimpleMatcherRuleSpecification<FinishedStateMachineMatch, FinishedStateMachineMatcher>(
-				FinishedStateMachineMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
+		SimpleMatcherRuleSpecification<AEventPatternMatch, AEventPatternMatcher> spec = new SimpleMatcherRuleSpecification<AEventPatternMatch, AEventPatternMatcher>(
+				AEventPatternMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
 		
 		return spec;
 		
