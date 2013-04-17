@@ -3,6 +3,7 @@
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
+
 import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;

@@ -76,7 +76,7 @@ public interface CepPackage extends EPackage {
 	int EVENT_PATTERN__COMPOSITION_EVENTS = 0;
 
 	/**
-	 * The feature id for the '<em><b>State Machines</b></em>' reference list.
+	 * The feature id for the '<em><b>State Machines</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -122,7 +122,7 @@ public interface CepPackage extends EPackage {
 	int ATOMIC_EVENT_PATTERN__COMPOSITION_EVENTS = EVENT_PATTERN__COMPOSITION_EVENTS;
 
 	/**
-	 * The feature id for the '<em><b>State Machines</b></em>' reference list.
+	 * The feature id for the '<em><b>State Machines</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -177,7 +177,7 @@ public interface CepPackage extends EPackage {
 	int COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS = EVENT_PATTERN__COMPOSITION_EVENTS;
 
 	/**
-	 * The feature id for the '<em><b>State Machines</b></em>' reference list.
+	 * The feature id for the '<em><b>State Machines</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -347,10 +347,10 @@ public interface CepPackage extends EPackage {
 	EReference getEventPattern_CompositionEvents();
 
 	/**
-	 * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines <em>State Machines</em>}'.
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines <em>State Machines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>State Machines</em>'.
+	 * @return the meta object for the reference '<em>State Machines</em>'.
 	 * @see hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines()
 	 * @see #getEventPattern()
 	 * @generated
@@ -546,7 +546,7 @@ public interface CepPackage extends EPackage {
 		EReference EVENT_PATTERN__COMPOSITION_EVENTS = eINSTANCE.getEventPattern_CompositionEvents();
 
 		/**
-		 * The meta object literal for the '<em><b>State Machines</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>State Machines</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

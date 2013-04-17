@@ -543,6 +543,34 @@ public interface InternalsmPackage extends EPackage {
 	 */
 	int EVENT_COLLECTION_FEATURE_COUNT = 1;
 
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimewindowImpl <em>Timewindow</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimewindowImpl
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimewindow()
+	 * @generated
+	 */
+	int TIMEWINDOW = 11;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMEWINDOW__LENGTH = 0;
+
+	/**
+	 * The number of structural features of the '<em>Timewindow</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMEWINDOW_FEATURE_COUNT = 1;
+
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State <em>State</em>}'.
@@ -864,6 +892,27 @@ public interface InternalsmPackage extends EPackage {
 	EReference getEventCollection_CurrentStateVisitor();
 
 	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow <em>Timewindow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Timewindow</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow
+	 * @generated
+	 */
+	EClass getTimewindow();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow#getLength <em>Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Length</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow#getLength()
+	 * @see #getTimewindow()
+	 * @generated
+	 */
+	EAttribute getTimewindow_Length();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1146,6 +1195,24 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EVENT_COLLECTION__CURRENT_STATE_VISITOR = eINSTANCE.getEventCollection_CurrentStateVisitor();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimewindowImpl <em>Timewindow</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimewindowImpl
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimewindow()
+		 * @generated
+		 */
+		EClass TIMEWINDOW = eINSTANCE.getTimewindow();
+
+		/**
+		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIMEWINDOW__LENGTH = eINSTANCE.getTimewindow_Length();
 
 	}
 

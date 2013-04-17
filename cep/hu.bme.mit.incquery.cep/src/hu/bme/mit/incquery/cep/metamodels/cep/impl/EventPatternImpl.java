@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -52,14 +51,14 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 	protected EList<EventPattern> compositionEvents;
 
 	/**
-	 * The cached value of the '{@link #getStateMachines() <em>State Machines</em>}' reference list.
+	 * The cached value of the '{@link #getStateMachines() <em>State Machines</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStateMachines()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<StateMachine> stateMachines;
+	protected StateMachine stateMachines;
 
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -117,11 +116,59 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<StateMachine> getStateMachines() {
-		if (stateMachines == null) {
-			stateMachines = new EObjectWithInverseResolvingEList<StateMachine>(StateMachine.class, this, CepPackage.EVENT_PATTERN__STATE_MACHINES, InternalsmPackage.STATE_MACHINE__EVENT_PATTERN);
+	public StateMachine getStateMachines() {
+		if (stateMachines != null && stateMachines.eIsProxy()) {
+			InternalEObject oldStateMachines = (InternalEObject)stateMachines;
+			stateMachines = (StateMachine)eResolveProxy(oldStateMachines);
+			if (stateMachines != oldStateMachines) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CepPackage.EVENT_PATTERN__STATE_MACHINES, oldStateMachines, stateMachines));
+			}
 		}
 		return stateMachines;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StateMachine basicGetStateMachines() {
+		return stateMachines;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetStateMachines(StateMachine newStateMachines, NotificationChain msgs) {
+		StateMachine oldStateMachines = stateMachines;
+		stateMachines = newStateMachines;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CepPackage.EVENT_PATTERN__STATE_MACHINES, oldStateMachines, newStateMachines);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStateMachines(StateMachine newStateMachines) {
+		if (newStateMachines != stateMachines) {
+			NotificationChain msgs = null;
+			if (stateMachines != null)
+				msgs = ((InternalEObject)stateMachines).eInverseRemove(this, InternalsmPackage.STATE_MACHINE__EVENT_PATTERN, StateMachine.class, msgs);
+			if (newStateMachines != null)
+				msgs = ((InternalEObject)newStateMachines).eInverseAdd(this, InternalsmPackage.STATE_MACHINE__EVENT_PATTERN, StateMachine.class, msgs);
+			msgs = basicSetStateMachines(newStateMachines, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CepPackage.EVENT_PATTERN__STATE_MACHINES, newStateMachines, newStateMachines));
 	}
 
 	/**
@@ -150,12 +197,13 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStateMachines()).basicAdd(otherEnd, msgs);
+				if (stateMachines != null)
+					msgs = ((InternalEObject)stateMachines).eInverseRemove(this, InternalsmPackage.STATE_MACHINE__EVENT_PATTERN, StateMachine.class, msgs);
+				return basicSetStateMachines((StateMachine)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -171,7 +219,7 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 			case CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS:
 				return ((InternalEList<?>)getCompositionEvents()).basicRemove(otherEnd, msgs);
 			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
-				return ((InternalEList<?>)getStateMachines()).basicRemove(otherEnd, msgs);
+				return basicSetStateMachines(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -187,7 +235,8 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 			case CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS:
 				return getCompositionEvents();
 			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
-				return getStateMachines();
+				if (resolve) return getStateMachines();
+				return basicGetStateMachines();
 			case CepPackage.EVENT_PATTERN__ID:
 				return getId();
 		}
@@ -208,8 +257,7 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 				getCompositionEvents().addAll((Collection<? extends EventPattern>)newValue);
 				return;
 			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
-				getStateMachines().clear();
-				getStateMachines().addAll((Collection<? extends StateMachine>)newValue);
+				setStateMachines((StateMachine)newValue);
 				return;
 			case CepPackage.EVENT_PATTERN__ID:
 				setId((String)newValue);
@@ -230,7 +278,7 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 				getCompositionEvents().clear();
 				return;
 			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
-				getStateMachines().clear();
+				setStateMachines((StateMachine)null);
 				return;
 			case CepPackage.EVENT_PATTERN__ID:
 				setId(ID_EDEFAULT);
@@ -250,7 +298,7 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 			case CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS:
 				return compositionEvents != null && !compositionEvents.isEmpty();
 			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
-				return stateMachines != null && !stateMachines.isEmpty();
+				return stateMachines != null;
 			case CepPackage.EVENT_PATTERN__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}

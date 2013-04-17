@@ -26,7 +26,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Guard">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventType" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="timewindow" eType="ecore:EClass CEPMeta.ecore#//Timewindow"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timewindow" eType="#//Timewindow"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="#//State">
@@ -65,5 +65,8 @@
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentStateVisitor" lowerBound="1"
         eType="#//CurrentStateVisitor" eOpposite="#//CurrentStateVisitor/eventCollection"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Timewindow">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
 </ecore:EPackage>

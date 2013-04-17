@@ -83,5 +83,8 @@
         <genParameters ecoreParameter="InternalSM.ecore#//EventCollection/addEvent/event"/>
       </genOperations>
     </genClasses>
+    <genClasses ecoreClass="InternalSM.ecore#//Timewindow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//Timewindow/length"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -4,8 +4,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="EventPattern" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="compositionEvents" upperBound="-1"
         eType="#//EventPattern" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachines" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass InternalSM.ecore#//StateMachine" eOpposite="InternalSM.ecore#//StateMachine/eventPattern"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachines" eType="ecore:EClass InternalSM.ecore#//StateMachine"
+        eOpposite="InternalSM.ecore#//StateMachine/eventPattern"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicEventPattern" eSuperTypes="#//EventPattern">

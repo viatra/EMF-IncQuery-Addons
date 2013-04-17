@@ -2,8 +2,6 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

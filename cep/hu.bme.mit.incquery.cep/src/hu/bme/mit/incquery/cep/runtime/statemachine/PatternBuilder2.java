@@ -108,6 +108,7 @@ public class PatternBuilder2 {
 		
 		return null;
 	}
+	
 	private List<String> getUsedAtomicEventPatterns(State state) {
 		List<String> events = new ArrayList<String>();
 		State currentState = state;
@@ -132,6 +133,7 @@ public class PatternBuilder2 {
 		}
 		return events;
 	}
+	
 	private State stepBack(State state) {
 		return state.getInTransitions().get(0).getPreState();
 	}

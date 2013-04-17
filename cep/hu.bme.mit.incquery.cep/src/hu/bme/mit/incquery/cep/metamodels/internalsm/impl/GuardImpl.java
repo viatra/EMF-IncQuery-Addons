@@ -2,10 +2,9 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
-
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;

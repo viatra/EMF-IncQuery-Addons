@@ -66,6 +66,7 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 			case InternalsmPackage.INTERNAL_EXECUTION_MODEL: return createInternalExecutionModel();
 			case InternalsmPackage.ACTION: return createAction();
 			case InternalsmPackage.CURRENT_STATE_VISITOR: return createCurrentStateVisitor();
+			case InternalsmPackage.TIMEWINDOW: return createTimewindow();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -169,6 +170,16 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 	public CurrentStateVisitor createCurrentStateVisitor() {
 		CurrentStateVisitorImpl currentStateVisitor = new CurrentStateVisitorImpl();
 		return currentStateVisitor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Timewindow createTimewindow() {
+		TimewindowImpl timewindow = new TimewindowImpl();
+		return timewindow;
 	}
 
 	/**

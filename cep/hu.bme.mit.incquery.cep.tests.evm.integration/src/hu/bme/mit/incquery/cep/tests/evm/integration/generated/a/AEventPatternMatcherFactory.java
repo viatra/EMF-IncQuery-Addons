@@ -1,5 +1,9 @@
 package hu.bme.mit.incquery.cep.tests.evm.integration.generated.a;
 
+import hu.bme.mit.incquery.cep.internal.Activator;
+import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
+
+import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcherFactory;
@@ -14,24 +18,42 @@ public class AEventPatternMatcherFactory extends BaseGeneratedMatcherFactory<AEv
 	
 	@Override
 	protected String getBundleName() {
-		// TODO Auto-generated method stub
-		return null;
+		return Activator.getDefault().getBundle().getSymbolicName();
 	}
 	
 	@Override
 	protected String patternName() {
-		// TODO Auto-generated method stub
-		return null;
+		return "hu.bme.mit.incquery.cep.tests.evm.integration.patterns.APattern";
 	}
 	
 	@Override
 	protected AEventPatternMatcher instantiate(IncQueryEngine engine) throws IncQueryException {
-		// TODO Auto-generated method stub
-		return null;
+		return new AEventPatternMatcher(engine);
 	}
 	
-	public static IMatcherFactory<AEventPatternMatcher> instance() {
-		// TODO Auto-generated method stub
+	public static IMatcherFactory<AEventPatternMatcher> instance() throws IncQueryException {
+		try {
+			return LazyHolder.INSTANCE;
+		} catch (ExceptionInInitializerError err) {
+			processInitializerError(err);
+			throw err;
+		}
+	}
+	
+	private static class LazyHolder {
+		private final static AEventPatternMatcherFactory INSTANCE = make();
+		
+		public static AEventPatternMatcherFactory make() {
+			try {
+				return new AEventPatternMatcherFactory();
+			} catch (IncQueryException ex) {
+				throw new RuntimeException(ex);
+			}
+			
+		}
+	}
+	
+	public EventPattern getEventPattern() {
 		return null;
 	}
 }

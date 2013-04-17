@@ -1,8 +1,8 @@
 package hu.bme.mit.incquery.cep.tests.evm.integration.generated.a;
 
-import hu.bme.mit.incquery.cep.runtime.api.IEventPatternMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
-public class AEventPatternProcessor implements IEventPatternMatchProcessor<AEventPatternMatch> {
+public class AEventPatternProcessor implements IMatchProcessor<AEventPatternMatch> {
 	
 	@Override
 	public void process(AEventPatternMatch match) {

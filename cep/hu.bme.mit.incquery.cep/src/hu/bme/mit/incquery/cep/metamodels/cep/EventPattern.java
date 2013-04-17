@@ -42,25 +42,35 @@ public interface EventPattern extends EObject {
 	 * @generated
 	 */
 	EList<EventPattern> getCompositionEvents();
-
+	
 	/**
-	 * Returns the value of the '<em><b>State Machines</b></em>' reference list.
-	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine}.
+	 * Returns the value of the '<em><b>State Machines</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern <em>Event Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>State Machines</em>' reference list isn't clear,
+	 * If the meaning of the '<em>State Machines</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>State Machines</em>' reference list.
+	 * @return the value of the '<em>State Machines</em>' reference.
+	 * @see #setStateMachines(StateMachine)
 	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getEventPattern_StateMachines()
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern
-	 * @model opposite="eventPattern" required="true"
+	 * @model opposite="eventPattern"
 	 * @generated
 	 */
-	EList<StateMachine> getStateMachines();
-
+	StateMachine getStateMachines();
+	
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines <em>State Machines</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>State Machines</em>' reference.
+	 * @see #getStateMachines()
+	 * @generated
+	 */
+	void setStateMachines(StateMachine value);
+	
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -76,7 +86,7 @@ public interface EventPattern extends EObject {
 	 * @generated
 	 */
 	String getId();
-
+	
 	/**
 	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -86,5 +96,5 @@ public interface EventPattern extends EObject {
 	 * @generated
 	 */
 	void setId(String value);
-
+	
 } // EventPattern
