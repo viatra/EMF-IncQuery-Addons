@@ -2,6 +2,7 @@ package hu.bme.mit.incquery.cep.tests.evm.integration.example.usage;
 
 import hu.bme.mit.incquery.cep.tests.evm.integration.generated.a.AEventPatternMatch;
 import hu.bme.mit.incquery.cep.tests.evm.integration.generated.a.AEventPatternMatcher;
+import hu.bme.mit.incquery.cep.tests.evm.integration.generated.a.AEventPatternProcessor;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,15 +17,8 @@ import org.eclipse.incquery.runtime.evm.specific.StatelessJob;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 public class Example {
-	public RuleSpecification<AEventPatternMatch> getFinishedStateMachineRule() throws IncQueryException {
-		IMatchProcessor<AEventPatternMatch> processor = new IMatchProcessor<AEventPatternMatch>() {
-			
-			@Override
-			public void process(AEventPatternMatch match) {
-				
-			}
-			
-		};
+	public static RuleSpecification<AEventPatternMatch> getAPatternMatchRule() throws IncQueryException {
+		IMatchProcessor<AEventPatternMatch> processor = new AEventPatternProcessor();
 		
 		Set<Job<AEventPatternMatch>> jobs = new HashSet<Job<AEventPatternMatch>>();
 		jobs.add(new StatelessJob<AEventPatternMatch>(ActivationState.APPEARED, processor));

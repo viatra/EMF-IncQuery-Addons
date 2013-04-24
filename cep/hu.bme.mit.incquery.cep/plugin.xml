@@ -3,19 +3,6 @@
 <plugin>
 
    <extension
-         point="org.eclipse.emf.ecore.generated_package">
-      <package
-            genModel="models/cepsm.genmodel"
-            uri="cep.meta"
-            class="hu.bme.mit.incquery.cep.metamodels.cep.CepPackage">
-      </package>
-      <package
-            genModel="models/cepsm.genmodel"
-            uri="sm.meta"
-            class="hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage">
-      </package>
-   </extension>
-   <extension
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedStateMachine"
          point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher

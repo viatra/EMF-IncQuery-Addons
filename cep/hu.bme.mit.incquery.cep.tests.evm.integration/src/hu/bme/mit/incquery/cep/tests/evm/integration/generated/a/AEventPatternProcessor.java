@@ -6,7 +6,7 @@ public class AEventPatternProcessor implements IMatchProcessor<AEventPatternMatc
 	
 	@Override
 	public void process(AEventPatternMatch match) {
-		// TODO Auto-generated method stub
+		System.out.println("A EVENT PATTERN RECOGNIZED");
 		
 	}
 }

@@ -10,6 +10,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.model.custom.impl.EventCollectionWithMultimap;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
+import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder2;
 import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder;
 
 import java.util.List;
@@ -69,7 +70,8 @@ public class EventModelManager {
 		};
 		EventQueue.getInstance().eAdapters().add(adapter);
 		
-		StateMachineBuilder smBuilder = new StateMachineBuilder(model);
+		// StateMachineBuilder smBuilder = new StateMachineBuilder(model);
+		StateMachineBuilder2 smBuilder = new StateMachineBuilder2(model);
 		
 		for (EventPattern eventPattern : eventPatterns) {
 			smBuilder.buildStateMachine(eventPattern);
@@ -88,7 +90,7 @@ public class EventModelManager {
 					.getIQBaseSchedulerFactory(engine);
 			ruleEngine = EventDrivenVM.createExecutionSchema(engine, schedulerFactory);
 			registerModelHandlerRules();
-			engine.getLogger().setLevel(Level.DEBUG);
+			// engine.getLogger().setLevel(Level.DEBUG);
 		} catch (IncQueryException e) {
 			// TODO handle error
 			e.printStackTrace();

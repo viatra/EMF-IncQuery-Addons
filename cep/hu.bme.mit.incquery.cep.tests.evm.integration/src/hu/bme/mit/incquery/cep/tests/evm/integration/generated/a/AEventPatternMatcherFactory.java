@@ -3,7 +3,6 @@ package hu.bme.mit.incquery.cep.tests.evm.integration.generated.a;
 import hu.bme.mit.incquery.cep.internal.Activator;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 
-import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcherFactory;

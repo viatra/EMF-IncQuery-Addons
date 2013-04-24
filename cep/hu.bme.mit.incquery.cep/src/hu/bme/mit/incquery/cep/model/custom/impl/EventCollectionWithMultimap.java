@@ -3,12 +3,12 @@ package hu.bme.mit.incquery.cep.model.custom.impl;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventCollectionImpl;
 
-import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Multimap;
 
 public class EventCollectionWithMultimap extends EventCollectionImpl {
 	
-	private Multimap<String, Event> recordedEvents = ArrayListMultimap.create();
+	private Multimap<String, Event> recordedEvents = LinkedListMultimap.create();
 	
 	@Override
 	public Multimap<String, Event> getRecordedEvents() {
