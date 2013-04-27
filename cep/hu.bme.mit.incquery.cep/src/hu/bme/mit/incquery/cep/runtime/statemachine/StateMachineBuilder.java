@@ -18,6 +18,12 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @deprecated Use {@link StateMachineBuilder2} instead.
+ * @author Istvan David
+ *
+ */
+@Deprecated
 public class StateMachineBuilder {
 	
 	protected final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;

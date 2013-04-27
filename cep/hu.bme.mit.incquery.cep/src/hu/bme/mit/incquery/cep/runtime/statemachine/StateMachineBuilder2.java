@@ -44,7 +44,6 @@ public class StateMachineBuilder2 {
 		sm.setEventPattern(eventPattern);
 		model.getStateMachines().add(sm);
 	}
-	
 	private void buildAlternativeTraces() {
 		State currentState = finalState;
 		

@@ -2,21 +2,17 @@ package hu.bme.mit.incquery.cep.runtime.evaluation;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
-import hu.bme.mit.incquery.cep.model.custom.impl.EventCollectionWithMultimap;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
+import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.EventProcessingStrategyFactory;
+import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.IEventProcessingStrategy;
+import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
 import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder2;
-import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder;
 
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Level;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
@@ -42,10 +38,22 @@ public class EventModelManager {
 	private RuleEngine ruleEngine;
 	private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
 	private Resource smModelResource;
+	private IEventProcessingStrategy strategy;
 	
+	public static EventModelManager getInstance(List<EventPattern> eventPatterns, Strategy strategy) {
+		if (instance == null) {
+			instance = new EventModelManager(eventPatterns, strategy);
+		}
+		return instance;
+	}
+	
+	/**
+	 * @deprecated Use {@link EventModelManager}{@link #getInstance(List, Strategy)} instead
+	 */
+	@Deprecated
 	public static EventModelManager getInstance(List<EventPattern> eventPatterns) {
 		if (instance == null) {
-			instance = new EventModelManager(eventPatterns);
+			instance = new EventModelManager(eventPatterns, Strategy.getDefault());
 		}
 		return instance;
 	}
@@ -54,8 +62,9 @@ public class EventModelManager {
 		return instance;
 	}
 	
-	private EventModelManager(List<EventPattern> eventPatterns) {
+	private EventModelManager(List<EventPattern> eventPatterns, Strategy strategy) {
 		model = SM_FACTORY.createInternalExecutionModel();
+		this.strategy = EventProcessingStrategyFactory.getStrategy(strategy);
 		
 		Adapter adapter = new AdapterImpl() {
 			@Override
@@ -106,18 +115,7 @@ public class EventModelManager {
 	
 	private void refreshModel(Event event) {
 		model.setLatestEvent(null);
-		for (StateMachine sm : model.getStateMachines()) {
-			for (State s : sm.getStates()) {
-				if (s instanceof InitState) {
-					if (s.getCurrentVisitors().isEmpty()) {
-						CurrentStateVisitor cv = SM_FACTORY.createCurrentStateVisitor();
-						cv.setCurrentState(s);
-						cv.setEventCollection(new EventCollectionWithMultimap());
-						model.getCurrentStateVisitors().add(cv);
-					}
-				}
-			}
-		}
+		strategy.handleVisitorCreation(model, SM_FACTORY);
 		model.setLatestEvent(event);
 	}
 	public InternalExecutionModel getModel() {
@@ -126,5 +124,9 @@ public class EventModelManager {
 	
 	public Resource getSmModelResource() {
 		return smModelResource;
+	}
+	
+	public IEventProcessingStrategy getStrategy() {
+		return strategy;
 	}
 }

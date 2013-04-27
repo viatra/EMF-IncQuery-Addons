@@ -5,11 +5,9 @@ import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 
 import java.util.ArrayList;
@@ -42,33 +40,6 @@ public final class SMUtils {
 			return true;
 		}
 		return false;
-	}
-	
-	public static void fireTransition(Transition t) {
-		State preState = t.getPreState();
-		if (preState instanceof FinalState) {
-			return;
-		}
-		
-		InternalExecutionModel model = EventModelManager.getInstance().getModel();
-		State nextState = t.getPostState();
-		
-		// TODO this is where the processing strategy comes in
-		
-		// CopyOnWriteArrayList<CurrentStateVisitor> currentVisitors = new
-		// CopyOnWriteArrayList<CurrentStateVisitor>();
-		// currentVisitors.addAll(t.getPreState().getCurrentVisitors());
-		//
-		// for (CurrentStateVisitor c : currentVisitors) {
-		// c.getEventCollection().addEvent(model.getLatestEvent());
-		// c.setCurrentState(nextState);
-		// }
-		//
-		
-		CurrentStateVisitor cvToMove = t.getPreState().getCurrentVisitors().get(0);
-		cvToMove.getEventCollection().addEvent(model.getLatestEvent());
-		cvToMove.setCurrentState(nextState);
-		
 	}
 	
 	// only for patterns using the ORDERED operator without time window

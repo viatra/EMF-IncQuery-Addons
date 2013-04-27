@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.runtime.evaluation;
+package hu.bme.mit.incquery.cep.runtime.evaluation.strategy;
 
 //TODO 	This would be a the perfect place to connect the single
 // 		evaluation strategies to the entire framework. This could
@@ -14,4 +14,8 @@ public enum Strategy {
 	 * Chronicle is the default behavior of event processing state machines.
 	 */
 	CHRONICLE, RECENT, UNRESTRICTED;
+	
+	public static Strategy getDefault() {
+		return CHRONICLE;
+	}
 }

@@ -107,7 +107,7 @@ public class ModelHandlerRules {
 				StateMachine sm = (StateMachine) t.getPostState().eContainer();
 				System.err.println("\tIQ: enabled transition in SM for pattern "
 						+ sm.getEventPattern().getClass().getSimpleName());
-				SMUtils.fireTransition(t);
+				EventModelManager.getInstance().getStrategy().fireTransition(t);
 			}
 		};
 		
