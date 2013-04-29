@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getCompositionEvents <em>Composition Events</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getStateMachines <em>State Machines</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getId <em>Id</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getHoldingTime <em>Holding Time</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,6 +80,26 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getHoldingTime() <em>Holding Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHoldingTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long HOLDING_TIME_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getHoldingTime() <em>Holding Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHoldingTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected long holdingTime = HOLDING_TIME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,6 +218,27 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public long getHoldingTime() {
+		return holdingTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHoldingTime(long newHoldingTime) {
+		long oldHoldingTime = holdingTime;
+		holdingTime = newHoldingTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CepPackage.EVENT_PATTERN__HOLDING_TIME, oldHoldingTime, holdingTime));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -239,6 +281,8 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 				return basicGetStateMachines();
 			case CepPackage.EVENT_PATTERN__ID:
 				return getId();
+			case CepPackage.EVENT_PATTERN__HOLDING_TIME:
+				return getHoldingTime();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -262,6 +306,9 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 			case CepPackage.EVENT_PATTERN__ID:
 				setId((String)newValue);
 				return;
+			case CepPackage.EVENT_PATTERN__HOLDING_TIME:
+				setHoldingTime((Long)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -283,6 +330,9 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 			case CepPackage.EVENT_PATTERN__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case CepPackage.EVENT_PATTERN__HOLDING_TIME:
+				setHoldingTime(HOLDING_TIME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -301,6 +351,8 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 				return stateMachines != null;
 			case CepPackage.EVENT_PATTERN__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case CepPackage.EVENT_PATTERN__HOLDING_TIME:
+				return holdingTime != HOLDING_TIME_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -317,6 +369,8 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
 		result.append(id);
+		result.append(", holdingTime: ");
+		result.append(holdingTime);
 		result.append(')');
 		return result.toString();
 	}

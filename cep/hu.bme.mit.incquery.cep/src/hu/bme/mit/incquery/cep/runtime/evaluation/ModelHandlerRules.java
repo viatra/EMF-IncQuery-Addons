@@ -22,9 +22,9 @@ import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.evm.api.ActivationState;
 import org.eclipse.incquery.runtime.evm.api.Job;
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification;
-import org.eclipse.incquery.runtime.evm.specific.DefaultActivationLifeCycle;
-import org.eclipse.incquery.runtime.evm.specific.SimpleMatcherRuleSpecification;
-import org.eclipse.incquery.runtime.evm.specific.StatelessJob;
+import org.eclipse.incquery.runtime.evm.specific.job.StatelessJob;
+import org.eclipse.incquery.runtime.evm.specific.lifecycle.DefaultActivationLifeCycle;
+import org.eclipse.incquery.runtime.evm.specific.rule.SimpleMatcherRuleSpecification;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 import com.google.common.collect.Multimap;

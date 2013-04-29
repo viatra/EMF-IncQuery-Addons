@@ -6,9 +6,9 @@ public class EventProcessingStrategyFactory {
 			case CHRONICLE :
 				return new ChronicleStrategy();
 			case RECENT :
-				return new RecentStrategy();
+				return null; // return new RecentStrategy();
 			case UNRESTRICTED :
-				return new UnrestrictedStrategy();
+				return null; // return new UnrestrictedStrategy();
 			default :
 				return null; // shall not happen
 		}

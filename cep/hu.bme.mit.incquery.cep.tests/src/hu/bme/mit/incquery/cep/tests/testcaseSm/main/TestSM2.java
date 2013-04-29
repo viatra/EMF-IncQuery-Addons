@@ -7,7 +7,8 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.A;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.B;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.C;
-import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.ABC_Pattern;
+import hu.bme.mit.incquery.cep.tests.testcaseSm.events.D;
+import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.DABC_Pattern_MIXED;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,21 +22,21 @@ public class TestSM2 {
 	DefaultRealm realm;
 	EventQueue eventQueue;
 	IEventSource source;
-	ABC_Pattern abcPattern;
+	DABC_Pattern_MIXED dabcPattern;
 	EventModelManager manager;
 	
 	@Before
 	public void setUp() {
 		realm = new DefaultRealm();
 		eventQueue = EventQueue.getInstance();
-		abcPattern = new ABC_Pattern();
+		dabcPattern = new DABC_Pattern_MIXED();
 	}
 	
 	@After
 	public void tearDown() {
 		realm.dispose();
 		eventQueue = null;
-		abcPattern = null;
+		dabcPattern = null;
 		manager = null;
 	}
 	
@@ -43,11 +44,14 @@ public class TestSM2 {
 	public void test() throws InterruptedException, IncQueryException {
 		
 		List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
-		eventPatterns.add(abcPattern);
+		eventPatterns.add(dabcPattern);
 		
 		manager = EventModelManager.getInstance(eventPatterns);
 		
 		System.err.println("DIAG: Test starting.\n");
+		Thread.sleep(1000l);
+		
+		eventQueue.push(new D(source));
 		Thread.sleep(1000l);
 		
 		eventQueue.push(new B(source));

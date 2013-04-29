@@ -23,16 +23,6 @@ public class ChronicleStrategy implements IEventProcessingStrategy {
 		InternalExecutionModel model = EventModelManager.getInstance().getModel();
 		State nextState = t.getPostState();
 		
-		// CopyOnWriteArrayList<CurrentStateVisitor> currentVisitors = new
-		// CopyOnWriteArrayList<CurrentStateVisitor>();
-		// currentVisitors.addAll(t.getPreState().getCurrentVisitors());
-		//
-		// for (CurrentStateVisitor c : currentVisitors) {
-		// c.getEventCollection().addEvent(model.getLatestEvent());
-		// c.setCurrentState(nextState);
-		// }
-		//
-		
 		CurrentStateVisitor cvToMove = t.getPreState().getCurrentVisitors().get(0);
 		cvToMove.getEventCollection().addEvent(model.getLatestEvent());
 		cvToMove.setCurrentState(nextState);

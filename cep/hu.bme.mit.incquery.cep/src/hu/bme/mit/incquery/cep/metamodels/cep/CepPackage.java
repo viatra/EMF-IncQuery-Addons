@@ -94,13 +94,22 @@ public interface CepPackage extends EPackage {
 	int EVENT_PATTERN__ID = 2;
 
 	/**
+	 * The feature id for the '<em><b>Holding Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_PATTERN__HOLDING_TIME = 3;
+
+	/**
 	 * The number of structural features of the '<em>Event Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_PATTERN_FEATURE_COUNT = 3;
+	int EVENT_PATTERN_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.AtomicEventPatternImpl <em>Atomic Event Pattern</em>}' class.
@@ -138,6 +147,15 @@ public interface CepPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATOMIC_EVENT_PATTERN__ID = EVENT_PATTERN__ID;
+
+	/**
+	 * The feature id for the '<em><b>Holding Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATOMIC_EVENT_PATTERN__HOLDING_TIME = EVENT_PATTERN__HOLDING_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -193,6 +211,15 @@ public interface CepPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPLEX_EVENT_PATTERN__ID = EVENT_PATTERN__ID;
+
+	/**
+	 * The feature id for the '<em><b>Holding Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_EVENT_PATTERN__HOLDING_TIME = EVENT_PATTERN__HOLDING_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -367,6 +394,17 @@ public interface CepPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEventPattern_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getHoldingTime <em>Holding Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Holding Time</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getHoldingTime()
+	 * @see #getEventPattern()
+	 * @generated
+	 */
+	EAttribute getEventPattern_HoldingTime();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern <em>Atomic Event Pattern</em>}'.
@@ -560,6 +598,14 @@ public interface CepPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EVENT_PATTERN__ID = eINSTANCE.getEventPattern_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Holding Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EVENT_PATTERN__HOLDING_TIME = eINSTANCE.getEventPattern_HoldingTime();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.AtomicEventPatternImpl <em>Atomic Event Pattern</em>}' class.

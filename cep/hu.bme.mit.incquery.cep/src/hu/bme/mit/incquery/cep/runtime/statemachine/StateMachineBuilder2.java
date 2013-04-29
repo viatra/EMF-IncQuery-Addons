@@ -1,6 +1,8 @@
 package hu.bme.mit.incquery.cep.runtime.statemachine;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
+import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
+import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Action;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
@@ -16,6 +18,8 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.logging.impl.AvalonLogger;
+
 public class StateMachineBuilder2 {
 	
 	private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
@@ -25,66 +29,28 @@ public class StateMachineBuilder2 {
 	private FinalState finalState;
 	private Action action;
 	private StateMachine sm;
+	private EventPattern rootPattern;
 	
-	public StateMachineBuilder2(InternalExecutionModel model) {
+	public StateMachineBuilder2(InternalExecutionModel model, EventPattern rootPattern) {
 		this.model = model;
+		this.rootPattern = rootPattern;
 	}
 	
-	public void buildStateMachine(EventPattern eventPattern) {
+	public void buildStateMachine() {
 		sm = SM_FACTORY.createStateMachine();
 		
 		action = SM_FACTORY.createAction();
-		action.setMsgToLog("\t\tCEP: Event pattern " + eventPattern.getId() + " recognized");
+		action.setMsgToLog("\t\tCEP: Event pattern " + rootPattern.getId() + " recognized");
 		
-		flattenedAtomicEventPatterns = SMUtils.flattenComplexPatterns(eventPattern);
+		flattenedAtomicEventPatterns = SMUtils.flattenComplexPatterns(rootPattern);
 		
 		buildInitialTrace();
 		buildAlternativeTraces();
 		
-		sm.setEventPattern(eventPattern);
+		sm.setEventPattern(rootPattern);
 		model.getStateMachines().add(sm);
 	}
-	private void buildAlternativeTraces() {
-		State currentState = finalState;
-		
-		while (!(currentState.equals(initState) && getAvailableAtomicEventPatterns(currentState).isEmpty())) {
-			if (currentState instanceof FinalState) {
-				currentState = stepBack(currentState);
-				continue;
-			}
-			
-			List<State> states = new ArrayList<State>();
-			
-			while (getAvailableAtomicEventPatterns(currentState).isEmpty()) {
-				currentState = stepBack(currentState);
-				if (currentState.equals(initState) && getAvailableAtomicEventPatterns(currentState).isEmpty()) {
-					return;
-				}
-			}
-			
-			List<String> availableAtomicEventPatterns = new ArrayList<String>();
-			availableAtomicEventPatterns.addAll(getAvailableAtomicEventPatterns(currentState));
-			
-			while (!availableAtomicEventPatterns.isEmpty()) {
-				String nextEventType = getAvailableAtomicEventPatterns(currentState).get(0);
-				
-				State foundState = findTrace(currentState, nextEventType);
-				if (foundState == null) {
-					State nextState = SM_FACTORY.createState();
-					states.add(nextState);
-					createTransition(currentState, nextState, createEventGuard(nextEventType));
-					currentState = nextState;
-					availableAtomicEventPatterns = getAvailableAtomicEventPatterns(currentState);
-				} else if (foundState != null) {
-					State nextState = foundState;
-					createTransition(currentState, nextState, createEventGuard(nextEventType));
-					availableAtomicEventPatterns.remove(nextEventType);
-				}
-			}
-			
-			sm.getStates().addAll(states);
-		}
-	}
+	
 	private void buildInitialTrace() {
 		initState = SM_FACTORY.createInitState();
 		sm.getStates().add(initState);
@@ -114,6 +80,47 @@ public class StateMachineBuilder2 {
 		sm.getStates().addAll(states);
 	}
 	
+	private void buildAlternativeTraces() {
+		State currentState = finalState;
+		
+		while (!(currentState.equals(initState) && getAvailableAtomicEventPatterns(currentState).isEmpty())) {
+			if (currentState instanceof FinalState) {
+				currentState = stepBack(currentState);
+			}
+			
+			List<State> states = new ArrayList<State>();
+			List<String> availableAtomicEventPatterns = getAvailableAtomicEventPatterns(currentState);
+			
+			while (availableAtomicEventPatterns.isEmpty()) {
+				currentState = stepBack(currentState);
+				availableAtomicEventPatterns = getAvailableAtomicEventPatterns(currentState);
+				if (currentState.equals(initState)) {
+					return;
+				}
+			}
+			
+			availableAtomicEventPatterns = getAvailableAtomicEventPatterns(currentState);
+			
+			while (!availableAtomicEventPatterns.isEmpty()) {
+				String nextEventType = getAvailableAtomicEventPatterns(currentState).get(0);
+				
+				State foundState = findTrace(currentState, nextEventType);
+				if (foundState == null) {
+					State nextState = SM_FACTORY.createState();
+					states.add(nextState);
+					createTransition(currentState, nextState, createEventGuard(nextEventType));
+					currentState = nextState;
+					availableAtomicEventPatterns = getAvailableAtomicEventPatterns(currentState);
+				} else if (foundState != null) {
+					State nextState = foundState;
+					createTransition(currentState, nextState, createEventGuard(nextEventType));
+					availableAtomicEventPatterns.remove(nextEventType);
+				}
+			}
+			
+			sm.getStates().addAll(states);
+		}
+	}
 	private FinalState createFinalState(AtomicEventPattern ep) {
 		FinalState finalState = SM_FACTORY.createFinalState();
 		finalState.setLabel("final");
@@ -157,13 +164,102 @@ public class StateMachineBuilder2 {
 		List<String> events = new ArrayList<String>();
 		
 		for (AtomicEventPattern ep : flattenedAtomicEventPatterns) {
-			if (!getUsedAtomicEventPatterns(state).contains(ep.getType())) {
-				if (!appearsOnOutTransition(ep.getType(), state)) {
-					events.add(ep.getType());
-				}
+			if (isAvailable(ep, state)) {
+				events.add(ep.getType());
 			}
 		}
 		return events;
+	}
+	
+	private boolean isAvailable(AtomicEventPattern ep, State state) {
+		if (appearsOnOutTransition(ep.getType(), state) || getUsedAtomicEventPatterns(state).contains(ep.getType())) {
+			return false;
+		}
+		
+		if (checkPrerequisites(ep, state)) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	private boolean isRootPattern(EventPattern pattern) {
+		if (pattern.getId().equals(rootPattern.getId())) {
+			return true;
+		}
+		return false;
+	}
+	
+	private boolean checkPrerequisites(EventPattern pattern, State state) {
+		if (pattern.eContainer() instanceof AtomicEventPattern) {
+			return false;
+		}
+		
+		ComplexEventPattern cePattern = (ComplexEventPattern) pattern.eContainer();
+		
+		while (true) {
+			if (isOrdered(cePattern)) {
+				List<EventPattern> compositionEvents = cePattern.getCompositionEvents();
+				int patternPosition = getPatternPositionInContainerPattern(pattern);
+				
+				if (patternPosition == 0 && !isRootPattern(cePattern)) {
+					continue;
+				}
+				
+				for (int i = 0; i < patternPosition; i++) {
+					EventPattern patternToCheck = compositionEvents.get(i);
+					if (patternToCheck instanceof AtomicEventPattern) {
+						if (!getUsedAtomicEventPatterns(state)
+								.contains(((AtomicEventPattern) patternToCheck).getType())) {
+							return false;
+						}
+					}
+					// if (!checkSubTree(compositionEvents.get(i - 1), state)) {
+					// return false;
+					// }
+				}
+			}
+			
+			if (isRootPattern(cePattern)) {
+				break;
+			}
+			pattern = cePattern;
+			cePattern = (ComplexEventPattern) cePattern.eContainer();
+		}
+		return true;
+	}
+	private int getPatternPositionInContainerPattern(EventPattern patternToFind) {
+		if (isRootPattern(patternToFind)) {
+			return 0;
+		}
+		ComplexEventPattern container = (ComplexEventPattern) patternToFind.eContainer();
+		int patternPosition = 0;
+		
+		for (EventPattern ep : container.getCompositionEvents()) {
+			if (ep.equals(patternToFind)) {
+				break;
+			}
+			patternPosition++;
+		}
+		
+		return patternPosition;
+	}
+	
+	private boolean checkSubTree(EventPattern precedingCompositionEvent, State state) {
+		List<AtomicEventPattern> flattenedPrecedingPatterns = new ArrayList<AtomicEventPattern>();
+		flattenedPrecedingPatterns.addAll(SMUtils.flattenComplexPatterns(precedingCompositionEvent));
+		
+		for (EventPattern ep : flattenedPrecedingPatterns) {
+			flattenedPrecedingPatterns.addAll(SMUtils.flattenComplexPatterns(ep));
+		}
+		
+		for (AtomicEventPattern ap : flattenedPrecedingPatterns) {
+			if (!getUsedAtomicEventPatterns(state).contains(ap)) {
+				return false;
+			}
+		}
+		
+		return true;
 	}
 	
 	private boolean appearsOnOutTransition(String eventType, State state) {
@@ -201,5 +297,21 @@ public class StateMachineBuilder2 {
 		Guard g = SM_FACTORY.createGuard();
 		g.setEventType(eventType);
 		return g;
+	}
+	
+	private boolean isOrdered(ComplexEventPattern cePattern) {
+		if (cePattern.getOperator().equals(ComplexOperator.ORDERED)
+				|| cePattern.getOperator().equals(ComplexOperator.ORDERED_T)) {
+			return true;
+		}
+		return false;
+	}
+	
+	private boolean isUnordered(ComplexEventPattern cePattern) {
+		if (cePattern.getOperator().equals(ComplexOperator.UNORDERED)
+				|| cePattern.getOperator().equals(ComplexOperator.UNORDERED_T)) {
+			return true;
+		}
+		return false;
 	}
 }

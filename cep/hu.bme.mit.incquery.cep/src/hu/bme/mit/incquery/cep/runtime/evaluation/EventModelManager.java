@@ -27,8 +27,8 @@ import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.evm.api.EventDrivenVM;
 import org.eclipse.incquery.runtime.evm.api.RuleEngine;
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification;
-import org.eclipse.incquery.runtime.evm.specific.UpdateCompleteBasedScheduler;
-import org.eclipse.incquery.runtime.evm.specific.UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory;
+import org.eclipse.incquery.runtime.evm.specific.Schedulers;
+import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 public class EventModelManager {
@@ -79,11 +79,8 @@ public class EventModelManager {
 		};
 		EventQueue.getInstance().eAdapters().add(adapter);
 		
-		// StateMachineBuilder smBuilder = new StateMachineBuilder(model);
-		StateMachineBuilder2 smBuilder = new StateMachineBuilder2(model);
-		
 		for (EventPattern eventPattern : eventPatterns) {
-			smBuilder.buildStateMachine(eventPattern);
+			new StateMachineBuilder2(model, eventPattern).buildStateMachine();
 		}
 		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
@@ -95,8 +92,7 @@ public class EventModelManager {
 		
 		try {
 			engine = EngineManager.getInstance().getIncQueryEngine(resourceSet);
-			UpdateCompleteBasedSchedulerFactory schedulerFactory = UpdateCompleteBasedScheduler
-					.getIQBaseSchedulerFactory(engine);
+			UpdateCompleteBasedSchedulerFactory schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine);
 			ruleEngine = EventDrivenVM.createExecutionSchema(engine, schedulerFactory);
 			registerModelHandlerRules();
 			// engine.getLogger().setLevel(Level.DEBUG);

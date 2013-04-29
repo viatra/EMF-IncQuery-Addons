@@ -9,6 +9,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.cep.runtime.statemachine.EventWithPrerequisite;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -59,15 +60,56 @@ public final class SMUtils {
 				if (op == null) {
 					continue;
 				}
-				if (op.equals(ComplexOperator.ORDERED)) {
-					flattenedList.addAll(flattenComplexPatterns(ep));
-				}
+				flattenedList.addAll(flattenComplexPatterns(ep));
 			}
 		}
 		
 		return flattenedList;
 	}
 	
+	public static List<EventWithPrerequisite> flattenComplexPatterns2(EventPattern pattern) {
+		List<EventWithPrerequisite> events = new ArrayList<EventWithPrerequisite>();
+		
+		if (pattern instanceof AtomicEventPattern) {
+			events.add(new EventWithPrerequisite((AtomicEventPattern) pattern));
+			return events;
+		}
+		
+		ComplexEventPattern cePattern = (ComplexEventPattern) pattern;
+		
+		for (int i = 0; i < cePattern.getCompositionEvents().size(); i++) {
+			EventPattern ep = cePattern.getCompositionEvents().get(i);
+			
+			if (ep instanceof AtomicEventPattern) {
+				if (cePattern.getOperator().equals(ComplexOperator.ORDERED)
+						|| cePattern.getOperator().equals(ComplexOperator.ORDERED_T)) {
+					events.add(new EventWithPrerequisite((AtomicEventPattern) ep));
+				} else if (cePattern.getOperator().equals(ComplexOperator.UNORDERED)
+						|| cePattern.getOperator().equals(ComplexOperator.UNORDERED_T)) {
+					if (i == 0) {
+						events.add(new EventWithPrerequisite((AtomicEventPattern) ep));
+					} else if (i > 0) {
+						EventPattern req = cePattern.getCompositionEvents().get(i - 1);
+						if (req instanceof AtomicEventPattern) {
+							events.add(new EventWithPrerequisite((AtomicEventPattern) ep, (AtomicEventPattern) req));
+						} else if (req instanceof ComplexEventPattern) {
+							List<EventWithPrerequisite> flatReq = flattenComplexPatterns2(req);
+							events.add(new EventWithPrerequisite((AtomicEventPattern) ep, flatReq.get(
+									flatReq.size() - 1).getEventPattern()));
+						}
+					}
+				}
+			} else {
+				ComplexOperator op = ((ComplexEventPattern) ep).getOperator();
+				if (op == null) {
+					continue;
+				}
+				events.addAll(flattenComplexPatterns2(ep));
+			}
+		}
+		
+		return events;
+	}
 	public static Map<AtomicEventPattern, List<AtomicEventPattern>> getPrecedenceRules() {
 		return Collections.emptyMap();
 	}
