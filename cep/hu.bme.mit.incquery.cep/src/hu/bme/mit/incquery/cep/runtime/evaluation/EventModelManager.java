@@ -8,6 +8,7 @@ import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.EventProcessingStrategyFactory;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.IEventProcessingStrategy;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
+import hu.bme.mit.incquery.cep.runtime.evm.CepRuleSpecification;
 import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder2;
 
 import java.util.HashSet;
@@ -33,6 +34,8 @@ import org.eclipse.incquery.runtime.evm.specific.Schedulers;
 import org.eclipse.incquery.runtime.evm.specific.event.IncQueryEventSource;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
+import com.google.common.base.Preconditions;
+
 public class EventModelManager {
 	private static EventModelManager instance;
 	private InternalExecutionModel model;
@@ -41,29 +44,26 @@ public class EventModelManager {
 	private Resource smModelResource;
 	private IEventProcessingStrategy strategy;
 	
+	@Deprecated
 	public static EventModelManager getInstance(List<EventPattern> eventPatterns, Strategy strategy) {
-		if (instance == null) {
-			instance = new EventModelManager(eventPatterns, strategy);
-		}
-		return instance;
+		return getInstance(eventPatterns, strategy, null);
 	}
 	
-	/**
-	 * @deprecated Use {@link EventModelManager}{@link #getInstance(List, Strategy)} instead
-	 */
-	@Deprecated
-	public static EventModelManager getInstance(List<EventPattern> eventPatterns) {
+	public static EventModelManager getInstance(List<EventPattern> eventPatterns, Strategy strategy,
+			Set<CepRuleSpecification> eventPatternMatchRules) {
 		if (instance == null) {
-			instance = new EventModelManager(eventPatterns, Strategy.getDefault());
+			instance = new EventModelManager(eventPatterns, strategy, eventPatternMatchRules);
 		}
 		return instance;
 	}
 	
 	public static EventModelManager getInstance() {
+		Preconditions.checkNotNull(instance, new Exception("The manager hasn't been initialized yet."));
 		return instance;
 	}
 	
-	private EventModelManager(List<EventPattern> eventPatterns, Strategy strategy) {
+	private EventModelManager(List<EventPattern> eventPatterns, Strategy strategy,
+			Set<CepRuleSpecification> eventPatternMatchRules) {
 		model = SM_FACTORY.createInternalExecutionModel();
 		this.strategy = EventProcessingStrategyFactory.getStrategy(strategy);
 		
@@ -95,17 +95,19 @@ public class EventModelManager {
 			engine = EngineManager.getInstance().getIncQueryEngine(resourceSet);
 			ISchedulerFactory schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine);
 			EventSource iqEventSource = IncQueryEventSource.create(engine);
-			EventDrivenVM.createExecutionSchema(iqEventSource, schedulerFactory, getModelHandlerRules());
+			
+			Set<RuleSpecification> rules = new HashSet<RuleSpecification>();
+			rules.addAll(ModelHandlerRules.getIntance().getModelHandlers());
+			if (eventPatternMatchRules != null) {
+				rules.addAll(eventPatternMatchRules);
+			}
+			
+			EventDrivenVM.createExecutionSchema(iqEventSource, schedulerFactory, rules);
 			// engine.getLogger().setLevel(Level.DEBUG);
 		} catch (IncQueryException e) {
 			// TODO handle error
 			e.printStackTrace();
 		}
-		
-	}
-	
-	private Set<RuleSpecification> getModelHandlerRules() {
-		return new HashSet<RuleSpecification>(ModelHandlerRules.getIntance().getModelHandlers());
 	}
 	
 	private void refreshModel(Event event) {

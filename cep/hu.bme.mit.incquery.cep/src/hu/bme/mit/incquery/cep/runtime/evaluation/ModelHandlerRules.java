@@ -11,9 +11,7 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledtransition.Enab
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedstatemachine.FinishedStateMachineMatch;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedstatemachine.FinishedStateMachineMatcher;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -30,10 +28,10 @@ import com.google.common.collect.Multimap;
 
 public class ModelHandlerRules {
 	private static ModelHandlerRules instance;
-	private List<RuleSpecification> modelHandlers;
+	private Set<RuleSpecification> modelHandlers;
 	
 	private ModelHandlerRules() {
-		modelHandlers = new ArrayList<RuleSpecification>();
+		modelHandlers = new HashSet<RuleSpecification>();
 		
 		try {
 			modelHandlers.add(getEnabledTransitionsRule());
@@ -51,7 +49,7 @@ public class ModelHandlerRules {
 		return instance;
 	}
 	
-	public List<RuleSpecification> getModelHandlers() {
+	public Set<RuleSpecification> getModelHandlers() {
 		return modelHandlers;
 	}
 	

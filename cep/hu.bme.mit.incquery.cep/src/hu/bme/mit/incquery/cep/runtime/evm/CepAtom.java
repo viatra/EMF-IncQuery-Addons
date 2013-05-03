@@ -2,7 +2,17 @@ package hu.bme.mit.incquery.cep.runtime.evm;
 
 import org.eclipse.incquery.runtime.evm.api.event.Atom;
 
-public class CepAtom implements Atom {
+public class CepAtom<Match extends EventPatternMatch> implements Atom {
+	
+	private Match match;
+	
+	public CepAtom(Match match) {
+		this.match = match;
+	}
+	
+	public Match getMatch() {
+		return match;
+	}
 	
 	@Override
 	public boolean isCompatibleWith(Atom other) {
@@ -14,14 +24,11 @@ public class CepAtom implements Atom {
 	
 	@Override
 	public boolean isMutable() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
 		return false;
 	}
-	
 }

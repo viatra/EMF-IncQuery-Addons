@@ -1,15 +1,16 @@
 package hu.bme.mit.incquery.cep.tests.testcaseSm.main;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
+import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
+import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.A;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.B;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.C;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.ABC_Pattern;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.APattern;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.BC_Pattern;
-import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
-import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +56,7 @@ public class TestSM {
 		eventPatterns.add(aPattern);
 		eventPatterns.add(abcPattern);
 		
-		manager = EventModelManager.getInstance(eventPatterns);
+		manager = EventModelManager.getInstance(eventPatterns, Strategy.getDefault());
 		
 		System.err.println("DIAG: Test starting.\n");
 		Thread.sleep(1000l);
