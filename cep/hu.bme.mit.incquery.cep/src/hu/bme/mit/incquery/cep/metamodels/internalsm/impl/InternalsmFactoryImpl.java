@@ -5,6 +5,7 @@ package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -66,9 +67,39 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 			case InternalsmPackage.INTERNAL_EXECUTION_MODEL: return createInternalExecutionModel();
 			case InternalsmPackage.ACTION: return createAction();
 			case InternalsmPackage.CURRENT_STATE_VISITOR: return createCurrentStateVisitor();
-			case InternalsmPackage.TIMEWINDOW: return createTimewindow();
+			case InternalsmPackage.TIME_CONSTRAINT: return createTimeConstraint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case InternalsmPackage.NUMERIC_COMPARE_OPERATOR:
+				return createNumericCompareOperatorFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case InternalsmPackage.NUMERIC_COMPARE_OPERATOR:
+				return convertNumericCompareOperatorToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -177,9 +208,29 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Timewindow createTimewindow() {
-		TimewindowImpl timewindow = new TimewindowImpl();
-		return timewindow;
+	public TimeConstraint createTimeConstraint() {
+		TimeConstraintImpl timeConstraint = new TimeConstraintImpl();
+		return timeConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NumericCompareOperator createNumericCompareOperatorFromString(EDataType eDataType, String initialValue) {
+		NumericCompareOperator result = NumericCompareOperator.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNumericCompareOperatorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

@@ -18,7 +18,6 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.evm.api.ActivationState;
 import org.eclipse.incquery.runtime.evm.api.Job;
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification;
@@ -31,10 +30,10 @@ import com.google.common.collect.Multimap;
 
 public class ModelHandlerRules {
 	private static ModelHandlerRules instance;
-	private List<RuleSpecification<? extends IPatternMatch>> modelHandlers;
+	private List<RuleSpecification> modelHandlers;
 	
 	private ModelHandlerRules() {
-		modelHandlers = new ArrayList<RuleSpecification<? extends IPatternMatch>>();
+		modelHandlers = new ArrayList<RuleSpecification>();
 		
 		try {
 			modelHandlers.add(getEnabledTransitionsRule());
@@ -52,11 +51,11 @@ public class ModelHandlerRules {
 		return instance;
 	}
 	
-	public List<RuleSpecification<? extends IPatternMatch>> getModelHandlers() {
+	public List<RuleSpecification> getModelHandlers() {
 		return modelHandlers;
 	}
 	
-	public RuleSpecification<FinishedStateMachineMatch> getFinishedStateMachineRule() throws IncQueryException {
+	public RuleSpecification getFinishedStateMachineRule() throws IncQueryException {
 		IMatchProcessor<FinishedStateMachineMatch> processor = new IMatchProcessor<FinishedStateMachineMatch>() {
 			
 			@Override
@@ -74,6 +73,7 @@ public class ModelHandlerRules {
 							if (!(recordedEvents instanceof Multimap<?, ?>)) {
 								continue;
 							}
+							@SuppressWarnings("unchecked")
 							Multimap<String, Event> eventMap = (Multimap<String, Event>) cv.getEventCollection()
 									.getRecordedEvents();
 							for (Event event : eventMap.values()) {
@@ -88,17 +88,17 @@ public class ModelHandlerRules {
 			
 		};
 		
-		Set<Job<FinishedStateMachineMatch>> jobs = new HashSet<Job<FinishedStateMachineMatch>>();
+		Set<Job> jobs = new HashSet<Job>();
 		jobs.add(new StatelessJob<FinishedStateMachineMatch>(ActivationState.APPEARED, processor));
 		
-		SimpleMatcherRuleSpecification<FinishedStateMachineMatch, FinishedStateMachineMatcher> spec = new SimpleMatcherRuleSpecification<FinishedStateMachineMatch, FinishedStateMachineMatcher>(
+		SimpleMatcherRuleSpecification<FinishedStateMachineMatch> spec = new SimpleMatcherRuleSpecification<FinishedStateMachineMatch>(
 				FinishedStateMachineMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
 		
 		return spec;
 		
 	}
 	
-	public RuleSpecification<EnabledTransitionMatch> getEnabledTransitionsRule() throws IncQueryException {
+	public RuleSpecification getEnabledTransitionsRule() throws IncQueryException {
 		IMatchProcessor<EnabledTransitionMatch> processor = new IMatchProcessor<EnabledTransitionMatch>() {
 			
 			@Override
@@ -111,10 +111,10 @@ public class ModelHandlerRules {
 			}
 		};
 		
-		Set<Job<EnabledTransitionMatch>> jobs = new HashSet<Job<EnabledTransitionMatch>>();
+		Set<Job> jobs = new HashSet<Job>();
 		jobs.add(new StatelessJob<EnabledTransitionMatch>(ActivationState.APPEARED, processor));
 		
-		SimpleMatcherRuleSpecification<EnabledTransitionMatch, EnabledTransitionMatcher> spec = new SimpleMatcherRuleSpecification<EnabledTransitionMatch, EnabledTransitionMatcher>(
+		SimpleMatcherRuleSpecification<EnabledTransitionMatch> spec = new SimpleMatcherRuleSpecification<EnabledTransitionMatch>(
 				EnabledTransitionMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
 		
 		return spec;

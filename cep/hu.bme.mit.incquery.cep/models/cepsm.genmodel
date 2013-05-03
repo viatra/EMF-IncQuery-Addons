@@ -13,6 +13,7 @@
       <genEnumLiterals ecoreEnumLiteral="CEPMeta.ecore#//ComplexOperator/UNORDERED"/>
       <genEnumLiterals ecoreEnumLiteral="CEPMeta.ecore#//ComplexOperator/UNORDERED_T"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CEPMeta.ecore#//NumericCompareOperator"/>
     <genClasses image="false" ecoreClass="CEPMeta.ecore#//EventPattern">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//EventPattern/compositionEvents"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//EventPattern/stateMachines"/>
@@ -41,11 +42,21 @@
   </genPackages>
   <genPackages prefix="Internalsm" basePackage="hu.bme.mit.incquery.cep.metamodels"
       resource="XML" disposableProviderFactory="true" ecorePackage="InternalSM.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="InternalSM.ecore#//NumericCompareOperator">
+      <genEnumLiterals ecoreEnumLiteral="InternalSM.ecore#//NumericCompareOperator/LESS_THAN"/>
+      <genEnumLiterals ecoreEnumLiteral="InternalSM.ecore#//NumericCompareOperator/LESS_OR_EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="InternalSM.ecore#//NumericCompareOperator/EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="InternalSM.ecore#//NumericCompareOperator/MORE_OR_EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="InternalSM.ecore#//NumericCompareOperator/MORE_THAN"/>
+    </genEnums>
     <genClasses ecoreClass="InternalSM.ecore#//State">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/outTransitions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/inTransitions"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//State/label"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/currentVisitors"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/startConstraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/stopConstraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/intermediateConstraints"/>
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//Transition">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference InternalSM.ecore#//Transition/preState"/>
@@ -54,7 +65,7 @@
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//Guard">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//Guard/eventType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Guard/timewindow"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Guard/timeConstraint"/>
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//FinalState">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//FinalState/actions"/>
@@ -84,8 +95,13 @@
         <genParameters ecoreParameter="InternalSM.ecore#//EventCollection/addEvent/event"/>
       </genOperations>
     </genClasses>
-    <genClasses ecoreClass="InternalSM.ecore#//Timewindow">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//Timewindow/length"/>
+    <genClasses ecoreClass="InternalSM.ecore#//TimeConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraint/expectedLength"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//TimeConstraint/startState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//TimeConstraint/stopState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraint/startTimeStamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraint/stopTimeStamp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//TimeConstraint/intermediateState"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

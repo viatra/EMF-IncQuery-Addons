@@ -7,8 +7,9 @@ import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
 import hu.bme.mit.incquery.cep.runtime.statemachine.EventWithPrerequisite;
 
 import java.util.ArrayList;
@@ -25,22 +26,20 @@ public final class SMUtils {
 		return false;
 	}
 	
-	public static boolean timedout(Transition transition, Long recordedTime) {
-		Timewindow timewindow = transition.getGuard().getTimewindow();
-		if (timewindow == null) {
-			return false;
-		}
-		if (timewindow.getLength() <= recordedTime) {
-			return false;
-		}
-		return true;
-	}
-	
 	public static boolean isFinal(State state) {
 		if (state instanceof FinalState) {
 			return true;
 		}
 		return false;
+	}
+	
+	public static TrapState getTrapState(StateMachine sm) {
+		for (State s : sm.getStates()) {
+			if (s instanceof TrapState) {
+				return (TrapState) s;
+			}
+		}
+		return null;
 	}
 	
 	// only for patterns using the ORDERED operator without time window

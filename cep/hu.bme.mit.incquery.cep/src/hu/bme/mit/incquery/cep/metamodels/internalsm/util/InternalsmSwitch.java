@@ -135,9 +135,9 @@ public class InternalsmSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case InternalsmPackage.TIMEWINDOW: {
-				Timewindow timewindow = (Timewindow)theEObject;
-				T result = caseTimewindow(timewindow);
+			case InternalsmPackage.TIME_CONSTRAINT: {
+				TimeConstraint timeConstraint = (TimeConstraint)theEObject;
+				T result = caseTimeConstraint(timeConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -311,17 +311,17 @@ public class InternalsmSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Timewindow</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Time Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Timewindow</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Time Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTimewindow(Timewindow object) {
+	public T caseTimeConstraint(TimeConstraint object) {
 		return null;
 	}
 

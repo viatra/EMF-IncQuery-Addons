@@ -4,7 +4,7 @@ package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.GuardImpl#getEventType <em>Event Type</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.GuardImpl#getTimewindow <em>Timewindow</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.GuardImpl#getTimeConstraint <em>Time Constraint</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,14 +51,14 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	protected String eventType = EVENT_TYPE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTimewindow() <em>Timewindow</em>}' containment reference.
+	 * The cached value of the '{@link #getTimeConstraint() <em>Time Constraint</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTimewindow()
+	 * @see #getTimeConstraint()
 	 * @generated
 	 * @ordered
 	 */
-	protected Timewindow timewindow;
+	protected TimeConstraint timeConstraint;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,8 +105,8 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Timewindow getTimewindow() {
-		return timewindow;
+	public TimeConstraint getTimeConstraint() {
+		return timeConstraint;
 	}
 
 	/**
@@ -114,11 +114,11 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTimewindow(Timewindow newTimewindow, NotificationChain msgs) {
-		Timewindow oldTimewindow = timewindow;
-		timewindow = newTimewindow;
+	public NotificationChain basicSetTimeConstraint(TimeConstraint newTimeConstraint, NotificationChain msgs) {
+		TimeConstraint oldTimeConstraint = timeConstraint;
+		timeConstraint = newTimeConstraint;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.GUARD__TIMEWINDOW, oldTimewindow, newTimewindow);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.GUARD__TIME_CONSTRAINT, oldTimeConstraint, newTimeConstraint);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -129,18 +129,18 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTimewindow(Timewindow newTimewindow) {
-		if (newTimewindow != timewindow) {
+	public void setTimeConstraint(TimeConstraint newTimeConstraint) {
+		if (newTimeConstraint != timeConstraint) {
 			NotificationChain msgs = null;
-			if (timewindow != null)
-				msgs = ((InternalEObject)timewindow).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.GUARD__TIMEWINDOW, null, msgs);
-			if (newTimewindow != null)
-				msgs = ((InternalEObject)newTimewindow).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.GUARD__TIMEWINDOW, null, msgs);
-			msgs = basicSetTimewindow(newTimewindow, msgs);
+			if (timeConstraint != null)
+				msgs = ((InternalEObject)timeConstraint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.GUARD__TIME_CONSTRAINT, null, msgs);
+			if (newTimeConstraint != null)
+				msgs = ((InternalEObject)newTimeConstraint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.GUARD__TIME_CONSTRAINT, null, msgs);
+			msgs = basicSetTimeConstraint(newTimeConstraint, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.GUARD__TIMEWINDOW, newTimewindow, newTimewindow));
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.GUARD__TIME_CONSTRAINT, newTimeConstraint, newTimeConstraint));
 	}
 
 	/**
@@ -151,8 +151,8 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InternalsmPackage.GUARD__TIMEWINDOW:
-				return basicSetTimewindow(null, msgs);
+			case InternalsmPackage.GUARD__TIME_CONSTRAINT:
+				return basicSetTimeConstraint(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -167,8 +167,8 @@ public class GuardImpl extends EObjectImpl implements Guard {
 		switch (featureID) {
 			case InternalsmPackage.GUARD__EVENT_TYPE:
 				return getEventType();
-			case InternalsmPackage.GUARD__TIMEWINDOW:
-				return getTimewindow();
+			case InternalsmPackage.GUARD__TIME_CONSTRAINT:
+				return getTimeConstraint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -184,8 +184,8 @@ public class GuardImpl extends EObjectImpl implements Guard {
 			case InternalsmPackage.GUARD__EVENT_TYPE:
 				setEventType((String)newValue);
 				return;
-			case InternalsmPackage.GUARD__TIMEWINDOW:
-				setTimewindow((Timewindow)newValue);
+			case InternalsmPackage.GUARD__TIME_CONSTRAINT:
+				setTimeConstraint((TimeConstraint)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -202,8 +202,8 @@ public class GuardImpl extends EObjectImpl implements Guard {
 			case InternalsmPackage.GUARD__EVENT_TYPE:
 				setEventType(EVENT_TYPE_EDEFAULT);
 				return;
-			case InternalsmPackage.GUARD__TIMEWINDOW:
-				setTimewindow((Timewindow)null);
+			case InternalsmPackage.GUARD__TIME_CONSTRAINT:
+				setTimeConstraint((TimeConstraint)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -219,8 +219,8 @@ public class GuardImpl extends EObjectImpl implements Guard {
 		switch (featureID) {
 			case InternalsmPackage.GUARD__EVENT_TYPE:
 				return EVENT_TYPE_EDEFAULT == null ? eventType != null : !EVENT_TYPE_EDEFAULT.equals(eventType);
-			case InternalsmPackage.GUARD__TIMEWINDOW:
-				return timewindow != null;
+			case InternalsmPackage.GUARD__TIME_CONSTRAINT:
+				return timeConstraint != null;
 		}
 		return super.eIsSet(featureID);
 	}

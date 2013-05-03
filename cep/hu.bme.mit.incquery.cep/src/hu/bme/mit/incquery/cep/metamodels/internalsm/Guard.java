@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getEventType <em>Event Type</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimewindow <em>Timewindow</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimeConstraint <em>Time Constraint</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,29 +49,29 @@ public interface Guard extends EObject {
 	void setEventType(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Timewindow</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Time Constraint</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Timewindow</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Time Constraint</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Timewindow</em>' containment reference.
-	 * @see #setTimewindow(Timewindow)
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getGuard_Timewindow()
+	 * @return the value of the '<em>Time Constraint</em>' containment reference.
+	 * @see #setTimeConstraint(TimeConstraint)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getGuard_TimeConstraint()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Timewindow getTimewindow();
+	TimeConstraint getTimeConstraint();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimewindow <em>Timewindow</em>}' containment reference.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimeConstraint <em>Time Constraint</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Timewindow</em>' containment reference.
-	 * @see #getTimewindow()
+	 * @param value the new value of the '<em>Time Constraint</em>' containment reference.
+	 * @see #getTimeConstraint()
 	 * @generated
 	 */
-	void setTimewindow(Timewindow value);
+	void setTimeConstraint(TimeConstraint value);
 
 } // Guard

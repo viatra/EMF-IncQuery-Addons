@@ -11,7 +11,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.model.custom.impl.EventCollectionWithMultimap;
 import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
 
-public class ChronicleStrategy implements IEventProcessingStrategy {
+public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 	
 	@Override
 	public void fireTransition(Transition t) {
@@ -26,6 +26,7 @@ public class ChronicleStrategy implements IEventProcessingStrategy {
 		CurrentStateVisitor cvToMove = t.getPreState().getCurrentVisitors().get(0);
 		cvToMove.getEventCollection().addEvent(model.getLatestEvent());
 		cvToMove.setCurrentState(nextState);
+		handleTimeConstraints(cvToMove);
 	}
 	
 	@Override

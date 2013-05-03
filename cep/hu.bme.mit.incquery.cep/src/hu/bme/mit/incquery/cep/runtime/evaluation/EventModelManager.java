@@ -10,8 +10,10 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.IEventProcessingStrat
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
 import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder2;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
@@ -22,20 +24,19 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.incquery.runtime.api.EngineManager;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.evm.api.EventDrivenVM;
-import org.eclipse.incquery.runtime.evm.api.RuleEngine;
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification;
+import org.eclipse.incquery.runtime.evm.api.Scheduler.ISchedulerFactory;
+import org.eclipse.incquery.runtime.evm.api.event.EventSource;
 import org.eclipse.incquery.runtime.evm.specific.Schedulers;
-import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory;
+import org.eclipse.incquery.runtime.evm.specific.event.IncQueryEventSource;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 public class EventModelManager {
 	private static EventModelManager instance;
 	private InternalExecutionModel model;
 	private IncQueryEngine engine;
-	private RuleEngine ruleEngine;
 	private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
 	private Resource smModelResource;
 	private IEventProcessingStrategy strategy;
@@ -92,9 +93,9 @@ public class EventModelManager {
 		
 		try {
 			engine = EngineManager.getInstance().getIncQueryEngine(resourceSet);
-			UpdateCompleteBasedSchedulerFactory schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine);
-			ruleEngine = EventDrivenVM.createExecutionSchema(engine, schedulerFactory);
-			registerModelHandlerRules();
+			ISchedulerFactory schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine);
+			EventSource iqEventSource = IncQueryEventSource.create(engine);
+			EventDrivenVM.createExecutionSchema(iqEventSource, schedulerFactory, getModelHandlerRules());
 			// engine.getLogger().setLevel(Level.DEBUG);
 		} catch (IncQueryException e) {
 			// TODO handle error
@@ -103,10 +104,8 @@ public class EventModelManager {
 		
 	}
 	
-	public void registerModelHandlerRules() {
-		for (RuleSpecification<? extends IPatternMatch> ruleSpec : ModelHandlerRules.getIntance().getModelHandlers()) {
-			ruleEngine.addRule(ruleSpec);
-		}
+	private Set<RuleSpecification> getModelHandlerRules() {
+		return new HashSet<RuleSpecification>(ModelHandlerRules.getIntance().getModelHandlers());
 	}
 	
 	private void refreshModel(Event event) {

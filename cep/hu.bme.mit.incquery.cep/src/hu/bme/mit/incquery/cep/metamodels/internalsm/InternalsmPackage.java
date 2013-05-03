@@ -4,6 +4,7 @@ package hu.bme.mit.incquery.cep.metamodels.internalsm;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -102,13 +103,40 @@ public interface InternalsmPackage extends EPackage {
 	int STATE__CURRENT_VISITORS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Start Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__START_CONSTRAINTS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Stop Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__STOP_CONSTRAINTS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Constraints</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__INTERMEDIATE_CONSTRAINTS = 6;
+
+	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = 4;
+	int STATE_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TransitionImpl <em>Transition</em>}' class.
@@ -176,13 +204,13 @@ public interface InternalsmPackage extends EPackage {
 	int GUARD__EVENT_TYPE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Timewindow</b></em>' containment reference.
+	 * The feature id for the '<em><b>Time Constraint</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUARD__TIMEWINDOW = 1;
+	int GUARD__TIME_CONSTRAINT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Guard</em>' class.
@@ -238,6 +266,33 @@ public interface InternalsmPackage extends EPackage {
 	 * @ordered
 	 */
 	int FINAL_STATE__CURRENT_VISITORS = STATE__CURRENT_VISITORS;
+
+	/**
+	 * The feature id for the '<em><b>Start Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STATE__START_CONSTRAINTS = STATE__START_CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Stop Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STATE__STOP_CONSTRAINTS = STATE__STOP_CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Constraints</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STATE__INTERMEDIATE_CONSTRAINTS = STATE__INTERMEDIATE_CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -304,6 +359,33 @@ public interface InternalsmPackage extends EPackage {
 	int INIT_STATE__CURRENT_VISITORS = STATE__CURRENT_VISITORS;
 
 	/**
+	 * The feature id for the '<em><b>Start Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INIT_STATE__START_CONSTRAINTS = STATE__START_CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Stop Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INIT_STATE__STOP_CONSTRAINTS = STATE__STOP_CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Constraints</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INIT_STATE__INTERMEDIATE_CONSTRAINTS = STATE__INTERMEDIATE_CONSTRAINTS;
+
+	/**
 	 * The number of structural features of the '<em>Init State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -357,6 +439,33 @@ public interface InternalsmPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRAP_STATE__CURRENT_VISITORS = STATE__CURRENT_VISITORS;
+
+	/**
+	 * The feature id for the '<em><b>Start Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAP_STATE__START_CONSTRAINTS = STATE__START_CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Stop Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAP_STATE__STOP_CONSTRAINTS = STATE__STOP_CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Constraints</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAP_STATE__INTERMEDIATE_CONSTRAINTS = STATE__INTERMEDIATE_CONSTRAINTS;
 
 	/**
 	 * The number of structural features of the '<em>Trap State</em>' class.
@@ -544,32 +653,87 @@ public interface InternalsmPackage extends EPackage {
 	int EVENT_COLLECTION_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimewindowImpl <em>Timewindow</em>}' class.
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintImpl <em>Time Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimewindowImpl
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimewindow()
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintImpl
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimeConstraint()
 	 * @generated
 	 */
-	int TIMEWINDOW = 11;
+	int TIME_CONSTRAINT = 11;
 
 	/**
-	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * The feature id for the '<em><b>Expected Length</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMEWINDOW__LENGTH = 0;
+	int TIME_CONSTRAINT__EXPECTED_LENGTH = 0;
 
 	/**
-	 * The number of structural features of the '<em>Timewindow</em>' class.
+	 * The feature id for the '<em><b>Start State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMEWINDOW_FEATURE_COUNT = 1;
+	int TIME_CONSTRAINT__START_STATE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Stop State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_CONSTRAINT__STOP_STATE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Start Time Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_CONSTRAINT__START_TIME_STAMP = 3;
+
+	/**
+	 * The feature id for the '<em><b>Stop Time Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_CONSTRAINT__STOP_TIME_STAMP = 4;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_CONSTRAINT__INTERMEDIATE_STATE = 5;
+
+	/**
+	 * The number of structural features of the '<em>Time Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_CONSTRAINT_FEATURE_COUNT = 6;
+
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator <em>Numeric Compare Operator</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getNumericCompareOperator()
+	 * @generated
+	 */
+	int NUMERIC_COMPARE_OPERATOR = 12;
 
 
 	/**
@@ -625,6 +789,39 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getState_CurrentVisitors();
+
+	/**
+	 * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getStartConstraints <em>Start Constraints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Start Constraints</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.State#getStartConstraints()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_StartConstraints();
+
+	/**
+	 * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getStopConstraints <em>Stop Constraints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Stop Constraints</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.State#getStopConstraints()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_StopConstraints();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getIntermediateConstraints <em>Intermediate Constraints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Intermediate Constraints</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.State#getIntermediateConstraints()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_IntermediateConstraints();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition <em>Transition</em>}'.
@@ -691,15 +888,15 @@ public interface InternalsmPackage extends EPackage {
 	EAttribute getGuard_EventType();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimewindow <em>Timewindow</em>}'.
+	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimeConstraint <em>Time Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Timewindow</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimewindow()
+	 * @return the meta object for the containment reference '<em>Time Constraint</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimeConstraint()
 	 * @see #getGuard()
 	 * @generated
 	 */
-	EReference getGuard_Timewindow();
+	EReference getGuard_TimeConstraint();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState <em>Final State</em>}'.
@@ -892,25 +1089,90 @@ public interface InternalsmPackage extends EPackage {
 	EReference getEventCollection_CurrentStateVisitor();
 
 	/**
-	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow <em>Timewindow</em>}'.
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint <em>Time Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Timewindow</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow
+	 * @return the meta object for class '<em>Time Constraint</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint
 	 * @generated
 	 */
-	EClass getTimewindow();
+	EClass getTimeConstraint();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow#getLength <em>Length</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getExpectedLength <em>Expected Length</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Length</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow#getLength()
-	 * @see #getTimewindow()
+	 * @return the meta object for the attribute '<em>Expected Length</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getExpectedLength()
+	 * @see #getTimeConstraint()
 	 * @generated
 	 */
-	EAttribute getTimewindow_Length();
+	EAttribute getTimeConstraint_ExpectedLength();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStartState <em>Start State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Start State</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStartState()
+	 * @see #getTimeConstraint()
+	 * @generated
+	 */
+	EReference getTimeConstraint_StartState();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStopState <em>Stop State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Stop State</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStopState()
+	 * @see #getTimeConstraint()
+	 * @generated
+	 */
+	EReference getTimeConstraint_StopState();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStartTimeStamp <em>Start Time Stamp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start Time Stamp</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStartTimeStamp()
+	 * @see #getTimeConstraint()
+	 * @generated
+	 */
+	EAttribute getTimeConstraint_StartTimeStamp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStopTimeStamp <em>Stop Time Stamp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Stop Time Stamp</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStopTimeStamp()
+	 * @see #getTimeConstraint()
+	 * @generated
+	 */
+	EAttribute getTimeConstraint_StopTimeStamp();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getIntermediateState <em>Intermediate State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Intermediate State</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getIntermediateState()
+	 * @see #getTimeConstraint()
+	 * @generated
+	 */
+	EReference getTimeConstraint_IntermediateState();
+
+	/**
+	 * Returns the meta object for enum '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator <em>Numeric Compare Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Numeric Compare Operator</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator
+	 * @generated
+	 */
+	EEnum getNumericCompareOperator();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -977,6 +1239,30 @@ public interface InternalsmPackage extends EPackage {
 		EReference STATE__CURRENT_VISITORS = eINSTANCE.getState_CurrentVisitors();
 
 		/**
+		 * The meta object literal for the '<em><b>Start Constraints</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__START_CONSTRAINTS = eINSTANCE.getState_StartConstraints();
+
+		/**
+		 * The meta object literal for the '<em><b>Stop Constraints</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__STOP_CONSTRAINTS = eINSTANCE.getState_StopConstraints();
+
+		/**
+		 * The meta object literal for the '<em><b>Intermediate Constraints</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__INTERMEDIATE_CONSTRAINTS = eINSTANCE.getState_IntermediateConstraints();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TransitionImpl <em>Transition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1029,12 +1315,12 @@ public interface InternalsmPackage extends EPackage {
 		EAttribute GUARD__EVENT_TYPE = eINSTANCE.getGuard_EventType();
 
 		/**
-		 * The meta object literal for the '<em><b>Timewindow</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Time Constraint</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GUARD__TIMEWINDOW = eINSTANCE.getGuard_Timewindow();
+		EReference GUARD__TIME_CONSTRAINT = eINSTANCE.getGuard_TimeConstraint();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.FinalStateImpl <em>Final State</em>}' class.
@@ -1197,22 +1483,72 @@ public interface InternalsmPackage extends EPackage {
 		EReference EVENT_COLLECTION__CURRENT_STATE_VISITOR = eINSTANCE.getEventCollection_CurrentStateVisitor();
 
 		/**
-		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimewindowImpl <em>Timewindow</em>}' class.
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintImpl <em>Time Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimewindowImpl
-		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimewindow()
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintImpl
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimeConstraint()
 		 * @generated
 		 */
-		EClass TIMEWINDOW = eINSTANCE.getTimewindow();
+		EClass TIME_CONSTRAINT = eINSTANCE.getTimeConstraint();
 
 		/**
-		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Expected Length</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIMEWINDOW__LENGTH = eINSTANCE.getTimewindow_Length();
+		EAttribute TIME_CONSTRAINT__EXPECTED_LENGTH = eINSTANCE.getTimeConstraint_ExpectedLength();
+
+		/**
+		 * The meta object literal for the '<em><b>Start State</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TIME_CONSTRAINT__START_STATE = eINSTANCE.getTimeConstraint_StartState();
+
+		/**
+		 * The meta object literal for the '<em><b>Stop State</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TIME_CONSTRAINT__STOP_STATE = eINSTANCE.getTimeConstraint_StopState();
+
+		/**
+		 * The meta object literal for the '<em><b>Start Time Stamp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_CONSTRAINT__START_TIME_STAMP = eINSTANCE.getTimeConstraint_StartTimeStamp();
+
+		/**
+		 * The meta object literal for the '<em><b>Stop Time Stamp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_CONSTRAINT__STOP_TIME_STAMP = eINSTANCE.getTimeConstraint_StopTimeStamp();
+
+		/**
+		 * The meta object literal for the '<em><b>Intermediate State</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TIME_CONSTRAINT__INTERMEDIATE_STATE = eINSTANCE.getTimeConstraint_IntermediateState();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator <em>Numeric Compare Operator</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getNumericCompareOperator()
+		 * @generated
+		 */
+		EEnum NUMERIC_COMPARE_OPERATOR = eINSTANCE.getNumericCompareOperator();
 
 	}
 

@@ -112,13 +112,13 @@ public interface InternalsmFactory extends EFactory {
 	CurrentStateVisitor createCurrentStateVisitor();
 
 	/**
-	 * Returns a new object of class '<em>Timewindow</em>'.
+	 * Returns a new object of class '<em>Time Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Timewindow</em>'.
+	 * @return a new object of class '<em>Time Constraint</em>'.
 	 * @generated
 	 */
-	Timewindow createTimewindow();
+	TimeConstraint createTimeConstraint();
 
 	/**
 	 * Returns the package supported by this factory.

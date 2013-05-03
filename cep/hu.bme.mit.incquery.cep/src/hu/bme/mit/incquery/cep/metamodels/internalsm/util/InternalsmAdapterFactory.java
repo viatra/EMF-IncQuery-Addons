@@ -112,8 +112,8 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 				return createEventCollectionAdapter();
 			}
 			@Override
-			public Adapter caseTimewindow(Timewindow object) {
-				return createTimewindowAdapter();
+			public Adapter caseTimeConstraint(TimeConstraint object) {
+				return createTimeConstraintAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -290,16 +290,16 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow <em>Timewindow</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint <em>Time Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Timewindow
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint
 	 * @generated
 	 */
-	public Adapter createTimewindowAdapter() {
+	public Adapter createTimeConstraintAdapter() {
 		return null;
 	}
 

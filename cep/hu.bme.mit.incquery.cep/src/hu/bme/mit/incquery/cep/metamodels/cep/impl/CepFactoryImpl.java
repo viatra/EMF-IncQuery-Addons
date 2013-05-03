@@ -76,6 +76,8 @@ public class CepFactoryImpl extends EFactoryImpl implements CepFactory {
 		switch (eDataType.getClassifierID()) {
 			case CepPackage.COMPLEX_OPERATOR:
 				return createComplexOperatorFromString(eDataType, initialValue);
+			case CepPackage.NUMERIC_COMPARE_OPERATOR:
+				return createNumericCompareOperatorFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -91,6 +93,8 @@ public class CepFactoryImpl extends EFactoryImpl implements CepFactory {
 		switch (eDataType.getClassifierID()) {
 			case CepPackage.COMPLEX_OPERATOR:
 				return convertComplexOperatorToString(eDataType, instanceValue);
+			case CepPackage.NUMERIC_COMPARE_OPERATOR:
+				return convertNumericCompareOperatorToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -153,6 +157,26 @@ public class CepFactoryImpl extends EFactoryImpl implements CepFactory {
 	 * @generated
 	 */
 	public String convertComplexOperatorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NumericCompareOperator createNumericCompareOperatorFromString(EDataType eDataType, String initialValue) {
+		NumericCompareOperator result = NumericCompareOperator.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNumericCompareOperatorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

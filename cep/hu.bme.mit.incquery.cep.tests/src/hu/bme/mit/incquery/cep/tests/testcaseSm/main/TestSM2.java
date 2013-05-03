@@ -1,22 +1,34 @@
 package hu.bme.mit.incquery.cep.tests.testcaseSm.main;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
+import hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.A;
+import hu.bme.mit.incquery.cep.tests.testcaseSm.events.AbstractEventInstance;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.B;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.C;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.D;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.DABC_Pattern_MIXED;
 
+import static org.junit.Assert.*;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import javax.swing.plaf.multi.MultiButtonUI;
+
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.google.common.collect.Multimap;
 
 public class TestSM2 {
 	DefaultRealm realm;
@@ -49,19 +61,19 @@ public class TestSM2 {
 		manager = EventModelManager.getInstance(eventPatterns);
 		
 		System.err.println("DIAG: Test starting.\n");
-		Thread.sleep(1000l);
+		// Thread.sleep(1000l);
 		
 		eventQueue.push(new D(source));
-		Thread.sleep(1000l);
+		// Thread.sleep(1000l);
 		
 		eventQueue.push(new B(source));
-		Thread.sleep(1000l);
+		// Thread.sleep(1000l);
 		
 		eventQueue.push(new C(source));
-		Thread.sleep(1000l);
+		// Thread.sleep(1000l);
 		
 		eventQueue.push(new A(source));
-		Thread.sleep(1000l);
+		// Thread.sleep(1000l);
 		
 		System.err.println("\nDIAG: Test finished.");
 	}

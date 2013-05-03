@@ -18,6 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getInTransitions <em>In Transitions</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getLabel <em>Label</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getCurrentVisitors <em>Current Visitors</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getStartConstraints <em>Start Constraints</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getStopConstraints <em>Stop Constraints</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getIntermediateConstraints <em>Intermediate Constraints</em>}</li>
  * </ul>
  * </p>
  *
@@ -106,5 +109,69 @@ public interface State extends EObject {
 	 * @generated
 	 */
 	EList<CurrentStateVisitor> getCurrentVisitors();
+
+	/**
+	 * Returns the value of the '<em><b>Start Constraints</b></em>' reference list.
+	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint}.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStartState <em>Start State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Start Constraints</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Start Constraints</em>' reference list.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getState_StartConstraints()
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStartState
+	 * @model opposite="startState"
+	 * @generated
+	 */
+	EList<TimeConstraint> getStartConstraints();
+
+	/**
+	 * Returns the value of the '<em><b>Stop Constraints</b></em>' reference list.
+	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint}.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStopState <em>Stop State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Stop Constraints</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Stop Constraints</em>' reference list.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getState_StopConstraints()
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStopState
+	 * @model opposite="stopState"
+	 * @generated
+	 */
+	EList<TimeConstraint> getStopConstraints();
+
+	/**
+	 * Returns the value of the '<em><b>Intermediate Constraints</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getIntermediateState <em>Intermediate State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intermediate Constraints</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intermediate Constraints</em>' reference.
+	 * @see #setIntermediateConstraints(TimeConstraint)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getState_IntermediateConstraints()
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getIntermediateState
+	 * @model opposite="intermediateState"
+	 * @generated
+	 */
+	TimeConstraint getIntermediateConstraints();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getIntermediateConstraints <em>Intermediate Constraints</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Intermediate Constraints</em>' reference.
+	 * @see #getIntermediateConstraints()
+	 * @generated
+	 */
+	void setIntermediateConstraints(TimeConstraint value);
 
 } // State

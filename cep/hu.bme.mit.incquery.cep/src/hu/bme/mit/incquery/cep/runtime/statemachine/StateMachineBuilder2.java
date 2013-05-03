@@ -4,6 +4,7 @@ import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
+import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Action;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
@@ -12,13 +13,13 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.commons.logging.impl.AvalonLogger;
 
 public class StateMachineBuilder2 {
 	
@@ -46,6 +47,8 @@ public class StateMachineBuilder2 {
 		
 		buildInitialTrace();
 		buildAlternativeTraces();
+		
+		sm.getStates().add(SM_FACTORY.createTrapState());
 		
 		sm.setEventPattern(rootPattern);
 		model.getStateMachines().add(sm);
@@ -171,6 +174,26 @@ public class StateMachineBuilder2 {
 		return events;
 	}
 	
+	private void checkTimeConstraint(AtomicEventPattern atomicEventPattern) {
+		ComplexEventPattern containerEventPattern = (ComplexEventPattern) atomicEventPattern.eContainer();
+		if (containerEventPattern.getTimewindow() != null) {
+			
+		}
+	}
+	
+	private enum TimeConstraintType {
+		START, STOP;
+	}
+	
+	private void createTimeConstraint(State state, Timewindow timewindow, TimeConstraintType type) {
+		TimeConstraint constraint = SM_FACTORY.createTimeConstraint();
+		constraint.setExpectedLength(timewindow.getLength());
+		if (type.equals(TimeConstraintType.START)) {
+			constraint.setStartState(state);
+		} else if (type.equals(TimeConstraintType.STOP)) {
+			constraint.setStopState(state);
+		}
+	}
 	private boolean isAvailable(AtomicEventPattern ep, State state) {
 		if (appearsOnOutTransition(ep.getType(), state) || getUsedAtomicEventPatterns(state).contains(ep.getType())) {
 			return false;
@@ -214,9 +237,6 @@ public class StateMachineBuilder2 {
 							return false;
 						}
 					}
-					// if (!checkSubTree(compositionEvents.get(i - 1), state)) {
-					// return false;
-					// }
 				}
 			}
 			
@@ -243,23 +263,6 @@ public class StateMachineBuilder2 {
 		}
 		
 		return patternPosition;
-	}
-	
-	private boolean checkSubTree(EventPattern precedingCompositionEvent, State state) {
-		List<AtomicEventPattern> flattenedPrecedingPatterns = new ArrayList<AtomicEventPattern>();
-		flattenedPrecedingPatterns.addAll(SMUtils.flattenComplexPatterns(precedingCompositionEvent));
-		
-		for (EventPattern ep : flattenedPrecedingPatterns) {
-			flattenedPrecedingPatterns.addAll(SMUtils.flattenComplexPatterns(ep));
-		}
-		
-		for (AtomicEventPattern ap : flattenedPrecedingPatterns) {
-			if (!getUsedAtomicEventPatterns(state).contains(ap)) {
-				return false;
-			}
-		}
-		
-		return true;
 	}
 	
 	private boolean appearsOnOutTransition(String eventType, State state) {
