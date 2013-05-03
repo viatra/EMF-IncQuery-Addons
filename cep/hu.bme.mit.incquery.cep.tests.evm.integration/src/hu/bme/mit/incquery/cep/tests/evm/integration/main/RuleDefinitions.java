@@ -1,5 +1,6 @@
 package hu.bme.mit.incquery.cep.tests.evm.integration.main;
 import hu.bme.mit.incquery.cep.runtime.evm.CepRuleSpecification;
+import hu.bme.mit.incquery.cep.runtime.evm.EventPatternMatch;
 import hu.bme.mit.incquery.cep.tests.evm.integration.evmspecific.ABCPatternMatch;
 
 import java.util.HashSet;
@@ -13,15 +14,15 @@ import org.eclipse.incquery.runtime.evm.specific.lifecycle.DefaultActivationLife
 
 public class RuleDefinitions {
 	
-	public static Set<CepRuleSpecification> getEventRules() {
-		Set<CepRuleSpecification> ruleSpecs = new HashSet<CepRuleSpecification>();
+	public static Set<CepRuleSpecification<EventPatternMatch>> getEventRules() {
+		Set<CepRuleSpecification<EventPatternMatch>> ruleSpecs = new HashSet<CepRuleSpecification<EventPatternMatch>>();
 		
 		ruleSpecs.add(getABCPatternMatchRule());
 		
 		return ruleSpecs;
 	}
 	
-	private static CepRuleSpecification getABCPatternMatchRule() {
+	private static CepRuleSpecification<EventPatternMatch> getABCPatternMatchRule() {
 		IMatchProcessor<ABCPatternMatch> processor = new IMatchProcessor<ABCPatternMatch>() {
 			
 			@Override
@@ -33,7 +34,8 @@ public class RuleDefinitions {
 		Set<Job> jobs = new HashSet<Job>();
 		jobs.add(new StatelessJob<ABCPatternMatch>(ActivationState.APPEARED, processor));
 		
-		CepRuleSpecification spec = new CepRuleSpecification(DefaultActivationLifeCycle.DEFAULT, jobs);
+		CepRuleSpecification<EventPatternMatch> spec = new CepRuleSpecification<EventPatternMatch>(
+				DefaultActivationLifeCycle.DEFAULT, jobs);
 		
 		return spec;
 	}

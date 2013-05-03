@@ -9,6 +9,7 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.EventProcessingStrate
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.IEventProcessingStrategy;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
 import hu.bme.mit.incquery.cep.runtime.evm.CepRuleSpecification;
+import hu.bme.mit.incquery.cep.runtime.evm.EventPatternMatch;
 import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder2;
 
 import java.util.HashSet;
@@ -50,7 +51,7 @@ public class EventModelManager {
 	}
 	
 	public static EventModelManager getInstance(List<EventPattern> eventPatterns, Strategy strategy,
-			Set<CepRuleSpecification> eventPatternMatchRules) {
+			Set<CepRuleSpecification<EventPatternMatch>> eventPatternMatchRules) {
 		if (instance == null) {
 			instance = new EventModelManager(eventPatterns, strategy, eventPatternMatchRules);
 		}
@@ -63,7 +64,7 @@ public class EventModelManager {
 	}
 	
 	private EventModelManager(List<EventPattern> eventPatterns, Strategy strategy,
-			Set<CepRuleSpecification> eventPatternMatchRules) {
+			Set<CepRuleSpecification<EventPatternMatch>> eventPatternMatchRules) {
 		model = SM_FACTORY.createInternalExecutionModel();
 		this.strategy = EventProcessingStrategyFactory.getStrategy(strategy);
 		
