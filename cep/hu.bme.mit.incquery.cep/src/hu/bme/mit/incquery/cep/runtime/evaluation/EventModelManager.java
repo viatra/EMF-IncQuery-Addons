@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.evm.api.EventDrivenVM;
+import org.eclipse.incquery.runtime.evm.api.ExecutionSchema;
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification;
 import org.eclipse.incquery.runtime.evm.api.Scheduler.ISchedulerFactory;
 import org.eclipse.incquery.runtime.evm.api.event.EventSource;
@@ -44,6 +45,7 @@ public class EventModelManager {
 	private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
 	private Resource smModelResource;
 	private IEventProcessingStrategy strategy;
+	private ExecutionSchema executionSchema;
 	
 	@Deprecated
 	public static EventModelManager getInstance(List<EventPattern> eventPatterns, Strategy strategy) {
@@ -103,7 +105,7 @@ public class EventModelManager {
 				rules.addAll(eventPatternMatchRules);
 			}
 			
-			EventDrivenVM.createExecutionSchema(iqEventSource, schedulerFactory, rules);
+			executionSchema = EventDrivenVM.createExecutionSchema(iqEventSource, schedulerFactory, rules);
 			// engine.getLogger().setLevel(Level.DEBUG);
 		} catch (IncQueryException e) {
 			// TODO handle error
@@ -126,5 +128,9 @@ public class EventModelManager {
 	
 	public IEventProcessingStrategy getStrategy() {
 		return strategy;
+	}
+	
+	public ExecutionSchema getExecutionSchema() {
+		return executionSchema;
 	}
 }

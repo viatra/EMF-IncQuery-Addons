@@ -1,5 +1,9 @@
 package hu.bme.mit.incquery.cep.runtime.evm;
 
+import hu.bme.mit.incquery.cep.runtime.evaluation.ModelHandlerRules;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import org.eclipse.incquery.runtime.evm.api.ActivationLifeCycle;
@@ -12,7 +16,7 @@ import org.eclipse.incquery.runtime.evm.specific.event.IncQueryEventSource;
 
 public class CepRuleSpecification<Match extends EventPatternMatch> extends RuleSpecification {
 	
-	public CepRuleSpecification(ActivationLifeCycle lifeCycle, Set<Job> jobs) {
+	public CepRuleSpecification(final ActivationLifeCycle lifeCycle, final Set<Job> jobs) {
 		super(lifeCycle, jobs);
 	}
 	
@@ -22,7 +26,7 @@ public class CepRuleSpecification<Match extends EventPatternMatch> extends RuleS
 		if (eventSource instanceof IncQueryEventSource) {
 			try {
 				ruleInstance = new CepRuleInstance<Match>(this, filter);
-				ruleInstance.prepareAttributeMonitor();
+				ruleInstance.prepareInstance();
 			} catch (Exception e) {
 				System.out.println(e.getStackTrace());
 			}
@@ -30,6 +34,11 @@ public class CepRuleSpecification<Match extends EventPatternMatch> extends RuleS
 			eventSource.getLogger().error(
 					"Cannot instantiate rule with EvenSource " + eventSource + "! Should be IncQueryEventSource.");
 		}
+		
+		List<CepRuleInstance<?>> list = new ArrayList<CepRuleInstance<?>>();
+		list.add(ruleInstance);
+		ModelHandlerRules.getIntance().assignEventHandlers(list);
+		
 		return ruleInstance;
 	}
 }

@@ -6,6 +6,9 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchUpdateListener;
+import org.eclipse.incquery.runtime.api.MatchUpdateAdapter;
 import org.eclipse.incquery.runtime.evm.api.Activation;
 import org.eclipse.incquery.runtime.evm.api.ActivationLifeCycleEvent;
 import org.eclipse.incquery.runtime.evm.api.ActivationState;
@@ -19,8 +22,45 @@ import org.eclipse.incquery.runtime.evm.specific.event.PatternMatchAtom;
 
 public class CepRuleInstance<Match extends EventPatternMatch> extends RuleInstance {
 	
+	private IMatchUpdateListener<Match> matchUpdateListener;
+	
 	protected CepRuleInstance(RuleSpecification specification, Atom filter) {
 		super(specification, filter);
+	}
+	
+	protected void prepareInstance() {
+		prepareMatchUpdateListener();
+		prepareAttributeMonitorAndListener();
+	}
+	
+	@Override
+	protected Logger getLogger() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public IMatchUpdateListener<Match> getMatchUpdateListener() {
+		return matchUpdateListener;
+	}
+	
+	public void setMatchUpdateListener(IMatchUpdateListener<Match> matchUpdateListener) {
+		this.matchUpdateListener = matchUpdateListener;
+	}
+	
+	protected void prepareMatchUpdateListener() {
+		IMatchProcessor<Match> matchAppearProcessor = checkNotNull(prepareMatchAppearProcessor(),
+				"Prepared match appearance processor is null!");
+		IMatchProcessor<Match> matchDisppearProcessor = checkNotNull(prepareMatchDisppearProcessor(),
+				"Prepared match disappearance processor is null!");
+		this.setMatchUpdateListener(new MatchUpdateAdapter<Match>(matchAppearProcessor, matchDisppearProcessor));
+	}
+	
+	protected IMatchProcessor<Match> prepareMatchAppearProcessor() {
+		return new DefaultMatchAppearProcessor();
+	}
+	
+	protected IMatchProcessor<Match> prepareMatchDisppearProcessor() {
+		return new DefaultMatchDisappearProcessor();
 	}
 	
 	@Override
@@ -34,17 +74,9 @@ public class CepRuleInstance<Match extends EventPatternMatch> extends RuleInstan
 	}
 	
 	private abstract class DefaultMatchEventProcessor {
-		
-		/**
-		 * This method is called with the match corresponding to the
-		 * activation that is affected by the event.
-		 * 
-		 * @param atom
-		 */
 		protected void processMatchEvent(CepAtom<Match> atom) {
 			checkNotNull(atom, "Cannot process null match!");
 			
-			// TODO check filter (this might be expensive!!!)
 			if (!getFilter().isCompatibleWith(atom)) {
 				return;
 			}
@@ -60,21 +92,58 @@ public class CepRuleInstance<Match extends EventPatternMatch> extends RuleInstan
 			}
 		}
 		
-		/**
-		 * This method is called by processMatchEvent if the activation
-		 * already exists for the given match.
-		 * 
-		 * @param activation
-		 */
 		protected abstract void activationExists(Activation activation);
 		
-		/**
-		 * This method is called by processMatchEvent if the activation
-		 * does not exists for the given match.
-		 * 
-		 * @param match
-		 */
 		protected abstract void activationMissing(CepAtom<Match> atom);
+	}
+	
+	private final class DefaultMatchAppearProcessor extends DefaultMatchEventProcessor
+			implements
+				IMatchProcessor<Match> {
+		
+		@Override
+		protected void activationExists(Activation activation) {
+			activationStateTransition(activation, ActivationLifeCycleEvent.MATCH_APPEARS);
+		}
+		
+		@Override
+		protected void activationMissing(CepAtom<Match> atom) {
+			Activation activation = createActivation(atom);
+			if (getSpecification().getLifeCycle().containsTo(ActivationState.UPDATED)) {
+				getAttributeMonitor().registerFor(atom);
+			}
+			activationStateTransition(activation, ActivationLifeCycleEvent.MATCH_APPEARS);
+		}
+		
+		@Override
+		public void process(Match match) {
+			CepAtom<Match> atom = new CepAtom<Match>(match);
+			processMatchEvent(atom);
+		}
+		
+	}
+	
+	private final class DefaultMatchDisappearProcessor extends DefaultMatchEventProcessor
+			implements
+				IMatchProcessor<Match> {
+		
+		@Override
+		protected void activationExists(Activation activation) {
+			activationStateTransition(activation, ActivationLifeCycleEvent.MATCH_DISAPPEARS);
+		}
+		
+		@Override
+		protected void activationMissing(CepAtom<Match> atom) {
+			getLogger().error(
+					String.format("Atom %s disappeared without existing activation in rule instance %s!", atom, this));
+		}
+		
+		@Override
+		public void process(Match match) {
+			CepAtom<Match> atom = new CepAtom<Match>(match);
+			processMatchEvent(atom);
+		}
+		
 	}
 	
 	private final class DefaultAttributeMonitorListener extends DefaultMatchEventProcessor
@@ -98,13 +167,5 @@ public class CepRuleInstance<Match extends EventPatternMatch> extends RuleInstan
 			getLogger().error(
 					String.format("Atom %s updated without existing activation in rule instance %s!", atom, this));
 		}
-		
 	}
-	
-	@Override
-	protected Logger getLogger() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 }
