@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Integration2
+Bundle-SymbolicName: hu.bme.mit.incquery.cep.tests.evm.integration2
+Fragment-Host: hu.bme.mit.incquery.cep;bundle-version="1.0.0"
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.incquery.runtime.evm;bundle-version="0.7.0",
+ org.junit
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

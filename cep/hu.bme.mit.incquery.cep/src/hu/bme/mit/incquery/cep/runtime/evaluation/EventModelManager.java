@@ -1,17 +1,20 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation;
 
+import hu.bme.mit.incquery.cep.api.ObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.EventProcessingStrategyFactory;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.IEventProcessingStrategy;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
-import hu.bme.mit.incquery.cep.runtime.evm.CepRuleSpecification;
-import hu.bme.mit.incquery.cep.runtime.evm.EventPatternMatch;
 import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder2;
+import hu.bme.mit.incquery.cep.specific.evm.CepEventSourceSpecification;
+import hu.bme.mit.incquery.cep.specific.evm.CepRealm;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -27,48 +30,44 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.evm.api.Activation;
+import org.eclipse.incquery.runtime.evm.api.Context;
 import org.eclipse.incquery.runtime.evm.api.EventDrivenVM;
 import org.eclipse.incquery.runtime.evm.api.ExecutionSchema;
+import org.eclipse.incquery.runtime.evm.api.Job;
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification;
 import org.eclipse.incquery.runtime.evm.api.Scheduler.ISchedulerFactory;
-import org.eclipse.incquery.runtime.evm.api.event.EventSource;
+import org.eclipse.incquery.runtime.evm.specific.ExecutionSchemas;
 import org.eclipse.incquery.runtime.evm.specific.Schedulers;
-import org.eclipse.incquery.runtime.evm.specific.event.IncQueryEventSource;
+import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum;
+import org.eclipse.incquery.runtime.evm.specific.lifecycle.DefaultActivationLifeCycle;
+import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedScheduler;
+import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory;
+import org.eclipse.incquery.runtime.evm.update.UpdateCompleteProvider;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
-import com.google.common.base.Preconditions;
+import com.google.common.collect.Sets;
 
 public class EventModelManager {
-	private static EventModelManager instance;
 	private InternalExecutionModel model;
 	private IncQueryEngine engine;
 	private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
 	private Resource smModelResource;
 	private IEventProcessingStrategy strategy;
-	private ExecutionSchema executionSchema;
+	private ExecutionSchema lowLevelExecutionSchema;
+	private CepRealm realm;
+	private UpdateCompleteProviderExtension updateCompleteProvider;
 	
-	@Deprecated
-	public static EventModelManager getInstance(List<EventPattern> eventPatterns, Strategy strategy) {
-		return getInstance(eventPatterns, strategy, null);
-	}
-	
-	public static EventModelManager getInstance(List<EventPattern> eventPatterns, Strategy strategy,
-			Set<CepRuleSpecification<EventPatternMatch>> eventPatternMatchRules) {
-		if (instance == null) {
-			instance = new EventModelManager(eventPatterns, strategy, eventPatternMatchRules);
+	private final class UpdateCompleteProviderExtension extends UpdateCompleteProvider {
+		protected void latestEventHandled() {
+			updateCompleted();
 		}
-		return instance;
 	}
 	
-	public static EventModelManager getInstance() {
-		Preconditions.checkNotNull(instance, new Exception("The manager hasn't been initialized yet."));
-		return instance;
-	}
-	
-	private EventModelManager(List<EventPattern> eventPatterns, Strategy strategy,
-			Set<CepRuleSpecification<EventPatternMatch>> eventPatternMatchRules) {
+	public EventModelManager(Strategy strategy) {
 		model = SM_FACTORY.createInternalExecutionModel();
-		this.strategy = EventProcessingStrategyFactory.getStrategy(strategy);
+		this.strategy = EventProcessingStrategyFactory.getStrategy(strategy, this);
+		this.realm = new CepRealm();
 		
 		Adapter adapter = new AdapterImpl() {
 			@Override
@@ -82,9 +81,38 @@ public class EventModelManager {
 			}
 		};
 		EventQueue.getInstance().eAdapters().add(adapter);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void assignEventPatterns(List<EventPattern> eventPatterns) {
+		Set<RuleSpecification<?>> rules = new HashSet<RuleSpecification<?>>();
 		
 		for (EventPattern eventPattern : eventPatterns) {
-			new StateMachineBuilder2(model, eventPattern).buildStateMachine();
+			CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(eventPattern, this);
+			
+			Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(
+					IncQueryActivationStateEnum.FIRED) {
+				@Override
+				protected void execute(Activation<? extends ObservedComplexEventPattern> activation, Context context) {
+					System.out.println("Complex event pattern disappeared:"
+							+ activation.getAtom().getObservedEventPattern().getId());
+				}
+				@Override
+				protected void handleError(Activation<? extends ObservedComplexEventPattern> activation,
+						Exception exception, Context context) {
+					// not gonna happen
+				}
+			};
+			
+			RuleSpecification<ObservedComplexEventPattern> ruleSpec = new RuleSpecification<ObservedComplexEventPattern>(
+					sourceSpec, new DefaultActivationLifeCycle(), Sets.newHashSet(job));
+			
+			updateCompleteProvider = new UpdateCompleteProviderExtension();
+			UpdateCompleteBasedSchedulerFactory schedulerFactory = new UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory(
+					updateCompleteProvider);
+			ExecutionSchema cepExecutionSchema = EventDrivenVM.createExecutionSchema(realm, schedulerFactory,
+					Collections.EMPTY_SET);
+			cepExecutionSchema.addRule(ruleSpec, false);
 		}
 		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
@@ -97,26 +125,23 @@ public class EventModelManager {
 		try {
 			engine = EngineManager.getInstance().getIncQueryEngine(resourceSet);
 			ISchedulerFactory schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine);
-			EventSource iqEventSource = IncQueryEventSource.create(engine);
 			
-			Set<RuleSpecification> rules = new HashSet<RuleSpecification>();
-			rules.addAll(ModelHandlerRules.getIntance().getModelHandlers());
-			if (eventPatternMatchRules != null) {
-				rules.addAll(eventPatternMatchRules);
-			}
-			
-			executionSchema = EventDrivenVM.createExecutionSchema(iqEventSource, schedulerFactory, rules);
+			rules.addAll(ModelHandlerRules.getIntance(this).getModelHandlers());
+			lowLevelExecutionSchema = ExecutionSchemas.createIncQueryExecutionSchema(engine, schedulerFactory, rules);
 			// engine.getLogger().setLevel(Level.DEBUG);
 		} catch (IncQueryException e) {
-			// TODO handle error
 			e.printStackTrace();
 		}
 	}
 	
+	public StateMachine getStateMachine(EventPattern eventPattern) {
+		return new StateMachineBuilder2(model, eventPattern).buildStateMachine();
+	}
 	private void refreshModel(Event event) {
 		model.setLatestEvent(null);
 		strategy.handleVisitorCreation(model, SM_FACTORY);
 		model.setLatestEvent(event);
+		updateCompleteProvider.latestEventHandled();
 	}
 	public InternalExecutionModel getModel() {
 		return model;
@@ -131,6 +156,10 @@ public class EventModelManager {
 	}
 	
 	public ExecutionSchema getExecutionSchema() {
-		return executionSchema;
+		return lowLevelExecutionSchema;
+	}
+	
+	public CepRealm getRealm() {
+		return realm;
 	}
 }

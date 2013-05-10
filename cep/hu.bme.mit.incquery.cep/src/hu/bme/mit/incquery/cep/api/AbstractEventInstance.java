@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.runtime.evaluation;
+package hu.bme.mit.incquery.cep.api;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.EventImpl;

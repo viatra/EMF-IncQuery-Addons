@@ -12,13 +12,13 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 public final class GroupOfFileEvaluationPatterns extends BaseGeneratedPatternGroup {
   public GroupOfFileEvaluationPatterns() throws IncQueryException {
-    matcherFactories.add(TransitionMatcher.factory());
-    matcherFactories.add(FinalStateMatcher.factory());
     matcherFactories.add(EnabledTransitionMatcher.factory());
-    matcherFactories.add(LatestEventMatcher.factory());
+    matcherFactories.add(FinalStateMatcher.factory());
+    matcherFactories.add(TransitionMatcher.factory());
     matcherFactories.add(EventHandledByCSVMatcher.factory());
-    matcherFactories.add(PreStateMatcher.factory());
+    matcherFactories.add(LatestEventMatcher.factory());
     matcherFactories.add(FinishedStateMachineMatcher.factory());
+    matcherFactories.add(PreStateMatcher.factory());
     
   }
 }

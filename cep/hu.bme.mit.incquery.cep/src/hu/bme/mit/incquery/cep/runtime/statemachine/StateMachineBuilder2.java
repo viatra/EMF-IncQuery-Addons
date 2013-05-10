@@ -36,7 +36,7 @@ public class StateMachineBuilder2 {
 		this.rootPattern = rootPattern;
 	}
 	
-	public void buildStateMachine() {
+	public StateMachine buildStateMachine() {
 		sm = SM_FACTORY.createStateMachine();
 		
 		action = SM_FACTORY.createAction();
@@ -51,6 +51,8 @@ public class StateMachineBuilder2 {
 		
 		sm.setEventPattern(rootPattern);
 		model.getStateMachines().add(sm);
+		
+		return sm;
 	}
 	
 	private void buildInitialTrace() {

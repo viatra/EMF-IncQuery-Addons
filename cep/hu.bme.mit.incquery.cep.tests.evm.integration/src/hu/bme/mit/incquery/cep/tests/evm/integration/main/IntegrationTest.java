@@ -45,7 +45,8 @@ public class IntegrationTest {
 		List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
 		eventPatterns.add(abcPattern);
 		
-		manager = EventModelManager.getInstance(eventPatterns, Strategy.getDefault(), RuleDefinitions.getEventRules());
+		manager = new EventModelManager(Strategy.getDefault());
+		manager.assignEventPatterns(eventPatterns);
 		
 		System.err.println("DIAG: Test starting.\n");
 		eventQueue.push(new A(source));

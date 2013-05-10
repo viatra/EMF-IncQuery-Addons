@@ -13,6 +13,12 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
 
 public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 	
+	private EventModelManager eventModelManager;
+	
+	public ChronicleStrategy(EventModelManager eventModelManager) {
+		this.eventModelManager = eventModelManager;
+	}
+	
 	@Override
 	public void fireTransition(Transition t) {
 		State preState = t.getPreState();
@@ -20,7 +26,7 @@ public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 			return;
 		}
 		
-		InternalExecutionModel model = EventModelManager.getInstance().getModel();
+		InternalExecutionModel model = eventModelManager.getModel();
 		State nextState = t.getPostState();
 		
 		CurrentStateVisitor cvToMove = t.getPreState().getCurrentVisitors().get(0);

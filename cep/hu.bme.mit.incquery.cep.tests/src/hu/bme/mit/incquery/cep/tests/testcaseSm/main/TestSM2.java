@@ -47,7 +47,8 @@ public class TestSM2 {
 		List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
 		eventPatterns.add(dabcPattern);
 		
-		manager = EventModelManager.getInstance(eventPatterns, Strategy.getDefault());
+		manager = new EventModelManager(Strategy.getDefault());
+		manager.assignEventPatterns(eventPatterns);
 		
 		System.err.println("DIAG: Test starting.\n");
 		// Thread.sleep(1000l);

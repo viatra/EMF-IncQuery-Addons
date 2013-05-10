@@ -1,5 +1,7 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation;
 
+import hu.bme.mit.incquery.cep.api.ObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.SimpleObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
@@ -10,78 +12,62 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledtransition.Enab
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledtransition.EnabledTransitionMatcher;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedstatemachine.FinishedStateMachineMatch;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedstatemachine.FinishedStateMachineMatcher;
-import hu.bme.mit.incquery.cep.runtime.evm.CepRuleInstance;
 
-import java.util.Collection;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatchUpdateListener;
-import org.eclipse.incquery.runtime.api.MatchUpdateAdapter;
-import org.eclipse.incquery.runtime.evm.api.Activation;
-import org.eclipse.incquery.runtime.evm.api.ActivationState;
 import org.eclipse.incquery.runtime.evm.api.Job;
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification;
+import org.eclipse.incquery.runtime.evm.specific.Rules;
+import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum;
 import org.eclipse.incquery.runtime.evm.specific.job.StatelessJob;
 import org.eclipse.incquery.runtime.evm.specific.lifecycle.DefaultActivationLifeCycle;
-import org.eclipse.incquery.runtime.evm.specific.rule.SimpleMatcherRuleSpecification;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 import com.google.common.collect.Multimap;
 
 public class ModelHandlerRules {
 	private static ModelHandlerRules instance;
-	private Set<RuleSpecification> modelHandlers;
-	private List<CepRuleInstance<?>> eventHandlers;
+	private Set<RuleSpecification<?>> modelHandlers;
+	private EventModelManager eventModelManager;
 	
-	private ModelHandlerRules() {
-		modelHandlers = new HashSet<RuleSpecification>();
+	private ModelHandlerRules(EventModelManager eventModelManager) {
+		this.eventModelManager = eventModelManager;
 		
+		modelHandlers = new HashSet<RuleSpecification<?>>();
 		try {
 			modelHandlers.add(getEnabledTransitionsRule());
 			modelHandlers.add(getFinishedStateMachineRule());
 		} catch (IncQueryException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
-	public static ModelHandlerRules getIntance() {
+	public static ModelHandlerRules getIntance(EventModelManager eventModelManager) {
 		if (instance == null) {
-			instance = new ModelHandlerRules();
+			instance = new ModelHandlerRules(eventModelManager);
 		}
 		return instance;
 	}
 	
-	public void assignEventHandlers(List<CepRuleInstance<?>> e) {
-		eventHandlers = e;
-	}
-	
-	public Set<RuleSpecification> getModelHandlers() {
+	public Set<RuleSpecification<?>> getModelHandlers() {
 		return modelHandlers;
 	}
 	
-	public RuleSpecification getFinishedStateMachineRule() throws IncQueryException {
+	public RuleSpecification<FinishedStateMachineMatch> getFinishedStateMachineRule() throws IncQueryException {
 		IMatchProcessor<FinishedStateMachineMatch> processor = new IMatchProcessor<FinishedStateMachineMatch>() {
 			
 			@Override
 			public void process(FinishedStateMachineMatch match) {
-				for (CepRuleInstance<?> ri : eventHandlers) {
-					Collection<Activation> allActivations = ri.getAllActivations();
-					Iterator<Activation> iterator = allActivations.iterator();
-					while (iterator.hasNext()) {
-						Activation a = iterator.next();
-						ri.fire(a, EventModelManager.getInstance().getExecutionSchema().getContext());
-					}
-					
-				}
-				
 				StateMachine sm = match.getSm();
 				System.err.println("\tIQ: " + sm.getEventPattern().getId() + " MATCHED!");
+				
+				// forward the observed pattern in a DTO
+				ObservedComplexEventPattern observedPattern = new SimpleObservedComplexEventPattern(
+						sm.getEventPattern());
+				eventModelManager.getRealm().forwardObservedEventPattern(observedPattern);
 				
 				for (State s : sm.getStates()) {
 					if (s instanceof FinalState) {
@@ -108,15 +94,16 @@ public class ModelHandlerRules {
 			
 		};
 		
-		Set<Job> jobs = new HashSet<Job>();
-		jobs.add(new StatelessJob<FinishedStateMachineMatch>(ActivationState.APPEARED, processor));
+		Set<Job<FinishedStateMachineMatch>> jobs = new HashSet<Job<FinishedStateMachineMatch>>();
+		jobs.add(new StatelessJob<FinishedStateMachineMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 		
-		SimpleMatcherRuleSpecification<FinishedStateMachineMatch> spec = new SimpleMatcherRuleSpecification<FinishedStateMachineMatch>(
+		RuleSpecification<FinishedStateMachineMatch> spec = Rules.newSimpleMatcherRuleSpecification(
 				FinishedStateMachineMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
 		
 		return spec;
 	}
-	public RuleSpecification getEnabledTransitionsRule() throws IncQueryException {
+	
+	public RuleSpecification<EnabledTransitionMatch> getEnabledTransitionsRule() throws IncQueryException {
 		IMatchProcessor<EnabledTransitionMatch> processor = new IMatchProcessor<EnabledTransitionMatch>() {
 			
 			@Override
@@ -125,14 +112,14 @@ public class ModelHandlerRules {
 				StateMachine sm = (StateMachine) t.getPostState().eContainer();
 				System.err.println("\tIQ: enabled transition in SM for pattern "
 						+ sm.getEventPattern().getClass().getSimpleName());
-				EventModelManager.getInstance().getStrategy().fireTransition(t);
+				eventModelManager.getStrategy().fireTransition(t);
 			}
 		};
 		
-		Set<Job> jobs = new HashSet<Job>();
-		jobs.add(new StatelessJob<EnabledTransitionMatch>(ActivationState.APPEARED, processor));
+		Set<Job<EnabledTransitionMatch>> jobs = new HashSet<Job<EnabledTransitionMatch>>();
+		jobs.add(new StatelessJob<EnabledTransitionMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 		
-		SimpleMatcherRuleSpecification<EnabledTransitionMatch> spec = new SimpleMatcherRuleSpecification<EnabledTransitionMatch>(
+		RuleSpecification<EnabledTransitionMatch> spec = Rules.newSimpleMatcherRuleSpecification(
 				EnabledTransitionMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
 		
 		return spec;

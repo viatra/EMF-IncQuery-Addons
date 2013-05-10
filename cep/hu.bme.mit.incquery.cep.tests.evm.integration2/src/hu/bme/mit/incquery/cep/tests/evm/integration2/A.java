@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.tests.evm.integration.events;
+package hu.bme.mit.incquery.cep.tests.evm.integration2;
 
 import hu.bme.mit.incquery.cep.api.AbstractEventInstance;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
