@@ -20,7 +20,6 @@ import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.incquery.patternlanguage.emf.eMFPatternLanguage.EClassifierConstraint;
 import org.eclipse.incquery.patternlanguage.patternLanguage.CheckConstraint;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Constraint;
 import org.eclipse.incquery.patternlanguage.patternLanguage.PathExpressionConstraint;
@@ -93,19 +92,37 @@ public class QueryOnlyMetrics {
 		return results;
 	}	
 	
+//	/**
+//	 * Number of: ...
+//	 */
+//	public static Map<PatternBody,Integer> numberOfEnumerableConstraints(Pattern pattern) {
+//		Map<PatternBody, Integer> results = new HashMap<PatternBody, Integer>(); 
+//		final EList<PatternBody> bodies = pattern.getBodies();
+//		for (PatternBody patternBody : bodies) {
+//			int count = 0;
+//			final EList<Constraint> constraints = patternBody.getConstraints();
+//			for (Constraint constraint : constraints) {
+//				if (constraint instanceof EClassifierConstraint ||
+//						constraint instanceof PathExpressionConstraint ||
+//						constraint instanceof PatternCompositionConstraint)
+//					count++;
+//			}
+//			results.put(patternBody, count);
+//		}
+//		return results;
+//	}	
+	
 	/**
 	 * Number of: ...
 	 */
-	public static Map<PatternBody,Integer> numberOfEnumerableConstraints(Pattern pattern) {
+	public static Map<PatternBody,Integer> numberOfEdgeConstraints(Pattern pattern) {
 		Map<PatternBody, Integer> results = new HashMap<PatternBody, Integer>(); 
 		final EList<PatternBody> bodies = pattern.getBodies();
 		for (PatternBody patternBody : bodies) {
 			int count = 0;
 			final EList<Constraint> constraints = patternBody.getConstraints();
 			for (Constraint constraint : constraints) {
-				if (constraint instanceof EClassifierConstraint ||
-						constraint instanceof PathExpressionConstraint ||
-						constraint instanceof PatternCompositionConstraint)
+				if (constraint instanceof PathExpressionConstraint)
 					count++;
 			}
 			results.put(patternBody, count);
