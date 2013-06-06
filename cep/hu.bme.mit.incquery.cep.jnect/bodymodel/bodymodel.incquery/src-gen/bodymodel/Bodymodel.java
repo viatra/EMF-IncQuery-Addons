@@ -39,8 +39,8 @@ public final class Bodymodel extends BaseGeneratedPatternGroup {
   private static Bodymodel INSTANCE;
   
   private Bodymodel() throws IncQueryException {
-    querySpecifications.add(RightHandAboveHead_MovingAverageMatcher.querySpecification());
     querySpecifications.add(RightHandAboveHeadMatcher.querySpecification());
+    querySpecifications.add(RightHandAboveHead_MovingAverageMatcher.querySpecification());
     
   }
 }

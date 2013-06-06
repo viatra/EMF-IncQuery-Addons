@@ -8,3 +8,5 @@ xtend-gen
 +keep.txt
 +.keep.txt
 globalEiqModel.xmi
+*.class
+*_trace
