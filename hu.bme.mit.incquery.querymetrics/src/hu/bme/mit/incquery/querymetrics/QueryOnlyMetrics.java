@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.incquery.patternlanguage.patternLanguage.CheckConstraint;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Constraint;
+import org.eclipse.incquery.patternlanguage.patternLanguage.PathExpressionConstraint;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.patternlanguage.patternLanguage.PatternBody;
 import org.eclipse.incquery.patternlanguage.patternLanguage.PatternCall;
@@ -84,6 +85,44 @@ public class QueryOnlyMetrics {
 			final EList<Constraint> constraints = patternBody.getConstraints();
 			for (Constraint constraint : constraints) {
 				if (constraint instanceof CheckConstraint)
+					count++;
+			}
+			results.put(patternBody, count);
+		}
+		return results;
+	}	
+	
+//	/**
+//	 * Number of: ...
+//	 */
+//	public static Map<PatternBody,Integer> numberOfEnumerableConstraints(Pattern pattern) {
+//		Map<PatternBody, Integer> results = new HashMap<PatternBody, Integer>(); 
+//		final EList<PatternBody> bodies = pattern.getBodies();
+//		for (PatternBody patternBody : bodies) {
+//			int count = 0;
+//			final EList<Constraint> constraints = patternBody.getConstraints();
+//			for (Constraint constraint : constraints) {
+//				if (constraint instanceof EClassifierConstraint ||
+//						constraint instanceof PathExpressionConstraint ||
+//						constraint instanceof PatternCompositionConstraint)
+//					count++;
+//			}
+//			results.put(patternBody, count);
+//		}
+//		return results;
+//	}	
+	
+	/**
+	 * Number of: ...
+	 */
+	public static Map<PatternBody,Integer> numberOfEdgeConstraints(Pattern pattern) {
+		Map<PatternBody, Integer> results = new HashMap<PatternBody, Integer>(); 
+		final EList<PatternBody> bodies = pattern.getBodies();
+		for (PatternBody patternBody : bodies) {
+			int count = 0;
+			final EList<Constraint> constraints = patternBody.getConstraints();
+			for (Constraint constraint : constraints) {
+				if (constraint instanceof PathExpressionConstraint)
 					count++;
 			}
 			results.put(patternBody, count);

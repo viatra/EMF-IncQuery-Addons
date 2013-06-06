@@ -40,7 +40,6 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.VariableReference;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.base.api.NavigationHelper;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.extensibility.MatcherFactoryRegistry;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -52,7 +51,7 @@ import com.google.common.collect.Multimap;
 public class QueryOnModelMetrics {
 	
 	public static int calcCountMatches(Pattern patt, IncQueryEngine engine) throws IncQueryException {
-		return MatcherFactoryRegistry.getOrCreateMatcherFactory(patt).getMatcher(engine).countMatches();
+		return engine.getMatcher(patt).countMatches();
 	}
 	
 	/**
@@ -112,7 +111,7 @@ public class QueryOnModelMetrics {
 						final PatternCall call = compo.getCall();
 						final Pattern patternRef = call.getPatternRef();
 						if (!call.isTransitive()) {
-							final int count = MatcherFactoryRegistry.getOrCreateMatcherFactory(patternRef).getMatcher(engine).countMatches();
+							final int count = calcCountMatches(patternRef, engine);
 							acc += Math.log(nonZero(count));
 						} else {
 							throw new UnsupportedOperationException("transitive closure estimate not supported yet");
