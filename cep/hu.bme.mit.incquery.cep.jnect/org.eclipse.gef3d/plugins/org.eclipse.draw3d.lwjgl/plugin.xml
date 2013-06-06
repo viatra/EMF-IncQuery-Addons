@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.draw3d.graphics3d">
+         <renderer
+               class="org.eclipse.draw3d.graphics3d.lwjgl.Graphics3DLwjgl"
+               id="org.eclipse.draw3d.graphics3d.lwjgl.Graphics3DLwjgl"
+               type="SCREEN">
+            <name>
+               LWJGL
+            </name>
+            <description>
+               Renders the diagram via OpenGL using the LWJGL Java wrpper library
+            </description>
+         </renderer>
+   </extension>
+
+</plugin>

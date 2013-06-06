@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+    <feature url="features/org.eclipse.draw3d_0.8.1.qualifier.jar" id="org.eclipse.draw3d" version="0.8.1.qualifier">
+      <category name="GEF3D"/>
+   </feature>
+   <feature url="features/org.eclipse.gef3d_0.8.1.qualifier.jar" id="org.eclipse.gef3d" version="0.8.1.qualifier">
+      <category name="GEF3D"/>
+   </feature>
+   <feature url="features/org.eclipse.gef3d.sdk_0.8.1.qualifier.jar" id="org.eclipse.gef3d.sdk" version="0.8.1.qualifier">
+      <category name="GEF3D"/>
+   </feature>
+   <feature url="features/org.eclipse.gef3d.examples_0.8.1.qualifier.jar" id="org.eclipse.gef3d.examples" version="0.8.1.qualifier">
+      <category name="GEF3D"/>
+   </feature>
+   <category-def name="GEF3D" label="GEF3D">
+      <description>
+         GEF3D
+      </description>
+   </category-def>
+</site>

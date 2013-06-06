@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension point="org.eclipse.help.toc">
+      <toc file="toc.xml" primary="true" />
+   </extension>
+   
+ <!--  ============================= --> 
+ <!--  Define Javadoc locations       --> 
+ <!--  =============================  --> 
+ <extension point="org.eclipse.pde.core.javadoc">
+     <javadoc path="reference/api/" archive="false">
+        <plugin id="org.eclipse.draw3d"/>
+        <plugin id="org.eclipse.draw3d.geometry"/>
+        <plugin id="org.eclipse.draw3d.graphics3d"/>
+    <!--    <plugin id="org.eclipse.draw3d.jogl"/> -->
+        <plugin id="org.eclipse.draw3d.lwjgl"/>
+        <plugin id="org.eclipse.draw3d.ui"/>
+        <plugin id="org.eclipse.gef3d"/>
+        <plugin id="org.eclipse.gef3d.ext"/>
+        <plugin id="org.eclipse.gef3d.ext.emf"/>
+        <plugin id="org.eclipse.gef3d.gmf"/>
+        <plugin id="org.eclipse.gef3d.examples.ecore"/>
+        <plugin id="org.eclipse.gef3d.examples.graph"/>
+     </javadoc>
+  </extension>
+  
+
+
+
+</plugin>

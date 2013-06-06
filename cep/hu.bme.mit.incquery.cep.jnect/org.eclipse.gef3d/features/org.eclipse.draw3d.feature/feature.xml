@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.draw3d"
+      label="Draw3D Feature"
+      version="0.8.1.qualifier"
+      provider-name="Eclipse.org">
+
+   <description url="http://www.example.com/description">
+      Draw3D is the 3D version of draw2d. 
+      Important notice: At least one OpenGL wrapper library is required, actually this Draw3D version requires LWJGL. Due to IP issues, no such library is included in this feature, it has to be installed previously. You can install the LWJGL library using the update site at
+        http://lwjgl.org/update 
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.draw2d" version="3.5.2.v20100111-1352-4417w311A223702A19"/>
+      <import feature="org.lwjgl" version="2.7.1" />
+   </requires>
+   
+   <plugin
+         id="org.eclipse.draw3d"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.draw3d.geometry"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.draw3d.graphics3d"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.draw3d.lwjgl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.draw3d.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

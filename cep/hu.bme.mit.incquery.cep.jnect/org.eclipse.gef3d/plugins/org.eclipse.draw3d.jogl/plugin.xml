@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.draw3d.graphics3d">
+         <renderer
+               class="org.eclipse.draw3d.jogl.graphics3d.Graphics3DJogl"
+               id="org.eclipse.draw3d.jogl.graphics3d.Graphics3DJogl"
+               type="PRINT">
+            <name>
+               GEF3D-JOGL
+            </name>
+            <description>
+               Renders the diagram via OpenGL using the JOGL Java wrapper library
+            </description>
+         </renderer>
+   </extension>
+</plugin>

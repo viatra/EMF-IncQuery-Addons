@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Graphics3D implementation using JOGL Plug-in
+Bundle-SymbolicName: org.eclipse.draw3d.jogl;singleton:=true
+Bundle-Version: 0.1.0
+Bundle-Activator: org.eclipse.draw3d.jogl.Activator
+Bundle-Vendor: Eclipse.org
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.draw3d;bundle-version="0.8.1",
+ org.eclipse.draw3d.graphics3d;bundle-version="0.8.1",
+ org.jogl;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy

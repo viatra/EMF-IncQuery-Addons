@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GEF3D Extensions
+Bundle-SymbolicName: org.eclipse.gef3d.ext
+Bundle-Version: 0.8.1.qualifier
+Bundle-Activator: org.eclipse.gef3d.ext.Activator
+Bundle-Vendor: Eclipse.org
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.gef3d,
+ org.eclipse.ui,
+ org.eclipse.ui.views;bundle-version="3.4.1",
+ org.eclipse.core.resources;bundle-version="3.4.0",
+ org.eclipse.ui.ide;bundle-version="3.4.1"
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.gef3d.ext,
+ org.eclipse.gef3d.ext.assimilator,
+ org.eclipse.gef3d.ext.intermodel,
+ org.eclipse.gef3d.ext.multieditor,
+ org.eclipse.gef3d.ext.multieditor.dnd,
+ org.eclipse.gef3d.ext.reverselookup
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

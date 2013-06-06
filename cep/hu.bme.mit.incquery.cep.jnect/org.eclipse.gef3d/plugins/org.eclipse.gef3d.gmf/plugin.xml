@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <!-- 3D Handles and Feedback for all 3D-Editors --> 
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+      <editpolicyProvider
+            class="org.eclipse.gef3d.gmf.runtime.diagram.ui.services.editpolicy.Handles3DEditPolicyProvider3D">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpolicyProvider>
+   </extension>
+   
+   <!-- 3D Connection Feedback for all 3D-Editors --> 
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+      <editpolicyProvider
+            class="org.eclipse.gef3d.gmf.runtime.diagram.ui.services.editpolicy.FeedbackHelper3DEditPolicyProvider3D">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpolicyProvider>
+   </extension>
+   
+   
+   
+   
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="org.eclipse.gef3d.gmf.runtime.diagram.ui.services.editpart.DiagramRootEditPart3DProvider">
+         <Priority name="High"></Priority>
+      </editpartProvider>
+   </extension>
+
+
+	<!-- Default transactional editing domain used for multi editors -->
+	<extension point="org.eclipse.emf.transaction.editingDomains">
+     <editingDomain
+           id="org.eclipse.gef3d.ext.multieditor"
+           factory="org.eclipse.gmf.runtime.diagram.core.DiagramEditingDomainFactory"/>
+     </extension>
+
+</plugin>
