@@ -49,13 +49,13 @@ public final class EvaluationPatterns extends BaseGeneratedPatternGroup {
   private static EvaluationPatterns INSTANCE;
   
   private EvaluationPatterns() throws IncQueryException {
-    querySpecifications.add(EnabledTransitionMatcher.querySpecification());
-    querySpecifications.add(PreStateMatcher.querySpecification());
-    querySpecifications.add(EventHandledByCSVMatcher.querySpecification());
-    querySpecifications.add(FinalStateMatcher.querySpecification());
     querySpecifications.add(FinishedStateMachineMatcher.querySpecification());
-    querySpecifications.add(LatestEventMatcher.querySpecification());
     querySpecifications.add(TransitionMatcher.querySpecification());
+    querySpecifications.add(PreStateMatcher.querySpecification());
+    querySpecifications.add(EnabledTransitionMatcher.querySpecification());
+    querySpecifications.add(FinalStateMatcher.querySpecification());
+    querySpecifications.add(EventHandledByCSVMatcher.querySpecification());
+    querySpecifications.add(LatestEventMatcher.querySpecification());
     
   }
 }
