@@ -9,6 +9,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.jnect.core.KinectManager;
 import org.jnect.demo.incquery.esper.EsperAdapter;
 import org.jnect.demo.incquery.esper.EsperManager;
+import org.jnect.demo.incquery.viatra.cep.ViatraCepAdapter;
 
 import bodymodel.ymca.BEMatcher;
 import bodymodel.ymca.BSMatcher;
@@ -34,17 +35,17 @@ public class StartCombinedRobotDemoHandler extends AbstractHandler {
 				Notifier km = KinectManager.INSTANCE.getSkeletonModel();
 				IncQueryEngine e = IncQueryEngine.on(km);
 				// adapters for the powerpoint robot demo
-				new EsperAdapter(FSMatcher.on(e));
-				new EsperAdapter(FEMatcher.on(e));
-				new EsperAdapter(BSMatcher.on(e));
-				new EsperAdapter(BEMatcher.on(e));
+				new ViatraCepAdapter(FSMatcher.on(e));
+				new ViatraCepAdapter(FEMatcher.on(e));
+				new ViatraCepAdapter(BSMatcher.on(e));
+				new ViatraCepAdapter(BEMatcher.on(e));
 				
 				
 			} catch (IncQueryException e) {
 				e.printStackTrace();
 			}
 			
-        	EsperManager.getInstance().registerRobotListeners();
+        	//EsperManager.getInstance().registerRobotListeners();
 		} else {
 			System.out.println("Start skeleton simulator first!");
 		}
