@@ -28,8 +28,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.evm.api.Activation;
 import org.eclipse.incquery.runtime.evm.api.Context;
 import org.eclipse.incquery.runtime.evm.api.EventDrivenVM;
@@ -55,9 +55,10 @@ public class EventModelManager {
 	private Resource smModelResource;
 	private IEventProcessingStrategy strategy;
 	private ExecutionSchema lowLevelExecutionSchema;
+	private ExecutionSchema topLevelExecutionSchema;
 	private CepRealm realm;
 	private UpdateCompleteProviderExtension updateCompleteProvider;
-	private ExecutionSchema cepExecutionSchema;
+	
 	
 	private final class UpdateCompleteProviderExtension extends UpdateCompleteProvider {
 		protected void latestEventHandled() {
@@ -95,7 +96,7 @@ public class EventModelManager {
 					IncQueryActivationStateEnum.FIRED) {
 				@Override
 				protected void execute(Activation<? extends ObservedComplexEventPattern> activation, Context context) {
-					System.out.println("Complex event pattern disappeared:"
+					System.out.println("Complex event pattern appeared: "
 							+ activation.getAtom().getObservedEventPattern().getId());
 				}
 				@Override
@@ -111,8 +112,8 @@ public class EventModelManager {
 			updateCompleteProvider = new UpdateCompleteProviderExtension();
 			UpdateCompleteBasedSchedulerFactory schedulerFactory = new UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory(
 					updateCompleteProvider);
-			cepExecutionSchema = EventDrivenVM.createExecutionSchema(realm, schedulerFactory, Collections.EMPTY_SET);
-			cepExecutionSchema.addRule(ruleSpec, false);
+			topLevelExecutionSchema = EventDrivenVM.createExecutionSchema(realm, schedulerFactory, Collections.EMPTY_SET);
+			topLevelExecutionSchema.addRule(ruleSpec, false);
 		}
 		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;

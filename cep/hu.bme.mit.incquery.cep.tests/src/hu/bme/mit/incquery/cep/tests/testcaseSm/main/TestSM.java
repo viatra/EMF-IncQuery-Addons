@@ -9,6 +9,7 @@ import hu.bme.mit.incquery.cep.tests.testcaseSm.events.A;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.B;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.C;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.ABC_Pattern;
+import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.ABC_Pattern_UNORDERED;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.APattern;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.BC_Pattern;
 
@@ -24,7 +25,7 @@ public class TestSM {
 	DefaultRealm realm;
 	EventQueue eventQueue;
 	IEventSource source;
-	ABC_Pattern abcPattern;
+	ABC_Pattern_UNORDERED abcPattern;
 	APattern aPattern;
 	BC_Pattern bcPattern;
 	EventModelManager manager;
@@ -35,7 +36,7 @@ public class TestSM {
 		eventQueue = EventQueue.getInstance();
 		aPattern = new APattern();
 		bcPattern = new BC_Pattern();
-		abcPattern = new ABC_Pattern();
+		abcPattern = new ABC_Pattern_UNORDERED();
 	}
 	
 	@After
