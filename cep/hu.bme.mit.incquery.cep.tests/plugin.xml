@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
 
-   <extension
-         id="hu.bme.mit.incquery.cep.tests.testcasesmqueries.stateMachine"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.incquery.cep.tests.testcasesmqueries.statemachine.StateMachineMatcherFactory$Provider"
-            id="hu.bme.mit.incquery.cep.tests.testcasesmqueries.stateMachine">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.incquery.cep.tests.testcasesmqueries.event"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.incquery.cep.tests.testcasesmqueries.event.EventMatcherFactory$Provider"
-            id="hu.bme.mit.incquery.cep.tests.testcasesmqueries.event">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.incquery.cep.tests.testcasesmqueries.transition"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.incquery.cep.tests.testcasesmqueries.transition.TransitionMatcherFactory$Provider"
-            id="hu.bme.mit.incquery.cep.tests.testcasesmqueries.transition">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.incquery.cep.tests.testcasesmqueries.enabledTransition"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.incquery.cep.tests.testcasesmqueries.enabledtransition.EnabledTransitionMatcherFactory$Provider"
-            id="hu.bme.mit.incquery.cep.tests.testcasesmqueries.enabledTransition">
-      </matcher>
-   </extension>
+   
 
 </plugin>
