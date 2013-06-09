@@ -30,7 +30,7 @@ public class EvmIntegration2 {
 		RuleEngine engine = EventDrivenVM.createRuleEngine(cepRealm);
 		engine.getLogger().setLevel(Level.DEBUG);
 		
-		ActivationLifeCycle lifeCycle = new ActivationLifeCycle(CepActivationStates.IS_NOT);
+		ActivationLifeCycle lifeCycle = ActivationLifeCycle.create(CepActivationStates.IS_NOT);
 		lifeCycle.addStateTransition(CepActivationStates.IS_NOT, CepEventType.APPEARED, CepActivationStates.IS);
 		lifeCycle.addStateTransition(CepActivationStates.IS, RuleEngineEventType.FIRE, CepActivationStates.IS_NOT);
 		

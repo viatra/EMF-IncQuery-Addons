@@ -4,17 +4,17 @@
 
    <extension
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedStateMachine"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedstatemachine.FinishedStateMachineMatcherFactory$Provider"
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.FinishedStateMachineQuerySpecification$Provider"
             id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedStateMachine">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finalState"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finalstate.FinalStateMatcherFactory$Provider"
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.FinalStateQuerySpecification$Provider"
             id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finalState">
       </matcher>
    </extension>
@@ -22,47 +22,47 @@
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finalState"
          point="org.eclipse.incquery.runtime.xexpressionevaluator">
       <evaluator
-            evaluatorClass="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finalstate.FinalStateEvaluator1_1"
+            evaluatorClass="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.FinalStateEvaluator1_1"
             id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finalState_1_1">
       </evaluator>
    </extension>
    <extension
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.latestEvent"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.latestevent.LatestEventMatcherFactory$Provider"
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.LatestEventQuerySpecification$Provider"
             id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.latestEvent">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.transition"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.transition.TransitionMatcherFactory$Provider"
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.TransitionQuerySpecification$Provider"
             id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.transition">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.preState"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.prestate.PreStateMatcherFactory$Provider"
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.PreStateQuerySpecification$Provider"
             id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.preState">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByCSV"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventhandledbycsv.EventHandledByCSVMatcherFactory$Provider"
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.EventHandledByCSVQuerySpecification$Provider"
             id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByCSV">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledTransition"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledtransition.EnabledTransitionMatcherFactory$Provider"
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.EnabledTransitionQuerySpecification$Provider"
             id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledTransition">
       </matcher>
    </extension>

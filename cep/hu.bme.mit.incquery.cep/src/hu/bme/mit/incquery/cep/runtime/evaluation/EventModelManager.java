@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.incquery.runtime.api.EngineManager;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.evm.api.Activation;
 import org.eclipse.incquery.runtime.evm.api.Context;
@@ -57,6 +57,7 @@ public class EventModelManager {
 	private ExecutionSchema lowLevelExecutionSchema;
 	private CepRealm realm;
 	private UpdateCompleteProviderExtension updateCompleteProvider;
+	private ExecutionSchema cepExecutionSchema;
 	
 	private final class UpdateCompleteProviderExtension extends UpdateCompleteProvider {
 		protected void latestEventHandled() {
@@ -110,8 +111,7 @@ public class EventModelManager {
 			updateCompleteProvider = new UpdateCompleteProviderExtension();
 			UpdateCompleteBasedSchedulerFactory schedulerFactory = new UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory(
 					updateCompleteProvider);
-			ExecutionSchema cepExecutionSchema = EventDrivenVM.createExecutionSchema(realm, schedulerFactory,
-					Collections.EMPTY_SET);
+			cepExecutionSchema = EventDrivenVM.createExecutionSchema(realm, schedulerFactory, Collections.EMPTY_SET);
 			cepExecutionSchema.addRule(ruleSpec, false);
 		}
 		
@@ -123,7 +123,7 @@ public class EventModelManager {
 		smModelResource.getContents().add(model);
 		
 		try {
-			engine = EngineManager.getInstance().getIncQueryEngine(resourceSet);
+			engine = IncQueryEngineManager.getInstance().getIncQueryEngine(resourceSet);
 			ISchedulerFactory schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine);
 			
 			rules.addAll(ModelHandlerRules.getIntance(this).getModelHandlers());

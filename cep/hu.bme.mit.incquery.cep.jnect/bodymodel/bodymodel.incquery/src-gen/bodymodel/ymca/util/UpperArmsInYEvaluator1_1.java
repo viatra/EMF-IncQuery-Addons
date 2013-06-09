@@ -15,7 +15,7 @@ public class UpperArmsInYEvaluator1_1 implements IMatchChecker {
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
-  private Boolean evaluateXExpressionGenerated(final Float RSZ, final Float RSY, final Float REY, final Float LSZ, final Float LSY, final Float REZ, final Float LEZ, final Float LSX, final Float LEX, final Float RSX, final Float LEY, final Float REX) {
+  private Boolean evaluateXExpressionGenerated(final Float REY, final Float LEZ, final Float LSX, final Float LEX, final Float RSZ, final Float RSY, final Float LSZ, final Float REZ, final Float LEY, final Float RSX, final Float LSY, final Float REX) {
     boolean _xblockexpression = false;
     {
       MovingAverageCalculator _calculator = MovingAverageCalculator.getCalculator("LEX");
@@ -83,30 +83,30 @@ public class UpperArmsInYEvaluator1_1 implements IMatchChecker {
    */
   @Override
   public Boolean evaluateXExpression(final Tuple tuple, final Map<String,Integer> tupleNameMap) {
-    int RSZPosition = tupleNameMap.get("RSZ");
-    java.lang.Float RSZ = (java.lang.Float) tuple.get(RSZPosition);
-    int RSYPosition = tupleNameMap.get("RSY");
-    java.lang.Float RSY = (java.lang.Float) tuple.get(RSYPosition);
     int REYPosition = tupleNameMap.get("REY");
     java.lang.Float REY = (java.lang.Float) tuple.get(REYPosition);
-    int LSZPosition = tupleNameMap.get("LSZ");
-    java.lang.Float LSZ = (java.lang.Float) tuple.get(LSZPosition);
-    int LSYPosition = tupleNameMap.get("LSY");
-    java.lang.Float LSY = (java.lang.Float) tuple.get(LSYPosition);
-    int REZPosition = tupleNameMap.get("REZ");
-    java.lang.Float REZ = (java.lang.Float) tuple.get(REZPosition);
     int LEZPosition = tupleNameMap.get("LEZ");
     java.lang.Float LEZ = (java.lang.Float) tuple.get(LEZPosition);
     int LSXPosition = tupleNameMap.get("LSX");
     java.lang.Float LSX = (java.lang.Float) tuple.get(LSXPosition);
     int LEXPosition = tupleNameMap.get("LEX");
     java.lang.Float LEX = (java.lang.Float) tuple.get(LEXPosition);
-    int RSXPosition = tupleNameMap.get("RSX");
-    java.lang.Float RSX = (java.lang.Float) tuple.get(RSXPosition);
+    int RSZPosition = tupleNameMap.get("RSZ");
+    java.lang.Float RSZ = (java.lang.Float) tuple.get(RSZPosition);
+    int RSYPosition = tupleNameMap.get("RSY");
+    java.lang.Float RSY = (java.lang.Float) tuple.get(RSYPosition);
+    int LSZPosition = tupleNameMap.get("LSZ");
+    java.lang.Float LSZ = (java.lang.Float) tuple.get(LSZPosition);
+    int REZPosition = tupleNameMap.get("REZ");
+    java.lang.Float REZ = (java.lang.Float) tuple.get(REZPosition);
     int LEYPosition = tupleNameMap.get("LEY");
     java.lang.Float LEY = (java.lang.Float) tuple.get(LEYPosition);
+    int RSXPosition = tupleNameMap.get("RSX");
+    java.lang.Float RSX = (java.lang.Float) tuple.get(RSXPosition);
+    int LSYPosition = tupleNameMap.get("LSY");
+    java.lang.Float LSY = (java.lang.Float) tuple.get(LSYPosition);
     int REXPosition = tupleNameMap.get("REX");
     java.lang.Float REX = (java.lang.Float) tuple.get(REXPosition);
-    return evaluateXExpressionGenerated(RSZ, RSY, REY, LSZ, LSY, REZ, LEZ, LSX, LEX, RSX, LEY, REX);
+    return evaluateXExpressionGenerated(REY, LEZ, LSX, LEX, RSZ, RSY, LSZ, REZ, LEY, RSX, LSY, REX);
   }
 }

@@ -15,7 +15,7 @@ public class HandsAreApartEvaluator1_1 implements IMatchChecker {
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
-  private Boolean evaluateXExpressionGenerated(final Float RHX, final Float RHY, final Float RHZ, final Float LHY, final Float LHZ, final Float LHX) {
+  private Boolean evaluateXExpressionGenerated(final Float RHZ, final Float RHY, final Float LHX, final Float RHX, final Float LHY, final Float LHZ) {
     MovingAverageCalculator _calculator = MovingAverageCalculator.getCalculator("LHX");
     Float _LHX = LHX;
     MovingAverageCalculator _addValue = _calculator.addValue((_LHX).floatValue());
@@ -51,18 +51,18 @@ public class HandsAreApartEvaluator1_1 implements IMatchChecker {
    */
   @Override
   public Boolean evaluateXExpression(final Tuple tuple, final Map<String,Integer> tupleNameMap) {
-    int RHXPosition = tupleNameMap.get("RHX");
-    java.lang.Float RHX = (java.lang.Float) tuple.get(RHXPosition);
-    int RHYPosition = tupleNameMap.get("RHY");
-    java.lang.Float RHY = (java.lang.Float) tuple.get(RHYPosition);
     int RHZPosition = tupleNameMap.get("RHZ");
     java.lang.Float RHZ = (java.lang.Float) tuple.get(RHZPosition);
+    int RHYPosition = tupleNameMap.get("RHY");
+    java.lang.Float RHY = (java.lang.Float) tuple.get(RHYPosition);
+    int LHXPosition = tupleNameMap.get("LHX");
+    java.lang.Float LHX = (java.lang.Float) tuple.get(LHXPosition);
+    int RHXPosition = tupleNameMap.get("RHX");
+    java.lang.Float RHX = (java.lang.Float) tuple.get(RHXPosition);
     int LHYPosition = tupleNameMap.get("LHY");
     java.lang.Float LHY = (java.lang.Float) tuple.get(LHYPosition);
     int LHZPosition = tupleNameMap.get("LHZ");
     java.lang.Float LHZ = (java.lang.Float) tuple.get(LHZPosition);
-    int LHXPosition = tupleNameMap.get("LHX");
-    java.lang.Float LHX = (java.lang.Float) tuple.get(LHXPosition);
-    return evaluateXExpressionGenerated(RHX, RHY, RHZ, LHY, LHZ, LHX);
+    return evaluateXExpressionGenerated(RHZ, RHY, LHX, RHX, LHY, LHZ);
   }
 }

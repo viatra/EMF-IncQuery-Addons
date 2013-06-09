@@ -1,5 +1,6 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.strategy;
 
+import hu.bme.mit.incquery.cep.metamodels.custom.impl.EventCollectionWithMultimap;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
@@ -8,7 +9,6 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
-import hu.bme.mit.incquery.cep.model.custom.impl.EventCollectionWithMultimap;
 import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
 
 public class ChronicleStrategy extends AbstractEventProcessingStrategy {

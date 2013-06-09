@@ -15,7 +15,7 @@ public class FeetAreCloseEvaluator1_1 implements IMatchChecker {
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
-  private Boolean evaluateXExpressionGenerated(final Float LFY, final Float RFY, final Float LFZ, final Float RFX, final Float LFX, final Float RFZ) {
+  private Boolean evaluateXExpressionGenerated(final Float LFY, final Float RFX, final Float LFZ, final Float RFZ, final Float RFY, final Float LFX) {
     MovingAverageCalculator _calculator = MovingAverageCalculator.getCalculator("LFX");
     Float _LFX = LFX;
     MovingAverageCalculator _addValue = _calculator.addValue((_LFX).floatValue());
@@ -53,16 +53,16 @@ public class FeetAreCloseEvaluator1_1 implements IMatchChecker {
   public Boolean evaluateXExpression(final Tuple tuple, final Map<String,Integer> tupleNameMap) {
     int LFYPosition = tupleNameMap.get("LFY");
     java.lang.Float LFY = (java.lang.Float) tuple.get(LFYPosition);
-    int RFYPosition = tupleNameMap.get("RFY");
-    java.lang.Float RFY = (java.lang.Float) tuple.get(RFYPosition);
-    int LFZPosition = tupleNameMap.get("LFZ");
-    java.lang.Float LFZ = (java.lang.Float) tuple.get(LFZPosition);
     int RFXPosition = tupleNameMap.get("RFX");
     java.lang.Float RFX = (java.lang.Float) tuple.get(RFXPosition);
-    int LFXPosition = tupleNameMap.get("LFX");
-    java.lang.Float LFX = (java.lang.Float) tuple.get(LFXPosition);
+    int LFZPosition = tupleNameMap.get("LFZ");
+    java.lang.Float LFZ = (java.lang.Float) tuple.get(LFZPosition);
     int RFZPosition = tupleNameMap.get("RFZ");
     java.lang.Float RFZ = (java.lang.Float) tuple.get(RFZPosition);
-    return evaluateXExpressionGenerated(LFY, RFY, LFZ, RFX, LFX, RFZ);
+    int RFYPosition = tupleNameMap.get("RFY");
+    java.lang.Float RFY = (java.lang.Float) tuple.get(RFYPosition);
+    int LFXPosition = tupleNameMap.get("LFX");
+    java.lang.Float LFX = (java.lang.Float) tuple.get(LFXPosition);
+    return evaluateXExpressionGenerated(LFY, RFX, LFZ, RFZ, RFY, LFX);
   }
 }

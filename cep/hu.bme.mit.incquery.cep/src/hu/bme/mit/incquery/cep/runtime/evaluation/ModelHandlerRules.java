@@ -8,10 +8,8 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
-import hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledtransition.EnabledTransitionMatch;
-import hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledtransition.EnabledTransitionMatcher;
-import hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedstatemachine.FinishedStateMachineMatch;
-import hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedstatemachine.FinishedStateMachineMatcher;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatch;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.FinishedStateMachineMatch;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -20,10 +18,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.evm.api.Job;
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification;
-import org.eclipse.incquery.runtime.evm.specific.Rules;
 import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum;
 import org.eclipse.incquery.runtime.evm.specific.job.StatelessJob;
-import org.eclipse.incquery.runtime.evm.specific.lifecycle.DefaultActivationLifeCycle;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 import com.google.common.collect.Multimap;
@@ -97,12 +93,13 @@ public class ModelHandlerRules {
 		Set<Job<FinishedStateMachineMatch>> jobs = new HashSet<Job<FinishedStateMachineMatch>>();
 		jobs.add(new StatelessJob<FinishedStateMachineMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 		
-		RuleSpecification<FinishedStateMachineMatch> spec = Rules.newSimpleMatcherRuleSpecification(
-				FinishedStateMachineMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
+		// RuleSpecification<FinishedStateMachineMatch> spec =
+		// Rules.newSimpleMatcherRuleSpecification(
+		// new IncQueryMatcher<FinishedStateMachineMatc>() {},
+		// DefaultActivationLifeCycle.DEFAULT, jobs);
 		
-		return spec;
+		return null;// spec;
 	}
-	
 	public RuleSpecification<EnabledTransitionMatch> getEnabledTransitionsRule() throws IncQueryException {
 		IMatchProcessor<EnabledTransitionMatch> processor = new IMatchProcessor<EnabledTransitionMatch>() {
 			
@@ -119,9 +116,11 @@ public class ModelHandlerRules {
 		Set<Job<EnabledTransitionMatch>> jobs = new HashSet<Job<EnabledTransitionMatch>>();
 		jobs.add(new StatelessJob<EnabledTransitionMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 		
-		RuleSpecification<EnabledTransitionMatch> spec = Rules.newSimpleMatcherRuleSpecification(
-				EnabledTransitionMatcher.factory(), DefaultActivationLifeCycle.DEFAULT, jobs);
+		// RuleSpecification<EnabledTransitionMatch> spec =
+		// Rules.newSimpleMatcherRuleSpecification(
+		// EnabledTransitionMatcher.factory(),
+		// DefaultActivationLifeCycle.DEFAULT, jobs);
 		
-		return spec;
+		return null;// spec;
 	}
 }
