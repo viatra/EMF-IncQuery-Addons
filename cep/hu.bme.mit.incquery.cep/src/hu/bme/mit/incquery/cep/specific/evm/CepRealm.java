@@ -25,4 +25,8 @@ public class CepRealm implements EventRealm {
 			}
 		}
 	}
+
+	public Set<CepEventSource> getSources() {
+		return sources;
+	}
 }

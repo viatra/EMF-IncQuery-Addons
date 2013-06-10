@@ -11,7 +11,9 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.EventProcessingStrate
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.IEventProcessingStrategy;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
 import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder2;
+import hu.bme.mit.incquery.cep.specific.evm.CepActivationStates;
 import hu.bme.mit.incquery.cep.specific.evm.CepEventSourceSpecification;
+import hu.bme.mit.incquery.cep.specific.evm.CepEventType;
 import hu.bme.mit.incquery.cep.specific.evm.CepRealm;
 
 import java.util.Collections;
@@ -31,12 +33,14 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.evm.api.Activation;
+import org.eclipse.incquery.runtime.evm.api.ActivationLifeCycle;
 import org.eclipse.incquery.runtime.evm.api.Context;
 import org.eclipse.incquery.runtime.evm.api.EventDrivenVM;
 import org.eclipse.incquery.runtime.evm.api.ExecutionSchema;
 import org.eclipse.incquery.runtime.evm.api.Job;
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification;
 import org.eclipse.incquery.runtime.evm.api.Scheduler.ISchedulerFactory;
+import org.eclipse.incquery.runtime.evm.api.event.EventType.RuleEngineEventType;
 import org.eclipse.incquery.runtime.evm.specific.ExecutionSchemas;
 import org.eclipse.incquery.runtime.evm.specific.Schedulers;
 import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum;
@@ -93,10 +97,10 @@ public class EventModelManager {
 			CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(eventPattern, this);
 			
 			Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(
-					IncQueryActivationStateEnum.FIRED) {
+					CepActivationStates.ACTIVE) {
 				@Override
 				protected void execute(Activation<? extends ObservedComplexEventPattern> activation, Context context) {
-					System.out.println("Complex event pattern appeared: "
+					System.err.println("Complex event pattern appeared: "
 							+ activation.getAtom().getObservedEventPattern().getId());
 				}
 				@Override
@@ -106,8 +110,12 @@ public class EventModelManager {
 				}
 			};
 			
+			ActivationLifeCycle lifeCycle = ActivationLifeCycle.create(CepActivationStates.INACTIVE);
+			lifeCycle.addStateTransition(CepActivationStates.INACTIVE, CepEventType.APPEARED, CepActivationStates.ACTIVE);
+			lifeCycle.addStateTransition(CepActivationStates.ACTIVE, RuleEngineEventType.FIRE, CepActivationStates.INACTIVE);
+			
 			RuleSpecification<ObservedComplexEventPattern> ruleSpec = new RuleSpecification<ObservedComplexEventPattern>(
-					sourceSpec, new DefaultActivationLifeCycle(), Sets.newHashSet(job));
+					sourceSpec, lifeCycle, Sets.newHashSet(job));
 			
 			updateCompleteProvider = new UpdateCompleteProviderExtension();
 			UpdateCompleteBasedSchedulerFactory schedulerFactory = new UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory(
@@ -127,9 +135,11 @@ public class EventModelManager {
 			engine = IncQueryEngineManager.getInstance().getIncQueryEngine(resourceSet);
 			ISchedulerFactory schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine);
 			
-			rules.addAll(ModelHandlerRules.getIntance(this).getModelHandlers());
+			ModelHandlerRules mhr = new ModelHandlerRules(this);
+			
+			rules.addAll(mhr.getModelHandlers());
 			lowLevelExecutionSchema = ExecutionSchemas.createIncQueryExecutionSchema(engine, schedulerFactory, rules);
-			// engine.getLogger().setLevel(Level.DEBUG);
+			 //engine.getLogger().setLevel(Level.DEBUG);
 		} catch (IncQueryException e) {
 			e.printStackTrace();
 		}

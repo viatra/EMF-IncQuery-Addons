@@ -8,10 +8,14 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatch;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatcher;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.FinishedStateMachineMatch;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.FinishedStateMachineMatcher;
+import hu.bme.mit.incquery.cep.specific.evm.CepEvent;
+import hu.bme.mit.incquery.cep.specific.evm.CepEventSource;
+import hu.bme.mit.incquery.cep.specific.evm.CepEventType;
 
 import java.util.HashSet;
 import java.util.Set;
