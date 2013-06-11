@@ -8,14 +8,10 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
-import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatch;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatcher;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.FinishedStateMachineMatch;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.FinishedStateMachineMatcher;
-import hu.bme.mit.incquery.cep.specific.evm.CepEvent;
-import hu.bme.mit.incquery.cep.specific.evm.CepEventSource;
-import hu.bme.mit.incquery.cep.specific.evm.CepEventType;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -74,19 +70,19 @@ public class ModelHandlerRules {
 						CopyOnWriteArrayList<CurrentStateVisitor> currentVisitors = new CopyOnWriteArrayList<CurrentStateVisitor>();
 						currentVisitors.addAll(s.getCurrentVisitors());
 						for (CurrentStateVisitor cv : currentVisitors) {
-							System.err
-									.println("\tIQ: Events recorded by the CurrentStateVisitor: ");
-							Object recordedEvents = cv.getEventCollection()
-									.getRecordedEvents();
-							if (!(recordedEvents instanceof Multimap<?, ?>)) {
-								continue;
-							}
-							@SuppressWarnings("unchecked")
-							Multimap<String, Event> eventMap = (Multimap<String, Event>) cv
-									.getEventCollection().getRecordedEvents();
-							for (Event event : eventMap.values()) {
-								System.err.println("\t\t" + event.getTypeId());
-							}
+//							System.err
+//									.println("\tIQ: Events recorded by the CurrentStateVisitor: ");
+//							Object recordedEvents = cv.getEventCollection()
+//									.getRecordedEvents();
+//							if (!(recordedEvents instanceof Multimap<?, ?>)) {
+//								continue;
+//							}
+//							@SuppressWarnings("unchecked")
+//							Multimap<String, Event> eventMap = (Multimap<String, Event>) cv
+//									.getEventCollection().getRecordedEvents();
+//							for (Event event : eventMap.values()) {
+//								System.err.println("\t\t" + event.getTypeId());
+//							}
 
 							s.getCurrentVisitors().remove(cv);
 						}
@@ -115,11 +111,11 @@ public class ModelHandlerRules {
 			@Override
 			public void process(EnabledTransitionMatch match) {
 				Transition t = match.getT();
-				StateMachine sm = (StateMachine) t.getPostState().eContainer();
-				System.err
-						.println("\tIQ: enabled transition in SM for pattern "
-								+ sm.getEventPattern().getClass()
-										.getSimpleName());
+//				StateMachine sm = (StateMachine) t.getPostState().eContainer();
+//				System.err
+//						.println("\tIQ: enabled transition in SM for pattern "
+//								+ sm.getEventPattern().getClass()
+//										.getSimpleName());
 				eventModelManager.getStrategy().fireTransition(t);
 			}
 		};

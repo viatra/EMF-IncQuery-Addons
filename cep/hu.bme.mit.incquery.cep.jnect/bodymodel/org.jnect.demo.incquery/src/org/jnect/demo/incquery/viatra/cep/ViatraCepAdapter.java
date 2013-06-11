@@ -12,26 +12,33 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
 import org.eclipse.core.databinding.observable.set.IObservableSet;
 import org.eclipse.core.databinding.observable.set.ISetChangeListener;
 import org.eclipse.core.databinding.observable.set.SetChangeEvent;
+import org.eclipse.incquery.databinding.runtime.api.IncQueryHeadlessRealm;
 import org.eclipse.incquery.databinding.runtime.api.IncQueryObservables;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.jnect.demo.incquery.esper.utils.Logger;
-import org.jnect.demo.incquery.viatra.cep.events.SS;
-import org.jnect.demo.incquery.viatra.cep.events.SSPattern;
+import org.jnect.demo.incquery.viatra.cep.events.FE;
+import org.jnect.demo.incquery.viatra.cep.events.FS;
+import org.jnect.demo.incquery.viatra.cep.patterns.FEPattern;
+import org.jnect.demo.incquery.viatra.cep.patterns.FSPattern;
+import org.jnect.demo.incquery.viatra.cep.patterns.FS_FE_Pattern;
 
 public class ViatraCepAdapter {
 	IncQueryMatcher<? extends IPatternMatch> matcher;
 	EventModelManager manager;
+	EventQueue queue = EventQueue.getInstance();
 	IEventSource source;
 
 	public ViatraCepAdapter(IncQueryMatcher<? extends IPatternMatch> matcher) {
 		this.matcher = matcher;
+		new IncQueryHeadlessRealm();
 		
 		List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
-		eventPatterns.add(new SSPattern());
+		eventPatterns.add(new FEPattern());
+		eventPatterns.add(new FSPattern());
+		eventPatterns.add(new FS_FE_Pattern());
 		manager = new EventModelManager(Strategy.getDefault());
 		manager.assignEventPatterns(eventPatterns);
-		
 		
 		IObservableSet os = IncQueryObservables.observeMatchesAsSet(matcher);
 		os.addSetChangeListener(new ISetChangeListener() {
@@ -43,7 +50,7 @@ public class ViatraCepAdapter {
 					Logger.log("VIATRACEPADAPTER: Event " + pm.patternName()
 							+ " found.");
 			
-					EventQueue.getInstance().push(new SS(source));
+					sentEvent(pm.patternName());
 					// EsperManager.getInstance().sendEvent(
 					// new PatternMatchEvent(pm, pm.patternName(),
 					// PatternMatchEventType.NEW));
@@ -55,10 +62,22 @@ public class ViatraCepAdapter {
 					// EsperManager.getInstance().sendEvent(
 					// new PatternMatchEvent(pm, pm.patternName(),
 					// PatternMatchEventType.LOST));
+					sentEvent(pm.patternName());
 				}
 
 			}
 
 		});
+	}
+	
+	private void sentEvent(String iqPatternName){
+		if(iqPatternName.equalsIgnoreCase("bodymodel.ymca.FE")){
+			queue.push(new FE(source));
+			return;
+		}
+		else if(iqPatternName.equalsIgnoreCase("bodymodel.ymca.FS")){
+			queue.push(new FS(source));
+			return;
+		}
 	}
 }

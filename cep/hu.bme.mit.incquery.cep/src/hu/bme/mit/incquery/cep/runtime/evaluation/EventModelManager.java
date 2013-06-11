@@ -43,8 +43,6 @@ import org.eclipse.incquery.runtime.evm.api.Scheduler.ISchedulerFactory;
 import org.eclipse.incquery.runtime.evm.api.event.EventType.RuleEngineEventType;
 import org.eclipse.incquery.runtime.evm.specific.ExecutionSchemas;
 import org.eclipse.incquery.runtime.evm.specific.Schedulers;
-import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum;
-import org.eclipse.incquery.runtime.evm.specific.lifecycle.DefaultActivationLifeCycle;
 import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedScheduler;
 import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory;
 import org.eclipse.incquery.runtime.evm.update.UpdateCompleteProvider;

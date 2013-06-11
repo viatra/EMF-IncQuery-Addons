@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.runtime.evaluation.tests;
+package hu.bme.mit.incquery.cep.tests.unittests;
 
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
@@ -8,8 +8,10 @@ import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class SMUtilsTests {
 	
 	@Test
