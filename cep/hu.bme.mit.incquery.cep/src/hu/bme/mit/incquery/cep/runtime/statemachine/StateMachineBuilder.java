@@ -44,7 +44,7 @@ public class StateMachineBuilder {
 		finalState.getActions().add(action);
 		
 		// only for ORDERED w/o timewin
-		List<AtomicEventPattern> atomicEventPatterns = SMUtils.flattenComplexPatterns(eventPattern);
+		List<AtomicEventPattern> atomicEventPatterns = SMUtils.flattenEventPatterns(eventPattern);
 		List<State> states = new ArrayList<State>();
 		states.add(initState);
 		

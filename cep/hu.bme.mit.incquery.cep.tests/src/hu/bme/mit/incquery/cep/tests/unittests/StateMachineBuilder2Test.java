@@ -88,10 +88,10 @@ public class StateMachineBuilder2Test {
 			return 1 + 2;
 		}
 		if (type.equals(EventPatternType.ORDERED)) {
-			return SMUtils.flattenComplexPatterns(pattern).size() + 2;
+			return SMUtils.flattenEventPatterns(pattern).size() + 2;
 		}
 		if (type.equals(EventPatternType.UNORDERED)) {
-			return (1 << SMUtils.flattenComplexPatterns(pattern).size()) + 1;
+			return (1 << SMUtils.flattenEventPatterns(pattern).size()) + 1;
 		}
 		if (type.equals(EventPatternType.MIXED)) {
 			return -1; // TODO

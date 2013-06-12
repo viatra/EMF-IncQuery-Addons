@@ -42,7 +42,7 @@ public class StateMachineBuilder2 {
 		action = SM_FACTORY.createAction();
 		action.setMsgToLog("\t\tCEP: Event pattern " + rootPattern.getId() + " recognized");
 
-		flattenedAtomicEventPatterns = SMUtils.flattenComplexPatterns(rootPattern);
+		flattenedAtomicEventPatterns = SMUtils.flattenEventPatterns(rootPattern);
 
 		buildInitialTrace();
 		if (flattenedAtomicEventPatterns.size() > 1) {
