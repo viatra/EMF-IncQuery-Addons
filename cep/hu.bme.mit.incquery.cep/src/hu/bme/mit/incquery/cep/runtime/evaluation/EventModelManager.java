@@ -60,114 +60,118 @@ public class EventModelManager {
 	private ExecutionSchema topLevelExecutionSchema;
 	private CepRealm realm;
 	private UpdateCompleteProviderExtension updateCompleteProvider;
-	
-	
+
 	private final class UpdateCompleteProviderExtension extends UpdateCompleteProvider {
 		protected void latestEventHandled() {
 			updateCompleted();
 		}
 	}
-	
+
 	public EventModelManager(Strategy strategy) {
 		model = SM_FACTORY.createInternalExecutionModel();
 		this.strategy = EventProcessingStrategyFactory.getStrategy(strategy, this);
 		this.realm = new CepRealm();
-		
+
 		Adapter adapter = new AdapterImpl() {
 			@Override
 			public void notifyChanged(Notification notification) {
 				Object newValue = notification.getNewValue();
 				if (newValue instanceof Event) {
 					Event event = (Event) newValue;
-					//System.err.println("DIAG: Event " + event.getClass().getName() + " captured...");
+					System.err.println("DIAG: Event " + event.getClass().getName() + " captured...");
 					refreshModel(event);
 				}
 			}
 		};
 		EventQueue.getInstance().eAdapters().add(adapter);
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public void assignEventPatterns(List<EventPattern> eventPatterns) {
 		Set<RuleSpecification<?>> rules = new HashSet<RuleSpecification<?>>();
-		
+
 		for (EventPattern eventPattern : eventPatterns) {
 			CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(eventPattern, this);
-			
-			Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(
-					CepActivationStates.ACTIVE) {
+
+			Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(CepActivationStates.ACTIVE) {
 				@Override
 				protected void execute(Activation<? extends ObservedComplexEventPattern> activation, Context context) {
 					System.err.println("Complex event pattern appeared: "
 							+ activation.getAtom().getObservedEventPattern().getId());
 				}
+
 				@Override
 				protected void handleError(Activation<? extends ObservedComplexEventPattern> activation,
 						Exception exception, Context context) {
 					// not gonna happen
 				}
 			};
-			
+
 			ActivationLifeCycle lifeCycle = ActivationLifeCycle.create(CepActivationStates.INACTIVE);
-			lifeCycle.addStateTransition(CepActivationStates.INACTIVE, CepEventType.APPEARED, CepActivationStates.ACTIVE);
-			lifeCycle.addStateTransition(CepActivationStates.ACTIVE, RuleEngineEventType.FIRE, CepActivationStates.INACTIVE);
-			
+			lifeCycle.addStateTransition(CepActivationStates.INACTIVE, CepEventType.APPEARED,
+					CepActivationStates.ACTIVE);
+			lifeCycle.addStateTransition(CepActivationStates.ACTIVE, RuleEngineEventType.FIRE,
+					CepActivationStates.INACTIVE);
+
 			RuleSpecification<ObservedComplexEventPattern> ruleSpec = new RuleSpecification<ObservedComplexEventPattern>(
 					sourceSpec, lifeCycle, Sets.newHashSet(job));
-			
+
 			updateCompleteProvider = new UpdateCompleteProviderExtension();
 			UpdateCompleteBasedSchedulerFactory schedulerFactory = new UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory(
 					updateCompleteProvider);
-			topLevelExecutionSchema = EventDrivenVM.createExecutionSchema(realm, schedulerFactory, Collections.EMPTY_SET);
+			topLevelExecutionSchema = EventDrivenVM.createExecutionSchema(realm, schedulerFactory,
+					Collections.EMPTY_SET);
 			topLevelExecutionSchema.addRule(ruleSpec, false);
 		}
-		
+
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("cep", new XMIResourceFactoryImpl());
 		ResourceSet resourceSet = new ResourceSetImpl();
 		smModelResource = resourceSet.createResource(URI.createURI("cep/sm.cep"));
 		smModelResource.getContents().add(model);
-		
+
 		try {
 			engine = IncQueryEngineManager.getInstance().getIncQueryEngine(resourceSet);
 			ISchedulerFactory schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine);
-			
+
 			ModelHandlerRules mhr = new ModelHandlerRules(this);
-			
+
 			rules.addAll(mhr.getModelHandlers());
 			lowLevelExecutionSchema = ExecutionSchemas.createIncQueryExecutionSchema(engine, schedulerFactory, rules);
-			 //engine.getLogger().setLevel(Level.DEBUG);
+			// engine.getLogger().setLevel(Level.DEBUG);
 		} catch (IncQueryException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public StateMachine getStateMachine(EventPattern eventPattern) {
 		return new StateMachineBuilder(model, eventPattern).buildStateMachine();
 	}
+
 	private void refreshModel(Event event) {
 		model.setLatestEvent(null);
 		strategy.handleVisitorCreation(model, SM_FACTORY);
 		model.setLatestEvent(event);
 		updateCompleteProvider.latestEventHandled();
 	}
+
 	public InternalExecutionModel getModel() {
 		return model;
 	}
-	
+
 	public Resource getSmModelResource() {
 		return smModelResource;
 	}
-	
+
 	public IEventProcessingStrategy getStrategy() {
 		return strategy;
 	}
-	
+
 	public ExecutionSchema getExecutionSchema() {
 		return lowLevelExecutionSchema;
 	}
-	
+
 	public CepRealm getRealm() {
 		return realm;
 	}

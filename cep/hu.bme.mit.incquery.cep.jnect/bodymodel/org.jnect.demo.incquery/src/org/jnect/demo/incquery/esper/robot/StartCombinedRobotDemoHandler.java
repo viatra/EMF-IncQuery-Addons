@@ -14,41 +14,36 @@ import bodymodel.ymca.BSMatcher;
 import bodymodel.ymca.FEMatcher;
 import bodymodel.ymca.FSMatcher;
 
-//import bodymodel.jump.JumpMatcher;
 
 /**
  * Handler class for the Jnect/IncQuery awt.Robot demo.
+ * 
  * @author istvanrath
  * 
  */
 public class StartCombinedRobotDemoHandler extends AbstractHandler {
 
-	
-
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		if (KinectManager.INSTANCE.isSkeletonTrackingStarted()) {
-			
+
 			try {
 				Notifier km = KinectManager.INSTANCE.getSkeletonModel();
 				IncQueryEngine e = IncQueryEngine.on(km);
 				// adapters for the powerpoint robot demo
-				new ViatraCepAdapter(FSMatcher.on(e));
-				new ViatraCepAdapter(FEMatcher.on(e));
-				new ViatraCepAdapter(BSMatcher.on(e));
-				new ViatraCepAdapter(BEMatcher.on(e));
-				
-				
+				ViatraCepAdapter vca = new ViatraCepAdapter();
+				vca.registerMatcher(FSMatcher.on(e));
+				vca.registerMatcher(FEMatcher.on(e));
+				vca.registerMatcher(BSMatcher.on(e));
+				vca.registerMatcher(BEMatcher.on(e));
+
 			} catch (IncQueryException e) {
 				e.printStackTrace();
 			}
-			
-        	//EsperManager.getInstance().registerRobotListeners();
 		} else {
 			System.out.println("Start skeleton simulator first!");
 		}
 		return null;
 	}
-
 
 }

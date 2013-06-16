@@ -24,22 +24,26 @@ import org.jnect.demo.incquery.viatra.cep.events.FS_found;
 import org.jnect.demo.incquery.viatra.cep.events.FS_lost;
 import org.jnect.demo.incquery.viatra.cep.patterns.FS_FE_Pattern;
 
+
+/**
+ * 
+ * @author idavid
+ *
+ */
 public class ViatraCepAdapter {
-	IncQueryMatcher<? extends IPatternMatch> matcher;
 	EventModelManager manager;
 	EventQueue queue = EventQueue.getInstance();
 	IEventSource source;
 	
-
-	public ViatraCepAdapter(IncQueryMatcher<? extends IPatternMatch> matcher) {
-		this.matcher = matcher;
+	public ViatraCepAdapter() {
 		new IncQueryHeadlessRealm();
-
 		List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
 		eventPatterns.add(new FS_FE_Pattern());
 		manager = new EventModelManager(Strategy.getDefault());
 		manager.assignEventPatterns(eventPatterns);
-
+	}
+	
+	public void registerMatcher(IncQueryMatcher<? extends IPatternMatch> matcher) {
 		IObservableSet os = IncQueryObservables.observeMatchesAsSet(matcher);
 		os.addSetChangeListener(new ISetChangeListener() {
 
