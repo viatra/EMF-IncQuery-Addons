@@ -7,7 +7,11 @@ Implementation
 --------------
 
 The implementation has a dedicated plugin: hu.bme.mit.incquery.cep.
-For example codes see the test plugin: hu.bme.mit.incquery.cep.tests.
+For example codes see the test plugins: hu.bme.mit.incquery.cep.tests, hu.bme.mit.incquery.cep.tests.evm.integration, hu.bme.mit.incquery.cep.tests.evm.integration2. The former one will contain the JUnit tests in the future; there will be an examples plugin for the EVM integration and the demonstrations.
+
+Implementation
+--------------
+The plugin hu.bme.mit.incquery.cep.jnect contains a demo based on a previously elaborated one: [http://incquery.net//incquery/demos/jnect]. The difference is in the event processing layer: in this demo, the new VIATRA-CEP layer is employed instead of ESPER.
 
 Roadmap/TODO
 ------------
