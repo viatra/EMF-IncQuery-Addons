@@ -13,7 +13,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
-import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder2;
+import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +72,7 @@ public final class SMUtils {
 	 * Flattens hierarchically nested {@link AtomicEventPattern}s. It is
 	 * deterministic for fully ordered case. In mixed or unordered case, it is
 	 * used for building an initial flattened equivalent to initialize the
-	 * back-step trace building algorithm. (See {@link StateMachineBuilder2#buildStateMachine()}.)
+	 * back-step trace building algorithm. (See {@link StateMachineBuilder#buildStateMachine()}.)
 	 * 
 	 * @param eventPattern
 	 * @return

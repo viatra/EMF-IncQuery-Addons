@@ -14,7 +14,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
-import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder2;
+import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +34,7 @@ import org.junit.runners.Parameterized.Parameters;
 
 @Ignore
 @RunWith(Parameterized.class)
-public class StateMachineBuilder2Test {
+public class StateMachineBuilderTest {
 
 	private enum EventPatternType {
 		ATOMIC, ORDERED, UNORDERED, MIXED;
@@ -46,11 +46,11 @@ public class StateMachineBuilder2Test {
 				{ EventPatternType.UNORDERED }, { EventPatternType.MIXED } });
 	}
 
-	private StateMachineBuilder2 smBuilder;
+	private StateMachineBuilder smBuilder;
 	private InternalExecutionModel model;
 	private EventPatternType eventPatternType;
 
-	public StateMachineBuilder2Test(EventPatternType eventPatternType) {
+	public StateMachineBuilderTest(EventPatternType eventPatternType) {
 		this.eventPatternType = eventPatternType;
 	}
 
@@ -76,7 +76,7 @@ public class StateMachineBuilder2Test {
 		int expected = calculateNumberOfStates(testEventPattern, eventPatternType);
 		assertFalse(expected == 0);
 
-		smBuilder = new StateMachineBuilder2(model, testEventPattern);
+		smBuilder = new StateMachineBuilder(model, testEventPattern);
 		StateMachine stateMachine = smBuilder.buildStateMachine();
 		assertNotNull(stateMachine);
 

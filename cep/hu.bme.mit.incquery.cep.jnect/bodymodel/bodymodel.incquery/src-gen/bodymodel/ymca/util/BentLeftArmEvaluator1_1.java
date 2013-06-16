@@ -15,7 +15,7 @@ public class BentLeftArmEvaluator1_1 implements IMatchChecker {
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
-  private Boolean evaluateXExpressionGenerated(final Float LSZ, final Float LHZ, final Float LSX, final Float LEY, final Float LSY, final Float LEZ, final Float LHY, final Float LHX, final Float LEX) {
+  private Boolean evaluateXExpressionGenerated(final Float LSZ, final Float LEZ, final Float LHX, final Float LSX, final Float LSY, final Float LEX, final Float LHZ, final Float LHY, final Float LEY) {
     boolean _xblockexpression = false;
     {
       MovingAverageCalculator _calculator = MovingAverageCalculator.getCalculator("LHX");
@@ -85,22 +85,22 @@ public class BentLeftArmEvaluator1_1 implements IMatchChecker {
   public Boolean evaluateXExpression(final Tuple tuple, final Map<String,Integer> tupleNameMap) {
     int LSZPosition = tupleNameMap.get("LSZ");
     java.lang.Float LSZ = (java.lang.Float) tuple.get(LSZPosition);
-    int LHZPosition = tupleNameMap.get("LHZ");
-    java.lang.Float LHZ = (java.lang.Float) tuple.get(LHZPosition);
-    int LSXPosition = tupleNameMap.get("LSX");
-    java.lang.Float LSX = (java.lang.Float) tuple.get(LSXPosition);
-    int LEYPosition = tupleNameMap.get("LEY");
-    java.lang.Float LEY = (java.lang.Float) tuple.get(LEYPosition);
-    int LSYPosition = tupleNameMap.get("LSY");
-    java.lang.Float LSY = (java.lang.Float) tuple.get(LSYPosition);
     int LEZPosition = tupleNameMap.get("LEZ");
     java.lang.Float LEZ = (java.lang.Float) tuple.get(LEZPosition);
-    int LHYPosition = tupleNameMap.get("LHY");
-    java.lang.Float LHY = (java.lang.Float) tuple.get(LHYPosition);
     int LHXPosition = tupleNameMap.get("LHX");
     java.lang.Float LHX = (java.lang.Float) tuple.get(LHXPosition);
+    int LSXPosition = tupleNameMap.get("LSX");
+    java.lang.Float LSX = (java.lang.Float) tuple.get(LSXPosition);
+    int LSYPosition = tupleNameMap.get("LSY");
+    java.lang.Float LSY = (java.lang.Float) tuple.get(LSYPosition);
     int LEXPosition = tupleNameMap.get("LEX");
     java.lang.Float LEX = (java.lang.Float) tuple.get(LEXPosition);
-    return evaluateXExpressionGenerated(LSZ, LHZ, LSX, LEY, LSY, LEZ, LHY, LHX, LEX);
+    int LHZPosition = tupleNameMap.get("LHZ");
+    java.lang.Float LHZ = (java.lang.Float) tuple.get(LHZPosition);
+    int LHYPosition = tupleNameMap.get("LHY");
+    java.lang.Float LHY = (java.lang.Float) tuple.get(LHYPosition);
+    int LEYPosition = tupleNameMap.get("LEY");
+    java.lang.Float LEY = (java.lang.Float) tuple.get(LEYPosition);
+    return evaluateXExpressionGenerated(LSZ, LEZ, LHX, LSX, LSY, LEX, LHZ, LHY, LEY);
   }
 }

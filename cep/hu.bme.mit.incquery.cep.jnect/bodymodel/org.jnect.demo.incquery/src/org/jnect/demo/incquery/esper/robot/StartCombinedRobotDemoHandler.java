@@ -7,8 +7,6 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.jnect.core.KinectManager;
-import org.jnect.demo.incquery.esper.EsperAdapter;
-import org.jnect.demo.incquery.esper.EsperManager;
 import org.jnect.demo.incquery.viatra.cep.ViatraCepAdapter;
 
 import bodymodel.ymca.BEMatcher;

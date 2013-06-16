@@ -10,7 +10,7 @@ import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.EventProcessingStrategyFactory;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.IEventProcessingStrategy;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
-import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder2;
+import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder;
 import hu.bme.mit.incquery.cep.specific.evm.CepActivationStates;
 import hu.bme.mit.incquery.cep.specific.evm.CepEventSourceSpecification;
 import hu.bme.mit.incquery.cep.specific.evm.CepEventType;
@@ -144,7 +144,7 @@ public class EventModelManager {
 	}
 	
 	public StateMachine getStateMachine(EventPattern eventPattern) {
-		return new StateMachineBuilder2(model, eventPattern).buildStateMachine();
+		return new StateMachineBuilder(model, eventPattern).buildStateMachine();
 	}
 	private void refreshModel(Event event) {
 		model.setLatestEvent(null);
