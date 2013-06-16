@@ -11,17 +11,18 @@ For example codes see the test plugin: hu.bme.mit.incquery.cep.tests.
 
 Roadmap/TODO
 ------------
-* implement the common event processing strategies: chronicle, recent, unrestricted
+In progress:
 * handle both ordered and unordered cases with time windows
 * elaborate the JNect demo
-* negotiate the interfaces used between the CEP layer and the EVM
+
+Future work:
+* define the language for modeling event patterns over EMF models
+ * reuse the concepts of event-driven model transformations and the pattern language of IncQuery
+* implement the common event processing strategies: chronicle, recent, unrestricted
 * make the EventQueue thread-safe in order to enable higher performance via threading
 * enable definition of custom execution strategies
  * define semantics for that
  * implement the required API (the extension point mechanism could work here perfectly)
-* define the language for modeling event patterns over EMF models
- * reuse the concepts of event-driven model transformations and the pattern language of IncQuery
-
 
 License
 -------
