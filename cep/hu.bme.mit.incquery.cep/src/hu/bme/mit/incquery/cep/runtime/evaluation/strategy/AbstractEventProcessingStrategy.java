@@ -1,12 +1,12 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.strategy;
 
-import java.util.Calendar;
-
-import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
+
+import java.util.Calendar;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -19,9 +19,9 @@ public abstract class AbstractEventProcessingStrategy implements IEventProcessin
 		return c.getTimeInMillis();
 	}
 	
-	protected void handleTimeConstraints(CurrentStateVisitor visitor) {
-		EList<TimeConstraint> startConstraints = visitor.getCurrentState().getStartConstraints();
-		EList<TimeConstraint> stopConstraints = visitor.getCurrentState().getStopConstraints();
+	protected void handleTimeConstraints(EventToken eventToken) {
+		EList<TimeConstraint> startConstraints = eventToken.getCurrentState().getStartConstraints();
+		EList<TimeConstraint> stopConstraints = eventToken.getCurrentState().getStopConstraints();
 		
 		if (!startConstraints.isEmpty()) {
 			for (TimeConstraint c : startConstraints) {
@@ -33,17 +33,17 @@ public abstract class AbstractEventProcessingStrategy implements IEventProcessin
 			for (TimeConstraint c : stopConstraints) {
 				c.setStopTimeStamp(getCurrentTimeStamp());
 				if (!isTimeConstraintSatisfied(c)) {
-					moveToTrapState(visitor);
+					moveToTrapState(eventToken);
 				}
 			}
 		}
 	}
 	
-	protected void moveToTrapState(CurrentStateVisitor visitor) {
-		StateMachine sm = (StateMachine) visitor.getCurrentState().eContainer();
+	protected void moveToTrapState(EventToken eventToken) {
+		StateMachine sm = (StateMachine) eventToken.getCurrentState().eContainer();
 		TrapState trapState = SMUtils.getTrapState(sm);
 		Preconditions.checkNotNull(trapState);
-		visitor.setCurrentState(trapState);
+		eventToken.setCurrentState(trapState);
 	}
 	
 	protected boolean isTimeConstraintSatisfied(TimeConstraint constraint) {

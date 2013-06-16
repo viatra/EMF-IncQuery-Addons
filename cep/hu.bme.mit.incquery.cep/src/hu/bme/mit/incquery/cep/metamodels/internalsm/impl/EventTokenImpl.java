@@ -2,8 +2,8 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 
@@ -18,19 +18,19 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Current State Visitor</b></em>'.
+ * An implementation of the model object '<em><b>Event Token</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.CurrentStateVisitorImpl#getCurrentState <em>Current State</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.CurrentStateVisitorImpl#getEventCollection <em>Event Collection</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventTokenImpl#getCurrentState <em>Current State</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventTokenImpl#getEventCollection <em>Event Collection</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentStateVisitor {
+public class EventTokenImpl extends EObjectImpl implements EventToken {
 	/**
 	 * The cached value of the '{@link #getCurrentState() <em>Current State</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -56,7 +56,7 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CurrentStateVisitorImpl() {
+	protected EventTokenImpl() {
 		super();
 	}
 
@@ -67,7 +67,7 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return InternalsmPackage.Literals.CURRENT_STATE_VISITOR;
+		return InternalsmPackage.Literals.EVENT_TOKEN;
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 			currentState = (State)eResolveProxy(oldCurrentState);
 			if (currentState != oldCurrentState) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE, oldCurrentState, currentState));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InternalsmPackage.EVENT_TOKEN__CURRENT_STATE, oldCurrentState, currentState));
 			}
 		}
 		return currentState;
@@ -105,7 +105,7 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 		State oldCurrentState = currentState;
 		currentState = newCurrentState;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE, oldCurrentState, newCurrentState);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.EVENT_TOKEN__CURRENT_STATE, oldCurrentState, newCurrentState);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -120,14 +120,14 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 		if (newCurrentState != currentState) {
 			NotificationChain msgs = null;
 			if (currentState != null)
-				msgs = ((InternalEObject)currentState).eInverseRemove(this, InternalsmPackage.STATE__CURRENT_VISITORS, State.class, msgs);
+				msgs = ((InternalEObject)currentState).eInverseRemove(this, InternalsmPackage.STATE__EVENT_TOKENS, State.class, msgs);
 			if (newCurrentState != null)
-				msgs = ((InternalEObject)newCurrentState).eInverseAdd(this, InternalsmPackage.STATE__CURRENT_VISITORS, State.class, msgs);
+				msgs = ((InternalEObject)newCurrentState).eInverseAdd(this, InternalsmPackage.STATE__EVENT_TOKENS, State.class, msgs);
 			msgs = basicSetCurrentState(newCurrentState, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE, newCurrentState, newCurrentState));
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.EVENT_TOKEN__CURRENT_STATE, newCurrentState, newCurrentState));
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 		EventCollection oldEventCollection = eventCollection;
 		eventCollection = newEventCollection;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION, oldEventCollection, newEventCollection);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION, oldEventCollection, newEventCollection);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -170,7 +170,7 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION, newEventCollection, newEventCollection));
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION, newEventCollection, newEventCollection));
 	}
 
 	/**
@@ -181,13 +181,13 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE:
+			case InternalsmPackage.EVENT_TOKEN__CURRENT_STATE:
 				if (currentState != null)
-					msgs = ((InternalEObject)currentState).eInverseRemove(this, InternalsmPackage.STATE__CURRENT_VISITORS, State.class, msgs);
+					msgs = ((InternalEObject)currentState).eInverseRemove(this, InternalsmPackage.STATE__EVENT_TOKENS, State.class, msgs);
 				return basicSetCurrentState((State)otherEnd, msgs);
-			case InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION:
+			case InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION:
 				if (eventCollection != null)
-					msgs = ((InternalEObject)eventCollection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION, null, msgs);
+					msgs = ((InternalEObject)eventCollection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION, null, msgs);
 				return basicSetEventCollection((EventCollection)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -201,9 +201,9 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE:
+			case InternalsmPackage.EVENT_TOKEN__CURRENT_STATE:
 				return basicSetCurrentState(null, msgs);
-			case InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION:
+			case InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION:
 				return basicSetEventCollection(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -217,10 +217,10 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE:
+			case InternalsmPackage.EVENT_TOKEN__CURRENT_STATE:
 				if (resolve) return getCurrentState();
 				return basicGetCurrentState();
-			case InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION:
+			case InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION:
 				return getEventCollection();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -234,10 +234,10 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE:
+			case InternalsmPackage.EVENT_TOKEN__CURRENT_STATE:
 				setCurrentState((State)newValue);
 				return;
-			case InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION:
+			case InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION:
 				setEventCollection((EventCollection)newValue);
 				return;
 		}
@@ -252,10 +252,10 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE:
+			case InternalsmPackage.EVENT_TOKEN__CURRENT_STATE:
 				setCurrentState((State)null);
 				return;
-			case InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION:
+			case InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION:
 				setEventCollection((EventCollection)null);
 				return;
 		}
@@ -270,12 +270,12 @@ public class CurrentStateVisitorImpl extends EObjectImpl implements CurrentState
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE:
+			case InternalsmPackage.EVENT_TOKEN__CURRENT_STATE:
 				return currentState != null;
-			case InternalsmPackage.CURRENT_STATE_VISITOR__EVENT_COLLECTION:
+			case InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION:
 				return eventCollection != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //CurrentStateVisitorImpl
+} //EventTokenImpl

@@ -1,6 +1,6 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.queries;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatch;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.EnabledTransitionQuerySpecification;
@@ -27,12 +27,12 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern enabledTransition(t : Transition, cv:CurrentStateVisitor) {
+ * pattern enabledTransition(t : Transition, et:EventToken) {
  * 	find latestEvent(e);
  * 	Event.typeId(e, eventId);
  * 	Transition.guard.eventType(t, eventId);
- * 	Transition.preState.currentVisitors(t, cv);
- * 	neg find eventHandledByCSV(e, cv);
+ * 	Transition.preState.eventTokens(t, et);
+ * 	neg find eventHandledByEventToken(e, et);
  * }
  * </pre></code>
  * 
@@ -62,7 +62,7 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
   
   private final static int POSITION_T = 0;
   
-  private final static int POSITION_CV = 1;
+  private final static int POSITION_ET = 1;
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet). 
@@ -98,71 +98,71 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
   /**
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pCv the fixed value of pattern parameter cv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @return matches represented as a EnabledTransitionMatch object.
    * 
    */
-  public Collection<EnabledTransitionMatch> getAllMatches(final Transition pT, final CurrentStateVisitor pCv) {
-    return rawGetAllMatches(new Object[]{pT, pCv});
+  public Collection<EnabledTransitionMatch> getAllMatches(final Transition pT, final EventToken pEt) {
+    return rawGetAllMatches(new Object[]{pT, pEt});
   }
   
   /**
    * Returns an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pCv the fixed value of pattern parameter cv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @return a match represented as a EnabledTransitionMatch object, or null if no match is found.
    * 
    */
-  public EnabledTransitionMatch getOneArbitraryMatch(final Transition pT, final CurrentStateVisitor pCv) {
-    return rawGetOneArbitraryMatch(new Object[]{pT, pCv});
+  public EnabledTransitionMatch getOneArbitraryMatch(final Transition pT, final EventToken pEt) {
+    return rawGetOneArbitraryMatch(new Object[]{pT, pEt});
   }
   
   /**
    * Indicates whether the given combination of specified pattern parameters constitute a valid pattern match,
    * under any possible substitution of the unspecified parameters (if any).
    * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pCv the fixed value of pattern parameter cv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Transition pT, final CurrentStateVisitor pCv) {
-    return rawHasMatch(new Object[]{pT, pCv});
+  public boolean hasMatch(final Transition pT, final EventToken pEt) {
+    return rawHasMatch(new Object[]{pT, pEt});
   }
   
   /**
    * Returns the number of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pCv the fixed value of pattern parameter cv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Transition pT, final CurrentStateVisitor pCv) {
-    return rawCountMatches(new Object[]{pT, pCv});
+  public int countMatches(final Transition pT, final EventToken pEt) {
+    return rawCountMatches(new Object[]{pT, pEt});
   }
   
   /**
    * Executes the given processor on each match of the pattern that conforms to the given fixed values of some parameters.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pCv the fixed value of pattern parameter cv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Transition pT, final CurrentStateVisitor pCv, final IMatchProcessor<? super EnabledTransitionMatch> processor) {
-    rawForEachMatch(new Object[]{pT, pCv}, processor);
+  public void forEachMatch(final Transition pT, final EventToken pEt, final IMatchProcessor<? super EnabledTransitionMatch> processor) {
+    rawForEachMatch(new Object[]{pT, pEt}, processor);
   }
   
   /**
    * Executes the given processor on an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.  
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pCv the fixed value of pattern parameter cv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @param processor the action that will process the selected match. 
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Transition pT, final CurrentStateVisitor pCv, final IMatchProcessor<? super EnabledTransitionMatch> processor) {
-    return rawForOneArbitraryMatch(new Object[]{pT, pCv}, processor);
+  public boolean forOneArbitraryMatch(final Transition pT, final EventToken pEt, final IMatchProcessor<? super EnabledTransitionMatch> processor) {
+    return rawForOneArbitraryMatch(new Object[]{pT, pEt}, processor);
   }
   
   /**
@@ -173,14 +173,14 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * See {@link DeltaMonitor} for details.
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pCv the fixed value of pattern parameter cv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @return the delta monitor.
    * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
   @Deprecated
-  public DeltaMonitor<EnabledTransitionMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Transition pT, final CurrentStateVisitor pCv) {
-    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pT, pCv});
+  public DeltaMonitor<EnabledTransitionMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Transition pT, final EventToken pEt) {
+    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pT, pEt});
   }
   
   /**
@@ -188,12 +188,12 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * This can be used e.g. to call the matcher with a partial match. 
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pCv the fixed value of pattern parameter cv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public EnabledTransitionMatch newMatch(final Transition pT, final CurrentStateVisitor pCv) {
-    return new EnabledTransitionMatch.Immutable(pT, pCv);
+  public EnabledTransitionMatch newMatch(final Transition pT, final EventToken pEt) {
+    return new EnabledTransitionMatch.Immutable(pT, pEt);
     
   }
   
@@ -231,52 +231,52 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Transition> getAllValuesOft(final CurrentStateVisitor pCv) {
-    return rawAccumulateAllValuesOft(new Object[]{null, pCv});
+  public Set<Transition> getAllValuesOft(final EventToken pEt) {
+    return rawAccumulateAllValuesOft(new Object[]{null, pEt});
   }
   
   /**
-   * Retrieve the set of values that occur in matches for cv.
+   * Retrieve the set of values that occur in matches for et.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected Set<CurrentStateVisitor> rawAccumulateAllValuesOfcv(final Object[] parameters) {
-    Set<CurrentStateVisitor> results = new HashSet<CurrentStateVisitor>();
-    rawAccumulateAllValues(POSITION_CV, parameters, results);
+  protected Set<EventToken> rawAccumulateAllValuesOfet(final Object[] parameters) {
+    Set<EventToken> results = new HashSet<EventToken>();
+    rawAccumulateAllValues(POSITION_ET, parameters, results);
     return results;
   }
   
   /**
-   * Retrieve the set of values that occur in matches for cv.
+   * Retrieve the set of values that occur in matches for et.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<CurrentStateVisitor> getAllValuesOfcv() {
-    return rawAccumulateAllValuesOfcv(emptyArray());
+  public Set<EventToken> getAllValuesOfet() {
+    return rawAccumulateAllValuesOfet(emptyArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for cv.
+   * Retrieve the set of values that occur in matches for et.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<CurrentStateVisitor> getAllValuesOfcv(final EnabledTransitionMatch partialMatch) {
-    return rawAccumulateAllValuesOfcv(partialMatch.toArray());
+  public Set<EventToken> getAllValuesOfet(final EnabledTransitionMatch partialMatch) {
+    return rawAccumulateAllValuesOfet(partialMatch.toArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for cv.
+   * Retrieve the set of values that occur in matches for et.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<CurrentStateVisitor> getAllValuesOfcv(final Transition pT) {
-    return rawAccumulateAllValuesOfcv(new Object[]{pT, null});
+  public Set<EventToken> getAllValuesOfet(final Transition pT) {
+    return rawAccumulateAllValuesOfet(new Object[]{pT, null});
   }
   
   @Override
   protected EnabledTransitionMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EnabledTransitionMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) t.get(POSITION_T), (hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor) t.get(POSITION_CV));	
+    	return new EnabledTransitionMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) t.get(POSITION_T), (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) t.get(POSITION_ET));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -286,7 +286,7 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
   @Override
   protected EnabledTransitionMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EnabledTransitionMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) match[POSITION_T], (hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor) match[POSITION_CV]);
+    	return new EnabledTransitionMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) match[POSITION_T], (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -296,7 +296,7 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
   @Override
   protected EnabledTransitionMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new EnabledTransitionMatch.Mutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) match[POSITION_T], (hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor) match[POSITION_CV]);
+    	return new EnabledTransitionMatch.Mutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) match[POSITION_T], (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

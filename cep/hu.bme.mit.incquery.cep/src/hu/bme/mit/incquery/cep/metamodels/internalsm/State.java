@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getOutTransitions <em>Out Transitions</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getInTransitions <em>In Transitions</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getLabel <em>Label</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getCurrentVisitors <em>Current Visitors</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getEventTokens <em>Event Tokens</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getStartConstraints <em>Start Constraints</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getStopConstraints <em>Stop Constraints</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getIntermediateConstraints <em>Intermediate Constraints</em>}</li>
@@ -93,22 +93,22 @@ public interface State extends EObject {
 	void setLabel(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Current Visitors</b></em>' reference list.
-	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor}.
-	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getCurrentState <em>Current State</em>}'.
+	 * Returns the value of the '<em><b>Event Tokens</b></em>' reference list.
+	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken}.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getCurrentState <em>Current State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Current Visitors</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Event Tokens</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Current Visitors</em>' reference list.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getState_CurrentVisitors()
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getCurrentState
+	 * @return the value of the '<em>Event Tokens</em>' reference list.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getState_EventTokens()
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getCurrentState
 	 * @model opposite="currentState"
 	 * @generated
 	 */
-	EList<CurrentStateVisitor> getCurrentVisitors();
+	EList<EventToken> getEventTokens();
 
 	/**
 	 * Returns the value of the '<em><b>Start Constraints</b></em>' reference list.

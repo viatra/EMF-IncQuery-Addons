@@ -5,15 +5,15 @@ import "sm.meta"
 import "http://www.eclipse.org/emf/2002/Ecore"
 uses hu.bme.mit.incquery.cep.runtime.evaluation.*
 
-pattern finishedStateMachine(sm : StateMachine, cv:CurrentStateVisitor) {
+pattern finishedStateMachine(sm : StateMachine, et:EventToken) {
 	StateMachine.states(sm, state);
-	find finalState(state, cv);
-	CurrentStateVisitor.currentState(_, state);
+	find finalState(state, et);
+	EventToken.currentState(_, state);
 }
 
-pattern finalState(s : State, cv :CurrentStateVisitor) {
+pattern finalState(s : State, et :EventToken) {
 	State.label(s, label);
-	State.currentVisitors(s, cv);
+	State.eventTokens(s, et);
 	check(label.equalsIgnoreCase("final"));
 }
 
@@ -29,14 +29,14 @@ pattern preState(t, s) {
 	Transition.preState(t, s);
 }
 
-pattern eventHandledByCSV(e, csv) {
-	CurrentStateVisitor.eventCollection(csv,e);
+pattern eventHandledByEventToken(e, et) {
+	EventToken.eventCollection(et,e);
 }
 
-pattern enabledTransition(t : Transition, cv:CurrentStateVisitor) {
+pattern enabledTransition(t : Transition, et:EventToken) {
 	find latestEvent(e);
 	Event.typeId(e, eventId);
 	Transition.guard.eventType(t, eventId);
-	Transition.preState.currentVisitors(t, cv);
-	neg find eventHandledByCSV(e, cv);
+	Transition.preState.eventTokens(t, et);
+	neg find eventHandledByEventToken(e, et);
 }

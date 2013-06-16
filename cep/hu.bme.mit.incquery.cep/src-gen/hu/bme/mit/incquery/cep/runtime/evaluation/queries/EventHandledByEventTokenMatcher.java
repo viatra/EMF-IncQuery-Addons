@@ -1,9 +1,9 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.queries;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection;
-import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EventHandledByCSVMatch;
-import hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.EventHandledByCSVQuerySpecification;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EventHandledByEventTokenMatch;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.EventHandledByEventTokenQuerySpecification;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,27 +17,27 @@ import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
- * Generated pattern matcher API of the hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByCSV pattern, 
+ * Generated pattern matcher API of the hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByEventToken pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)}, 
  * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
  * 
- * <p>Matches of the pattern will be represented as {@link EventHandledByCSVMatch}.
+ * <p>Matches of the pattern will be represented as {@link EventHandledByEventTokenMatch}.
  * 
  * <p>Original source:
  * <code><pre>
- * pattern eventHandledByCSV(e, csv) {
- * 	CurrentStateVisitor.eventCollection(csv,e);
+ * pattern eventHandledByEventToken(e, et) {
+ * 	EventToken.eventCollection(et,e);
  * }
  * </pre></code>
  * 
- * @see EventHandledByCSVMatch
- * @see EventHandledByCSVProcessor
- * @see EventHandledByCSVQuerySpecification
+ * @see EventHandledByEventTokenMatch
+ * @see EventHandledByEventTokenProcessor
+ * @see EventHandledByEventTokenQuerySpecification
  * 
  */
-public class EventHandledByCSVMatcher extends BaseMatcher<EventHandledByCSVMatch> {
+public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByEventTokenMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
@@ -46,11 +46,11 @@ public class EventHandledByCSVMatcher extends BaseMatcher<EventHandledByCSVMatch
    * @throws IncQueryException if an error occurs during pattern matcher creation
    * 
    */
-  public static EventHandledByCSVMatcher on(final IncQueryEngine engine) throws IncQueryException {
+  public static EventHandledByEventTokenMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    EventHandledByCSVMatcher matcher = engine.getExistingMatcher(querySpecification());
+    EventHandledByEventTokenMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
-    	matcher = new EventHandledByCSVMatcher(engine);
+    	matcher = new EventHandledByEventTokenMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it
     } 	
     return matcher;
@@ -58,7 +58,7 @@ public class EventHandledByCSVMatcher extends BaseMatcher<EventHandledByCSVMatch
   
   private final static int POSITION_E = 0;
   
-  private final static int POSITION_CSV = 1;
+  private final static int POSITION_ET = 1;
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet). 
@@ -73,7 +73,7 @@ public class EventHandledByCSVMatcher extends BaseMatcher<EventHandledByCSVMatch
    * 
    */
   @Deprecated
-  public EventHandledByCSVMatcher(final Notifier emfRoot) throws IncQueryException {
+  public EventHandledByEventTokenMatcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngine.on(emfRoot));
   }
   
@@ -87,78 +87,78 @@ public class EventHandledByCSVMatcher extends BaseMatcher<EventHandledByCSVMatch
    * 
    */
   @Deprecated
-  public EventHandledByCSVMatcher(final IncQueryEngine engine) throws IncQueryException {
+  public EventHandledByEventTokenMatcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }
   
   /**
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pE the fixed value of pattern parameter e, or null if not bound.
-   * @param pCsv the fixed value of pattern parameter csv, or null if not bound.
-   * @return matches represented as a EventHandledByCSVMatch object.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @return matches represented as a EventHandledByEventTokenMatch object.
    * 
    */
-  public Collection<EventHandledByCSVMatch> getAllMatches(final EventCollection pE, final CurrentStateVisitor pCsv) {
-    return rawGetAllMatches(new Object[]{pE, pCsv});
+  public Collection<EventHandledByEventTokenMatch> getAllMatches(final EventCollection pE, final EventToken pEt) {
+    return rawGetAllMatches(new Object[]{pE, pEt});
   }
   
   /**
    * Returns an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pE the fixed value of pattern parameter e, or null if not bound.
-   * @param pCsv the fixed value of pattern parameter csv, or null if not bound.
-   * @return a match represented as a EventHandledByCSVMatch object, or null if no match is found.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @return a match represented as a EventHandledByEventTokenMatch object, or null if no match is found.
    * 
    */
-  public EventHandledByCSVMatch getOneArbitraryMatch(final EventCollection pE, final CurrentStateVisitor pCsv) {
-    return rawGetOneArbitraryMatch(new Object[]{pE, pCsv});
+  public EventHandledByEventTokenMatch getOneArbitraryMatch(final EventCollection pE, final EventToken pEt) {
+    return rawGetOneArbitraryMatch(new Object[]{pE, pEt});
   }
   
   /**
    * Indicates whether the given combination of specified pattern parameters constitute a valid pattern match,
    * under any possible substitution of the unspecified parameters (if any).
    * @param pE the fixed value of pattern parameter e, or null if not bound.
-   * @param pCsv the fixed value of pattern parameter csv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final EventCollection pE, final CurrentStateVisitor pCsv) {
-    return rawHasMatch(new Object[]{pE, pCsv});
+  public boolean hasMatch(final EventCollection pE, final EventToken pEt) {
+    return rawHasMatch(new Object[]{pE, pEt});
   }
   
   /**
    * Returns the number of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pE the fixed value of pattern parameter e, or null if not bound.
-   * @param pCsv the fixed value of pattern parameter csv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final EventCollection pE, final CurrentStateVisitor pCsv) {
-    return rawCountMatches(new Object[]{pE, pCsv});
+  public int countMatches(final EventCollection pE, final EventToken pEt) {
+    return rawCountMatches(new Object[]{pE, pEt});
   }
   
   /**
    * Executes the given processor on each match of the pattern that conforms to the given fixed values of some parameters.
    * @param pE the fixed value of pattern parameter e, or null if not bound.
-   * @param pCsv the fixed value of pattern parameter csv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final EventCollection pE, final CurrentStateVisitor pCsv, final IMatchProcessor<? super EventHandledByCSVMatch> processor) {
-    rawForEachMatch(new Object[]{pE, pCsv}, processor);
+  public void forEachMatch(final EventCollection pE, final EventToken pEt, final IMatchProcessor<? super EventHandledByEventTokenMatch> processor) {
+    rawForEachMatch(new Object[]{pE, pEt}, processor);
   }
   
   /**
    * Executes the given processor on an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.  
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pE the fixed value of pattern parameter e, or null if not bound.
-   * @param pCsv the fixed value of pattern parameter csv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @param processor the action that will process the selected match. 
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final EventCollection pE, final CurrentStateVisitor pCsv, final IMatchProcessor<? super EventHandledByCSVMatch> processor) {
-    return rawForOneArbitraryMatch(new Object[]{pE, pCsv}, processor);
+  public boolean forOneArbitraryMatch(final EventCollection pE, final EventToken pEt, final IMatchProcessor<? super EventHandledByEventTokenMatch> processor) {
+    return rawForOneArbitraryMatch(new Object[]{pE, pEt}, processor);
   }
   
   /**
@@ -169,14 +169,14 @@ public class EventHandledByCSVMatcher extends BaseMatcher<EventHandledByCSVMatch
    * See {@link DeltaMonitor} for details.
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pE the fixed value of pattern parameter e, or null if not bound.
-   * @param pCsv the fixed value of pattern parameter csv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @return the delta monitor.
    * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
   @Deprecated
-  public DeltaMonitor<EventHandledByCSVMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EventCollection pE, final CurrentStateVisitor pCsv) {
-    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pE, pCsv});
+  public DeltaMonitor<EventHandledByEventTokenMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EventCollection pE, final EventToken pEt) {
+    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pE, pEt});
   }
   
   /**
@@ -184,12 +184,12 @@ public class EventHandledByCSVMatcher extends BaseMatcher<EventHandledByCSVMatch
    * This can be used e.g. to call the matcher with a partial match. 
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pE the fixed value of pattern parameter e, or null if not bound.
-   * @param pCsv the fixed value of pattern parameter csv, or null if not bound.
+   * @param pEt the fixed value of pattern parameter et, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public EventHandledByCSVMatch newMatch(final EventCollection pE, final CurrentStateVisitor pCsv) {
-    return new EventHandledByCSVMatch.Immutable(pE, pCsv);
+  public EventHandledByEventTokenMatch newMatch(final EventCollection pE, final EventToken pEt) {
+    return new EventHandledByEventTokenMatch.Immutable(pE, pEt);
     
   }
   
@@ -218,7 +218,7 @@ public class EventHandledByCSVMatcher extends BaseMatcher<EventHandledByCSVMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EventCollection> getAllValuesOfe(final EventHandledByCSVMatch partialMatch) {
+  public Set<EventCollection> getAllValuesOfe(final EventHandledByEventTokenMatch partialMatch) {
     return rawAccumulateAllValuesOfe(partialMatch.toArray());
   }
   
@@ -227,52 +227,52 @@ public class EventHandledByCSVMatcher extends BaseMatcher<EventHandledByCSVMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EventCollection> getAllValuesOfe(final CurrentStateVisitor pCsv) {
-    return rawAccumulateAllValuesOfe(new Object[]{null, pCsv});
+  public Set<EventCollection> getAllValuesOfe(final EventToken pEt) {
+    return rawAccumulateAllValuesOfe(new Object[]{null, pEt});
   }
   
   /**
-   * Retrieve the set of values that occur in matches for csv.
+   * Retrieve the set of values that occur in matches for et.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected Set<CurrentStateVisitor> rawAccumulateAllValuesOfcsv(final Object[] parameters) {
-    Set<CurrentStateVisitor> results = new HashSet<CurrentStateVisitor>();
-    rawAccumulateAllValues(POSITION_CSV, parameters, results);
+  protected Set<EventToken> rawAccumulateAllValuesOfet(final Object[] parameters) {
+    Set<EventToken> results = new HashSet<EventToken>();
+    rawAccumulateAllValues(POSITION_ET, parameters, results);
     return results;
   }
   
   /**
-   * Retrieve the set of values that occur in matches for csv.
+   * Retrieve the set of values that occur in matches for et.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<CurrentStateVisitor> getAllValuesOfcsv() {
-    return rawAccumulateAllValuesOfcsv(emptyArray());
+  public Set<EventToken> getAllValuesOfet() {
+    return rawAccumulateAllValuesOfet(emptyArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for csv.
+   * Retrieve the set of values that occur in matches for et.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<CurrentStateVisitor> getAllValuesOfcsv(final EventHandledByCSVMatch partialMatch) {
-    return rawAccumulateAllValuesOfcsv(partialMatch.toArray());
+  public Set<EventToken> getAllValuesOfet(final EventHandledByEventTokenMatch partialMatch) {
+    return rawAccumulateAllValuesOfet(partialMatch.toArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for csv.
+   * Retrieve the set of values that occur in matches for et.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<CurrentStateVisitor> getAllValuesOfcsv(final EventCollection pE) {
-    return rawAccumulateAllValuesOfcsv(new Object[]{pE, null});
+  public Set<EventToken> getAllValuesOfet(final EventCollection pE) {
+    return rawAccumulateAllValuesOfet(new Object[]{pE, null});
   }
   
   @Override
-  protected EventHandledByCSVMatch tupleToMatch(final Tuple t) {
+  protected EventHandledByEventTokenMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EventHandledByCSVMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection) t.get(POSITION_E), (hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor) t.get(POSITION_CSV));	
+    	return new EventHandledByEventTokenMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection) t.get(POSITION_E), (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) t.get(POSITION_ET));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -280,9 +280,9 @@ public class EventHandledByCSVMatcher extends BaseMatcher<EventHandledByCSVMatch
   }
   
   @Override
-  protected EventHandledByCSVMatch arrayToMatch(final Object[] match) {
+  protected EventHandledByEventTokenMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EventHandledByCSVMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection) match[POSITION_E], (hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor) match[POSITION_CSV]);
+    	return new EventHandledByEventTokenMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection) match[POSITION_E], (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -290,9 +290,9 @@ public class EventHandledByCSVMatcher extends BaseMatcher<EventHandledByCSVMatch
   }
   
   @Override
-  protected EventHandledByCSVMatch arrayToMatchMutable(final Object[] match) {
+  protected EventHandledByEventTokenMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new EventHandledByCSVMatch.Mutable((hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection) match[POSITION_E], (hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor) match[POSITION_CSV]);
+    	return new EventHandledByEventTokenMatch.Mutable((hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection) match[POSITION_E], (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -304,7 +304,7 @@ public class EventHandledByCSVMatcher extends BaseMatcher<EventHandledByCSVMatch
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IQuerySpecification<EventHandledByCSVMatcher> querySpecification() throws IncQueryException {
-    return EventHandledByCSVQuerySpecification.instance();
+  public static IQuerySpecification<EventHandledByEventTokenMatcher> querySpecification() throws IncQueryException {
+    return EventHandledByEventTokenQuerySpecification.instance();
   }
 }

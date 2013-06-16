@@ -71,7 +71,7 @@ public interface InternalExecutionModel extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Current State Visitors</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor}.
+	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Current State Visitors</em>' containment reference list isn't clear,
@@ -83,6 +83,6 @@ public interface InternalExecutionModel extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<CurrentStateVisitor> getCurrentStateVisitors();
+	EList<EventToken> getCurrentStateVisitors();
 
 } // InternalExecutionModel

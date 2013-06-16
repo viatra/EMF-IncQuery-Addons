@@ -2,7 +2,7 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getOutTransitions <em>Out Transitions</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getInTransitions <em>In Transitions</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getLabel <em>Label</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getCurrentVisitors <em>Current Visitors</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getEventTokens <em>Event Tokens</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getStartConstraints <em>Start Constraints</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getStopConstraints <em>Stop Constraints</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getIntermediateConstraints <em>Intermediate Constraints</em>}</li>
@@ -86,14 +86,14 @@ public class StateImpl extends EObjectImpl implements State {
 	protected String label = LABEL_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCurrentVisitors() <em>Current Visitors</em>}' reference list.
+	 * The cached value of the '{@link #getEventTokens() <em>Event Tokens</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCurrentVisitors()
+	 * @see #getEventTokens()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CurrentStateVisitor> currentVisitors;
+	protected EList<EventToken> eventTokens;
 
 	/**
 	 * The cached value of the '{@link #getStartConstraints() <em>Start Constraints</em>}' reference list.
@@ -194,11 +194,11 @@ public class StateImpl extends EObjectImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CurrentStateVisitor> getCurrentVisitors() {
-		if (currentVisitors == null) {
-			currentVisitors = new EObjectWithInverseResolvingEList<CurrentStateVisitor>(CurrentStateVisitor.class, this, InternalsmPackage.STATE__CURRENT_VISITORS, InternalsmPackage.CURRENT_STATE_VISITOR__CURRENT_STATE);
+	public EList<EventToken> getEventTokens() {
+		if (eventTokens == null) {
+			eventTokens = new EObjectWithInverseResolvingEList<EventToken>(EventToken.class, this, InternalsmPackage.STATE__EVENT_TOKENS, InternalsmPackage.EVENT_TOKEN__CURRENT_STATE);
 		}
-		return currentVisitors;
+		return eventTokens;
 	}
 
 	/**
@@ -298,8 +298,8 @@ public class StateImpl extends EObjectImpl implements State {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutTransitions()).basicAdd(otherEnd, msgs);
 			case InternalsmPackage.STATE__IN_TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInTransitions()).basicAdd(otherEnd, msgs);
-			case InternalsmPackage.STATE__CURRENT_VISITORS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCurrentVisitors()).basicAdd(otherEnd, msgs);
+			case InternalsmPackage.STATE__EVENT_TOKENS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEventTokens()).basicAdd(otherEnd, msgs);
 			case InternalsmPackage.STATE__START_CONSTRAINTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStartConstraints()).basicAdd(otherEnd, msgs);
 			case InternalsmPackage.STATE__STOP_CONSTRAINTS:
@@ -324,8 +324,8 @@ public class StateImpl extends EObjectImpl implements State {
 				return ((InternalEList<?>)getOutTransitions()).basicRemove(otherEnd, msgs);
 			case InternalsmPackage.STATE__IN_TRANSITIONS:
 				return ((InternalEList<?>)getInTransitions()).basicRemove(otherEnd, msgs);
-			case InternalsmPackage.STATE__CURRENT_VISITORS:
-				return ((InternalEList<?>)getCurrentVisitors()).basicRemove(otherEnd, msgs);
+			case InternalsmPackage.STATE__EVENT_TOKENS:
+				return ((InternalEList<?>)getEventTokens()).basicRemove(otherEnd, msgs);
 			case InternalsmPackage.STATE__START_CONSTRAINTS:
 				return ((InternalEList<?>)getStartConstraints()).basicRemove(otherEnd, msgs);
 			case InternalsmPackage.STATE__STOP_CONSTRAINTS:
@@ -350,8 +350,8 @@ public class StateImpl extends EObjectImpl implements State {
 				return getInTransitions();
 			case InternalsmPackage.STATE__LABEL:
 				return getLabel();
-			case InternalsmPackage.STATE__CURRENT_VISITORS:
-				return getCurrentVisitors();
+			case InternalsmPackage.STATE__EVENT_TOKENS:
+				return getEventTokens();
 			case InternalsmPackage.STATE__START_CONSTRAINTS:
 				return getStartConstraints();
 			case InternalsmPackage.STATE__STOP_CONSTRAINTS:
@@ -383,9 +383,9 @@ public class StateImpl extends EObjectImpl implements State {
 			case InternalsmPackage.STATE__LABEL:
 				setLabel((String)newValue);
 				return;
-			case InternalsmPackage.STATE__CURRENT_VISITORS:
-				getCurrentVisitors().clear();
-				getCurrentVisitors().addAll((Collection<? extends CurrentStateVisitor>)newValue);
+			case InternalsmPackage.STATE__EVENT_TOKENS:
+				getEventTokens().clear();
+				getEventTokens().addAll((Collection<? extends EventToken>)newValue);
 				return;
 			case InternalsmPackage.STATE__START_CONSTRAINTS:
 				getStartConstraints().clear();
@@ -419,8 +419,8 @@ public class StateImpl extends EObjectImpl implements State {
 			case InternalsmPackage.STATE__LABEL:
 				setLabel(LABEL_EDEFAULT);
 				return;
-			case InternalsmPackage.STATE__CURRENT_VISITORS:
-				getCurrentVisitors().clear();
+			case InternalsmPackage.STATE__EVENT_TOKENS:
+				getEventTokens().clear();
 				return;
 			case InternalsmPackage.STATE__START_CONSTRAINTS:
 				getStartConstraints().clear();
@@ -449,8 +449,8 @@ public class StateImpl extends EObjectImpl implements State {
 				return inTransitions != null && !inTransitions.isEmpty();
 			case InternalsmPackage.STATE__LABEL:
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-			case InternalsmPackage.STATE__CURRENT_VISITORS:
-				return currentVisitors != null && !currentVisitors.isEmpty();
+			case InternalsmPackage.STATE__EVENT_TOKENS:
+				return eventTokens != null && !eventTokens.isEmpty();
 			case InternalsmPackage.STATE__START_CONSTRAINTS:
 				return startConstraints != null && !startConstraints.isEmpty();
 			case InternalsmPackage.STATE__STOP_CONSTRAINTS:

@@ -1,6 +1,6 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.queries.util;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.FinishedStateMachineMatch;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
@@ -15,14 +15,14 @@ public abstract class FinishedStateMachineProcessor implements IMatchProcessor<F
   /**
    * Defines the action that is to be executed on each match.
    * @param pSm the value of pattern parameter sm in the currently processed match 
-   * @param pCv the value of pattern parameter cv in the currently processed match 
+   * @param pEt the value of pattern parameter et in the currently processed match 
    * 
    */
-  public abstract void process(final StateMachine pSm, final CurrentStateVisitor pCv);
+  public abstract void process(final StateMachine pSm, final EventToken pEt);
   
   @Override
   public void process(final FinishedStateMachineMatch match) {
-    process(match.getSm(), match.getCv());  				
+    process(match.getSm(), match.getEt());  				
     
   }
 }

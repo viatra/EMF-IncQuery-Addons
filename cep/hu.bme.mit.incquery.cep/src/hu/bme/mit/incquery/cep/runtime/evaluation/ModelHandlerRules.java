@@ -3,7 +3,7 @@ package hu.bme.mit.incquery.cep.runtime.evaluation;
 import hu.bme.mit.incquery.cep.api.ObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.api.SimpleObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
@@ -55,7 +55,7 @@ public class ModelHandlerRules {
 			@Override
 			public void process(FinishedStateMachineMatch match) {
 				StateMachine sm = match.getSm();
-				System.err.println("\tIQ: " + sm.getEventPattern().getId() + " MATCHED!");
+				//log(sm);
 
 				// forward the observed pattern in a DTO
 				ObservedComplexEventPattern observedPattern = new SimpleObservedComplexEventPattern(
@@ -64,11 +64,11 @@ public class ModelHandlerRules {
 
 				for (State s : sm.getStates()) {
 					if (s instanceof FinalState) {
-						CopyOnWriteArrayList<CurrentStateVisitor> currentVisitors = new CopyOnWriteArrayList<CurrentStateVisitor>();
-						currentVisitors.addAll(s.getCurrentVisitors());
-						for (CurrentStateVisitor cv : currentVisitors) {
+						CopyOnWriteArrayList<EventToken> currentVisitors = new CopyOnWriteArrayList<EventToken>();
+						currentVisitors.addAll(s.getEventTokens());
+						for (EventToken cv : currentVisitors) {
 							// log(cv);
-							s.getCurrentVisitors().remove(cv);
+							s.getEventTokens().remove(cv);
 						}
 					}
 				}
@@ -85,14 +85,18 @@ public class ModelHandlerRules {
 		return spec;
 	}
 
-	private void log(CurrentStateVisitor cv) {
+	private void log(StateMachine sm){
+		System.err.println("\tIQ: " + sm.getEventPattern().getId() + " MATCHED!");
+	}
+	
+	private void log(EventToken et) {
 		System.err.println("\tIQ: Events recorded by the CurrentStateVisitor: ");
-		Object recordedEvents = cv.getEventCollection().getRecordedEvents();
+		Object recordedEvents = et.getEventCollection().getRecordedEvents();
 		if (!(recordedEvents instanceof Multimap<?, ?>)) {
 			return;
 		}
 		@SuppressWarnings("unchecked")
-		Multimap<String, Event> eventMap = (Multimap<String, Event>) cv.getEventCollection().getRecordedEvents();
+		Multimap<String, Event> eventMap = (Multimap<String, Event>) et.getEventCollection().getRecordedEvents();
 		for (Event event : eventMap.values()) {
 			System.err.println("\t\t" + event.getTypeId());
 		}

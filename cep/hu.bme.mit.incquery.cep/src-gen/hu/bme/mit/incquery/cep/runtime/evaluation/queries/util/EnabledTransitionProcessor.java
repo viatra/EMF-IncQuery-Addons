@@ -1,6 +1,6 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.queries.util;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatch;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
@@ -15,14 +15,14 @@ public abstract class EnabledTransitionProcessor implements IMatchProcessor<Enab
   /**
    * Defines the action that is to be executed on each match.
    * @param pT the value of pattern parameter t in the currently processed match 
-   * @param pCv the value of pattern parameter cv in the currently processed match 
+   * @param pEt the value of pattern parameter et in the currently processed match 
    * 
    */
-  public abstract void process(final Transition pT, final CurrentStateVisitor pCv);
+  public abstract void process(final Transition pT, final EventToken pEt);
   
   @Override
   public void process(final EnabledTransitionMatch match) {
-    process(match.getT(), match.getCv());  				
+    process(match.getT(), match.getEt());  				
     
   }
 }

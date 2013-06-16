@@ -78,6 +78,7 @@ public class SMUtilsTests {
 	
 	@Test
 	public void flattenEventPatternsTest() {
+		//TODO unordered+mixed case
 		ComplexEventPattern rootPattern = mock(ComplexEventPattern.class);
 		ComplexEventPattern c1 = mock(ComplexEventPattern.class);
 		ComplexEventPattern c2 = mock(ComplexEventPattern.class);

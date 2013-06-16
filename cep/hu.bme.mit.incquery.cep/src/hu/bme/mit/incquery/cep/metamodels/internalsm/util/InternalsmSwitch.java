@@ -123,9 +123,9 @@ public class InternalsmSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case InternalsmPackage.CURRENT_STATE_VISITOR: {
-				CurrentStateVisitor currentStateVisitor = (CurrentStateVisitor)theEObject;
-				T result = caseCurrentStateVisitor(currentStateVisitor);
+			case InternalsmPackage.EVENT_TOKEN: {
+				EventToken eventToken = (EventToken)theEObject;
+				T result = caseEventToken(eventToken);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -281,17 +281,17 @@ public class InternalsmSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Current State Visitor</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Event Token</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Current State Visitor</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Event Token</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCurrentStateVisitor(CurrentStateVisitor object) {
+	public T caseEventToken(EventToken object) {
 		return null;
 	}
 

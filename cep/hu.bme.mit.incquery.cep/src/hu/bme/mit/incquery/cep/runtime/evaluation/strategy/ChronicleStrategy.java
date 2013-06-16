@@ -1,7 +1,7 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.strategy;
 
 import hu.bme.mit.incquery.cep.metamodels.custom.impl.EventCollectionWithMultimap;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
@@ -29,7 +29,7 @@ public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 		InternalExecutionModel model = eventModelManager.getModel();
 		State nextState = t.getPostState();
 		
-		CurrentStateVisitor cvToMove = t.getPreState().getCurrentVisitors().get(0);
+		EventToken cvToMove = t.getPreState().getEventTokens().get(0);
 		cvToMove.getEventCollection().addEvent(model.getLatestEvent());
 		cvToMove.setCurrentState(nextState);
 		handleTimeConstraints(cvToMove);
@@ -40,8 +40,8 @@ public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 		for (StateMachine sm : model.getStateMachines()) {
 			for (State s : sm.getStates()) {
 				if (s instanceof InitState) {
-					if (s.getCurrentVisitors().isEmpty()) {
-						CurrentStateVisitor cv = SM_FACTORY.createCurrentStateVisitor();
+					if (s.getEventTokens().isEmpty()) {
+						EventToken cv = SM_FACTORY.createEventToken();
 						cv.setCurrentState(s);
 						cv.setEventCollection(new EventCollectionWithMultimap());
 						model.getCurrentStateVisitors().add(cv);

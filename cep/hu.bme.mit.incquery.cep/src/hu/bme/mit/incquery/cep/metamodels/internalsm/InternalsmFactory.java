@@ -103,13 +103,13 @@ public interface InternalsmFactory extends EFactory {
 	Action createAction();
 
 	/**
-	 * Returns a new object of class '<em>Current State Visitor</em>'.
+	 * Returns a new object of class '<em>Event Token</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Current State Visitor</em>'.
+	 * @return a new object of class '<em>Event Token</em>'.
 	 * @generated
 	 */
-	CurrentStateVisitor createCurrentStateVisitor();
+	EventToken createEventToken();
 
 	/**
 	 * Returns a new object of class '<em>Time Constraint</em>'.

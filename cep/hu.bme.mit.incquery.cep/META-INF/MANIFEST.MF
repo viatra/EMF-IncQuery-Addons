@@ -13,7 +13,8 @@ Export-Package: hu.bme.mit.incquery.cep.api,
  hu.bme.mit.incquery.cep.runtime.evaluation,
  hu.bme.mit.incquery.cep.runtime.evaluation.queries,
  hu.bme.mit.incquery.cep.runtime.evaluation.queries.util,
- hu.bme.mit.incquery.cep.runtime.evaluation.strategy
+ hu.bme.mit.incquery.cep.runtime.evaluation.strategy,
+ hu.bme.mit.incquery.cep.specific.evm
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  hu.bme.mit.incquery.cep,

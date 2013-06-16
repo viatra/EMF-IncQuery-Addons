@@ -1,7 +1,7 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.queries;
 
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatcher;
-import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EventHandledByCSVMatcher;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EventHandledByEventTokenMatcher;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.FinalStateMatcher;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.FinishedStateMachineMatcher;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.LatestEventMatcher;
@@ -23,7 +23,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * <li>latestEvent</li>
  * <li>transition</li>
  * <li>preState</li>
- * <li>eventHandledByCSV</li>
+ * <li>eventHandledByEventToken</li>
  * <li>enabledTransition</li>
  * </ul>
  * 
@@ -49,13 +49,13 @@ public final class EvaluationPatterns extends BaseGeneratedPatternGroup {
   private static EvaluationPatterns INSTANCE;
   
   private EvaluationPatterns() throws IncQueryException {
-    querySpecifications.add(FinishedStateMachineMatcher.querySpecification());
-    querySpecifications.add(TransitionMatcher.querySpecification());
-    querySpecifications.add(EventHandledByCSVMatcher.querySpecification());
-    querySpecifications.add(EnabledTransitionMatcher.querySpecification());
-    querySpecifications.add(PreStateMatcher.querySpecification());
     querySpecifications.add(LatestEventMatcher.querySpecification());
+    querySpecifications.add(TransitionMatcher.querySpecification());
+    querySpecifications.add(EnabledTransitionMatcher.querySpecification());
+    querySpecifications.add(FinishedStateMachineMatcher.querySpecification());
+    querySpecifications.add(EventHandledByEventTokenMatcher.querySpecification());
     querySpecifications.add(FinalStateMatcher.querySpecification());
+    querySpecifications.add(PreStateMatcher.querySpecification());
     
   }
 }

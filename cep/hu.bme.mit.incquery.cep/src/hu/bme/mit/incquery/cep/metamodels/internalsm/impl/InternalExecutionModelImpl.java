@@ -4,7 +4,7 @@ package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
@@ -69,7 +69,7 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CurrentStateVisitor> currentStateVisitors;
+	protected EList<EventToken> currentStateVisitors;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,9 +150,9 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CurrentStateVisitor> getCurrentStateVisitors() {
+	public EList<EventToken> getCurrentStateVisitors() {
 		if (currentStateVisitors == null) {
-			currentStateVisitors = new EObjectContainmentEList<CurrentStateVisitor>(CurrentStateVisitor.class, this, InternalsmPackage.INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS);
+			currentStateVisitors = new EObjectContainmentEList<EventToken>(EventToken.class, this, InternalsmPackage.INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS);
 		}
 		return currentStateVisitors;
 	}
@@ -211,7 +211,7 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 				return;
 			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS:
 				getCurrentStateVisitors().clear();
-				getCurrentStateVisitors().addAll((Collection<? extends CurrentStateVisitor>)newValue);
+				getCurrentStateVisitors().addAll((Collection<? extends EventToken>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

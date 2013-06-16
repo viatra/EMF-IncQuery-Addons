@@ -6,25 +6,25 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Current State Visitor</b></em>'.
+ * A representation of the model object '<em><b>Event Token</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getCurrentState <em>Current State</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getEventCollection <em>Event Collection</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getCurrentState <em>Current State</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getEventCollection <em>Event Collection</em>}</li>
  * </ul>
  * </p>
  *
- * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getCurrentStateVisitor()
+ * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getEventToken()
  * @model
  * @generated
  */
-public interface CurrentStateVisitor extends EObject {
+public interface EventToken extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Current State</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getCurrentVisitors <em>Current Visitors</em>}'.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getEventTokens <em>Event Tokens</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Current State</em>' reference isn't clear,
@@ -33,15 +33,15 @@ public interface CurrentStateVisitor extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Current State</em>' reference.
 	 * @see #setCurrentState(State)
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getCurrentStateVisitor_CurrentState()
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.State#getCurrentVisitors
-	 * @model opposite="currentVisitors"
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getEventToken_CurrentState()
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.State#getEventTokens
+	 * @model opposite="eventTokens"
 	 * @generated
 	 */
 	State getCurrentState();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getCurrentState <em>Current State</em>}' reference.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getCurrentState <em>Current State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Current State</em>' reference.
@@ -61,7 +61,7 @@ public interface CurrentStateVisitor extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Event Collection</em>' containment reference.
 	 * @see #setEventCollection(EventCollection)
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getCurrentStateVisitor_EventCollection()
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getEventToken_EventCollection()
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getCurrentStateVisitor
 	 * @model opposite="currentStateVisitor" containment="true"
 	 * @generated
@@ -69,7 +69,7 @@ public interface CurrentStateVisitor extends EObject {
 	EventCollection getEventCollection();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getEventCollection <em>Event Collection</em>}' containment reference.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getEventCollection <em>Event Collection</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Event Collection</em>' containment reference.
@@ -78,4 +78,4 @@ public interface CurrentStateVisitor extends EObject {
 	 */
 	void setEventCollection(EventCollection value);
 
-} // CurrentStateVisitor
+} // EventToken

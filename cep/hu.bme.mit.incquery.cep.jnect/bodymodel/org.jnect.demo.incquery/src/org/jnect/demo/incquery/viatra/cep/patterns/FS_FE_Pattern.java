@@ -13,9 +13,11 @@ public class FS_FE_Pattern extends ComplexEventPatternImpl {
 		super();
 		setOperator(ComplexOperator.ORDERED);
 		List<EventPattern> atomicEventPatternsForCP = new ArrayList<EventPattern>();
-		atomicEventPatternsForCP.add(new FSPattern());
-		atomicEventPatternsForCP.add(new FEPattern());
+		atomicEventPatternsForCP.add(new FEFoundPattern());
+		atomicEventPatternsForCP.add(new FELostPattern());
+		atomicEventPatternsForCP.add(new FSFoundPattern());
+		atomicEventPatternsForCP.add(new FSLostPattern());
 		eSet(CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS, atomicEventPatternsForCP);
-		setId("FS_FE_Pattern");
+		setId("FE_FS_Pattern");
 	}
 }

@@ -53,7 +53,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/outTransitions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/inTransitions"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//State/label"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/currentVisitors"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/eventTokens"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/startConstraints"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/stopConstraints"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/intermediateConstraints"/>
@@ -84,9 +84,9 @@
     <genClasses ecoreClass="InternalSM.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//Action/msgToLog"/>
     </genClasses>
-    <genClasses ecoreClass="InternalSM.ecore#//CurrentStateVisitor">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//CurrentStateVisitor/currentState"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//CurrentStateVisitor/eventCollection"/>
+    <genClasses ecoreClass="InternalSM.ecore#//EventToken">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//EventToken/currentState"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//EventToken/eventCollection"/>
     </genClasses>
     <genClasses image="false" ecoreClass="InternalSM.ecore#//EventCollection">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference InternalSM.ecore#//EventCollection/currentStateVisitor"/>

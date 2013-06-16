@@ -66,7 +66,7 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 			case InternalsmPackage.STATE_MACHINE: return createStateMachine();
 			case InternalsmPackage.INTERNAL_EXECUTION_MODEL: return createInternalExecutionModel();
 			case InternalsmPackage.ACTION: return createAction();
-			case InternalsmPackage.CURRENT_STATE_VISITOR: return createCurrentStateVisitor();
+			case InternalsmPackage.EVENT_TOKEN: return createEventToken();
 			case InternalsmPackage.TIME_CONSTRAINT: return createTimeConstraint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -198,9 +198,9 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CurrentStateVisitor createCurrentStateVisitor() {
-		CurrentStateVisitorImpl currentStateVisitor = new CurrentStateVisitorImpl();
-		return currentStateVisitor;
+	public EventToken createEventToken() {
+		EventTokenImpl eventToken = new EventTokenImpl();
+		return eventToken;
 	}
 
 	/**

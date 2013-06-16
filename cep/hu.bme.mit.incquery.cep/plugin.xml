@@ -51,11 +51,11 @@
       </matcher>
    </extension>
    <extension
-         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByCSV"
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByEventToken"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.EventHandledByCSVQuerySpecification$Provider"
-            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByCSV">
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.EventHandledByEventTokenQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByEventToken">
       </matcher>
    </extension>
    <extension

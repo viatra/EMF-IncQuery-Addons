@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface EventCollection extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Current State Visitor</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getEventCollection <em>Event Collection</em>}'.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getEventCollection <em>Event Collection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Current State Visitor</em>' container reference isn't clear,
@@ -33,13 +33,13 @@ public interface EventCollection extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Current State Visitor</em>' container reference.
-	 * @see #setCurrentStateVisitor(CurrentStateVisitor)
+	 * @see #setCurrentStateVisitor(EventToken)
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getEventCollection_CurrentStateVisitor()
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor#getEventCollection
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getEventCollection
 	 * @model opposite="eventCollection" required="true" transient="false"
 	 * @generated
 	 */
-	CurrentStateVisitor getCurrentStateVisitor();
+	EventToken getCurrentStateVisitor();
 
 	/**
 	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getCurrentStateVisitor <em>Current State Visitor</em>}' container reference.
@@ -49,7 +49,7 @@ public interface EventCollection extends EObject {
 	 * @see #getCurrentStateVisitor()
 	 * @generated
 	 */
-	void setCurrentStateVisitor(CurrentStateVisitor value);
+	void setCurrentStateVisitor(EventToken value);
 
 	/**
 	 * <!-- begin-user-doc -->

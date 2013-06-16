@@ -104,8 +104,8 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 				return createActionAdapter();
 			}
 			@Override
-			public Adapter caseCurrentStateVisitor(CurrentStateVisitor object) {
-				return createCurrentStateVisitorAdapter();
+			public Adapter caseEventToken(EventToken object) {
+				return createEventTokenAdapter();
 			}
 			@Override
 			public Adapter caseEventCollection(EventCollection object) {
@@ -262,16 +262,16 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor <em>Current State Visitor</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken <em>Event Token</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.CurrentStateVisitor
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken
 	 * @generated
 	 */
-	public Adapter createCurrentStateVisitorAdapter() {
+	public Adapter createEventTokenAdapter() {
 		return null;
 	}
 

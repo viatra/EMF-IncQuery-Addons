@@ -12,8 +12,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="inTransitions" upperBound="-1"
         eType="#//Transition" eOpposite="#//Transition/postState"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="currentVisitors" upperBound="-1"
-        eType="#//CurrentStateVisitor" eOpposite="#//CurrentStateVisitor/currentState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventTokens" upperBound="-1"
+        eType="#//EventToken" eOpposite="#//EventToken/currentState"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="startConstraints" upperBound="-1"
         eType="#//TimeConstraint" eOpposite="#//TimeConstraint/startState"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stopConstraints" upperBound="-1"
@@ -53,14 +53,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="latestEvent" eType="ecore:EClass CEPMeta.ecore#//Event"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentStateVisitors" upperBound="-1"
-        eType="#//CurrentStateVisitor" containment="true"/>
+        eType="#//EventToken" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgToLog" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CurrentStateVisitor">
+  <eClassifiers xsi:type="ecore:EClass" name="EventToken">
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentState" eType="#//State"
-        eOpposite="#//State/currentVisitors"/>
+        eOpposite="#//State/eventTokens"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventCollection" eType="#//EventCollection"
         containment="true" eOpposite="#//EventCollection/currentStateVisitor"/>
   </eClassifiers>
@@ -70,7 +70,7 @@
       <eParameters name="event" eType="ecore:EClass CEPMeta.ecore#//Event"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentStateVisitor" lowerBound="1"
-        eType="#//CurrentStateVisitor" eOpposite="#//CurrentStateVisitor/eventCollection"/>
+        eType="#//EventToken" eOpposite="#//EventToken/eventCollection"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeConstraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expectedLength" lowerBound="1"
