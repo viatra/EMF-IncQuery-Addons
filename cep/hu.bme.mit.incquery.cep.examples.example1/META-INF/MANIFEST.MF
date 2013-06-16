@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Example for defining and processing events via VIATRA-CEP
+Bundle-SymbolicName: hu.bme.mit.incquery.cep.examples.example1
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: hu.bme.mit.incquery.cep;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.databinding.observable;bundle-version="1.4.1",
+ org.junit;bundle-version="4.10.0"

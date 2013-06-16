@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Integration
-Bundle-SymbolicName: hu.bme.mit.incquery.cep.tests.evm.integration
-Bundle-Version: 1.0.0.qualifier
-Fragment-Host: hu.bme.mit.incquery.cep;bundle-version="1.0.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.junit
-Import-Package: org.eclipse.core.databinding.observable
