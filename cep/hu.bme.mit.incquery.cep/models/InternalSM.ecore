@@ -91,4 +91,8 @@
     <eLiterals name="MORE_OR_EQUALS" value="3"/>
     <eLiterals name="MORE_THAN" value="4"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Path">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="#//State"/>
+  </eClassifiers>
 </ecore:EPackage>

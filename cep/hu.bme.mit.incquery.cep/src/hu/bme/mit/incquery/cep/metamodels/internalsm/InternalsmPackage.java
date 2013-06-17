@@ -726,6 +726,34 @@ public interface InternalsmPackage extends EPackage {
 	int TIME_CONSTRAINT_FEATURE_COUNT = 6;
 
 	/**
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.PathImpl <em>Path</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.PathImpl
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getPath()
+	 * @generated
+	 */
+	int PATH = 12;
+
+	/**
+	 * The feature id for the '<em><b>States</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH__STATES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator <em>Numeric Compare Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -733,7 +761,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getNumericCompareOperator()
 	 * @generated
 	 */
-	int NUMERIC_COMPARE_OPERATOR = 12;
+	int NUMERIC_COMPARE_OPERATOR = 13;
 
 
 	/**
@@ -1165,6 +1193,27 @@ public interface InternalsmPackage extends EPackage {
 	EReference getTimeConstraint_IntermediateState();
 
 	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Path <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Path</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Path
+	 * @generated
+	 */
+	EClass getPath();
+
+	/**
+	 * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Path#getStates <em>States</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>States</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Path#getStates()
+	 * @see #getPath()
+	 * @generated
+	 */
+	EReference getPath_States();
+
+	/**
 	 * Returns the meta object for enum '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator <em>Numeric Compare Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1539,6 +1588,24 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TIME_CONSTRAINT__INTERMEDIATE_STATE = eINSTANCE.getTimeConstraint_IntermediateState();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.PathImpl <em>Path</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.PathImpl
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getPath()
+		 * @generated
+		 */
+		EClass PATH = eINSTANCE.getPath();
+
+		/**
+		 * The meta object literal for the '<em><b>States</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATH__STATES = eINSTANCE.getPath_States();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator <em>Numeric Compare Operator</em>}' enum.

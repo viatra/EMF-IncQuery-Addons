@@ -2,7 +2,6 @@ package hu.bme.mit.incquery.cep.runtime.evaluation;
 
 import hu.bme.mit.incquery.cep.api.ObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.api.SimpleObservedComplexEventPattern;
-import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
@@ -25,8 +24,6 @@ import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEn
 import org.eclipse.incquery.runtime.evm.specific.job.StatelessJob;
 import org.eclipse.incquery.runtime.evm.specific.lifecycle.DefaultActivationLifeCycle;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-
-import com.google.common.collect.Multimap;
 
 public class ModelHandlerRules {
 	private Set<RuleSpecification<?>> modelHandlers;
@@ -55,7 +52,7 @@ public class ModelHandlerRules {
 			@Override
 			public void process(FinishedStateMachineMatch match) {
 				StateMachine sm = match.getSm();
-				//log(sm);
+				// log(sm);
 
 				// forward the observed pattern in a DTO
 				ObservedComplexEventPattern observedPattern = new SimpleObservedComplexEventPattern(
@@ -85,22 +82,24 @@ public class ModelHandlerRules {
 		return spec;
 	}
 
-	private void log(StateMachine sm){
-		System.err.println("\tIQ: " + sm.getEventPattern().getId() + " MATCHED!");
-	}
-	
-	private void log(EventToken et) {
-		System.err.println("\tIQ: Events recorded by the CurrentStateVisitor: ");
-		Object recordedEvents = et.getEventCollection().getRecordedEvents();
-		if (!(recordedEvents instanceof Multimap<?, ?>)) {
-			return;
-		}
-		@SuppressWarnings("unchecked")
-		Multimap<String, Event> eventMap = (Multimap<String, Event>) et.getEventCollection().getRecordedEvents();
-		for (Event event : eventMap.values()) {
-			System.err.println("\t\t" + event.getTypeId());
-		}
-	}
+	// private void log(StateMachine sm){
+	// System.err.println("\tIQ: " + sm.getEventPattern().getId() +
+	// " MATCHED!");
+	// }
+	//
+	// private void log(EventToken et) {
+	// System.err.println("\tIQ: Events recorded by the CurrentStateVisitor: ");
+	// Object recordedEvents = et.getEventCollection().getRecordedEvents();
+	// if (!(recordedEvents instanceof Multimap<?, ?>)) {
+	// return;
+	// }
+	// @SuppressWarnings("unchecked")
+	// Multimap<String, Event> eventMap = (Multimap<String, Event>)
+	// et.getEventCollection().getRecordedEvents();
+	// for (Event event : eventMap.values()) {
+	// System.err.println("\t\t" + event.getTypeId());
+	// }
+	// }
 
 	public RuleSpecification<EnabledTransitionMatch> getEnabledTransitionsRule() throws IncQueryException {
 		IMatchProcessor<EnabledTransitionMatch> processor = new IMatchProcessor<EnabledTransitionMatch>() {
@@ -122,9 +121,9 @@ public class ModelHandlerRules {
 		return spec;
 	}
 
-	private void log(Transition t) {
-		StateMachine sm = (StateMachine) t.getPostState().eContainer();
-		System.err.println("\tIQ: enabled transition in SM for pattern "
-				+ sm.getEventPattern().getClass().getSimpleName());
-	}
+	// private void log(Transition t) {
+	// StateMachine sm = (StateMachine) t.getPostState().eContainer();
+	// System.err.println("\tIQ: enabled transition in SM for pattern "
+	// + sm.getEventPattern().getClass().getSimpleName());
+	// }
 }

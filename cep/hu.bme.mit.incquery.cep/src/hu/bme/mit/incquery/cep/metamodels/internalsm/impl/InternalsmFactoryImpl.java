@@ -68,6 +68,7 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 			case InternalsmPackage.ACTION: return createAction();
 			case InternalsmPackage.EVENT_TOKEN: return createEventToken();
 			case InternalsmPackage.TIME_CONSTRAINT: return createTimeConstraint();
+			case InternalsmPackage.PATH: return createPath();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -211,6 +212,16 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 	public TimeConstraint createTimeConstraint() {
 		TimeConstraintImpl timeConstraint = new TimeConstraintImpl();
 		return timeConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Path createPath() {
+		PathImpl path = new PathImpl();
+		return path;
 	}
 
 	/**

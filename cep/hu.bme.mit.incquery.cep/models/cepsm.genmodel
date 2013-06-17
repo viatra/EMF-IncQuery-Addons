@@ -103,5 +103,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraint/stopTimeStamp"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//TimeConstraint/intermediateState"/>
     </genClasses>
+    <genClasses ecoreClass="InternalSM.ecore#//Path">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Path/states"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

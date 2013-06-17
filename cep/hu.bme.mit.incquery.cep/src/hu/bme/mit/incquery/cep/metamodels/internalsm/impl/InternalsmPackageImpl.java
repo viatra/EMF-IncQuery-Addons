@@ -16,6 +16,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.Path;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
@@ -121,6 +122,13 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * @generated
 	 */
 	private EClass timeConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pathEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -560,6 +568,24 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPath() {
+		return pathEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPath_States() {
+		return (EReference)pathEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getNumericCompareOperator() {
 		return numericCompareOperatorEEnum;
 	}
@@ -643,6 +669,9 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__START_TIME_STAMP);
 		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__STOP_TIME_STAMP);
 		createEReference(timeConstraintEClass, TIME_CONSTRAINT__INTERMEDIATE_STATE);
+
+		pathEClass = createEClass(PATH);
+		createEReference(pathEClass, PATH__STATES);
 
 		// Create enums
 		numericCompareOperatorEEnum = createEEnum(NUMERIC_COMPARE_OPERATOR);
@@ -740,6 +769,9 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		initEAttribute(getTimeConstraint_StartTimeStamp(), ecorePackage.getELong(), "startTimeStamp", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeConstraint_StopTimeStamp(), ecorePackage.getELong(), "stopTimeStamp", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTimeConstraint_IntermediateState(), this.getState(), this.getState_IntermediateConstraints(), "intermediateState", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(pathEClass, Path.class, "Path", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPath_States(), this.getState(), null, "states", null, 0, -1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(numericCompareOperatorEEnum, NumericCompareOperator.class, "NumericCompareOperator");

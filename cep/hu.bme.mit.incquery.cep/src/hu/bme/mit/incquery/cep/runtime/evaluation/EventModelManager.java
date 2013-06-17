@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.log4j.Level;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
@@ -133,13 +134,13 @@ public class EventModelManager {
 
 		try {
 			engine = IncQueryEngineManager.getInstance().getIncQueryEngine(resourceSet);
-			ISchedulerFactory schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine);
+			ISchedulerFactory schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine.getBaseIndex());
 
 			ModelHandlerRules mhr = new ModelHandlerRules(this);
 
 			rules.addAll(mhr.getModelHandlers());
 			lowLevelExecutionSchema = ExecutionSchemas.createIncQueryExecutionSchema(engine, schedulerFactory, rules);
-			// engine.getLogger().setLevel(Level.DEBUG);
+			engine.getLogger().setLevel(Level.OFF);
 		} catch (IncQueryException e) {
 			e.printStackTrace();
 		}
