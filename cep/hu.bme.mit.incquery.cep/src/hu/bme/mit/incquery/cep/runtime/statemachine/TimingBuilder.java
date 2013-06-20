@@ -33,7 +33,7 @@ public class TimingBuilder {
 		}
 		
 		
-		for (EventPattern ep : eventPattern.getCompositionEvents()) {
+		for (EventPattern ep : ((ComplexEventPattern) eventPattern).getCompositionEvents()) {
 			if (ep instanceof AtomicEventPattern) {
 				continue;
 			} else if (ep instanceof ComplexEventPattern) {

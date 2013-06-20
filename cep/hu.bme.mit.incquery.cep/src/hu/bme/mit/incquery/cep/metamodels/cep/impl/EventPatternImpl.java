@@ -8,21 +8,14 @@ import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +24,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getCompositionEvents <em>Composition Events</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getStateMachines <em>State Machines</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getId <em>Id</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getHoldingTime <em>Holding Time</em>}</li>
@@ -41,16 +33,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public abstract class EventPatternImpl extends EObjectImpl implements EventPattern {
-	/**
-	 * The cached value of the '{@link #getCompositionEvents() <em>Composition Events</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCompositionEvents()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EventPattern> compositionEvents;
-
 	/**
 	 * The cached value of the '{@link #getStateMachines() <em>State Machines</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -118,18 +100,6 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 	@Override
 	protected EClass eStaticClass() {
 		return CepPackage.Literals.EVENT_PATTERN;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EventPattern> getCompositionEvents() {
-		if (compositionEvents == null) {
-			compositionEvents = new EObjectContainmentEList<EventPattern>(EventPattern.class, this, CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS);
-		}
-		return compositionEvents;
 	}
 
 	/**
@@ -258,8 +228,6 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS:
-				return ((InternalEList<?>)getCompositionEvents()).basicRemove(otherEnd, msgs);
 			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
 				return basicSetStateMachines(null, msgs);
 		}
@@ -274,8 +242,6 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS:
-				return getCompositionEvents();
 			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
 				if (resolve) return getStateMachines();
 				return basicGetStateMachines();
@@ -292,14 +258,9 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS:
-				getCompositionEvents().clear();
-				getCompositionEvents().addAll((Collection<? extends EventPattern>)newValue);
-				return;
 			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
 				setStateMachines((StateMachine)newValue);
 				return;
@@ -321,9 +282,6 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS:
-				getCompositionEvents().clear();
-				return;
 			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
 				setStateMachines((StateMachine)null);
 				return;
@@ -345,8 +303,6 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CepPackage.EVENT_PATTERN__COMPOSITION_EVENTS:
-				return compositionEvents != null && !compositionEvents.isEmpty();
 			case CepPackage.EVENT_PATTERN__STATE_MACHINES:
 				return stateMachines != null;
 			case CepPackage.EVENT_PATTERN__ID:

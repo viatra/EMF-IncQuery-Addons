@@ -2,6 +2,8 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
+
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
@@ -22,34 +24,14 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.GuardImpl#getEventType <em>Event Type</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.GuardImpl#getTimeConstraint <em>Time Constraint</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.GuardImpl#getEventType <em>Event Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class GuardImpl extends EObjectImpl implements Guard {
-	/**
-	 * The default value of the '{@link #getEventType() <em>Event Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEventType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EVENT_TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEventType() <em>Event Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEventType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String eventType = EVENT_TYPE_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getTimeConstraint() <em>Time Constraint</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -59,6 +41,16 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * @ordered
 	 */
 	protected TimeConstraint timeConstraint;
+
+	/**
+	 * The cached value of the '{@link #getEventType() <em>Event Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventType()
+	 * @generated
+	 * @ordered
+	 */
+	protected AtomicEventPattern eventType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,27 +69,6 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	@Override
 	protected EClass eStaticClass() {
 		return InternalsmPackage.Literals.GUARD;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getEventType() {
-		return eventType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEventType(String newEventType) {
-		String oldEventType = eventType;
-		eventType = newEventType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.GUARD__EVENT_TYPE, oldEventType, eventType));
 	}
 
 	/**
@@ -148,6 +119,44 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public AtomicEventPattern getEventType() {
+		if (eventType != null && eventType.eIsProxy()) {
+			InternalEObject oldEventType = (InternalEObject)eventType;
+			eventType = (AtomicEventPattern)eResolveProxy(oldEventType);
+			if (eventType != oldEventType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InternalsmPackage.GUARD__EVENT_TYPE, oldEventType, eventType));
+			}
+		}
+		return eventType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AtomicEventPattern basicGetEventType() {
+		return eventType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEventType(AtomicEventPattern newEventType) {
+		AtomicEventPattern oldEventType = eventType;
+		eventType = newEventType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.GUARD__EVENT_TYPE, oldEventType, eventType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -165,10 +174,11 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InternalsmPackage.GUARD__EVENT_TYPE:
-				return getEventType();
 			case InternalsmPackage.GUARD__TIME_CONSTRAINT:
 				return getTimeConstraint();
+			case InternalsmPackage.GUARD__EVENT_TYPE:
+				if (resolve) return getEventType();
+				return basicGetEventType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -181,11 +191,11 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InternalsmPackage.GUARD__EVENT_TYPE:
-				setEventType((String)newValue);
-				return;
 			case InternalsmPackage.GUARD__TIME_CONSTRAINT:
 				setTimeConstraint((TimeConstraint)newValue);
+				return;
+			case InternalsmPackage.GUARD__EVENT_TYPE:
+				setEventType((AtomicEventPattern)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -199,11 +209,11 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InternalsmPackage.GUARD__EVENT_TYPE:
-				setEventType(EVENT_TYPE_EDEFAULT);
-				return;
 			case InternalsmPackage.GUARD__TIME_CONSTRAINT:
 				setTimeConstraint((TimeConstraint)null);
+				return;
+			case InternalsmPackage.GUARD__EVENT_TYPE:
+				setEventType((AtomicEventPattern)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -217,28 +227,12 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InternalsmPackage.GUARD__EVENT_TYPE:
-				return EVENT_TYPE_EDEFAULT == null ? eventType != null : !EVENT_TYPE_EDEFAULT.equals(eventType);
 			case InternalsmPackage.GUARD__TIME_CONSTRAINT:
 				return timeConstraint != null;
+			case InternalsmPackage.GUARD__EVENT_TYPE:
+				return eventType != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (eventType: ");
-		result.append(eventType);
-		result.append(')');
-		return result.toString();
 	}
 
 } //GuardImpl

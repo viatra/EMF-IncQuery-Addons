@@ -27,10 +27,11 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern enabledTransition(t : Transition, et:EventToken) {
+ * pattern enabledTransition(t : Transition, et : EventToken) {
  * 	find latestEvent(e);
- * 	Event.typeId(e, eventId);
- * 	Transition.guard.eventType(t, eventId);
+ * 	Event.type(e, eventType);
+ * 	//check(eventType.equalsIgnoreCase("hu.bme.mit.incquery.cep.tests.testcaseSm.events.A"));
+ * 	Transition.guard.eventType.type(t, eventType);
  * 	Transition.preState.eventTokens(t, et);
  * 	neg find eventHandledByEventToken(e, et);
  * }

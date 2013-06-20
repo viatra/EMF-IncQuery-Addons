@@ -169,7 +169,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEventPattern_CompositionEvents() {
+	public EReference getEventPattern_StateMachines() {
 		return (EReference)eventPatternEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -178,17 +178,8 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEventPattern_StateMachines() {
-		return (EReference)eventPatternEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getEventPattern_Id() {
-		return (EAttribute)eventPatternEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)eventPatternEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -197,7 +188,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * @generated
 	 */
 	public EAttribute getEventPattern_HoldingTime() {
-		return (EAttribute)eventPatternEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)eventPatternEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -250,6 +241,15 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getComplexEventPattern_CompositionEvents() {
+		return (EReference)complexEventPatternEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEvent() {
 		return eventEClass;
 	}
@@ -259,7 +259,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEvent_TypeId() {
+	public EAttribute getEvent_Type() {
 		return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -355,7 +355,6 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 
 		// Create classes and their features
 		eventPatternEClass = createEClass(EVENT_PATTERN);
-		createEReference(eventPatternEClass, EVENT_PATTERN__COMPOSITION_EVENTS);
 		createEReference(eventPatternEClass, EVENT_PATTERN__STATE_MACHINES);
 		createEAttribute(eventPatternEClass, EVENT_PATTERN__ID);
 		createEAttribute(eventPatternEClass, EVENT_PATTERN__HOLDING_TIME);
@@ -366,9 +365,10 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		complexEventPatternEClass = createEClass(COMPLEX_EVENT_PATTERN);
 		createEAttribute(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__OPERATOR);
 		createEReference(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__TIMEWINDOW);
+		createEReference(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS);
 
 		eventEClass = createEClass(EVENT);
-		createEAttribute(eventEClass, EVENT__TYPE_ID);
+		createEAttribute(eventEClass, EVENT__TYPE);
 		createEAttribute(eventEClass, EVENT__TIMESTAMP);
 		createEReference(eventEClass, EVENT__EVENT_SOURCE);
 
@@ -418,7 +418,6 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(eventPatternEClass, EventPattern.class, "EventPattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEventPattern_CompositionEvents(), this.getEventPattern(), null, "compositionEvents", null, 0, -1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEventPattern_StateMachines(), theInternalsmPackage.getStateMachine(), theInternalsmPackage.getStateMachine_EventPattern(), "stateMachines", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEventPattern_Id(), ecorePackage.getEString(), "id", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEventPattern_HoldingTime(), ecorePackage.getELong(), "holdingTime", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -429,12 +428,13 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		initEClass(complexEventPatternEClass, ComplexEventPattern.class, "ComplexEventPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComplexEventPattern_Operator(), this.getComplexOperator(), "operator", null, 1, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComplexEventPattern_Timewindow(), this.getTimewindow(), null, "timewindow", null, 0, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComplexEventPattern_CompositionEvents(), this.getEventPattern(), null, "compositionEvents", null, 0, -1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(complexEventPatternEClass, null, "addCompositionEventPattern", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEventPattern(), "compositionEventPattern", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEvent_TypeId(), ecorePackage.getEString(), "typeId", null, 1, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEvent_Type(), ecorePackage.getEString(), "type", null, 1, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEvent_Timestamp(), ecorePackage.getELong(), "timestamp", null, 1, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEvent_EventSource(), this.getIEventSource(), null, "eventSource", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -25,6 +25,7 @@ import java.util.Set;
 import org.apache.log4j.Level;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -61,6 +62,7 @@ public class EventModelManager {
 	private ExecutionSchema topLevelExecutionSchema;
 	private CepRealm realm;
 	private UpdateCompleteProviderExtension updateCompleteProvider;
+	private ResourceSet resourceSet;
 
 	private final class UpdateCompleteProviderExtension extends UpdateCompleteProvider {
 		protected void latestEventHandled() {
@@ -70,6 +72,12 @@ public class EventModelManager {
 
 	public EventModelManager(Strategy strategy) {
 		model = SM_FACTORY.createInternalExecutionModel();
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("cep", new XMIResourceFactoryImpl());
+		resourceSet = new ResourceSetImpl();
+		smModelResource = resourceSet.createResource(URI.createURI("cep/sm.cep"));
+		smModelResource.getContents().add(model);
 		this.strategy = EventProcessingStrategyFactory.getStrategy(strategy, this);
 		this.realm = new CepRealm();
 
@@ -125,13 +133,6 @@ public class EventModelManager {
 			topLevelExecutionSchema.addRule(ruleSpec, false);
 		}
 
-		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> m = reg.getExtensionToFactoryMap();
-		m.put("cep", new XMIResourceFactoryImpl());
-		ResourceSet resourceSet = new ResourceSetImpl();
-		smModelResource = resourceSet.createResource(URI.createURI("cep/sm.cep"));
-		smModelResource.getContents().add(model);
-
 		try {
 			engine = IncQueryEngineManager.getInstance().getIncQueryEngine(resourceSet);
 			ISchedulerFactory schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine.getBaseIndex());
@@ -140,7 +141,7 @@ public class EventModelManager {
 
 			rules.addAll(mhr.getModelHandlers());
 			lowLevelExecutionSchema = ExecutionSchemas.createIncQueryExecutionSchema(engine, schedulerFactory, rules);
-			engine.getLogger().setLevel(Level.OFF);
+			engine.getLogger().setLevel(Level.DEBUG);
 		} catch (IncQueryException e) {
 			e.printStackTrace();
 		}

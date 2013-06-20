@@ -7,6 +7,6 @@ public class AbstractEventInstance extends EventImpl {
 	public AbstractEventInstance(IEventSource eventSource) {
 		super();
 		setEventSource(eventSource);
-		setTypeId(this.getClass().getCanonicalName());
+		setType(this.getClass().getCanonicalName());
 	}
 }

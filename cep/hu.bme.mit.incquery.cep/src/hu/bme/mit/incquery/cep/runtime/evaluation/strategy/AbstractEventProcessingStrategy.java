@@ -20,23 +20,23 @@ public abstract class AbstractEventProcessingStrategy implements IEventProcessin
 	}
 	
 	protected void handleTimeConstraints(EventToken eventToken) {
-		EList<TimeConstraint> startConstraints = eventToken.getCurrentState().getStartConstraints();
-		EList<TimeConstraint> stopConstraints = eventToken.getCurrentState().getStopConstraints();
-		
-		if (!startConstraints.isEmpty()) {
-			for (TimeConstraint c : startConstraints) {
-				c.setStartTimeStamp(getCurrentTimeStamp());
-			}
-		}
-		
-		if (!stopConstraints.isEmpty()) {
-			for (TimeConstraint c : stopConstraints) {
-				c.setStopTimeStamp(getCurrentTimeStamp());
-				if (!isTimeConstraintSatisfied(c)) {
-					moveToTrapState(eventToken);
-				}
-			}
-		}
+//		EList<TimeConstraint> startConstraints = eventToken.getCurrentState().getStartConstraints();
+//		EList<TimeConstraint> stopConstraints = eventToken.getCurrentState().getStopConstraints();
+//		
+//		if (!startConstraints.isEmpty()) {
+//			for (TimeConstraint c : startConstraints) {
+//				c.setStartTimeStamp(getCurrentTimeStamp());
+//			}
+//		}
+//		
+//		if (!stopConstraints.isEmpty()) {
+//			for (TimeConstraint c : stopConstraints) {
+//				c.setStopTimeStamp(getCurrentTimeStamp());
+//				if (!isTimeConstraintSatisfied(c)) {
+//					moveToTrapState(eventToken);
+//				}
+//			}
+//		}
 	}
 	
 	protected void moveToTrapState(EventToken eventToken) {

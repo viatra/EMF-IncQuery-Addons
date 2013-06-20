@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getTypeId <em>Type Id</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getType <em>Type</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getTimestamp <em>Timestamp</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getEventSource <em>Event Source</em>}</li>
  * </ul>
@@ -24,30 +24,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Event extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Type Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type Id</em>' attribute.
-	 * @see #setTypeId(String)
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getEvent_TypeId()
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see #setType(String)
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getEvent_Type()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getTypeId();
+	String getType();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getTypeId <em>Type Id</em>}' attribute.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type Id</em>' attribute.
-	 * @see #getTypeId()
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see #getType()
 	 * @generated
 	 */
-	void setTypeId(String value);
+	void setType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Timestamp</b></em>' attribute.

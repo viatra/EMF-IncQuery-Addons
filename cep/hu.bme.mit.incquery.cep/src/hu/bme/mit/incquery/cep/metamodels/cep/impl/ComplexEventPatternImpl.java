@@ -8,13 +8,20 @@ import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +32,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl#getOperator <em>Operator</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl#getTimewindow <em>Timewindow</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl#getCompositionEvents <em>Composition Events</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,6 +68,16 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 	 * @ordered
 	 */
 	protected Timewindow timewindow;
+
+	/**
+	 * The cached value of the '{@link #getCompositionEvents() <em>Composition Events</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCompositionEvents()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EventPattern> compositionEvents;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,6 +167,18 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<EventPattern> getCompositionEvents() {
+		if (compositionEvents == null) {
+			compositionEvents = new EObjectContainmentEList<EventPattern>(EventPattern.class, this, CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS);
+		}
+		return compositionEvents;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void addCompositionEventPattern(EventPattern compositionEventPattern) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -165,6 +195,8 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 		switch (featureID) {
 			case CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW:
 				return basicSetTimewindow(null, msgs);
+			case CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS:
+				return ((InternalEList<?>)getCompositionEvents()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -181,6 +213,8 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 				return getOperator();
 			case CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW:
 				return getTimewindow();
+			case CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS:
+				return getCompositionEvents();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,6 +224,7 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -198,6 +233,10 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 				return;
 			case CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW:
 				setTimewindow((Timewindow)newValue);
+				return;
+			case CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS:
+				getCompositionEvents().clear();
+				getCompositionEvents().addAll((Collection<? extends EventPattern>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -217,6 +256,9 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 			case CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW:
 				setTimewindow((Timewindow)null);
 				return;
+			case CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS:
+				getCompositionEvents().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -233,6 +275,8 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 				return operator != OPERATOR_EDEFAULT;
 			case CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW:
 				return timewindow != null;
+			case CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS:
+				return compositionEvents != null && !compositionEvents.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

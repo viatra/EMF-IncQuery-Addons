@@ -17,7 +17,7 @@ public class EventCollectionWithMultimap extends EventCollectionImpl {
 	
 	@Override
 	public void addEvent(Event event) {
-		String id = event.getTypeId();
+		String id = event.getType();
 		recordedEvents.put(id, event);
 	}
 }

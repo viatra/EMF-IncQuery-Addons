@@ -4,8 +4,6 @@ package hu.bme.mit.incquery.cep.metamodels.cep;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getCompositionEvents <em>Composition Events</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines <em>State Machines</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getId <em>Id</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getHoldingTime <em>Holding Time</em>}</li>
@@ -28,22 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface EventPattern extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Composition Events</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Composition Events</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Composition Events</em>' containment reference list.
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getEventPattern_CompositionEvents()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<EventPattern> getCompositionEvents();
-
 	/**
 	 * Returns the value of the '<em><b>State Machines</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern <em>Event Pattern</em>}'.

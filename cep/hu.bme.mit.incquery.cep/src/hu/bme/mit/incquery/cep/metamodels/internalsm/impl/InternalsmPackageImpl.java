@@ -16,10 +16,10 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.Path;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintType;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
 
@@ -128,14 +128,14 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pathEClass = null;
+	private EEnum numericCompareOperatorEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum numericCompareOperatorEEnum = null;
+	private EEnum timeConstraintTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -253,26 +253,8 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_StartConstraints() {
+	public EReference getState_TimeConstraints() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getState_StopConstraints() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getState_IntermediateConstraints() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -325,8 +307,8 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGuard_EventType() {
-		return (EAttribute)guardEClass.getEStructuralFeatures().get(0);
+	public EReference getGuard_TimeConstraint() {
+		return (EReference)guardEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -334,7 +316,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getGuard_TimeConstraint() {
+	public EReference getGuard_EventType() {
 		return (EReference)guardEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -514,7 +496,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTimeConstraint_ExpectedLength() {
+	public EAttribute getTimeConstraint_Id() {
 		return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -523,8 +505,8 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTimeConstraint_StartState() {
-		return (EReference)timeConstraintEClass.getEStructuralFeatures().get(1);
+	public EAttribute getTimeConstraint_Type() {
+		return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -532,8 +514,8 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTimeConstraint_StopState() {
-		return (EReference)timeConstraintEClass.getEStructuralFeatures().get(2);
+	public EAttribute getTimeConstraint_ExpectedLength() {
+		return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -559,35 +541,17 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTimeConstraint_IntermediateState() {
-		return (EReference)timeConstraintEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getPath() {
-		return pathEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPath_States() {
-		return (EReference)pathEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getNumericCompareOperator() {
 		return numericCompareOperatorEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTimeConstraintType() {
+		return timeConstraintTypeEEnum;
 	}
 
 	/**
@@ -623,9 +587,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		createEReference(stateEClass, STATE__IN_TRANSITIONS);
 		createEAttribute(stateEClass, STATE__LABEL);
 		createEReference(stateEClass, STATE__EVENT_TOKENS);
-		createEReference(stateEClass, STATE__START_CONSTRAINTS);
-		createEReference(stateEClass, STATE__STOP_CONSTRAINTS);
-		createEReference(stateEClass, STATE__INTERMEDIATE_CONSTRAINTS);
+		createEReference(stateEClass, STATE__TIME_CONSTRAINTS);
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__PRE_STATE);
@@ -633,8 +595,8 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		createEReference(transitionEClass, TRANSITION__POST_STATE);
 
 		guardEClass = createEClass(GUARD);
-		createEAttribute(guardEClass, GUARD__EVENT_TYPE);
 		createEReference(guardEClass, GUARD__TIME_CONSTRAINT);
+		createEReference(guardEClass, GUARD__EVENT_TYPE);
 
 		finalStateEClass = createEClass(FINAL_STATE);
 		createEReference(finalStateEClass, FINAL_STATE__ACTIONS);
@@ -663,18 +625,15 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		createEReference(eventCollectionEClass, EVENT_COLLECTION__CURRENT_STATE_VISITOR);
 
 		timeConstraintEClass = createEClass(TIME_CONSTRAINT);
+		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__ID);
+		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__TYPE);
 		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__EXPECTED_LENGTH);
-		createEReference(timeConstraintEClass, TIME_CONSTRAINT__START_STATE);
-		createEReference(timeConstraintEClass, TIME_CONSTRAINT__STOP_STATE);
 		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__START_TIME_STAMP);
 		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__STOP_TIME_STAMP);
-		createEReference(timeConstraintEClass, TIME_CONSTRAINT__INTERMEDIATE_STATE);
-
-		pathEClass = createEClass(PATH);
-		createEReference(pathEClass, PATH__STATES);
 
 		// Create enums
 		numericCompareOperatorEEnum = createEEnum(NUMERIC_COMPARE_OPERATOR);
+		timeConstraintTypeEEnum = createEEnum(TIME_CONSTRAINT_TYPE);
 	}
 
 	/**
@@ -718,9 +677,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		initEReference(getState_InTransitions(), this.getTransition(), this.getTransition_PostState(), "inTransitions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getState_Label(), ecorePackage.getEString(), "label", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_EventTokens(), this.getEventToken(), this.getEventToken_CurrentState(), "eventTokens", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_StartConstraints(), this.getTimeConstraint(), this.getTimeConstraint_StartState(), "startConstraints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_StopConstraints(), this.getTimeConstraint(), this.getTimeConstraint_StopState(), "stopConstraints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_IntermediateConstraints(), this.getTimeConstraint(), this.getTimeConstraint_IntermediateState(), "intermediateConstraints", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_TimeConstraints(), this.getTimeConstraint(), null, "timeConstraints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransition_PreState(), this.getState(), this.getState_OutTransitions(), "preState", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -728,8 +685,8 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		initEReference(getTransition_PostState(), this.getState(), this.getState_InTransitions(), "postState", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(guardEClass, Guard.class, "Guard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGuard_EventType(), ecorePackage.getEString(), "eventType", null, 1, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGuard_TimeConstraint(), this.getTimeConstraint(), null, "timeConstraint", null, 0, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGuard_EventType(), theCepPackage.getAtomicEventPattern(), null, "eventType", null, 1, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(finalStateEClass, FinalState.class, "FinalState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFinalState_Actions(), this.getAction(), null, "actions", null, 0, -1, FinalState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -763,15 +720,13 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		addEParameter(op, theCepPackage.getEvent(), "event", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(timeConstraintEClass, TimeConstraint.class, "TimeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTimeConstraint_Id(), ecorePackage.getEString(), "id", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTimeConstraint_Type(), this.getTimeConstraintType(), "type", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeConstraint_ExpectedLength(), ecorePackage.getELong(), "expectedLength", null, 1, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTimeConstraint_StartState(), this.getState(), this.getState_StartConstraints(), "startState", null, 1, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTimeConstraint_StopState(), this.getState(), this.getState_StopConstraints(), "stopState", null, 1, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeConstraint_StartTimeStamp(), ecorePackage.getELong(), "startTimeStamp", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeConstraint_StopTimeStamp(), ecorePackage.getELong(), "stopTimeStamp", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTimeConstraint_IntermediateState(), this.getState(), this.getState_IntermediateConstraints(), "intermediateState", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(pathEClass, Path.class, "Path", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPath_States(), this.getState(), null, "states", null, 0, -1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		addEOperation(timeConstraintEClass, null, "handleTimeConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(numericCompareOperatorEEnum, NumericCompareOperator.class, "NumericCompareOperator");
@@ -780,6 +735,11 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		addEEnumLiteral(numericCompareOperatorEEnum, NumericCompareOperator.EQUALS);
 		addEEnumLiteral(numericCompareOperatorEEnum, NumericCompareOperator.MORE_OR_EQUALS);
 		addEEnumLiteral(numericCompareOperatorEEnum, NumericCompareOperator.MORE_THAN);
+
+		initEEnum(timeConstraintTypeEEnum, TimeConstraintType.class, "TimeConstraintType");
+		addEEnumLiteral(timeConstraintTypeEEnum, TimeConstraintType.START);
+		addEEnumLiteral(timeConstraintTypeEEnum, TimeConstraintType.STOP);
+		addEEnumLiteral(timeConstraintTypeEEnum, TimeConstraintType.CHECK);
 
 		// Create resource
 		createResource(eNS_URI);

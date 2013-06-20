@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -36,9 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getInTransitions <em>In Transitions</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getEventTokens <em>Event Tokens</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getStartConstraints <em>Start Constraints</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getStopConstraints <em>Stop Constraints</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getIntermediateConstraints <em>Intermediate Constraints</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getTimeConstraints <em>Time Constraints</em>}</li>
  * </ul>
  * </p>
  *
@@ -96,34 +95,14 @@ public class StateImpl extends EObjectImpl implements State {
 	protected EList<EventToken> eventTokens;
 
 	/**
-	 * The cached value of the '{@link #getStartConstraints() <em>Start Constraints</em>}' reference list.
+	 * The cached value of the '{@link #getTimeConstraints() <em>Time Constraints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStartConstraints()
+	 * @see #getTimeConstraints()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TimeConstraint> startConstraints;
-
-	/**
-	 * The cached value of the '{@link #getStopConstraints() <em>Stop Constraints</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStopConstraints()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<TimeConstraint> stopConstraints;
-
-	/**
-	 * The cached value of the '{@link #getIntermediateConstraints() <em>Intermediate Constraints</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntermediateConstraints()
-	 * @generated
-	 * @ordered
-	 */
-	protected TimeConstraint intermediateConstraints;
+	protected EList<TimeConstraint> timeConstraints;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,83 +185,11 @@ public class StateImpl extends EObjectImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TimeConstraint> getStartConstraints() {
-		if (startConstraints == null) {
-			startConstraints = new EObjectWithInverseResolvingEList<TimeConstraint>(TimeConstraint.class, this, InternalsmPackage.STATE__START_CONSTRAINTS, InternalsmPackage.TIME_CONSTRAINT__START_STATE);
+	public EList<TimeConstraint> getTimeConstraints() {
+		if (timeConstraints == null) {
+			timeConstraints = new EObjectContainmentEList<TimeConstraint>(TimeConstraint.class, this, InternalsmPackage.STATE__TIME_CONSTRAINTS);
 		}
-		return startConstraints;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<TimeConstraint> getStopConstraints() {
-		if (stopConstraints == null) {
-			stopConstraints = new EObjectWithInverseResolvingEList<TimeConstraint>(TimeConstraint.class, this, InternalsmPackage.STATE__STOP_CONSTRAINTS, InternalsmPackage.TIME_CONSTRAINT__STOP_STATE);
-		}
-		return stopConstraints;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TimeConstraint getIntermediateConstraints() {
-		if (intermediateConstraints != null && intermediateConstraints.eIsProxy()) {
-			InternalEObject oldIntermediateConstraints = (InternalEObject)intermediateConstraints;
-			intermediateConstraints = (TimeConstraint)eResolveProxy(oldIntermediateConstraints);
-			if (intermediateConstraints != oldIntermediateConstraints) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InternalsmPackage.STATE__INTERMEDIATE_CONSTRAINTS, oldIntermediateConstraints, intermediateConstraints));
-			}
-		}
-		return intermediateConstraints;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TimeConstraint basicGetIntermediateConstraints() {
-		return intermediateConstraints;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetIntermediateConstraints(TimeConstraint newIntermediateConstraints, NotificationChain msgs) {
-		TimeConstraint oldIntermediateConstraints = intermediateConstraints;
-		intermediateConstraints = newIntermediateConstraints;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE__INTERMEDIATE_CONSTRAINTS, oldIntermediateConstraints, newIntermediateConstraints);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIntermediateConstraints(TimeConstraint newIntermediateConstraints) {
-		if (newIntermediateConstraints != intermediateConstraints) {
-			NotificationChain msgs = null;
-			if (intermediateConstraints != null)
-				msgs = ((InternalEObject)intermediateConstraints).eInverseRemove(this, InternalsmPackage.TIME_CONSTRAINT__INTERMEDIATE_STATE, TimeConstraint.class, msgs);
-			if (newIntermediateConstraints != null)
-				msgs = ((InternalEObject)newIntermediateConstraints).eInverseAdd(this, InternalsmPackage.TIME_CONSTRAINT__INTERMEDIATE_STATE, TimeConstraint.class, msgs);
-			msgs = basicSetIntermediateConstraints(newIntermediateConstraints, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE__INTERMEDIATE_CONSTRAINTS, newIntermediateConstraints, newIntermediateConstraints));
+		return timeConstraints;
 	}
 
 	/**
@@ -300,14 +207,6 @@ public class StateImpl extends EObjectImpl implements State {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInTransitions()).basicAdd(otherEnd, msgs);
 			case InternalsmPackage.STATE__EVENT_TOKENS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEventTokens()).basicAdd(otherEnd, msgs);
-			case InternalsmPackage.STATE__START_CONSTRAINTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStartConstraints()).basicAdd(otherEnd, msgs);
-			case InternalsmPackage.STATE__STOP_CONSTRAINTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStopConstraints()).basicAdd(otherEnd, msgs);
-			case InternalsmPackage.STATE__INTERMEDIATE_CONSTRAINTS:
-				if (intermediateConstraints != null)
-					msgs = ((InternalEObject)intermediateConstraints).eInverseRemove(this, InternalsmPackage.TIME_CONSTRAINT__INTERMEDIATE_STATE, TimeConstraint.class, msgs);
-				return basicSetIntermediateConstraints((TimeConstraint)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -326,12 +225,8 @@ public class StateImpl extends EObjectImpl implements State {
 				return ((InternalEList<?>)getInTransitions()).basicRemove(otherEnd, msgs);
 			case InternalsmPackage.STATE__EVENT_TOKENS:
 				return ((InternalEList<?>)getEventTokens()).basicRemove(otherEnd, msgs);
-			case InternalsmPackage.STATE__START_CONSTRAINTS:
-				return ((InternalEList<?>)getStartConstraints()).basicRemove(otherEnd, msgs);
-			case InternalsmPackage.STATE__STOP_CONSTRAINTS:
-				return ((InternalEList<?>)getStopConstraints()).basicRemove(otherEnd, msgs);
-			case InternalsmPackage.STATE__INTERMEDIATE_CONSTRAINTS:
-				return basicSetIntermediateConstraints(null, msgs);
+			case InternalsmPackage.STATE__TIME_CONSTRAINTS:
+				return ((InternalEList<?>)getTimeConstraints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -352,13 +247,8 @@ public class StateImpl extends EObjectImpl implements State {
 				return getLabel();
 			case InternalsmPackage.STATE__EVENT_TOKENS:
 				return getEventTokens();
-			case InternalsmPackage.STATE__START_CONSTRAINTS:
-				return getStartConstraints();
-			case InternalsmPackage.STATE__STOP_CONSTRAINTS:
-				return getStopConstraints();
-			case InternalsmPackage.STATE__INTERMEDIATE_CONSTRAINTS:
-				if (resolve) return getIntermediateConstraints();
-				return basicGetIntermediateConstraints();
+			case InternalsmPackage.STATE__TIME_CONSTRAINTS:
+				return getTimeConstraints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -387,16 +277,9 @@ public class StateImpl extends EObjectImpl implements State {
 				getEventTokens().clear();
 				getEventTokens().addAll((Collection<? extends EventToken>)newValue);
 				return;
-			case InternalsmPackage.STATE__START_CONSTRAINTS:
-				getStartConstraints().clear();
-				getStartConstraints().addAll((Collection<? extends TimeConstraint>)newValue);
-				return;
-			case InternalsmPackage.STATE__STOP_CONSTRAINTS:
-				getStopConstraints().clear();
-				getStopConstraints().addAll((Collection<? extends TimeConstraint>)newValue);
-				return;
-			case InternalsmPackage.STATE__INTERMEDIATE_CONSTRAINTS:
-				setIntermediateConstraints((TimeConstraint)newValue);
+			case InternalsmPackage.STATE__TIME_CONSTRAINTS:
+				getTimeConstraints().clear();
+				getTimeConstraints().addAll((Collection<? extends TimeConstraint>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -422,14 +305,8 @@ public class StateImpl extends EObjectImpl implements State {
 			case InternalsmPackage.STATE__EVENT_TOKENS:
 				getEventTokens().clear();
 				return;
-			case InternalsmPackage.STATE__START_CONSTRAINTS:
-				getStartConstraints().clear();
-				return;
-			case InternalsmPackage.STATE__STOP_CONSTRAINTS:
-				getStopConstraints().clear();
-				return;
-			case InternalsmPackage.STATE__INTERMEDIATE_CONSTRAINTS:
-				setIntermediateConstraints((TimeConstraint)null);
+			case InternalsmPackage.STATE__TIME_CONSTRAINTS:
+				getTimeConstraints().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -451,12 +328,8 @@ public class StateImpl extends EObjectImpl implements State {
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 			case InternalsmPackage.STATE__EVENT_TOKENS:
 				return eventTokens != null && !eventTokens.isEmpty();
-			case InternalsmPackage.STATE__START_CONSTRAINTS:
-				return startConstraints != null && !startConstraints.isEmpty();
-			case InternalsmPackage.STATE__STOP_CONSTRAINTS:
-				return stopConstraints != null && !stopConstraints.isEmpty();
-			case InternalsmPackage.STATE__INTERMEDIATE_CONSTRAINTS:
-				return intermediateConstraints != null;
+			case InternalsmPackage.STATE__TIME_CONSTRAINTS:
+				return timeConstraints != null && !timeConstraints.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

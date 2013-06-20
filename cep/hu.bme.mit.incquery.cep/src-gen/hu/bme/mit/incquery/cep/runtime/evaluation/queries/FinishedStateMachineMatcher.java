@@ -27,7 +27,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern finishedStateMachine(sm : StateMachine, et:EventToken) {
+ * pattern finishedStateMachine(sm : StateMachine, et : EventToken) {
  * 	StateMachine.states(sm, state);
  * 	find finalState(state, et);
  * 	EventToken.currentState(_, state);

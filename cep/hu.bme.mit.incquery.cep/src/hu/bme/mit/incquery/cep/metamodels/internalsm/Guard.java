@@ -2,6 +2,8 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -12,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getEventType <em>Event Type</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimeConstraint <em>Time Constraint</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getEventType <em>Event Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,32 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Guard extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Event Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Event Type</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Event Type</em>' attribute.
-	 * @see #setEventType(String)
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getGuard_EventType()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getEventType();
-
-	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getEventType <em>Event Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Event Type</em>' attribute.
-	 * @see #getEventType()
-	 * @generated
-	 */
-	void setEventType(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Time Constraint</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -73,5 +49,31 @@ public interface Guard extends EObject {
 	 * @generated
 	 */
 	void setTimeConstraint(TimeConstraint value);
+
+	/**
+	 * Returns the value of the '<em><b>Event Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Event Type</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Event Type</em>' reference.
+	 * @see #setEventType(AtomicEventPattern)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getGuard_EventType()
+	 * @model required="true"
+	 * @generated
+	 */
+	AtomicEventPattern getEventType();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getEventType <em>Event Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Event Type</em>' reference.
+	 * @see #getEventType()
+	 * @generated
+	 */
+	void setEventType(AtomicEventPattern value);
 
 } // Guard

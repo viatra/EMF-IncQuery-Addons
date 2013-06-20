@@ -27,7 +27,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern finalState(s : State, et :EventToken) {
+ * pattern finalState(s : State, et : EventToken) {
  * 	State.label(s, label);
  * 	State.eventTokens(s, et);
  * 	check(label.equalsIgnoreCase("final"));

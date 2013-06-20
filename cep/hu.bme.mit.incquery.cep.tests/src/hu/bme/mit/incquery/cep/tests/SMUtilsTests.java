@@ -38,16 +38,18 @@ public class SMUtilsTests {
 		Transition transition= mock(Transition.class);
 		Guard guard = mock(Guard.class);
 		when(transition.getGuard()).thenReturn(guard);
-		when(guard.getEventType()).thenReturn("testTheSame");
+		AtomicEventPattern atomicEventPattern = mock(AtomicEventPattern.class);
+		when(guard.getEventType()).thenReturn(atomicEventPattern);
+		when(atomicEventPattern.getType()).thenReturn("testTheSame");
 		Event event = mock(Event.class);
 		
-		when(event.getTypeId()).thenReturn("testTheSame");
+		when(event.getType()).thenReturn("testTheSame");
 		assertTrue(SMUtils.isEnabled(transition, event));
 		
-		when(event.getTypeId()).thenReturn("testTheDifferent");
+		when(event.getType()).thenReturn("testTheDifferent");
 		assertFalse(SMUtils.isEnabled(transition, event));
 	}
-	
+
 	@Test
 	public void isFinalTest(){
 		FinalState finalMock = mock(FinalState.class);

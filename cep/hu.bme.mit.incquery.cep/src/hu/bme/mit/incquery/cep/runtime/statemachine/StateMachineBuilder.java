@@ -4,7 +4,6 @@ import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
-import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Action;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
@@ -13,8 +12,8 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 
 import java.util.ArrayList;
@@ -36,6 +35,7 @@ public class StateMachineBuilder {
 	public StateMachineBuilder(InternalExecutionModel model, EventPattern rootPattern) {
 		this.model = model;
 		this.rootPattern = rootPattern;
+		model.eResource().getContents().add(rootPattern);
 	}
 
 	public StateMachine buildStateMachine() {
@@ -98,7 +98,7 @@ public class StateMachineBuilder {
 			}
 
 			List<State> states = new ArrayList<State>();
-			List<String> availableAtomicEventPatterns = getAvailableAtomicEventPatterns(currentState);
+			List<AtomicEventPattern> availableAtomicEventPatterns = getAvailableAtomicEventPatterns(currentState);
 
 			while (availableAtomicEventPatterns.isEmpty()) {
 				currentState = stepBack(currentState);
@@ -111,19 +111,19 @@ public class StateMachineBuilder {
 			availableAtomicEventPatterns = getAvailableAtomicEventPatterns(currentState);
 
 			while (!availableAtomicEventPatterns.isEmpty()) {
-				String nextEventType = getAvailableAtomicEventPatterns(currentState).get(0);
+				AtomicEventPattern nextEventPattern = getAvailableAtomicEventPatterns(currentState).get(0);
 
-				State foundState = findTrace(currentState, nextEventType);
+				State foundState = findTrace(currentState, nextEventPattern.getType());
 				if (foundState == null) {
 					State nextState = SM_FACTORY.createState();
 					states.add(nextState);
-					createTransition(currentState, nextState, createEventGuard(nextEventType));
+					createTransition(currentState, nextState, createEventGuard(nextEventPattern));
 					currentState = nextState;
 					availableAtomicEventPatterns = getAvailableAtomicEventPatterns(currentState);
 				} else if (foundState != null) {
 					State nextState = foundState;
-					createTransition(currentState, nextState, createEventGuard(nextEventType));
-					availableAtomicEventPatterns.remove(nextEventType);
+					createTransition(currentState, nextState, createEventGuard(nextEventPattern));
+					availableAtomicEventPatterns.remove(nextEventPattern);
 				}
 			}
 
@@ -163,44 +163,34 @@ public class StateMachineBuilder {
 		List<String> events = new ArrayList<String>();
 		State currentState = state;
 		while (!(currentState instanceof InitState)) {
-			String usedEvent = currentState.getInTransitions().get(0).getGuard().getEventType();
+			String usedEvent = currentState.getInTransitions().get(0).getGuard().getEventType().getType();
 			events.add(usedEvent);
 			currentState = stepBack(currentState);
 		}
 		return events;
 	}
 
-	private List<String> getAvailableAtomicEventPatterns(State state) {
-		List<String> events = new ArrayList<String>();
+	private List<AtomicEventPattern> getAvailableAtomicEventPatterns(State state) {
+		List<AtomicEventPattern> events = new ArrayList<AtomicEventPattern>();
 
 		for (AtomicEventPattern ep : flattenedAtomicEventPatterns) {
 			if (isAvailable(ep, state)) {
-				events.add(ep.getType());
+				events.add(ep);
 			}
 		}
 		return events;
 	}
-
-	private void checkTimeConstraint(AtomicEventPattern atomicEventPattern) {
-		ComplexEventPattern containerEventPattern = (ComplexEventPattern) atomicEventPattern.eContainer();
-		if (containerEventPattern.getTimewindow() != null) {
-
-		}
-	}
-
-	private enum TimeConstraintType {
-		START, STOP;
-	}
-
-	private void createTimeConstraint(State state, Timewindow timewindow, TimeConstraintType type) {
-		TimeConstraint constraint = SM_FACTORY.createTimeConstraint();
-		constraint.setExpectedLength(timewindow.getLength());
-		if (type.equals(TimeConstraintType.START)) {
-			constraint.setStartState(state);
-		} else if (type.equals(TimeConstraintType.STOP)) {
-			constraint.setStopState(state);
-		}
-	}
+	
+//	private List<AtomicEventPattern> getAvailableAtomicEventPatterns(State state) {
+//		List<AtomicEventPattern> events = new ArrayList<AtomicEventPattern>();
+//
+//		for (AtomicEventPattern ep : flattenedAtomicEventPatterns) {
+//			if (isAvailable(ep, state)) {
+//				events.add(ep);
+//			}
+//		}
+//		return events;
+//	}
 
 	private boolean isAvailable(AtomicEventPattern ep, State state) {
 		if (appearsOnOutTransition(ep.getType(), state)) {
@@ -296,7 +286,7 @@ public class StateMachineBuilder {
 		}
 
 		for (Transition t : state.getOutTransitions()) {
-			if (t.getGuard().getEventType().equalsIgnoreCase(eventType)) {
+			if (t.getGuard().getEventType().getType().equalsIgnoreCase(eventType)) {
 				return true;
 			}
 		}
@@ -317,27 +307,19 @@ public class StateMachineBuilder {
 
 	private Guard createEventGuard(AtomicEventPattern atomicEventPattern) {
 		Guard g = SM_FACTORY.createGuard();
-		g.setEventType(atomicEventPattern.getType());
+		g.setEventType(atomicEventPattern);
 		return g;
 	}
 
-	private Guard createEventGuard(String eventType) {
-		Guard g = SM_FACTORY.createGuard();
-		g.setEventType(eventType);
-		return g;
-	}
+//	private Guard createEventGuard(String eventType) {
+//		Guard g = SM_FACTORY.createGuard();
+//		g.setEventType(eventType);
+//		return g;
+//	}
 
 	private boolean isOrdered(ComplexEventPattern cePattern) {
 		if (cePattern.getOperator().equals(ComplexOperator.ORDERED)
 				|| cePattern.getOperator().equals(ComplexOperator.ORDERED_T)) {
-			return true;
-		}
-		return false;
-	}
-
-	private boolean isUnordered(ComplexEventPattern cePattern) {
-		if (cePattern.getOperator().equals(ComplexOperator.UNORDERED)
-				|| cePattern.getOperator().equals(ComplexOperator.UNORDERED_T)) {
 			return true;
 		}
 		return false;

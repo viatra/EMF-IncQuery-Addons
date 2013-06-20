@@ -5,13 +5,13 @@ import "sm.meta"
 import "http://www.eclipse.org/emf/2002/Ecore"
 uses hu.bme.mit.incquery.cep.runtime.evaluation.*
 
-pattern finishedStateMachine(sm : StateMachine, et:EventToken) {
+pattern finishedStateMachine(sm : StateMachine, et : EventToken) {
 	StateMachine.states(sm, state);
 	find finalState(state, et);
 	EventToken.currentState(_, state);
 }
 
-pattern finalState(s : State, et :EventToken) {
+pattern finalState(s : State, et : EventToken) {
 	State.label(s, label);
 	State.eventTokens(s, et);
 	check(label.equalsIgnoreCase("final"));
@@ -29,14 +29,24 @@ pattern preState(t, s) {
 	Transition.preState(t, s);
 }
 
-pattern eventHandledByEventToken(e, et) {
-	EventToken.eventCollection(et,e);
+pattern
+guardAtomicPattern(guard : Guard, atomicPattern : AtomicEventPattern) {
+	Guard.eventType(guard, atomicPattern);
 }
 
-pattern enabledTransition(t : Transition, et:EventToken) {
+pattern eventHandledByEventToken(e, et) {
+	EventToken.eventCollection(et, e);
+}
+
+pattern atomicPatternType(a : AtomicEventPattern, t : EString) {
+	AtomicEventPattern.type(a, t);
+}
+
+pattern enabledTransition(t : Transition, et : EventToken) {
 	find latestEvent(e);
-	Event.typeId(e, eventId);
-	Transition.guard.eventType(t, eventId);
+	Event.type(e, eventType);
+	//check(eventType.equalsIgnoreCase("hu.bme.mit.incquery.cep.tests.testcaseSm.events.A"));
+	Transition.guard.eventType.type(t, eventType);
 	Transition.preState.eventTokens(t, et);
 	neg find eventHandledByEventToken(e, et);
 }

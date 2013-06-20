@@ -51,11 +51,27 @@
       </matcher>
    </extension>
    <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.guardAtomicPattern"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.GuardAtomicPatternQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.guardAtomicPattern">
+      </matcher>
+   </extension>
+   <extension
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByEventToken"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
             querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.EventHandledByEventTokenQuerySpecification$Provider"
             id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByEventToken">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.atomicPatternType"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.AtomicPatternTypeQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.atomicPatternType">
       </matcher>
    </extension>
    <extension

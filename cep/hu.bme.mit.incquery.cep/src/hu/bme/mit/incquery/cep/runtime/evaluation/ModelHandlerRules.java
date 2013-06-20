@@ -51,7 +51,7 @@ public class ModelHandlerRules {
 
 			@Override
 			public void process(FinishedStateMachineMatch match) {
-				StateMachine sm = match.getSm();
+				StateMachine sm = (StateMachine) match.getSm();
 				// log(sm);
 
 				// forward the observed pattern in a DTO
@@ -106,8 +106,8 @@ public class ModelHandlerRules {
 
 			@Override
 			public void process(EnabledTransitionMatch match) {
-				Transition t = match.getT();
-				// log(t);
+				Transition t = (Transition) match.getT();
+				log(t);
 				eventModelManager.getStrategy().fireTransition(t);
 			}
 		};
@@ -121,9 +121,9 @@ public class ModelHandlerRules {
 		return spec;
 	}
 
-	// private void log(Transition t) {
-	// StateMachine sm = (StateMachine) t.getPostState().eContainer();
-	// System.err.println("\tIQ: enabled transition in SM for pattern "
-	// + sm.getEventPattern().getClass().getSimpleName());
-	// }
+	private void log(Transition t) {
+		StateMachine sm = (StateMachine) t.getPostState().eContainer();
+		System.err.println("\tIQ: enabled transition in SM for pattern "
+				+ sm.getEventPattern().getClass().getSimpleName());
+	}
 }

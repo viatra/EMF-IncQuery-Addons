@@ -67,22 +67,13 @@ public interface CepPackage extends EPackage {
 	int EVENT_PATTERN = 0;
 
 	/**
-	 * The feature id for the '<em><b>Composition Events</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_PATTERN__COMPOSITION_EVENTS = 0;
-
-	/**
 	 * The feature id for the '<em><b>State Machines</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_PATTERN__STATE_MACHINES = 1;
+	int EVENT_PATTERN__STATE_MACHINES = 0;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -91,7 +82,7 @@ public interface CepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_PATTERN__ID = 2;
+	int EVENT_PATTERN__ID = 1;
 
 	/**
 	 * The feature id for the '<em><b>Holding Time</b></em>' attribute.
@@ -100,7 +91,7 @@ public interface CepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_PATTERN__HOLDING_TIME = 3;
+	int EVENT_PATTERN__HOLDING_TIME = 2;
 
 	/**
 	 * The number of structural features of the '<em>Event Pattern</em>' class.
@@ -109,7 +100,7 @@ public interface CepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_PATTERN_FEATURE_COUNT = 4;
+	int EVENT_PATTERN_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.AtomicEventPatternImpl <em>Atomic Event Pattern</em>}' class.
@@ -120,15 +111,6 @@ public interface CepPackage extends EPackage {
 	 * @generated
 	 */
 	int ATOMIC_EVENT_PATTERN = 1;
-
-	/**
-	 * The feature id for the '<em><b>Composition Events</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_EVENT_PATTERN__COMPOSITION_EVENTS = EVENT_PATTERN__COMPOSITION_EVENTS;
 
 	/**
 	 * The feature id for the '<em><b>State Machines</b></em>' reference.
@@ -186,15 +168,6 @@ public interface CepPackage extends EPackage {
 	int COMPLEX_EVENT_PATTERN = 2;
 
 	/**
-	 * The feature id for the '<em><b>Composition Events</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS = EVENT_PATTERN__COMPOSITION_EVENTS;
-
-	/**
 	 * The feature id for the '<em><b>State Machines</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -240,13 +213,22 @@ public interface CepPackage extends EPackage {
 	int COMPLEX_EVENT_PATTERN__TIMEWINDOW = EVENT_PATTERN_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Composition Events</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS = EVENT_PATTERN_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Complex Event Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_EVENT_PATTERN_FEATURE_COUNT = EVENT_PATTERN_FEATURE_COUNT + 2;
+	int COMPLEX_EVENT_PATTERN_FEATURE_COUNT = EVENT_PATTERN_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventImpl <em>Event</em>}' class.
@@ -259,13 +241,13 @@ public interface CepPackage extends EPackage {
 	int EVENT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT__TYPE_ID = 0;
+	int EVENT__TYPE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -373,17 +355,6 @@ public interface CepPackage extends EPackage {
 	EClass getEventPattern();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getCompositionEvents <em>Composition Events</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Composition Events</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getCompositionEvents()
-	 * @see #getEventPattern()
-	 * @generated
-	 */
-	EReference getEventPattern_CompositionEvents();
-
-	/**
 	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines <em>State Machines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -470,6 +441,17 @@ public interface CepPackage extends EPackage {
 	EReference getComplexEventPattern_Timewindow();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern#getCompositionEvents <em>Composition Events</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Composition Events</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern#getCompositionEvents()
+	 * @see #getComplexEventPattern()
+	 * @generated
+	 */
+	EReference getComplexEventPattern_CompositionEvents();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.cep.Event <em>Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -480,15 +462,15 @@ public interface CepPackage extends EPackage {
 	EClass getEvent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getTypeId <em>Type Id</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type Id</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.Event#getTypeId()
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.Event#getType()
 	 * @see #getEvent()
 	 * @generated
 	 */
-	EAttribute getEvent_TypeId();
+	EAttribute getEvent_Type();
 
 	/**
 	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.cep.Event#getTimestamp <em>Timestamp</em>}'.
@@ -596,14 +578,6 @@ public interface CepPackage extends EPackage {
 		EClass EVENT_PATTERN = eINSTANCE.getEventPattern();
 
 		/**
-		 * The meta object literal for the '<em><b>Composition Events</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EVENT_PATTERN__COMPOSITION_EVENTS = eINSTANCE.getEventPattern_CompositionEvents();
-
-		/**
 		 * The meta object literal for the '<em><b>State Machines</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -672,6 +646,14 @@ public interface CepPackage extends EPackage {
 		EReference COMPLEX_EVENT_PATTERN__TIMEWINDOW = eINSTANCE.getComplexEventPattern_Timewindow();
 
 		/**
+		 * The meta object literal for the '<em><b>Composition Events</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS = eINSTANCE.getComplexEventPattern_CompositionEvents();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventImpl <em>Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -682,12 +664,12 @@ public interface CepPackage extends EPackage {
 		EClass EVENT = eINSTANCE.getEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EVENT__TYPE_ID = eINSTANCE.getEvent_TypeId();
+		EAttribute EVENT__TYPE = eINSTANCE.getEvent_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Timestamp</b></em>' attribute feature.

@@ -122,10 +122,7 @@ public class StateMachineBuilderTest {
 		EventPattern eventPattern = mock(EventPattern.class, withSettings().extraInterfaces(InternalEObject.class));
 		when(eventPattern.getId()).thenReturn("testPattern");
 
-		EList<EventPattern> returnables = new BasicEList<EventPattern>();
 		AtomicEventPattern atomicEventPattern = mock(AtomicEventPattern.class);
-		returnables.add(atomicEventPattern);
-		when(eventPattern.getCompositionEvents()).thenReturn(returnables);
 		when(atomicEventPattern.getType()).thenReturn("test1");
 		return eventPattern;
 	}

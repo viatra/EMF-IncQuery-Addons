@@ -116,10 +116,6 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 				return createTimeConstraintAdapter();
 			}
 			@Override
-			public Adapter casePath(Path object) {
-				return createPathAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -304,20 +300,6 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTimeConstraintAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Path <em>Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Path
-	 * @generated
-	 */
-	public Adapter createPathAdapter() {
 		return null;
 	}
 

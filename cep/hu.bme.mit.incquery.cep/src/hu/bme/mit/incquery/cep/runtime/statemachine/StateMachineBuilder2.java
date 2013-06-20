@@ -14,30 +14,36 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintType;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
-
-import com.google.common.collect.Multimap;
+import java.util.UUID;
 
 public class StateMachineBuilder2 {
 
 	private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
 	private InternalExecutionModel model;
-	private Multimap<AtomicEventPattern, List<Timewindow>> flattenedAtomicEventPatterns2;
+	private List<String> flattenedAtomicEventTypes;
+	private Map<AtomicEventPattern, List<Timewindow>> flattenedAtomicEventPatterns2;
 	private InitState initState;
 	private FinalState finalState;
 	private Action action;
 	private StateMachine sm;
 	private EventPattern rootPattern;
+	private Map<Timewindow, UUID> window2constraintMapping;
 
 	public StateMachineBuilder2(InternalExecutionModel model, EventPattern rootPattern) {
 		this.model = model;
 		this.rootPattern = rootPattern;
+		window2constraintMapping = new LinkedHashMap<Timewindow, UUID>();
 	}
 
 	public StateMachine buildStateMachine() {
@@ -47,9 +53,10 @@ public class StateMachineBuilder2 {
 		action.setMsgToLog("\t\tCEP: Event pattern " + rootPattern.getId() + " recognized");
 
 		flattenedAtomicEventPatterns2 = SMUtils.flattenEventPatterns2(rootPattern);
-		
+		flattenedAtomicEventTypes = SMUtils.getFlattenedEventTypeList(flattenedAtomicEventPatterns2);
+
 		buildInitialTrace();
-		if (flattenedAtomicEventPatterns2.keySet().size() > 1) {
+		if (flattenedAtomicEventPatterns2.size() > 1) {
 			buildAlternativeTraces();
 		}
 
@@ -74,6 +81,11 @@ public class StateMachineBuilder2 {
 				states.add(currentState);
 
 				createTransition(latestState, currentState, createEventGuard(ep));
+				if (latestState.equals(initState)) {
+					createTimeConstraints(currentState, ep, TimeConstraintType.START);
+				} else {
+					createTimeConstraints(currentState, ep);
+				}
 
 				latestState = currentState;
 			}
@@ -81,6 +93,7 @@ public class StateMachineBuilder2 {
 			else {
 				finalState = createFinalState(ep);
 				finalState.getActions().add(action);
+				createTimeConstraints(finalState, ep, TimeConstraintType.STOP);
 				states.add(finalState);
 
 				createTransition(latestState, finalState, createEventGuard(ep));
@@ -88,6 +101,36 @@ public class StateMachineBuilder2 {
 		}
 
 		sm.getStates().addAll(states);
+	}
+
+	private void createTimeConstraints(State currentState, AtomicEventPattern ep) {
+		if (SMUtils.isFinal(currentState)) {
+			createTimeConstraints(currentState, ep, TimeConstraintType.STOP);
+			return;
+		} else
+			createTimeConstraints(currentState, ep, TimeConstraintType.CHECK);
+	}
+
+	private void createTimeConstraints(State currentState, AtomicEventPattern ep, TimeConstraintType constraintType) {
+		for (Timewindow timewindow : flattenedAtomicEventPatterns2.get(ep)) {
+			TimeConstraint timeConstraint = SM_FACTORY.createTimeConstraint();
+			timeConstraint.setId(getIdForTimewindow(timewindow));
+			timeConstraint.setType(constraintType);
+			timeConstraint.setExpectedLength(timewindow.getLength());
+			currentState.getTimeConstraints().add(timeConstraint);
+		}
+	}
+
+	private String getIdForTimewindow(Timewindow timewindow) {
+		for (Timewindow t : window2constraintMapping.keySet()) {
+			if (timewindow.equals(t)) {
+				return window2constraintMapping.get(t).toString();
+			}
+		}
+
+		UUID uuid = UUID.randomUUID();
+		window2constraintMapping.put(timewindow, uuid);
+		return uuid.toString();
 	}
 
 	private AtomicEventPattern getLastElement(Set<AtomicEventPattern> atomicEventPatterns) {
@@ -118,16 +161,18 @@ public class StateMachineBuilder2 {
 				}
 			}
 
-			availableAtomicEventPatterns = getAvailableAtomicEventPatterns(currentState);
-
 			while (!availableAtomicEventPatterns.isEmpty()) {
 				String nextEventType = getAvailableAtomicEventPatterns(currentState).get(0);
+				AtomicEventPattern nextAtomicEventPattern = getAvailableAtomicEventPatterns(currentState).get(0);
 
 				State foundState = findTrace(currentState, nextEventType);
 				if (foundState == null) {
 					State nextState = SM_FACTORY.createState();
 					states.add(nextState);
 					createTransition(currentState, nextState, createEventGuard(nextEventType));
+					
+					createTimeConstraints(currentState, ep, TimeConstraintType.START);
+					
 					currentState = nextState;
 					availableAtomicEventPatterns = getAvailableAtomicEventPatterns(currentState);
 				} else if (foundState != null) {
@@ -138,20 +183,6 @@ public class StateMachineBuilder2 {
 			}
 
 			sm.getStates().addAll(states);
-		}
-	}
-
-	private enum TimeConstraintType {
-		START, STOP, CHECK;
-	}
-
-	private void createTimeConstraint(State state, Timewindow timewindow, TimeConstraintType type) {
-		TimeConstraint constraint = SM_FACTORY.createTimeConstraint();
-		constraint.setExpectedLength(timewindow.getLength());
-		if (type.equals(TimeConstraintType.START)) {
-			constraint.setStartState(state);
-		} else if (type.equals(TimeConstraintType.STOP)) {
-			constraint.setStopState(state);
 		}
 	}
 
@@ -204,9 +235,33 @@ public class StateMachineBuilder2 {
 		}
 		return events;
 	}
+	
+	private List<String> getAvailableAtomicEvents(State state) {
+		List<String> events = new ArrayList<String>();
+
+		for (AtomicEventPattern ep : flattenedAtomicEventPatterns2.keySet()) {
+			if (isAvailable(ep, state)) {
+				events.add(ep.getType());
+			}
+		}
+		return events;
+	}
 
 	private boolean isAvailable(AtomicEventPattern ep, State state) {
-		if (appearsOnOutTransition(ep.getType(), state) || getUsedAtomicEventPatterns(state).contains(ep.getType())) {
+		if (appearsOnOutTransition(ep.getType(), state)) {
+			return false;
+		}
+
+		List<String> usedAtomicEventPatterns = getUsedAtomicEventPatterns(state);
+		int usedTimes = Collections.frequency(usedAtomicEventPatterns, ep.getType());
+
+		int availableTimes = Collections.frequency(flattenedAtomicEventTypes, ep.getType());
+
+		if (appearsOnOutTransition(ep.getType(), state)) {
+			usedTimes++;
+		}
+
+		if (!(usedTimes < availableTimes)) {
 			return false;
 		}
 

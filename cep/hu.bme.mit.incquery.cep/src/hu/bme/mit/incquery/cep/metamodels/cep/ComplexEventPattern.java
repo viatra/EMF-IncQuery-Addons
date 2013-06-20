@@ -2,6 +2,7 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.cep;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,7 @@ package hu.bme.mit.incquery.cep.metamodels.cep;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern#getOperator <em>Operator</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern#getTimewindow <em>Timewindow</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern#getCompositionEvents <em>Composition Events</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,6 +77,22 @@ public interface ComplexEventPattern extends EventPattern {
 	 * @generated
 	 */
 	void setTimewindow(Timewindow value);
+
+	/**
+	 * Returns the value of the '<em><b>Composition Events</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Composition Events</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Composition Events</em>' containment reference list.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getComplexEventPattern_CompositionEvents()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<EventPattern> getCompositionEvents();
 
 	/**
 	 * <!-- begin-user-doc -->

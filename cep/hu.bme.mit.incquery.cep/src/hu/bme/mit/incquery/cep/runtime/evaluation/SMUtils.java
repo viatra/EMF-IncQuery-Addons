@@ -17,12 +17,11 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
 import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
-
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
 
 /**
  * 
@@ -44,9 +43,9 @@ public final class SMUtils {
 		checkArgument(event != null);
 
 		Guard guard = checkNotNull(transition.getGuard(), "The Guard must not be null.");
-		String guardEventType = checkNotNull(guard.getEventType(), "The Event Type of the Guard must not be null.");
+		String guardEventType = checkNotNull(guard.getEventType().getType(), "The Event Type of the Guard must not be null.");
 
-		String eventTypeId = checkNotNull(event.getTypeId(), "The Event Type of the Event must not be null.");
+		String eventTypeId = checkNotNull(event.getType(), "The Event Type of the Event must not be null.");
 
 		if (guardEventType.equalsIgnoreCase(eventTypeId)) {
 			return true;
@@ -94,7 +93,7 @@ public final class SMUtils {
 			return flattenedList;
 		}
 
-		for (EventPattern ep : eventPattern.getCompositionEvents()) {
+		for (EventPattern ep : ((ComplexEventPattern)eventPattern).getCompositionEvents()) {
 			if (ep instanceof AtomicEventPattern) {
 				flattenedList.add((AtomicEventPattern) ep);
 			} else if (ep instanceof ComplexEventPattern) {
@@ -108,29 +107,38 @@ public final class SMUtils {
 
 		return flattenedList;
 	}
-	
-	public static List<String> getFlattenedEventTypeList(List<AtomicEventPattern> atomicEventPatterns){
+
+	public static List<String> getFlattenedEventTypeList(List<AtomicEventPattern> atomicEventPatterns) {
 		List<String> flattenedTypeList = new ArrayList<String>();
 		for (AtomicEventPattern atomicEventPattern : atomicEventPatterns) {
 			flattenedTypeList.add(atomicEventPattern.getType());
 		}
-		
+
 		return flattenedTypeList;
 	}
 
-	public static Multimap<AtomicEventPattern, List<Timewindow>> flattenEventPatterns2(EventPattern eventPattern) {
+	public static List<String> getFlattenedEventTypeList(
+			Map<AtomicEventPattern, List<Timewindow>> atomicEventPatterns) {
+		List<String> flattenedTypeList = new ArrayList<String>();
+		for (AtomicEventPattern atomicEventPattern : atomicEventPatterns.keySet()) {
+			flattenedTypeList.add(atomicEventPattern.getType());
+		}
+
+		return flattenedTypeList;
+	}
+
+	public static Map<AtomicEventPattern, List<Timewindow>> flattenEventPatterns2(EventPattern eventPattern) {
 		checkArgument(eventPattern != null);
 
-		Multimap<AtomicEventPattern, List<Timewindow>> flattenedList = ArrayListMultimap.create();
-
+		Map<AtomicEventPattern, List<Timewindow>> flattenedList = new LinkedHashMap<AtomicEventPattern, List<Timewindow>>();
 		if (eventPattern instanceof AtomicEventPattern) {
-			flattenedList.put((AtomicEventPattern) eventPattern, collectTimewindows(eventPattern));
+			addElement(flattenedList, (AtomicEventPattern) eventPattern);
 			return flattenedList;
 		}
 
-		for (EventPattern ep : eventPattern.getCompositionEvents()) {
+		for (EventPattern ep : ((ComplexEventPattern) eventPattern).getCompositionEvents()) {
 			if (ep instanceof AtomicEventPattern) {
-				flattenedList.put((AtomicEventPattern) ep, collectTimewindows(ep));
+				addElement(flattenedList, (AtomicEventPattern) ep);
 			} else if (ep instanceof ComplexEventPattern) {
 				ComplexEventPattern cep = (ComplexEventPattern) ep;
 				ComplexOperator op = (cep).getOperator();
@@ -144,6 +152,16 @@ public final class SMUtils {
 		return flattenedList;
 	}
 
+	private static void addElement(Map<AtomicEventPattern, List<Timewindow>> map, AtomicEventPattern patternToAdd) {
+		for (AtomicEventPattern aep : map.keySet()) {
+			if (aep.equals(patternToAdd)) {
+				return;
+			}
+		}
+
+		map.put((AtomicEventPattern) patternToAdd, collectTimewindows(patternToAdd));
+	}
+
 	private static List<Timewindow> collectTimewindows(EventPattern eventPattern) {
 		List<Timewindow> timewindows = new ArrayList<Timewindow>();
 
@@ -155,8 +173,8 @@ public final class SMUtils {
 			} else if (parent instanceof ComplexEventPattern) {
 				ComplexEventPattern ep = (ComplexEventPattern) eventPattern.eContainer();
 				Timewindow timewindow = ep.getTimewindow();
-				if(timewindow!=null){
-					timewindows.add(timewindow);	
+				if (timewindow != null) {
+					timewindows.add(timewindow);
 				}
 				eventPattern = (ComplexEventPattern) parent;
 				continue;

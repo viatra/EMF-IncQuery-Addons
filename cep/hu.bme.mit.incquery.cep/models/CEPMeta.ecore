@@ -2,8 +2,6 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cep" nsURI="cep.meta" nsPrefix="hu.bme.mit.incquery.metamodels">
   <eClassifiers xsi:type="ecore:EClass" name="EventPattern" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="compositionEvents" upperBound="-1"
-        eType="#//EventPattern" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachines" eType="ecore:EClass InternalSM.ecore#//StateMachine"
         eOpposite="InternalSM.ecore#//StateMachine/eventPattern"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -20,6 +18,8 @@
         eType="#//ComplexOperator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timewindow" eType="#//Timewindow"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compositionEvents" upperBound="-1"
+        eType="#//EventPattern" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ComplexOperator">
     <eLiterals name="ORDERED"/>
@@ -28,8 +28,7 @@
     <eLiterals name="UNORDERED_T" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Event">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeId" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventSource" eType="#//IEventSource"/>
