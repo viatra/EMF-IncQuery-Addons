@@ -4,7 +4,6 @@ import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.Action;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
@@ -27,7 +26,6 @@ public class StateMachineBuilder {
 	private List<String> flattenedAtomicEventTypes;
 	private InitState initState;
 	private FinalState finalState;
-	private Action action;
 	private StateMachine sm;
 	private EventPattern rootPattern;
 
@@ -39,9 +37,6 @@ public class StateMachineBuilder {
 
 	public StateMachine buildStateMachine() {
 		sm = SM_FACTORY.createStateMachine();
-
-		action = SM_FACTORY.createAction();
-		action.setMsgToLog("\t\tCEP: Event pattern " + rootPattern.getId() + " recognized");
 
 		flattenedAtomicEventPatterns = SMUtils.flattenEventPatterns(rootPattern);
 		flattenedAtomicEventTypes = SMUtils.getFlattenedEventTypeList(flattenedAtomicEventPatterns);
@@ -78,7 +73,6 @@ public class StateMachineBuilder {
 
 			else {
 				finalState = createFinalState(ep);
-				finalState.getActions().add(action);
 				states.add(finalState);
 
 				createTransition(latestState, finalState, createEventGuard(ep));

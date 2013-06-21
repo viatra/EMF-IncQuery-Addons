@@ -259,22 +259,13 @@ public interface InternalsmPackage extends EPackage {
 	int FINAL_STATE__TIME_CONSTRAINTS = STATE__TIME_CONSTRAINTS;
 
 	/**
-	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FINAL_STATE__ACTIONS = STATE_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Final State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FINAL_STATE_FEATURE_COUNT = STATE_FEATURE_COUNT + 1;
+	int FINAL_STATE_FEATURE_COUNT = STATE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InitStateImpl <em>Init State</em>}' class.
@@ -488,34 +479,6 @@ public interface InternalsmPackage extends EPackage {
 	int INTERNAL_EXECUTION_MODEL_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.ActionImpl <em>Action</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.ActionImpl
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getAction()
-	 * @generated
-	 */
-	int ACTION = 8;
-
-	/**
-	 * The feature id for the '<em><b>Msg To Log</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION__MSG_TO_LOG = 0;
-
-	/**
-	 * The number of structural features of the '<em>Action</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_FEATURE_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventTokenImpl <em>Event Token</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -523,7 +486,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getEventToken()
 	 * @generated
 	 */
-	int EVENT_TOKEN = 9;
+	int EVENT_TOKEN = 8;
 
 	/**
 	 * The feature id for the '<em><b>Current State</b></em>' reference.
@@ -560,7 +523,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getEventCollection()
 	 * @generated
 	 */
-	int EVENT_COLLECTION = 10;
+	int EVENT_COLLECTION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Current State Visitor</b></em>' container reference.
@@ -588,7 +551,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimeConstraintSpecification()
 	 * @generated
 	 */
-	int TIME_CONSTRAINT_SPECIFICATION = 11;
+	int TIME_CONSTRAINT_SPECIFICATION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -643,7 +606,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimeConstraint()
 	 * @generated
 	 */
-	int TIME_CONSTRAINT = 12;
+	int TIME_CONSTRAINT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -680,7 +643,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getNumericCompareOperator()
 	 * @generated
 	 */
-	int NUMERIC_COMPARE_OPERATOR = 13;
+	int NUMERIC_COMPARE_OPERATOR = 12;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintType <em>Time Constraint Type</em>}' enum.
@@ -690,7 +653,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimeConstraintType()
 	 * @generated
 	 */
-	int TIME_CONSTRAINT_TYPE = 14;
+	int TIME_CONSTRAINT_TYPE = 13;
 
 
 	/**
@@ -844,17 +807,6 @@ public interface InternalsmPackage extends EPackage {
 	EClass getFinalState();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState#getActions <em>Actions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Actions</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState#getActions()
-	 * @see #getFinalState()
-	 * @generated
-	 */
-	EReference getFinalState_Actions();
-
-	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InitState <em>Init State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -948,27 +900,6 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInternalExecutionModel_CurrentStateVisitors();
-
-	/**
-	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Action <em>Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Action</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Action
-	 * @generated
-	 */
-	EClass getAction();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Action#getMsgToLog <em>Msg To Log</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Msg To Log</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Action#getMsgToLog()
-	 * @see #getAction()
-	 * @generated
-	 */
-	EAttribute getAction_MsgToLog();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken <em>Event Token</em>}'.
@@ -1272,14 +1203,6 @@ public interface InternalsmPackage extends EPackage {
 		EClass FINAL_STATE = eINSTANCE.getFinalState();
 
 		/**
-		 * The meta object literal for the '<em><b>Actions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FINAL_STATE__ACTIONS = eINSTANCE.getFinalState_Actions();
-
-		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InitStateImpl <em>Init State</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1358,24 +1281,6 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS = eINSTANCE.getInternalExecutionModel_CurrentStateVisitors();
-
-		/**
-		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.ActionImpl <em>Action</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.ActionImpl
-		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getAction()
-		 * @generated
-		 */
-		EClass ACTION = eINSTANCE.getAction();
-
-		/**
-		 * The meta object literal for the '<em><b>Msg To Log</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ACTION__MSG_TO_LOG = eINSTANCE.getAction_MsgToLog();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventTokenImpl <em>Event Token</em>}' class.

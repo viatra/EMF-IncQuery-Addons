@@ -70,9 +70,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Guard/timeConstraint"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EReference InternalSM.ecore#//Guard/eventType"/>
     </genClasses>
-    <genClasses ecoreClass="InternalSM.ecore#//FinalState">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//FinalState/actions"/>
-    </genClasses>
+    <genClasses ecoreClass="InternalSM.ecore#//FinalState"/>
     <genClasses ecoreClass="InternalSM.ecore#//InitState"/>
     <genClasses ecoreClass="InternalSM.ecore#//TrapState"/>
     <genClasses ecoreClass="InternalSM.ecore#//StateMachine">
@@ -83,9 +81,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//InternalExecutionModel/stateMachines"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//InternalExecutionModel/latestEvent"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//InternalExecutionModel/currentStateVisitors"/>
-    </genClasses>
-    <genClasses ecoreClass="InternalSM.ecore#//Action">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//Action/msgToLog"/>
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//EventToken">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//EventToken/currentState"/>

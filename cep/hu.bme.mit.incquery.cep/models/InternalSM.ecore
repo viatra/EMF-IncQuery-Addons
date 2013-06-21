@@ -31,10 +31,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventType" lowerBound="1"
         eType="ecore:EClass CEPMeta.ecore#//AtomicEventPattern"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="#//State">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-        eType="#//Action" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="#//State"/>
   <eClassifiers xsi:type="ecore:EClass" name="InitState" eSuperTypes="#//State"/>
   <eClassifiers xsi:type="ecore:EClass" name="TrapState" eSuperTypes="#//State"/>
   <eClassifiers xsi:type="ecore:EClass" name="StateMachine">
@@ -50,9 +47,6 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentStateVisitors" upperBound="-1"
         eType="#//EventToken" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Action">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgToLog" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventToken">
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentState" eType="#//State"

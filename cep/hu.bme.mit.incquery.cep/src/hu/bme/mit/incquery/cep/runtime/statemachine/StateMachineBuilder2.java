@@ -5,7 +5,6 @@ import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.Action;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
@@ -35,7 +34,6 @@ public class StateMachineBuilder2 {
 	private Map<AtomicEventPattern, List<Timewindow>> flattenedAtomicEventPatterns;
 	private InitState initState;
 	private FinalState finalState;
-	private Action action;
 	private StateMachine sm;
 	private EventPattern rootPattern;
 	private Map<Timewindow, TimeConstraintSpecification> window2constraintSpecMapping;
@@ -49,9 +47,6 @@ public class StateMachineBuilder2 {
 
 	public StateMachine buildStateMachine() {
 		sm = SM_FACTORY.createStateMachine();
-
-		action = SM_FACTORY.createAction();
-		action.setMsgToLog("\t\tCEP: Event pattern " + rootPattern.getId() + " recognized");
 
 		flattenedAtomicEventPatterns = SMUtils.flattenEventPatterns2(rootPattern);
 
@@ -93,7 +88,6 @@ public class StateMachineBuilder2 {
 
 			else {
 				finalState = createFinalState(ep);
-				finalState.getActions().add(action);
 				assignTimeConstraints(finalState, ep, TimeConstraintType.STOP);
 				states.add(finalState);
 

@@ -6,7 +6,6 @@ import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.CepPackageImpl;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.Action;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
@@ -95,13 +94,6 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * @generated
 	 */
 	private EClass internalExecutionModelEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass actionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -342,15 +334,6 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFinalState_Actions() {
-		return (EReference)finalStateEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getInitState() {
 		return initStateEClass;
 	}
@@ -425,24 +408,6 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 */
 	public EReference getInternalExecutionModel_CurrentStateVisitors() {
 		return (EReference)internalExecutionModelEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAction() {
-		return actionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAction_MsgToLog() {
-		return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -625,7 +590,6 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		createEReference(guardEClass, GUARD__EVENT_TYPE);
 
 		finalStateEClass = createEClass(FINAL_STATE);
-		createEReference(finalStateEClass, FINAL_STATE__ACTIONS);
 
 		initStateEClass = createEClass(INIT_STATE);
 
@@ -639,9 +603,6 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		createEReference(internalExecutionModelEClass, INTERNAL_EXECUTION_MODEL__STATE_MACHINES);
 		createEReference(internalExecutionModelEClass, INTERNAL_EXECUTION_MODEL__LATEST_EVENT);
 		createEReference(internalExecutionModelEClass, INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS);
-
-		actionEClass = createEClass(ACTION);
-		createEAttribute(actionEClass, ACTION__MSG_TO_LOG);
 
 		eventTokenEClass = createEClass(EVENT_TOKEN);
 		createEReference(eventTokenEClass, EVENT_TOKEN__CURRENT_STATE);
@@ -718,7 +679,6 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		initEReference(getGuard_EventType(), theCepPackage.getAtomicEventPattern(), null, "eventType", null, 1, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(finalStateEClass, FinalState.class, "FinalState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFinalState_Actions(), this.getAction(), null, "actions", null, 0, -1, FinalState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(initStateEClass, InitState.class, "InitState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -732,9 +692,6 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		initEReference(getInternalExecutionModel_StateMachines(), this.getStateMachine(), null, "stateMachines", null, 0, -1, InternalExecutionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInternalExecutionModel_LatestEvent(), theCepPackage.getEvent(), null, "latestEvent", null, 0, 1, InternalExecutionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInternalExecutionModel_CurrentStateVisitors(), this.getEventToken(), null, "currentStateVisitors", null, 0, -1, InternalExecutionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAction_MsgToLog(), ecorePackage.getEString(), "msgToLog", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eventTokenEClass, EventToken.class, "EventToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEventToken_CurrentState(), this.getState(), this.getState_EventTokens(), "currentState", null, 0, 1, EventToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

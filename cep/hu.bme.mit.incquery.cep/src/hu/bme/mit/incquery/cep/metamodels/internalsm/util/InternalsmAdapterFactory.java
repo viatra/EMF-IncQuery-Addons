@@ -100,10 +100,6 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 				return createInternalExecutionModelAdapter();
 			}
 			@Override
-			public Adapter caseAction(Action object) {
-				return createActionAdapter();
-			}
-			@Override
 			public Adapter caseEventToken(EventToken object) {
 				return createEventTokenAdapter();
 			}
@@ -248,20 +244,6 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInternalExecutionModelAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Action <em>Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Action
-	 * @generated
-	 */
-	public Adapter createActionAdapter() {
 		return null;
 	}
 

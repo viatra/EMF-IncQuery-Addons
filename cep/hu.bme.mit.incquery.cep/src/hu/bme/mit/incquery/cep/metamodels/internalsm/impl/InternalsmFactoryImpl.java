@@ -65,7 +65,6 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 			case InternalsmPackage.TRAP_STATE: return createTrapState();
 			case InternalsmPackage.STATE_MACHINE: return createStateMachine();
 			case InternalsmPackage.INTERNAL_EXECUTION_MODEL: return createInternalExecutionModel();
-			case InternalsmPackage.ACTION: return createAction();
 			case InternalsmPackage.EVENT_TOKEN: return createEventToken();
 			case InternalsmPackage.TIME_CONSTRAINT_SPECIFICATION: return createTimeConstraintSpecification();
 			case InternalsmPackage.TIME_CONSTRAINT: return createTimeConstraint();
@@ -186,16 +185,6 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 	public InternalExecutionModel createInternalExecutionModel() {
 		InternalExecutionModelImpl internalExecutionModel = new InternalExecutionModelImpl();
 		return internalExecutionModel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Action createAction() {
-		ActionImpl action = new ActionImpl();
-		return action;
 	}
 
 	/**
