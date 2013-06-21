@@ -1,9 +1,9 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.queries;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
-import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatch;
-import hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.EnabledTransitionQuerySpecification;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.StateWithTimeconstraintMatch;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.StateWithTimeconstraintQuerySpecification;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,31 +17,27 @@ import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
- * Generated pattern matcher API of the hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledTransition pattern, 
+ * Generated pattern matcher API of the hu.bme.mit.incquery.cep.runtime.evaluation.queries.stateWithTimeconstraint pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)}, 
  * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
  * 
- * <p>Matches of the pattern will be represented as {@link EnabledTransitionMatch}.
+ * <p>Matches of the pattern will be represented as {@link StateWithTimeconstraintMatch}.
  * 
  * <p>Original source:
  * <code><pre>
- * pattern enabledTransition(t : Transition, et : EventToken) {
- * 	find latestEvent(e);
- * 	Event.type(e, eventType);
- * 	Transition.guard.eventType.type(t, eventType);
- * 	Transition.preState.eventTokens(t, et);
- * 	neg find eventHandledByEventToken(e, et);
+ * pattern stateWithTimeconstraint(s : State, tc : TimeConstraint) {
+ * 	State.timeConstraints(s, tc);
  * }
  * </pre></code>
  * 
- * @see EnabledTransitionMatch
- * @see EnabledTransitionProcessor
- * @see EnabledTransitionQuerySpecification
+ * @see StateWithTimeconstraintMatch
+ * @see StateWithTimeconstraintProcessor
+ * @see StateWithTimeconstraintQuerySpecification
  * 
  */
-public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch> {
+public class StateWithTimeconstraintMatcher extends BaseMatcher<StateWithTimeconstraintMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
@@ -50,19 +46,19 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * @throws IncQueryException if an error occurs during pattern matcher creation
    * 
    */
-  public static EnabledTransitionMatcher on(final IncQueryEngine engine) throws IncQueryException {
+  public static StateWithTimeconstraintMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    EnabledTransitionMatcher matcher = engine.getExistingMatcher(querySpecification());
+    StateWithTimeconstraintMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
-    	matcher = new EnabledTransitionMatcher(engine);
+    	matcher = new StateWithTimeconstraintMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it
     } 	
     return matcher;
   }
   
-  private final static int POSITION_T = 0;
+  private final static int POSITION_S = 0;
   
-  private final static int POSITION_ET = 1;
+  private final static int POSITION_TC = 1;
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet). 
@@ -77,7 +73,7 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * 
    */
   @Deprecated
-  public EnabledTransitionMatcher(final Notifier emfRoot) throws IncQueryException {
+  public StateWithTimeconstraintMatcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngine.on(emfRoot));
   }
   
@@ -91,78 +87,78 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * 
    */
   @Deprecated
-  public EnabledTransitionMatcher(final IncQueryEngine engine) throws IncQueryException {
+  public StateWithTimeconstraintMatcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }
   
   /**
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
-   * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pEt the fixed value of pattern parameter et, or null if not bound.
-   * @return matches represented as a EnabledTransitionMatch object.
+   * @param pS the fixed value of pattern parameter s, or null if not bound.
+   * @param pTc the fixed value of pattern parameter tc, or null if not bound.
+   * @return matches represented as a StateWithTimeconstraintMatch object.
    * 
    */
-  public Collection<EnabledTransitionMatch> getAllMatches(final Transition pT, final EventToken pEt) {
-    return rawGetAllMatches(new Object[]{pT, pEt});
+  public Collection<StateWithTimeconstraintMatch> getAllMatches(final State pS, final TimeConstraint pTc) {
+    return rawGetAllMatches(new Object[]{pS, pTc});
   }
   
   /**
    * Returns an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
-   * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pEt the fixed value of pattern parameter et, or null if not bound.
-   * @return a match represented as a EnabledTransitionMatch object, or null if no match is found.
+   * @param pS the fixed value of pattern parameter s, or null if not bound.
+   * @param pTc the fixed value of pattern parameter tc, or null if not bound.
+   * @return a match represented as a StateWithTimeconstraintMatch object, or null if no match is found.
    * 
    */
-  public EnabledTransitionMatch getOneArbitraryMatch(final Transition pT, final EventToken pEt) {
-    return rawGetOneArbitraryMatch(new Object[]{pT, pEt});
+  public StateWithTimeconstraintMatch getOneArbitraryMatch(final State pS, final TimeConstraint pTc) {
+    return rawGetOneArbitraryMatch(new Object[]{pS, pTc});
   }
   
   /**
    * Indicates whether the given combination of specified pattern parameters constitute a valid pattern match,
    * under any possible substitution of the unspecified parameters (if any).
-   * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pS the fixed value of pattern parameter s, or null if not bound.
+   * @param pTc the fixed value of pattern parameter tc, or null if not bound.
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Transition pT, final EventToken pEt) {
-    return rawHasMatch(new Object[]{pT, pEt});
+  public boolean hasMatch(final State pS, final TimeConstraint pTc) {
+    return rawHasMatch(new Object[]{pS, pTc});
   }
   
   /**
    * Returns the number of all matches of the pattern that conform to the given fixed values of some parameters.
-   * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pS the fixed value of pattern parameter s, or null if not bound.
+   * @param pTc the fixed value of pattern parameter tc, or null if not bound.
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Transition pT, final EventToken pEt) {
-    return rawCountMatches(new Object[]{pT, pEt});
+  public int countMatches(final State pS, final TimeConstraint pTc) {
+    return rawCountMatches(new Object[]{pS, pTc});
   }
   
   /**
    * Executes the given processor on each match of the pattern that conforms to the given fixed values of some parameters.
-   * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pS the fixed value of pattern parameter s, or null if not bound.
+   * @param pTc the fixed value of pattern parameter tc, or null if not bound.
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Transition pT, final EventToken pEt, final IMatchProcessor<? super EnabledTransitionMatch> processor) {
-    rawForEachMatch(new Object[]{pT, pEt}, processor);
+  public void forEachMatch(final State pS, final TimeConstraint pTc, final IMatchProcessor<? super StateWithTimeconstraintMatch> processor) {
+    rawForEachMatch(new Object[]{pS, pTc}, processor);
   }
   
   /**
    * Executes the given processor on an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.  
    * Neither determinism nor randomness of selection is guaranteed.
-   * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pS the fixed value of pattern parameter s, or null if not bound.
+   * @param pTc the fixed value of pattern parameter tc, or null if not bound.
    * @param processor the action that will process the selected match. 
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Transition pT, final EventToken pEt, final IMatchProcessor<? super EnabledTransitionMatch> processor) {
-    return rawForOneArbitraryMatch(new Object[]{pT, pEt}, processor);
+  public boolean forOneArbitraryMatch(final State pS, final TimeConstraint pTc, final IMatchProcessor<? super StateWithTimeconstraintMatch> processor) {
+    return rawForOneArbitraryMatch(new Object[]{pS, pTc}, processor);
   }
   
   /**
@@ -172,111 +168,111 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * and changes can even be acknowledged on an individual basis. 
    * See {@link DeltaMonitor} for details.
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
-   * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pS the fixed value of pattern parameter s, or null if not bound.
+   * @param pTc the fixed value of pattern parameter tc, or null if not bound.
    * @return the delta monitor.
    * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
   @Deprecated
-  public DeltaMonitor<EnabledTransitionMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Transition pT, final EventToken pEt) {
-    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pT, pEt});
+  public DeltaMonitor<StateWithTimeconstraintMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final State pS, final TimeConstraint pTc) {
+    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pS, pTc});
   }
   
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
-   * @param pT the fixed value of pattern parameter t, or null if not bound.
-   * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pS the fixed value of pattern parameter s, or null if not bound.
+   * @param pTc the fixed value of pattern parameter tc, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public EnabledTransitionMatch newMatch(final Transition pT, final EventToken pEt) {
-    return new EnabledTransitionMatch.Immutable(pT, pEt);
+  public StateWithTimeconstraintMatch newMatch(final State pS, final TimeConstraint pTc) {
+    return new StateWithTimeconstraintMatch.Immutable(pS, pTc);
     
   }
   
   /**
-   * Retrieve the set of values that occur in matches for t.
+   * Retrieve the set of values that occur in matches for s.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected Set<Transition> rawAccumulateAllValuesOft(final Object[] parameters) {
-    Set<Transition> results = new HashSet<Transition>();
-    rawAccumulateAllValues(POSITION_T, parameters, results);
+  protected Set<State> rawAccumulateAllValuesOfs(final Object[] parameters) {
+    Set<State> results = new HashSet<State>();
+    rawAccumulateAllValues(POSITION_S, parameters, results);
     return results;
   }
   
   /**
-   * Retrieve the set of values that occur in matches for t.
+   * Retrieve the set of values that occur in matches for s.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Transition> getAllValuesOft() {
-    return rawAccumulateAllValuesOft(emptyArray());
+  public Set<State> getAllValuesOfs() {
+    return rawAccumulateAllValuesOfs(emptyArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for t.
+   * Retrieve the set of values that occur in matches for s.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Transition> getAllValuesOft(final EnabledTransitionMatch partialMatch) {
-    return rawAccumulateAllValuesOft(partialMatch.toArray());
+  public Set<State> getAllValuesOfs(final StateWithTimeconstraintMatch partialMatch) {
+    return rawAccumulateAllValuesOfs(partialMatch.toArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for t.
+   * Retrieve the set of values that occur in matches for s.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Transition> getAllValuesOft(final EventToken pEt) {
-    return rawAccumulateAllValuesOft(new Object[]{null, pEt});
+  public Set<State> getAllValuesOfs(final TimeConstraint pTc) {
+    return rawAccumulateAllValuesOfs(new Object[]{null, pTc});
   }
   
   /**
-   * Retrieve the set of values that occur in matches for et.
+   * Retrieve the set of values that occur in matches for tc.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected Set<EventToken> rawAccumulateAllValuesOfet(final Object[] parameters) {
-    Set<EventToken> results = new HashSet<EventToken>();
-    rawAccumulateAllValues(POSITION_ET, parameters, results);
+  protected Set<TimeConstraint> rawAccumulateAllValuesOftc(final Object[] parameters) {
+    Set<TimeConstraint> results = new HashSet<TimeConstraint>();
+    rawAccumulateAllValues(POSITION_TC, parameters, results);
     return results;
   }
   
   /**
-   * Retrieve the set of values that occur in matches for et.
+   * Retrieve the set of values that occur in matches for tc.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EventToken> getAllValuesOfet() {
-    return rawAccumulateAllValuesOfet(emptyArray());
+  public Set<TimeConstraint> getAllValuesOftc() {
+    return rawAccumulateAllValuesOftc(emptyArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for et.
+   * Retrieve the set of values that occur in matches for tc.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EventToken> getAllValuesOfet(final EnabledTransitionMatch partialMatch) {
-    return rawAccumulateAllValuesOfet(partialMatch.toArray());
+  public Set<TimeConstraint> getAllValuesOftc(final StateWithTimeconstraintMatch partialMatch) {
+    return rawAccumulateAllValuesOftc(partialMatch.toArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for et.
+   * Retrieve the set of values that occur in matches for tc.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EventToken> getAllValuesOfet(final Transition pT) {
-    return rawAccumulateAllValuesOfet(new Object[]{pT, null});
+  public Set<TimeConstraint> getAllValuesOftc(final State pS) {
+    return rawAccumulateAllValuesOftc(new Object[]{pS, null});
   }
   
   @Override
-  protected EnabledTransitionMatch tupleToMatch(final Tuple t) {
+  protected StateWithTimeconstraintMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EnabledTransitionMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) t.get(POSITION_T), (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) t.get(POSITION_ET));	
+    	return new StateWithTimeconstraintMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.State) t.get(POSITION_S), (hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint) t.get(POSITION_TC));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -284,9 +280,9 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
   }
   
   @Override
-  protected EnabledTransitionMatch arrayToMatch(final Object[] match) {
+  protected StateWithTimeconstraintMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EnabledTransitionMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) match[POSITION_T], (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET]);
+    	return new StateWithTimeconstraintMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.State) match[POSITION_S], (hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint) match[POSITION_TC]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -294,9 +290,9 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
   }
   
   @Override
-  protected EnabledTransitionMatch arrayToMatchMutable(final Object[] match) {
+  protected StateWithTimeconstraintMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new EnabledTransitionMatch.Mutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) match[POSITION_T], (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET]);
+    	return new StateWithTimeconstraintMatch.Mutable((hu.bme.mit.incquery.cep.metamodels.internalsm.State) match[POSITION_S], (hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint) match[POSITION_TC]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -308,7 +304,7 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IQuerySpecification<EnabledTransitionMatcher> querySpecification() throws IncQueryException {
-    return EnabledTransitionQuerySpecification.instance();
+  public static IQuerySpecification<StateWithTimeconstraintMatcher> querySpecification() throws IncQueryException {
+    return StateWithTimeconstraintQuerySpecification.instance();
   }
 }

@@ -21,6 +21,25 @@ pattern latestEvent(e) {
 	InternalExecutionModel.latestEvent(_, e);
 }
 
+pattern stateWithTimeconstraint(s : State, tc : TimeConstraint) {
+	State.timeConstraints(s, tc);
+}
+
+pattern stateWithSTOPTimeconstraint(s : State, tc : TimeConstraint) {
+	State.timeConstraints(s, tc);
+	TimeConstraint.type(tc, ::STOP);
+}
+
+pattern stateWithSTARTTimeconstraint(s : State, tc : TimeConstraint) {
+	State.timeConstraints(s, tc);
+	TimeConstraint.type(tc, ::START);
+}
+
+pattern stateWithCHECKTimeconstraint(s : State, tc : TimeConstraint) {
+	State.timeConstraints(s, tc);
+	TimeConstraint.type(tc, ::CHECK);
+}
+
 pattern transition(t) {
 	Transition(t);
 }
@@ -29,12 +48,11 @@ pattern preState(t, s) {
 	Transition.preState(t, s);
 }
 
-pattern
-guardAtomicPattern(guard : Guard, atomicPattern : AtomicEventPattern) {
+pattern guardAtomicPattern(guard : Guard, atomicPattern : AtomicEventPattern) {
 	Guard.eventType(guard, atomicPattern);
 }
 
-pattern eventHandledByEventToken(e, et) {
+pattern eventHandledByEventToken(et, e) {
 	EventToken.eventCollection(et, e);
 }
 
@@ -45,8 +63,11 @@ pattern atomicPatternType(a : AtomicEventPattern, t : EString) {
 pattern enabledTransition(t : Transition, et : EventToken) {
 	find latestEvent(e);
 	Event.type(e, eventType);
-	//check(eventType.equalsIgnoreCase("hu.bme.mit.incquery.cep.tests.testcaseSm.events.A"));
 	Transition.guard.eventType.type(t, eventType);
 	Transition.preState.eventTokens(t, et);
 	neg find eventHandledByEventToken(e, et);
+}
+
+pattern tokenInTrapState(et : EventToken) {
+	TrapState.eventTokens(_, et);
 }

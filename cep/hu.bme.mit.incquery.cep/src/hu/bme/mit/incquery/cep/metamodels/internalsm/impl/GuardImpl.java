@@ -6,7 +6,7 @@ import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -40,7 +40,7 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * @generated
 	 * @ordered
 	 */
-	protected TimeConstraint timeConstraint;
+	protected TimeConstraintSpecification timeConstraint;
 
 	/**
 	 * The cached value of the '{@link #getEventType() <em>Event Type</em>}' reference.
@@ -76,7 +76,7 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeConstraint getTimeConstraint() {
+	public TimeConstraintSpecification getTimeConstraint() {
 		return timeConstraint;
 	}
 
@@ -85,8 +85,8 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTimeConstraint(TimeConstraint newTimeConstraint, NotificationChain msgs) {
-		TimeConstraint oldTimeConstraint = timeConstraint;
+	public NotificationChain basicSetTimeConstraint(TimeConstraintSpecification newTimeConstraint, NotificationChain msgs) {
+		TimeConstraintSpecification oldTimeConstraint = timeConstraint;
 		timeConstraint = newTimeConstraint;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.GUARD__TIME_CONSTRAINT, oldTimeConstraint, newTimeConstraint);
@@ -100,7 +100,7 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTimeConstraint(TimeConstraint newTimeConstraint) {
+	public void setTimeConstraint(TimeConstraintSpecification newTimeConstraint) {
 		if (newTimeConstraint != timeConstraint) {
 			NotificationChain msgs = null;
 			if (timeConstraint != null)
@@ -192,7 +192,7 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case InternalsmPackage.GUARD__TIME_CONSTRAINT:
-				setTimeConstraint((TimeConstraint)newValue);
+				setTimeConstraint((TimeConstraintSpecification)newValue);
 				return;
 			case InternalsmPackage.GUARD__EVENT_TYPE:
 				setEventType((AtomicEventPattern)newValue);
@@ -210,7 +210,7 @@ public class GuardImpl extends EObjectImpl implements Guard {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case InternalsmPackage.GUARD__TIME_CONSTRAINT:
-				setTimeConstraint((TimeConstraint)null);
+				setTimeConstraint((TimeConstraintSpecification)null);
 				return;
 			case InternalsmPackage.GUARD__EVENT_TYPE:
 				setEventType((AtomicEventPattern)null);

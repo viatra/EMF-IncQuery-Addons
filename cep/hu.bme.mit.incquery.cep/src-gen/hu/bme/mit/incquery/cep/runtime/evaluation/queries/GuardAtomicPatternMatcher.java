@@ -27,8 +27,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern
- * guardAtomicPattern(guard : Guard, atomicPattern : AtomicEventPattern) {
+ * pattern guardAtomicPattern(guard : Guard, atomicPattern : AtomicEventPattern) {
  * 	Guard.eventType(guard, atomicPattern);
  * }
  * </pre></code>

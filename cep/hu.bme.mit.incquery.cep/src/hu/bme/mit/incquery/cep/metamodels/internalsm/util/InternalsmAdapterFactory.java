@@ -112,6 +112,10 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 				return createEventCollectionAdapter();
 			}
 			@Override
+			public Adapter caseTimeConstraintSpecification(TimeConstraintSpecification object) {
+				return createTimeConstraintSpecificationAdapter();
+			}
+			@Override
 			public Adapter caseTimeConstraint(TimeConstraint object) {
 				return createTimeConstraintAdapter();
 			}
@@ -286,6 +290,20 @@ public class InternalsmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEventCollectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification <em>Time Constraint Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification
+	 * @generated
+	 */
+	public Adapter createTimeConstraintSpecificationAdapter() {
 		return null;
 	}
 

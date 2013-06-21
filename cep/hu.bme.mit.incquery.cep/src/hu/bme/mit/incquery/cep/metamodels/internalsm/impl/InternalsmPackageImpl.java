@@ -19,6 +19,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintType;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
@@ -115,6 +116,13 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * @generated
 	 */
 	private EClass eventCollectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass timeConstraintSpecificationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -487,6 +495,51 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTimeConstraintSpecification() {
+		return timeConstraintSpecificationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTimeConstraintSpecification_Id() {
+		return (EAttribute)timeConstraintSpecificationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTimeConstraintSpecification_ExpectedLength() {
+		return (EAttribute)timeConstraintSpecificationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTimeConstraintSpecification_StartTimestamp() {
+		return (EAttribute)timeConstraintSpecificationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTimeConstraintSpecification_StopTimestamp() {
+		return (EAttribute)timeConstraintSpecificationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTimeConstraint() {
 		return timeConstraintEClass;
 	}
@@ -496,7 +549,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTimeConstraint_Id() {
+	public EAttribute getTimeConstraint_Type() {
 		return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -505,35 +558,8 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTimeConstraint_Type() {
-		return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTimeConstraint_ExpectedLength() {
-		return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTimeConstraint_StartTimeStamp() {
-		return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTimeConstraint_StopTimeStamp() {
-		return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(4);
+	public EReference getTimeConstraint_TimeConstraintSpecification() {
+		return (EReference)timeConstraintEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -624,12 +650,15 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		eventCollectionEClass = createEClass(EVENT_COLLECTION);
 		createEReference(eventCollectionEClass, EVENT_COLLECTION__CURRENT_STATE_VISITOR);
 
+		timeConstraintSpecificationEClass = createEClass(TIME_CONSTRAINT_SPECIFICATION);
+		createEAttribute(timeConstraintSpecificationEClass, TIME_CONSTRAINT_SPECIFICATION__ID);
+		createEAttribute(timeConstraintSpecificationEClass, TIME_CONSTRAINT_SPECIFICATION__EXPECTED_LENGTH);
+		createEAttribute(timeConstraintSpecificationEClass, TIME_CONSTRAINT_SPECIFICATION__START_TIMESTAMP);
+		createEAttribute(timeConstraintSpecificationEClass, TIME_CONSTRAINT_SPECIFICATION__STOP_TIMESTAMP);
+
 		timeConstraintEClass = createEClass(TIME_CONSTRAINT);
-		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__ID);
 		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__TYPE);
-		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__EXPECTED_LENGTH);
-		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__START_TIME_STAMP);
-		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__STOP_TIME_STAMP);
+		createEReference(timeConstraintEClass, TIME_CONSTRAINT__TIME_CONSTRAINT_SPECIFICATION);
 
 		// Create enums
 		numericCompareOperatorEEnum = createEEnum(NUMERIC_COMPARE_OPERATOR);
@@ -685,7 +714,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		initEReference(getTransition_PostState(), this.getState(), this.getState_InTransitions(), "postState", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(guardEClass, Guard.class, "Guard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGuard_TimeConstraint(), this.getTimeConstraint(), null, "timeConstraint", null, 0, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGuard_TimeConstraint(), this.getTimeConstraintSpecification(), null, "timeConstraint", null, 0, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGuard_EventType(), theCepPackage.getAtomicEventPattern(), null, "eventType", null, 1, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(finalStateEClass, FinalState.class, "FinalState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -719,14 +748,17 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		EOperation op = addEOperation(eventCollectionEClass, null, "addEvent", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theCepPackage.getEvent(), "event", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(timeConstraintEClass, TimeConstraint.class, "TimeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTimeConstraint_Id(), ecorePackage.getEString(), "id", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimeConstraint_Type(), this.getTimeConstraintType(), "type", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimeConstraint_ExpectedLength(), ecorePackage.getELong(), "expectedLength", null, 1, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimeConstraint_StartTimeStamp(), ecorePackage.getELong(), "startTimeStamp", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimeConstraint_StopTimeStamp(), ecorePackage.getELong(), "stopTimeStamp", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(timeConstraintSpecificationEClass, TimeConstraintSpecification.class, "TimeConstraintSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTimeConstraintSpecification_Id(), ecorePackage.getEString(), "id", null, 0, 1, TimeConstraintSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTimeConstraintSpecification_ExpectedLength(), ecorePackage.getELong(), "expectedLength", null, 1, 1, TimeConstraintSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTimeConstraintSpecification_StartTimestamp(), ecorePackage.getELong(), "startTimestamp", null, 0, 1, TimeConstraintSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTimeConstraintSpecification_StopTimestamp(), ecorePackage.getELong(), "stopTimestamp", null, 0, 1, TimeConstraintSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(timeConstraintEClass, null, "handleTimeConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(timeConstraintSpecificationEClass, null, "handleTimeConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(timeConstraintEClass, TimeConstraint.class, "TimeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTimeConstraint_Type(), this.getTimeConstraintType(), "type", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTimeConstraint_TimeConstraintSpecification(), this.getTimeConstraintSpecification(), null, "timeConstraintSpecification", null, 1, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(numericCompareOperatorEEnum, NumericCompareOperator.class, "NumericCompareOperator");

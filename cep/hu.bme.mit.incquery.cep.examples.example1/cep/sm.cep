@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hu.bme.mit.incquery.metamodels="sm.meta" xmlns:hu.bme.mit.incquery.metamodels_1="cep.meta">
+  <hu.bme.mit.incquery.metamodels:InternalExecutionModel>
+    <stateMachines eventPattern="/1">
+      <states xsi:type="hu.bme.mit.incquery.metamodels:InitState" eventTokens="/0/@currentStateVisitors.0">
+        <outTransitions postState="/0/@stateMachines.0/@states.1">
+          <guard eventType="/1/@compositionEvents.0"/>
+        </outTransitions>
+      </states>
+      <states inTransitions="/0/@stateMachines.0/@states.0/@outTransitions.0">
+        <outTransitions postState="/0/@stateMachines.0/@states.2">
+          <guard eventType="/1/@compositionEvents.1/@compositionEvents.0"/>
+        </outTransitions>
+        <outTransitions postState="/0/@stateMachines.0/@states.6">
+          <guard eventType="/1/@compositionEvents.1/@compositionEvents.1"/>
+        </outTransitions>
+        <outTransitions postState="/0/@stateMachines.0/@states.8">
+          <guard eventType="/1/@compositionEvents.1/@compositionEvents.2"/>
+        </outTransitions>
+        <timeConstraints/>
+      </states>
+      <states inTransitions="/0/@stateMachines.0/@states.1/@outTransitions.0">
+        <outTransitions postState="/0/@stateMachines.0/@states.3">
+          <guard eventType="/1/@compositionEvents.1/@compositionEvents.1"/>
+        </outTransitions>
+        <outTransitions postState="/0/@stateMachines.0/@states.5">
+          <guard eventType="/1/@compositionEvents.1/@compositionEvents.2"/>
+        </outTransitions>
+        <timeConstraints type="CHECK"/>
+        <timeConstraints type="CHECK"/>
+      </states>
+      <states inTransitions="/0/@stateMachines.0/@states.2/@outTransitions.0 /0/@stateMachines.0/@states.6/@outTransitions.0">
+        <outTransitions postState="/0/@stateMachines.0/@states.4">
+          <guard eventType="/1/@compositionEvents.1/@compositionEvents.2"/>
+        </outTransitions>
+        <timeConstraints type="CHECK"/>
+        <timeConstraints type="CHECK"/>
+      </states>
+      <states xsi:type="hu.bme.mit.incquery.metamodels:FinalState" inTransitions="/0/@stateMachines.0/@states.3/@outTransitions.0 /0/@stateMachines.0/@states.5/@outTransitions.0 /0/@stateMachines.0/@states.7/@outTransitions.0" label="final">
+        <timeConstraints type="STOP"/>
+        <timeConstraints type="STOP"/>
+        <actions msgToLog="&#x9;&#x9;CEP: Event pattern DABCPattern recognized"/>
+      </states>
+      <states inTransitions="/0/@stateMachines.0/@states.2/@outTransitions.1 /0/@stateMachines.0/@states.8/@outTransitions.0">
+        <outTransitions postState="/0/@stateMachines.0/@states.4">
+          <guard eventType="/1/@compositionEvents.1/@compositionEvents.1"/>
+        </outTransitions>
+        <timeConstraints type="CHECK"/>
+        <timeConstraints type="CHECK"/>
+      </states>
+      <states inTransitions="/0/@stateMachines.0/@states.1/@outTransitions.1">
+        <outTransitions postState="/0/@stateMachines.0/@states.3">
+          <guard eventType="/1/@compositionEvents.1/@compositionEvents.0"/>
+        </outTransitions>
+        <outTransitions postState="/0/@stateMachines.0/@states.7">
+          <guard eventType="/1/@compositionEvents.1/@compositionEvents.2"/>
+        </outTransitions>
+        <timeConstraints type="CHECK"/>
+        <timeConstraints type="CHECK"/>
+      </states>
+      <states inTransitions="/0/@stateMachines.0/@states.6/@outTransitions.1 /0/@stateMachines.0/@states.8/@outTransitions.1">
+        <outTransitions postState="/0/@stateMachines.0/@states.4">
+          <guard eventType="/1/@compositionEvents.1/@compositionEvents.0"/>
+        </outTransitions>
+        <timeConstraints type="CHECK"/>
+        <timeConstraints type="CHECK"/>
+      </states>
+      <states inTransitions="/0/@stateMachines.0/@states.1/@outTransitions.2">
+        <outTransitions postState="/0/@stateMachines.0/@states.5">
+          <guard eventType="/1/@compositionEvents.1/@compositionEvents.0"/>
+        </outTransitions>
+        <outTransitions postState="/0/@stateMachines.0/@states.7">
+          <guard eventType="/1/@compositionEvents.1/@compositionEvents.1"/>
+        </outTransitions>
+        <timeConstraints type="CHECK" timeConstraintSpecification="/3"/>
+        <timeConstraints type="CHECK" timeConstraintSpecification="/2"/>
+      </states>
+      <states xsi:type="hu.bme.mit.incquery.metamodels:TrapState"/>
+    </stateMachines>
+    <latestEvent type="hu.bme.mit.incquery.cep.tests.testcaseSm.events.D"/>
+    <currentStateVisitors currentState="/0/@stateMachines.0/@states.0">
+      <eventCollection/>
+    </currentStateVisitors>
+  </hu.bme.mit.incquery.metamodels:InternalExecutionModel>
+  <hu.bme.mit.incquery.metamodels_1:ComplexEventPattern stateMachines="/0/@stateMachines.0" id="DABCPattern">
+    <timewindow length="1500"/>
+    <compositionEvents xsi:type="hu.bme.mit.incquery.metamodels_1:AtomicEventPattern" id="DPattern" type="hu.bme.mit.incquery.cep.tests.testcaseSm.events.D"/>
+    <compositionEvents xsi:type="hu.bme.mit.incquery.metamodels_1:ComplexEventPattern" id="ABCPattern" operator="UNORDERED">
+      <timewindow length="2500"/>
+      <compositionEvents xsi:type="hu.bme.mit.incquery.metamodels_1:AtomicEventPattern" id="APattern" type="hu.bme.mit.incquery.cep.tests.testcaseSm.events.A"/>
+      <compositionEvents xsi:type="hu.bme.mit.incquery.metamodels_1:AtomicEventPattern" id="BPattern" type="hu.bme.mit.incquery.cep.tests.testcaseSm.events.B"/>
+      <compositionEvents xsi:type="hu.bme.mit.incquery.metamodels_1:AtomicEventPattern" id="CPattern" type="hu.bme.mit.incquery.cep.tests.testcaseSm.events.C"/>
+    </compositionEvents>
+  </hu.bme.mit.incquery.metamodels_1:ComplexEventPattern>
+  <hu.bme.mit.incquery.metamodels:TimeConstraintSpecification id="232ae626-da53-4468-b5da-c4eee00e4ba3" expectedLength="1500"/>
+  <hu.bme.mit.incquery.metamodels:TimeConstraintSpecification id="7fb6d27d-8732-4344-b903-f6ec2aa539e7" expectedLength="2500"/>
+</xmi:XMI>

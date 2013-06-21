@@ -33,12 +33,12 @@ public interface Guard extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Time Constraint</em>' containment reference.
-	 * @see #setTimeConstraint(TimeConstraint)
+	 * @see #setTimeConstraint(TimeConstraintSpecification)
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getGuard_TimeConstraint()
 	 * @model containment="true"
 	 * @generated
 	 */
-	TimeConstraint getTimeConstraint();
+	TimeConstraintSpecification getTimeConstraint();
 
 	/**
 	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimeConstraint <em>Time Constraint</em>}' containment reference.
@@ -48,7 +48,7 @@ public interface Guard extends EObject {
 	 * @see #getTimeConstraint()
 	 * @generated
 	 */
-	void setTimeConstraint(TimeConstraint value);
+	void setTimeConstraint(TimeConstraintSpecification value);
 
 	/**
 	 * Returns the value of the '<em><b>Event Type</b></em>' reference.

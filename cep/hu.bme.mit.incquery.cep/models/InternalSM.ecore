@@ -26,7 +26,7 @@
         eType="#//State" eOpposite="#//State/inTransitions"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Guard">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="timeConstraint" eType="#//TimeConstraint"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeConstraint" eType="#//TimeConstraintSpecification"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventType" lowerBound="1"
         eType="ecore:EClass CEPMeta.ecore#//AtomicEventPattern"/>
@@ -68,14 +68,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentStateVisitor" lowerBound="1"
         eType="#//EventToken" eOpposite="#//EventToken/eventCollection"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TimeConstraint">
+  <eClassifiers xsi:type="ecore:EClass" name="TimeConstraintSpecification">
     <eOperations name="handleTimeConstraint"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TimeConstraintType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expectedLength" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startTimeStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stopTimeStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startTimestamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stopTimestamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="NumericCompareOperator">
     <eLiterals name="LESS_THAN" literal="LESS_THAN"/>
@@ -88,5 +87,10 @@
     <eLiterals name="START"/>
     <eLiterals name="STOP" value="1"/>
     <eLiterals name="CHECK" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeConstraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TimeConstraintType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeConstraintSpecification"
+        lowerBound="1" eType="#//TimeConstraintSpecification"/>
   </eClassifiers>
 </ecore:EPackage>

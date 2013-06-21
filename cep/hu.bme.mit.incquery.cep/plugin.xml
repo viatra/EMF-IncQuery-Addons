@@ -35,6 +35,38 @@
       </matcher>
    </extension>
    <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.stateWithTimeconstraint"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.StateWithTimeconstraintQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.stateWithTimeconstraint">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.stateWithSTOPTimeconstraint"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.StateWithSTOPTimeconstraintQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.stateWithSTOPTimeconstraint">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.stateWithSTARTTimeconstraint"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.StateWithSTARTTimeconstraintQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.stateWithSTARTTimeconstraint">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.stateWithCHECKTimeconstraint"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.StateWithCHECKTimeconstraintQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.stateWithCHECKTimeconstraint">
+      </matcher>
+   </extension>
+   <extension
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.transition"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
@@ -80,6 +112,14 @@
       <matcher
             querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.EnabledTransitionQuerySpecification$Provider"
             id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledTransition">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.tokenInTrapState"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.TokenInTrapStateQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.tokenInTrapState">
       </matcher>
    </extension>
 

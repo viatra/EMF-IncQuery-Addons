@@ -112,6 +112,15 @@ public interface InternalsmFactory extends EFactory {
 	EventToken createEventToken();
 
 	/**
+	 * Returns a new object of class '<em>Time Constraint Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Time Constraint Specification</em>'.
+	 * @generated
+	 */
+	TimeConstraintSpecification createTimeConstraintSpecification();
+
+	/**
 	 * Returns a new object of class '<em>Time Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -8,6 +8,11 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.queries.FinishedStateMachineMa
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.GuardAtomicPatternMatcher;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.LatestEventMatcher;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.PreStateMatcher;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.StateWithCHECKTimeconstraintMatcher;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.StateWithSTARTTimeconstraintMatcher;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.StateWithSTOPTimeconstraintMatcher;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.StateWithTimeconstraintMatcher;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.TokenInTrapStateMatcher;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.TransitionMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedPatternGroup;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
@@ -23,12 +28,17 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * <li>finishedStateMachine</li>
  * <li>finalState</li>
  * <li>latestEvent</li>
+ * <li>stateWithTimeconstraint</li>
+ * <li>stateWithSTOPTimeconstraint</li>
+ * <li>stateWithSTARTTimeconstraint</li>
+ * <li>stateWithCHECKTimeconstraint</li>
  * <li>transition</li>
  * <li>preState</li>
  * <li>guardAtomicPattern</li>
  * <li>eventHandledByEventToken</li>
  * <li>atomicPatternType</li>
  * <li>enabledTransition</li>
+ * <li>tokenInTrapState</li>
  * </ul>
  * 
  * @see IPatternGroup
@@ -53,15 +63,20 @@ public final class EvaluationPatterns extends BaseGeneratedPatternGroup {
   private static EvaluationPatterns INSTANCE;
   
   private EvaluationPatterns() throws IncQueryException {
-    querySpecifications.add(GuardAtomicPatternMatcher.querySpecification());
-    querySpecifications.add(FinishedStateMachineMatcher.querySpecification());
-    querySpecifications.add(PreStateMatcher.querySpecification());
+    querySpecifications.add(StateWithTimeconstraintMatcher.querySpecification());
     querySpecifications.add(EventHandledByEventTokenMatcher.querySpecification());
-    querySpecifications.add(FinalStateMatcher.querySpecification());
+    querySpecifications.add(StateWithSTARTTimeconstraintMatcher.querySpecification());
+    querySpecifications.add(TokenInTrapStateMatcher.querySpecification());
     querySpecifications.add(TransitionMatcher.querySpecification());
-    querySpecifications.add(EnabledTransitionMatcher.querySpecification());
+    querySpecifications.add(PreStateMatcher.querySpecification());
+    querySpecifications.add(StateWithSTOPTimeconstraintMatcher.querySpecification());
     querySpecifications.add(AtomicPatternTypeMatcher.querySpecification());
+    querySpecifications.add(FinishedStateMachineMatcher.querySpecification());
+    querySpecifications.add(FinalStateMatcher.querySpecification());
+    querySpecifications.add(GuardAtomicPatternMatcher.querySpecification());
     querySpecifications.add(LatestEventMatcher.querySpecification());
+    querySpecifications.add(EnabledTransitionMatcher.querySpecification());
+    querySpecifications.add(StateWithCHECKTimeconstraintMatcher.querySpecification());
     
   }
 }

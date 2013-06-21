@@ -581,14 +581,14 @@ public interface InternalsmPackage extends EPackage {
 	int EVENT_COLLECTION_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintImpl <em>Time Constraint</em>}' class.
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintSpecificationImpl <em>Time Constraint Specification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintImpl
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimeConstraint()
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintSpecificationImpl
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimeConstraintSpecification()
 	 * @generated
 	 */
-	int TIME_CONSTRAINT = 11;
+	int TIME_CONSTRAINT_SPECIFICATION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -597,16 +597,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_CONSTRAINT__ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_CONSTRAINT__TYPE = 1;
+	int TIME_CONSTRAINT_SPECIFICATION__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Expected Length</b></em>' attribute.
@@ -615,25 +606,62 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_CONSTRAINT__EXPECTED_LENGTH = 2;
+	int TIME_CONSTRAINT_SPECIFICATION__EXPECTED_LENGTH = 1;
 
 	/**
-	 * The feature id for the '<em><b>Start Time Stamp</b></em>' attribute.
+	 * The feature id for the '<em><b>Start Timestamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_CONSTRAINT__START_TIME_STAMP = 3;
+	int TIME_CONSTRAINT_SPECIFICATION__START_TIMESTAMP = 2;
 
 	/**
-	 * The feature id for the '<em><b>Stop Time Stamp</b></em>' attribute.
+	 * The feature id for the '<em><b>Stop Timestamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_CONSTRAINT__STOP_TIME_STAMP = 4;
+	int TIME_CONSTRAINT_SPECIFICATION__STOP_TIMESTAMP = 3;
+
+	/**
+	 * The number of structural features of the '<em>Time Constraint Specification</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_CONSTRAINT_SPECIFICATION_FEATURE_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintImpl <em>Time Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintImpl
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimeConstraint()
+	 * @generated
+	 */
+	int TIME_CONSTRAINT = 12;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_CONSTRAINT__TYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Time Constraint Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_CONSTRAINT__TIME_CONSTRAINT_SPECIFICATION = 1;
 
 	/**
 	 * The number of structural features of the '<em>Time Constraint</em>' class.
@@ -642,7 +670,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_CONSTRAINT_FEATURE_COUNT = 5;
+	int TIME_CONSTRAINT_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator <em>Numeric Compare Operator</em>}' enum.
@@ -652,7 +680,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getNumericCompareOperator()
 	 * @generated
 	 */
-	int NUMERIC_COMPARE_OPERATOR = 12;
+	int NUMERIC_COMPARE_OPERATOR = 13;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintType <em>Time Constraint Type</em>}' enum.
@@ -662,7 +690,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimeConstraintType()
 	 * @generated
 	 */
-	int TIME_CONSTRAINT_TYPE = 13;
+	int TIME_CONSTRAINT_TYPE = 14;
 
 
 	/**
@@ -996,6 +1024,60 @@ public interface InternalsmPackage extends EPackage {
 	EReference getEventCollection_CurrentStateVisitor();
 
 	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification <em>Time Constraint Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Time Constraint Specification</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification
+	 * @generated
+	 */
+	EClass getTimeConstraintSpecification();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification#getId()
+	 * @see #getTimeConstraintSpecification()
+	 * @generated
+	 */
+	EAttribute getTimeConstraintSpecification_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification#getExpectedLength <em>Expected Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Expected Length</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification#getExpectedLength()
+	 * @see #getTimeConstraintSpecification()
+	 * @generated
+	 */
+	EAttribute getTimeConstraintSpecification_ExpectedLength();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification#getStartTimestamp <em>Start Timestamp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start Timestamp</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification#getStartTimestamp()
+	 * @see #getTimeConstraintSpecification()
+	 * @generated
+	 */
+	EAttribute getTimeConstraintSpecification_StartTimestamp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification#getStopTimestamp <em>Stop Timestamp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Stop Timestamp</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification#getStopTimestamp()
+	 * @see #getTimeConstraintSpecification()
+	 * @generated
+	 */
+	EAttribute getTimeConstraintSpecification_StopTimestamp();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint <em>Time Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1004,17 +1086,6 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTimeConstraint();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getId()
-	 * @see #getTimeConstraint()
-	 * @generated
-	 */
-	EAttribute getTimeConstraint_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getType <em>Type</em>}'.
@@ -1028,37 +1099,15 @@ public interface InternalsmPackage extends EPackage {
 	EAttribute getTimeConstraint_Type();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getExpectedLength <em>Expected Length</em>}'.
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getTimeConstraintSpecification <em>Time Constraint Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Expected Length</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getExpectedLength()
+	 * @return the meta object for the reference '<em>Time Constraint Specification</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getTimeConstraintSpecification()
 	 * @see #getTimeConstraint()
 	 * @generated
 	 */
-	EAttribute getTimeConstraint_ExpectedLength();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStartTimeStamp <em>Start Time Stamp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Start Time Stamp</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStartTimeStamp()
-	 * @see #getTimeConstraint()
-	 * @generated
-	 */
-	EAttribute getTimeConstraint_StartTimeStamp();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStopTimeStamp <em>Stop Time Stamp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Stop Time Stamp</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getStopTimeStamp()
-	 * @see #getTimeConstraint()
-	 * @generated
-	 */
-	EAttribute getTimeConstraint_StopTimeStamp();
+	EReference getTimeConstraint_TimeConstraintSpecification();
 
 	/**
 	 * Returns the meta object for enum '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator <em>Numeric Compare Operator</em>}'.
@@ -1373,6 +1422,48 @@ public interface InternalsmPackage extends EPackage {
 		EReference EVENT_COLLECTION__CURRENT_STATE_VISITOR = eINSTANCE.getEventCollection_CurrentStateVisitor();
 
 		/**
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintSpecificationImpl <em>Time Constraint Specification</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintSpecificationImpl
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimeConstraintSpecification()
+		 * @generated
+		 */
+		EClass TIME_CONSTRAINT_SPECIFICATION = eINSTANCE.getTimeConstraintSpecification();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_CONSTRAINT_SPECIFICATION__ID = eINSTANCE.getTimeConstraintSpecification_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Expected Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_CONSTRAINT_SPECIFICATION__EXPECTED_LENGTH = eINSTANCE.getTimeConstraintSpecification_ExpectedLength();
+
+		/**
+		 * The meta object literal for the '<em><b>Start Timestamp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_CONSTRAINT_SPECIFICATION__START_TIMESTAMP = eINSTANCE.getTimeConstraintSpecification_StartTimestamp();
+
+		/**
+		 * The meta object literal for the '<em><b>Stop Timestamp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_CONSTRAINT_SPECIFICATION__STOP_TIMESTAMP = eINSTANCE.getTimeConstraintSpecification_StopTimestamp();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintImpl <em>Time Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1383,14 +1474,6 @@ public interface InternalsmPackage extends EPackage {
 		EClass TIME_CONSTRAINT = eINSTANCE.getTimeConstraint();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TIME_CONSTRAINT__ID = eINSTANCE.getTimeConstraint_Id();
-
-		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1399,28 +1482,12 @@ public interface InternalsmPackage extends EPackage {
 		EAttribute TIME_CONSTRAINT__TYPE = eINSTANCE.getTimeConstraint_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Expected Length</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Time Constraint Specification</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIME_CONSTRAINT__EXPECTED_LENGTH = eINSTANCE.getTimeConstraint_ExpectedLength();
-
-		/**
-		 * The meta object literal for the '<em><b>Start Time Stamp</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TIME_CONSTRAINT__START_TIME_STAMP = eINSTANCE.getTimeConstraint_StartTimeStamp();
-
-		/**
-		 * The meta object literal for the '<em><b>Stop Time Stamp</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TIME_CONSTRAINT__STOP_TIME_STAMP = eINSTANCE.getTimeConstraint_StopTimeStamp();
+		EReference TIME_CONSTRAINT__TIME_CONSTRAINT_SPECIFICATION = eINSTANCE.getTimeConstraint_TimeConstraintSpecification();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator <em>Numeric Compare Operator</em>}' enum.

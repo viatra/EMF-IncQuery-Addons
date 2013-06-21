@@ -10,7 +10,6 @@ import hu.bme.mit.incquery.cep.tests.testcaseSm.events.B;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.C;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.D;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.APattern;
-import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.DABC_Pattern_MIXED;
 
 import java.util.ArrayList;
 import java.util.List;

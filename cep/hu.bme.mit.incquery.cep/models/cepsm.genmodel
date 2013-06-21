@@ -98,13 +98,16 @@
         <genParameters ecoreParameter="InternalSM.ecore#//EventCollection/addEvent/event"/>
       </genOperations>
     </genClasses>
+    <genClasses ecoreClass="InternalSM.ecore#//TimeConstraintSpecification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraintSpecification/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraintSpecification/expectedLength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraintSpecification/startTimestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraintSpecification/stopTimestamp"/>
+      <genOperations ecoreOperation="InternalSM.ecore#//TimeConstraintSpecification/handleTimeConstraint"/>
+    </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//TimeConstraint">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraint/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraint/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraint/expectedLength"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraint/startTimeStamp"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraint/stopTimeStamp"/>
-      <genOperations ecoreOperation="InternalSM.ecore#//TimeConstraint/handleTimeConstraint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//TimeConstraint/timeConstraintSpecification"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -30,9 +30,11 @@ public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 		State nextState = t.getPostState();
 		
 		EventToken cvToMove = t.getPreState().getEventTokens().get(0);
+		if(!handleTimeConstraints(cvToMove, nextState)){
+			return;
+		}
 		cvToMove.getEventCollection().addEvent(model.getLatestEvent());
 		cvToMove.setCurrentState(nextState);
-		handleTimeConstraints(cvToMove);
 	}
 	
 	@Override

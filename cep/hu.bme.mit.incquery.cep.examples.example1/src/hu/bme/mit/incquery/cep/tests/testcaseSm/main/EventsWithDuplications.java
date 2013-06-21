@@ -7,8 +7,6 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.A;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.B;
-import hu.bme.mit.incquery.cep.tests.testcaseSm.events.C;
-import hu.bme.mit.incquery.cep.tests.testcaseSm.events.D;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.ABB_Pattern;
 
 import java.util.ArrayList;
