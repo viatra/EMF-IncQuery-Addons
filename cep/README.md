@@ -23,6 +23,8 @@ Latest enhancement:
 * handling both ordered and unordered cases with time windows
 
 In progress:
+* revisit duplicate handling
+* complete the examples and unit tests
 * elaborate the JNect demo
 
 Future work:
