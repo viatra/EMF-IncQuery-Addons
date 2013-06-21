@@ -18,8 +18,11 @@ The plugin **[hu.bme.mit.incquery.cep.jnect](https://github.com/istvanrath/EMF-I
 
 Roadmap/TODO
 ------------
+
+Latest enhancement:
+* handling both ordered and unordered cases with time windows
+
 In progress:
-* handle both ordered and unordered cases with time windows
 * elaborate the JNect demo
 
 Future work:
