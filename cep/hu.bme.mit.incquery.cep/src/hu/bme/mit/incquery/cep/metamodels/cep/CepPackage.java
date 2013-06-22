@@ -333,16 +333,6 @@ public interface CepPackage extends EPackage {
 	 */
 	int COMPLEX_OPERATOR = 6;
 
-	/**
-	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.NumericCompareOperator <em>Numeric Compare Operator</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.NumericCompareOperator
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.impl.CepPackageImpl#getNumericCompareOperator()
-	 * @generated
-	 */
-	int NUMERIC_COMPARE_OPERATOR = 7;
-
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern <em>Event Pattern</em>}'.
@@ -536,16 +526,6 @@ public interface CepPackage extends EPackage {
 	EEnum getComplexOperator();
 
 	/**
-	 * Returns the meta object for enum '{@link hu.bme.mit.incquery.cep.metamodels.cep.NumericCompareOperator <em>Numeric Compare Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Numeric Compare Operator</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.NumericCompareOperator
-	 * @generated
-	 */
-	EEnum getNumericCompareOperator();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -724,16 +704,6 @@ public interface CepPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum COMPLEX_OPERATOR = eINSTANCE.getComplexOperator();
-
-		/**
-		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.NumericCompareOperator <em>Numeric Compare Operator</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.bme.mit.incquery.cep.metamodels.cep.NumericCompareOperator
-		 * @see hu.bme.mit.incquery.cep.metamodels.cep.impl.CepPackageImpl#getNumericCompareOperator()
-		 * @generated
-		 */
-		EEnum NUMERIC_COMPARE_OPERATOR = eINSTANCE.getNumericCompareOperator();
 
 	}
 

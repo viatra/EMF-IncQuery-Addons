@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getCurrentStateVisitor <em>Current State Visitor</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getEventToken <em>Event Token</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,32 +24,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EventCollection extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Current State Visitor</b></em>' container reference.
+	 * Returns the value of the '<em><b>Event Token</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getEventCollection <em>Event Collection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Current State Visitor</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Event Token</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Current State Visitor</em>' container reference.
-	 * @see #setCurrentStateVisitor(EventToken)
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getEventCollection_CurrentStateVisitor()
+	 * @return the value of the '<em>Event Token</em>' container reference.
+	 * @see #setEventToken(EventToken)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getEventCollection_EventToken()
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getEventCollection
 	 * @model opposite="eventCollection" required="true" transient="false"
 	 * @generated
 	 */
-	EventToken getCurrentStateVisitor();
+	EventToken getEventToken();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getCurrentStateVisitor <em>Current State Visitor</em>}' container reference.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getEventToken <em>Event Token</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Current State Visitor</em>' container reference.
-	 * @see #getCurrentStateVisitor()
+	 * @param value the new value of the '<em>Event Token</em>' container reference.
+	 * @see #getEventToken()
 	 * @generated
 	 */
-	void setCurrentStateVisitor(EventToken value);
+	void setEventToken(EventToken value);
 
 	/**
 	 * <!-- begin-user-doc -->

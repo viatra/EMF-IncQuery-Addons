@@ -177,22 +177,13 @@ public interface InternalsmPackage extends EPackage {
 	int GUARD = 2;
 
 	/**
-	 * The feature id for the '<em><b>Time Constraint</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUARD__TIME_CONSTRAINT = 0;
-
-	/**
 	 * The feature id for the '<em><b>Event Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUARD__EVENT_TYPE = 1;
+	int GUARD__EVENT_TYPE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Guard</em>' class.
@@ -201,7 +192,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARD_FEATURE_COUNT = 2;
+	int GUARD_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.FinalStateImpl <em>Final State</em>}' class.
@@ -461,13 +452,13 @@ public interface InternalsmPackage extends EPackage {
 	int INTERNAL_EXECUTION_MODEL__LATEST_EVENT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Current State Visitors</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Event Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS = 2;
+	int INTERNAL_EXECUTION_MODEL__EVENT_TOKENS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Internal Execution Model</em>' class.
@@ -526,13 +517,13 @@ public interface InternalsmPackage extends EPackage {
 	int EVENT_COLLECTION = 9;
 
 	/**
-	 * The feature id for the '<em><b>Current State Visitor</b></em>' container reference.
+	 * The feature id for the '<em><b>Event Token</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_COLLECTION__CURRENT_STATE_VISITOR = 0;
+	int EVENT_COLLECTION__EVENT_TOKEN = 0;
 
 	/**
 	 * The number of structural features of the '<em>Event Collection</em>' class.
@@ -775,17 +766,6 @@ public interface InternalsmPackage extends EPackage {
 	EClass getGuard();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimeConstraint <em>Time Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Time Constraint</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getTimeConstraint()
-	 * @see #getGuard()
-	 * @generated
-	 */
-	EReference getGuard_TimeConstraint();
-
-	/**
 	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Guard#getEventType <em>Event Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -891,15 +871,15 @@ public interface InternalsmPackage extends EPackage {
 	EReference getInternalExecutionModel_LatestEvent();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getCurrentStateVisitors <em>Current State Visitors</em>}'.
+	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getEventTokens <em>Event Tokens</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Current State Visitors</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getCurrentStateVisitors()
+	 * @return the meta object for the containment reference list '<em>Event Tokens</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getEventTokens()
 	 * @see #getInternalExecutionModel()
 	 * @generated
 	 */
-	EReference getInternalExecutionModel_CurrentStateVisitors();
+	EReference getInternalExecutionModel_EventTokens();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken <em>Event Token</em>}'.
@@ -944,15 +924,15 @@ public interface InternalsmPackage extends EPackage {
 	EClass getEventCollection();
 
 	/**
-	 * Returns the meta object for the container reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getCurrentStateVisitor <em>Current State Visitor</em>}'.
+	 * Returns the meta object for the container reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getEventToken <em>Event Token</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Current State Visitor</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getCurrentStateVisitor()
+	 * @return the meta object for the container reference '<em>Event Token</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getEventToken()
 	 * @see #getEventCollection()
 	 * @generated
 	 */
-	EReference getEventCollection_CurrentStateVisitor();
+	EReference getEventCollection_EventToken();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification <em>Time Constraint Specification</em>}'.
@@ -1177,14 +1157,6 @@ public interface InternalsmPackage extends EPackage {
 		EClass GUARD = eINSTANCE.getGuard();
 
 		/**
-		 * The meta object literal for the '<em><b>Time Constraint</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GUARD__TIME_CONSTRAINT = eINSTANCE.getGuard_TimeConstraint();
-
-		/**
 		 * The meta object literal for the '<em><b>Event Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1275,12 +1247,12 @@ public interface InternalsmPackage extends EPackage {
 		EReference INTERNAL_EXECUTION_MODEL__LATEST_EVENT = eINSTANCE.getInternalExecutionModel_LatestEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Current State Visitors</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Event Tokens</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INTERNAL_EXECUTION_MODEL__CURRENT_STATE_VISITORS = eINSTANCE.getInternalExecutionModel_CurrentStateVisitors();
+		EReference INTERNAL_EXECUTION_MODEL__EVENT_TOKENS = eINSTANCE.getInternalExecutionModel_EventTokens();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventTokenImpl <em>Event Token</em>}' class.
@@ -1319,12 +1291,12 @@ public interface InternalsmPackage extends EPackage {
 		EClass EVENT_COLLECTION = eINSTANCE.getEventCollection();
 
 		/**
-		 * The meta object literal for the '<em><b>Current State Visitor</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Event Token</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EVENT_COLLECTION__CURRENT_STATE_VISITOR = eINSTANCE.getEventCollection_CurrentStateVisitor();
+		EReference EVENT_COLLECTION__EVENT_TOKEN = eINSTANCE.getEventCollection_EventToken();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintSpecificationImpl <em>Time Constraint Specification</em>}' class.

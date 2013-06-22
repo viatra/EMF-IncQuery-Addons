@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventCollectionImpl#getCurrentStateVisitor <em>Current State Visitor</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventCollectionImpl#getEventToken <em>Event Token</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,8 +57,8 @@ public abstract class EventCollectionImpl extends EObjectImpl implements EventCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventToken getCurrentStateVisitor() {
-		if (eContainerFeatureID() != InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR) return null;
+	public EventToken getEventToken() {
+		if (eContainerFeatureID() != InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN) return null;
 		return (EventToken)eContainer();
 	}
 
@@ -67,8 +67,8 @@ public abstract class EventCollectionImpl extends EObjectImpl implements EventCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCurrentStateVisitor(EventToken newCurrentStateVisitor, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newCurrentStateVisitor, InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR, msgs);
+	public NotificationChain basicSetEventToken(EventToken newEventToken, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newEventToken, InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN, msgs);
 		return msgs;
 	}
 
@@ -77,20 +77,20 @@ public abstract class EventCollectionImpl extends EObjectImpl implements EventCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCurrentStateVisitor(EventToken newCurrentStateVisitor) {
-		if (newCurrentStateVisitor != eInternalContainer() || (eContainerFeatureID() != InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR && newCurrentStateVisitor != null)) {
-			if (EcoreUtil.isAncestor(this, newCurrentStateVisitor))
+	public void setEventToken(EventToken newEventToken) {
+		if (newEventToken != eInternalContainer() || (eContainerFeatureID() != InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN && newEventToken != null)) {
+			if (EcoreUtil.isAncestor(this, newEventToken))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newCurrentStateVisitor != null)
-				msgs = ((InternalEObject)newCurrentStateVisitor).eInverseAdd(this, InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION, EventToken.class, msgs);
-			msgs = basicSetCurrentStateVisitor(newCurrentStateVisitor, msgs);
+			if (newEventToken != null)
+				msgs = ((InternalEObject)newEventToken).eInverseAdd(this, InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION, EventToken.class, msgs);
+			msgs = basicSetEventToken(newEventToken, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR, newCurrentStateVisitor, newCurrentStateVisitor));
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN, newEventToken, newEventToken));
 	}
 
 	/**
@@ -123,10 +123,10 @@ public abstract class EventCollectionImpl extends EObjectImpl implements EventCo
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR:
+			case InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetCurrentStateVisitor((EventToken)otherEnd, msgs);
+				return basicSetEventToken((EventToken)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -139,8 +139,8 @@ public abstract class EventCollectionImpl extends EObjectImpl implements EventCo
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR:
-				return basicSetCurrentStateVisitor(null, msgs);
+			case InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN:
+				return basicSetEventToken(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -153,7 +153,7 @@ public abstract class EventCollectionImpl extends EObjectImpl implements EventCo
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR:
+			case InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN:
 				return eInternalContainer().eInverseRemove(this, InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION, EventToken.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -167,8 +167,8 @@ public abstract class EventCollectionImpl extends EObjectImpl implements EventCo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR:
-				return getCurrentStateVisitor();
+			case InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN:
+				return getEventToken();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -181,8 +181,8 @@ public abstract class EventCollectionImpl extends EObjectImpl implements EventCo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR:
-				setCurrentStateVisitor((EventToken)newValue);
+			case InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN:
+				setEventToken((EventToken)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -196,8 +196,8 @@ public abstract class EventCollectionImpl extends EObjectImpl implements EventCo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR:
-				setCurrentStateVisitor((EventToken)null);
+			case InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN:
+				setEventToken((EventToken)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -211,8 +211,8 @@ public abstract class EventCollectionImpl extends EObjectImpl implements EventCo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR:
-				return getCurrentStateVisitor() != null;
+			case InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN:
+				return getEventToken() != null;
 		}
 		return super.eIsSet(featureID);
 	}

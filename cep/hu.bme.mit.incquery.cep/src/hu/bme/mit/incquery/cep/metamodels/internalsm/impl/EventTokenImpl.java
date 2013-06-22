@@ -163,9 +163,9 @@ public class EventTokenImpl extends EObjectImpl implements EventToken {
 		if (newEventCollection != eventCollection) {
 			NotificationChain msgs = null;
 			if (eventCollection != null)
-				msgs = ((InternalEObject)eventCollection).eInverseRemove(this, InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR, EventCollection.class, msgs);
+				msgs = ((InternalEObject)eventCollection).eInverseRemove(this, InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN, EventCollection.class, msgs);
 			if (newEventCollection != null)
-				msgs = ((InternalEObject)newEventCollection).eInverseAdd(this, InternalsmPackage.EVENT_COLLECTION__CURRENT_STATE_VISITOR, EventCollection.class, msgs);
+				msgs = ((InternalEObject)newEventCollection).eInverseAdd(this, InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN, EventCollection.class, msgs);
 			msgs = basicSetEventCollection(newEventCollection, msgs);
 			if (msgs != null) msgs.dispatch();
 		}

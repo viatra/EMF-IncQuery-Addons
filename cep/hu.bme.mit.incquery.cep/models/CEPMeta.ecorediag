@@ -155,17 +155,6 @@
     <element xmi:type="ecore:EClass" href="CEPMeta.ecore#//Timewindow"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lrY1m5R-EeKJ-IAR0t4eRA" x="480" y="465"/>
   </children>
-  <children xmi:type="notation:Node" xmi:id="_eb_F8LNGEeKOPPprGjN3tA" type="1005">
-    <children xmi:type="notation:Node" xmi:id="_eb_F87NGEeKOPPprGjN3tA" type="4010"/>
-    <children xmi:type="notation:Node" xmi:id="_eb_F9LNGEeKOPPprGjN3tA" type="5008">
-      <styles xmi:type="notation:DrawerStyle" xmi:id="_eb_F9bNGEeKOPPprGjN3tA"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_eb_F9rNGEeKOPPprGjN3tA"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_eb_F97NGEeKOPPprGjN3tA"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_eb_F8bNGEeKOPPprGjN3tA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="CEPMeta.ecore#//NumericCompareOperator"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eb_F8rNGEeKOPPprGjN3tA" x="725" y="640"/>
-  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_lqwjcZR-EeKJ-IAR0t4eRA"/>
   <element xmi:type="ecore:EPackage" href="CEPMeta.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_lrbR0JR-EeKJ-IAR0t4eRA" type="3002" source="_lrTWCpR-EeKJ-IAR0t4eRA" target="_lrOdgJR-EeKJ-IAR0t4eRA">

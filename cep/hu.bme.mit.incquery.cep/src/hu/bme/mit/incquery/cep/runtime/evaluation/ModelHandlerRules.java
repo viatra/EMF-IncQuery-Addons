@@ -65,9 +65,9 @@ public class ModelHandlerRules {
 
 				for (State s : sm.getStates()) {
 					if (s instanceof FinalState) {
-						CopyOnWriteArrayList<EventToken> currentVisitors = new CopyOnWriteArrayList<EventToken>();
-						currentVisitors.addAll(s.getEventTokens());
-						for (EventToken cv : currentVisitors) {
+						CopyOnWriteArrayList<EventToken> eventTokens = new CopyOnWriteArrayList<EventToken>();
+						eventTokens.addAll(s.getEventTokens());
+						for (EventToken cv : eventTokens) {
 							// log(cv);
 							s.getEventTokens().remove(cv);
 						}

@@ -52,7 +52,7 @@ public interface EventToken extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Event Collection</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getCurrentStateVisitor <em>Current State Visitor</em>}'.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getEventToken <em>Event Token</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Event Collection</em>' containment reference isn't clear,
@@ -62,8 +62,8 @@ public interface EventToken extends EObject {
 	 * @return the value of the '<em>Event Collection</em>' containment reference.
 	 * @see #setEventCollection(EventCollection)
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getEventToken_EventCollection()
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getCurrentStateVisitor
-	 * @model opposite="currentStateVisitor" containment="true"
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getEventToken
+	 * @model opposite="eventToken" containment="true"
 	 * @generated
 	 */
 	EventCollection getEventCollection();

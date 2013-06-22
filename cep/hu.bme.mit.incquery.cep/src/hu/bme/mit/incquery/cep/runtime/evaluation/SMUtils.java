@@ -107,27 +107,8 @@ public final class SMUtils {
 
 		return flattenedList;
 	}
-
-	public static List<String> getFlattenedEventTypeList(List<AtomicEventPattern> atomicEventPatterns) {
-		List<String> flattenedTypeList = new ArrayList<String>();
-		for (AtomicEventPattern atomicEventPattern : atomicEventPatterns) {
-			flattenedTypeList.add(atomicEventPattern.getType());
-		}
-
-		return flattenedTypeList;
-	}
-
-	public static List<String> getFlattenedEventTypeList(
-			Map<AtomicEventPattern, List<Timewindow>> atomicEventPatterns) {
-		List<String> flattenedTypeList = new ArrayList<String>();
-		for (AtomicEventPattern atomicEventPattern : atomicEventPatterns.keySet()) {
-			flattenedTypeList.add(atomicEventPattern.getType());
-		}
-
-		return flattenedTypeList;
-	}
-
-	public static Map<AtomicEventPattern, List<Timewindow>> flattenEventPatterns2(EventPattern eventPattern) {
+	
+	public static Map<AtomicEventPattern, List<Timewindow>> flattenEventPatternsWithTimewindows(EventPattern eventPattern) {
 		checkArgument(eventPattern != null);
 
 		Map<AtomicEventPattern, List<Timewindow>> flattenedList = new LinkedHashMap<AtomicEventPattern, List<Timewindow>>();
@@ -145,7 +126,7 @@ public final class SMUtils {
 				if (op == null) {
 					continue;
 				}
-				flattenedList.putAll(flattenEventPatterns2(ep));
+				flattenedList.putAll(flattenEventPatternsWithTimewindows(ep));
 			}
 		}
 

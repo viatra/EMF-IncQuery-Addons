@@ -13,7 +13,6 @@
       <genEnumLiterals ecoreEnumLiteral="CEPMeta.ecore#//ComplexOperator/UNORDERED"/>
       <genEnumLiterals ecoreEnumLiteral="CEPMeta.ecore#//ComplexOperator/UNORDERED_T"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CEPMeta.ecore#//NumericCompareOperator"/>
     <genClasses image="false" ecoreClass="CEPMeta.ecore#//EventPattern">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//EventPattern/stateMachines"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CEPMeta.ecore#//EventPattern/id"/>
@@ -67,7 +66,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Transition/postState"/>
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//Guard">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//Guard/timeConstraint"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EReference InternalSM.ecore#//Guard/eventType"/>
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//FinalState"/>
@@ -80,14 +78,14 @@
     <genClasses ecoreClass="InternalSM.ecore#//InternalExecutionModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//InternalExecutionModel/stateMachines"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//InternalExecutionModel/latestEvent"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//InternalExecutionModel/currentStateVisitors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//InternalExecutionModel/eventTokens"/>
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//EventToken">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//EventToken/currentState"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//EventToken/eventCollection"/>
     </genClasses>
     <genClasses image="false" ecoreClass="InternalSM.ecore#//EventCollection">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference InternalSM.ecore#//EventCollection/currentStateVisitor"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference InternalSM.ecore#//EventCollection/eventToken"/>
       <genOperations ecoreOperation="InternalSM.ecore#//EventCollection/getRecordedEvents"/>
       <genOperations ecoreOperation="InternalSM.ecore#//EventCollection/addEvent">
         <genParameters ecoreParameter="InternalSM.ecore#//EventCollection/addEvent/event"/>

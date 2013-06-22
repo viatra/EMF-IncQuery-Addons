@@ -10,7 +10,6 @@ import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
-import hu.bme.mit.incquery.cep.metamodels.cep.NumericCompareOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
@@ -81,13 +80,6 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * @generated
 	 */
 	private EEnum complexOperatorEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum numericCompareOperatorEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -322,15 +314,6 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getNumericCompareOperator() {
-		return numericCompareOperatorEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public CepFactory getCepFactory() {
 		return (CepFactory)getEFactoryInstance();
 	}
@@ -379,7 +362,6 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 
 		// Create enums
 		complexOperatorEEnum = createEEnum(COMPLEX_OPERATOR);
-		numericCompareOperatorEEnum = createEEnum(NUMERIC_COMPARE_OPERATOR);
 	}
 
 	/**
@@ -449,8 +431,6 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		addEEnumLiteral(complexOperatorEEnum, ComplexOperator.ORDERED_T);
 		addEEnumLiteral(complexOperatorEEnum, ComplexOperator.UNORDERED);
 		addEEnumLiteral(complexOperatorEEnum, ComplexOperator.UNORDERED_T);
-
-		initEEnum(numericCompareOperatorEEnum, NumericCompareOperator.class, "NumericCompareOperator");
 
 		// Create resource
 		createResource(eNS_URI);

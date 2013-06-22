@@ -46,7 +46,7 @@ public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 						EventToken cv = SM_FACTORY.createEventToken();
 						cv.setCurrentState(s);
 						cv.setEventCollection(new EventCollectionWithMultimap());
-						model.getCurrentStateVisitors().add(cv);
+						model.getEventTokens().add(cv);
 					}
 				}
 			}

@@ -39,7 +39,7 @@ public class StateMachineBuilder {
 		sm = SM_FACTORY.createStateMachine();
 
 		flattenedAtomicEventPatterns = SMUtils.flattenEventPatterns(rootPattern);
-		flattenedAtomicEventTypes = SMUtils.getFlattenedEventTypeList(flattenedAtomicEventPatterns);
+		flattenedAtomicEventTypes = getFlattenedEventTypeList(flattenedAtomicEventPatterns);
 
 		buildInitialTrace();
 		if (flattenedAtomicEventPatterns.size() > 1) {
@@ -80,6 +80,15 @@ public class StateMachineBuilder {
 		}
 
 		sm.getStates().addAll(states);
+	}
+	
+	private List<String> getFlattenedEventTypeList(List<AtomicEventPattern> atomicEventPatterns) {
+		List<String> flattenedTypeList = new ArrayList<String>();
+		for (AtomicEventPattern atomicEventPattern : atomicEventPatterns) {
+			flattenedTypeList.add(atomicEventPattern.getType());
+		}
+
+		return flattenedTypeList;
 	}
 
 	private void buildAlternativeTraces() {

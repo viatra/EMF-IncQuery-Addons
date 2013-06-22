@@ -48,7 +48,7 @@ public class StateMachineBuilder2 {
 	public StateMachine buildStateMachine() {
 		sm = SM_FACTORY.createStateMachine();
 
-		flattenedAtomicEventPatterns = SMUtils.flattenEventPatterns2(rootPattern);
+		flattenedAtomicEventPatterns = SMUtils.flattenEventPatternsWithTimewindows(rootPattern);
 
 		buildInitialTrace();
 		if (flattenedAtomicEventPatterns.size() > 1) {

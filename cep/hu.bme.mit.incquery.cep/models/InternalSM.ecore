@@ -26,8 +26,6 @@
         eType="#//State" eOpposite="#//State/inTransitions"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Guard">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="timeConstraint" eType="#//TimeConstraintSpecification"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventType" lowerBound="1"
         eType="ecore:EClass CEPMeta.ecore#//AtomicEventPattern"/>
   </eClassifiers>
@@ -45,21 +43,21 @@
         eType="#//StateMachine" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="latestEvent" eType="ecore:EClass CEPMeta.ecore#//Event"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="currentStateVisitors" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventTokens" upperBound="-1"
         eType="#//EventToken" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventToken">
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentState" eType="#//State"
         eOpposite="#//State/eventTokens"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventCollection" eType="#//EventCollection"
-        containment="true" eOpposite="#//EventCollection/currentStateVisitor"/>
+        containment="true" eOpposite="#//EventCollection/eventToken"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventCollection" abstract="true">
     <eOperations name="getRecordedEvents" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
     <eOperations name="addEvent" lowerBound="1">
       <eParameters name="event" eType="ecore:EClass CEPMeta.ecore#//Event"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="currentStateVisitor" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventToken" lowerBound="1"
         eType="#//EventToken" eOpposite="#//EventToken/eventCollection"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeConstraintSpecification">
