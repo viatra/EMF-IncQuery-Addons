@@ -28,6 +28,7 @@ In progress:
 * elaborate the JNect demo
 
 Future work:
+* extend the DFA formalism to a PDA by utilizing the built-in memory of EventTokens
 * define the language for modeling event patterns over EMF models
  * reuse the concepts of event-driven model transformations and the pattern language of IncQuery
 * implement the common event processing strategies: chronicle, recent, unrestricted
