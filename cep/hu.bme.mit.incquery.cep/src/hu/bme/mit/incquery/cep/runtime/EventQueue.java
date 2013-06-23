@@ -3,7 +3,7 @@ package hu.bme.mit.incquery.cep.runtime;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 
 import java.util.Queue;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -14,13 +14,12 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * 
  * TODO:
  *  - make this class thread-safe
- *  - replace {@link LinkedBlockingQueue} with some kind of a memory-limited FIFO-queue
  * 
  * @author Istvan David
  */
 public final class EventQueue extends EObjectImpl {
 	private static EventQueue instance;
-	private Queue<Event> queue = new LinkedBlockingQueue<Event>();
+	private Queue<Event> queue = new ConcurrentLinkedQueue<Event>();
 	
 	private EventQueue() {
 		super();
@@ -49,6 +48,7 @@ public final class EventQueue extends EObjectImpl {
 		this.queue.add(event);
 		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.ADD, null, oldQueue, event));
+			queue.remove(event);
 		}
 	}
 	

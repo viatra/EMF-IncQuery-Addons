@@ -55,7 +55,7 @@ public class EventsWithTimewindows {
 		eventQueue.push(new D(source));
 		eventQueue.push(new B(source));
 		eventQueue.push(new C(source));
-		Thread.sleep(1488l);
+		Thread.sleep(1495l);
 		eventQueue.push(new A(source));
 		
 		System.err.println("\nDIAG: Test finished.");
