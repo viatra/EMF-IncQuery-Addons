@@ -1,8 +1,8 @@
 package org.jnect.demo.incquery.viatra.cep;
 
+import hu.bme.mit.incquery.cep.api.ViatraCepAdapter;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
-import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
 import hu.bme.mit.incquery.cep.specific.evm.CepEventType;
@@ -30,58 +30,63 @@ import org.jnect.demo.incquery.viatra.cep.patterns.FS_FE_Pattern;
  * @author idavid
  *
  */
-public class ViatraCepAdapter {
-	EventModelManager manager;
-	EventQueue queue = EventQueue.getInstance();
+public class RobotCepAdapter extends ViatraCepAdapter{
 	IEventSource source;
+	List<IncQueryMatcher<? extends IPatternMatch>> matchers;
 	
-	public ViatraCepAdapter() {
+	public RobotCepAdapter(List<IncQueryMatcher<? extends IPatternMatch>> matchers) {
 		new IncQueryHeadlessRealm();
 		List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
 		eventPatterns.add(new FS_FE_Pattern());
-		manager = new EventModelManager(Strategy.getDefault());
-		manager.assignEventPatterns(eventPatterns);
+		this.eventModelManager = new EventModelManager(Strategy.getDefault());
+		this.eventModelManager.assignEventPatterns(eventPatterns);
+		this.matchers = matchers;
+		
+		//TODO this call should be made somewhere in the CEP after registering the adapter 
+		registerAdapter();
 	}
 	
-	public void registerMatcher(IncQueryMatcher<? extends IPatternMatch> matcher) {
-		IObservableSet os = IncQueryObservables.observeMatchesAsSet(matcher);
-		os.addSetChangeListener(new ISetChangeListener() {
+	@Override
+	public void registerAdapter() {
+		for(IncQueryMatcher<? extends IPatternMatch> matcher : matchers){
+			IObservableSet os = IncQueryObservables.observeMatchesAsSet(matcher);
+			os.addSetChangeListener(new ISetChangeListener() {
 
-			@Override
-			public void handleSetChange(SetChangeEvent event) {
-				for (Object _o : event.diff.getAdditions()) {
-					IPatternMatch pm = (IPatternMatch) _o;
-					Logger.log("VIATRACEPADAPTER: Event " + pm.patternName() + " found.");
+				@Override
+				public void handleSetChange(SetChangeEvent event) {
+					for (Object _o : event.diff.getAdditions()) {
+						IPatternMatch pm = (IPatternMatch) _o;
+						Logger.log("VIATRACEPADAPTER: Event " + pm.patternName() + " found.");
 
-					sentEvent(pm.patternName(), CepEventType.APPEARED);
+						sendEvent(pm.patternName(), CepEventType.APPEARED);
+					}
+					for (Object _o : event.diff.getRemovals()) {
+						IPatternMatch pm = (IPatternMatch) _o;
+						Logger.log("VIATRACEPADAPTER: Event " + pm.patternName() + " lost.");
+						sendEvent(pm.patternName(), CepEventType.DISAPPEARED);
+					}
 				}
-				for (Object _o : event.diff.getRemovals()) {
-					IPatternMatch pm = (IPatternMatch) _o;
-					Logger.log("VIATRACEPADAPTER: Event " + pm.patternName() + " lost.");
-					sentEvent(pm.patternName(), CepEventType.DISAPPEARED);
-				}
-			}
-		});
+			});	
+		}
 	}
 
-	private void sentEvent(String iqPatternName, CepEventType t) {
-
+	private void sendEvent(String iqPatternName, CepEventType t) {
 		if (iqPatternName.equalsIgnoreCase("bodymodel.ymca.FE")) {
 			switch (t) {
 			case APPEARED:
-				queue.push(new FE_found(source));
+				eventQueue.push(new FE_found(source));
 				return;
 			case DISAPPEARED:
-				queue.push(new FE_lost(source));
+				eventQueue.push(new FE_lost(source));
 				return;
 			}
 		} else if (iqPatternName.equalsIgnoreCase("bodymodel.ymca.FS")) {
 			switch (t) {
 			case APPEARED:
-				queue.push(new FS_found(source));
+				eventQueue.push(new FS_found(source));
 				return;
 			case DISAPPEARED:
-				queue.push(new FS_lost(source));
+				eventQueue.push(new FS_lost(source));
 				return;
 			}
 		}
