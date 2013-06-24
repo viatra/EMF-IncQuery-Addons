@@ -39,7 +39,7 @@ public class ModelHandlerRules {
 		modelHandlers = new LinkedHashMap<RuleSpecification<?>, Integer>();
 		try {
 			modelHandlers.put(getEnabledTransitionsRule(), 10);
-			modelHandlers.put(getFinishedStateMachineRule(), 0);
+			modelHandlers.put(getFinishedStateMachineRule(), 50);
 			modelHandlers.put(getTokenInTrapStateRule(), 5);
 		} catch (IncQueryException e) {
 			e.printStackTrace();

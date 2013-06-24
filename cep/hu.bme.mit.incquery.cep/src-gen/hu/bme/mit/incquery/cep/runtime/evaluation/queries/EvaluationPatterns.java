@@ -64,19 +64,19 @@ public final class EvaluationPatterns extends BaseGeneratedPatternGroup {
   
   private EvaluationPatterns() throws IncQueryException {
     querySpecifications.add(EventHandledByEventTokenMatcher.querySpecification());
-    querySpecifications.add(AtomicPatternTypeMatcher.querySpecification());
     querySpecifications.add(FinishedStateMachineMatcher.querySpecification());
-    querySpecifications.add(FinalStateMatcher.querySpecification());
-    querySpecifications.add(GuardAtomicPatternMatcher.querySpecification());
+    querySpecifications.add(AtomicPatternTypeMatcher.querySpecification());
     querySpecifications.add(StateWithTimeconstraintMatcher.querySpecification());
-    querySpecifications.add(PreStateMatcher.querySpecification());
+    querySpecifications.add(FinalStateMatcher.querySpecification());
+    querySpecifications.add(EnabledTransitionMatcher.querySpecification());
+    querySpecifications.add(StateWithSTARTTimeconstraintMatcher.querySpecification());
     querySpecifications.add(LatestEventMatcher.querySpecification());
-    querySpecifications.add(TransitionMatcher.querySpecification());
     querySpecifications.add(TokenInTrapStateMatcher.querySpecification());
     querySpecifications.add(StateWithCHECKTimeconstraintMatcher.querySpecification());
-    querySpecifications.add(StateWithSTARTTimeconstraintMatcher.querySpecification());
-    querySpecifications.add(EnabledTransitionMatcher.querySpecification());
+    querySpecifications.add(TransitionMatcher.querySpecification());
+    querySpecifications.add(GuardAtomicPatternMatcher.querySpecification());
     querySpecifications.add(StateWithSTOPTimeconstraintMatcher.querySpecification());
+    querySpecifications.add(PreStateMatcher.querySpecification());
     
   }
 }
