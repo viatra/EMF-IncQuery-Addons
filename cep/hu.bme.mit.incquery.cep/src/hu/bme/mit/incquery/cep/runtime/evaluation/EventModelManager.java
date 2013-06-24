@@ -3,8 +3,10 @@ package hu.bme.mit.incquery.cep.runtime.evaluation;
 import hu.bme.mit.incquery.cep.api.ObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.EventProcessingStrategyFactory;
@@ -18,6 +20,7 @@ import hu.bme.mit.incquery.cep.specific.evm.CepRealm;
 
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -62,6 +65,7 @@ public class EventModelManager {
 	private CepRealm realm;
 	private UpdateCompleteProviderExtension updateCompleteProvider;
 	private ResourceSet resourceSet;
+	private Map<StateMachine, FinalState> finalStatesForStatemachines = new LinkedHashMap<StateMachine, FinalState>();
 
 	private final class UpdateCompleteProviderExtension extends UpdateCompleteProvider {
 		protected void latestEventHandled() {
@@ -83,6 +87,9 @@ public class EventModelManager {
 		Adapter adapter = new AdapterImpl() {
 			@Override
 			public void notifyChanged(Notification notification) {
+				if (notification.getEventType() != Notification.ADD) {
+					return;
+				}
 				Object newValue = notification.getNewValue();
 				if (newValue instanceof Event) {
 					Event event = (Event) newValue;
@@ -147,7 +154,19 @@ public class EventModelManager {
 	}
 
 	public StateMachine getStateMachine(EventPattern eventPattern) {
-		return new StateMachineBuilder2(model, eventPattern).buildStateMachine();
+		StateMachine stateMachine = new StateMachineBuilder2(model, eventPattern).buildStateMachine();
+		FinalState finalState = null;
+		for (State state : stateMachine.getStates()) {
+			if (SMUtils.isFinal(state)) {
+				finalState = (FinalState) state;
+			}
+		}
+		
+		if(finalState != null){
+			finalStatesForStatemachines.put(stateMachine, finalState);
+		}
+		
+		return stateMachine;
 	}
 
 	private void refreshModel(Event event) {
@@ -175,5 +194,9 @@ public class EventModelManager {
 
 	public CepRealm getRealm() {
 		return realm;
+	}
+
+	public Map<StateMachine, FinalState> getFinalStatesForStatemachines() {
+		return finalStatesForStatemachines;
 	}
 }

@@ -48,6 +48,7 @@ public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 						cv.setEventCollection(new EventCollectionWithMultimap());
 						model.getEventTokens().add(cv);
 					}
+					break;
 				}
 			}
 		}

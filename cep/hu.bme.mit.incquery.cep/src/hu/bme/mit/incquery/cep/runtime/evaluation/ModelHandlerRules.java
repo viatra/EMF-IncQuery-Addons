@@ -17,7 +17,6 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.queries.TokenInTrapStateMatche
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.evm.api.Job;
@@ -58,21 +57,13 @@ public class ModelHandlerRules {
 				StateMachine sm = match.getSm();
 				// log(sm);
 
+				FinalState finalState = eventModelManager.getFinalStatesForStatemachines().get(sm);
+				finalState.getEventTokens().remove(0);
+				
 				// forward the observed pattern in a DTO
 				ObservedComplexEventPattern observedPattern = new SimpleObservedComplexEventPattern(
 						sm.getEventPattern());
 				eventModelManager.getRealm().forwardObservedEventPattern(observedPattern);
-
-				for (State s : sm.getStates()) {
-					if (s instanceof FinalState) {
-						CopyOnWriteArrayList<EventToken> eventTokens = new CopyOnWriteArrayList<EventToken>();
-						eventTokens.addAll(s.getEventTokens());
-						for (EventToken cv : eventTokens) {
-							// log(cv);
-							s.getEventTokens().remove(cv);
-						}
-					}
-				}
 			}
 
 		};

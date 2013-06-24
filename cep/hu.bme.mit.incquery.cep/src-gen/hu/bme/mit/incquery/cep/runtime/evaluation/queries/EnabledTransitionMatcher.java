@@ -32,7 +32,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 	Event.type(e, eventType);
  * 	Transition.guard.eventType.type(t, eventType);
  * 	Transition.preState.eventTokens(t, et);
- * 	neg find eventHandledByEventToken(e, et);
+ * 	neg find eventHandledByEventToken(et, e);
  * }
  * </pre></code>
  * 
