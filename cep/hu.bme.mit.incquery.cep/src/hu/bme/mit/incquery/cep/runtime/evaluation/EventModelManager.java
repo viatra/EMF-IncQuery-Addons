@@ -45,8 +45,10 @@ import org.eclipse.incquery.runtime.evm.api.Job;
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification;
 import org.eclipse.incquery.runtime.evm.api.Scheduler.ISchedulerFactory;
 import org.eclipse.incquery.runtime.evm.api.event.EventType.RuleEngineEventType;
+import org.eclipse.incquery.runtime.evm.specific.ConflictResolvers;
 import org.eclipse.incquery.runtime.evm.specific.ExecutionSchemas;
 import org.eclipse.incquery.runtime.evm.specific.Schedulers;
+import org.eclipse.incquery.runtime.evm.specific.resolver.FixedPriorityConflictResolver;
 import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedScheduler;
 import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory;
 import org.eclipse.incquery.runtime.evm.update.UpdateCompleteProvider;
@@ -144,10 +146,18 @@ public class EventModelManager {
 			ISchedulerFactory schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine.getBaseIndex());
 
 			ModelHandlerRules mhr = new ModelHandlerRules(this);
-
-			rules.addAll(mhr.getModelHandlers());
+			FixedPriorityConflictResolver fixedPriorityResolver = ConflictResolvers.createFixedPriorityResolver();
+			
+			for(RuleSpecification<?> ruleSpec : mhr.getModelHandlers().keySet()){
+				rules.add(ruleSpec);
+				fixedPriorityResolver.setPriority(ruleSpec, mhr.getModelHandlers().get(ruleSpec));	
+			}
+			
 			lowLevelExecutionSchema = ExecutionSchemas.createIncQueryExecutionSchema(engine, schedulerFactory, rules);
+			lowLevelExecutionSchema.setConflictResolver(fixedPriorityResolver);
+			
 			engine.getLogger().setLevel(Level.OFF);
+			
 		} catch (IncQueryException e) {
 			e.printStackTrace();
 		}

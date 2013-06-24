@@ -16,6 +16,8 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.queries.TokenInTrapStateMatch;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.TokenInTrapStateMatcher;
 
 import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
@@ -28,24 +30,24 @@ import org.eclipse.incquery.runtime.evm.specific.lifecycle.DefaultActivationLife
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 public class ModelHandlerRules {
-	private Set<RuleSpecification<?>> modelHandlers;
+	private Map<RuleSpecification<?>, Integer> modelHandlers;
 	private EventModelManager eventModelManager;
 
 	public ModelHandlerRules(EventModelManager eventModelManager) {
 		this.eventModelManager = eventModelManager;
 
-		modelHandlers = new HashSet<RuleSpecification<?>>();
+		modelHandlers = new LinkedHashMap<RuleSpecification<?>, Integer>();
 		try {
-			modelHandlers.add(getEnabledTransitionsRule());
-			modelHandlers.add(getFinishedStateMachineRule());
-			modelHandlers.add(getTokenInTrapStateRule());
+			modelHandlers.put(getEnabledTransitionsRule(), 10);
+			modelHandlers.put(getFinishedStateMachineRule(), 0);
+			modelHandlers.put(getTokenInTrapStateRule(), 5);
 		} catch (IncQueryException e) {
 			e.printStackTrace();
 		}
 
 	}
 
-	public Set<RuleSpecification<?>> getModelHandlers() {
+	public Map<RuleSpecification<?>, Integer> getModelHandlers() {
 		return modelHandlers;
 	}
 
