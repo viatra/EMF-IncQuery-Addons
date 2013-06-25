@@ -17,6 +17,7 @@ import hu.bme.mit.incquery.cep.specific.evm.CepActivationStates;
 import hu.bme.mit.incquery.cep.specific.evm.CepEventSourceSpecification;
 import hu.bme.mit.incquery.cep.specific.evm.CepEventType;
 import hu.bme.mit.incquery.cep.specific.evm.CepRealm;
+import hu.bme.mit.incquery.resolver.LifoConflictResolver;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -147,6 +148,7 @@ public class EventModelManager {
 
 			ModelHandlerRules mhr = new ModelHandlerRules(this);
 			FixedPriorityConflictResolver fixedPriorityResolver = ConflictResolvers.createFixedPriorityResolver();
+			LifoConflictResolver lifoConflictResolver = new LifoConflictResolver();
 			
 			for(RuleSpecification<?> ruleSpec : mhr.getModelHandlers().keySet()){
 				rules.add(ruleSpec);
@@ -154,7 +156,8 @@ public class EventModelManager {
 			}
 			
 			lowLevelExecutionSchema = ExecutionSchemas.createIncQueryExecutionSchema(engine, schedulerFactory, rules);
-			lowLevelExecutionSchema.setConflictResolver(fixedPriorityResolver);
+			//lowLevelExecutionSchema.setConflictResolver(fixedPriorityResolver);
+			lowLevelExecutionSchema.setConflictResolver(lifoConflictResolver);
 			
 			engine.getLogger().setLevel(Level.OFF);
 			

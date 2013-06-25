@@ -1,6 +1,6 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.queries;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection;
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import java.util.Arrays;
 import java.util.List;
@@ -25,11 +25,11 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 public abstract class EventHandledByEventTokenMatch extends BasePatternMatch {
   private EventToken fEt;
   
-  private EventCollection fE;
+  private Event fE;
   
   private static List<String> parameterNames = makeImmutableList("et", "e");
   
-  private EventHandledByEventTokenMatch(final EventToken pEt, final EventCollection pE) {
+  private EventHandledByEventTokenMatch(final EventToken pEt, final Event pE) {
     this.fEt = pEt;
     this.fE = pE;
     
@@ -48,7 +48,7 @@ public abstract class EventHandledByEventTokenMatch extends BasePatternMatch {
     
   }
   
-  public EventCollection getE() {
+  public Event getE() {
     return this.fE;
     
   }
@@ -61,7 +61,7 @@ public abstract class EventHandledByEventTokenMatch extends BasePatternMatch {
     	return true;
     }
     if ("e".equals(parameterName) ) {
-    	this.fE = (hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection) newValue;
+    	this.fE = (hu.bme.mit.incquery.cep.metamodels.cep.Event) newValue;
     	return true;
     }
     return false;
@@ -74,7 +74,7 @@ public abstract class EventHandledByEventTokenMatch extends BasePatternMatch {
     
   }
   
-  public void setE(final EventCollection pE) {
+  public void setE(final Event pE) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fE = pE;
     
@@ -150,7 +150,7 @@ public abstract class EventHandledByEventTokenMatch extends BasePatternMatch {
     
   }
   static final class Mutable extends EventHandledByEventTokenMatch {
-    Mutable(final EventToken pEt, final EventCollection pE) {
+    Mutable(final EventToken pEt, final Event pE) {
       super(pEt, pE);
       
     }
@@ -162,7 +162,7 @@ public abstract class EventHandledByEventTokenMatch extends BasePatternMatch {
   }
   
   static final class Immutable extends EventHandledByEventTokenMatch {
-    Immutable(final EventToken pEt, final EventCollection pE) {
+    Immutable(final EventToken pEt, final Event pE) {
       super(pEt, pE);
       
     }

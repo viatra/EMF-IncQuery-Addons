@@ -99,6 +99,14 @@
       </matcher>
    </extension>
    <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByState"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.EventHandledByStateQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.eventHandledByState">
+      </matcher>
+   </extension>
+   <extension
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.atomicPatternType"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher

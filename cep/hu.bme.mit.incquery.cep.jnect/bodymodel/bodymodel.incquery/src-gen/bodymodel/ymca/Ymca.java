@@ -83,30 +83,30 @@ public final class Ymca extends BaseGeneratedPatternGroup {
   private static Ymca INSTANCE;
   
   private Ymca() throws IncQueryException {
-    querySpecifications.add(HandsAreApartMatcher.querySpecification());
+    querySpecifications.add(FeetAreApartMatcher.querySpecification());
+    querySpecifications.add(BentLeftArmMatcher.querySpecification());
+    querySpecifications.add(IMatcher.querySpecification());
+    querySpecifications.add(BSMatcher.querySpecification());
+    querySpecifications.add(HandsAreCloseMatcher.querySpecification());
+    querySpecifications.add(FeetAreCloseMatcher.querySpecification());
+    querySpecifications.add(QMatcher.querySpecification());
+    querySpecifications.add(MMatcher.querySpecification());
+    querySpecifications.add(YMatcher.querySpecification());
     querySpecifications.add(BEMatcher.querySpecification());
     querySpecifications.add(CMatcher.querySpecification());
-    querySpecifications.add(HandsAreCloseMatcher.querySpecification());
-    querySpecifications.add(StretchedLeftArmMatcher.querySpecification());
-    querySpecifications.add(LeftHandAboveHeadMatcher.querySpecification());
-    querySpecifications.add(IMatcher.querySpecification());
-    querySpecifications.add(SMMatcher.querySpecification());
-    querySpecifications.add(BSMatcher.querySpecification());
-    querySpecifications.add(MMatcher.querySpecification());
-    querySpecifications.add(SSMatcher.querySpecification());
-    querySpecifications.add(FEMatcher.querySpecification());
-    querySpecifications.add(FeetAreCloseMatcher.querySpecification());
-    querySpecifications.add(StretchedRightArmMatcher.querySpecification());
-    querySpecifications.add(BentLeftArmMatcher.querySpecification());
     querySpecifications.add(BentRightArmMatcher.querySpecification());
-    querySpecifications.add(QMatcher.querySpecification());
+    querySpecifications.add(FEMatcher.querySpecification());
+    querySpecifications.add(FSMatcher.querySpecification());
     querySpecifications.add(RightHandAboveHeadMatcher.querySpecification());
     querySpecifications.add(UpperArmsInYMatcher.querySpecification());
-    querySpecifications.add(FeetAreApartMatcher.querySpecification());
-    querySpecifications.add(FSMatcher.querySpecification());
-    querySpecifications.add(YMatcher.querySpecification());
     querySpecifications.add(SEMatcher.querySpecification());
+    querySpecifications.add(SMMatcher.querySpecification());
+    querySpecifications.add(LeftHandAboveHeadMatcher.querySpecification());
+    querySpecifications.add(SSMatcher.querySpecification());
     querySpecifications.add(AMatcher.querySpecification());
+    querySpecifications.add(StretchedRightArmMatcher.querySpecification());
+    querySpecifications.add(HandsAreApartMatcher.querySpecification());
+    querySpecifications.add(StretchedLeftArmMatcher.querySpecification());
     
   }
 }

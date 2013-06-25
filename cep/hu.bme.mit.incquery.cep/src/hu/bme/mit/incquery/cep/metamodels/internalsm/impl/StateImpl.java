@@ -2,6 +2,8 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
+
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
@@ -38,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getEventTokens <em>Event Tokens</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getTimeConstraints <em>Time Constraints</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateImpl#getLastProcessedEvent <em>Last Processed Event</em>}</li>
  * </ul>
  * </p>
  *
@@ -103,6 +106,16 @@ public class StateImpl extends EObjectImpl implements State {
 	 * @ordered
 	 */
 	protected EList<TimeConstraint> timeConstraints;
+
+	/**
+	 * The cached value of the '{@link #getLastProcessedEvent() <em>Last Processed Event</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastProcessedEvent()
+	 * @generated
+	 * @ordered
+	 */
+	protected Event lastProcessedEvent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,6 +210,44 @@ public class StateImpl extends EObjectImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Event getLastProcessedEvent() {
+		if (lastProcessedEvent != null && lastProcessedEvent.eIsProxy()) {
+			InternalEObject oldLastProcessedEvent = (InternalEObject)lastProcessedEvent;
+			lastProcessedEvent = (Event)eResolveProxy(oldLastProcessedEvent);
+			if (lastProcessedEvent != oldLastProcessedEvent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InternalsmPackage.STATE__LAST_PROCESSED_EVENT, oldLastProcessedEvent, lastProcessedEvent));
+			}
+		}
+		return lastProcessedEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Event basicGetLastProcessedEvent() {
+		return lastProcessedEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLastProcessedEvent(Event newLastProcessedEvent) {
+		Event oldLastProcessedEvent = lastProcessedEvent;
+		lastProcessedEvent = newLastProcessedEvent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE__LAST_PROCESSED_EVENT, oldLastProcessedEvent, lastProcessedEvent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -249,6 +300,9 @@ public class StateImpl extends EObjectImpl implements State {
 				return getEventTokens();
 			case InternalsmPackage.STATE__TIME_CONSTRAINTS:
 				return getTimeConstraints();
+			case InternalsmPackage.STATE__LAST_PROCESSED_EVENT:
+				if (resolve) return getLastProcessedEvent();
+				return basicGetLastProcessedEvent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,6 +335,9 @@ public class StateImpl extends EObjectImpl implements State {
 				getTimeConstraints().clear();
 				getTimeConstraints().addAll((Collection<? extends TimeConstraint>)newValue);
 				return;
+			case InternalsmPackage.STATE__LAST_PROCESSED_EVENT:
+				setLastProcessedEvent((Event)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -308,6 +365,9 @@ public class StateImpl extends EObjectImpl implements State {
 			case InternalsmPackage.STATE__TIME_CONSTRAINTS:
 				getTimeConstraints().clear();
 				return;
+			case InternalsmPackage.STATE__LAST_PROCESSED_EVENT:
+				setLastProcessedEvent((Event)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -330,6 +390,8 @@ public class StateImpl extends EObjectImpl implements State {
 				return eventTokens != null && !eventTokens.isEmpty();
 			case InternalsmPackage.STATE__TIME_CONSTRAINTS:
 				return timeConstraints != null && !timeConstraints.isEmpty();
+			case InternalsmPackage.STATE__LAST_PROCESSED_EVENT:
+				return lastProcessedEvent != null;
 		}
 		return super.eIsSet(featureID);
 	}

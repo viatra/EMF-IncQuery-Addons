@@ -52,8 +52,12 @@ pattern guardAtomicPattern(guard : Guard, atomicPattern : AtomicEventPattern) {
 	Guard.eventType(guard, atomicPattern);
 }
 
-pattern eventHandledByEventToken(et, e) {
-	EventToken.eventCollection(et, e);
+pattern eventHandledByEventToken(et : EventToken, e : Event) {
+	EventToken.recordedEvents(et, e);
+}
+
+pattern eventHandledByState(s : State, e : Event) {
+	State.lastProcessedEvent(s, e);
 }
 
 pattern atomicPatternType(a : AtomicEventPattern, t : EString) {
@@ -65,7 +69,8 @@ pattern enabledTransition(t : Transition, et : EventToken) {
 	Event.type(e, eventType);
 	Transition.guard.eventType.type(t, eventType);
 	Transition.preState.eventTokens(t, et);
-	neg find eventHandledByEventToken(et, e);
+	Transition.preState(t, ps);
+	neg find eventHandledByState(ps, e);
 }
 
 pattern tokenInTrapState(et : EventToken) {

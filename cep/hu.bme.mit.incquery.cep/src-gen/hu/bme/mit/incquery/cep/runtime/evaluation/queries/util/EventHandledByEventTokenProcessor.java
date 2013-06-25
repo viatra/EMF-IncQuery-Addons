@@ -1,6 +1,6 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.queries.util;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection;
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EventHandledByEventTokenMatch;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
@@ -18,7 +18,7 @@ public abstract class EventHandledByEventTokenProcessor implements IMatchProcess
    * @param pE the value of pattern parameter e in the currently processed match 
    * 
    */
-  public abstract void process(final EventToken pEt, final EventCollection pE);
+  public abstract void process(final EventToken pEt, final Event pE);
   
   @Override
   public void process(final EventHandledByEventTokenMatch match) {

@@ -2,6 +2,10 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
+
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getCurrentState <em>Current State</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getEventCollection <em>Event Collection</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getRecordedEvents <em>Recorded Events</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,31 +55,19 @@ public interface EventToken extends EObject {
 	void setCurrentState(State value);
 
 	/**
-	 * Returns the value of the '<em><b>Event Collection</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getEventToken <em>Event Token</em>}'.
+	 * Returns the value of the '<em><b>Recorded Events</b></em>' reference list.
+	 * The list contents are of type {@link hu.bme.mit.incquery.cep.metamodels.cep.Event}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Event Collection</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Recorded Events</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Event Collection</em>' containment reference.
-	 * @see #setEventCollection(EventCollection)
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getEventToken_EventCollection()
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getEventToken
-	 * @model opposite="eventToken" containment="true"
+	 * @return the value of the '<em>Recorded Events</em>' reference list.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getEventToken_RecordedEvents()
+	 * @model
 	 * @generated
 	 */
-	EventCollection getEventCollection();
-
-	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getEventCollection <em>Event Collection</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Event Collection</em>' containment reference.
-	 * @see #getEventCollection()
-	 * @generated
-	 */
-	void setEventCollection(EventCollection value);
+	EList<Event> getRecordedEvents();
 
 } // EventToken

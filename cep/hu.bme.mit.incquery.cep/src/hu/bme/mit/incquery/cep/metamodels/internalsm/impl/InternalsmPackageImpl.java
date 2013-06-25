@@ -6,7 +6,6 @@ import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.CepPackageImpl;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
@@ -26,7 +25,6 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -101,13 +99,6 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * @generated
 	 */
 	private EClass eventTokenEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass eventCollectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,6 +246,15 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 */
 	public EReference getState_TimeConstraints() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getState_LastProcessedEvent() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -424,26 +424,8 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEventToken_EventCollection() {
+	public EReference getEventToken_RecordedEvents() {
 		return (EReference)eventTokenEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEventCollection() {
-		return eventCollectionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEventCollection_EventToken() {
-		return (EReference)eventCollectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -570,6 +552,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		createEAttribute(stateEClass, STATE__LABEL);
 		createEReference(stateEClass, STATE__EVENT_TOKENS);
 		createEReference(stateEClass, STATE__TIME_CONSTRAINTS);
+		createEReference(stateEClass, STATE__LAST_PROCESSED_EVENT);
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__PRE_STATE);
@@ -596,10 +579,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 
 		eventTokenEClass = createEClass(EVENT_TOKEN);
 		createEReference(eventTokenEClass, EVENT_TOKEN__CURRENT_STATE);
-		createEReference(eventTokenEClass, EVENT_TOKEN__EVENT_COLLECTION);
-
-		eventCollectionEClass = createEClass(EVENT_COLLECTION);
-		createEReference(eventCollectionEClass, EVENT_COLLECTION__EVENT_TOKEN);
+		createEReference(eventTokenEClass, EVENT_TOKEN__RECORDED_EVENTS);
 
 		timeConstraintSpecificationEClass = createEClass(TIME_CONSTRAINT_SPECIFICATION);
 		createEAttribute(timeConstraintSpecificationEClass, TIME_CONSTRAINT_SPECIFICATION__ID);
@@ -658,6 +638,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		initEAttribute(getState_Label(), ecorePackage.getEString(), "label", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_EventTokens(), this.getEventToken(), this.getEventToken_CurrentState(), "eventTokens", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_TimeConstraints(), this.getTimeConstraint(), null, "timeConstraints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_LastProcessedEvent(), theCepPackage.getEvent(), null, "lastProcessedEvent", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransition_PreState(), this.getState(), this.getState_OutTransitions(), "preState", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -684,15 +665,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 
 		initEClass(eventTokenEClass, EventToken.class, "EventToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEventToken_CurrentState(), this.getState(), this.getState_EventTokens(), "currentState", null, 0, 1, EventToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEventToken_EventCollection(), this.getEventCollection(), this.getEventCollection_EventToken(), "eventCollection", null, 0, 1, EventToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(eventCollectionEClass, EventCollection.class, "EventCollection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEventCollection_EventToken(), this.getEventToken(), this.getEventToken_EventCollection(), "eventToken", null, 1, 1, EventCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(eventCollectionEClass, ecorePackage.getEJavaObject(), "getRecordedEvents", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		EOperation op = addEOperation(eventCollectionEClass, null, "addEvent", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theCepPackage.getEvent(), "event", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEReference(getEventToken_RecordedEvents(), theCepPackage.getEvent(), null, "recordedEvents", null, 0, -1, EventToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timeConstraintSpecificationEClass, TimeConstraintSpecification.class, "TimeConstraintSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimeConstraintSpecification_Id(), ecorePackage.getEString(), "id", null, 0, 1, TimeConstraintSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

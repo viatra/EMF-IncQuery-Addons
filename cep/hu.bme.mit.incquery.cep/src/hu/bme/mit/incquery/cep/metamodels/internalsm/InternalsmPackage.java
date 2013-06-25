@@ -112,13 +112,22 @@ public interface InternalsmPackage extends EPackage {
 	int STATE__TIME_CONSTRAINTS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Last Processed Event</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__LAST_PROCESSED_EVENT = 5;
+
+	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = 5;
+	int STATE_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TransitionImpl <em>Transition</em>}' class.
@@ -250,6 +259,15 @@ public interface InternalsmPackage extends EPackage {
 	int FINAL_STATE__TIME_CONSTRAINTS = STATE__TIME_CONSTRAINTS;
 
 	/**
+	 * The feature id for the '<em><b>Last Processed Event</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STATE__LAST_PROCESSED_EVENT = STATE__LAST_PROCESSED_EVENT;
+
+	/**
 	 * The number of structural features of the '<em>Final State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -314,6 +332,15 @@ public interface InternalsmPackage extends EPackage {
 	int INIT_STATE__TIME_CONSTRAINTS = STATE__TIME_CONSTRAINTS;
 
 	/**
+	 * The feature id for the '<em><b>Last Processed Event</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INIT_STATE__LAST_PROCESSED_EVENT = STATE__LAST_PROCESSED_EVENT;
+
+	/**
 	 * The number of structural features of the '<em>Init State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -376,6 +403,15 @@ public interface InternalsmPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRAP_STATE__TIME_CONSTRAINTS = STATE__TIME_CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Last Processed Event</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAP_STATE__LAST_PROCESSED_EVENT = STATE__LAST_PROCESSED_EVENT;
 
 	/**
 	 * The number of structural features of the '<em>Trap State</em>' class.
@@ -489,13 +525,13 @@ public interface InternalsmPackage extends EPackage {
 	int EVENT_TOKEN__CURRENT_STATE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Event Collection</b></em>' containment reference.
+	 * The feature id for the '<em><b>Recorded Events</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_TOKEN__EVENT_COLLECTION = 1;
+	int EVENT_TOKEN__RECORDED_EVENTS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Event Token</em>' class.
@@ -507,34 +543,6 @@ public interface InternalsmPackage extends EPackage {
 	int EVENT_TOKEN_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventCollectionImpl <em>Event Collection</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventCollectionImpl
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getEventCollection()
-	 * @generated
-	 */
-	int EVENT_COLLECTION = 9;
-
-	/**
-	 * The feature id for the '<em><b>Event Token</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_COLLECTION__EVENT_TOKEN = 0;
-
-	/**
-	 * The number of structural features of the '<em>Event Collection</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_COLLECTION_FEATURE_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintSpecificationImpl <em>Time Constraint Specification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -542,7 +550,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimeConstraintSpecification()
 	 * @generated
 	 */
-	int TIME_CONSTRAINT_SPECIFICATION = 10;
+	int TIME_CONSTRAINT_SPECIFICATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -597,7 +605,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimeConstraint()
 	 * @generated
 	 */
-	int TIME_CONSTRAINT = 11;
+	int TIME_CONSTRAINT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -634,7 +642,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getNumericCompareOperator()
 	 * @generated
 	 */
-	int NUMERIC_COMPARE_OPERATOR = 12;
+	int NUMERIC_COMPARE_OPERATOR = 11;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintType <em>Time Constraint Type</em>}' enum.
@@ -644,7 +652,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getTimeConstraintType()
 	 * @generated
 	 */
-	int TIME_CONSTRAINT_TYPE = 13;
+	int TIME_CONSTRAINT_TYPE = 12;
 
 
 	/**
@@ -711,6 +719,17 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getState_TimeConstraints();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getLastProcessedEvent <em>Last Processed Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Last Processed Event</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.State#getLastProcessedEvent()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_LastProcessedEvent();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.Transition <em>Transition</em>}'.
@@ -903,36 +922,15 @@ public interface InternalsmPackage extends EPackage {
 	EReference getEventToken_CurrentState();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getEventCollection <em>Event Collection</em>}'.
+	 * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getRecordedEvents <em>Recorded Events</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Event Collection</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getEventCollection()
+	 * @return the meta object for the reference list '<em>Recorded Events</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken#getRecordedEvents()
 	 * @see #getEventToken()
 	 * @generated
 	 */
-	EReference getEventToken_EventCollection();
-
-	/**
-	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection <em>Event Collection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Event Collection</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection
-	 * @generated
-	 */
-	EClass getEventCollection();
-
-	/**
-	 * Returns the meta object for the container reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getEventToken <em>Event Token</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Event Token</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection#getEventToken()
-	 * @see #getEventCollection()
-	 * @generated
-	 */
-	EReference getEventCollection_EventToken();
+	EReference getEventToken_RecordedEvents();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification <em>Time Constraint Specification</em>}'.
@@ -1113,6 +1111,14 @@ public interface InternalsmPackage extends EPackage {
 		EReference STATE__TIME_CONSTRAINTS = eINSTANCE.getState_TimeConstraints();
 
 		/**
+		 * The meta object literal for the '<em><b>Last Processed Event</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__LAST_PROCESSED_EVENT = eINSTANCE.getState_LastProcessedEvent();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TransitionImpl <em>Transition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1273,30 +1279,12 @@ public interface InternalsmPackage extends EPackage {
 		EReference EVENT_TOKEN__CURRENT_STATE = eINSTANCE.getEventToken_CurrentState();
 
 		/**
-		 * The meta object literal for the '<em><b>Event Collection</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Recorded Events</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EVENT_TOKEN__EVENT_COLLECTION = eINSTANCE.getEventToken_EventCollection();
-
-		/**
-		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventCollectionImpl <em>Event Collection</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventCollectionImpl
-		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getEventCollection()
-		 * @generated
-		 */
-		EClass EVENT_COLLECTION = eINSTANCE.getEventCollection();
-
-		/**
-		 * The meta object literal for the '<em><b>Event Token</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EVENT_COLLECTION__EVENT_TOKEN = eINSTANCE.getEventCollection_EventToken();
+		EReference EVENT_TOKEN__RECORDED_EVENTS = eINSTANCE.getEventToken_RecordedEvents();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintSpecificationImpl <em>Time Constraint Specification</em>}' class.

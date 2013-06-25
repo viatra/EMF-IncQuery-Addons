@@ -16,6 +16,7 @@
         eType="#//EventToken" eOpposite="#//EventToken/currentState"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeConstraints" upperBound="-1"
         eType="#//TimeConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lastProcessedEvent" eType="ecore:EClass CEPMeta.ecore#//Event"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="preState" lowerBound="1"
@@ -49,16 +50,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="EventToken">
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentState" eType="#//State"
         eOpposite="#//State/eventTokens"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eventCollection" eType="#//EventCollection"
-        containment="true" eOpposite="#//EventCollection/eventToken"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EventCollection" abstract="true">
-    <eOperations name="getRecordedEvents" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-    <eOperations name="addEvent" lowerBound="1">
-      <eParameters name="event" eType="ecore:EClass CEPMeta.ecore#//Event"/>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eventToken" lowerBound="1"
-        eType="#//EventToken" eOpposite="#//EventToken/eventCollection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recordedEvents" upperBound="-1"
+        eType="ecore:EClass CEPMeta.ecore#//Event"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeConstraintSpecification">
     <eOperations name="handleTimeConstraint"/>

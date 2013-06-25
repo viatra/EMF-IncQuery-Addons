@@ -59,6 +59,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//State/label"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/eventTokens"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/timeConstraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/lastProcessedEvent"/>
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//Transition">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference InternalSM.ecore#//Transition/preState"/>
@@ -82,14 +83,7 @@
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//EventToken">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//EventToken/currentState"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//EventToken/eventCollection"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="InternalSM.ecore#//EventCollection">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference InternalSM.ecore#//EventCollection/eventToken"/>
-      <genOperations ecoreOperation="InternalSM.ecore#//EventCollection/getRecordedEvents"/>
-      <genOperations ecoreOperation="InternalSM.ecore#//EventCollection/addEvent">
-        <genParameters ecoreParameter="InternalSM.ecore#//EventCollection/addEvent/event"/>
-      </genOperations>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InternalSM.ecore#//EventToken/recordedEvents"/>
     </genClasses>
     <genClasses ecoreClass="InternalSM.ecore#//TimeConstraintSpecification">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InternalSM.ecore#//TimeConstraintSpecification/id"/>

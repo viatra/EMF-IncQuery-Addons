@@ -1,6 +1,5 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.strategy;
 
-import hu.bme.mit.incquery.cep.metamodels.custom.impl.EventCollectionWithMultimap;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
@@ -33,7 +32,8 @@ public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 		if(!handleTimeConstraints(cvToMove, nextState)){
 			return;
 		}
-		cvToMove.getEventCollection().addEvent(model.getLatestEvent());
+		cvToMove.getRecordedEvents().add(model.getLatestEvent());
+		preState.setLastProcessedEvent(model.getLatestEvent());
 		cvToMove.setCurrentState(nextState);
 	}
 	
@@ -45,7 +45,6 @@ public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 					if (s.getEventTokens().isEmpty()) {
 						EventToken cv = SM_FACTORY.createEventToken();
 						cv.setCurrentState(s);
-						cv.setEventCollection(new EventCollectionWithMultimap());
 						model.getEventTokens().add(cv);
 					}
 					break;

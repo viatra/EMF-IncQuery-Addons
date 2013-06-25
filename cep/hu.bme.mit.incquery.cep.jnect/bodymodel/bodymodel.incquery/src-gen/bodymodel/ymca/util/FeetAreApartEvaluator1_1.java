@@ -15,7 +15,7 @@ public class FeetAreApartEvaluator1_1 implements IMatchChecker {
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
-  private Boolean evaluateXExpressionGenerated(final Float LFY, final Float LFX, final Float RFZ, final Float RFY, final Float RFX, final Float LFZ) {
+  private Boolean evaluateXExpressionGenerated(final Float LFY, final Float LFX, final Float LFZ, final Float RFZ, final Float RFX, final Float RFY) {
     MovingAverageCalculator _calculator = MovingAverageCalculator.getCalculator("LFX");
     Float _LFX = LFX;
     MovingAverageCalculator _addValue = _calculator.addValue((_LFX).floatValue());
@@ -55,14 +55,14 @@ public class FeetAreApartEvaluator1_1 implements IMatchChecker {
     java.lang.Float LFY = (java.lang.Float) tuple.get(LFYPosition);
     int LFXPosition = tupleNameMap.get("LFX");
     java.lang.Float LFX = (java.lang.Float) tuple.get(LFXPosition);
-    int RFZPosition = tupleNameMap.get("RFZ");
-    java.lang.Float RFZ = (java.lang.Float) tuple.get(RFZPosition);
-    int RFYPosition = tupleNameMap.get("RFY");
-    java.lang.Float RFY = (java.lang.Float) tuple.get(RFYPosition);
-    int RFXPosition = tupleNameMap.get("RFX");
-    java.lang.Float RFX = (java.lang.Float) tuple.get(RFXPosition);
     int LFZPosition = tupleNameMap.get("LFZ");
     java.lang.Float LFZ = (java.lang.Float) tuple.get(LFZPosition);
-    return evaluateXExpressionGenerated(LFY, LFX, RFZ, RFY, RFX, LFZ);
+    int RFZPosition = tupleNameMap.get("RFZ");
+    java.lang.Float RFZ = (java.lang.Float) tuple.get(RFZPosition);
+    int RFXPosition = tupleNameMap.get("RFX");
+    java.lang.Float RFX = (java.lang.Float) tuple.get(RFXPosition);
+    int RFYPosition = tupleNameMap.get("RFY");
+    java.lang.Float RFY = (java.lang.Float) tuple.get(RFYPosition);
+    return evaluateXExpressionGenerated(LFY, LFX, LFZ, RFZ, RFX, RFY);
   }
 }

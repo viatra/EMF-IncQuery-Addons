@@ -24,14 +24,14 @@ public class OrderedEventsMultipleTimes {
 	IEventSource source;
 	ABC_Pattern abcPattern;
 	EventModelManager manager;
-	
+
 	@Before
 	public void setUp() {
 		realm = new DefaultRealm();
 		eventQueue = EventQueue.getInstance();
 		abcPattern = new ABC_Pattern();
 	}
-	
+
 	@After
 	public void tearDown() {
 		realm.dispose();
@@ -39,18 +39,18 @@ public class OrderedEventsMultipleTimes {
 		abcPattern = null;
 		manager = null;
 	}
-	
+
 	@Test
 	public void test() throws InterruptedException, IncQueryException {
-		
+
 		List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
 		eventPatterns.add(abcPattern);
-		
+
 		manager = new EventModelManager(Strategy.getDefault());
 		manager.assignEventPatterns(eventPatterns);
-		
+
 		System.err.println("DIAG: Test starting.\n");
-		
+
 		eventQueue.push(new A(source));
 		eventQueue.push(new B(source));
 		eventQueue.push(new A(source));
@@ -58,7 +58,9 @@ public class OrderedEventsMultipleTimes {
 		eventQueue.push(new A(source));
 		eventQueue.push(new B(source));
 		eventQueue.push(new C(source));
-		
+		eventQueue.push(new C(source));
+		eventQueue.push(new C(source));
+
 		System.err.println("\nDIAG: Test finished.");
 	}
 }

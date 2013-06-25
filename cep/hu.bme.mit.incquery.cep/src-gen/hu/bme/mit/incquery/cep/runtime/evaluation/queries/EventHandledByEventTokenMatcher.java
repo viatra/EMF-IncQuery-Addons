@@ -1,6 +1,6 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.queries;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection;
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EventHandledByEventTokenMatch;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.EventHandledByEventTokenQuerySpecification;
@@ -27,8 +27,8 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern eventHandledByEventToken(et, e) {
- * 	EventToken.eventCollection(et, e);
+ * pattern eventHandledByEventToken(et : EventToken, e : Event) {
+ * 	EventToken.recordedEvents(et, e);
  * }
  * </pre></code>
  * 
@@ -98,7 +98,7 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
    * @return matches represented as a EventHandledByEventTokenMatch object.
    * 
    */
-  public Collection<EventHandledByEventTokenMatch> getAllMatches(final EventToken pEt, final EventCollection pE) {
+  public Collection<EventHandledByEventTokenMatch> getAllMatches(final EventToken pEt, final Event pE) {
     return rawGetAllMatches(new Object[]{pEt, pE});
   }
   
@@ -110,7 +110,7 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
    * @return a match represented as a EventHandledByEventTokenMatch object, or null if no match is found.
    * 
    */
-  public EventHandledByEventTokenMatch getOneArbitraryMatch(final EventToken pEt, final EventCollection pE) {
+  public EventHandledByEventTokenMatch getOneArbitraryMatch(final EventToken pEt, final Event pE) {
     return rawGetOneArbitraryMatch(new Object[]{pEt, pE});
   }
   
@@ -122,7 +122,7 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final EventToken pEt, final EventCollection pE) {
+  public boolean hasMatch(final EventToken pEt, final Event pE) {
     return rawHasMatch(new Object[]{pEt, pE});
   }
   
@@ -133,7 +133,7 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final EventToken pEt, final EventCollection pE) {
+  public int countMatches(final EventToken pEt, final Event pE) {
     return rawCountMatches(new Object[]{pEt, pE});
   }
   
@@ -144,7 +144,7 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final EventToken pEt, final EventCollection pE, final IMatchProcessor<? super EventHandledByEventTokenMatch> processor) {
+  public void forEachMatch(final EventToken pEt, final Event pE, final IMatchProcessor<? super EventHandledByEventTokenMatch> processor) {
     rawForEachMatch(new Object[]{pEt, pE}, processor);
   }
   
@@ -157,7 +157,7 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final EventToken pEt, final EventCollection pE, final IMatchProcessor<? super EventHandledByEventTokenMatch> processor) {
+  public boolean forOneArbitraryMatch(final EventToken pEt, final Event pE, final IMatchProcessor<? super EventHandledByEventTokenMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pEt, pE}, processor);
   }
   
@@ -175,7 +175,7 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
    * 
    */
   @Deprecated
-  public DeltaMonitor<EventHandledByEventTokenMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EventToken pEt, final EventCollection pE) {
+  public DeltaMonitor<EventHandledByEventTokenMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EventToken pEt, final Event pE) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pEt, pE});
   }
   
@@ -188,7 +188,7 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
    * @return the (partial) match object.
    * 
    */
-  public EventHandledByEventTokenMatch newMatch(final EventToken pEt, final EventCollection pE) {
+  public EventHandledByEventTokenMatch newMatch(final EventToken pEt, final Event pE) {
     return new EventHandledByEventTokenMatch.Immutable(pEt, pE);
     
   }
@@ -227,7 +227,7 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EventToken> getAllValuesOfet(final EventCollection pE) {
+  public Set<EventToken> getAllValuesOfet(final Event pE) {
     return rawAccumulateAllValuesOfet(new Object[]{null, pE});
   }
   
@@ -236,8 +236,8 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected Set<EventCollection> rawAccumulateAllValuesOfe(final Object[] parameters) {
-    Set<EventCollection> results = new HashSet<EventCollection>();
+  protected Set<Event> rawAccumulateAllValuesOfe(final Object[] parameters) {
+    Set<Event> results = new HashSet<Event>();
     rawAccumulateAllValues(POSITION_E, parameters, results);
     return results;
   }
@@ -247,7 +247,7 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EventCollection> getAllValuesOfe() {
+  public Set<Event> getAllValuesOfe() {
     return rawAccumulateAllValuesOfe(emptyArray());
   }
   
@@ -256,7 +256,7 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EventCollection> getAllValuesOfe(final EventHandledByEventTokenMatch partialMatch) {
+  public Set<Event> getAllValuesOfe(final EventHandledByEventTokenMatch partialMatch) {
     return rawAccumulateAllValuesOfe(partialMatch.toArray());
   }
   
@@ -265,14 +265,14 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EventCollection> getAllValuesOfe(final EventToken pEt) {
+  public Set<Event> getAllValuesOfe(final EventToken pEt) {
     return rawAccumulateAllValuesOfe(new Object[]{pEt, null});
   }
   
   @Override
   protected EventHandledByEventTokenMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EventHandledByEventTokenMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) t.get(POSITION_ET), (hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection) t.get(POSITION_E));	
+    	return new EventHandledByEventTokenMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) t.get(POSITION_ET), (hu.bme.mit.incquery.cep.metamodels.cep.Event) t.get(POSITION_E));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -282,7 +282,7 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
   @Override
   protected EventHandledByEventTokenMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EventHandledByEventTokenMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET], (hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection) match[POSITION_E]);
+    	return new EventHandledByEventTokenMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET], (hu.bme.mit.incquery.cep.metamodels.cep.Event) match[POSITION_E]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -292,7 +292,7 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
   @Override
   protected EventHandledByEventTokenMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new EventHandledByEventTokenMatch.Mutable((hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET], (hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection) match[POSITION_E]);
+    	return new EventHandledByEventTokenMatch.Mutable((hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET], (hu.bme.mit.incquery.cep.metamodels.cep.Event) match[POSITION_E]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

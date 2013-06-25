@@ -2,6 +2,8 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -19,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getLabel <em>Label</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getEventTokens <em>Event Tokens</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getTimeConstraints <em>Time Constraints</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getLastProcessedEvent <em>Last Processed Event</em>}</li>
  * </ul>
  * </p>
  *
@@ -123,5 +126,31 @@ public interface State extends EObject {
 	 * @generated
 	 */
 	EList<TimeConstraint> getTimeConstraints();
+
+	/**
+	 * Returns the value of the '<em><b>Last Processed Event</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Last Processed Event</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Last Processed Event</em>' reference.
+	 * @see #setLastProcessedEvent(Event)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getState_LastProcessedEvent()
+	 * @model
+	 * @generated
+	 */
+	Event getLastProcessedEvent();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.State#getLastProcessedEvent <em>Last Processed Event</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Last Processed Event</em>' reference.
+	 * @see #getLastProcessedEvent()
+	 * @generated
+	 */
+	void setLastProcessedEvent(Event value);
 
 } // State

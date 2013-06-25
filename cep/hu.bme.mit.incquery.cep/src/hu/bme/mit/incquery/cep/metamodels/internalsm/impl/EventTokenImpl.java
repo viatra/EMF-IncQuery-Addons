@@ -2,19 +2,26 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.EventCollection;
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
+
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +31,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventTokenImpl#getCurrentState <em>Current State</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventTokenImpl#getEventCollection <em>Event Collection</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventTokenImpl#getRecordedEvents <em>Recorded Events</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,14 +49,14 @@ public class EventTokenImpl extends EObjectImpl implements EventToken {
 	protected State currentState;
 
 	/**
-	 * The cached value of the '{@link #getEventCollection() <em>Event Collection</em>}' containment reference.
+	 * The cached value of the '{@link #getRecordedEvents() <em>Recorded Events</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEventCollection()
+	 * @see #getRecordedEvents()
 	 * @generated
 	 * @ordered
 	 */
-	protected EventCollection eventCollection;
+	protected EList<Event> recordedEvents;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,42 +142,11 @@ public class EventTokenImpl extends EObjectImpl implements EventToken {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventCollection getEventCollection() {
-		return eventCollection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetEventCollection(EventCollection newEventCollection, NotificationChain msgs) {
-		EventCollection oldEventCollection = eventCollection;
-		eventCollection = newEventCollection;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION, oldEventCollection, newEventCollection);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<Event> getRecordedEvents() {
+		if (recordedEvents == null) {
+			recordedEvents = new EObjectResolvingEList<Event>(Event.class, this, InternalsmPackage.EVENT_TOKEN__RECORDED_EVENTS);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEventCollection(EventCollection newEventCollection) {
-		if (newEventCollection != eventCollection) {
-			NotificationChain msgs = null;
-			if (eventCollection != null)
-				msgs = ((InternalEObject)eventCollection).eInverseRemove(this, InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN, EventCollection.class, msgs);
-			if (newEventCollection != null)
-				msgs = ((InternalEObject)newEventCollection).eInverseAdd(this, InternalsmPackage.EVENT_COLLECTION__EVENT_TOKEN, EventCollection.class, msgs);
-			msgs = basicSetEventCollection(newEventCollection, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION, newEventCollection, newEventCollection));
+		return recordedEvents;
 	}
 
 	/**
@@ -185,10 +161,6 @@ public class EventTokenImpl extends EObjectImpl implements EventToken {
 				if (currentState != null)
 					msgs = ((InternalEObject)currentState).eInverseRemove(this, InternalsmPackage.STATE__EVENT_TOKENS, State.class, msgs);
 				return basicSetCurrentState((State)otherEnd, msgs);
-			case InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION:
-				if (eventCollection != null)
-					msgs = ((InternalEObject)eventCollection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION, null, msgs);
-				return basicSetEventCollection((EventCollection)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -203,8 +175,6 @@ public class EventTokenImpl extends EObjectImpl implements EventToken {
 		switch (featureID) {
 			case InternalsmPackage.EVENT_TOKEN__CURRENT_STATE:
 				return basicSetCurrentState(null, msgs);
-			case InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION:
-				return basicSetEventCollection(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -220,8 +190,8 @@ public class EventTokenImpl extends EObjectImpl implements EventToken {
 			case InternalsmPackage.EVENT_TOKEN__CURRENT_STATE:
 				if (resolve) return getCurrentState();
 				return basicGetCurrentState();
-			case InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION:
-				return getEventCollection();
+			case InternalsmPackage.EVENT_TOKEN__RECORDED_EVENTS:
+				return getRecordedEvents();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -231,14 +201,16 @@ public class EventTokenImpl extends EObjectImpl implements EventToken {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case InternalsmPackage.EVENT_TOKEN__CURRENT_STATE:
 				setCurrentState((State)newValue);
 				return;
-			case InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION:
-				setEventCollection((EventCollection)newValue);
+			case InternalsmPackage.EVENT_TOKEN__RECORDED_EVENTS:
+				getRecordedEvents().clear();
+				getRecordedEvents().addAll((Collection<? extends Event>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -255,8 +227,8 @@ public class EventTokenImpl extends EObjectImpl implements EventToken {
 			case InternalsmPackage.EVENT_TOKEN__CURRENT_STATE:
 				setCurrentState((State)null);
 				return;
-			case InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION:
-				setEventCollection((EventCollection)null);
+			case InternalsmPackage.EVENT_TOKEN__RECORDED_EVENTS:
+				getRecordedEvents().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -272,8 +244,8 @@ public class EventTokenImpl extends EObjectImpl implements EventToken {
 		switch (featureID) {
 			case InternalsmPackage.EVENT_TOKEN__CURRENT_STATE:
 				return currentState != null;
-			case InternalsmPackage.EVENT_TOKEN__EVENT_COLLECTION:
-				return eventCollection != null;
+			case InternalsmPackage.EVENT_TOKEN__RECORDED_EVENTS:
+				return recordedEvents != null && !recordedEvents.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
