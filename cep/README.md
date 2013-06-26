@@ -34,6 +34,9 @@ Future work:
  * make it possible to define own measurement types (percentage, scalar and literal won't be satisfactory in the practice)
  * also: find a proper name for this feature
 * extend the DFA formalism to a PDA by utilizing the built-in memory of EventTokens
+* refactor the examples plugin in a more lucid way
+ * package/class naming, comments, etc
+ * make sure every use case is properly presented
 * define the language for modeling event patterns over EMF models
  * reuse the concepts of event-driven model transformations and the pattern language of IncQuery
 * implement the common event processing strategies: chronicle, recent, unrestricted
