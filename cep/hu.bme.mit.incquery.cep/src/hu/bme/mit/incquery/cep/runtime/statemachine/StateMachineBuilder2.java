@@ -19,6 +19,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -26,6 +27,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+
+import org.eclipse.core.runtime.internal.adaptor.PluginParser.Prerequisite;
 
 public class StateMachineBuilder2 {
 
@@ -105,8 +108,8 @@ public class StateMachineBuilder2 {
 		} else
 			assignTimeConstraints(currentState, ep, TimeConstraintType.CHECK);
 	}
-	
-	private TimeConstraint createTimeConstraintForSpec(TimeConstraintSpecification tcs, TimeConstraintType type){
+
+	private TimeConstraint createTimeConstraintForSpec(TimeConstraintSpecification tcs, TimeConstraintType type) {
 		TimeConstraint timeConstraint = SM_FACTORY.createTimeConstraint();
 		timeConstraint.setTimeConstraintSpecification(tcs);
 		timeConstraint.setType(type);
@@ -121,13 +124,13 @@ public class StateMachineBuilder2 {
 				timeConstraintSpecification = SM_FACTORY.createTimeConstraintSpecification();
 				String id = registerWindow2ConstraintSpecMapping(timewindow, timeConstraintSpecification);
 				timeConstraintSpecification.setId(id);
-				timeConstraintSpecification.setExpectedLength(timewindow.getLength());	
+				timeConstraintSpecification.setExpectedLength(timewindow.getLength());
 			}
-			
+
 			if (stateEquippedWithTheGivenTimeconstraintSpec(currentState, timeConstraintSpecification)) {
 				continue;
 			}
-			
+
 			TimeConstraint timeConstraint = createTimeConstraintForSpec(timeConstraintSpecification, constraintType);
 			currentState.getTimeConstraints().add(timeConstraint);
 			continue;
@@ -141,9 +144,10 @@ public class StateMachineBuilder2 {
 		return uuid.toString();
 	}
 
-	private boolean stateEquippedWithTheGivenTimeconstraintSpec(State currentState, TimeConstraintSpecification timeConstraintSpecification) {
+	private boolean stateEquippedWithTheGivenTimeconstraintSpec(State currentState,
+			TimeConstraintSpecification timeConstraintSpecification) {
 		for (TimeConstraint tc : currentState.getTimeConstraints()) {
-			if(tc.getTimeConstraintSpecification() == null) {
+			if (tc.getTimeConstraintSpecification() == null) {
 				continue;
 			}
 			if (tc.getTimeConstraintSpecification().getId().equalsIgnoreCase(timeConstraintSpecification.getId())) {
@@ -186,7 +190,7 @@ public class StateMachineBuilder2 {
 			while (availableAtomicEventPatterns.isEmpty()) {
 				currentState = stepBack(currentState);
 				availableAtomicEventPatterns = getAvailableAtomicEventPatterns(currentState);
-				if (currentState.equals(initState)) {
+				if (currentState.equals(initState) && availableAtomicEventPatterns.isEmpty()) {
 					return;
 				}
 			}
@@ -232,7 +236,7 @@ public class StateMachineBuilder2 {
 			}
 
 			for (AtomicEventPattern e1 : eventsToLookFor) {
-				usedEventPatterns.remove(e1);
+				removeByType(usedEventPatterns, e1);
 			}
 
 			if (usedEventPatterns.isEmpty()) {
@@ -241,6 +245,15 @@ public class StateMachineBuilder2 {
 		}
 
 		return null;
+	}
+	
+	private void removeByType(List<AtomicEventPattern> collection, AtomicEventPattern element){
+		for(AtomicEventPattern ap : collection){
+			if(ap.getType().equalsIgnoreCase(element.getType())){
+				collection.remove(ap);
+				return;
+			}
+		}
 	}
 
 	private List<AtomicEventPattern> getUsedAtomicEventPatterns(State state) {
@@ -259,7 +272,9 @@ public class StateMachineBuilder2 {
 
 		for (AtomicEventPattern ep : flattenedAtomicEventPatterns.keySet()) {
 			if (isAvailable(ep, state)) {
-				events.add(ep);
+				if (getUsedTimes(events, ep) == 0) {
+					events.add(ep);
+				}
 			}
 		}
 		return events;
@@ -271,9 +286,9 @@ public class StateMachineBuilder2 {
 		}
 
 		List<AtomicEventPattern> usedAtomicEventPatterns = getUsedAtomicEventPatterns(state);
-		int usedTimes = Collections.frequency(usedAtomicEventPatterns, atomicEventPattern);
+		int usedTimes = getUsedTimes(usedAtomicEventPatterns, atomicEventPattern);
 
-		int availableTimes = Collections.frequency(flattenedAtomicEventPatterns.keySet(), atomicEventPattern);
+		int availableTimes = getUsedTimes(flattenedAtomicEventPatterns.keySet(), atomicEventPattern);
 
 		if (!(usedTimes < availableTimes)) {
 			return false;
@@ -284,6 +299,21 @@ public class StateMachineBuilder2 {
 		}
 
 		return false;
+	}
+
+	private int getUsedTimes(Collection<AtomicEventPattern> usedAtomicEventPatterns,
+			AtomicEventPattern atomicEventPattern) {
+		if (usedAtomicEventPatterns.isEmpty()) {
+			return 0;
+		}
+
+		int count = 0;
+		for (AtomicEventPattern ap : usedAtomicEventPatterns) {
+			if (ap.getType().equalsIgnoreCase(atomicEventPattern.getType())) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	private boolean isRootPattern(EventPattern pattern) {
@@ -354,7 +384,7 @@ public class StateMachineBuilder2 {
 		}
 
 		for (Transition t : state.getOutTransitions()) {
-			if (t.getGuard().getEventType().equals(atomicEventPattern)) {
+			if (t.getGuard().getEventType().getType().equals(atomicEventPattern.getType())) {
 				return true;
 			}
 		}

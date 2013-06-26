@@ -57,6 +57,12 @@ public class OrderedEventsMultipleTimes {
 		eventQueue.push(new B(source));
 		eventQueue.push(new A(source));
 		eventQueue.push(new B(source));
+		eventQueue.push(new A(source));
+		eventQueue.push(new B(source));
+		eventQueue.push(new A(source));
+		eventQueue.push(new B(source));
+		eventQueue.push(new C(source));
+		eventQueue.push(new C(source));
 		eventQueue.push(new C(source));
 		eventQueue.push(new C(source));
 		eventQueue.push(new C(source));
