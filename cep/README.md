@@ -42,7 +42,10 @@ Future work:
  * define semantics for that
  * implement the required API (the extension point mechanism could work here perfectly)
 
-Known issues
+Known issues:
+* slightly stochastic behavior when multiple tokens are placed on a state before the final one and an appropriate event arrives to pass some tokens forward to the final state
+ * in case of N tokens, the first N-2 are fired properly, the last two, however, are fired together but only one triggers a finished state machine
+
 
 License
 -------
