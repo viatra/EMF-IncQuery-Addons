@@ -19,11 +19,11 @@ The plugin **[hu.bme.mit.incquery.cep.jnect](https://github.com/istvanrath/EMF-I
 Roadmap/TODO
 ------------
 
-Latest enhancement:
+Latest enhancements:
+* duplicate handling fixed on state machine level
 * handling both ordered and unordered cases with time windows
 
 In progress:
-* revisit duplicate handling
 * complete the examples and unit tests
 * elaborate the JNect demo
 
