@@ -28,6 +28,11 @@ In progress:
 * elaborate the JNect demo
 
 Future work:
+* enable defining more compound events, i.e. using measurments (as of CEDL)
+ * e.g. instead of having an IQPattern_Found and an IQPattern_Lost event, define one event containing the Found/Lost parameter
+ * this would require more advanced guard handling on the transitions
+ * make it possible to define own measurement types (percentage, scalar and literal won't be satisfactory in the practice)
+ * also: find a proper name for this feature
 * extend the DFA formalism to a PDA by utilizing the built-in memory of EventTokens
 * define the language for modeling event patterns over EMF models
  * reuse the concepts of event-driven model transformations and the pattern language of IncQuery
@@ -36,6 +41,8 @@ Future work:
 * enable definition of custom execution strategies
  * define semantics for that
  * implement the required API (the extension point mechanism could work here perfectly)
+
+Known issues
 
 License
 -------
