@@ -156,8 +156,8 @@ public class EventModelManager {
 			}
 			
 			lowLevelExecutionSchema = ExecutionSchemas.createIncQueryExecutionSchema(engine, schedulerFactory, rules);
-			//lowLevelExecutionSchema.setConflictResolver(fixedPriorityResolver);
-			lowLevelExecutionSchema.setConflictResolver(lifoConflictResolver);
+			lowLevelExecutionSchema.setConflictResolver(fixedPriorityResolver);
+			//lowLevelExecutionSchema.setConflictResolver(lifoConflictResolver);
 			
 			engine.getLogger().setLevel(Level.OFF);
 			
