@@ -31,6 +31,8 @@ public class LifoConflictResolverTest {
 	@After
 	public void tearDown() {
 		resolver = null;
+		conflictSet = null;
+		activationsToBeInserted = null;
 	}
 
 	@SuppressWarnings("unchecked")
