@@ -28,6 +28,9 @@ In progress:
 * elaborate the JNect demo
 
 Future work:
+* make it possible to enable/disable "noise filtering" (per event pattern)
+ * e.g. for an "AB" pattern defined and an "AxxxxBxxx" stream observed, the noise-filtered alternative will trigger a recognized event, while the non-filtered will not
+ * as a typical use-case for noise-filtering, consider the Jnect Robot Demo 
 * enable defining more compound events, i.e. using measurments (as of CEDL)
  * e.g. instead of having an IQPattern_Found and an IQPattern_Lost event, define one event containing the Found/Lost parameter
  * this would require more advanced guard handling on the transitions
