@@ -60,7 +60,7 @@ public class LifoConflictResolver extends ReconfigurableConflictResolver<LifoCon
 		@Override
 		public boolean addActivation(Activation<?> activation) {
 			checkArgument(activation != null, "Activation cannot be null!");
-			if(activations.peek().equals(activation)) {
+			if(activation.equals(activations.peek())) {
 			    return false; // no change required
 			} else {
 			    // activation may already be in the queue, but never more than once (see JavaDoc of method)

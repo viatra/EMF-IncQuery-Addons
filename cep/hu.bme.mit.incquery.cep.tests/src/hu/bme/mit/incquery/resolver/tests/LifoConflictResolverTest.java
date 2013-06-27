@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.resolver.tests;
 
 import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import hu.bme.mit.incquery.resolver.LifoConflictResolver;
 
@@ -62,6 +63,7 @@ public class LifoConflictResolverTest {
 		while (conflictSet.getConflictingActivations().size() > 0) {
 			List<Activation<?>> nextActivations = Lists.newArrayList(conflictSet.getNextActivations());
 			assertEquals(1, nextActivations.size());
+			assertTrue(conflictSet.removeActivation(nextActivations.get(0)));
 			assertEquals(activationsToBeInserted.remove(0), nextActivations.get(0));
 		}
 	}
@@ -72,6 +74,7 @@ public class LifoConflictResolverTest {
 
 		while (conflictSet.getConflictingActivations().size() > 0) {
 			Activation<?> nextActivation = conflictSet.getNextActivation();
+			assertTrue(conflictSet.removeActivation(nextActivation));
 			assertEquals(activationsToBeInserted.remove(0), nextActivation);
 		}
 	}
