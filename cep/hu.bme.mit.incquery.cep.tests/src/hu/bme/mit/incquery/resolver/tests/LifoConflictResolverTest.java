@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.resolver.tests;
 
 import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import hu.bme.mit.incquery.resolver.LifoConflictResolver;
@@ -11,6 +12,7 @@ import java.util.List;
 import org.eclipse.incquery.runtime.evm.api.Activation;
 import org.eclipse.incquery.runtime.evm.api.ConflictSet;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -90,5 +92,21 @@ public class LifoConflictResolverTest {
 		conflictSet.addActivation(newActivationMockToBeAdded);
 		Activation<?> nextRetrievedActivation = conflictSet.getNextActivation();
 		assertEquals(newActivationMockToBeAdded, nextRetrievedActivation);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testNullActivationRetrieval() {
+		while(true){
+			conflictSet.removeActivation(conflictSet.getNextActivation()); //throws IAE if there's no next activation
+		}
+	}
+	
+	@Test
+	public void testEmptyList() {
+		while(conflictSet.getNextActivation()!=null){
+			conflictSet.removeActivation(conflictSet.getNextActivation());
+		}
+		
+		assertNull(conflictSet.getNextActivation());
 	}
 }
