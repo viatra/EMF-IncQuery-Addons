@@ -39,10 +39,7 @@ public class LifoConflictResolver extends ReconfigurableConflictResolver<LifoCon
 
 		@Override
 		public Activation<?> getNextActivation() {
-			if (!activations.isEmpty()) {
-				return activations.pop();
-			}
-			return null;
+			return activations.peek();
 		}
 
 		@Override
@@ -63,11 +60,14 @@ public class LifoConflictResolver extends ReconfigurableConflictResolver<LifoCon
 		@Override
 		public boolean addActivation(Activation<?> activation) {
 			checkArgument(activation != null, "Activation cannot be null!");
-			activations.push(activation);
-			if (activations.peek().equals(activation)) {
-				return true;
+			if(activations.peek().equals(activation)) {
+			    return false; // no change required
+			} else {
+			    // activation may already be in the queue, but never more than once (see JavaDoc of method)
+			    activations.remove(activation);
+			    activations.push(activation);
+			    return true; // if the first activation changes, we consider it a change in the set
 			}
-			return false;
 		}
 
 		@Override

@@ -28,7 +28,8 @@ public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 		InternalExecutionModel model = eventModelManager.getModel();
 		State nextState = t.getPostState();
 		
-		EventToken cvToMove = t.getPreState().getEventTokens().get(0);
+		// FIXME how do you know it was the first event token that was fired?
+        EventToken cvToMove = t.getPreState().getEventTokens().get(0);
 		if(!handleTimeConstraints(cvToMove, nextState)){
 			return;
 		}

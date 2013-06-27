@@ -23,10 +23,10 @@ import java.util.Set;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.evm.api.Job;
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification;
+import org.eclipse.incquery.runtime.evm.specific.Lifecycles;
 import org.eclipse.incquery.runtime.evm.specific.Rules;
 import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum;
 import org.eclipse.incquery.runtime.evm.specific.job.StatelessJob;
-import org.eclipse.incquery.runtime.evm.specific.lifecycle.DefaultActivationLifeCycle;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 public class ModelHandlerRules {
@@ -59,6 +59,7 @@ public class ModelHandlerRules {
 				// log(sm);
 
 				FinalState finalState = eventModelManager.getFinalStatesForStatemachines().get(sm);
+				
 				finalState.getEventTokens().remove(0);
 				
 				// forward the observed pattern in a DTO
@@ -73,7 +74,7 @@ public class ModelHandlerRules {
 		jobs.add(new StatelessJob<FinishedStateMachineMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
 		RuleSpecification<FinishedStateMachineMatch> spec = Rules.newSimpleMatcherRuleSpecification(
-				FinishedStateMachineMatcher.querySpecification(), DefaultActivationLifeCycle.DEFAULT, jobs);
+				FinishedStateMachineMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
 
 		return spec;
 	}
@@ -104,6 +105,7 @@ public class ModelHandlerRules {
 			public void process(EnabledTransitionMatch match) {
 				Transition t = match.getT();
 				// log(t);
+				EventToken et = match.getEt(); // FIXME you need to know which eventToken is fired
 				eventModelManager.getStrategy().fireTransition(t);
 			}
 		};
@@ -112,7 +114,7 @@ public class ModelHandlerRules {
 		jobs.add(new StatelessJob<EnabledTransitionMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
 		RuleSpecification<EnabledTransitionMatch> spec = Rules.newSimpleMatcherRuleSpecification(
-				EnabledTransitionMatcher.querySpecification(), DefaultActivationLifeCycle.DEFAULT, jobs);
+				EnabledTransitionMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
 
 		return spec;
 	}
@@ -146,7 +148,7 @@ public class ModelHandlerRules {
 		jobs.add(new StatelessJob<TokenInTrapStateMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
 		RuleSpecification<TokenInTrapStateMatch> spec = Rules.newSimpleMatcherRuleSpecification(
-				TokenInTrapStateMatcher.querySpecification(), DefaultActivationLifeCycle.DEFAULT, jobs);
+				TokenInTrapStateMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
 
 		return spec;
 	}
