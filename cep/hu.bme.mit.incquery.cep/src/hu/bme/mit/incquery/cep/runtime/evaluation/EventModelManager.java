@@ -96,7 +96,7 @@ public class EventModelManager {
 				Object newValue = notification.getNewValue();
 				if (newValue instanceof Event) {
 					Event event = (Event) newValue;
-					System.err.println("DIAG: Event " + event.getClass().getName() + " captured...");
+					System.out.println("DIAG: Event " + event.getClass().getName() + " captured...");
 					refreshModel(event);
 				}
 			}

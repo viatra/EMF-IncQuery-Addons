@@ -1,5 +1,7 @@
 package hu.bme.mit.incquery.cep.api;
 
+import java.util.Calendar;
+
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
 
@@ -15,6 +17,11 @@ public abstract class ViatraCepAdapter {
 	
 	public abstract void registerAdapter();
 
+	protected long getCurrentTimeStamp() {
+		Calendar c = Calendar.getInstance();
+		return c.getTimeInMillis();
+	}
+	
 	public EventModelManager getEventModelManager() {
 		return eventModelManager;
 	}

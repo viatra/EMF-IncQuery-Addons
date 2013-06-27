@@ -8,6 +8,7 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
 import hu.bme.mit.incquery.cep.specific.evm.CepEventType;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.eclipse.core.databinding.observable.set.IObservableSet;
@@ -29,11 +30,11 @@ import org.jnect.demo.incquery.viatra.cep.patterns.FS_FE_Pattern;
  * @author idavid
  * 
  */
-public class RobotCepAdapter extends ViatraCepAdapter {
+public class RobotCepAdapter_new extends ViatraCepAdapter {
 	IEventSource source;
 	List<IncQueryMatcher<? extends IPatternMatch>> matchers;
 
-	public RobotCepAdapter(List<IncQueryMatcher<? extends IPatternMatch>> matchers) {
+	public RobotCepAdapter_new(List<IncQueryMatcher<? extends IPatternMatch>> matchers) {
 		new IncQueryHeadlessRealm();
 		List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
 		eventPatterns.add(new FS_FE_Pattern());
@@ -51,21 +52,56 @@ public class RobotCepAdapter extends ViatraCepAdapter {
 		for (IncQueryMatcher<? extends IPatternMatch> matcher : matchers) {
 			IObservableSet os = IncQueryObservables.observeMatchesAsSet(matcher);
 			os.addSetChangeListener(new ISetChangeListener() {
+
+				long lastSendTimestamp = Calendar.getInstance().getTimeInMillis();
+				List<IPatternMatch> buffer = new ArrayList<IPatternMatch>();
+
 				@Override
 				public void handleSetChange(SetChangeEvent event) {
 					for (Object _o : event.diff.getAdditions()) {
 						IPatternMatch pm = (IPatternMatch) _o;
 						Logger.log("ROBOTCEPADAPTER: Event " + pm.patternName() + " found.");
-						sendEvent(pm.patternName(), CepEventType.APPEARED);
+						if (!containsPatternMatch(buffer, pm)) {
+							buffer.add(pm);
+						}
+						if (Calendar.getInstance().getTimeInMillis() - lastSendTimestamp < 500) {
+							sendEvent(pm.patternName(), CepEventType.APPEARED);
+							buffer.clear();
+							lastSendTimestamp = Calendar.getInstance().getTimeInMillis();
+							Logger.log("ROBOTCEPADAPTER: Events sent");
+						}
+
 					}
 					for (Object _o : event.diff.getRemovals()) {
 						IPatternMatch pm = (IPatternMatch) _o;
 						Logger.log("ROBOTCEPADAPTER: Event " + pm.patternName() + " lost.");
-						sendEvent(pm.patternName(), CepEventType.DISAPPEARED);
+						// sendEvent(pm.patternName(),
+						// CepEventType.DISAPPEARED);
+						if (!containsPatternMatch(buffer, pm)) {
+							buffer.add(pm);
+						}
+						if (Calendar.getInstance().getTimeInMillis() - lastSendTimestamp < 500) {
+							sendEvent(pm.patternName(), CepEventType.APPEARED);
+							buffer.clear();
+							lastSendTimestamp = Calendar.getInstance().getTimeInMillis();
+							Logger.log("ROBOTCEPADAPTER: Events sent");
+						}
 					}
 				}
 			});
 		}
+	}
+
+	private boolean containsPatternMatch(List<IPatternMatch> matches, IPatternMatch match) {
+		if (matches.isEmpty()) {
+			return true;
+		}
+		for (IPatternMatch m : matches) {
+			if (m.patternName().equalsIgnoreCase(m.patternName())) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private void sendEvent(String iqPatternName, CepEventType t) {
