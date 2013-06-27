@@ -12,14 +12,13 @@ import java.util.Set;
 import org.eclipse.incquery.runtime.evm.api.Activation;
 import org.eclipse.incquery.runtime.evm.api.ConflictResolver;
 import org.eclipse.incquery.runtime.evm.api.ConflictSet;
-import org.eclipse.incquery.runtime.evm.specific.resolver.ReconfigurableConflictResolver;
 
 import com.google.common.collect.Sets;
 
-public class LifoConflictResolver extends ReconfigurableConflictResolver<LifoConflictSet> {
-	
+public class LifoConflictResolver implements ConflictResolver<LifoConflictSet> {
+
 	@Override
-	protected LifoConflictSet createReconfigurableConflictSet() {
+	public LifoConflictSet createConflictSet() {
 		return new LifoConflictSet(this);
 	}
 
@@ -60,13 +59,15 @@ public class LifoConflictResolver extends ReconfigurableConflictResolver<LifoCon
 		@Override
 		public boolean addActivation(Activation<?> activation) {
 			checkArgument(activation != null, "Activation cannot be null!");
-			if(activation.equals(activations.peek())) {
-			    return false; // no change required
+			if (activation.equals(activations.peek())) {
+				return false; // no change required
 			} else {
-			    // activation may already be in the queue, but never more than once (see JavaDoc of method)
-			    activations.remove(activation);
-			    activations.push(activation);
-			    return true; // if the first activation changes, we consider it a change in the set
+				// activation may already be in the queue, but never more than
+				// once (see JavaDoc of method)
+				activations.remove(activation);
+				activations.push(activation);
+				return true; // if the first activation changes, we consider it
+								// a change in the set
 			}
 		}
 
