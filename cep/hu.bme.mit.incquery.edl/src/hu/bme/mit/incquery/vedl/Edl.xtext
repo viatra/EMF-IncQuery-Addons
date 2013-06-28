@@ -1,0 +1,162 @@
+grammar hu.bme.mit.incquery.vedl.Edl with org.eclipse.xtext.common.Terminals 
+
+generate edl "http://www.bme.hu/mit/incquery/vedl/Edl"
+
+import "http://www.bme.hu/mit/incquery/srct/Srct" as srct
+
+PackageDeclaration:
+	'package' name = QualifiedName
+	usages+=Usage*
+	model = Model
+;
+
+DOUBLE:
+	INT('.'INT)?
+;
+
+QualifiedName:
+	ID ('.' ID)*
+;
+
+QualifiedNameWithWildcard:
+  QualifiedName'.*'?
+;
+
+Usage:
+	IQUsage | EventSourceUsage
+;
+
+IQUsage:
+	'uses-incquery-patterns' importedNamespace = QualifiedNameWithWildcard
+;
+
+EventSourceUsage:
+	'uses-eventsources' importedNamespace = QualifiedNameWithWildcard
+;
+ 
+
+
+Model hidden(WS, ML_COMMENT, SL_COMMENT):
+	annotations+=Annotations*
+	'EventModel' name = ID '{'
+		events+=Event*
+	'}'
+;
+
+Event:
+	AbstractAtomicEvent | ComplexEvent
+;
+
+AbstractAtomicEvent:
+	AtomicEvent | IQPatternEvent
+;
+
+AtomicEvent:
+	annotations+=Annotations*
+	'AtomicEvent' name=ID '()''{'
+		'source'':' source = [srct::Source]
+		'id'':' id = STRING
+		'parameterFilters''{'
+			parameterFilters += ParameterFilter+
+		'}'
+	'}'
+;
+
+IQPatternEvent:
+	'IQPatternEvent' name=ID '()''{'
+		'IQPatternRef'':' iqpattern = IQPattern
+		'ChangeType'':' changeType = IQPatternChangeType
+	'}'
+;
+
+ComplexEvent:
+	annotations+=Annotations*
+	'ComplexEvent' name=ID paramlist=CEParamlist'{'
+		
+	'}'
+;
+
+CEParamlist: {CEParamlist}
+	'('params+=ParamWithType*')'
+;
+
+ParamWithType:
+	name = ID ':' type=[AbstractAtomicEvent]
+;
+
+ParameterFilter:
+	attributeName = ID paramFilterRule = ParameterFilterRule
+;
+
+enum IQPatternChangeType:
+	FOUND | LOST
+;
+
+IQPattern:
+	name = ID
+;
+
+Annotations:
+	ContextAnnotation | SamplingAnnotation | PriorityAnnotation
+;
+
+ContextAnnotation:
+	'@Context''('context=Context')'
+;
+
+enum Context:
+	Chronicle | Recent | Unrestricted
+;
+
+SamplingAnnotation:
+	'@SamplingTime''('sampling=INT')'
+;
+
+PriorityAnnotation:
+	'@Priority''('priority=INT')'
+;
+
+ParameterFilterRule:
+	RangeFilter | NumericFilter | LiteralFilter
+;
+
+RangeFilter:
+	(neg=NegationOpartor)? "in" range = Range
+;
+
+Range:
+	OpenOpen | OpenClosed | ClosedClosed | ClosedOpen
+;
+
+OpenOpen:
+	'('lowerBound=DOUBLE','upperBound=DOUBLE')'
+;
+OpenClosed:
+	'('lowerBound=DOUBLE','upperBound=DOUBLE']'
+;
+ClosedClosed:
+	'['lowerBound=DOUBLE','upperBound=DOUBLE')'
+;
+ClosedOpen:
+	'['lowerBound=DOUBLE','upperBound=DOUBLE']'
+;
+
+NumericFilter:
+	operator=NumericOperator value = DOUBLE	
+;
+
+NumericOperator:
+	'<' | '=<' | '==' | '!=' | '>=' | '>'
+;
+
+LiteralFilter:
+	(neg=NegationOpartor)? operator=LiteralOperator value = STRING
+;
+
+LiteralOperator:
+	'contains' | 'startsWith' | 'endsWith'
+;
+
+NegationOpartor:
+	'not'
+;

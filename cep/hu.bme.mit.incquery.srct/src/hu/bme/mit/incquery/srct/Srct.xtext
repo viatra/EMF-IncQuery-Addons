@@ -1,0 +1,27 @@
+grammar hu.bme.mit.incquery.srct.Srct with org.eclipse.xtext.common.Terminals
+
+generate srct "http://www.bme.hu/mit/incquery/srct/Srct"
+
+PackageDeclaration:
+	'package' name = QualifiedName
+	sourceModel = SourceModel
+;
+
+QualifiedName:
+	ID ('.' ID)*
+;
+
+SourceModel:
+	{SourceModel}
+	sources += Source*
+;
+
+Source:
+	'source' name=ID '{'
+		('register' adapter+=Adapter)+
+	'}'
+;
+
+Adapter:
+	name=ID
+;
