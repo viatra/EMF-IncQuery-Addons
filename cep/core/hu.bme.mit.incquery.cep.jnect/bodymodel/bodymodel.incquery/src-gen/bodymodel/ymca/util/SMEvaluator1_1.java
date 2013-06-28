@@ -13,7 +13,7 @@ public class SMEvaluator1_1 implements IMatchChecker {
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
-  private Boolean evaluateXExpressionGenerated(final Float RSy, final Float RHy) {
+  private Boolean evaluateXExpressionGenerated(final Float RHy, final Float RSy) {
     MovingAverageCalculator _calculator = MovingAverageCalculator.getCalculator("RSY");
     Float _RSy = RSy;
     MovingAverageCalculator _addValue = _calculator.addValue((_RSy).floatValue());
@@ -33,10 +33,10 @@ public class SMEvaluator1_1 implements IMatchChecker {
    */
   @Override
   public Boolean evaluateXExpression(final Tuple tuple, final Map<String,Integer> tupleNameMap) {
-    int RSyPosition = tupleNameMap.get("RSy");
-    java.lang.Float RSy = (java.lang.Float) tuple.get(RSyPosition);
     int RHyPosition = tupleNameMap.get("RHy");
     java.lang.Float RHy = (java.lang.Float) tuple.get(RHyPosition);
-    return evaluateXExpressionGenerated(RSy, RHy);
+    int RSyPosition = tupleNameMap.get("RSy");
+    java.lang.Float RSy = (java.lang.Float) tuple.get(RSyPosition);
+    return evaluateXExpressionGenerated(RHy, RSy);
   }
 }

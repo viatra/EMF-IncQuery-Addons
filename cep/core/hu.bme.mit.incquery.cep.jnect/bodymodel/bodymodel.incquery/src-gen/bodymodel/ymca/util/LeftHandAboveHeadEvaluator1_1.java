@@ -12,7 +12,7 @@ public class LeftHandAboveHeadEvaluator1_1 implements IMatchChecker {
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
-  private Boolean evaluateXExpressionGenerated(final Float LHy, final Float Hy) {
+  private Boolean evaluateXExpressionGenerated(final Float Hy, final Float LHy) {
     MovingAverageCalculator _calculator = MovingAverageCalculator.getCalculator("HY");
     Float _Hy = Hy;
     MovingAverageCalculator _addValue = _calculator.addValue((_Hy).floatValue());
@@ -30,10 +30,10 @@ public class LeftHandAboveHeadEvaluator1_1 implements IMatchChecker {
    */
   @Override
   public Boolean evaluateXExpression(final Tuple tuple, final Map<String,Integer> tupleNameMap) {
-    int LHyPosition = tupleNameMap.get("LHy");
-    java.lang.Float LHy = (java.lang.Float) tuple.get(LHyPosition);
     int HyPosition = tupleNameMap.get("Hy");
     java.lang.Float Hy = (java.lang.Float) tuple.get(HyPosition);
-    return evaluateXExpressionGenerated(LHy, Hy);
+    int LHyPosition = tupleNameMap.get("LHy");
+    java.lang.Float LHy = (java.lang.Float) tuple.get(LHyPosition);
+    return evaluateXExpressionGenerated(Hy, LHy);
   }
 }
