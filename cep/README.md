@@ -6,7 +6,8 @@ This add-on aims at providing a CEP layer for the **[VIATRA-EVM](http://www.ecli
 Implementation
 --------------
 
-The implementation is located in plugin **[hu.bme.mit.incquery.cep](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/hu.bme.mit.incquery.cep)** plugin. The appropriate unit tests are located in plugin **[hu.bme.mit.incquery.cep.tests](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/hu.bme.mit.incquery.cep.tests)**.
+The main implementation is located in plugin **[hu.bme.mit.incquery.cep](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/hu.bme.mit.incquery.cep)** plugin. The appropriate unit tests are located in plugin **[hu.bme.mit.incquery.cep.tests](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/hu.bme.mit.incquery.cep.tests)**.
+There are also two DSLs for defining event patterns and event source types: **[hu.bme.mit.incquery.edl](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/hu.bme.mit.incquery.edl)** and **[hu.bme.mit.incquery.srct](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/hu.bme.mit.incquery.srct)** respectively.
 
 For example codes see the **\*.examples.*** plugins:
 * **[hu.bme.mit.incquery.cep.examples.example1](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/hu.bme.mit.incquery.cep.examples.example1)** shows a simple use-case where atomic and complex event patterns are defined and recognized on the event stream among other events.
@@ -20,18 +21,20 @@ Roadmap/TODO
 ------------
 
 Latest enhancements:
-* duplicate handling fixed on state machine level
-* handling both ordered and unordered cases with time windows
+* 06.27. initial commit for the DSLs
+* 06.26. duplicate handling fixed on state machine level
+* 06.22. handling both ordered and unordered cases with time windows
 
 In progress:
+* elaborate the JNect demo (robot)
 * complete the examples and unit tests
-* elaborate the JNect demo
+* define the language for modeling event patterns over EMF models
 
 Future work:
 * make it possible to enable/disable "noise filtering" (per event pattern)
  * e.g. for an "AB" pattern defined and an "AxxxxBxxx" stream observed, the noise-filtered alternative will trigger a recognized event, while the non-filtered will not
  * as a typical use-case for noise-filtering, consider the Jnect Robot Demo
-* enable discretization (on adapter-level)
+* enable discretization
 * enable defining more compound events, i.e. using measurments (as of CEDL)
  * e.g. instead of having an IQPattern_Found and an IQPattern_Lost event, define one event containing the Found/Lost parameter
  * this would require more advanced guard handling on the transitions
@@ -41,18 +44,12 @@ Future work:
 * refactor the examples plugin in a more lucid way
  * package/class naming, comments, etc
  * make sure every use case is properly presented
-* define the language for modeling event patterns over EMF models
  * reuse the concepts of event-driven model transformations and the pattern language of IncQuery
 * implement the common event processing strategies: chronicle, recent, unrestricted
 * make the EventQueue thread-safe in order to enable higher performance via threading
 * enable definition of custom execution strategies
  * define semantics for that
  * implement the required API (the extension point mechanism could work here perfectly)
-
-Known issues:
-* slightly stochastic behavior when multiple tokens are placed on a state before the final one and an appropriate event arrives to pass some tokens forward to the final state
- * in case of N tokens, the first N-2 are fired properly, the last two, however, are fired together but only one triggers a finished state machine
-
 
 License
 -------
