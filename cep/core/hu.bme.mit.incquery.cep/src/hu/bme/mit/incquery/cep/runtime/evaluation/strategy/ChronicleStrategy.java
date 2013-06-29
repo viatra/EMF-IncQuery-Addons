@@ -11,33 +11,31 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
 
 public class ChronicleStrategy extends AbstractEventProcessingStrategy {
-	
+
 	private EventModelManager eventModelManager;
-	
+
 	public ChronicleStrategy(EventModelManager eventModelManager) {
 		this.eventModelManager = eventModelManager;
 	}
-	
+
 	@Override
-	public void fireTransition(Transition t) {
+	public void fireTransition(Transition t, EventToken eventTokenToMove) {
 		State preState = t.getPreState();
 		if (preState instanceof FinalState) {
 			return;
 		}
-		
+
 		InternalExecutionModel model = eventModelManager.getModel();
 		State nextState = t.getPostState();
-		
-		// FIXME how do you know it was the first event token that was fired?
-        EventToken cvToMove = t.getPreState().getEventTokens().get(0);
-		if(!handleTimeConstraints(cvToMove, nextState)){
+
+		if (!handleTimeConstraints(eventTokenToMove, nextState)) {
 			return;
 		}
-		cvToMove.getRecordedEvents().add(model.getLatestEvent());
+		eventTokenToMove.getRecordedEvents().add(model.getLatestEvent());
 		preState.setLastProcessedEvent(model.getLatestEvent());
-		cvToMove.setCurrentState(nextState);
+		eventTokenToMove.setCurrentState(nextState);
 	}
-	
+
 	@Override
 	public void handleVisitorCreation(InternalExecutionModel model, InternalsmFactory SM_FACTORY) {
 		for (StateMachine sm : model.getStateMachines()) {
