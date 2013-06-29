@@ -21,6 +21,7 @@ Roadmap/TODO
 ------------
 
 Latest enhancements:
+* 06.29. fixed token handling issue causing wrongly fired tokens
 * 06.27. initial commit for the DSLs
 * 06.26. duplicate handling fixed on state machine level
 * 06.22. handling both ordered and unordered cases with time windows
