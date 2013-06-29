@@ -4,7 +4,7 @@ package hu.bme.mit.incquery.vedl.edl.impl;
 
 import hu.bme.mit.incquery.vedl.edl.CEParamlist;
 import hu.bme.mit.incquery.vedl.edl.EdlPackage;
-import hu.bme.mit.incquery.vedl.edl.ParamWithType;
+import hu.bme.mit.incquery.vedl.edl.EventParamWithType;
 
 import java.util.Collection;
 
@@ -43,7 +43,7 @@ public class CEParamlistImpl extends MinimalEObjectImpl.Container implements CEP
    * @generated
    * @ordered
    */
-  protected EList<ParamWithType> params;
+  protected EList<EventParamWithType> params;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,11 +71,11 @@ public class CEParamlistImpl extends MinimalEObjectImpl.Container implements CEP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ParamWithType> getParams()
+  public EList<EventParamWithType> getParams()
   {
     if (params == null)
     {
-      params = new EObjectContainmentEList<ParamWithType>(ParamWithType.class, this, EdlPackage.CE_PARAMLIST__PARAMS);
+      params = new EObjectContainmentEList<EventParamWithType>(EventParamWithType.class, this, EdlPackage.CE_PARAMLIST__PARAMS);
     }
     return params;
   }
@@ -125,7 +125,7 @@ public class CEParamlistImpl extends MinimalEObjectImpl.Container implements CEP
     {
       case EdlPackage.CE_PARAMLIST__PARAMS:
         getParams().clear();
-        getParams().addAll((Collection<? extends ParamWithType>)newValue);
+        getParams().addAll((Collection<? extends EventParamWithType>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

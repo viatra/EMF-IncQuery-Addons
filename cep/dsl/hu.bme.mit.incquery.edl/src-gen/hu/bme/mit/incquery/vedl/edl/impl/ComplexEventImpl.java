@@ -5,6 +5,7 @@ package hu.bme.mit.incquery.vedl.edl.impl;
 import hu.bme.mit.incquery.vedl.edl.Annotations;
 import hu.bme.mit.incquery.vedl.edl.CEParamlist;
 import hu.bme.mit.incquery.vedl.edl.ComplexEvent;
+import hu.bme.mit.incquery.vedl.edl.ComplexEventExpression;
 import hu.bme.mit.incquery.vedl.edl.EdlPackage;
 
 import java.util.Collection;
@@ -31,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.vedl.edl.impl.ComplexEventImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.vedl.edl.impl.ComplexEventImpl#getParamlist <em>Paramlist</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.vedl.edl.impl.ComplexEventImpl#getComplexEventExpressions <em>Complex Event Expressions</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,6 +59,16 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
    * @ordered
    */
   protected CEParamlist paramlist;
+
+  /**
+   * The cached value of the '{@link #getComplexEventExpressions() <em>Complex Event Expressions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComplexEventExpressions()
+   * @generated
+   * @ordered
+   */
+  protected EList<ComplexEventExpression> complexEventExpressions;
 
   /**
    * <!-- begin-user-doc -->
@@ -146,6 +158,20 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<ComplexEventExpression> getComplexEventExpressions()
+  {
+    if (complexEventExpressions == null)
+    {
+      complexEventExpressions = new EObjectContainmentEList<ComplexEventExpression>(ComplexEventExpression.class, this, EdlPackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS);
+    }
+    return complexEventExpressions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -155,6 +181,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
         return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
       case EdlPackage.COMPLEX_EVENT__PARAMLIST:
         return basicSetParamlist(null, msgs);
+      case EdlPackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS:
+        return ((InternalEList<?>)getComplexEventExpressions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -173,6 +201,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
         return getAnnotations();
       case EdlPackage.COMPLEX_EVENT__PARAMLIST:
         return getParamlist();
+      case EdlPackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS:
+        return getComplexEventExpressions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -195,6 +225,10 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
       case EdlPackage.COMPLEX_EVENT__PARAMLIST:
         setParamlist((CEParamlist)newValue);
         return;
+      case EdlPackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS:
+        getComplexEventExpressions().clear();
+        getComplexEventExpressions().addAll((Collection<? extends ComplexEventExpression>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -215,6 +249,9 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
       case EdlPackage.COMPLEX_EVENT__PARAMLIST:
         setParamlist((CEParamlist)null);
         return;
+      case EdlPackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS:
+        getComplexEventExpressions().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -233,6 +270,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
         return annotations != null && !annotations.isEmpty();
       case EdlPackage.COMPLEX_EVENT__PARAMLIST:
         return paramlist != null;
+      case EdlPackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS:
+        return complexEventExpressions != null && !complexEventExpressions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

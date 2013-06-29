@@ -48,13 +48,14 @@
     <genClasses ecoreClass="Edl.ecore#//ComplexEvent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edl.ecore#//ComplexEvent/annotations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edl.ecore#//ComplexEvent/paramlist"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edl.ecore#//ComplexEvent/complexEventExpressions"/>
     </genClasses>
     <genClasses ecoreClass="Edl.ecore#//CEParamlist">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edl.ecore#//CEParamlist/params"/>
     </genClasses>
-    <genClasses ecoreClass="Edl.ecore#//ParamWithType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edl.ecore#//ParamWithType/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Edl.ecore#//ParamWithType/type"/>
+    <genClasses ecoreClass="Edl.ecore#//EventParamWithType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edl.ecore#//EventParamWithType/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Edl.ecore#//EventParamWithType/type"/>
     </genClasses>
     <genClasses ecoreClass="Edl.ecore#//ParameterFilter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edl.ecore#//ParameterFilter/attributeName"/>
@@ -94,6 +95,24 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edl.ecore#//LiteralFilter/neg"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edl.ecore#//LiteralFilter/operator"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edl.ecore#//LiteralFilter/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Edl.ecore#//ComplexEventExpression"/>
+    <genClasses ecoreClass="Edl.ecore#//FollowsExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edl.ecore#//FollowsExpression/firstEvent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edl.ecore#//FollowsExpression/events"/>
+    </genClasses>
+    <genClasses ecoreClass="Edl.ecore#//EventWithFollowsOperator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edl.ecore#//EventWithFollowsOperator/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edl.ecore#//EventWithFollowsOperator/event"/>
+    </genClasses>
+    <genClasses ecoreClass="Edl.ecore#//FollowsOperator"/>
+    <genClasses ecoreClass="Edl.ecore#//FollowsOperatorNoTW"/>
+    <genClasses ecoreClass="Edl.ecore#//FollowsOperatorViaTW">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edl.ecore#//FollowsOperatorViaTW/timewindow"/>
+    </genClasses>
+    <genClasses ecoreClass="Edl.ecore#//EventWithMultiplicity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Edl.ecore#//EventWithMultiplicity/event"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edl.ecore#//EventWithMultiplicity/multiplicity"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

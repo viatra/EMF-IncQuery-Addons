@@ -76,7 +76,7 @@ public class EdlFactoryImpl extends EFactoryImpl implements EdlFactory
       case EdlPackage.IQ_PATTERN_EVENT: return createIQPatternEvent();
       case EdlPackage.COMPLEX_EVENT: return createComplexEvent();
       case EdlPackage.CE_PARAMLIST: return createCEParamlist();
-      case EdlPackage.PARAM_WITH_TYPE: return createParamWithType();
+      case EdlPackage.EVENT_PARAM_WITH_TYPE: return createEventParamWithType();
       case EdlPackage.PARAMETER_FILTER: return createParameterFilter();
       case EdlPackage.IQ_PATTERN: return createIQPattern();
       case EdlPackage.ANNOTATIONS: return createAnnotations();
@@ -92,6 +92,13 @@ public class EdlFactoryImpl extends EFactoryImpl implements EdlFactory
       case EdlPackage.CLOSED_OPEN: return createClosedOpen();
       case EdlPackage.NUMERIC_FILTER: return createNumericFilter();
       case EdlPackage.LITERAL_FILTER: return createLiteralFilter();
+      case EdlPackage.COMPLEX_EVENT_EXPRESSION: return createComplexEventExpression();
+      case EdlPackage.FOLLOWS_EXPRESSION: return createFollowsExpression();
+      case EdlPackage.EVENT_WITH_FOLLOWS_OPERATOR: return createEventWithFollowsOperator();
+      case EdlPackage.FOLLOWS_OPERATOR: return createFollowsOperator();
+      case EdlPackage.FOLLOWS_OPERATOR_NO_TW: return createFollowsOperatorNoTW();
+      case EdlPackage.FOLLOWS_OPERATOR_VIA_TW: return createFollowsOperatorViaTW();
+      case EdlPackage.EVENT_WITH_MULTIPLICITY: return createEventWithMultiplicity();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -261,10 +268,10 @@ public class EdlFactoryImpl extends EFactoryImpl implements EdlFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ParamWithType createParamWithType()
+  public EventParamWithType createEventParamWithType()
   {
-    ParamWithTypeImpl paramWithType = new ParamWithTypeImpl();
-    return paramWithType;
+    EventParamWithTypeImpl eventParamWithType = new EventParamWithTypeImpl();
+    return eventParamWithType;
   }
 
   /**
@@ -430,6 +437,83 @@ public class EdlFactoryImpl extends EFactoryImpl implements EdlFactory
   {
     LiteralFilterImpl literalFilter = new LiteralFilterImpl();
     return literalFilter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ComplexEventExpression createComplexEventExpression()
+  {
+    ComplexEventExpressionImpl complexEventExpression = new ComplexEventExpressionImpl();
+    return complexEventExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FollowsExpression createFollowsExpression()
+  {
+    FollowsExpressionImpl followsExpression = new FollowsExpressionImpl();
+    return followsExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EventWithFollowsOperator createEventWithFollowsOperator()
+  {
+    EventWithFollowsOperatorImpl eventWithFollowsOperator = new EventWithFollowsOperatorImpl();
+    return eventWithFollowsOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FollowsOperator createFollowsOperator()
+  {
+    FollowsOperatorImpl followsOperator = new FollowsOperatorImpl();
+    return followsOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FollowsOperatorNoTW createFollowsOperatorNoTW()
+  {
+    FollowsOperatorNoTWImpl followsOperatorNoTW = new FollowsOperatorNoTWImpl();
+    return followsOperatorNoTW;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FollowsOperatorViaTW createFollowsOperatorViaTW()
+  {
+    FollowsOperatorViaTWImpl followsOperatorViaTW = new FollowsOperatorViaTWImpl();
+    return followsOperatorViaTW;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EventWithMultiplicity createEventWithMultiplicity()
+  {
+    EventWithMultiplicityImpl eventWithMultiplicity = new EventWithMultiplicityImpl();
+    return eventWithMultiplicity;
   }
 
   /**

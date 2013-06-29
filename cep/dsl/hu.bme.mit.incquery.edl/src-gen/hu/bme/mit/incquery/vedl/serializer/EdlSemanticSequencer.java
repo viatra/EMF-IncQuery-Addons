@@ -9,7 +9,13 @@ import hu.bme.mit.incquery.vedl.edl.ClosedOpen;
 import hu.bme.mit.incquery.vedl.edl.ComplexEvent;
 import hu.bme.mit.incquery.vedl.edl.ContextAnnotation;
 import hu.bme.mit.incquery.vedl.edl.EdlPackage;
+import hu.bme.mit.incquery.vedl.edl.EventParamWithType;
 import hu.bme.mit.incquery.vedl.edl.EventSourceUsage;
+import hu.bme.mit.incquery.vedl.edl.EventWithFollowsOperator;
+import hu.bme.mit.incquery.vedl.edl.EventWithMultiplicity;
+import hu.bme.mit.incquery.vedl.edl.FollowsExpression;
+import hu.bme.mit.incquery.vedl.edl.FollowsOperatorNoTW;
+import hu.bme.mit.incquery.vedl.edl.FollowsOperatorViaTW;
 import hu.bme.mit.incquery.vedl.edl.IQPattern;
 import hu.bme.mit.incquery.vedl.edl.IQPatternEvent;
 import hu.bme.mit.incquery.vedl.edl.IQUsage;
@@ -19,7 +25,6 @@ import hu.bme.mit.incquery.vedl.edl.NumericFilter;
 import hu.bme.mit.incquery.vedl.edl.OpenClosed;
 import hu.bme.mit.incquery.vedl.edl.OpenOpen;
 import hu.bme.mit.incquery.vedl.edl.PackageDeclaration;
-import hu.bme.mit.incquery.vedl.edl.ParamWithType;
 import hu.bme.mit.incquery.vedl.edl.ParameterFilter;
 import hu.bme.mit.incquery.vedl.edl.PriorityAnnotation;
 import hu.bme.mit.incquery.vedl.edl.RangeFilter;
@@ -87,10 +92,49 @@ public class EdlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case EdlPackage.EVENT_PARAM_WITH_TYPE:
+				if(context == grammarAccess.getEventParamWithTypeRule()) {
+					sequence_EventParamWithType(context, (EventParamWithType) semanticObject); 
+					return; 
+				}
+				else break;
 			case EdlPackage.EVENT_SOURCE_USAGE:
 				if(context == grammarAccess.getEventSourceUsageRule() ||
 				   context == grammarAccess.getUsageRule()) {
 					sequence_EventSourceUsage(context, (EventSourceUsage) semanticObject); 
+					return; 
+				}
+				else break;
+			case EdlPackage.EVENT_WITH_FOLLOWS_OPERATOR:
+				if(context == grammarAccess.getEventWithFollowsOperatorRule()) {
+					sequence_EventWithFollowsOperator(context, (EventWithFollowsOperator) semanticObject); 
+					return; 
+				}
+				else break;
+			case EdlPackage.EVENT_WITH_MULTIPLICITY:
+				if(context == grammarAccess.getEventWithMultiplicityRule()) {
+					sequence_EventWithMultiplicity(context, (EventWithMultiplicity) semanticObject); 
+					return; 
+				}
+				else break;
+			case EdlPackage.FOLLOWS_EXPRESSION:
+				if(context == grammarAccess.getComplexEventExpressionRule() ||
+				   context == grammarAccess.getFollowsExpressionRule()) {
+					sequence_FollowsExpression(context, (FollowsExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case EdlPackage.FOLLOWS_OPERATOR_NO_TW:
+				if(context == grammarAccess.getFollowsOperatorRule() ||
+				   context == grammarAccess.getFollowsOperatorNoTWRule()) {
+					sequence_FollowsOperatorNoTW(context, (FollowsOperatorNoTW) semanticObject); 
+					return; 
+				}
+				else break;
+			case EdlPackage.FOLLOWS_OPERATOR_VIA_TW:
+				if(context == grammarAccess.getFollowsOperatorRule() ||
+				   context == grammarAccess.getFollowsOperatorViaTWRule()) {
+					sequence_FollowsOperatorViaTW(context, (FollowsOperatorViaTW) semanticObject); 
 					return; 
 				}
 				else break;
@@ -155,12 +199,6 @@ public class EdlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case EdlPackage.PARAM_WITH_TYPE:
-				if(context == grammarAccess.getParamWithTypeRule()) {
-					sequence_ParamWithType(context, (ParamWithType) semanticObject); 
-					return; 
-				}
-				else break;
 			case EdlPackage.PARAMETER_FILTER:
 				if(context == grammarAccess.getParameterFilterRule()) {
 					sequence_ParameterFilter(context, (ParameterFilter) semanticObject); 
@@ -203,7 +241,7 @@ public class EdlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (params+=ParamWithType*)
+	 *     (params+=EventParamWithType*)
 	 */
 	protected void sequence_CEParamlist(EObject context, CEParamlist semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -250,7 +288,7 @@ public class EdlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (annotations+=Annotations* name=ID paramlist=CEParamlist)
+	 *     (annotations+=Annotations* name=ID paramlist=CEParamlist complexEventExpressions+=ComplexEventExpression*)
 	 */
 	protected void sequence_ComplexEvent(EObject context, ComplexEvent semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -275,6 +313,25 @@ public class EdlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (name=ID type=[Event|ID])
+	 */
+	protected void sequence_EventParamWithType(EObject context, EventParamWithType semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, EdlPackage.Literals.EVENT_PARAM_WITH_TYPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EdlPackage.Literals.EVENT_PARAM_WITH_TYPE__NAME));
+			if(transientValues.isValueTransient(semanticObject, EdlPackage.Literals.EVENT_PARAM_WITH_TYPE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EdlPackage.Literals.EVENT_PARAM_WITH_TYPE__TYPE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getEventParamWithTypeAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEventParamWithTypeAccess().getTypeEventIDTerminalRuleCall_2_0_1(), semanticObject.getType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     importedNamespace=QualifiedNameWithWildcard
 	 */
 	protected void sequence_EventSourceUsage(EObject context, EventSourceUsage semanticObject) {
@@ -285,6 +342,68 @@ public class EdlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getEventSourceUsageAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (operator=FollowsOperator event=EventWithMultiplicity)
+	 */
+	protected void sequence_EventWithFollowsOperator(EObject context, EventWithFollowsOperator semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, EdlPackage.Literals.EVENT_WITH_FOLLOWS_OPERATOR__OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EdlPackage.Literals.EVENT_WITH_FOLLOWS_OPERATOR__OPERATOR));
+			if(transientValues.isValueTransient(semanticObject, EdlPackage.Literals.EVENT_WITH_FOLLOWS_OPERATOR__EVENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EdlPackage.Literals.EVENT_WITH_FOLLOWS_OPERATOR__EVENT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getEventWithFollowsOperatorAccess().getOperatorFollowsOperatorParserRuleCall_0_0(), semanticObject.getOperator());
+		feeder.accept(grammarAccess.getEventWithFollowsOperatorAccess().getEventEventWithMultiplicityParserRuleCall_1_0(), semanticObject.getEvent());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (event=[EventParamWithType|ID] multiplicity=INT?)
+	 */
+	protected void sequence_EventWithMultiplicity(EObject context, EventWithMultiplicity semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (firstEvent+=EventWithMultiplicity events+=EventWithFollowsOperator*)
+	 */
+	protected void sequence_FollowsExpression(EObject context, FollowsExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {FollowsOperatorNoTW}
+	 */
+	protected void sequence_FollowsOperatorNoTW(EObject context, FollowsOperatorNoTW semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     timewindow=INT
+	 */
+	protected void sequence_FollowsOperatorViaTW(EObject context, FollowsOperatorViaTW semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, EdlPackage.Literals.FOLLOWS_OPERATOR_VIA_TW__TIMEWINDOW) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EdlPackage.Literals.FOLLOWS_OPERATOR_VIA_TW__TIMEWINDOW));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getFollowsOperatorViaTWAccess().getTimewindowINTTerminalRuleCall_1_0(), semanticObject.getTimewindow());
 		feeder.finish();
 	}
 	
@@ -424,25 +543,6 @@ public class EdlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_PackageDeclaration(EObject context, PackageDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID type=[AbstractAtomicEvent|ID])
-	 */
-	protected void sequence_ParamWithType(EObject context, ParamWithType semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EdlPackage.Literals.PARAM_WITH_TYPE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EdlPackage.Literals.PARAM_WITH_TYPE__NAME));
-			if(transientValues.isValueTransient(semanticObject, EdlPackage.Literals.PARAM_WITH_TYPE__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EdlPackage.Literals.PARAM_WITH_TYPE__TYPE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getParamWithTypeAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getParamWithTypeAccess().getTypeAbstractAtomicEventIDTerminalRuleCall_2_0_1(), semanticObject.getType());
-		feeder.finish();
 	}
 	
 	

@@ -42,14 +42,16 @@
         eType="#//Annotations" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="paramlist" eType="#//CEParamlist"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="complexEventExpressions"
+        upperBound="-1" eType="#//ComplexEventExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CEParamlist">
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
-        eType="#//ParamWithType" containment="true"/>
+        eType="#//EventParamWithType" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParamWithType">
+  <eClassifiers xsi:type="ecore:EClass" name="EventParamWithType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//AbstractAtomicEvent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Event"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterFilter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -100,5 +102,27 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="neg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexEventExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FollowsExpression" eSuperTypes="#//ComplexEventExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="firstEvent" upperBound="-1"
+        eType="#//EventWithMultiplicity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+        eType="#//EventWithFollowsOperator" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventWithFollowsOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operator" eType="#//FollowsOperator"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//EventWithMultiplicity"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FollowsOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FollowsOperatorNoTW" eSuperTypes="#//FollowsOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FollowsOperatorViaTW" eSuperTypes="#//FollowsOperator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timewindow" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventWithMultiplicity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//EventParamWithType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

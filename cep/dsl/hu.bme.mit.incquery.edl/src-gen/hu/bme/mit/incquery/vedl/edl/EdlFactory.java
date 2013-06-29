@@ -122,13 +122,13 @@ public interface EdlFactory extends EFactory
   CEParamlist createCEParamlist();
 
   /**
-   * Returns a new object of class '<em>Param With Type</em>'.
+   * Returns a new object of class '<em>Event Param With Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Param With Type</em>'.
+   * @return a new object of class '<em>Event Param With Type</em>'.
    * @generated
    */
-  ParamWithType createParamWithType();
+  EventParamWithType createEventParamWithType();
 
   /**
    * Returns a new object of class '<em>Parameter Filter</em>'.
@@ -264,6 +264,69 @@ public interface EdlFactory extends EFactory
    * @generated
    */
   LiteralFilter createLiteralFilter();
+
+  /**
+   * Returns a new object of class '<em>Complex Event Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Complex Event Expression</em>'.
+   * @generated
+   */
+  ComplexEventExpression createComplexEventExpression();
+
+  /**
+   * Returns a new object of class '<em>Follows Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Follows Expression</em>'.
+   * @generated
+   */
+  FollowsExpression createFollowsExpression();
+
+  /**
+   * Returns a new object of class '<em>Event With Follows Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Event With Follows Operator</em>'.
+   * @generated
+   */
+  EventWithFollowsOperator createEventWithFollowsOperator();
+
+  /**
+   * Returns a new object of class '<em>Follows Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Follows Operator</em>'.
+   * @generated
+   */
+  FollowsOperator createFollowsOperator();
+
+  /**
+   * Returns a new object of class '<em>Follows Operator No TW</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Follows Operator No TW</em>'.
+   * @generated
+   */
+  FollowsOperatorNoTW createFollowsOperatorNoTW();
+
+  /**
+   * Returns a new object of class '<em>Follows Operator Via TW</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Follows Operator Via TW</em>'.
+   * @generated
+   */
+  FollowsOperatorViaTW createFollowsOperatorViaTW();
+
+  /**
+   * Returns a new object of class '<em>Event With Multiplicity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Event With Multiplicity</em>'.
+   * @generated
+   */
+  EventWithMultiplicity createEventWithMultiplicity();
 
   /**
    * Returns the package supported by this factory.

@@ -45,6 +45,7 @@ public class EdlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRangeAccess().getAlternatives(), "rule__Range__Alternatives");
 					put(grammarAccess.getNumericOperatorAccess().getAlternatives(), "rule__NumericOperator__Alternatives");
 					put(grammarAccess.getLiteralOperatorAccess().getAlternatives(), "rule__LiteralOperator__Alternatives");
+					put(grammarAccess.getFollowsOperatorAccess().getAlternatives(), "rule__FollowsOperator__Alternatives");
 					put(grammarAccess.getIQPatternChangeTypeAccess().getAlternatives(), "rule__IQPatternChangeType__Alternatives");
 					put(grammarAccess.getContextAccess().getAlternatives(), "rule__Context__Alternatives");
 					put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
@@ -60,7 +61,7 @@ public class EdlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIQPatternEventAccess().getGroup(), "rule__IQPatternEvent__Group__0");
 					put(grammarAccess.getComplexEventAccess().getGroup(), "rule__ComplexEvent__Group__0");
 					put(grammarAccess.getCEParamlistAccess().getGroup(), "rule__CEParamlist__Group__0");
-					put(grammarAccess.getParamWithTypeAccess().getGroup(), "rule__ParamWithType__Group__0");
+					put(grammarAccess.getEventParamWithTypeAccess().getGroup(), "rule__EventParamWithType__Group__0");
 					put(grammarAccess.getParameterFilterAccess().getGroup(), "rule__ParameterFilter__Group__0");
 					put(grammarAccess.getContextAnnotationAccess().getGroup(), "rule__ContextAnnotation__Group__0");
 					put(grammarAccess.getSamplingAnnotationAccess().getGroup(), "rule__SamplingAnnotation__Group__0");
@@ -72,6 +73,12 @@ public class EdlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getClosedOpenAccess().getGroup(), "rule__ClosedOpen__Group__0");
 					put(grammarAccess.getNumericFilterAccess().getGroup(), "rule__NumericFilter__Group__0");
 					put(grammarAccess.getLiteralFilterAccess().getGroup(), "rule__LiteralFilter__Group__0");
+					put(grammarAccess.getFollowsExpressionAccess().getGroup(), "rule__FollowsExpression__Group__0");
+					put(grammarAccess.getEventWithFollowsOperatorAccess().getGroup(), "rule__EventWithFollowsOperator__Group__0");
+					put(grammarAccess.getFollowsOperatorNoTWAccess().getGroup(), "rule__FollowsOperatorNoTW__Group__0");
+					put(grammarAccess.getFollowsOperatorViaTWAccess().getGroup(), "rule__FollowsOperatorViaTW__Group__0");
+					put(grammarAccess.getEventWithMultiplicityAccess().getGroup(), "rule__EventWithMultiplicity__Group__0");
+					put(grammarAccess.getEventWithMultiplicityAccess().getGroup_1(), "rule__EventWithMultiplicity__Group_1__0");
 					put(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1(), "rule__PackageDeclaration__NameAssignment_1");
 					put(grammarAccess.getPackageDeclarationAccess().getUsagesAssignment_2(), "rule__PackageDeclaration__UsagesAssignment_2");
 					put(grammarAccess.getPackageDeclarationAccess().getModelAssignment_3(), "rule__PackageDeclaration__ModelAssignment_3");
@@ -91,9 +98,10 @@ public class EdlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getComplexEventAccess().getAnnotationsAssignment_0(), "rule__ComplexEvent__AnnotationsAssignment_0");
 					put(grammarAccess.getComplexEventAccess().getNameAssignment_2(), "rule__ComplexEvent__NameAssignment_2");
 					put(grammarAccess.getComplexEventAccess().getParamlistAssignment_3(), "rule__ComplexEvent__ParamlistAssignment_3");
+					put(grammarAccess.getComplexEventAccess().getComplexEventExpressionsAssignment_5(), "rule__ComplexEvent__ComplexEventExpressionsAssignment_5");
 					put(grammarAccess.getCEParamlistAccess().getParamsAssignment_2(), "rule__CEParamlist__ParamsAssignment_2");
-					put(grammarAccess.getParamWithTypeAccess().getNameAssignment_0(), "rule__ParamWithType__NameAssignment_0");
-					put(grammarAccess.getParamWithTypeAccess().getTypeAssignment_2(), "rule__ParamWithType__TypeAssignment_2");
+					put(grammarAccess.getEventParamWithTypeAccess().getNameAssignment_0(), "rule__EventParamWithType__NameAssignment_0");
+					put(grammarAccess.getEventParamWithTypeAccess().getTypeAssignment_2(), "rule__EventParamWithType__TypeAssignment_2");
 					put(grammarAccess.getParameterFilterAccess().getAttributeNameAssignment_0(), "rule__ParameterFilter__AttributeNameAssignment_0");
 					put(grammarAccess.getParameterFilterAccess().getParamFilterRuleAssignment_1(), "rule__ParameterFilter__ParamFilterRuleAssignment_1");
 					put(grammarAccess.getIQPatternAccess().getNameAssignment(), "rule__IQPattern__NameAssignment");
@@ -115,6 +123,13 @@ public class EdlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLiteralFilterAccess().getNegAssignment_0(), "rule__LiteralFilter__NegAssignment_0");
 					put(grammarAccess.getLiteralFilterAccess().getOperatorAssignment_1(), "rule__LiteralFilter__OperatorAssignment_1");
 					put(grammarAccess.getLiteralFilterAccess().getValueAssignment_2(), "rule__LiteralFilter__ValueAssignment_2");
+					put(grammarAccess.getFollowsExpressionAccess().getFirstEventAssignment_0(), "rule__FollowsExpression__FirstEventAssignment_0");
+					put(grammarAccess.getFollowsExpressionAccess().getEventsAssignment_1(), "rule__FollowsExpression__EventsAssignment_1");
+					put(grammarAccess.getEventWithFollowsOperatorAccess().getOperatorAssignment_0(), "rule__EventWithFollowsOperator__OperatorAssignment_0");
+					put(grammarAccess.getEventWithFollowsOperatorAccess().getEventAssignment_1(), "rule__EventWithFollowsOperator__EventAssignment_1");
+					put(grammarAccess.getFollowsOperatorViaTWAccess().getTimewindowAssignment_1(), "rule__FollowsOperatorViaTW__TimewindowAssignment_1");
+					put(grammarAccess.getEventWithMultiplicityAccess().getEventAssignment_0(), "rule__EventWithMultiplicity__EventAssignment_0");
+					put(grammarAccess.getEventWithMultiplicityAccess().getMultiplicityAssignment_1_1(), "rule__EventWithMultiplicity__MultiplicityAssignment_1_1");
 				}
 			};
 		}

@@ -72,16 +72,16 @@ IQPatternEvent:
 ComplexEvent:
 	annotations+=Annotations*
 	'ComplexEvent' name=ID paramlist=CEParamlist'{'
-		
+		complexEventExpressions += ComplexEventExpression*
 	'}'
 ;
 
 CEParamlist: {CEParamlist}
-	'('params+=ParamWithType*')'
+	'('params+=EventParamWithType*')'
 ;
 
-ParamWithType:
-	name = ID ':' type=[AbstractAtomicEvent]
+EventParamWithType:
+	name = ID ':' type=[Event]
 ;
 
 ParameterFilter:
@@ -159,4 +159,33 @@ LiteralOperator:
 
 NegationOpartor:
 	'not'
+;
+
+ComplexEventExpression:
+	FollowsExpression //| ConcurrentExpression
+;
+
+FollowsExpression:
+	firstEvent+=EventWithMultiplicity(events+=EventWithFollowsOperator)*
+;
+
+EventWithFollowsOperator:
+	operator=FollowsOperator event=EventWithMultiplicity
+;
+
+FollowsOperator:
+	FollowsOperatorNoTW | FollowsOperatorViaTW
+;
+
+FollowsOperatorNoTW:
+	{FollowsOperatorNoTW}
+	'->'
+;
+
+FollowsOperatorViaTW:
+	'-['timewindow = INT']->'
+;
+
+EventWithMultiplicity:
+	event = [EventParamWithType]('{'multiplicity=INT'}')?
 ;

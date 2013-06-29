@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.vedl.edl.ComplexEvent#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.vedl.edl.ComplexEvent#getParamlist <em>Paramlist</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.vedl.edl.ComplexEvent#getComplexEventExpressions <em>Complex Event Expressions</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,5 +65,21 @@ public interface ComplexEvent extends Event
    * @generated
    */
   void setParamlist(CEParamlist value);
+
+  /**
+   * Returns the value of the '<em><b>Complex Event Expressions</b></em>' containment reference list.
+   * The list contents are of type {@link hu.bme.mit.incquery.vedl.edl.ComplexEventExpression}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Complex Event Expressions</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Complex Event Expressions</em>' containment reference list.
+   * @see hu.bme.mit.incquery.vedl.edl.EdlPackage#getComplexEvent_ComplexEventExpressions()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ComplexEventExpression> getComplexEventExpressions();
 
 } // ComplexEvent

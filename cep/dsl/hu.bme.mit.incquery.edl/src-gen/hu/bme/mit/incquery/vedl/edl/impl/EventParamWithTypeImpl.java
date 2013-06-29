@@ -2,9 +2,9 @@
  */
 package hu.bme.mit.incquery.vedl.edl.impl;
 
-import hu.bme.mit.incquery.vedl.edl.AbstractAtomicEvent;
 import hu.bme.mit.incquery.vedl.edl.EdlPackage;
-import hu.bme.mit.incquery.vedl.edl.ParamWithType;
+import hu.bme.mit.incquery.vedl.edl.Event;
+import hu.bme.mit.incquery.vedl.edl.EventParamWithType;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -16,19 +16,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Param With Type</b></em>'.
+ * An implementation of the model object '<em><b>Event Param With Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.vedl.edl.impl.ParamWithTypeImpl#getName <em>Name</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.vedl.edl.impl.ParamWithTypeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.vedl.edl.impl.EventParamWithTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.vedl.edl.impl.EventParamWithTypeImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ParamWithTypeImpl extends MinimalEObjectImpl.Container implements ParamWithType
+public class EventParamWithTypeImpl extends MinimalEObjectImpl.Container implements EventParamWithType
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -58,14 +58,14 @@ public class ParamWithTypeImpl extends MinimalEObjectImpl.Container implements P
    * @generated
    * @ordered
    */
-  protected AbstractAtomicEvent type;
+  protected Event type;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ParamWithTypeImpl()
+  protected EventParamWithTypeImpl()
   {
     super();
   }
@@ -78,7 +78,7 @@ public class ParamWithTypeImpl extends MinimalEObjectImpl.Container implements P
   @Override
   protected EClass eStaticClass()
   {
-    return EdlPackage.Literals.PARAM_WITH_TYPE;
+    return EdlPackage.Literals.EVENT_PARAM_WITH_TYPE;
   }
 
   /**
@@ -101,7 +101,7 @@ public class ParamWithTypeImpl extends MinimalEObjectImpl.Container implements P
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EdlPackage.PARAM_WITH_TYPE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, EdlPackage.EVENT_PARAM_WITH_TYPE__NAME, oldName, name));
   }
 
   /**
@@ -109,16 +109,16 @@ public class ParamWithTypeImpl extends MinimalEObjectImpl.Container implements P
    * <!-- end-user-doc -->
    * @generated
    */
-  public AbstractAtomicEvent getType()
+  public Event getType()
   {
     if (type != null && type.eIsProxy())
     {
       InternalEObject oldType = (InternalEObject)type;
-      type = (AbstractAtomicEvent)eResolveProxy(oldType);
+      type = (Event)eResolveProxy(oldType);
       if (type != oldType)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EdlPackage.PARAM_WITH_TYPE__TYPE, oldType, type));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EdlPackage.EVENT_PARAM_WITH_TYPE__TYPE, oldType, type));
       }
     }
     return type;
@@ -129,7 +129,7 @@ public class ParamWithTypeImpl extends MinimalEObjectImpl.Container implements P
    * <!-- end-user-doc -->
    * @generated
    */
-  public AbstractAtomicEvent basicGetType()
+  public Event basicGetType()
   {
     return type;
   }
@@ -139,12 +139,12 @@ public class ParamWithTypeImpl extends MinimalEObjectImpl.Container implements P
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(AbstractAtomicEvent newType)
+  public void setType(Event newType)
   {
-    AbstractAtomicEvent oldType = type;
+    Event oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EdlPackage.PARAM_WITH_TYPE__TYPE, oldType, type));
+      eNotify(new ENotificationImpl(this, Notification.SET, EdlPackage.EVENT_PARAM_WITH_TYPE__TYPE, oldType, type));
   }
 
   /**
@@ -157,9 +157,9 @@ public class ParamWithTypeImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case EdlPackage.PARAM_WITH_TYPE__NAME:
+      case EdlPackage.EVENT_PARAM_WITH_TYPE__NAME:
         return getName();
-      case EdlPackage.PARAM_WITH_TYPE__TYPE:
+      case EdlPackage.EVENT_PARAM_WITH_TYPE__TYPE:
         if (resolve) return getType();
         return basicGetType();
     }
@@ -176,11 +176,11 @@ public class ParamWithTypeImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case EdlPackage.PARAM_WITH_TYPE__NAME:
+      case EdlPackage.EVENT_PARAM_WITH_TYPE__NAME:
         setName((String)newValue);
         return;
-      case EdlPackage.PARAM_WITH_TYPE__TYPE:
-        setType((AbstractAtomicEvent)newValue);
+      case EdlPackage.EVENT_PARAM_WITH_TYPE__TYPE:
+        setType((Event)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -196,11 +196,11 @@ public class ParamWithTypeImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case EdlPackage.PARAM_WITH_TYPE__NAME:
+      case EdlPackage.EVENT_PARAM_WITH_TYPE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case EdlPackage.PARAM_WITH_TYPE__TYPE:
-        setType((AbstractAtomicEvent)null);
+      case EdlPackage.EVENT_PARAM_WITH_TYPE__TYPE:
+        setType((Event)null);
         return;
     }
     super.eUnset(featureID);
@@ -216,9 +216,9 @@ public class ParamWithTypeImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case EdlPackage.PARAM_WITH_TYPE__NAME:
+      case EdlPackage.EVENT_PARAM_WITH_TYPE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case EdlPackage.PARAM_WITH_TYPE__TYPE:
+      case EdlPackage.EVENT_PARAM_WITH_TYPE__TYPE:
         return type != null;
     }
     return super.eIsSet(featureID);
@@ -241,4 +241,4 @@ public class ParamWithTypeImpl extends MinimalEObjectImpl.Container implements P
     return result.toString();
   }
 
-} //ParamWithTypeImpl
+} //EventParamWithTypeImpl

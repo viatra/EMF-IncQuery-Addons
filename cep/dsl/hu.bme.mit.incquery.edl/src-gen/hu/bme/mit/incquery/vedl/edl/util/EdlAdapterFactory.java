@@ -130,9 +130,9 @@ public class EdlAdapterFactory extends AdapterFactoryImpl
         return createCEParamlistAdapter();
       }
       @Override
-      public Adapter caseParamWithType(ParamWithType object)
+      public Adapter caseEventParamWithType(EventParamWithType object)
       {
-        return createParamWithTypeAdapter();
+        return createEventParamWithTypeAdapter();
       }
       @Override
       public Adapter caseParameterFilter(ParameterFilter object)
@@ -208,6 +208,41 @@ public class EdlAdapterFactory extends AdapterFactoryImpl
       public Adapter caseLiteralFilter(LiteralFilter object)
       {
         return createLiteralFilterAdapter();
+      }
+      @Override
+      public Adapter caseComplexEventExpression(ComplexEventExpression object)
+      {
+        return createComplexEventExpressionAdapter();
+      }
+      @Override
+      public Adapter caseFollowsExpression(FollowsExpression object)
+      {
+        return createFollowsExpressionAdapter();
+      }
+      @Override
+      public Adapter caseEventWithFollowsOperator(EventWithFollowsOperator object)
+      {
+        return createEventWithFollowsOperatorAdapter();
+      }
+      @Override
+      public Adapter caseFollowsOperator(FollowsOperator object)
+      {
+        return createFollowsOperatorAdapter();
+      }
+      @Override
+      public Adapter caseFollowsOperatorNoTW(FollowsOperatorNoTW object)
+      {
+        return createFollowsOperatorNoTWAdapter();
+      }
+      @Override
+      public Adapter caseFollowsOperatorViaTW(FollowsOperatorViaTW object)
+      {
+        return createFollowsOperatorViaTWAdapter();
+      }
+      @Override
+      public Adapter caseEventWithMultiplicity(EventWithMultiplicity object)
+      {
+        return createEventWithMultiplicityAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -397,16 +432,16 @@ public class EdlAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.vedl.edl.ParamWithType <em>Param With Type</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.vedl.edl.EventParamWithType <em>Event Param With Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.incquery.vedl.edl.ParamWithType
+   * @see hu.bme.mit.incquery.vedl.edl.EventParamWithType
    * @generated
    */
-  public Adapter createParamWithTypeAdapter()
+  public Adapter createEventParamWithTypeAdapter()
   {
     return null;
   }
@@ -632,6 +667,111 @@ public class EdlAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLiteralFilterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.vedl.edl.ComplexEventExpression <em>Complex Event Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.vedl.edl.ComplexEventExpression
+   * @generated
+   */
+  public Adapter createComplexEventExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.vedl.edl.FollowsExpression <em>Follows Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.vedl.edl.FollowsExpression
+   * @generated
+   */
+  public Adapter createFollowsExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.vedl.edl.EventWithFollowsOperator <em>Event With Follows Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.vedl.edl.EventWithFollowsOperator
+   * @generated
+   */
+  public Adapter createEventWithFollowsOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.vedl.edl.FollowsOperator <em>Follows Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.vedl.edl.FollowsOperator
+   * @generated
+   */
+  public Adapter createFollowsOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.vedl.edl.FollowsOperatorNoTW <em>Follows Operator No TW</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.vedl.edl.FollowsOperatorNoTW
+   * @generated
+   */
+  public Adapter createFollowsOperatorNoTWAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.vedl.edl.FollowsOperatorViaTW <em>Follows Operator Via TW</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.vedl.edl.FollowsOperatorViaTW
+   * @generated
+   */
+  public Adapter createFollowsOperatorViaTWAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.vedl.edl.EventWithMultiplicity <em>Event With Multiplicity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.vedl.edl.EventWithMultiplicity
+   * @generated
+   */
+  public Adapter createEventWithMultiplicityAdapter()
   {
     return null;
   }

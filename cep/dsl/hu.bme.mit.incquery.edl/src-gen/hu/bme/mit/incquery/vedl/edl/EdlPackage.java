@@ -437,13 +437,22 @@ public interface EdlPackage extends EPackage
   int COMPLEX_EVENT__PARAMLIST = EVENT_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Complex Event Expressions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS = EVENT_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Complex Event</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPLEX_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 2;
+  int COMPLEX_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.impl.CEParamlistImpl <em>CE Paramlist</em>}' class.
@@ -474,14 +483,14 @@ public interface EdlPackage extends EPackage
   int CE_PARAMLIST_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.impl.ParamWithTypeImpl <em>Param With Type</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.impl.EventParamWithTypeImpl <em>Event Param With Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.incquery.vedl.edl.impl.ParamWithTypeImpl
-   * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getParamWithType()
+   * @see hu.bme.mit.incquery.vedl.edl.impl.EventParamWithTypeImpl
+   * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getEventParamWithType()
    * @generated
    */
-  int PARAM_WITH_TYPE = 11;
+  int EVENT_PARAM_WITH_TYPE = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -490,7 +499,7 @@ public interface EdlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAM_WITH_TYPE__NAME = 0;
+  int EVENT_PARAM_WITH_TYPE__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -499,16 +508,16 @@ public interface EdlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAM_WITH_TYPE__TYPE = 1;
+  int EVENT_PARAM_WITH_TYPE__TYPE = 1;
 
   /**
-   * The number of structural features of the '<em>Param With Type</em>' class.
+   * The number of structural features of the '<em>Event Param With Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAM_WITH_TYPE_FEATURE_COUNT = 2;
+  int EVENT_PARAM_WITH_TYPE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.impl.ParameterFilterImpl <em>Parameter Filter</em>}' class.
@@ -1003,6 +1012,202 @@ public interface EdlPackage extends EPackage
   int LITERAL_FILTER_FEATURE_COUNT = PARAMETER_FILTER_RULE_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.impl.ComplexEventExpressionImpl <em>Complex Event Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.incquery.vedl.edl.impl.ComplexEventExpressionImpl
+   * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getComplexEventExpression()
+   * @generated
+   */
+  int COMPLEX_EVENT_EXPRESSION = 27;
+
+  /**
+   * The number of structural features of the '<em>Complex Event Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPLEX_EVENT_EXPRESSION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.impl.FollowsExpressionImpl <em>Follows Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.incquery.vedl.edl.impl.FollowsExpressionImpl
+   * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getFollowsExpression()
+   * @generated
+   */
+  int FOLLOWS_EXPRESSION = 28;
+
+  /**
+   * The feature id for the '<em><b>First Event</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOLLOWS_EXPRESSION__FIRST_EVENT = COMPLEX_EVENT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Events</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOLLOWS_EXPRESSION__EVENTS = COMPLEX_EVENT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Follows Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOLLOWS_EXPRESSION_FEATURE_COUNT = COMPLEX_EVENT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.impl.EventWithFollowsOperatorImpl <em>Event With Follows Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.incquery.vedl.edl.impl.EventWithFollowsOperatorImpl
+   * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getEventWithFollowsOperator()
+   * @generated
+   */
+  int EVENT_WITH_FOLLOWS_OPERATOR = 29;
+
+  /**
+   * The feature id for the '<em><b>Operator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT_WITH_FOLLOWS_OPERATOR__OPERATOR = 0;
+
+  /**
+   * The feature id for the '<em><b>Event</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT_WITH_FOLLOWS_OPERATOR__EVENT = 1;
+
+  /**
+   * The number of structural features of the '<em>Event With Follows Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT_WITH_FOLLOWS_OPERATOR_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.impl.FollowsOperatorImpl <em>Follows Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.incquery.vedl.edl.impl.FollowsOperatorImpl
+   * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getFollowsOperator()
+   * @generated
+   */
+  int FOLLOWS_OPERATOR = 30;
+
+  /**
+   * The number of structural features of the '<em>Follows Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOLLOWS_OPERATOR_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.impl.FollowsOperatorNoTWImpl <em>Follows Operator No TW</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.incquery.vedl.edl.impl.FollowsOperatorNoTWImpl
+   * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getFollowsOperatorNoTW()
+   * @generated
+   */
+  int FOLLOWS_OPERATOR_NO_TW = 31;
+
+  /**
+   * The number of structural features of the '<em>Follows Operator No TW</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOLLOWS_OPERATOR_NO_TW_FEATURE_COUNT = FOLLOWS_OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.impl.FollowsOperatorViaTWImpl <em>Follows Operator Via TW</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.incquery.vedl.edl.impl.FollowsOperatorViaTWImpl
+   * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getFollowsOperatorViaTW()
+   * @generated
+   */
+  int FOLLOWS_OPERATOR_VIA_TW = 32;
+
+  /**
+   * The feature id for the '<em><b>Timewindow</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOLLOWS_OPERATOR_VIA_TW__TIMEWINDOW = FOLLOWS_OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Follows Operator Via TW</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOLLOWS_OPERATOR_VIA_TW_FEATURE_COUNT = FOLLOWS_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.impl.EventWithMultiplicityImpl <em>Event With Multiplicity</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.incquery.vedl.edl.impl.EventWithMultiplicityImpl
+   * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getEventWithMultiplicity()
+   * @generated
+   */
+  int EVENT_WITH_MULTIPLICITY = 33;
+
+  /**
+   * The feature id for the '<em><b>Event</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT_WITH_MULTIPLICITY__EVENT = 0;
+
+  /**
+   * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT_WITH_MULTIPLICITY__MULTIPLICITY = 1;
+
+  /**
+   * The number of structural features of the '<em>Event With Multiplicity</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT_WITH_MULTIPLICITY_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.IQPatternChangeType <em>IQ Pattern Change Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1010,7 +1215,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getIQPatternChangeType()
    * @generated
    */
-  int IQ_PATTERN_CHANGE_TYPE = 27;
+  int IQ_PATTERN_CHANGE_TYPE = 34;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.Context <em>Context</em>}' enum.
@@ -1020,7 +1225,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getContext()
    * @generated
    */
-  int CONTEXT = 28;
+  int CONTEXT = 35;
 
 
   /**
@@ -1300,6 +1505,17 @@ public interface EdlPackage extends EPackage
   EReference getComplexEvent_Paramlist();
 
   /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.vedl.edl.ComplexEvent#getComplexEventExpressions <em>Complex Event Expressions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Complex Event Expressions</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.ComplexEvent#getComplexEventExpressions()
+   * @see #getComplexEvent()
+   * @generated
+   */
+  EReference getComplexEvent_ComplexEventExpressions();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.incquery.vedl.edl.CEParamlist <em>CE Paramlist</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1321,36 +1537,36 @@ public interface EdlPackage extends EPackage
   EReference getCEParamlist_Params();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.incquery.vedl.edl.ParamWithType <em>Param With Type</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.incquery.vedl.edl.EventParamWithType <em>Event Param With Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Param With Type</em>'.
-   * @see hu.bme.mit.incquery.vedl.edl.ParamWithType
+   * @return the meta object for class '<em>Event Param With Type</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.EventParamWithType
    * @generated
    */
-  EClass getParamWithType();
+  EClass getEventParamWithType();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.vedl.edl.ParamWithType#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.vedl.edl.EventParamWithType#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.incquery.vedl.edl.ParamWithType#getName()
-   * @see #getParamWithType()
+   * @see hu.bme.mit.incquery.vedl.edl.EventParamWithType#getName()
+   * @see #getEventParamWithType()
    * @generated
    */
-  EAttribute getParamWithType_Name();
+  EAttribute getEventParamWithType_Name();
 
   /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.incquery.vedl.edl.ParamWithType#getType <em>Type</em>}'.
+   * Returns the meta object for the reference '{@link hu.bme.mit.incquery.vedl.edl.EventParamWithType#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Type</em>'.
-   * @see hu.bme.mit.incquery.vedl.edl.ParamWithType#getType()
-   * @see #getParamWithType()
+   * @see hu.bme.mit.incquery.vedl.edl.EventParamWithType#getType()
+   * @see #getEventParamWithType()
    * @generated
    */
-  EReference getParamWithType_Type();
+  EReference getEventParamWithType_Type();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.incquery.vedl.edl.ParameterFilter <em>Parameter Filter</em>}'.
@@ -1668,6 +1884,153 @@ public interface EdlPackage extends EPackage
   EAttribute getLiteralFilter_Value();
 
   /**
+   * Returns the meta object for class '{@link hu.bme.mit.incquery.vedl.edl.ComplexEventExpression <em>Complex Event Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Complex Event Expression</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.ComplexEventExpression
+   * @generated
+   */
+  EClass getComplexEventExpression();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.incquery.vedl.edl.FollowsExpression <em>Follows Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Follows Expression</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.FollowsExpression
+   * @generated
+   */
+  EClass getFollowsExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.vedl.edl.FollowsExpression#getFirstEvent <em>First Event</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>First Event</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.FollowsExpression#getFirstEvent()
+   * @see #getFollowsExpression()
+   * @generated
+   */
+  EReference getFollowsExpression_FirstEvent();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.vedl.edl.FollowsExpression#getEvents <em>Events</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Events</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.FollowsExpression#getEvents()
+   * @see #getFollowsExpression()
+   * @generated
+   */
+  EReference getFollowsExpression_Events();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.incquery.vedl.edl.EventWithFollowsOperator <em>Event With Follows Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Event With Follows Operator</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.EventWithFollowsOperator
+   * @generated
+   */
+  EClass getEventWithFollowsOperator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.vedl.edl.EventWithFollowsOperator#getOperator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operator</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.EventWithFollowsOperator#getOperator()
+   * @see #getEventWithFollowsOperator()
+   * @generated
+   */
+  EReference getEventWithFollowsOperator_Operator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.vedl.edl.EventWithFollowsOperator#getEvent <em>Event</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Event</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.EventWithFollowsOperator#getEvent()
+   * @see #getEventWithFollowsOperator()
+   * @generated
+   */
+  EReference getEventWithFollowsOperator_Event();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.incquery.vedl.edl.FollowsOperator <em>Follows Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Follows Operator</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.FollowsOperator
+   * @generated
+   */
+  EClass getFollowsOperator();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.incquery.vedl.edl.FollowsOperatorNoTW <em>Follows Operator No TW</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Follows Operator No TW</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.FollowsOperatorNoTW
+   * @generated
+   */
+  EClass getFollowsOperatorNoTW();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.incquery.vedl.edl.FollowsOperatorViaTW <em>Follows Operator Via TW</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Follows Operator Via TW</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.FollowsOperatorViaTW
+   * @generated
+   */
+  EClass getFollowsOperatorViaTW();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.vedl.edl.FollowsOperatorViaTW#getTimewindow <em>Timewindow</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Timewindow</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.FollowsOperatorViaTW#getTimewindow()
+   * @see #getFollowsOperatorViaTW()
+   * @generated
+   */
+  EAttribute getFollowsOperatorViaTW_Timewindow();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.incquery.vedl.edl.EventWithMultiplicity <em>Event With Multiplicity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Event With Multiplicity</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.EventWithMultiplicity
+   * @generated
+   */
+  EClass getEventWithMultiplicity();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.incquery.vedl.edl.EventWithMultiplicity#getEvent <em>Event</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Event</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.EventWithMultiplicity#getEvent()
+   * @see #getEventWithMultiplicity()
+   * @generated
+   */
+  EReference getEventWithMultiplicity_Event();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.vedl.edl.EventWithMultiplicity#getMultiplicity <em>Multiplicity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Multiplicity</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.EventWithMultiplicity#getMultiplicity()
+   * @see #getEventWithMultiplicity()
+   * @generated
+   */
+  EAttribute getEventWithMultiplicity_Multiplicity();
+
+  /**
    * Returns the meta object for enum '{@link hu.bme.mit.incquery.vedl.edl.IQPatternChangeType <em>IQ Pattern Change Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1939,6 +2302,14 @@ public interface EdlPackage extends EPackage
     EReference COMPLEX_EVENT__PARAMLIST = eINSTANCE.getComplexEvent_Paramlist();
 
     /**
+     * The meta object literal for the '<em><b>Complex Event Expressions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS = eINSTANCE.getComplexEvent_ComplexEventExpressions();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.impl.CEParamlistImpl <em>CE Paramlist</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1957,14 +2328,14 @@ public interface EdlPackage extends EPackage
     EReference CE_PARAMLIST__PARAMS = eINSTANCE.getCEParamlist_Params();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.impl.ParamWithTypeImpl <em>Param With Type</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.impl.EventParamWithTypeImpl <em>Event Param With Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.incquery.vedl.edl.impl.ParamWithTypeImpl
-     * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getParamWithType()
+     * @see hu.bme.mit.incquery.vedl.edl.impl.EventParamWithTypeImpl
+     * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getEventParamWithType()
      * @generated
      */
-    EClass PARAM_WITH_TYPE = eINSTANCE.getParamWithType();
+    EClass EVENT_PARAM_WITH_TYPE = eINSTANCE.getEventParamWithType();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1972,7 +2343,7 @@ public interface EdlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PARAM_WITH_TYPE__NAME = eINSTANCE.getParamWithType_Name();
+    EAttribute EVENT_PARAM_WITH_TYPE__NAME = eINSTANCE.getEventParamWithType_Name();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' reference feature.
@@ -1980,7 +2351,7 @@ public interface EdlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PARAM_WITH_TYPE__TYPE = eINSTANCE.getParamWithType_Type();
+    EReference EVENT_PARAM_WITH_TYPE__TYPE = eINSTANCE.getEventParamWithType_Type();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.impl.ParameterFilterImpl <em>Parameter Filter</em>}' class.
@@ -2251,6 +2622,132 @@ public interface EdlPackage extends EPackage
      * @generated
      */
     EAttribute LITERAL_FILTER__VALUE = eINSTANCE.getLiteralFilter_Value();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.impl.ComplexEventExpressionImpl <em>Complex Event Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.incquery.vedl.edl.impl.ComplexEventExpressionImpl
+     * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getComplexEventExpression()
+     * @generated
+     */
+    EClass COMPLEX_EVENT_EXPRESSION = eINSTANCE.getComplexEventExpression();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.impl.FollowsExpressionImpl <em>Follows Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.incquery.vedl.edl.impl.FollowsExpressionImpl
+     * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getFollowsExpression()
+     * @generated
+     */
+    EClass FOLLOWS_EXPRESSION = eINSTANCE.getFollowsExpression();
+
+    /**
+     * The meta object literal for the '<em><b>First Event</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOLLOWS_EXPRESSION__FIRST_EVENT = eINSTANCE.getFollowsExpression_FirstEvent();
+
+    /**
+     * The meta object literal for the '<em><b>Events</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOLLOWS_EXPRESSION__EVENTS = eINSTANCE.getFollowsExpression_Events();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.impl.EventWithFollowsOperatorImpl <em>Event With Follows Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.incquery.vedl.edl.impl.EventWithFollowsOperatorImpl
+     * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getEventWithFollowsOperator()
+     * @generated
+     */
+    EClass EVENT_WITH_FOLLOWS_OPERATOR = eINSTANCE.getEventWithFollowsOperator();
+
+    /**
+     * The meta object literal for the '<em><b>Operator</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EVENT_WITH_FOLLOWS_OPERATOR__OPERATOR = eINSTANCE.getEventWithFollowsOperator_Operator();
+
+    /**
+     * The meta object literal for the '<em><b>Event</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EVENT_WITH_FOLLOWS_OPERATOR__EVENT = eINSTANCE.getEventWithFollowsOperator_Event();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.impl.FollowsOperatorImpl <em>Follows Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.incquery.vedl.edl.impl.FollowsOperatorImpl
+     * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getFollowsOperator()
+     * @generated
+     */
+    EClass FOLLOWS_OPERATOR = eINSTANCE.getFollowsOperator();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.impl.FollowsOperatorNoTWImpl <em>Follows Operator No TW</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.incquery.vedl.edl.impl.FollowsOperatorNoTWImpl
+     * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getFollowsOperatorNoTW()
+     * @generated
+     */
+    EClass FOLLOWS_OPERATOR_NO_TW = eINSTANCE.getFollowsOperatorNoTW();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.impl.FollowsOperatorViaTWImpl <em>Follows Operator Via TW</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.incquery.vedl.edl.impl.FollowsOperatorViaTWImpl
+     * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getFollowsOperatorViaTW()
+     * @generated
+     */
+    EClass FOLLOWS_OPERATOR_VIA_TW = eINSTANCE.getFollowsOperatorViaTW();
+
+    /**
+     * The meta object literal for the '<em><b>Timewindow</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FOLLOWS_OPERATOR_VIA_TW__TIMEWINDOW = eINSTANCE.getFollowsOperatorViaTW_Timewindow();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.impl.EventWithMultiplicityImpl <em>Event With Multiplicity</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.incquery.vedl.edl.impl.EventWithMultiplicityImpl
+     * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getEventWithMultiplicity()
+     * @generated
+     */
+    EClass EVENT_WITH_MULTIPLICITY = eINSTANCE.getEventWithMultiplicity();
+
+    /**
+     * The meta object literal for the '<em><b>Event</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EVENT_WITH_MULTIPLICITY__EVENT = eINSTANCE.getEventWithMultiplicity_Event();
+
+    /**
+     * The meta object literal for the '<em><b>Multiplicity</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EVENT_WITH_MULTIPLICITY__MULTIPLICITY = eINSTANCE.getEventWithMultiplicity_Multiplicity();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.IQPatternChangeType <em>IQ Pattern Change Type</em>}' enum.

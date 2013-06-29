@@ -11,12 +11,20 @@ import hu.bme.mit.incquery.vedl.edl.CEParamlist;
 import hu.bme.mit.incquery.vedl.edl.ClosedClosed;
 import hu.bme.mit.incquery.vedl.edl.ClosedOpen;
 import hu.bme.mit.incquery.vedl.edl.ComplexEvent;
+import hu.bme.mit.incquery.vedl.edl.ComplexEventExpression;
 import hu.bme.mit.incquery.vedl.edl.Context;
 import hu.bme.mit.incquery.vedl.edl.ContextAnnotation;
 import hu.bme.mit.incquery.vedl.edl.EdlFactory;
 import hu.bme.mit.incquery.vedl.edl.EdlPackage;
 import hu.bme.mit.incquery.vedl.edl.Event;
+import hu.bme.mit.incquery.vedl.edl.EventParamWithType;
 import hu.bme.mit.incquery.vedl.edl.EventSourceUsage;
+import hu.bme.mit.incquery.vedl.edl.EventWithFollowsOperator;
+import hu.bme.mit.incquery.vedl.edl.EventWithMultiplicity;
+import hu.bme.mit.incquery.vedl.edl.FollowsExpression;
+import hu.bme.mit.incquery.vedl.edl.FollowsOperator;
+import hu.bme.mit.incquery.vedl.edl.FollowsOperatorNoTW;
+import hu.bme.mit.incquery.vedl.edl.FollowsOperatorViaTW;
 import hu.bme.mit.incquery.vedl.edl.IQPattern;
 import hu.bme.mit.incquery.vedl.edl.IQPatternChangeType;
 import hu.bme.mit.incquery.vedl.edl.IQPatternEvent;
@@ -27,7 +35,6 @@ import hu.bme.mit.incquery.vedl.edl.NumericFilter;
 import hu.bme.mit.incquery.vedl.edl.OpenClosed;
 import hu.bme.mit.incquery.vedl.edl.OpenOpen;
 import hu.bme.mit.incquery.vedl.edl.PackageDeclaration;
-import hu.bme.mit.incquery.vedl.edl.ParamWithType;
 import hu.bme.mit.incquery.vedl.edl.ParameterFilter;
 import hu.bme.mit.incquery.vedl.edl.ParameterFilterRule;
 import hu.bme.mit.incquery.vedl.edl.PriorityAnnotation;
@@ -134,7 +141,7 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass paramWithTypeEClass = null;
+  private EClass eventParamWithTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -240,6 +247,55 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
    * @generated
    */
   private EClass literalFilterEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass complexEventExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass followsExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass eventWithFollowsOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass followsOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass followsOperatorNoTWEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass followsOperatorViaTWEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass eventWithMultiplicityEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -586,6 +642,16 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getComplexEvent_ComplexEventExpressions()
+  {
+    return (EReference)complexEventEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getCEParamlist()
   {
     return ceParamlistEClass;
@@ -606,9 +672,9 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getParamWithType()
+  public EClass getEventParamWithType()
   {
-    return paramWithTypeEClass;
+    return eventParamWithTypeEClass;
   }
 
   /**
@@ -616,9 +682,9 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getParamWithType_Name()
+  public EAttribute getEventParamWithType_Name()
   {
-    return (EAttribute)paramWithTypeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)eventParamWithTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -626,9 +692,9 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getParamWithType_Type()
+  public EReference getEventParamWithType_Type()
   {
-    return (EReference)paramWithTypeEClass.getEStructuralFeatures().get(1);
+    return (EReference)eventParamWithTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -936,6 +1002,146 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getComplexEventExpression()
+  {
+    return complexEventExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFollowsExpression()
+  {
+    return followsExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFollowsExpression_FirstEvent()
+  {
+    return (EReference)followsExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFollowsExpression_Events()
+  {
+    return (EReference)followsExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEventWithFollowsOperator()
+  {
+    return eventWithFollowsOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEventWithFollowsOperator_Operator()
+  {
+    return (EReference)eventWithFollowsOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEventWithFollowsOperator_Event()
+  {
+    return (EReference)eventWithFollowsOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFollowsOperator()
+  {
+    return followsOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFollowsOperatorNoTW()
+  {
+    return followsOperatorNoTWEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFollowsOperatorViaTW()
+  {
+    return followsOperatorViaTWEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFollowsOperatorViaTW_Timewindow()
+  {
+    return (EAttribute)followsOperatorViaTWEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEventWithMultiplicity()
+  {
+    return eventWithMultiplicityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEventWithMultiplicity_Event()
+  {
+    return (EReference)eventWithMultiplicityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEventWithMultiplicity_Multiplicity()
+  {
+    return (EAttribute)eventWithMultiplicityEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getIQPatternChangeType()
   {
     return iqPatternChangeTypeEEnum;
@@ -1016,13 +1222,14 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
     complexEventEClass = createEClass(COMPLEX_EVENT);
     createEReference(complexEventEClass, COMPLEX_EVENT__ANNOTATIONS);
     createEReference(complexEventEClass, COMPLEX_EVENT__PARAMLIST);
+    createEReference(complexEventEClass, COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS);
 
     ceParamlistEClass = createEClass(CE_PARAMLIST);
     createEReference(ceParamlistEClass, CE_PARAMLIST__PARAMS);
 
-    paramWithTypeEClass = createEClass(PARAM_WITH_TYPE);
-    createEAttribute(paramWithTypeEClass, PARAM_WITH_TYPE__NAME);
-    createEReference(paramWithTypeEClass, PARAM_WITH_TYPE__TYPE);
+    eventParamWithTypeEClass = createEClass(EVENT_PARAM_WITH_TYPE);
+    createEAttribute(eventParamWithTypeEClass, EVENT_PARAM_WITH_TYPE__NAME);
+    createEReference(eventParamWithTypeEClass, EVENT_PARAM_WITH_TYPE__TYPE);
 
     parameterFilterEClass = createEClass(PARAMETER_FILTER);
     createEAttribute(parameterFilterEClass, PARAMETER_FILTER__ATTRIBUTE_NAME);
@@ -1068,6 +1275,27 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
     createEAttribute(literalFilterEClass, LITERAL_FILTER__NEG);
     createEAttribute(literalFilterEClass, LITERAL_FILTER__OPERATOR);
     createEAttribute(literalFilterEClass, LITERAL_FILTER__VALUE);
+
+    complexEventExpressionEClass = createEClass(COMPLEX_EVENT_EXPRESSION);
+
+    followsExpressionEClass = createEClass(FOLLOWS_EXPRESSION);
+    createEReference(followsExpressionEClass, FOLLOWS_EXPRESSION__FIRST_EVENT);
+    createEReference(followsExpressionEClass, FOLLOWS_EXPRESSION__EVENTS);
+
+    eventWithFollowsOperatorEClass = createEClass(EVENT_WITH_FOLLOWS_OPERATOR);
+    createEReference(eventWithFollowsOperatorEClass, EVENT_WITH_FOLLOWS_OPERATOR__OPERATOR);
+    createEReference(eventWithFollowsOperatorEClass, EVENT_WITH_FOLLOWS_OPERATOR__EVENT);
+
+    followsOperatorEClass = createEClass(FOLLOWS_OPERATOR);
+
+    followsOperatorNoTWEClass = createEClass(FOLLOWS_OPERATOR_NO_TW);
+
+    followsOperatorViaTWEClass = createEClass(FOLLOWS_OPERATOR_VIA_TW);
+    createEAttribute(followsOperatorViaTWEClass, FOLLOWS_OPERATOR_VIA_TW__TIMEWINDOW);
+
+    eventWithMultiplicityEClass = createEClass(EVENT_WITH_MULTIPLICITY);
+    createEReference(eventWithMultiplicityEClass, EVENT_WITH_MULTIPLICITY__EVENT);
+    createEAttribute(eventWithMultiplicityEClass, EVENT_WITH_MULTIPLICITY__MULTIPLICITY);
 
     // Create enums
     iqPatternChangeTypeEEnum = createEEnum(IQ_PATTERN_CHANGE_TYPE);
@@ -1122,6 +1350,9 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
     closedOpenEClass.getESuperTypes().add(this.getRange());
     numericFilterEClass.getESuperTypes().add(this.getParameterFilterRule());
     literalFilterEClass.getESuperTypes().add(this.getParameterFilterRule());
+    followsExpressionEClass.getESuperTypes().add(this.getComplexEventExpression());
+    followsOperatorNoTWEClass.getESuperTypes().add(this.getFollowsOperator());
+    followsOperatorViaTWEClass.getESuperTypes().add(this.getFollowsOperator());
 
     // Initialize classes and features; add operations and parameters
     initEClass(packageDeclarationEClass, PackageDeclaration.class, "PackageDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1159,13 +1390,14 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
     initEClass(complexEventEClass, ComplexEvent.class, "ComplexEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComplexEvent_Annotations(), this.getAnnotations(), null, "annotations", null, 0, -1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComplexEvent_Paramlist(), this.getCEParamlist(), null, "paramlist", null, 0, 1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComplexEvent_ComplexEventExpressions(), this.getComplexEventExpression(), null, "complexEventExpressions", null, 0, -1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ceParamlistEClass, CEParamlist.class, "CEParamlist", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCEParamlist_Params(), this.getParamWithType(), null, "params", null, 0, -1, CEParamlist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCEParamlist_Params(), this.getEventParamWithType(), null, "params", null, 0, -1, CEParamlist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(paramWithTypeEClass, ParamWithType.class, "ParamWithType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getParamWithType_Name(), ecorePackage.getEString(), "name", null, 0, 1, ParamWithType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getParamWithType_Type(), this.getAbstractAtomicEvent(), null, "type", null, 0, 1, ParamWithType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eventParamWithTypeEClass, EventParamWithType.class, "EventParamWithType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEventParamWithType_Name(), ecorePackage.getEString(), "name", null, 0, 1, EventParamWithType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEventParamWithType_Type(), this.getEvent(), null, "type", null, 0, 1, EventParamWithType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterFilterEClass, ParameterFilter.class, "ParameterFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParameterFilter_AttributeName(), ecorePackage.getEString(), "attributeName", null, 0, 1, ParameterFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1211,6 +1443,27 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
     initEAttribute(getLiteralFilter_Neg(), ecorePackage.getEString(), "neg", null, 0, 1, LiteralFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLiteralFilter_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, LiteralFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLiteralFilter_Value(), ecorePackage.getEString(), "value", null, 0, 1, LiteralFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(complexEventExpressionEClass, ComplexEventExpression.class, "ComplexEventExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(followsExpressionEClass, FollowsExpression.class, "FollowsExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFollowsExpression_FirstEvent(), this.getEventWithMultiplicity(), null, "firstEvent", null, 0, -1, FollowsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFollowsExpression_Events(), this.getEventWithFollowsOperator(), null, "events", null, 0, -1, FollowsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(eventWithFollowsOperatorEClass, EventWithFollowsOperator.class, "EventWithFollowsOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEventWithFollowsOperator_Operator(), this.getFollowsOperator(), null, "operator", null, 0, 1, EventWithFollowsOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEventWithFollowsOperator_Event(), this.getEventWithMultiplicity(), null, "event", null, 0, 1, EventWithFollowsOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(followsOperatorEClass, FollowsOperator.class, "FollowsOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(followsOperatorNoTWEClass, FollowsOperatorNoTW.class, "FollowsOperatorNoTW", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(followsOperatorViaTWEClass, FollowsOperatorViaTW.class, "FollowsOperatorViaTW", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFollowsOperatorViaTW_Timewindow(), ecorePackage.getEInt(), "timewindow", null, 0, 1, FollowsOperatorViaTW.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(eventWithMultiplicityEClass, EventWithMultiplicity.class, "EventWithMultiplicity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEventWithMultiplicity_Event(), this.getEventParamWithType(), null, "event", null, 0, 1, EventWithMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEventWithMultiplicity_Multiplicity(), ecorePackage.getEInt(), "multiplicity", null, 0, 1, EventWithMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(iqPatternChangeTypeEEnum, IQPatternChangeType.class, "IQPatternChangeType");

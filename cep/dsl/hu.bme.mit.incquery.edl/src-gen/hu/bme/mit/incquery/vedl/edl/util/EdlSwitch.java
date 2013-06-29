@@ -157,10 +157,10 @@ public class EdlSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EdlPackage.PARAM_WITH_TYPE:
+      case EdlPackage.EVENT_PARAM_WITH_TYPE:
       {
-        ParamWithType paramWithType = (ParamWithType)theEObject;
-        T result = caseParamWithType(paramWithType);
+        EventParamWithType eventParamWithType = (EventParamWithType)theEObject;
+        T result = caseEventParamWithType(eventParamWithType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -276,6 +276,58 @@ public class EdlSwitch<T> extends Switch<T>
         LiteralFilter literalFilter = (LiteralFilter)theEObject;
         T result = caseLiteralFilter(literalFilter);
         if (result == null) result = caseParameterFilterRule(literalFilter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EdlPackage.COMPLEX_EVENT_EXPRESSION:
+      {
+        ComplexEventExpression complexEventExpression = (ComplexEventExpression)theEObject;
+        T result = caseComplexEventExpression(complexEventExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EdlPackage.FOLLOWS_EXPRESSION:
+      {
+        FollowsExpression followsExpression = (FollowsExpression)theEObject;
+        T result = caseFollowsExpression(followsExpression);
+        if (result == null) result = caseComplexEventExpression(followsExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EdlPackage.EVENT_WITH_FOLLOWS_OPERATOR:
+      {
+        EventWithFollowsOperator eventWithFollowsOperator = (EventWithFollowsOperator)theEObject;
+        T result = caseEventWithFollowsOperator(eventWithFollowsOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EdlPackage.FOLLOWS_OPERATOR:
+      {
+        FollowsOperator followsOperator = (FollowsOperator)theEObject;
+        T result = caseFollowsOperator(followsOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EdlPackage.FOLLOWS_OPERATOR_NO_TW:
+      {
+        FollowsOperatorNoTW followsOperatorNoTW = (FollowsOperatorNoTW)theEObject;
+        T result = caseFollowsOperatorNoTW(followsOperatorNoTW);
+        if (result == null) result = caseFollowsOperator(followsOperatorNoTW);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EdlPackage.FOLLOWS_OPERATOR_VIA_TW:
+      {
+        FollowsOperatorViaTW followsOperatorViaTW = (FollowsOperatorViaTW)theEObject;
+        T result = caseFollowsOperatorViaTW(followsOperatorViaTW);
+        if (result == null) result = caseFollowsOperator(followsOperatorViaTW);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EdlPackage.EVENT_WITH_MULTIPLICITY:
+      {
+        EventWithMultiplicity eventWithMultiplicity = (EventWithMultiplicity)theEObject;
+        T result = caseEventWithMultiplicity(eventWithMultiplicity);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -460,17 +512,17 @@ public class EdlSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Param With Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Event Param With Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Param With Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Event Param With Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseParamWithType(ParamWithType object)
+  public T caseEventParamWithType(EventParamWithType object)
   {
     return null;
   }
@@ -711,6 +763,118 @@ public class EdlSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLiteralFilter(LiteralFilter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Complex Event Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Complex Event Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComplexEventExpression(ComplexEventExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Follows Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Follows Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFollowsExpression(FollowsExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Event With Follows Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Event With Follows Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEventWithFollowsOperator(EventWithFollowsOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Follows Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Follows Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFollowsOperator(FollowsOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Follows Operator No TW</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Follows Operator No TW</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFollowsOperatorNoTW(FollowsOperatorNoTW object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Follows Operator Via TW</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Follows Operator Via TW</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFollowsOperatorViaTW(FollowsOperatorViaTW object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Event With Multiplicity</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Event With Multiplicity</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEventWithMultiplicity(EventWithMultiplicity object)
   {
     return null;
   }
