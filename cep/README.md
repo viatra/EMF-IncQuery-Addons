@@ -29,6 +29,8 @@ Roadmap/TODO
 * 06.22. handling both ordered and unordered cases with time windows
 
 **In progress:**
+* replace Strategy with the generated EventProcessingContext
+* make noise filtering more efficient
 * elaborate the JNect demo (robot)
 * enable discretization
 * complete the examples and unit tests
