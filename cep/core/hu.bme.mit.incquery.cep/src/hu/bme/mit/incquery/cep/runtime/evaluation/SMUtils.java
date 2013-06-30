@@ -14,7 +14,6 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
-import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -43,7 +42,8 @@ public final class SMUtils {
 		checkArgument(event != null);
 
 		Guard guard = checkNotNull(transition.getGuard(), "The Guard must not be null.");
-		String guardEventType = checkNotNull(guard.getEventType().getType(), "The Event Type of the Guard must not be null.");
+		String guardEventType = checkNotNull(guard.getEventType().getType(),
+				"The Event Type of the Guard must not be null.");
 
 		String eventTypeId = checkNotNull(event.getType(), "The Event Type of the Event must not be null.");
 
@@ -93,7 +93,7 @@ public final class SMUtils {
 			return flattenedList;
 		}
 
-		for (EventPattern ep : ((ComplexEventPattern)eventPattern).getCompositionEvents()) {
+		for (EventPattern ep : ((ComplexEventPattern) eventPattern).getCompositionEvents()) {
 			if (ep instanceof AtomicEventPattern) {
 				flattenedList.add((AtomicEventPattern) ep);
 			} else if (ep instanceof ComplexEventPattern) {
@@ -107,8 +107,9 @@ public final class SMUtils {
 
 		return flattenedList;
 	}
-	
-	public static Map<AtomicEventPattern, List<Timewindow>> flattenEventPatternsWithTimewindows(EventPattern eventPattern) {
+
+	public static Map<AtomicEventPattern, List<Timewindow>> flattenEventPatternsWithTimewindows(
+			EventPattern eventPattern) {
 		checkArgument(eventPattern != null);
 
 		Map<AtomicEventPattern, List<Timewindow>> flattenedList = new LinkedHashMap<AtomicEventPattern, List<Timewindow>>();

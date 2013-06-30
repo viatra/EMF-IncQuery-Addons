@@ -85,6 +85,10 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 				return createNumericCompareOperatorFromString(eDataType, initialValue);
 			case InternalsmPackage.TIME_CONSTRAINT_TYPE:
 				return createTimeConstraintTypeFromString(eDataType, initialValue);
+			case InternalsmPackage.NOISE_FILTERING:
+				return createNoiseFilteringFromString(eDataType, initialValue);
+			case InternalsmPackage.EVENT_PROCESSING_CONTEXT:
+				return createEventProcessingContextFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -102,6 +106,10 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 				return convertNumericCompareOperatorToString(eDataType, instanceValue);
 			case InternalsmPackage.TIME_CONSTRAINT_TYPE:
 				return convertTimeConstraintTypeToString(eDataType, instanceValue);
+			case InternalsmPackage.NOISE_FILTERING:
+				return convertNoiseFilteringToString(eDataType, instanceValue);
+			case InternalsmPackage.EVENT_PROCESSING_CONTEXT:
+				return convertEventProcessingContextToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -254,6 +262,46 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 	 * @generated
 	 */
 	public String convertTimeConstraintTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NoiseFiltering createNoiseFilteringFromString(EDataType eDataType, String initialValue) {
+		NoiseFiltering result = NoiseFiltering.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNoiseFilteringToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventProcessingContext createEventProcessingContextFromString(EDataType eDataType, String initialValue) {
+		EventProcessingContext result = EventProcessingContext.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEventProcessingContextToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

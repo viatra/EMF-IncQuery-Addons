@@ -1,19 +1,15 @@
 package hu.bme.mit.incquery.cep.tests.testcaseSm.main;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
-import hu.bme.mit.incquery.cep.runtime.evaluation.NoiseFiltering;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.A;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.B;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.C;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.X;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.ABC_Pattern;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.junit.After;
@@ -45,7 +41,7 @@ public class PartialMatchFiltering {
 	@Test
 	public void test() throws InterruptedException, IncQueryException {
 		manager = new EventModelManager(Strategy.getDefault());
-		manager.assignEventPattern(abcPattern, NoiseFiltering.NORMAL);
+		manager.assignEventPattern(abcPattern, NoiseFiltering.OFF);
 
 		System.err.println("DIAG: Test starting.\n");
 

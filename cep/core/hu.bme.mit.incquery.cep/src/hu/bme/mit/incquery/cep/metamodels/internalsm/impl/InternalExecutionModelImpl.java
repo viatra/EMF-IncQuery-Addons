@@ -4,6 +4,7 @@ package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
@@ -35,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl#getStateMachines <em>State Machines</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl#getLatestEvent <em>Latest Event</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl#getEventTokens <em>Event Tokens</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl#getContext <em>Context</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +72,26 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 	 * @ordered
 	 */
 	protected EList<EventToken> eventTokens;
+
+	/**
+	 * The default value of the '{@link #getContext() <em>Context</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContext()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EventProcessingContext CONTEXT_EDEFAULT = EventProcessingContext.CHRONICLE;
+
+	/**
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContext()
+	 * @generated
+	 * @ordered
+	 */
+	protected EventProcessingContext context = CONTEXT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,6 +184,27 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EventProcessingContext getContext() {
+		return context;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContext(EventProcessingContext newContext) {
+		EventProcessingContext oldContext = context;
+		context = newContext == null ? CONTEXT_EDEFAULT : newContext;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.INTERNAL_EXECUTION_MODEL__CONTEXT, oldContext, context));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -189,6 +232,8 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 				return getLatestEvent();
 			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__EVENT_TOKENS:
 				return getEventTokens();
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__CONTEXT:
+				return getContext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,6 +258,9 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 				getEventTokens().clear();
 				getEventTokens().addAll((Collection<? extends EventToken>)newValue);
 				return;
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__CONTEXT:
+				setContext((EventProcessingContext)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -234,6 +282,9 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__EVENT_TOKENS:
 				getEventTokens().clear();
 				return;
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__CONTEXT:
+				setContext(CONTEXT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -252,8 +303,26 @@ public class InternalExecutionModelImpl extends EObjectImpl implements InternalE
 				return latestEvent != null;
 			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__EVENT_TOKENS:
 				return eventTokens != null && !eventTokens.isEmpty();
+			case InternalsmPackage.INTERNAL_EXECUTION_MODEL__CONTEXT:
+				return context != CONTEXT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (context: ");
+		result.append(context);
+		result.append(')');
+		return result.toString();
 	}
 
 } //InternalExecutionModelImpl

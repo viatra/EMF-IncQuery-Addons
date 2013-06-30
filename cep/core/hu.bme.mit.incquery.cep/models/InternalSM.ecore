@@ -38,6 +38,10 @@
         eType="#//State" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventPattern" lowerBound="1"
         eType="ecore:EClass CEPMeta.ecore#//EventPattern" eOpposite="CEPMeta.ecore#//EventPattern/stateMachines"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noiseFiltering" lowerBound="1"
+        eType="#//NoiseFiltering"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" eType="#//EventProcessingContext"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InternalExecutionModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachines" upperBound="-1"
@@ -46,6 +50,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventTokens" upperBound="-1"
         eType="#//EventToken" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" eType="#//EventProcessingContext"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventToken">
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentState" eType="#//State"
@@ -74,8 +79,18 @@
     <eLiterals name="CHECK" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeConstraint">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TimeConstraintType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeConstraintSpecification"
         lowerBound="1" eType="#//TimeConstraintSpecification"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TimeConstraintType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="NoiseFiltering">
+    <eLiterals name="OFF"/>
+    <eLiterals name="NORMAL" value="1"/>
+    <eLiterals name="STRICT" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EventProcessingContext">
+    <eLiterals name="CHRONICLE"/>
+    <eLiterals name="RECENT" value="1"/>
+    <eLiterals name="UNRESTRICTED" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

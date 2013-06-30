@@ -451,13 +451,40 @@ public interface InternalsmPackage extends EPackage {
 	int STATE_MACHINE__EVENT_PATTERN = 1;
 
 	/**
+	 * The feature id for the '<em><b>Noise Filtering</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MACHINE__NOISE_FILTERING = 2;
+
+	/**
+	 * The feature id for the '<em><b>Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MACHINE__PRIORITY = 3;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MACHINE__CONTEXT = 4;
+
+	/**
 	 * The number of structural features of the '<em>State Machine</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE_FEATURE_COUNT = 2;
+	int STATE_MACHINE_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl <em>Internal Execution Model</em>}' class.
@@ -497,13 +524,22 @@ public interface InternalsmPackage extends EPackage {
 	int INTERNAL_EXECUTION_MODEL__EVENT_TOKENS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Context</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_EXECUTION_MODEL__CONTEXT = 3;
+
+	/**
 	 * The number of structural features of the '<em>Internal Execution Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_EXECUTION_MODEL_FEATURE_COUNT = 3;
+	int INTERNAL_EXECUTION_MODEL_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventTokenImpl <em>Event Token</em>}' class.
@@ -608,22 +644,22 @@ public interface InternalsmPackage extends EPackage {
 	int TIME_CONSTRAINT = 10;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_CONSTRAINT__TYPE = 0;
-
-	/**
 	 * The feature id for the '<em><b>Time Constraint Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_CONSTRAINT__TIME_CONSTRAINT_SPECIFICATION = 1;
+	int TIME_CONSTRAINT__TIME_CONSTRAINT_SPECIFICATION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_CONSTRAINT__TYPE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Time Constraint</em>' class.
@@ -653,6 +689,27 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 */
 	int TIME_CONSTRAINT_TYPE = 12;
+
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering <em>Noise Filtering</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getNoiseFiltering()
+	 * @generated
+	 */
+	int NOISE_FILTERING = 13;
+
+
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext <em>Event Processing Context</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getEventProcessingContext()
+	 * @generated
+	 */
+	int EVENT_PROCESSING_CONTEXT = 14;
 
 
 	/**
@@ -858,6 +915,39 @@ public interface InternalsmPackage extends EPackage {
 	EReference getStateMachine_EventPattern();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getNoiseFiltering <em>Noise Filtering</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Noise Filtering</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getNoiseFiltering()
+	 * @see #getStateMachine()
+	 * @generated
+	 */
+	EAttribute getStateMachine_NoiseFiltering();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getPriority <em>Priority</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Priority</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getPriority()
+	 * @see #getStateMachine()
+	 * @generated
+	 */
+	EAttribute getStateMachine_Priority();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getContext <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Context</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getContext()
+	 * @see #getStateMachine()
+	 * @generated
+	 */
+	EAttribute getStateMachine_Context();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel <em>Internal Execution Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -899,6 +989,17 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInternalExecutionModel_EventTokens();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getContext <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Context</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getContext()
+	 * @see #getInternalExecutionModel()
+	 * @generated
+	 */
+	EAttribute getInternalExecutionModel_Context();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken <em>Event Token</em>}'.
@@ -1037,6 +1138,26 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getTimeConstraintType();
+
+	/**
+	 * Returns the meta object for enum '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering <em>Noise Filtering</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Noise Filtering</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering
+	 * @generated
+	 */
+	EEnum getNoiseFiltering();
+
+	/**
+	 * Returns the meta object for enum '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext <em>Event Processing Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Event Processing Context</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext
+	 * @generated
+	 */
+	EEnum getEventProcessingContext();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1227,6 +1348,30 @@ public interface InternalsmPackage extends EPackage {
 		EReference STATE_MACHINE__EVENT_PATTERN = eINSTANCE.getStateMachine_EventPattern();
 
 		/**
+		 * The meta object literal for the '<em><b>Noise Filtering</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATE_MACHINE__NOISE_FILTERING = eINSTANCE.getStateMachine_NoiseFiltering();
+
+		/**
+		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATE_MACHINE__PRIORITY = eINSTANCE.getStateMachine_Priority();
+
+		/**
+		 * The meta object literal for the '<em><b>Context</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATE_MACHINE__CONTEXT = eINSTANCE.getStateMachine_Context();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl <em>Internal Execution Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1259,6 +1404,14 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTERNAL_EXECUTION_MODEL__EVENT_TOKENS = eINSTANCE.getInternalExecutionModel_EventTokens();
+
+		/**
+		 * The meta object literal for the '<em><b>Context</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERNAL_EXECUTION_MODEL__CONTEXT = eINSTANCE.getInternalExecutionModel_Context();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.EventTokenImpl <em>Event Token</em>}' class.
@@ -1373,6 +1526,26 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum TIME_CONSTRAINT_TYPE = eINSTANCE.getTimeConstraintType();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering <em>Noise Filtering</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getNoiseFiltering()
+		 * @generated
+		 */
+		EEnum NOISE_FILTERING = eINSTANCE.getNoiseFiltering();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext <em>Event Processing Context</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext
+		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getEventProcessingContext()
+		 * @generated
+		 */
+		EEnum EVENT_PROCESSING_CONTEXT = eINSTANCE.getEventProcessingContext();
 
 	}
 

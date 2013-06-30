@@ -5,7 +5,9 @@ package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 
@@ -34,6 +36,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateMachineImpl#getStates <em>States</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateMachineImpl#getEventPattern <em>Event Pattern</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateMachineImpl#getNoiseFiltering <em>Noise Filtering</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateMachineImpl#getPriority <em>Priority</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.StateMachineImpl#getContext <em>Context</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +64,66 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * @ordered
 	 */
 	protected EventPattern eventPattern;
+
+	/**
+	 * The default value of the '{@link #getNoiseFiltering() <em>Noise Filtering</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNoiseFiltering()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final NoiseFiltering NOISE_FILTERING_EDEFAULT = NoiseFiltering.OFF;
+
+	/**
+	 * The cached value of the '{@link #getNoiseFiltering() <em>Noise Filtering</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNoiseFiltering()
+	 * @generated
+	 * @ordered
+	 */
+	protected NoiseFiltering noiseFiltering = NOISE_FILTERING_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPriority()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PRIORITY_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPriority()
+	 * @generated
+	 * @ordered
+	 */
+	protected int priority = PRIORITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getContext() <em>Context</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContext()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EventProcessingContext CONTEXT_EDEFAULT = EventProcessingContext.CHRONICLE;
+
+	/**
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContext()
+	 * @generated
+	 * @ordered
+	 */
+	protected EventProcessingContext context = CONTEXT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,6 +221,69 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public NoiseFiltering getNoiseFiltering() {
+		return noiseFiltering;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNoiseFiltering(NoiseFiltering newNoiseFiltering) {
+		NoiseFiltering oldNoiseFiltering = noiseFiltering;
+		noiseFiltering = newNoiseFiltering == null ? NOISE_FILTERING_EDEFAULT : newNoiseFiltering;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE_MACHINE__NOISE_FILTERING, oldNoiseFiltering, noiseFiltering));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getPriority() {
+		return priority;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPriority(int newPriority) {
+		int oldPriority = priority;
+		priority = newPriority;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE_MACHINE__PRIORITY, oldPriority, priority));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventProcessingContext getContext() {
+		return context;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContext(EventProcessingContext newContext) {
+		EventProcessingContext oldContext = context;
+		context = newContext == null ? CONTEXT_EDEFAULT : newContext;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.STATE_MACHINE__CONTEXT, oldContext, context));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -196,6 +324,12 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
 				if (resolve) return getEventPattern();
 				return basicGetEventPattern();
+			case InternalsmPackage.STATE_MACHINE__NOISE_FILTERING:
+				return getNoiseFiltering();
+			case InternalsmPackage.STATE_MACHINE__PRIORITY:
+				return getPriority();
+			case InternalsmPackage.STATE_MACHINE__CONTEXT:
+				return getContext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,6 +350,15 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
 				setEventPattern((EventPattern)newValue);
 				return;
+			case InternalsmPackage.STATE_MACHINE__NOISE_FILTERING:
+				setNoiseFiltering((NoiseFiltering)newValue);
+				return;
+			case InternalsmPackage.STATE_MACHINE__PRIORITY:
+				setPriority((Integer)newValue);
+				return;
+			case InternalsmPackage.STATE_MACHINE__CONTEXT:
+				setContext((EventProcessingContext)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -234,6 +377,15 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
 				setEventPattern((EventPattern)null);
 				return;
+			case InternalsmPackage.STATE_MACHINE__NOISE_FILTERING:
+				setNoiseFiltering(NOISE_FILTERING_EDEFAULT);
+				return;
+			case InternalsmPackage.STATE_MACHINE__PRIORITY:
+				setPriority(PRIORITY_EDEFAULT);
+				return;
+			case InternalsmPackage.STATE_MACHINE__CONTEXT:
+				setContext(CONTEXT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -250,8 +402,34 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 				return states != null && !states.isEmpty();
 			case InternalsmPackage.STATE_MACHINE__EVENT_PATTERN:
 				return eventPattern != null;
+			case InternalsmPackage.STATE_MACHINE__NOISE_FILTERING:
+				return noiseFiltering != NOISE_FILTERING_EDEFAULT;
+			case InternalsmPackage.STATE_MACHINE__PRIORITY:
+				return priority != PRIORITY_EDEFAULT;
+			case InternalsmPackage.STATE_MACHINE__CONTEXT:
+				return context != CONTEXT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (noiseFiltering: ");
+		result.append(noiseFiltering);
+		result.append(", priority: ");
+		result.append(priority);
+		result.append(", context: ");
+		result.append(context);
+		result.append(')');
+		return result.toString();
 	}
 
 } //StateMachineImpl

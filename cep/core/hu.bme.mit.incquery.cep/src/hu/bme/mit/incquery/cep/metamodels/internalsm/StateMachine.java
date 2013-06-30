@@ -18,6 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getStates <em>States</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern <em>Event Pattern</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getNoiseFiltering <em>Noise Filtering</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getPriority <em>Priority</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getContext <em>Context</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,5 +72,89 @@ public interface StateMachine extends EObject {
 	 * @generated
 	 */
 	void setEventPattern(EventPattern value);
+
+	/**
+	 * Returns the value of the '<em><b>Noise Filtering</b></em>' attribute.
+	 * The literals are from the enumeration {@link hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Noise Filtering</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Noise Filtering</em>' attribute.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering
+	 * @see #setNoiseFiltering(NoiseFiltering)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getStateMachine_NoiseFiltering()
+	 * @model required="true"
+	 * @generated
+	 */
+	NoiseFiltering getNoiseFiltering();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getNoiseFiltering <em>Noise Filtering</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Noise Filtering</em>' attribute.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering
+	 * @see #getNoiseFiltering()
+	 * @generated
+	 */
+	void setNoiseFiltering(NoiseFiltering value);
+
+	/**
+	 * Returns the value of the '<em><b>Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Priority</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Priority</em>' attribute.
+	 * @see #setPriority(int)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getStateMachine_Priority()
+	 * @model
+	 * @generated
+	 */
+	int getPriority();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getPriority <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Priority</em>' attribute.
+	 * @see #getPriority()
+	 * @generated
+	 */
+	void setPriority(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Context</b></em>' attribute.
+	 * The literals are from the enumeration {@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Context</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Context</em>' attribute.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext
+	 * @see #setContext(EventProcessingContext)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getStateMachine_Context()
+	 * @model
+	 * @generated
+	 */
+	EventProcessingContext getContext();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getContext <em>Context</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Context</em>' attribute.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext
+	 * @see #getContext()
+	 * @generated
+	 */
+	void setContext(EventProcessingContext value);
 
 } // StateMachine

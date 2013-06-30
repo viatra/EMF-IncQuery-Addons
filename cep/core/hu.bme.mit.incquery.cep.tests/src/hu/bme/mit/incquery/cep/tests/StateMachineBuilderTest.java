@@ -13,6 +13,7 @@ import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
+import hu.bme.mit.incquery.cep.runtime.evaluation.EventPatternAutomatonOptions;
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder;
 
@@ -76,7 +77,7 @@ public class StateMachineBuilderTest {
 		int expected = calculateNumberOfStates(testEventPattern, eventPatternType);
 		assertFalse(expected == 0);
 
-		smBuilder = new StateMachineBuilder(model, testEventPattern);
+		smBuilder = new StateMachineBuilder(model, testEventPattern, EventPatternAutomatonOptions.getDefault());
 		StateMachine stateMachine = smBuilder.buildStateMachine();
 		assertNotNull(stateMachine);
 

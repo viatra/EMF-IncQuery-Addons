@@ -6,6 +6,7 @@ import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.CepPackageImpl;
 
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
@@ -13,6 +14,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
@@ -127,6 +129,20 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * @generated
 	 */
 	private EEnum timeConstraintTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum noiseFilteringEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum eventProcessingContextEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -370,6 +386,33 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getStateMachine_NoiseFiltering() {
+		return (EAttribute)stateMachineEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStateMachine_Priority() {
+		return (EAttribute)stateMachineEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStateMachine_Context() {
+		return (EAttribute)stateMachineEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInternalExecutionModel() {
 		return internalExecutionModelEClass;
 	}
@@ -399,6 +442,15 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 */
 	public EReference getInternalExecutionModel_EventTokens() {
 		return (EReference)internalExecutionModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInternalExecutionModel_Context() {
+		return (EAttribute)internalExecutionModelEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -488,7 +540,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * @generated
 	 */
 	public EAttribute getTimeConstraint_Type() {
-		return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)timeConstraintEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -497,7 +549,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 * @generated
 	 */
 	public EReference getTimeConstraint_TimeConstraintSpecification() {
-		return (EReference)timeConstraintEClass.getEStructuralFeatures().get(1);
+		return (EReference)timeConstraintEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -516,6 +568,24 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 	 */
 	public EEnum getTimeConstraintType() {
 		return timeConstraintTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getNoiseFiltering() {
+		return noiseFilteringEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getEventProcessingContext() {
+		return eventProcessingContextEEnum;
 	}
 
 	/**
@@ -571,11 +641,15 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		stateMachineEClass = createEClass(STATE_MACHINE);
 		createEReference(stateMachineEClass, STATE_MACHINE__STATES);
 		createEReference(stateMachineEClass, STATE_MACHINE__EVENT_PATTERN);
+		createEAttribute(stateMachineEClass, STATE_MACHINE__NOISE_FILTERING);
+		createEAttribute(stateMachineEClass, STATE_MACHINE__PRIORITY);
+		createEAttribute(stateMachineEClass, STATE_MACHINE__CONTEXT);
 
 		internalExecutionModelEClass = createEClass(INTERNAL_EXECUTION_MODEL);
 		createEReference(internalExecutionModelEClass, INTERNAL_EXECUTION_MODEL__STATE_MACHINES);
 		createEReference(internalExecutionModelEClass, INTERNAL_EXECUTION_MODEL__LATEST_EVENT);
 		createEReference(internalExecutionModelEClass, INTERNAL_EXECUTION_MODEL__EVENT_TOKENS);
+		createEAttribute(internalExecutionModelEClass, INTERNAL_EXECUTION_MODEL__CONTEXT);
 
 		eventTokenEClass = createEClass(EVENT_TOKEN);
 		createEReference(eventTokenEClass, EVENT_TOKEN__CURRENT_STATE);
@@ -588,12 +662,14 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		createEAttribute(timeConstraintSpecificationEClass, TIME_CONSTRAINT_SPECIFICATION__STOP_TIMESTAMP);
 
 		timeConstraintEClass = createEClass(TIME_CONSTRAINT);
-		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__TYPE);
 		createEReference(timeConstraintEClass, TIME_CONSTRAINT__TIME_CONSTRAINT_SPECIFICATION);
+		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__TYPE);
 
 		// Create enums
 		numericCompareOperatorEEnum = createEEnum(NUMERIC_COMPARE_OPERATOR);
 		timeConstraintTypeEEnum = createEEnum(TIME_CONSTRAINT_TYPE);
+		noiseFilteringEEnum = createEEnum(NOISE_FILTERING);
+		eventProcessingContextEEnum = createEEnum(EVENT_PROCESSING_CONTEXT);
 	}
 
 	/**
@@ -657,11 +733,15 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		initEClass(stateMachineEClass, StateMachine.class, "StateMachine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStateMachine_States(), this.getState(), null, "states", null, 0, -1, StateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStateMachine_EventPattern(), theCepPackage.getEventPattern(), theCepPackage.getEventPattern_StateMachines(), "eventPattern", null, 1, 1, StateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStateMachine_NoiseFiltering(), this.getNoiseFiltering(), "noiseFiltering", null, 1, 1, StateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStateMachine_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, StateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStateMachine_Context(), this.getEventProcessingContext(), "context", null, 0, 1, StateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(internalExecutionModelEClass, InternalExecutionModel.class, "InternalExecutionModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInternalExecutionModel_StateMachines(), this.getStateMachine(), null, "stateMachines", null, 0, -1, InternalExecutionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInternalExecutionModel_LatestEvent(), theCepPackage.getEvent(), null, "latestEvent", null, 0, 1, InternalExecutionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInternalExecutionModel_EventTokens(), this.getEventToken(), null, "eventTokens", null, 0, -1, InternalExecutionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInternalExecutionModel_Context(), this.getEventProcessingContext(), "context", null, 0, 1, InternalExecutionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eventTokenEClass, EventToken.class, "EventToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEventToken_CurrentState(), this.getState(), this.getState_EventTokens(), "currentState", null, 0, 1, EventToken.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -676,8 +756,8 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		addEOperation(timeConstraintSpecificationEClass, null, "handleTimeConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(timeConstraintEClass, TimeConstraint.class, "TimeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTimeConstraint_Type(), this.getTimeConstraintType(), "type", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTimeConstraint_TimeConstraintSpecification(), this.getTimeConstraintSpecification(), null, "timeConstraintSpecification", null, 1, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTimeConstraint_Type(), this.getTimeConstraintType(), "type", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(numericCompareOperatorEEnum, NumericCompareOperator.class, "NumericCompareOperator");
@@ -691,6 +771,16 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		addEEnumLiteral(timeConstraintTypeEEnum, TimeConstraintType.START);
 		addEEnumLiteral(timeConstraintTypeEEnum, TimeConstraintType.STOP);
 		addEEnumLiteral(timeConstraintTypeEEnum, TimeConstraintType.CHECK);
+
+		initEEnum(noiseFilteringEEnum, NoiseFiltering.class, "NoiseFiltering");
+		addEEnumLiteral(noiseFilteringEEnum, NoiseFiltering.OFF);
+		addEEnumLiteral(noiseFilteringEEnum, NoiseFiltering.NORMAL);
+		addEEnumLiteral(noiseFilteringEEnum, NoiseFiltering.STRICT);
+
+		initEEnum(eventProcessingContextEEnum, EventProcessingContext.class, "EventProcessingContext");
+		addEEnumLiteral(eventProcessingContextEEnum, EventProcessingContext.CHRONICLE);
+		addEEnumLiteral(eventProcessingContextEEnum, EventProcessingContext.RECENT);
+		addEEnumLiteral(eventProcessingContextEEnum, EventProcessingContext.UNRESTRICTED);
 
 		// Create resource
 		createResource(eNS_URI);

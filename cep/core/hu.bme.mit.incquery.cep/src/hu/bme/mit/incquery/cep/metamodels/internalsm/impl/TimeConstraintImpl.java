@@ -22,14 +22,24 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintImpl#getType <em>Type</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintImpl#getTimeConstraintSpecification <em>Time Constraint Specification</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.TimeConstraintImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class TimeConstraintImpl extends EObjectImpl implements TimeConstraint {
+	/**
+	 * The cached value of the '{@link #getTimeConstraintSpecification() <em>Time Constraint Specification</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeConstraintSpecification()
+	 * @generated
+	 * @ordered
+	 */
+	protected TimeConstraintSpecification timeConstraintSpecification;
+
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -49,16 +59,6 @@ public class TimeConstraintImpl extends EObjectImpl implements TimeConstraint {
 	 * @ordered
 	 */
 	protected TimeConstraintType type = TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getTimeConstraintSpecification() <em>Time Constraint Specification</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTimeConstraintSpecification()
-	 * @generated
-	 * @ordered
-	 */
-	protected TimeConstraintSpecification timeConstraintSpecification;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -146,11 +146,11 @@ public class TimeConstraintImpl extends EObjectImpl implements TimeConstraint {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InternalsmPackage.TIME_CONSTRAINT__TYPE:
-				return getType();
 			case InternalsmPackage.TIME_CONSTRAINT__TIME_CONSTRAINT_SPECIFICATION:
 				if (resolve) return getTimeConstraintSpecification();
 				return basicGetTimeConstraintSpecification();
+			case InternalsmPackage.TIME_CONSTRAINT__TYPE:
+				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -163,11 +163,11 @@ public class TimeConstraintImpl extends EObjectImpl implements TimeConstraint {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InternalsmPackage.TIME_CONSTRAINT__TYPE:
-				setType((TimeConstraintType)newValue);
-				return;
 			case InternalsmPackage.TIME_CONSTRAINT__TIME_CONSTRAINT_SPECIFICATION:
 				setTimeConstraintSpecification((TimeConstraintSpecification)newValue);
+				return;
+			case InternalsmPackage.TIME_CONSTRAINT__TYPE:
+				setType((TimeConstraintType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -181,11 +181,11 @@ public class TimeConstraintImpl extends EObjectImpl implements TimeConstraint {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InternalsmPackage.TIME_CONSTRAINT__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
 			case InternalsmPackage.TIME_CONSTRAINT__TIME_CONSTRAINT_SPECIFICATION:
 				setTimeConstraintSpecification((TimeConstraintSpecification)null);
+				return;
+			case InternalsmPackage.TIME_CONSTRAINT__TYPE:
+				setType(TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -199,10 +199,10 @@ public class TimeConstraintImpl extends EObjectImpl implements TimeConstraint {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InternalsmPackage.TIME_CONSTRAINT__TYPE:
-				return type != TYPE_EDEFAULT;
 			case InternalsmPackage.TIME_CONSTRAINT__TIME_CONSTRAINT_SPECIFICATION:
 				return timeConstraintSpecification != null;
+			case InternalsmPackage.TIME_CONSTRAINT__TYPE:
+				return type != TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

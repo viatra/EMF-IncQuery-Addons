@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getStateMachines <em>State Machines</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getLatestEvent <em>Latest Event</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getEventTokens <em>Event Tokens</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getContext <em>Context</em>}</li>
  * </ul>
  * </p>
  *
@@ -84,5 +85,34 @@ public interface InternalExecutionModel extends EObject {
 	 * @generated
 	 */
 	EList<EventToken> getEventTokens();
+
+	/**
+	 * Returns the value of the '<em><b>Context</b></em>' attribute.
+	 * The literals are from the enumeration {@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Context</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Context</em>' attribute.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext
+	 * @see #setContext(EventProcessingContext)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getInternalExecutionModel_Context()
+	 * @model
+	 * @generated
+	 */
+	EventProcessingContext getContext();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel#getContext <em>Context</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Context</em>' attribute.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext
+	 * @see #getContext()
+	 * @generated
+	 */
+	void setContext(EventProcessingContext value);
 
 } // InternalExecutionModel

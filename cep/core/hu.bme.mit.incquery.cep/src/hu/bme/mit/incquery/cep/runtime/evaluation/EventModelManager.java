@@ -8,6 +8,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
@@ -16,12 +17,11 @@ import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.EventProcessingStrategyFactory;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.IEventProcessingStrategy;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
-import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder2;
+import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder;
 import hu.bme.mit.incquery.cep.specific.evm.CepActivationStates;
 import hu.bme.mit.incquery.cep.specific.evm.CepEventSourceSpecification;
 import hu.bme.mit.incquery.cep.specific.evm.CepEventType;
 import hu.bme.mit.incquery.cep.specific.evm.CepRealm;
-import hu.bme.mit.incquery.resolver.LifoConflictResolver;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -35,6 +35,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -74,7 +75,8 @@ public class EventModelManager {
 	private ResourceSet resourceSet;
 	private Map<StateMachine, FinalState> finalStatesForStatemachines = new LinkedHashMap<StateMachine, FinalState>();
 	private Map<StateMachine, InitState> initStatesForStatemachines = new LinkedHashMap<StateMachine, InitState>();
-	private boolean wasEnabled = false;
+	// private boolean wasEnabled = false;
+	private Map<StateMachine, Boolean> wasEnabled = new LinkedHashMap<StateMachine, Boolean>();
 	private NoiseFiltering noiseFiltering;
 
 	private final class UpdateCompleteProviderExtension extends UpdateCompleteProvider {
@@ -111,17 +113,16 @@ public class EventModelManager {
 		EventQueue.getInstance().eAdapters().add(adapter);
 	}
 
-	/**
-	 * @deprecated an additional boolean param will be introduced regarding the
-	 *             NOISE FILTERING resulting in a different param type (~Map)
-	 */
-	@Deprecated
-	@SuppressWarnings("unchecked")
-	public void assignEventPatterns(List<EventPattern> eventPatterns) {
+	public void assignEventPatterns(Map<EventPattern, EventPatternAutomatonOptions> eventPatternsWithOptions) {
 		Set<RuleSpecification<?>> rules = new HashSet<RuleSpecification<?>>();
 
-		for (EventPattern eventPattern : eventPatterns) {
-			CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(eventPattern, this);
+		for (EventPattern eventPattern : eventPatternsWithOptions.keySet()) {
+			EventPatternAutomatonOptions options = eventPatternsWithOptions.get(eventPattern);
+			StateMachine stateMachine = getStateMachine(eventPattern, options);
+
+			wasEnabled.put(stateMachine, true);
+
+			CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(stateMachine);
 
 			Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(CepActivationStates.ACTIVE) {
 				@Override
@@ -150,7 +151,7 @@ public class EventModelManager {
 			UpdateCompleteBasedSchedulerFactory schedulerFactory = new UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory(
 					updateCompleteProvider);
 			topLevelExecutionSchema = EventDrivenVM.createExecutionSchema(realm, schedulerFactory,
-					Collections.EMPTY_SET);
+					Collections.<RuleSpecification<?>> emptySet());
 			topLevelExecutionSchema.addRule(ruleSpec, false);
 		}
 
@@ -160,7 +161,6 @@ public class EventModelManager {
 
 			ModelHandlerRules mhr = new ModelHandlerRules(this);
 			FixedPriorityConflictResolver fixedPriorityResolver = ConflictResolvers.createFixedPriorityResolver();
-			LifoConflictResolver lifoConflictResolver = new LifoConflictResolver();
 
 			for (RuleSpecification<?> ruleSpec : mhr.getModelHandlers().keySet()) {
 				rules.add(ruleSpec);
@@ -170,75 +170,6 @@ public class EventModelManager {
 			lowLevelExecutionSchema = ExecutionSchemas.createIncQueryExecutionSchema(engine, schedulerFactory, rules);
 			// lowLevelExecutionSchema.getLogger().setLevel(Level.DEBUG);
 			lowLevelExecutionSchema.setConflictResolver(fixedPriorityResolver);
-			// lowLevelExecutionSchema.setConflictResolver(lifoConflictResolver);
-
-			engine.getLogger().setLevel(Level.OFF);
-
-		} catch (IncQueryException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void assignEventPattern(EventPattern eventPattern, NoiseFiltering noiseFiltering) {
-		Set<RuleSpecification<?>> rules = new HashSet<RuleSpecification<?>>();
-
-		CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(eventPattern, this);
-
-		Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(CepActivationStates.ACTIVE) {
-			@Override
-			protected void execute(Activation<? extends ObservedComplexEventPattern> activation, Context context) {
-				Logger.log(">>>>>>>>>>>>>>>CEP: Complex event pattern appeared: "
-						+ activation.getAtom().getObservedEventPattern().getId());
-			}
-
-			@Override
-			protected void handleError(Activation<? extends ObservedComplexEventPattern> activation,
-					Exception exception, Context context) {
-				// not gonna happen
-			}
-		};
-
-		ActivationLifeCycle lifeCycle = ActivationLifeCycle.create(CepActivationStates.INACTIVE);
-		lifeCycle.addStateTransition(CepActivationStates.INACTIVE, CepEventType.APPEARED, CepActivationStates.ACTIVE);
-		lifeCycle
-				.addStateTransition(CepActivationStates.ACTIVE, RuleEngineEventType.FIRE, CepActivationStates.INACTIVE);
-
-		RuleSpecification<ObservedComplexEventPattern> ruleSpec = new RuleSpecification<ObservedComplexEventPattern>(
-				sourceSpec, lifeCycle, Sets.newHashSet(job));
-
-		updateCompleteProvider = new UpdateCompleteProviderExtension();
-		UpdateCompleteBasedSchedulerFactory schedulerFactory = new UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory(
-				updateCompleteProvider);
-		topLevelExecutionSchema = EventDrivenVM.createExecutionSchema(realm, schedulerFactory, Collections.EMPTY_SET);
-		topLevelExecutionSchema.addRule(ruleSpec, false);
-
-		try {
-			engine = IncQueryEngineManager.getInstance().getIncQueryEngine(resourceSet);
-			ISchedulerFactory schedulerFactory2 = Schedulers.getIQBaseSchedulerFactory(engine.getBaseIndex());
-
-			ModelHandlerRules mhr = new ModelHandlerRules(this);
-			FixedPriorityConflictResolver fixedPriorityResolver = ConflictResolvers.createFixedPriorityResolver();
-
-			for (RuleSpecification<?> ruleSpec2 : mhr.getModelHandlers().keySet()) {
-				rules.add(ruleSpec2);
-				fixedPriorityResolver.setPriority(ruleSpec2, mhr.getModelHandlers().get(ruleSpec2));
-			}
-
-			// if (filterNoise) {
-			// RuleSpecification<PartiallyMatchedEventPatternMatch>
-			// partiallyMatchedEventPatternRule = mhr
-			// .getPartiallyMatchedEventPatternRule();
-			// rules.add(partiallyMatchedEventPatternRule);
-			// fixedPriorityResolver.setPriority(partiallyMatchedEventPatternRule,
-			// 1000);
-			// }
-
-			this.noiseFiltering = noiseFiltering;
-
-			lowLevelExecutionSchema = ExecutionSchemas.createIncQueryExecutionSchema(engine, schedulerFactory2, rules);
-			// lowLevelExecutionSchema.getLogger().setLevel(Level.DEBUG);
-			lowLevelExecutionSchema.setConflictResolver(fixedPriorityResolver);
-			// lowLevelExecutionSchema.setConflictResolver(lifoConflictResolver);
 
 			engine.getLogger().setLevel(Level.OFF);
 
@@ -256,8 +187,29 @@ public class EventModelManager {
 		}
 	}
 
-	public StateMachine getStateMachine(EventPattern eventPattern) {
-		StateMachine stateMachine = new StateMachineBuilder2(model, eventPattern).buildStateMachine();
+	public void assignEventPatterns(List<EventPattern> eventPatterns) {
+		Map<EventPattern, EventPatternAutomatonOptions> eventsWithOptions = new LinkedHashMap<EventPattern, EventPatternAutomatonOptions>();
+
+		for (EventPattern ep : eventPatterns) {
+			eventsWithOptions.put(ep, EventPatternAutomatonOptions.getDefault());
+		}
+
+		assignEventPatterns(eventsWithOptions);
+	}
+
+	public void assignEventPattern(EventPattern eventPattern, NoiseFiltering noiseFiltering) {
+		Map<EventPattern, EventPatternAutomatonOptions> eventsWithOptions = new LinkedHashMap<EventPattern, EventPatternAutomatonOptions>();
+
+		EventPatternAutomatonOptions options = EventPatternAutomatonOptions.getDefault();
+		options.setNoiseFiltering(noiseFiltering);
+
+		eventsWithOptions.put(eventPattern, options);
+
+		assignEventPatterns(eventsWithOptions);
+	}
+
+	public StateMachine getStateMachine(EventPattern eventPattern, EventPatternAutomatonOptions options) {
+		StateMachine stateMachine = new StateMachineBuilder(model, eventPattern, options).buildStateMachine();
 		FinalState finalState = null;
 		InitState initState = null;
 		for (State state : stateMachine.getStates()) {
@@ -287,42 +239,45 @@ public class EventModelManager {
 
 	private void refreshModel(Event event) {
 		model.setLatestEvent(null);
-		wasEnabled = false;
+		wasEnabled.clear();
 		strategy.handleInitTokenCreation(model, SM_FACTORY, null);
 		model.setLatestEvent(event);
 		updateCompleteProvider.latestEventHandled();
-		if ((noiseFiltering != null) && !noiseFiltering.equals(NoiseFiltering.OFF) && !wasEnabled) {
+		handleNoiseFiltering();
+	}
 
-			// FIXME!!! (handles only the first SM)
-			StateMachine stateMachine = model.getStateMachines().get(0);
+	private void handleNoiseFiltering() {
+		for (StateMachine stateMachine : model.getStateMachines()) {
+			// if noise filtering is not turned off AND if the SM wasn't updated
+			if ((noiseFiltering != null) && !noiseFiltering.equals(NoiseFiltering.OFF)
+					&& !(wasEnabled.containsKey(stateMachine) && wasEnabled.get(stateMachine))) {
+				String id = stateMachine.getEventPattern().getId();
+				System.out.println("\t\t\t>>>>>>>>>No suitable update in the SM : " + id + ". It's going to be reset.");
 
-			String id = stateMachine.getEventPattern().getId();
-			System.out.println("\t\t\t>>>>>>>>>No suitable update in the SM : " + id + ". It's going to be reset.");
+				for (State state : stateMachine.getStates()) {
+					if ((state instanceof InitState) || (state instanceof TrapState) || (state instanceof FinalState)) {
+						continue;
+					}
 
-			for (State state : stateMachine.getStates()) {
-				if ((state instanceof InitState) || (state instanceof TrapState) || (state instanceof FinalState)) {
-					continue;
+					if (state.getEventTokens().isEmpty()) {
+						continue;
+					}
+
+					System.out.println("\t\t\t>>>>>>>>>>>>>>>>>>Deleting tokens from state: " + state.getLabel());
+
+					state.getEventTokens().clear();
 				}
 
-				if (state.getEventTokens().isEmpty()) {
-					continue;
+				model.setLatestEvent(null);
+
+				InitState initState = initStatesForStatemachines.get(stateMachine);
+				if (initState.getEventTokens().isEmpty()) {
+					EventToken cv = SM_FACTORY.createEventToken();
+					cv.setCurrentState(initState);
+					model.getEventTokens().add(cv);
 				}
-
-				System.out.println("\t\t\t>>>>>>>>>>>>>>>>>>Deleting tokens from state: " + state.getLabel());
-
-				state.getEventTokens().clear();
-			}
-
-			model.setLatestEvent(null);
-
-			InitState initState = initStatesForStatemachines.get(stateMachine);
-			if (initState.getEventTokens().isEmpty()) {
-				EventToken cv = SM_FACTORY.createEventToken();
-				cv.setCurrentState(initState);
-				model.getEventTokens().add(cv);
 			}
 		}
-
 	}
 
 	public InternalExecutionModel getModel() {
@@ -354,7 +309,17 @@ public class EventModelManager {
 	}
 
 	public void callbackOnFiredToken(Transition t, EventToken eventTokenToMove) {
-		wasEnabled = true;
+		EObject state = t.eContainer();
+		if (!(state instanceof State)) {
+			return;
+		}
+
+		EObject sm = ((State) state).eContainer();
+		if (!(sm instanceof StateMachine)) {
+			return;
+		}
+
+		wasEnabled.put(((StateMachine) sm), true);
 	}
 
 	public void callbackOnPatternRecognition(ObservedComplexEventPattern observedPattern) {
