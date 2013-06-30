@@ -65,10 +65,13 @@ public class ModelHandlerRules {
 				FinalState finalState = eventModelManager.getFinalStatesForStatemachines().get(sm);
 
 				finalState.getEventTokens().remove(0);
-
+				
 				// forward the observed pattern in a DTO
 				ObservedComplexEventPattern observedPattern = new SimpleObservedComplexEventPattern(
 						sm.getEventPattern());
+				
+				eventModelManager.callbackOnPatternRecognition(observedPattern);
+				
 				eventModelManager.getRealm().forwardObservedEventPattern(observedPattern);
 			}
 

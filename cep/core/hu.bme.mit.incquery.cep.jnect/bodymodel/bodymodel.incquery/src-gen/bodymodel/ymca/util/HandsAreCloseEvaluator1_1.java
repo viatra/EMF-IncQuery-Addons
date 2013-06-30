@@ -15,7 +15,7 @@ public class HandsAreCloseEvaluator1_1 implements IMatchChecker {
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
-  private Boolean evaluateXExpressionGenerated(final Float LHY, final Float LHX, final Float RHZ, final Float RHX, final Float RHY, final Float LHZ) {
+  private Boolean evaluateXExpressionGenerated(final Float RHX, final Float LHY, final Float LHZ, final Float RHZ, final Float LHX, final Float RHY) {
     MovingAverageCalculator _calculator = MovingAverageCalculator.getCalculator("LHX");
     Float _LHX = LHX;
     MovingAverageCalculator _addValue = _calculator.addValue((_LHX).floatValue());
@@ -51,18 +51,18 @@ public class HandsAreCloseEvaluator1_1 implements IMatchChecker {
    */
   @Override
   public Boolean evaluateXExpression(final Tuple tuple, final Map<String,Integer> tupleNameMap) {
-    int LHYPosition = tupleNameMap.get("LHY");
-    java.lang.Float LHY = (java.lang.Float) tuple.get(LHYPosition);
-    int LHXPosition = tupleNameMap.get("LHX");
-    java.lang.Float LHX = (java.lang.Float) tuple.get(LHXPosition);
-    int RHZPosition = tupleNameMap.get("RHZ");
-    java.lang.Float RHZ = (java.lang.Float) tuple.get(RHZPosition);
     int RHXPosition = tupleNameMap.get("RHX");
     java.lang.Float RHX = (java.lang.Float) tuple.get(RHXPosition);
-    int RHYPosition = tupleNameMap.get("RHY");
-    java.lang.Float RHY = (java.lang.Float) tuple.get(RHYPosition);
+    int LHYPosition = tupleNameMap.get("LHY");
+    java.lang.Float LHY = (java.lang.Float) tuple.get(LHYPosition);
     int LHZPosition = tupleNameMap.get("LHZ");
     java.lang.Float LHZ = (java.lang.Float) tuple.get(LHZPosition);
-    return evaluateXExpressionGenerated(LHY, LHX, RHZ, RHX, RHY, LHZ);
+    int RHZPosition = tupleNameMap.get("RHZ");
+    java.lang.Float RHZ = (java.lang.Float) tuple.get(RHZPosition);
+    int LHXPosition = tupleNameMap.get("LHX");
+    java.lang.Float LHX = (java.lang.Float) tuple.get(LHXPosition);
+    int RHYPosition = tupleNameMap.get("RHY");
+    java.lang.Float RHY = (java.lang.Float) tuple.get(RHYPosition);
+    return evaluateXExpressionGenerated(RHX, LHY, LHZ, RHZ, LHX, RHY);
   }
 }

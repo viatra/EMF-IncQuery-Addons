@@ -15,7 +15,7 @@ public class FeetAreCloseEvaluator1_1 implements IMatchChecker {
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
-  private Boolean evaluateXExpressionGenerated(final Float LFZ, final Float LFY, final Float LFX, final Float RFY, final Float RFZ, final Float RFX) {
+  private Boolean evaluateXExpressionGenerated(final Float RFX, final Float RFY, final Float LFX, final Float LFZ, final Float RFZ, final Float LFY) {
     MovingAverageCalculator _calculator = MovingAverageCalculator.getCalculator("LFX");
     Float _LFX = LFX;
     MovingAverageCalculator _addValue = _calculator.addValue((_LFX).floatValue());
@@ -51,18 +51,18 @@ public class FeetAreCloseEvaluator1_1 implements IMatchChecker {
    */
   @Override
   public Boolean evaluateXExpression(final Tuple tuple, final Map<String,Integer> tupleNameMap) {
-    int LFZPosition = tupleNameMap.get("LFZ");
-    java.lang.Float LFZ = (java.lang.Float) tuple.get(LFZPosition);
-    int LFYPosition = tupleNameMap.get("LFY");
-    java.lang.Float LFY = (java.lang.Float) tuple.get(LFYPosition);
-    int LFXPosition = tupleNameMap.get("LFX");
-    java.lang.Float LFX = (java.lang.Float) tuple.get(LFXPosition);
-    int RFYPosition = tupleNameMap.get("RFY");
-    java.lang.Float RFY = (java.lang.Float) tuple.get(RFYPosition);
-    int RFZPosition = tupleNameMap.get("RFZ");
-    java.lang.Float RFZ = (java.lang.Float) tuple.get(RFZPosition);
     int RFXPosition = tupleNameMap.get("RFX");
     java.lang.Float RFX = (java.lang.Float) tuple.get(RFXPosition);
-    return evaluateXExpressionGenerated(LFZ, LFY, LFX, RFY, RFZ, RFX);
+    int RFYPosition = tupleNameMap.get("RFY");
+    java.lang.Float RFY = (java.lang.Float) tuple.get(RFYPosition);
+    int LFXPosition = tupleNameMap.get("LFX");
+    java.lang.Float LFX = (java.lang.Float) tuple.get(LFXPosition);
+    int LFZPosition = tupleNameMap.get("LFZ");
+    java.lang.Float LFZ = (java.lang.Float) tuple.get(LFZPosition);
+    int RFZPosition = tupleNameMap.get("RFZ");
+    java.lang.Float RFZ = (java.lang.Float) tuple.get(RFZPosition);
+    int LFYPosition = tupleNameMap.get("LFY");
+    java.lang.Float LFY = (java.lang.Float) tuple.get(LFYPosition);
+    return evaluateXExpressionGenerated(RFX, RFY, LFX, LFZ, RFZ, LFY);
   }
 }

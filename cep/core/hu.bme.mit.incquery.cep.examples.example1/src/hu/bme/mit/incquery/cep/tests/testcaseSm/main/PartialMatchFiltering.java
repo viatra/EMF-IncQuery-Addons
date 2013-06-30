@@ -4,6 +4,7 @@ import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
+import hu.bme.mit.incquery.cep.runtime.evaluation.NoiseFiltering;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.A;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.B;
@@ -44,13 +45,15 @@ public class PartialMatchFiltering {
 	@Test
 	public void test() throws InterruptedException, IncQueryException {
 		manager = new EventModelManager(Strategy.getDefault());
-		manager.assignEventPattern(abcPattern, true);
+		manager.assignEventPattern(abcPattern, NoiseFiltering.NORMAL);
 
 		System.err.println("DIAG: Test starting.\n");
 
 		eventQueue.push(new A(source));
 		eventQueue.push(new B(source));
 		eventQueue.push(new C(source));	//gets recognized
+		eventQueue.push(new A(source));
+		eventQueue.push(new B(source));
 		eventQueue.push(new A(source));
 		eventQueue.push(new B(source));
 		eventQueue.push(new X(source));

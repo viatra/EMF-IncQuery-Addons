@@ -1,5 +1,6 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.strategy;
 
+import hu.bme.mit.incquery.cep.api.ObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
@@ -9,6 +10,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
+import hu.bme.mit.incquery.cep.runtime.evaluation.NoiseFiltering;
 
 public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 
@@ -38,7 +40,13 @@ public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 	}
 
 	@Override
-	public void handleVisitorCreation(InternalExecutionModel model, InternalsmFactory SM_FACTORY) {
+	public void handleInitTokenCreation(InternalExecutionModel model, InternalsmFactory SM_FACTORY,
+			ObservedComplexEventPattern observedComplexEventPattern) {
+		NoiseFiltering nf = eventModelManager.getNoiseFiltering();
+
+		if ((nf != null) && nf.equals(NoiseFiltering.STRICT) && observedComplexEventPattern == null) {
+			return;
+		}
 		for (StateMachine sm : model.getStateMachines()) {
 			for (State s : sm.getStates()) {
 				if (s instanceof InitState) {

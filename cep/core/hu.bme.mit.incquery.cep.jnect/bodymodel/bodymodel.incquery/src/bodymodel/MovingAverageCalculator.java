@@ -63,7 +63,7 @@ public class MovingAverageCalculator {
 	
 	static Map<String, MovingAverageCalculator> calculators = new HashMap<String, MovingAverageCalculator>();
 	
-	public static int periodLength = 20;
+	public static int periodLength = 25;
 	
 	public static MovingAverageCalculator getCalculator(String key) {
 		if (calculators.containsKey(key)) {

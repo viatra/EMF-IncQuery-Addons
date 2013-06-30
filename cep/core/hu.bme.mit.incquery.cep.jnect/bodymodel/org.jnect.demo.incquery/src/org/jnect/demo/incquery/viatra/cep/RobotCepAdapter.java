@@ -4,6 +4,7 @@ import hu.bme.mit.incquery.cep.api.ViatraCepAdapter;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
+import hu.bme.mit.incquery.cep.runtime.evaluation.NoiseFiltering;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
 import hu.bme.mit.incquery.cep.specific.evm.CepEventType;
 
@@ -35,10 +36,10 @@ public class RobotCepAdapter extends ViatraCepAdapter {
 
 	public RobotCepAdapter(List<IncQueryMatcher<? extends IPatternMatch>> matchers) {
 		new IncQueryHeadlessRealm();
-		List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
-		eventPatterns.add(new FS_FE_Pattern());
+		//List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
+		//eventPatterns.add(new FS_FE_Pattern());
 		this.eventModelManager = new EventModelManager(Strategy.getDefault());
-		this.eventModelManager.assignEventPatterns(eventPatterns);
+		this.eventModelManager.assignEventPattern(new FS_FE_Pattern(), NoiseFiltering.STRICT);
 		this.matchers = matchers;
 
 		// TODO this call should be made somewhere in the CEP after registering
@@ -68,22 +69,24 @@ public class RobotCepAdapter extends ViatraCepAdapter {
 
 	private void sendEvent(String iqPatternName, CepEventType t) {
 		if (iqPatternName.equalsIgnoreCase("bodymodel.ymca.FE")) {
-			Logger.log("ROBOTCEPADAPTER: Event " + iqPatternName + " found.");
 			switch (t) {
 			case APPEARED:
+				Logger.log("ROBOTCEPADAPTER: Event " + iqPatternName + " found.");
 				eventQueue.push(new FE_found(source));
 				return;
 			case DISAPPEARED:
+				Logger.log("ROBOTCEPADAPTER: Event " + iqPatternName + " lost.");
 				eventQueue.push(new FE_lost(source));
 				return;
 			}
 		} else if (iqPatternName.equalsIgnoreCase("bodymodel.ymca.FS")) {
-			Logger.log("ROBOTCEPADAPTER: Event " + iqPatternName + " lost.");
 			switch (t) {
 			case APPEARED:
+				Logger.log("ROBOTCEPADAPTER: Event " + iqPatternName + " found.");
 				eventQueue.push(new FS_found(source));
 				return;
 			case DISAPPEARED:
+				Logger.log("ROBOTCEPADAPTER: Event " + iqPatternName + " lost.");
 				eventQueue.push(new FS_lost(source));
 				return;
 			}

@@ -13,8 +13,6 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
 import hu.bme.mit.incquery.cep.runtime.EventQueue;
-import hu.bme.mit.incquery.cep.runtime.evaluation.queries.PartiallyMatchedEventPatternMatch;
-import hu.bme.mit.incquery.cep.runtime.evaluation.queries.PartiallyMatchedEventPatternMatcher;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.EventProcessingStrategyFactory;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.IEventProcessingStrategy;
 import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
@@ -75,8 +73,9 @@ public class EventModelManager {
 	private UpdateCompleteProviderExtension updateCompleteProvider;
 	private ResourceSet resourceSet;
 	private Map<StateMachine, FinalState> finalStatesForStatemachines = new LinkedHashMap<StateMachine, FinalState>();
+	private Map<StateMachine, InitState> initStatesForStatemachines = new LinkedHashMap<StateMachine, InitState>();
 	private boolean wasEnabled = false;
-	private boolean filterNoise;
+	private NoiseFiltering noiseFiltering;
 
 	private final class UpdateCompleteProviderExtension extends UpdateCompleteProvider {
 		protected void latestEventHandled() {
@@ -104,7 +103,7 @@ public class EventModelManager {
 				Object newValue = notification.getNewValue();
 				if (newValue instanceof Event) {
 					Event event = (Event) newValue;
-					System.err.println("DIAG: Event " + event.getClass().getName() + " captured...");
+					Logger.log("DIAG: Event " + event.getClass().getName() + " captured...");
 					refreshModel(event);
 				}
 			}
@@ -112,6 +111,10 @@ public class EventModelManager {
 		EventQueue.getInstance().eAdapters().add(adapter);
 	}
 
+	/**
+	 * @deprecated an additional boolean param will be introduced regarding the
+	 *             NOISE FILTERING resulting in a different param type (~Map)
+	 */
 	@Deprecated
 	@SuppressWarnings("unchecked")
 	public void assignEventPatterns(List<EventPattern> eventPatterns) {
@@ -123,7 +126,7 @@ public class EventModelManager {
 			Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(CepActivationStates.ACTIVE) {
 				@Override
 				protected void execute(Activation<? extends ObservedComplexEventPattern> activation, Context context) {
-					System.err.println("Complex event pattern appeared: "
+					Logger.log(">>>>>>>>>>>>>>>CEP: Complex event pattern appeared: "
 							+ activation.getAtom().getObservedEventPattern().getId());
 				}
 
@@ -176,7 +179,7 @@ public class EventModelManager {
 		}
 	}
 
-	public void assignEventPattern(EventPattern eventPattern, boolean filterNoise) {
+	public void assignEventPattern(EventPattern eventPattern, NoiseFiltering noiseFiltering) {
 		Set<RuleSpecification<?>> rules = new HashSet<RuleSpecification<?>>();
 
 		CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(eventPattern, this);
@@ -184,7 +187,7 @@ public class EventModelManager {
 		Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(CepActivationStates.ACTIVE) {
 			@Override
 			protected void execute(Activation<? extends ObservedComplexEventPattern> activation, Context context) {
-				System.err.println("Complex event pattern appeared: "
+				Logger.log(">>>>>>>>>>>>>>>CEP: Complex event pattern appeared: "
 						+ activation.getAtom().getObservedEventPattern().getId());
 			}
 
@@ -230,7 +233,7 @@ public class EventModelManager {
 			// 1000);
 			// }
 
-			this.filterNoise = filterNoise;
+			this.noiseFiltering = noiseFiltering;
 
 			lowLevelExecutionSchema = ExecutionSchemas.createIncQueryExecutionSchema(engine, schedulerFactory2, rules);
 			// lowLevelExecutionSchema.getLogger().setLevel(Level.DEBUG);
@@ -242,19 +245,41 @@ public class EventModelManager {
 		} catch (IncQueryException e) {
 			e.printStackTrace();
 		}
+
+		// initialize init states
+		for (InitState is : initStatesForStatemachines.values()) {
+			if (is.getEventTokens().isEmpty()) {
+				EventToken cv = SM_FACTORY.createEventToken();
+				cv.setCurrentState(is);
+				model.getEventTokens().add(cv);
+			}
+		}
 	}
 
 	public StateMachine getStateMachine(EventPattern eventPattern) {
 		StateMachine stateMachine = new StateMachineBuilder2(model, eventPattern).buildStateMachine();
 		FinalState finalState = null;
+		InitState initState = null;
 		for (State state : stateMachine.getStates()) {
 			if (SMUtils.isFinal(state)) {
 				finalState = (FinalState) state;
+				break;
 			}
 		}
 
 		if (finalState != null) {
 			finalStatesForStatemachines.put(stateMachine, finalState);
+		}
+
+		for (State state : stateMachine.getStates()) {
+			if (state instanceof InitState) {
+				initState = (InitState) state;
+				break;
+			}
+		}
+
+		if (initState != null) {
+			initStatesForStatemachines.put(stateMachine, initState);
 		}
 
 		return stateMachine;
@@ -263,22 +288,23 @@ public class EventModelManager {
 	private void refreshModel(Event event) {
 		model.setLatestEvent(null);
 		wasEnabled = false;
-		strategy.handleVisitorCreation(model, SM_FACTORY);
+		strategy.handleInitTokenCreation(model, SM_FACTORY, null);
 		model.setLatestEvent(event);
 		updateCompleteProvider.latestEventHandled();
-		if (filterNoise && !wasEnabled) {
+		if ((noiseFiltering != null) && !noiseFiltering.equals(NoiseFiltering.OFF) && !wasEnabled) {
+
+			// FIXME!!! (handles only the first SM)
 			StateMachine stateMachine = model.getStateMachines().get(0);
-			
+
 			String id = stateMachine.getEventPattern().getId();
-			System.out.println("\t\t\t>>>>>>>>>PartiallyNo suitable update in the SM : " + id
-					+ ". It's going to be reset.");
-			
+			System.out.println("\t\t\t>>>>>>>>>No suitable update in the SM : " + id + ". It's going to be reset.");
+
 			for (State state : stateMachine.getStates()) {
 				if ((state instanceof InitState) || (state instanceof TrapState) || (state instanceof FinalState)) {
 					continue;
 				}
-				
-				if(state.getEventTokens().isEmpty()){
+
+				if (state.getEventTokens().isEmpty()) {
 					continue;
 				}
 
@@ -286,7 +312,17 @@ public class EventModelManager {
 
 				state.getEventTokens().clear();
 			}
+
+			model.setLatestEvent(null);
+
+			InitState initState = initStatesForStatemachines.get(stateMachine);
+			if (initState.getEventTokens().isEmpty()) {
+				EventToken cv = SM_FACTORY.createEventToken();
+				cv.setCurrentState(initState);
+				model.getEventTokens().add(cv);
+			}
 		}
+
 	}
 
 	public InternalExecutionModel getModel() {
@@ -313,7 +349,15 @@ public class EventModelManager {
 		return finalStatesForStatemachines;
 	}
 
+	public NoiseFiltering getNoiseFiltering() {
+		return noiseFiltering;
+	}
+
 	public void callbackOnFiredToken(Transition t, EventToken eventTokenToMove) {
 		wasEnabled = true;
+	}
+
+	public void callbackOnPatternRecognition(ObservedComplexEventPattern observedPattern) {
+		strategy.handleInitTokenCreation(model, SM_FACTORY, observedPattern);
 	}
 }
