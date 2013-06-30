@@ -130,5 +130,21 @@
             id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.tokenInTrapState">
       </matcher>
    </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.initState"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.InitStateQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.initState">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.partiallyMatchedEventPattern"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.runtime.evaluation.queries.util.PartiallyMatchedEventPatternQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.partiallyMatchedEventPattern">
+      </matcher>
+   </extension>
 
 </plugin>

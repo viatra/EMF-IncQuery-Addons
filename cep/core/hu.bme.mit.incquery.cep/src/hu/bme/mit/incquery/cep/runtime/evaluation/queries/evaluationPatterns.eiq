@@ -75,3 +75,16 @@ pattern enabledTransition(t : Transition, et : EventToken) {
 pattern tokenInTrapState(et : EventToken) {
 	TrapState.eventTokens(_, et);
 }
+
+pattern initState(s){
+	InitState(s);
+}
+
+pattern partiallyMatchedEventPattern(et : EventToken, s : State){
+	State.eventTokens(s, et);
+	neg find initState(s);
+}
+
+
+
+

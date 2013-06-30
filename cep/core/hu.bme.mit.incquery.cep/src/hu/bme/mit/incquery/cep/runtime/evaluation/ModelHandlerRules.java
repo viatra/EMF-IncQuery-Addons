@@ -4,6 +4,7 @@ import hu.bme.mit.incquery.cep.api.ObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.api.SimpleObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
@@ -12,6 +13,8 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatch
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatcher;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.FinishedStateMachineMatch;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.FinishedStateMachineMatcher;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.PartiallyMatchedEventPatternMatch;
+import hu.bme.mit.incquery.cep.runtime.evaluation.queries.PartiallyMatchedEventPatternMatcher;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.TokenInTrapStateMatch;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.TokenInTrapStateMatcher;
 
@@ -60,9 +63,9 @@ public class ModelHandlerRules {
 				// log(sm);
 
 				FinalState finalState = eventModelManager.getFinalStatesForStatemachines().get(sm);
-				
+
 				finalState.getEventTokens().remove(0);
-				
+
 				// forward the observed pattern in a DTO
 				ObservedComplexEventPattern observedPattern = new SimpleObservedComplexEventPattern(
 						sm.getEventPattern());
@@ -75,7 +78,8 @@ public class ModelHandlerRules {
 		jobs.add(new StatelessJob<FinishedStateMachineMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
 		RuleSpecification<FinishedStateMachineMatch> spec = Rules.newSimpleMatcherRuleSpecification(
-				//FinishedStateMachineMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
+		// FinishedStateMachineMatcher.querySpecification(),
+		// Lifecycles.getDefault(false, false), jobs);
 				FinishedStateMachineMatcher.querySpecification(), DefaultActivationLifeCycle.DEFAULT, jobs);
 
 		return spec;
@@ -116,7 +120,8 @@ public class ModelHandlerRules {
 		jobs.add(new StatelessJob<EnabledTransitionMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
 		RuleSpecification<EnabledTransitionMatch> spec = Rules.newSimpleMatcherRuleSpecification(
-				//EnabledTransitionMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
+		// EnabledTransitionMatcher.querySpecification(),
+		// Lifecycles.getDefault(false, false), jobs);
 				EnabledTransitionMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
 
 		return spec;
@@ -151,8 +156,40 @@ public class ModelHandlerRules {
 		jobs.add(new StatelessJob<TokenInTrapStateMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
 		RuleSpecification<TokenInTrapStateMatch> spec = Rules.newSimpleMatcherRuleSpecification(
-				//TokenInTrapStateMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
+		// TokenInTrapStateMatcher.querySpecification(),
+		// Lifecycles.getDefault(false, false), jobs);
 				TokenInTrapStateMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
+
+		return spec;
+	}
+
+	public RuleSpecification<PartiallyMatchedEventPatternMatch> getPartiallyMatchedEventPatternRule()
+			throws IncQueryException {
+		IMatchProcessor<PartiallyMatchedEventPatternMatch> processor = new IMatchProcessor<PartiallyMatchedEventPatternMatch>() {
+
+			@Override
+			public void process(PartiallyMatchedEventPatternMatch match) {
+				EventToken et = match.getEt();
+				State currentState = et.getCurrentState();
+				if (currentState instanceof InitState) {
+					return;
+				}
+
+				String id = ((StateMachine) et.getCurrentState().eContainer()).getEventPattern().getId();
+				System.out.println("\t\t\t>>>>>>>>>Partially matched event pattern found: " + id
+						+ " It's going to be reset.");
+
+				currentState.getEventTokens().clear();
+			}
+		};
+
+		Set<Job<PartiallyMatchedEventPatternMatch>> jobs = new HashSet<Job<PartiallyMatchedEventPatternMatch>>();
+		jobs.add(new StatelessJob<PartiallyMatchedEventPatternMatch>(IncQueryActivationStateEnum.APPEARED, processor));
+
+		RuleSpecification<PartiallyMatchedEventPatternMatch> spec = Rules.newSimpleMatcherRuleSpecification(
+		// TokenInTrapStateMatcher.querySpecification(),
+		// Lifecycles.getDefault(false, false), jobs);
+				PartiallyMatchedEventPatternMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
 
 		return spec;
 	}

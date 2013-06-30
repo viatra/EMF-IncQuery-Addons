@@ -55,12 +55,10 @@ public class RobotCepAdapter extends ViatraCepAdapter {
 				public void handleSetChange(SetChangeEvent event) {
 					for (Object _o : event.diff.getAdditions()) {
 						IPatternMatch pm = (IPatternMatch) _o;
-						Logger.log("ROBOTCEPADAPTER: Event " + pm.patternName() + " found.");
 						sendEvent(pm.patternName(), CepEventType.APPEARED);
 					}
 					for (Object _o : event.diff.getRemovals()) {
 						IPatternMatch pm = (IPatternMatch) _o;
-						Logger.log("ROBOTCEPADAPTER: Event " + pm.patternName() + " lost.");
 						sendEvent(pm.patternName(), CepEventType.DISAPPEARED);
 					}
 				}
@@ -70,6 +68,7 @@ public class RobotCepAdapter extends ViatraCepAdapter {
 
 	private void sendEvent(String iqPatternName, CepEventType t) {
 		if (iqPatternName.equalsIgnoreCase("bodymodel.ymca.FE")) {
+			Logger.log("ROBOTCEPADAPTER: Event " + iqPatternName + " found.");
 			switch (t) {
 			case APPEARED:
 				eventQueue.push(new FE_found(source));
@@ -79,6 +78,7 @@ public class RobotCepAdapter extends ViatraCepAdapter {
 				return;
 			}
 		} else if (iqPatternName.equalsIgnoreCase("bodymodel.ymca.FS")) {
+			Logger.log("ROBOTCEPADAPTER: Event " + iqPatternName + " lost.");
 			switch (t) {
 			case APPEARED:
 				eventQueue.push(new FS_found(source));

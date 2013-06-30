@@ -16,11 +16,12 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintType;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -28,7 +29,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-import org.eclipse.core.runtime.internal.adaptor.PluginParser.Prerequisite;
+import com.google.common.base.Strings;
 
 public class StateMachineBuilder2 {
 
@@ -246,10 +247,10 @@ public class StateMachineBuilder2 {
 
 		return null;
 	}
-	
-	private void removeByType(List<AtomicEventPattern> collection, AtomicEventPattern element){
-		for(AtomicEventPattern ap : collection){
-			if(ap.getType().equalsIgnoreCase(element.getType())){
+
+	private void removeByType(List<AtomicEventPattern> collection, AtomicEventPattern element) {
+		for (AtomicEventPattern ap : collection) {
+			if (ap.getType().equalsIgnoreCase(element.getType())) {
 				collection.remove(ap);
 				return;
 			}
@@ -400,6 +401,42 @@ public class StateMachineBuilder2 {
 		t.setGuard(guard);
 		t.setPreState(preState);
 		t.setPostState(postState);
+
+		if ((postState instanceof FinalState) || (postState instanceof TrapState)) {
+			return t;
+		}
+
+		String[] split = guard.getEventType().getType().split("\\.");
+		String additionalEventType = split[split.length - 1];
+		String postLabel = postState.getLabel();
+
+		if (Strings.isNullOrEmpty(postLabel) || postLabel.equalsIgnoreCase("null")) {
+			postState.setLabel("");
+			postLabel = postState.getLabel();
+		}
+
+		
+		String newLabel = "";
+		
+		//adding prestate label
+		if (!(preState instanceof InitState)) {
+			String preLabel = preState.getLabel();
+			if(!Strings.isNullOrEmpty(preLabel)){
+				for(String s : Arrays.asList(preLabel.split(""))){
+					if (!postLabel.contains(s)) {
+						newLabel+=s;	
+					}
+				}
+			}
+		}
+		
+		//adding transition
+		if (!postLabel.contains(additionalEventType)) {
+			newLabel+=additionalEventType;
+		}
+		
+		postState.setLabel(postLabel + newLabel);
+
 		return t;
 	}
 

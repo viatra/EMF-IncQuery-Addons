@@ -34,6 +34,7 @@ public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 		eventTokenToMove.getRecordedEvents().add(model.getLatestEvent());
 		preState.setLastProcessedEvent(model.getLatestEvent());
 		eventTokenToMove.setCurrentState(nextState);
+		eventModelManager.callbackOnFiredToken(t, eventTokenToMove);
 	}
 
 	@Override
