@@ -20,23 +20,22 @@ The plugin **[hu.bme.mit.incquery.cep.jnect](https://github.com/istvanrath/EMF-I
 Roadmap/TODO
 ------------
 
-Latest enhancements:
+**Latest enhancements:**
+* 06.30. noise filtering
 * 06.29. DSL improvements: follows operator (+timewindows), syntax coloring
 * 06.29. fixed token handling issue causing wrongly fired tokens
 * 06.27. initial commit for the DSLs
 * 06.26. duplicate handling fixed on state machine level
 * 06.22. handling both ordered and unordered cases with time windows
 
-In progress:
+**In progress:**
 * elaborate the JNect demo (robot)
+* enable discretization
 * complete the examples and unit tests
 * define the language for modeling event patterns over EMF models
+ * reuse the concepts of event-driven model transformations and the pattern language of IncQuery
 
-Future work:
-* make it possible to enable/disable "noise filtering" (per event pattern)
- * e.g. for an "AB" pattern defined and an "AxxxxBxxx" stream observed, the noise-filtered alternative will trigger a recognized event, while the non-filtered will not
- * as a typical use-case for noise-filtering, consider the Jnect Robot Demo
-* enable discretization
+**Future work:**
 * enable defining more compound events, i.e. using measurments (as of CEDL)
  * e.g. instead of having an IQPattern_Found and an IQPattern_Lost event, define one event containing the Found/Lost parameter
  * this would require more advanced guard handling on the transitions
@@ -46,7 +45,6 @@ Future work:
 * refactor the examples plugin in a more lucid way
  * package/class naming, comments, etc
  * make sure every use case is properly presented
- * reuse the concepts of event-driven model transformations and the pattern language of IncQuery
 * implement the common event processing strategies: chronicle, recent, unrestricted
 * make the EventQueue thread-safe in order to enable higher performance via threading
 * enable definition of custom execution strategies
