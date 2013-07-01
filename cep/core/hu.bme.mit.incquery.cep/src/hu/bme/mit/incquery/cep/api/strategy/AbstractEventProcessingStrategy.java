@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.runtime.evaluation.strategy;
+package hu.bme.mit.incquery.cep.api.strategy;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
@@ -6,7 +6,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
-import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
+import hu.bme.mit.incquery.cep.utils.SMUtils;
 
 import java.util.Calendar;
 

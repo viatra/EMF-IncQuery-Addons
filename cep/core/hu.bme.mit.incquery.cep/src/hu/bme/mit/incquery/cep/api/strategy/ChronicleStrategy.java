@@ -1,6 +1,7 @@
-package hu.bme.mit.incquery.cep.runtime.evaluation.strategy;
+package hu.bme.mit.incquery.cep.api.strategy;
 
-import hu.bme.mit.incquery.cep.api.ObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
@@ -10,7 +11,6 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
-import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
 
 public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 

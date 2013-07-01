@@ -1,5 +1,6 @@
-package hu.bme.mit.incquery.cep.runtime.statemachine;
+package hu.bme.mit.incquery.cep.runtime.evaluation;
 
+import hu.bme.mit.incquery.cep.api.EventPatternAutomatonOptions;
 import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
@@ -17,8 +18,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintType;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
-import hu.bme.mit.incquery.cep.runtime.evaluation.EventPatternAutomatonOptions;
-import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
+import hu.bme.mit.incquery.cep.utils.SMUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

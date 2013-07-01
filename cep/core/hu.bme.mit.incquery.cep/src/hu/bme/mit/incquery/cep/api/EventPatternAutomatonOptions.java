@@ -1,7 +1,7 @@
-package hu.bme.mit.incquery.cep.runtime.evaluation;
+package hu.bme.mit.incquery.cep.api;
 
+import hu.bme.mit.incquery.cep.api.strategy.Strategy;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering;
-import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
 
 public class EventPatternAutomatonOptions {
 	NoiseFiltering noiseFiltering;

@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.runtime.evaluation.strategy;
+package hu.bme.mit.incquery.cep.api.strategy;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 

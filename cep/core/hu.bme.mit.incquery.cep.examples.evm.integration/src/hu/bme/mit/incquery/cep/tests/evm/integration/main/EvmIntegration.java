@@ -1,6 +1,6 @@
 package hu.bme.mit.incquery.cep.tests.evm.integration.main;
 
-import hu.bme.mit.incquery.cep.api.ObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.tests.evm.integration.evmspecific.CepActivationStates;
 import hu.bme.mit.incquery.cep.tests.evm.integration.evmspecific.CepEventFilter;
 import hu.bme.mit.incquery.cep.tests.evm.integration.evmspecific.CepEventSourceSpecification;

@@ -1,11 +1,11 @@
 package org.jnect.demo.incquery.viatra.cep;
 
 import hu.bme.mit.incquery.cep.api.ViatraCepAdapter;
+import hu.bme.mit.incquery.cep.api.evm.CepEventType;
+import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
+import hu.bme.mit.incquery.cep.api.strategy.Strategy;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering;
-import hu.bme.mit.incquery.cep.runtime.evaluation.EventModelManager;
-import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
-import hu.bme.mit.incquery.cep.specific.evm.CepEventType;
 
 import java.util.List;
 

@@ -1,6 +1,5 @@
-package hu.bme.mit.incquery.cep.specific.evm;
+package hu.bme.mit.incquery.cep.api.evm;
 
-import hu.bme.mit.incquery.cep.api.ObservedComplexEventPattern;
 
 import org.eclipse.incquery.runtime.evm.api.RuleInstance;
 import org.eclipse.incquery.runtime.evm.api.event.Event;

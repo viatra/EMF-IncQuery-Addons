@@ -1,7 +1,8 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation;
 
-import hu.bme.mit.incquery.cep.api.ObservedComplexEventPattern;
-import hu.bme.mit.incquery.cep.api.SimpleObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.evm.SimpleObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;

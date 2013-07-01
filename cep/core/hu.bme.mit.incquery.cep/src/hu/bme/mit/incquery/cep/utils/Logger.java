@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.runtime.evaluation;
+package hu.bme.mit.incquery.cep.utils;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

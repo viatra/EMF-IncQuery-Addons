@@ -1,6 +1,14 @@
-package hu.bme.mit.incquery.cep.runtime.evaluation;
+package hu.bme.mit.incquery.cep.api.runtime;
 
-import hu.bme.mit.incquery.cep.api.ObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.EventPatternAutomatonOptions;
+import hu.bme.mit.incquery.cep.api.evm.CepActivationStates;
+import hu.bme.mit.incquery.cep.api.evm.CepEventSourceSpecification;
+import hu.bme.mit.incquery.cep.api.evm.CepEventType;
+import hu.bme.mit.incquery.cep.api.evm.CepRealm;
+import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.strategy.EventProcessingStrategyFactory;
+import hu.bme.mit.incquery.cep.api.strategy.IEventProcessingStrategy;
+import hu.bme.mit.incquery.cep.api.strategy.Strategy;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
@@ -13,15 +21,10 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
-import hu.bme.mit.incquery.cep.runtime.EventQueue;
-import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.EventProcessingStrategyFactory;
-import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.IEventProcessingStrategy;
-import hu.bme.mit.incquery.cep.runtime.evaluation.strategy.Strategy;
-import hu.bme.mit.incquery.cep.runtime.statemachine.StateMachineBuilder;
-import hu.bme.mit.incquery.cep.specific.evm.CepActivationStates;
-import hu.bme.mit.incquery.cep.specific.evm.CepEventSourceSpecification;
-import hu.bme.mit.incquery.cep.specific.evm.CepEventType;
-import hu.bme.mit.incquery.cep.specific.evm.CepRealm;
+import hu.bme.mit.incquery.cep.runtime.evaluation.ModelHandlerRules;
+import hu.bme.mit.incquery.cep.runtime.evaluation.StateMachineBuilder;
+import hu.bme.mit.incquery.cep.utils.Logger;
+import hu.bme.mit.incquery.cep.utils.SMUtils;
 
 import java.util.Collections;
 import java.util.HashSet;

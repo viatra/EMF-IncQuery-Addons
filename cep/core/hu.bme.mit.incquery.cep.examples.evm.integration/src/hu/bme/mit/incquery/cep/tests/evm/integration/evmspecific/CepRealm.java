@@ -1,7 +1,7 @@
 package hu.bme.mit.incquery.cep.tests.evm.integration.evmspecific;
 
-import hu.bme.mit.incquery.cep.api.ObservedComplexEventPattern;
-import hu.bme.mit.incquery.cep.api.SimpleObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.evm.SimpleObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.tests.evm.integration.eventpatterns.APattern;
 
 import java.util.Set;
