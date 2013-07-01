@@ -38,20 +38,21 @@ Roadmap/TODO
  * reuse the concepts of event-driven model transformations and the pattern language of IncQuery
 
 **Future work:**
-* enable defining more compound events, i.e. using measurments (as of CEDL)
+* [r/d] enable defining more compound events, i.e. using measurments (as of CEDL)
  * e.g. instead of having an IQPattern_Found and an IQPattern_Lost event, define one event containing the Found/Lost parameter
  * this would require more advanced guard handling on the transitions
  * make it possible to define own measurement types (percentage, scalar and literal won't be satisfactory in the practice)
  * also: find a proper name for this feature
-* extend the DFA formalism to a PDA by utilizing the built-in memory of EventTokens
-* refactor the examples plugin in a more lucid way
+* [r/d] extend the DFA formalism to a PDA by utilizing the built-in memory of EventTokens
+* [d] refactor the examples plugin in a more lucid way
  * package/class naming, comments, etc
  * make sure every use case is properly presented
-* implement the common event processing strategies: chronicle, recent, unrestricted
-* make the EventQueue thread-safe in order to enable higher performance via threading
-* enable definition of custom execution strategies
+* [d] implement the common event processing strategies: chronicle, recent, unrestricted
+* [d] make the EventQueue thread-safe in order to enable higher performance via threading
+* [r/d] enable definition of custom execution strategies
  * define semantics for that
  * implement the required API (the extension point mechanism could work here perfectly)
+* [r] examine the opportunities in enabling DTW-based pattern recognition
 
 License
 -------
