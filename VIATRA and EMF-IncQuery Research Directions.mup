@@ -13,11 +13,29 @@
         },
         "2": {
           "title": "Rete optimization",
-          "id": 10
+          "id": 10,
+          "attr": {
+            "attachment": {
+              "contentType": "text/html",
+              "content": "Bergmann Gábor"
+            },
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
         },
         "3": {
           "title": "Benchmarking",
-          "id": 19
+          "id": 19,
+          "attr": {
+            "attachment": {
+              "contentType": "text/html",
+              "content": "Izsó Bence"
+            },
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
         }
       },
       "attr": {
@@ -130,6 +148,10 @@
           "attr": {
             "style": {
               "background": "#333399"
+            },
+            "attachment": {
+              "contentType": "text/html",
+              "content": "Dávid István"
             }
           }
         },
