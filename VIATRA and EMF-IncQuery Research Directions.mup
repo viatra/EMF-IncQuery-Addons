@@ -9,7 +9,16 @@
       "ideas": {
         "1": {
           "title": "Local search",
-          "id": 9
+          "id": 9,
+          "attr": {
+            "attachment": {
+              "contentType": "text/html",
+              "content": "Búr Márton, Horváth Ákos, (Ujhelyi Zoltán)"
+            },
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
         },
         "2": {
           "title": "Rete optimization",
@@ -115,6 +124,19 @@
         }
       }
     },
+    "45": {
+      "title": "TRANS-IMA projekt",
+      "id": 24,
+      "attr": {
+        "style": {
+          "background": "#333399"
+        },
+        "attachment": {
+          "contentType": "text/html",
+          "content": "Horváth Ákos, Hegedüs Ábel,"
+        }
+      }
+    },
     "-1": {
       "title": "UX",
       "id": 5,
@@ -161,7 +183,16 @@
         },
         "1.5": {
           "title": "DSE",
-          "id": 15
+          "id": 15,
+          "attr": {
+            "attachment": {
+              "contentType": "text/html",
+              "content": "Nagy Szabols András, Földi Miklós, Horváth Ákos"
+            },
+            "style": {
+              "background": "#333399"
+            }
+          }
         }
       },
       "attr": {
@@ -180,6 +211,46 @@
         "attachment": {
           "contentType": "text/html",
           "content": "Ujhelyi Zoli"
+        }
+      },
+      "ideas": {}
+    },
+    "-17.5": {
+      "title": "Viewers",
+      "id": 25,
+      "attr": {
+        "style": {
+          "background": "#333399"
+        },
+        "attachment": {
+          "contentType": "text/html",
+          "content": "Ráth istván, Ujhelyi Zoltán, Hegedüs Ábel, Horváth Ákos"
+        }
+      }
+    },
+    "-18.5": {
+      "title": "Formal verification of DF and VR",
+      "id": 26,
+      "attr": {
+        "attachment": {
+          "contentType": "text/html",
+          "content": "Semeráth Oszkár, Varró Dániel, (Horváth Ákos)"
+        },
+        "style": {
+          "background": "#333399"
+        }
+      }
+    },
+    "-19.5": {
+      "title": "Derived Objects",
+      "id": 27,
+      "attr": {
+        "style": {
+          "background": "#333399"
+        },
+        "attachment": {
+          "contentType": "text/html",
+          "content": "Debreceni Csaba, Horváth Ákos, (Ráth istván?)"
         }
       }
     }
@@ -230,6 +301,58 @@
           "color": "#FF0000",
           "lineStyle": "solid",
           "arrow": true
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 9,
+      "ideaIdTo": 21,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 24,
+      "ideaIdTo": 25,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "solid",
+          "arrow": true
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 24,
+      "ideaIdTo": 8,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 24,
+      "ideaIdTo": 11,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "solid",
+          "arrow": true
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 26,
+      "ideaIdTo": 24,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
         }
       }
     }
