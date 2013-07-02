@@ -2,10 +2,135 @@
   "title": "VIATRA and EMF-IncQuery Research Directions",
   "id": 1,
   "formatVersion": 2,
-  "ideas": {},
+  "ideas": {
+    "2": {
+      "title": "Performance",
+      "id": 8,
+      "ideas": {
+        "1": {
+          "title": "Local search",
+          "id": 9
+        },
+        "2": {
+          "title": "Rete optimization",
+          "id": 10
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#008000"
+        }
+      }
+    },
+    "3": {
+      "title": "IncQuery-D",
+      "id": 14,
+      "attr": {
+        "style": {
+          "background": "#333399"
+        }
+      }
+    },
+    "4": {
+      "title": "OCL Support",
+      "id": 17,
+      "attr": {
+        "style": {
+          "background": "#333399"
+        }
+      }
+    },
+    "-1": {
+      "title": "UX",
+      "id": 5,
+      "ideas": {
+        "1": {
+          "title": "Dev UI refactor",
+          "id": 6
+        },
+        "2": {
+          "title": "IQPL Enhancements",
+          "id": 7
+        },
+        "3": {
+          "title": "Builder",
+          "id": 2,
+          "ideas": {
+            "1": {
+              "title": "Eclipse Builder",
+              "id": 3
+            },
+            "2": {
+              "title": "Maven builder",
+              "id": 4
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#008000"
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#008000"
+        }
+      }
+    },
+    "-2": {
+      "title": "Transformations",
+      "id": 11,
+      "ideas": {
+        "1": {
+          "title": "Transformation language DSL family",
+          "id": 12
+        },
+        "2": {
+          "title": "CEP",
+          "id": 13
+        },
+        "3": {
+          "title": "DSE",
+          "id": 15
+        },
+        "4": {
+          "title": "Xform Engine",
+          "id": 16
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#008000"
+        }
+      }
+    },
+    "-3": {
+      "title": "XCore integration",
+      "id": 18,
+      "attr": {
+        "style": {
+          "background": "#ffcc00"
+        }
+      }
+    }
+  },
   "attr": {
     "style": {
       "background": "#ff6600"
     }
-  }
+  },
+  "links": [
+    {
+      "ideaIdFrom": 15,
+      "ideaIdTo": 14,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "solid",
+          "arrow": true
+        }
+      }
+    }
+  ]
 }
