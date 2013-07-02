@@ -26,6 +26,19 @@
         }
       }
     },
+    "3": {
+      "title": "IncQuery-D",
+      "id": 14,
+      "attr": {
+        "style": {
+          "background": "#333399"
+        },
+        "attachment": {
+          "contentType": "text/html",
+          "content": "Szárnyas Gábor, Izsó Bence"
+        }
+      }
+    },
     "4": {
       "title": "OCL Support",
       "id": 17,
@@ -71,6 +84,19 @@
         }
       }
     },
+    "25": {
+      "title": "IncQuery-DEPS CERN",
+      "id": 20,
+      "attr": {
+        "attachment": {
+          "contentType": "text/html",
+          "content": "Csikós Donát"
+        },
+        "style": {
+          "background": "#ffcc00"
+        }
+      }
+    },
     "-1": {
       "title": "UX",
       "id": 5,
@@ -100,15 +126,20 @@
         },
         "2": {
           "title": "CEP",
-          "id": 13
-        },
-        "3": {
-          "title": "DSE",
-          "id": 15
+          "id": 13,
+          "attr": {
+            "style": {
+              "background": "#333399"
+            }
+          }
         },
         "4": {
           "title": "Xform Engine",
           "id": 16
+        },
+        "1.5": {
+          "title": "DSE",
+          "id": 15
         }
       },
       "attr": {
@@ -117,16 +148,16 @@
         }
       }
     },
-    "-13": {
-      "title": "IncQuery-D",
-      "id": 14,
+    "-7.5": {
+      "title": "Columbus projekt",
+      "id": 21,
       "attr": {
         "style": {
           "background": "#333399"
         },
         "attachment": {
           "contentType": "text/html",
-          "content": "Szárnyas Gábor, Izsó Bence"
+          "content": "Ujhelyi Zoli"
         }
       }
     }
@@ -140,6 +171,38 @@
     {
       "ideaIdFrom": 15,
       "ideaIdTo": 14,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed",
+          "arrow": false
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 21,
+      "ideaIdTo": 20,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 11,
+      "ideaIdTo": 21,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "solid",
+          "arrow": true
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 14,
+      "ideaIdTo": 19,
       "attr": {
         "style": {
           "color": "#FF0000",
