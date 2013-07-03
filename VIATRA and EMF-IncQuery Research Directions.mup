@@ -355,6 +355,16 @@
           "lineStyle": "dashed"
         }
       }
+    },
+    {
+      "ideaIdFrom": 13,
+      "ideaIdTo": 14,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
     }
   ]
 }
