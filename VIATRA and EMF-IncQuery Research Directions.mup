@@ -148,6 +148,11 @@
         "2": {
           "title": "IQPL Enhancements",
           "id": 7
+        },
+        "3": {
+          "title": "Debugging support",
+          "id": 28,
+          "ideas": {}
         }
       },
       "attr": {
@@ -253,6 +258,11 @@
           "content": "Debreceni Csaba, Horváth Ákos, (Ráth istván?)"
         }
       }
+    },
+    "-20.5": {
+      "title": "Derived feature enhancements",
+      "id": 29,
+      "ideas": {}
     }
   },
   "attr": {
@@ -359,6 +369,36 @@
     {
       "ideaIdFrom": 13,
       "ideaIdTo": 14,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 28,
+      "ideaIdTo": 11,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 28,
+      "ideaIdTo": 25,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 29,
+      "ideaIdTo": 24,
       "attr": {
         "style": {
           "color": "#FF0000",
