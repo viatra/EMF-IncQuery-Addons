@@ -260,9 +260,18 @@
       }
     },
     "-20.5": {
-      "title": "Derived feature enhancements",
+      "title": "Derived feature enhancements including derived Objects",
       "id": 29,
-      "ideas": {}
+      "ideas": {},
+      "attr": {
+        "attachment": {
+          "contentType": "text/html",
+          "content": "Debreceni Csaba"
+        },
+        "style": {
+          "background": "#E0E0E0"
+        }
+      }
     }
   },
   "attr": {
