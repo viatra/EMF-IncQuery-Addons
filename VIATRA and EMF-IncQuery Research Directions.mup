@@ -137,6 +137,30 @@
         }
       }
     },
+    "46": {
+      "title": "Runtime",
+      "id": 30,
+      "attr": {
+        "style": {
+          "background": "#008000"
+        }
+      },
+      "ideas": {
+        "1": {
+          "title": "EPackage import refactoring",
+          "id": 31,
+          "attr": {
+            "attachment": {
+              "contentType": "text/html",
+              "content": "Ujhelyi Zoli"
+            },
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
+        }
+      }
+    },
     "-1": {
       "title": "UX",
       "id": 5,
@@ -412,6 +436,17 @@
         "style": {
           "color": "#FF0000",
           "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 31,
+      "ideaIdTo": 18,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "solid",
+          "arrow": true
         }
       }
     }
