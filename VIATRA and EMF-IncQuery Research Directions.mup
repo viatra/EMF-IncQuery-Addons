@@ -178,7 +178,7 @@
             },
             "attachment": {
               "contentType": "text/html",
-              "content": "Dávid István"
+              "content": "Dávid István, (Hegedüs Ábel)"
             }
           }
         },
@@ -192,7 +192,7 @@
           "attr": {
             "attachment": {
               "contentType": "text/html",
-              "content": "Nagy Szabols András, Földi Miklós, Horváth Ákos"
+              "content": "Nagy András&nbsp;Szabolcs, Földényi Miklós, Horváth Ákos, (Hegedüs Ábel)"
             },
             "style": {
               "background": "#333399"
@@ -255,7 +255,7 @@
         },
         "attachment": {
           "contentType": "text/html",
-          "content": "Debreceni Csaba, Horváth Ákos, (Ráth istván?)"
+          "content": "Debreceni Csaba, Horváth Ákos, (Hegedüs Ábel,&nbsp;Ráth istván?)"
         }
       }
     },
@@ -266,7 +266,7 @@
       "attr": {
         "attachment": {
           "contentType": "text/html",
-          "content": "Debreceni Csaba"
+          "content": "Debreceni Csaba, (Hegedüs Ábel)"
         },
         "style": {
           "background": "#E0E0E0"
