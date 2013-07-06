@@ -53,6 +53,10 @@ Roadmap/TODO
  * define semantics for that
  * implement the required API (the extension point mechanism could work here perfectly)
 * [r] examine the opportunities in enabling DTW-based pattern recognition
+* [r] examine the possibility to introduce grouping of atomic events (~"noise groups" or stg like that) which grouping would enable more intelligent noise filtering
+ * e.g. in Strict mode FS_FE is not recognized if an arbitrary event is inserted between these two
+ * however, that arbitrary event might have nothing to do with the targeted area of the skeleton
+  * e.g. moving a leg whilst forward slide
 
 License
 -------
