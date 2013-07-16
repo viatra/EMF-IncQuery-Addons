@@ -255,6 +255,12 @@
           "contentType": "text/html",
           "content": "Ráth istván, Ujhelyi Zoltán, Hegedüs Ábel, Horváth Ákos"
         }
+      },
+      "ideas": {
+        "1": {
+          "title": "Editors? (updateable query results)",
+          "id": 34
+        }
       }
     },
     "-18.5": {
