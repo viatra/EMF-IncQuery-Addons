@@ -604,10 +604,10 @@ public class InternalEdlLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:36:7: ( 'source' )
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:36:9: 'source'
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:36:7: ( 'id' )
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:36:9: 'id'
             {
-            match("source"); 
+            match("id"); 
 
 
             }
@@ -645,10 +645,10 @@ public class InternalEdlLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:38:7: ( 'id' )
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:38:9: 'id'
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:38:7: ( 'source' )
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:38:9: 'source'
             {
-            match("id"); 
+            match("source"); 
 
 
             }
@@ -1018,10 +1018,10 @@ public class InternalEdlLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6187:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6187:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6144:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6144:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6187:11: ( '^' )?
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6144:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1030,7 +1030,7 @@ public class InternalEdlLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6187:11: '^'
+                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6144:11: '^'
                     {
                     match('^'); 
 
@@ -1048,7 +1048,7 @@ public class InternalEdlLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6187:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6144:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1097,10 +1097,10 @@ public class InternalEdlLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6189:10: ( ( '0' .. '9' )+ )
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6189:12: ( '0' .. '9' )+
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6146:10: ( ( '0' .. '9' )+ )
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6146:12: ( '0' .. '9' )+
             {
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6189:12: ( '0' .. '9' )+
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6146:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1114,7 +1114,7 @@ public class InternalEdlLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6189:13: '0' .. '9'
+            	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6146:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1146,10 +1146,10 @@ public class InternalEdlLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6191:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6191:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6148:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6148:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6191:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6148:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1167,10 +1167,10 @@ public class InternalEdlLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6191:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6148:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6191:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6148:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1186,7 +1186,7 @@ public class InternalEdlLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6191:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6148:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1202,7 +1202,7 @@ public class InternalEdlLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6191:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6148:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1227,10 +1227,10 @@ public class InternalEdlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6191:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6148:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6191:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6148:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1246,7 +1246,7 @@ public class InternalEdlLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6191:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6148:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1262,7 +1262,7 @@ public class InternalEdlLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6191:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6148:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1305,12 +1305,12 @@ public class InternalEdlLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6193:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6193:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6150:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6150:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6193:24: ( options {greedy=false; } : . )*
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6150:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1335,7 +1335,7 @@ public class InternalEdlLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6193:52: .
+            	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6150:52: .
             	    {
             	    matchAny(); 
 
@@ -1365,12 +1365,12 @@ public class InternalEdlLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6195:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6195:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6152:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6152:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6195:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6152:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1383,7 +1383,7 @@ public class InternalEdlLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6195:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6152:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1403,7 +1403,7 @@ public class InternalEdlLexer extends Lexer {
                 }
             } while (true);
 
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6195:40: ( ( '\\r' )? '\\n' )?
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6152:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1412,9 +1412,9 @@ public class InternalEdlLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6195:41: ( '\\r' )? '\\n'
+                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6152:41: ( '\\r' )? '\\n'
                     {
-                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6195:41: ( '\\r' )?
+                    // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6152:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1423,7 +1423,7 @@ public class InternalEdlLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6195:41: '\\r'
+                            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6152:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1455,10 +1455,10 @@ public class InternalEdlLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6197:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6197:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6154:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6154:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6197:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6154:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1512,8 +1512,8 @@ public class InternalEdlLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6199:16: ( . )
-            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6199:18: .
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6156:16: ( . )
+            // ../hu.bme.mit.incquery.edl.ui/src-gen/hu/bme/mit/incquery/vedl/ui/contentassist/antlr/internal/InternalEdl.g:6156:18: .
             {
             matchAny(); 
 
@@ -1905,75 +1905,75 @@ public class InternalEdlLexer extends Lexer {
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
         "\1\uffff\1\50\1\uffff\2\46\1\56\11\50\1\73\2\50\2\uffff\1\50\1"+
-        "\102\1\uffff\2\50\1\uffff\1\46\1\uffff\1\115\1\uffff\2\46\2\uffff"+
-        "\3\46\2\uffff\1\50\7\uffff\13\50\2\uffff\2\50\2\uffff\1\50\3\uffff"+
-        "\1\147\1\150\1\50\17\uffff\1\152\20\50\2\uffff\1\50\1\uffff\5\50"+
-        "\1\u0081\17\50\1\u0091\1\uffff\7\50\1\uffff\5\50\1\u00a0\1\50\1"+
-        "\uffff\3\50\1\u00a5\3\50\2\uffff\5\50\1\uffff\4\50\1\uffff\1\50"+
-        "\1\u00b3\4\50\1\u00b8\1\50\1\u00ba\4\50\1\uffff\4\50\1\uffff\1\50"+
-        "\1\uffff\1\u00c4\7\50\1\u00cd\1\uffff\1\u00ce\3\50\1\u00d2\3\50"+
-        "\2\uffff\3\50\1\uffff\1\u00d9\2\50\1\u00dc\1\u00dd\1\50\1\uffff"+
-        "\1\50\1\u00e0\2\uffff\2\50\1\uffff\1\50\1\u00e4\1\50\1\uffff\1\u00e6"+
-        "\1\uffff";
+        "\102\1\50\1\uffff\1\50\1\uffff\1\46\1\uffff\1\115\1\uffff\2\46\2"+
+        "\uffff\3\46\2\uffff\1\50\7\uffff\13\50\2\uffff\2\50\2\uffff\1\50"+
+        "\2\uffff\1\147\1\150\1\uffff\1\50\17\uffff\1\152\20\50\2\uffff\1"+
+        "\50\1\uffff\5\50\1\u0081\17\50\1\u0091\1\uffff\7\50\1\uffff\5\50"+
+        "\1\u00a0\1\50\1\uffff\3\50\1\u00a5\3\50\2\uffff\5\50\1\uffff\4\50"+
+        "\1\uffff\1\50\1\u00b3\4\50\1\u00b8\1\50\1\u00ba\4\50\1\uffff\4\50"+
+        "\1\uffff\1\50\1\uffff\1\u00c4\7\50\1\u00cd\1\uffff\1\u00ce\3\50"+
+        "\1\u00d2\3\50\2\uffff\3\50\1\uffff\1\u00d9\2\50\1\u00dc\1\u00dd"+
+        "\1\50\1\uffff\1\50\1\u00e0\2\uffff\2\50\1\uffff\1\50\1\u00e4\1\50"+
+        "\1\uffff\1\u00e6\1\uffff";
     static final String DFA12_eofS =
         "\u00e7\uffff";
     static final String DFA12_minS =
         "\1\0\1\157\1\uffff\1\74\2\75\2\157\1\156\2\117\1\150\1\145\1\156"+
-        "\1\141\1\52\1\163\1\166\2\uffff\1\164\1\51\1\uffff\1\144\1\121\1"+
+        "\1\141\1\52\1\163\1\166\2\uffff\1\164\1\51\1\144\1\uffff\1\121\1"+
         "\uffff\1\103\1\uffff\1\55\1\uffff\1\76\1\101\2\uffff\2\0\1\52\2"+
         "\uffff\1\164\7\uffff\1\156\1\141\1\165\1\144\1\125\1\123\1\141\1"+
-        "\155\1\143\1\162\1\143\2\uffff\2\145\2\uffff\1\157\3\uffff\2\60"+
-        "\1\120\17\uffff\1\60\1\164\2\162\1\163\1\116\1\124\1\157\1\156\1"+
-        "\160\2\145\1\153\1\141\1\163\1\156\1\155\2\uffff\1\141\1\uffff\1"+
-        "\141\1\164\1\143\1\127\1\104\1\60\1\156\1\147\1\154\1\156\1\163"+
-        "\1\141\1\155\1\55\1\164\1\151\1\164\1\151\1\163\1\145\1\151\1\60"+
-        "\1\uffff\1\151\2\145\2\164\1\147\2\145\1\115\1\143\1\164\1\156\1"+
-        "\127\1\60\1\164\1\uffff\1\143\1\124\1\170\1\60\1\162\1\145\1\164"+
-        "\2\uffff\1\157\1\105\1\145\1\163\1\151\1\uffff\1\150\1\154\1\171"+
-        "\1\105\1\uffff\1\151\1\60\1\145\1\144\1\166\1\162\1\60\1\164\1\60"+
-        "\1\145\1\160\1\166\1\143\1\uffff\1\162\2\145\1\156\1\uffff\1\150"+
-        "\1\uffff\1\60\2\145\1\164\1\106\1\154\1\156\1\105\1\60\1\uffff\1"+
-        "\60\1\156\1\145\1\151\1\60\1\164\1\166\1\145\2\uffff\1\164\1\144"+
+        "\155\1\143\1\162\1\143\2\uffff\2\145\2\uffff\1\157\2\uffff\2\60"+
+        "\1\uffff\1\120\17\uffff\1\60\1\164\2\162\1\163\1\116\1\124\1\157"+
+        "\1\156\1\160\2\145\1\153\1\141\1\163\1\156\1\155\2\uffff\1\141\1"+
+        "\uffff\1\141\1\164\1\143\1\127\1\104\1\60\1\156\1\147\1\154\1\156"+
+        "\1\163\1\141\1\155\1\55\1\164\1\151\1\164\1\151\1\163\1\145\1\151"+
+        "\1\60\1\uffff\1\151\2\145\2\164\1\147\2\145\1\115\1\143\1\164\1"+
+        "\156\1\127\1\60\1\164\1\uffff\1\143\1\124\1\170\1\60\1\162\1\145"+
+        "\1\164\2\uffff\1\157\1\105\1\145\1\163\1\151\1\uffff\1\150\1\154"+
+        "\1\171\1\105\1\uffff\1\151\1\60\1\145\1\144\1\166\1\162\1\60\1\164"+
+        "\1\60\1\145\1\160\1\166\1\143\1\uffff\1\162\2\145\1\156\1\uffff"+
+        "\1\150\1\uffff\1\60\2\145\1\164\1\106\1\154\1\156\1\105\1\60\1\uffff"+
+        "\1\60\1\156\1\145\1\151\1\60\1\164\1\166\1\145\2\uffff\1\164\1\144"+
         "\1\154\1\uffff\1\60\1\145\1\146\2\60\1\164\1\uffff\1\156\1\60\2"+
         "\uffff\1\145\1\164\1\uffff\1\162\1\60\1\163\1\uffff\1\60\1\uffff";
     static final String DFA12_maxS =
         "\1\uffff\1\157\1\uffff\3\75\1\157\1\164\1\156\2\117\1\157\1\145"+
-        "\1\156\1\141\1\52\1\163\1\166\2\uffff\1\164\1\51\1\uffff\1\156\1"+
+        "\1\156\1\141\1\52\1\163\1\166\2\uffff\1\164\1\51\1\156\1\uffff\1"+
         "\121\1\uffff\1\123\1\uffff\1\55\1\uffff\1\133\1\172\2\uffff\2\uffff"+
         "\1\57\2\uffff\1\164\7\uffff\1\156\1\141\1\165\1\144\1\125\1\123"+
-        "\1\162\1\155\1\143\2\162\2\uffff\2\145\2\uffff\1\157\3\uffff\2\172"+
-        "\1\120\17\uffff\1\172\1\164\2\162\1\163\1\116\1\124\1\157\1\156"+
-        "\1\160\2\145\1\153\1\141\1\163\1\156\1\155\2\uffff\1\141\1\uffff"+
-        "\1\141\1\164\1\143\1\127\1\104\1\172\1\156\1\147\1\154\1\156\1\163"+
-        "\1\141\1\155\1\55\1\164\1\151\1\164\1\151\1\163\1\145\1\151\1\172"+
-        "\1\uffff\1\151\2\145\2\164\1\147\1\145\1\151\1\115\1\143\1\164\1"+
-        "\156\1\127\1\172\1\164\1\uffff\1\143\1\124\1\170\1\172\1\162\1\145"+
-        "\1\164\2\uffff\1\157\1\105\1\145\1\163\1\151\1\uffff\1\150\1\154"+
-        "\1\171\1\105\1\uffff\1\151\1\172\1\145\1\144\1\166\1\162\1\172\1"+
-        "\164\1\172\1\145\1\160\1\166\1\143\1\uffff\1\162\2\145\1\156\1\uffff"+
-        "\1\150\1\uffff\1\172\2\145\1\164\1\106\1\154\1\156\1\122\1\172\1"+
-        "\uffff\1\172\1\156\1\145\1\151\1\172\1\164\1\166\1\145\2\uffff\1"+
-        "\164\1\144\1\154\1\uffff\1\172\1\145\1\146\2\172\1\164\1\uffff\1"+
-        "\156\1\172\2\uffff\1\145\1\164\1\uffff\1\162\1\172\1\163\1\uffff"+
-        "\1\172\1\uffff";
+        "\1\162\1\155\1\143\2\162\2\uffff\2\145\2\uffff\1\157\2\uffff\2\172"+
+        "\1\uffff\1\120\17\uffff\1\172\1\164\2\162\1\163\1\116\1\124\1\157"+
+        "\1\156\1\160\2\145\1\153\1\141\1\163\1\156\1\155\2\uffff\1\141\1"+
+        "\uffff\1\141\1\164\1\143\1\127\1\104\1\172\1\156\1\147\1\154\1\156"+
+        "\1\163\1\141\1\155\1\55\1\164\1\151\1\164\1\151\1\163\1\145\1\151"+
+        "\1\172\1\uffff\1\151\2\145\2\164\1\147\1\145\1\151\1\115\1\143\1"+
+        "\164\1\156\1\127\1\172\1\164\1\uffff\1\143\1\124\1\170\1\172\1\162"+
+        "\1\145\1\164\2\uffff\1\157\1\105\1\145\1\163\1\151\1\uffff\1\150"+
+        "\1\154\1\171\1\105\1\uffff\1\151\1\172\1\145\1\144\1\166\1\162\1"+
+        "\172\1\164\1\172\1\145\1\160\1\166\1\143\1\uffff\1\162\2\145\1\156"+
+        "\1\uffff\1\150\1\uffff\1\172\2\145\1\164\1\106\1\154\1\156\1\122"+
+        "\1\172\1\uffff\1\172\1\156\1\145\1\151\1\172\1\164\1\166\1\145\2"+
+        "\uffff\1\164\1\144\1\154\1\uffff\1\172\1\145\1\146\2\172\1\164\1"+
+        "\uffff\1\156\1\172\2\uffff\1\145\1\164\1\uffff\1\162\1\172\1\163"+
+        "\1\uffff\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\17\uffff\1\26\1\27\2\uffff\1\33\2\uffff\1\43\1\uffff"+
+        "\2\uffff\1\2\17\uffff\1\26\1\27\3\uffff\1\33\1\uffff\1\43\1\uffff"+
         "\1\50\1\uffff\1\52\2\uffff\1\56\1\57\3\uffff\1\63\1\64\1\uffff\1"+
         "\56\1\2\1\3\1\4\1\5\1\6\1\7\13\uffff\1\22\1\21\2\uffff\1\26\1\27"+
-        "\1\uffff\1\31\1\42\1\33\3\uffff\1\43\1\44\1\45\1\46\1\50\1\55\1"+
-        "\51\1\52\1\53\1\54\1\57\1\60\1\61\1\62\1\63\21\uffff\1\34\1\47\1"+
-        "\uffff\1\1\26\uffff\1\14\17\uffff\1\13\7\uffff\1\23\1\24\5\uffff"+
-        "\1\32\4\uffff\1\16\15\uffff\1\20\4\uffff\1\10\1\uffff\1\12\11\uffff"+
-        "\1\15\10\uffff\1\11\1\40\3\uffff\1\25\6\uffff\1\30\2\uffff\1\41"+
-        "\1\17\2\uffff\1\37\3\uffff\1\36\1\uffff\1\35";
+        "\1\uffff\1\31\1\42\2\uffff\1\33\1\uffff\1\43\1\44\1\45\1\46\1\50"+
+        "\1\55\1\51\1\52\1\53\1\54\1\57\1\60\1\61\1\62\1\63\21\uffff\1\32"+
+        "\1\47\1\uffff\1\1\26\uffff\1\14\17\uffff\1\13\7\uffff\1\23\1\24"+
+        "\5\uffff\1\34\4\uffff\1\16\15\uffff\1\20\4\uffff\1\10\1\uffff\1"+
+        "\12\11\uffff\1\15\10\uffff\1\11\1\40\3\uffff\1\25\6\uffff\1\30\2"+
+        "\uffff\1\41\1\17\2\uffff\1\37\3\uffff\1\36\1\uffff\1\35";
     static final String DFA12_specialS =
         "\1\0\41\uffff\1\2\1\1\u00c3\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\46\2\45\2\46\1\45\22\46\1\45\1\4\1\42\4\46\1\43\1\25\1"+
-            "\31\2\46\1\33\1\36\1\17\1\44\12\41\1\26\1\46\1\2\1\3\1\5\1\46"+
+            "\31\2\46\1\33\1\36\1\17\1\44\12\41\1\27\1\46\1\2\1\3\1\5\1\46"+
             "\1\32\1\24\1\40\1\13\1\40\1\21\1\11\2\40\1\30\2\40\1\12\5\40"+
             "\1\14\2\40\1\15\5\40\1\35\1\46\1\34\1\37\1\40\1\46\2\40\1\6"+
-            "\1\40\1\10\3\40\1\27\4\40\1\1\1\40\1\16\2\40\1\7\1\40\1\20\5"+
+            "\1\40\1\10\3\40\1\26\4\40\1\1\1\40\1\16\2\40\1\7\1\40\1\20\5"+
             "\40\1\22\1\46\1\23\uff82\46",
             "\1\47",
             "",
@@ -1996,8 +1996,8 @@ public class InternalEdlLexer extends Lexer {
             "",
             "\1\100",
             "\1\101",
+            "\1\103\11\uffff\1\104",
             "",
-            "\1\104\11\uffff\1\105",
             "\1\106",
             "",
             "\1\110\14\uffff\1\112\2\uffff\1\111",
@@ -2041,9 +2041,9 @@ public class InternalEdlLexer extends Lexer {
             "\1\146",
             "",
             "",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\151",
             "",
             "",
@@ -2289,9 +2289,9 @@ public class InternalEdlLexer extends Lexer {
 
                         else if ( (LA12_0=='(') ) {s = 21;}
 
-                        else if ( (LA12_0==':') ) {s = 22;}
+                        else if ( (LA12_0=='i') ) {s = 22;}
 
-                        else if ( (LA12_0=='i') ) {s = 23;}
+                        else if ( (LA12_0==':') ) {s = 23;}
 
                         else if ( (LA12_0=='I') ) {s = 24;}
 

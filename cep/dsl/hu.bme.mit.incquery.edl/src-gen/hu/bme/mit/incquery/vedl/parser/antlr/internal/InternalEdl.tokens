@@ -61,7 +61,7 @@ RULE_WS=9
 'endsWith'=46
 'IQPatternRef'=26
 'AtomicEvent'=19
-'source'=21
+'source'=23
 '.'=12
 ')'=30
 ']->'=50
@@ -78,7 +78,7 @@ RULE_WS=9
 'EventModel'=16
 'IQPatternEvent'=25
 'package'=11
-'id'=23
+'id'=21
 '!='=41
 'Unrestricted'=55
 '<'=38

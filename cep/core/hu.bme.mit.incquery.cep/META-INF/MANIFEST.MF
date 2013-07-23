@@ -5,8 +5,7 @@ Bundle-SymbolicName: hu.bme.mit.incquery.cep;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: 
- hu.bme.mit.incquery.cep.api,
+Export-Package: hu.bme.mit.incquery.cep.api,
  hu.bme.mit.incquery.cep.api.evm,
  hu.bme.mit.incquery.cep.api.runtime,
  hu.bme.mit.incquery.cep.api.strategy,
@@ -15,7 +14,9 @@ Export-Package:
  hu.bme.mit.incquery.cep.metamodels.cep.util,
  hu.bme.mit.incquery.cep.metamodels.internalsm,
  hu.bme.mit.incquery.cep.metamodels.internalsm.impl,
- hu.bme.mit.incquery.cep.metamodels.internalsm.util
+ hu.bme.mit.incquery.cep.metamodels.internalsm.util,
+ hu.bme.mit.incquery.cep.runtime.evaluation.queries,
+ hu.bme.mit.incquery.cep.runtime.evaluation.queries.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  hu.bme.mit.incquery.cep,

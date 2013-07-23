@@ -318,22 +318,22 @@ public interface EdlPackage extends EPackage
   int ATOMIC_EVENT__ANNOTATIONS = ABSTRACT_ATOMIC_EVENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Source</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOMIC_EVENT__SOURCE = ABSTRACT_ATOMIC_EVENT_FEATURE_COUNT + 1;
-
-  /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATOMIC_EVENT__ID = ABSTRACT_ATOMIC_EVENT_FEATURE_COUNT + 2;
+  int ATOMIC_EVENT__ID = ABSTRACT_ATOMIC_EVENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Source</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATOMIC_EVENT__SOURCE = ABSTRACT_ATOMIC_EVENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Parameter Filters</b></em>' containment reference list.
@@ -373,7 +373,7 @@ public interface EdlPackage extends EPackage
   int IQ_PATTERN_EVENT__NAME = ABSTRACT_ATOMIC_EVENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Iqpattern</b></em>' containment reference.
+   * The feature id for the '<em><b>Iqpattern</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -557,34 +557,6 @@ public interface EdlPackage extends EPackage
   int PARAMETER_FILTER_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.impl.IQPatternImpl <em>IQ Pattern</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.incquery.vedl.edl.impl.IQPatternImpl
-   * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getIQPattern()
-   * @generated
-   */
-  int IQ_PATTERN = 13;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IQ_PATTERN__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>IQ Pattern</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IQ_PATTERN_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.impl.AnnotationsImpl <em>Annotations</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -592,7 +564,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getAnnotations()
    * @generated
    */
-  int ANNOTATIONS = 14;
+  int ANNOTATIONS = 13;
 
   /**
    * The number of structural features of the '<em>Annotations</em>' class.
@@ -611,7 +583,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getContextAnnotation()
    * @generated
    */
-  int CONTEXT_ANNOTATION = 15;
+  int CONTEXT_ANNOTATION = 14;
 
   /**
    * The feature id for the '<em><b>Context</b></em>' attribute.
@@ -639,7 +611,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getSamplingAnnotation()
    * @generated
    */
-  int SAMPLING_ANNOTATION = 16;
+  int SAMPLING_ANNOTATION = 15;
 
   /**
    * The feature id for the '<em><b>Sampling</b></em>' attribute.
@@ -667,7 +639,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getPriorityAnnotation()
    * @generated
    */
-  int PRIORITY_ANNOTATION = 17;
+  int PRIORITY_ANNOTATION = 16;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -695,7 +667,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getParameterFilterRule()
    * @generated
    */
-  int PARAMETER_FILTER_RULE = 18;
+  int PARAMETER_FILTER_RULE = 17;
 
   /**
    * The number of structural features of the '<em>Parameter Filter Rule</em>' class.
@@ -714,7 +686,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getRangeFilter()
    * @generated
    */
-  int RANGE_FILTER = 19;
+  int RANGE_FILTER = 18;
 
   /**
    * The feature id for the '<em><b>Neg</b></em>' attribute.
@@ -751,7 +723,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getRange()
    * @generated
    */
-  int RANGE = 20;
+  int RANGE = 19;
 
   /**
    * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -788,7 +760,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getOpenOpen()
    * @generated
    */
-  int OPEN_OPEN = 21;
+  int OPEN_OPEN = 20;
 
   /**
    * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -825,7 +797,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getOpenClosed()
    * @generated
    */
-  int OPEN_CLOSED = 22;
+  int OPEN_CLOSED = 21;
 
   /**
    * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -862,7 +834,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getClosedClosed()
    * @generated
    */
-  int CLOSED_CLOSED = 23;
+  int CLOSED_CLOSED = 22;
 
   /**
    * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -899,7 +871,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getClosedOpen()
    * @generated
    */
-  int CLOSED_OPEN = 24;
+  int CLOSED_OPEN = 23;
 
   /**
    * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -936,7 +908,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getNumericFilter()
    * @generated
    */
-  int NUMERIC_FILTER = 25;
+  int NUMERIC_FILTER = 24;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -973,7 +945,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getLiteralFilter()
    * @generated
    */
-  int LITERAL_FILTER = 26;
+  int LITERAL_FILTER = 25;
 
   /**
    * The feature id for the '<em><b>Neg</b></em>' attribute.
@@ -1019,7 +991,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getComplexEventExpression()
    * @generated
    */
-  int COMPLEX_EVENT_EXPRESSION = 27;
+  int COMPLEX_EVENT_EXPRESSION = 26;
 
   /**
    * The number of structural features of the '<em>Complex Event Expression</em>' class.
@@ -1038,7 +1010,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getFollowsExpression()
    * @generated
    */
-  int FOLLOWS_EXPRESSION = 28;
+  int FOLLOWS_EXPRESSION = 27;
 
   /**
    * The feature id for the '<em><b>First Event</b></em>' containment reference list.
@@ -1075,7 +1047,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getEventWithFollowsOperator()
    * @generated
    */
-  int EVENT_WITH_FOLLOWS_OPERATOR = 29;
+  int EVENT_WITH_FOLLOWS_OPERATOR = 28;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' containment reference.
@@ -1112,7 +1084,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getFollowsOperator()
    * @generated
    */
-  int FOLLOWS_OPERATOR = 30;
+  int FOLLOWS_OPERATOR = 29;
 
   /**
    * The number of structural features of the '<em>Follows Operator</em>' class.
@@ -1131,7 +1103,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getFollowsOperatorNoTW()
    * @generated
    */
-  int FOLLOWS_OPERATOR_NO_TW = 31;
+  int FOLLOWS_OPERATOR_NO_TW = 30;
 
   /**
    * The number of structural features of the '<em>Follows Operator No TW</em>' class.
@@ -1150,7 +1122,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getFollowsOperatorViaTW()
    * @generated
    */
-  int FOLLOWS_OPERATOR_VIA_TW = 32;
+  int FOLLOWS_OPERATOR_VIA_TW = 31;
 
   /**
    * The feature id for the '<em><b>Timewindow</b></em>' attribute.
@@ -1178,7 +1150,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getEventWithMultiplicity()
    * @generated
    */
-  int EVENT_WITH_MULTIPLICITY = 33;
+  int EVENT_WITH_MULTIPLICITY = 32;
 
   /**
    * The feature id for the '<em><b>Event</b></em>' reference.
@@ -1215,7 +1187,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getIQPatternChangeType()
    * @generated
    */
-  int IQ_PATTERN_CHANGE_TYPE = 34;
+  int IQ_PATTERN_CHANGE_TYPE = 33;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.incquery.vedl.edl.Context <em>Context</em>}' enum.
@@ -1225,7 +1197,7 @@ public interface EdlPackage extends EPackage
    * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getContext()
    * @generated
    */
-  int CONTEXT = 35;
+  int CONTEXT = 34;
 
 
   /**
@@ -1408,17 +1380,6 @@ public interface EdlPackage extends EPackage
   EReference getAtomicEvent_Annotations();
 
   /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.incquery.vedl.edl.AtomicEvent#getSource <em>Source</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Source</em>'.
-   * @see hu.bme.mit.incquery.vedl.edl.AtomicEvent#getSource()
-   * @see #getAtomicEvent()
-   * @generated
-   */
-  EReference getAtomicEvent_Source();
-
-  /**
    * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.vedl.edl.AtomicEvent#getId <em>Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1428,6 +1389,17 @@ public interface EdlPackage extends EPackage
    * @generated
    */
   EAttribute getAtomicEvent_Id();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.incquery.vedl.edl.AtomicEvent#getSource <em>Source</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Source</em>'.
+   * @see hu.bme.mit.incquery.vedl.edl.AtomicEvent#getSource()
+   * @see #getAtomicEvent()
+   * @generated
+   */
+  EReference getAtomicEvent_Source();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.vedl.edl.AtomicEvent#getParameterFilters <em>Parameter Filters</em>}'.
@@ -1451,15 +1423,15 @@ public interface EdlPackage extends EPackage
   EClass getIQPatternEvent();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.vedl.edl.IQPatternEvent#getIqpattern <em>Iqpattern</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.vedl.edl.IQPatternEvent#getIqpattern <em>Iqpattern</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Iqpattern</em>'.
+   * @return the meta object for the attribute '<em>Iqpattern</em>'.
    * @see hu.bme.mit.incquery.vedl.edl.IQPatternEvent#getIqpattern()
    * @see #getIQPatternEvent()
    * @generated
    */
-  EReference getIQPatternEvent_Iqpattern();
+  EAttribute getIQPatternEvent_Iqpattern();
 
   /**
    * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.vedl.edl.IQPatternEvent#getChangeType <em>Change Type</em>}'.
@@ -1599,27 +1571,6 @@ public interface EdlPackage extends EPackage
    * @generated
    */
   EReference getParameterFilter_ParamFilterRule();
-
-  /**
-   * Returns the meta object for class '{@link hu.bme.mit.incquery.vedl.edl.IQPattern <em>IQ Pattern</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>IQ Pattern</em>'.
-   * @see hu.bme.mit.incquery.vedl.edl.IQPattern
-   * @generated
-   */
-  EClass getIQPattern();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.vedl.edl.IQPattern#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.incquery.vedl.edl.IQPattern#getName()
-   * @see #getIQPattern()
-   * @generated
-   */
-  EAttribute getIQPattern_Name();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.incquery.vedl.edl.Annotations <em>Annotations</em>}'.
@@ -2226,20 +2177,20 @@ public interface EdlPackage extends EPackage
     EReference ATOMIC_EVENT__ANNOTATIONS = eINSTANCE.getAtomicEvent_Annotations();
 
     /**
-     * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATOMIC_EVENT__SOURCE = eINSTANCE.getAtomicEvent_Source();
-
-    /**
      * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute ATOMIC_EVENT__ID = eINSTANCE.getAtomicEvent_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATOMIC_EVENT__SOURCE = eINSTANCE.getAtomicEvent_Source();
 
     /**
      * The meta object literal for the '<em><b>Parameter Filters</b></em>' containment reference list feature.
@@ -2260,12 +2211,12 @@ public interface EdlPackage extends EPackage
     EClass IQ_PATTERN_EVENT = eINSTANCE.getIQPatternEvent();
 
     /**
-     * The meta object literal for the '<em><b>Iqpattern</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Iqpattern</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IQ_PATTERN_EVENT__IQPATTERN = eINSTANCE.getIQPatternEvent_Iqpattern();
+    EAttribute IQ_PATTERN_EVENT__IQPATTERN = eINSTANCE.getIQPatternEvent_Iqpattern();
 
     /**
      * The meta object literal for the '<em><b>Change Type</b></em>' attribute feature.
@@ -2378,24 +2329,6 @@ public interface EdlPackage extends EPackage
      * @generated
      */
     EReference PARAMETER_FILTER__PARAM_FILTER_RULE = eINSTANCE.getParameterFilter_ParamFilterRule();
-
-    /**
-     * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.impl.IQPatternImpl <em>IQ Pattern</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.incquery.vedl.edl.impl.IQPatternImpl
-     * @see hu.bme.mit.incquery.vedl.edl.impl.EdlPackageImpl#getIQPattern()
-     * @generated
-     */
-    EClass IQ_PATTERN = eINSTANCE.getIQPattern();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IQ_PATTERN__NAME = eINSTANCE.getIQPattern_Name();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.incquery.vedl.edl.impl.AnnotationsImpl <em>Annotations</em>}' class.

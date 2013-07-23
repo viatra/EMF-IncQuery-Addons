@@ -15,8 +15,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.vedl.edl.AtomicEvent#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.vedl.edl.AtomicEvent#getSource <em>Source</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.vedl.edl.AtomicEvent#getId <em>Id</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.vedl.edl.AtomicEvent#getSource <em>Source</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.vedl.edl.AtomicEvent#getParameterFilters <em>Parameter Filters</em>}</li>
  * </ul>
  * </p>
@@ -44,32 +44,6 @@ public interface AtomicEvent extends AbstractAtomicEvent
   EList<Annotations> getAnnotations();
 
   /**
-   * Returns the value of the '<em><b>Source</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Source</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Source</em>' reference.
-   * @see #setSource(Source)
-   * @see hu.bme.mit.incquery.vedl.edl.EdlPackage#getAtomicEvent_Source()
-   * @model
-   * @generated
-   */
-  Source getSource();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.incquery.vedl.edl.AtomicEvent#getSource <em>Source</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Source</em>' reference.
-   * @see #getSource()
-   * @generated
-   */
-  void setSource(Source value);
-
-  /**
    * Returns the value of the '<em><b>Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
@@ -94,6 +68,32 @@ public interface AtomicEvent extends AbstractAtomicEvent
    * @generated
    */
   void setId(String value);
+
+  /**
+   * Returns the value of the '<em><b>Source</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Source</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Source</em>' reference.
+   * @see #setSource(Source)
+   * @see hu.bme.mit.incquery.vedl.edl.EdlPackage#getAtomicEvent_Source()
+   * @model
+   * @generated
+   */
+  Source getSource();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.incquery.vedl.edl.AtomicEvent#getSource <em>Source</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Source</em>' reference.
+   * @see #getSource()
+   * @generated
+   */
+  void setSource(Source value);
 
   /**
    * Returns the value of the '<em><b>Parameter Filters</b></em>' containment reference list.

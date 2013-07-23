@@ -3,15 +3,12 @@
 package hu.bme.mit.incquery.vedl.edl.impl;
 
 import hu.bme.mit.incquery.vedl.edl.EdlPackage;
-import hu.bme.mit.incquery.vedl.edl.IQPattern;
 import hu.bme.mit.incquery.vedl.edl.IQPatternChangeType;
 import hu.bme.mit.incquery.vedl.edl.IQPatternEvent;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -32,14 +29,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class IQPatternEventImpl extends AbstractAtomicEventImpl implements IQPatternEvent
 {
   /**
-   * The cached value of the '{@link #getIqpattern() <em>Iqpattern</em>}' containment reference.
+   * The default value of the '{@link #getIqpattern() <em>Iqpattern</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getIqpattern()
    * @generated
    * @ordered
    */
-  protected IQPattern iqpattern;
+  protected static final String IQPATTERN_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getIqpattern() <em>Iqpattern</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIqpattern()
+   * @generated
+   * @ordered
+   */
+  protected String iqpattern = IQPATTERN_EDEFAULT;
 
   /**
    * The default value of the '{@link #getChangeType() <em>Change Type</em>}' attribute.
@@ -87,7 +94,7 @@ public class IQPatternEventImpl extends AbstractAtomicEventImpl implements IQPat
    * <!-- end-user-doc -->
    * @generated
    */
-  public IQPattern getIqpattern()
+  public String getIqpattern()
   {
     return iqpattern;
   }
@@ -97,37 +104,12 @@ public class IQPatternEventImpl extends AbstractAtomicEventImpl implements IQPat
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetIqpattern(IQPattern newIqpattern, NotificationChain msgs)
+  public void setIqpattern(String newIqpattern)
   {
-    IQPattern oldIqpattern = iqpattern;
+    String oldIqpattern = iqpattern;
     iqpattern = newIqpattern;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EdlPackage.IQ_PATTERN_EVENT__IQPATTERN, oldIqpattern, newIqpattern);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setIqpattern(IQPattern newIqpattern)
-  {
-    if (newIqpattern != iqpattern)
-    {
-      NotificationChain msgs = null;
-      if (iqpattern != null)
-        msgs = ((InternalEObject)iqpattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EdlPackage.IQ_PATTERN_EVENT__IQPATTERN, null, msgs);
-      if (newIqpattern != null)
-        msgs = ((InternalEObject)newIqpattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EdlPackage.IQ_PATTERN_EVENT__IQPATTERN, null, msgs);
-      msgs = basicSetIqpattern(newIqpattern, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EdlPackage.IQ_PATTERN_EVENT__IQPATTERN, newIqpattern, newIqpattern));
+      eNotify(new ENotificationImpl(this, Notification.SET, EdlPackage.IQ_PATTERN_EVENT__IQPATTERN, oldIqpattern, iqpattern));
   }
 
   /**
@@ -159,22 +141,6 @@ public class IQPatternEventImpl extends AbstractAtomicEventImpl implements IQPat
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case EdlPackage.IQ_PATTERN_EVENT__IQPATTERN:
-        return basicSetIqpattern(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -198,7 +164,7 @@ public class IQPatternEventImpl extends AbstractAtomicEventImpl implements IQPat
     switch (featureID)
     {
       case EdlPackage.IQ_PATTERN_EVENT__IQPATTERN:
-        setIqpattern((IQPattern)newValue);
+        setIqpattern((String)newValue);
         return;
       case EdlPackage.IQ_PATTERN_EVENT__CHANGE_TYPE:
         setChangeType((IQPatternChangeType)newValue);
@@ -218,7 +184,7 @@ public class IQPatternEventImpl extends AbstractAtomicEventImpl implements IQPat
     switch (featureID)
     {
       case EdlPackage.IQ_PATTERN_EVENT__IQPATTERN:
-        setIqpattern((IQPattern)null);
+        setIqpattern(IQPATTERN_EDEFAULT);
         return;
       case EdlPackage.IQ_PATTERN_EVENT__CHANGE_TYPE:
         setChangeType(CHANGE_TYPE_EDEFAULT);
@@ -238,7 +204,7 @@ public class IQPatternEventImpl extends AbstractAtomicEventImpl implements IQPat
     switch (featureID)
     {
       case EdlPackage.IQ_PATTERN_EVENT__IQPATTERN:
-        return iqpattern != null;
+        return IQPATTERN_EDEFAULT == null ? iqpattern != null : !IQPATTERN_EDEFAULT.equals(iqpattern);
       case EdlPackage.IQ_PATTERN_EVENT__CHANGE_TYPE:
         return changeType != CHANGE_TYPE_EDEFAULT;
     }
@@ -256,7 +222,9 @@ public class IQPatternEventImpl extends AbstractAtomicEventImpl implements IQPat
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (changeType: ");
+    result.append(" (iqpattern: ");
+    result.append(iqpattern);
+    result.append(", changeType: ");
     result.append(changeType);
     result.append(')');
     return result.toString();

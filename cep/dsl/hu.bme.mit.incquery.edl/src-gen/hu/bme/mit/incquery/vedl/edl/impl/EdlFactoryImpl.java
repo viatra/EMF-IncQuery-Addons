@@ -31,7 +31,7 @@ public class EdlFactoryImpl extends EFactoryImpl implements EdlFactory
   {
     try
     {
-      EdlFactory theEdlFactory = (EdlFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.bme.hu/mit/incquery/vedl/Edl"); 
+      EdlFactory theEdlFactory = (EdlFactory)EPackage.Registry.INSTANCE.getEFactory(EdlPackage.eNS_URI);
       if (theEdlFactory != null)
       {
         return theEdlFactory;
@@ -78,7 +78,6 @@ public class EdlFactoryImpl extends EFactoryImpl implements EdlFactory
       case EdlPackage.CE_PARAMLIST: return createCEParamlist();
       case EdlPackage.EVENT_PARAM_WITH_TYPE: return createEventParamWithType();
       case EdlPackage.PARAMETER_FILTER: return createParameterFilter();
-      case EdlPackage.IQ_PATTERN: return createIQPattern();
       case EdlPackage.ANNOTATIONS: return createAnnotations();
       case EdlPackage.CONTEXT_ANNOTATION: return createContextAnnotation();
       case EdlPackage.SAMPLING_ANNOTATION: return createSamplingAnnotation();
@@ -283,17 +282,6 @@ public class EdlFactoryImpl extends EFactoryImpl implements EdlFactory
   {
     ParameterFilterImpl parameterFilter = new ParameterFilterImpl();
     return parameterFilter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public IQPattern createIQPattern()
-  {
-    IQPatternImpl iqPattern = new IQPatternImpl();
-    return iqPattern;
   }
 
   /**

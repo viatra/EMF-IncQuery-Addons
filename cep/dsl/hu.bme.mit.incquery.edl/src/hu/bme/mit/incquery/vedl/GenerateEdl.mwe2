@@ -13,9 +13,13 @@ Workflow {
     bean = StandaloneSetup {
             scanClassPath = true
             platformUri = "${runtimeProject}/.."
-            // The following two lines can be removed, if Xbase is not used.
-            registerGeneratedEPackage = "hu.bme.mit.incquery.srct.srct.SrctPackage"
+            //registerGeneratedEPackage = "org.eclipse.xtext.xbase.XbasePackage"
+        	registerGeneratedEPackage = "hu.bme.mit.incquery.srct.srct.SrctPackage"
+        	//registerGeneratedEPackage = "org.eclipse.incquery.patternlanguage.patternLanguage.PatternLanguagePackage"
+        	//registerGenModelFile = "platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel"
+			registerGenModelFile = "platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel"
             registerGenModelFile = "platform:/resource/hu.bme.mit.incquery.srct/src-gen/hu/bme/mit/incquery/srct/Srct.genmodel"
+           // registerGenModelFile = "platform:/resource/org.eclipse.incquery.patternlanguage/src-gen/org/eclipse/incquery/patternlanguage/PatternLanguage.genmodel"
         }
     
         component = DirectoryCleaner {

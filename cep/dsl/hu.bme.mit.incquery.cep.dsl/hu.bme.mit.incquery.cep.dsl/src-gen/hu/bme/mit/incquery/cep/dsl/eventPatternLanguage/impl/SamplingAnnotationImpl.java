@@ -1,58 +1,57 @@
 /**
  */
-package hu.bme.mit.incquery.vedl.edl.impl;
+package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
-import hu.bme.mit.incquery.vedl.edl.EdlPackage;
-import hu.bme.mit.incquery.vedl.edl.IQPattern;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.SamplingAnnotation;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>IQ Pattern</b></em>'.
+ * An implementation of the model object '<em><b>Sampling Annotation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.vedl.edl.impl.IQPatternImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.SamplingAnnotationImpl#getSampling <em>Sampling</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class IQPatternImpl extends MinimalEObjectImpl.Container implements IQPattern
+public class SamplingAnnotationImpl extends AnnotationsImpl implements SamplingAnnotation
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getSampling() <em>Sampling</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getSampling()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final int SAMPLING_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getSampling() <em>Sampling</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getSampling()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected int sampling = SAMPLING_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected IQPatternImpl()
+  protected SamplingAnnotationImpl()
   {
     super();
   }
@@ -65,7 +64,7 @@ public class IQPatternImpl extends MinimalEObjectImpl.Container implements IQPat
   @Override
   protected EClass eStaticClass()
   {
-    return EdlPackage.Literals.IQ_PATTERN;
+    return EventPatternLanguagePackage.Literals.SAMPLING_ANNOTATION;
   }
 
   /**
@@ -73,9 +72,9 @@ public class IQPatternImpl extends MinimalEObjectImpl.Container implements IQPat
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public int getSampling()
   {
-    return name;
+    return sampling;
   }
 
   /**
@@ -83,12 +82,12 @@ public class IQPatternImpl extends MinimalEObjectImpl.Container implements IQPat
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setSampling(int newSampling)
   {
-    String oldName = name;
-    name = newName;
+    int oldSampling = sampling;
+    sampling = newSampling;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EdlPackage.IQ_PATTERN__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.SAMPLING_ANNOTATION__SAMPLING, oldSampling, sampling));
   }
 
   /**
@@ -101,8 +100,8 @@ public class IQPatternImpl extends MinimalEObjectImpl.Container implements IQPat
   {
     switch (featureID)
     {
-      case EdlPackage.IQ_PATTERN__NAME:
-        return getName();
+      case EventPatternLanguagePackage.SAMPLING_ANNOTATION__SAMPLING:
+        return getSampling();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +116,8 @@ public class IQPatternImpl extends MinimalEObjectImpl.Container implements IQPat
   {
     switch (featureID)
     {
-      case EdlPackage.IQ_PATTERN__NAME:
-        setName((String)newValue);
+      case EventPatternLanguagePackage.SAMPLING_ANNOTATION__SAMPLING:
+        setSampling((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +133,8 @@ public class IQPatternImpl extends MinimalEObjectImpl.Container implements IQPat
   {
     switch (featureID)
     {
-      case EdlPackage.IQ_PATTERN__NAME:
-        setName(NAME_EDEFAULT);
+      case EventPatternLanguagePackage.SAMPLING_ANNOTATION__SAMPLING:
+        setSampling(SAMPLING_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +150,8 @@ public class IQPatternImpl extends MinimalEObjectImpl.Container implements IQPat
   {
     switch (featureID)
     {
-      case EdlPackage.IQ_PATTERN__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case EventPatternLanguagePackage.SAMPLING_ANNOTATION__SAMPLING:
+        return sampling != SAMPLING_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -168,10 +167,10 @@ public class IQPatternImpl extends MinimalEObjectImpl.Container implements IQPat
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (sampling: ");
+    result.append(sampling);
     result.append(')');
     return result.toString();
   }
 
-} //IQPatternImpl
+} //SamplingAnnotationImpl

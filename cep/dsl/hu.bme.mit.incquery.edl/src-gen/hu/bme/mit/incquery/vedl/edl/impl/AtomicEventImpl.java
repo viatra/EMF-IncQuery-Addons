@@ -32,8 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.vedl.edl.impl.AtomicEventImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.vedl.edl.impl.AtomicEventImpl#getSource <em>Source</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.vedl.edl.impl.AtomicEventImpl#getId <em>Id</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.vedl.edl.impl.AtomicEventImpl#getSource <em>Source</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.vedl.edl.impl.AtomicEventImpl#getParameterFilters <em>Parameter Filters</em>}</li>
  * </ul>
  * </p>
@@ -51,16 +51,6 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
    * @ordered
    */
   protected EList<Annotations> annotations;
-
-  /**
-   * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSource()
-   * @generated
-   * @ordered
-   */
-  protected Source source;
 
   /**
    * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -81,6 +71,16 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
    * @ordered
    */
   protected String id = ID_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSource()
+   * @generated
+   * @ordered
+   */
+  protected Source source;
 
   /**
    * The cached value of the '{@link #getParameterFilters() <em>Parameter Filters</em>}' containment reference list.
@@ -132,6 +132,29 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getId()
+  {
+    return id;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setId(String newId)
+  {
+    String oldId = id;
+    id = newId;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EdlPackage.ATOMIC_EVENT__ID, oldId, id));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Source getSource()
   {
     if (source != null && source.eIsProxy())
@@ -168,29 +191,6 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
     source = newSource;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EdlPackage.ATOMIC_EVENT__SOURCE, oldSource, source));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getId()
-  {
-    return id;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setId(String newId)
-  {
-    String oldId = id;
-    id = newId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EdlPackage.ATOMIC_EVENT__ID, oldId, id));
   }
 
   /**
@@ -237,11 +237,11 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
     {
       case EdlPackage.ATOMIC_EVENT__ANNOTATIONS:
         return getAnnotations();
+      case EdlPackage.ATOMIC_EVENT__ID:
+        return getId();
       case EdlPackage.ATOMIC_EVENT__SOURCE:
         if (resolve) return getSource();
         return basicGetSource();
-      case EdlPackage.ATOMIC_EVENT__ID:
-        return getId();
       case EdlPackage.ATOMIC_EVENT__PARAMETER_FILTERS:
         return getParameterFilters();
     }
@@ -263,11 +263,11 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
         getAnnotations().clear();
         getAnnotations().addAll((Collection<? extends Annotations>)newValue);
         return;
-      case EdlPackage.ATOMIC_EVENT__SOURCE:
-        setSource((Source)newValue);
-        return;
       case EdlPackage.ATOMIC_EVENT__ID:
         setId((String)newValue);
+        return;
+      case EdlPackage.ATOMIC_EVENT__SOURCE:
+        setSource((Source)newValue);
         return;
       case EdlPackage.ATOMIC_EVENT__PARAMETER_FILTERS:
         getParameterFilters().clear();
@@ -290,11 +290,11 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
       case EdlPackage.ATOMIC_EVENT__ANNOTATIONS:
         getAnnotations().clear();
         return;
-      case EdlPackage.ATOMIC_EVENT__SOURCE:
-        setSource((Source)null);
-        return;
       case EdlPackage.ATOMIC_EVENT__ID:
         setId(ID_EDEFAULT);
+        return;
+      case EdlPackage.ATOMIC_EVENT__SOURCE:
+        setSource((Source)null);
         return;
       case EdlPackage.ATOMIC_EVENT__PARAMETER_FILTERS:
         getParameterFilters().clear();
@@ -315,10 +315,10 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
     {
       case EdlPackage.ATOMIC_EVENT__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
-      case EdlPackage.ATOMIC_EVENT__SOURCE:
-        return source != null;
       case EdlPackage.ATOMIC_EVENT__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case EdlPackage.ATOMIC_EVENT__SOURCE:
+        return source != null;
       case EdlPackage.ATOMIC_EVENT__PARAMETER_FILTERS:
         return parameterFilters != null && !parameterFilters.isEmpty();
     }

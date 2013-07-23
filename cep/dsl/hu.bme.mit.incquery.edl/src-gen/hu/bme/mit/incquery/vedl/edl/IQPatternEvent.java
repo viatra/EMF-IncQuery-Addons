@@ -23,30 +23,30 @@ package hu.bme.mit.incquery.vedl.edl;
 public interface IQPatternEvent extends AbstractAtomicEvent
 {
   /**
-   * Returns the value of the '<em><b>Iqpattern</b></em>' containment reference.
+   * Returns the value of the '<em><b>Iqpattern</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Iqpattern</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Iqpattern</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Iqpattern</em>' containment reference.
-   * @see #setIqpattern(IQPattern)
+   * @return the value of the '<em>Iqpattern</em>' attribute.
+   * @see #setIqpattern(String)
    * @see hu.bme.mit.incquery.vedl.edl.EdlPackage#getIQPatternEvent_Iqpattern()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  IQPattern getIqpattern();
+  String getIqpattern();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.incquery.vedl.edl.IQPatternEvent#getIqpattern <em>Iqpattern</em>}' containment reference.
+   * Sets the value of the '{@link hu.bme.mit.incquery.vedl.edl.IQPatternEvent#getIqpattern <em>Iqpattern</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Iqpattern</em>' containment reference.
+   * @param value the new value of the '<em>Iqpattern</em>' attribute.
    * @see #getIqpattern()
    * @generated
    */
-  void setIqpattern(IQPattern value);
+  void setIqpattern(String value);
 
   /**
    * Returns the value of the '<em><b>Change Type</b></em>' attribute.

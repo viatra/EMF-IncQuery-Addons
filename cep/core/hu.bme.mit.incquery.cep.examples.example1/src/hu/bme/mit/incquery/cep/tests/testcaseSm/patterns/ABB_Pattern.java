@@ -1,8 +1,9 @@
 package hu.bme.mit.incquery.cep.tests.testcaseSm.patterns;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
+import hu.bme.mit.incquery.cep.metamodels.cep.CepFactory;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
+import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl;
 
 import java.util.ArrayList;
@@ -16,7 +17,10 @@ public class ABB_Pattern extends ComplexEventPatternImpl {
 		atomicEventPatternsForCP.add(new APattern());
 		atomicEventPatternsForCP.add(new BPattern());
 		atomicEventPatternsForCP.add(new BPattern());
-		eSet(CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS, atomicEventPatternsForCP);
+		getCompositionEvents().addAll(atomicEventPatternsForCP);
+		Timewindow timewindow = CepFactory.eINSTANCE.createTimewindow();
+		timewindow.setLength(2000);
+		setTimewindow(timewindow);
 		setId("ABBPattern");
 	}
 }

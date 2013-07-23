@@ -1,8 +1,9 @@
-grammar hu.bme.mit.incquery.vedl.Edl with org.eclipse.xtext.common.Terminals 
+grammar hu.bme.mit.incquery.vedl.Edl with org.eclipse.xtext.common.Terminals
 
 generate edl "http://www.bme.hu/mit/incquery/vedl/Edl"
 
 import "http://www.bme.hu/mit/incquery/srct/Srct" as srct
+//import "http://www.eclipse.org/incquery/patternlanguage/PatternLanguage" as iqpl
 
 PackageDeclaration:
 	'package' name = QualifiedName
@@ -54,8 +55,8 @@ AbstractAtomicEvent:
 AtomicEvent:
 	annotations+=Annotations*
 	'AtomicEvent' name=ID '()''{'
-		'source'':' source = [srct::Source]
 		'id'':' id = STRING
+		'source'':' source = [srct::Source]
 		'parameterFilters''{'
 			parameterFilters += ParameterFilter+
 		'}'
@@ -64,7 +65,7 @@ AtomicEvent:
 
 IQPatternEvent:
 	'IQPatternEvent' name=ID '()''{'
-		'IQPatternRef'':' iqpattern = IQPattern
+		'IQPatternRef'':' iqpattern = STRING //[iqpl::Pattern]
 		'ChangeType'':' changeType = IQPatternChangeType
 	'}'
 ;
@@ -90,10 +91,6 @@ ParameterFilter:
 
 enum IQPatternChangeType:
 	FOUND | LOST
-;
-
-IQPattern:
-	name = ID
 ;
 
 Annotations:

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalEdlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'.'", "'.*'", "'uses-incquery-patterns'", "'uses-eventsources'", "'EventModel'", "'{'", "'}'", "'AtomicEvent'", "'()'", "'source'", "':'", "'id'", "'parameterFilters'", "'IQPatternEvent'", "'IQPatternRef'", "'ChangeType'", "'ComplexEvent'", "'('", "')'", "'@Context'", "'@SamplingTime'", "'@Priority'", "'in'", "','", "']'", "'['", "'<'", "'=<'", "'=='", "'!='", "'>='", "'>'", "'contains'", "'startsWith'", "'endsWith'", "'not'", "'->'", "'-['", "']->'", "'FOUND'", "'LOST'", "'Chronicle'", "'Recent'", "'Unrestricted'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'.'", "'.*'", "'uses-incquery-patterns'", "'uses-eventsources'", "'EventModel'", "'{'", "'}'", "'AtomicEvent'", "'()'", "'id'", "':'", "'source'", "'parameterFilters'", "'IQPatternEvent'", "'IQPatternRef'", "'ChangeType'", "'ComplexEvent'", "'('", "')'", "'@Context'", "'@SamplingTime'", "'@Priority'", "'in'", "','", "']'", "'['", "'<'", "'=<'", "'=='", "'!='", "'>='", "'>'", "'contains'", "'startsWith'", "'endsWith'", "'not'", "'->'", "'-['", "']->'", "'FOUND'", "'LOST'", "'Chronicle'", "'Recent'", "'Unrestricted'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -1488,7 +1488,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtomicEvent"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:579:1: ruleAtomicEvent returns [EObject current=null] : ( ( (lv_annotations_0_0= ruleAnnotations ) )* otherlv_1= 'AtomicEvent' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '()' otherlv_4= '{' otherlv_5= 'source' otherlv_6= ':' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'id' otherlv_9= ':' ( (lv_id_10_0= RULE_STRING ) ) otherlv_11= 'parameterFilters' otherlv_12= '{' ( (lv_parameterFilters_13_0= ruleParameterFilter ) )+ otherlv_14= '}' otherlv_15= '}' ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:579:1: ruleAtomicEvent returns [EObject current=null] : ( ( (lv_annotations_0_0= ruleAnnotations ) )* otherlv_1= 'AtomicEvent' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '()' otherlv_4= '{' otherlv_5= 'id' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= 'parameterFilters' otherlv_12= '{' ( (lv_parameterFilters_13_0= ruleParameterFilter ) )+ otherlv_14= '}' otherlv_15= '}' ) ;
     public final EObject ruleAtomicEvent() throws RecognitionException {
         EObject current = null;
 
@@ -1498,10 +1498,10 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
         Token otherlv_4=null;
         Token otherlv_5=null;
         Token otherlv_6=null;
-        Token otherlv_7=null;
+        Token lv_id_7_0=null;
         Token otherlv_8=null;
         Token otherlv_9=null;
-        Token lv_id_10_0=null;
+        Token otherlv_10=null;
         Token otherlv_11=null;
         Token otherlv_12=null;
         Token otherlv_14=null;
@@ -1514,11 +1514,11 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:582:28: ( ( ( (lv_annotations_0_0= ruleAnnotations ) )* otherlv_1= 'AtomicEvent' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '()' otherlv_4= '{' otherlv_5= 'source' otherlv_6= ':' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'id' otherlv_9= ':' ( (lv_id_10_0= RULE_STRING ) ) otherlv_11= 'parameterFilters' otherlv_12= '{' ( (lv_parameterFilters_13_0= ruleParameterFilter ) )+ otherlv_14= '}' otherlv_15= '}' ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:583:1: ( ( (lv_annotations_0_0= ruleAnnotations ) )* otherlv_1= 'AtomicEvent' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '()' otherlv_4= '{' otherlv_5= 'source' otherlv_6= ':' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'id' otherlv_9= ':' ( (lv_id_10_0= RULE_STRING ) ) otherlv_11= 'parameterFilters' otherlv_12= '{' ( (lv_parameterFilters_13_0= ruleParameterFilter ) )+ otherlv_14= '}' otherlv_15= '}' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:582:28: ( ( ( (lv_annotations_0_0= ruleAnnotations ) )* otherlv_1= 'AtomicEvent' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '()' otherlv_4= '{' otherlv_5= 'id' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= 'parameterFilters' otherlv_12= '{' ( (lv_parameterFilters_13_0= ruleParameterFilter ) )+ otherlv_14= '}' otherlv_15= '}' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:583:1: ( ( (lv_annotations_0_0= ruleAnnotations ) )* otherlv_1= 'AtomicEvent' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '()' otherlv_4= '{' otherlv_5= 'id' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= 'parameterFilters' otherlv_12= '{' ( (lv_parameterFilters_13_0= ruleParameterFilter ) )+ otherlv_14= '}' otherlv_15= '}' )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:583:1: ( ( (lv_annotations_0_0= ruleAnnotations ) )* otherlv_1= 'AtomicEvent' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '()' otherlv_4= '{' otherlv_5= 'source' otherlv_6= ':' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'id' otherlv_9= ':' ( (lv_id_10_0= RULE_STRING ) ) otherlv_11= 'parameterFilters' otherlv_12= '{' ( (lv_parameterFilters_13_0= ruleParameterFilter ) )+ otherlv_14= '}' otherlv_15= '}' )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:583:2: ( (lv_annotations_0_0= ruleAnnotations ) )* otherlv_1= 'AtomicEvent' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '()' otherlv_4= '{' otherlv_5= 'source' otherlv_6= ':' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'id' otherlv_9= ':' ( (lv_id_10_0= RULE_STRING ) ) otherlv_11= 'parameterFilters' otherlv_12= '{' ( (lv_parameterFilters_13_0= ruleParameterFilter ) )+ otherlv_14= '}' otherlv_15= '}'
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:583:1: ( ( (lv_annotations_0_0= ruleAnnotations ) )* otherlv_1= 'AtomicEvent' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '()' otherlv_4= '{' otherlv_5= 'id' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= 'parameterFilters' otherlv_12= '{' ( (lv_parameterFilters_13_0= ruleParameterFilter ) )+ otherlv_14= '}' otherlv_15= '}' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:583:2: ( (lv_annotations_0_0= ruleAnnotations ) )* otherlv_1= 'AtomicEvent' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '()' otherlv_4= '{' otherlv_5= 'id' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= 'parameterFilters' otherlv_12= '{' ( (lv_parameterFilters_13_0= ruleParameterFilter ) )+ otherlv_14= '}' otherlv_15= '}'
             {
             // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:583:2: ( (lv_annotations_0_0= ruleAnnotations ) )*
             loop10:
@@ -1609,50 +1609,21 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                 
             otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleAtomicEvent1487); 
 
-                	newLeafNode(otherlv_5, grammarAccess.getAtomicEventAccess().getSourceKeyword_5());
+                	newLeafNode(otherlv_5, grammarAccess.getAtomicEventAccess().getIdKeyword_5());
                 
             otherlv_6=(Token)match(input,22,FOLLOW_22_in_ruleAtomicEvent1499); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getAtomicEventAccess().getColonKeyword_6());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:639:1: ( (otherlv_7= RULE_ID ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:640:1: (otherlv_7= RULE_ID )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:639:1: ( (lv_id_7_0= RULE_STRING ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:640:1: (lv_id_7_0= RULE_STRING )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:640:1: (otherlv_7= RULE_ID )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:641:3: otherlv_7= RULE_ID
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:640:1: (lv_id_7_0= RULE_STRING )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:641:3: lv_id_7_0= RULE_STRING
             {
+            lv_id_7_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAtomicEvent1516); 
 
-            			if (current==null) {
-            	            current = createModelElement(grammarAccess.getAtomicEventRule());
-            	        }
-                    
-            otherlv_7=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicEvent1519); 
-
-            		newLeafNode(otherlv_7, grammarAccess.getAtomicEventAccess().getSourceSourceCrossReference_7_0()); 
-            	
-
-            }
-
-
-            }
-
-            otherlv_8=(Token)match(input,23,FOLLOW_23_in_ruleAtomicEvent1531); 
-
-                	newLeafNode(otherlv_8, grammarAccess.getAtomicEventAccess().getIdKeyword_8());
-                
-            otherlv_9=(Token)match(input,22,FOLLOW_22_in_ruleAtomicEvent1543); 
-
-                	newLeafNode(otherlv_9, grammarAccess.getAtomicEventAccess().getColonKeyword_9());
-                
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:660:1: ( (lv_id_10_0= RULE_STRING ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:661:1: (lv_id_10_0= RULE_STRING )
-            {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:661:1: (lv_id_10_0= RULE_STRING )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:662:3: lv_id_10_0= RULE_STRING
-            {
-            lv_id_10_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAtomicEvent1560); 
-
-            			newLeafNode(lv_id_10_0, grammarAccess.getAtomicEventAccess().getIdSTRINGTerminalRuleCall_10_0()); 
+            			newLeafNode(lv_id_7_0, grammarAccess.getAtomicEventAccess().getIdSTRINGTerminalRuleCall_7_0()); 
             		
 
             	        if (current==null) {
@@ -1661,9 +1632,38 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                    		setWithLastConsumed(
                    			current, 
                    			"id",
-                    		lv_id_10_0, 
+                    		lv_id_7_0, 
                     		"STRING");
             	    
+
+            }
+
+
+            }
+
+            otherlv_8=(Token)match(input,23,FOLLOW_23_in_ruleAtomicEvent1533); 
+
+                	newLeafNode(otherlv_8, grammarAccess.getAtomicEventAccess().getSourceKeyword_8());
+                
+            otherlv_9=(Token)match(input,22,FOLLOW_22_in_ruleAtomicEvent1545); 
+
+                	newLeafNode(otherlv_9, grammarAccess.getAtomicEventAccess().getColonKeyword_9());
+                
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:665:1: ( (otherlv_10= RULE_ID ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:666:1: (otherlv_10= RULE_ID )
+            {
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:666:1: (otherlv_10= RULE_ID )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:667:3: otherlv_10= RULE_ID
+            {
+
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getAtomicEventRule());
+            	        }
+                    
+            otherlv_10=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicEvent1565); 
+
+            		newLeafNode(otherlv_10, grammarAccess.getAtomicEventAccess().getSourceSourceCrossReference_10_0()); 
+            	
 
             }
 
@@ -1797,7 +1797,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIQPatternEvent"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:729:1: ruleIQPatternEvent returns [EObject current=null] : (otherlv_0= 'IQPatternEvent' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '()' otherlv_3= '{' otherlv_4= 'IQPatternRef' otherlv_5= ':' ( (lv_iqpattern_6_0= ruleIQPattern ) ) otherlv_7= 'ChangeType' otherlv_8= ':' ( (lv_changeType_9_0= ruleIQPatternChangeType ) ) otherlv_10= '}' ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:729:1: ruleIQPatternEvent returns [EObject current=null] : (otherlv_0= 'IQPatternEvent' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '()' otherlv_3= '{' otherlv_4= 'IQPatternRef' otherlv_5= ':' ( (lv_iqpattern_6_0= RULE_STRING ) ) otherlv_7= 'ChangeType' otherlv_8= ':' ( (lv_changeType_9_0= ruleIQPatternChangeType ) ) otherlv_10= '}' ) ;
     public final EObject ruleIQPatternEvent() throws RecognitionException {
         EObject current = null;
 
@@ -1807,22 +1807,21 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
         Token otherlv_3=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
+        Token lv_iqpattern_6_0=null;
         Token otherlv_7=null;
         Token otherlv_8=null;
         Token otherlv_10=null;
-        EObject lv_iqpattern_6_0 = null;
-
         Enumerator lv_changeType_9_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:732:28: ( (otherlv_0= 'IQPatternEvent' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '()' otherlv_3= '{' otherlv_4= 'IQPatternRef' otherlv_5= ':' ( (lv_iqpattern_6_0= ruleIQPattern ) ) otherlv_7= 'ChangeType' otherlv_8= ':' ( (lv_changeType_9_0= ruleIQPatternChangeType ) ) otherlv_10= '}' ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:733:1: (otherlv_0= 'IQPatternEvent' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '()' otherlv_3= '{' otherlv_4= 'IQPatternRef' otherlv_5= ':' ( (lv_iqpattern_6_0= ruleIQPattern ) ) otherlv_7= 'ChangeType' otherlv_8= ':' ( (lv_changeType_9_0= ruleIQPatternChangeType ) ) otherlv_10= '}' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:732:28: ( (otherlv_0= 'IQPatternEvent' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '()' otherlv_3= '{' otherlv_4= 'IQPatternRef' otherlv_5= ':' ( (lv_iqpattern_6_0= RULE_STRING ) ) otherlv_7= 'ChangeType' otherlv_8= ':' ( (lv_changeType_9_0= ruleIQPatternChangeType ) ) otherlv_10= '}' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:733:1: (otherlv_0= 'IQPatternEvent' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '()' otherlv_3= '{' otherlv_4= 'IQPatternRef' otherlv_5= ':' ( (lv_iqpattern_6_0= RULE_STRING ) ) otherlv_7= 'ChangeType' otherlv_8= ':' ( (lv_changeType_9_0= ruleIQPatternChangeType ) ) otherlv_10= '}' )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:733:1: (otherlv_0= 'IQPatternEvent' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '()' otherlv_3= '{' otherlv_4= 'IQPatternRef' otherlv_5= ':' ( (lv_iqpattern_6_0= ruleIQPattern ) ) otherlv_7= 'ChangeType' otherlv_8= ':' ( (lv_changeType_9_0= ruleIQPatternChangeType ) ) otherlv_10= '}' )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:733:3: otherlv_0= 'IQPatternEvent' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '()' otherlv_3= '{' otherlv_4= 'IQPatternRef' otherlv_5= ':' ( (lv_iqpattern_6_0= ruleIQPattern ) ) otherlv_7= 'ChangeType' otherlv_8= ':' ( (lv_changeType_9_0= ruleIQPatternChangeType ) ) otherlv_10= '}'
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:733:1: (otherlv_0= 'IQPatternEvent' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '()' otherlv_3= '{' otherlv_4= 'IQPatternRef' otherlv_5= ':' ( (lv_iqpattern_6_0= RULE_STRING ) ) otherlv_7= 'ChangeType' otherlv_8= ':' ( (lv_changeType_9_0= ruleIQPatternChangeType ) ) otherlv_10= '}' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:733:3: otherlv_0= 'IQPatternEvent' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '()' otherlv_3= '{' otherlv_4= 'IQPatternRef' otherlv_5= ':' ( (lv_iqpattern_6_0= RULE_STRING ) ) otherlv_7= 'ChangeType' otherlv_8= ':' ( (lv_changeType_9_0= ruleIQPatternChangeType ) ) otherlv_10= '}'
             {
             otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleIQPatternEvent1718); 
 
@@ -1870,30 +1869,25 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_5, grammarAccess.getIQPatternEventAccess().getColonKeyword_5());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:771:1: ( (lv_iqpattern_6_0= ruleIQPattern ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:772:1: (lv_iqpattern_6_0= ruleIQPattern )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:771:1: ( (lv_iqpattern_6_0= RULE_STRING ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:772:1: (lv_iqpattern_6_0= RULE_STRING )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:772:1: (lv_iqpattern_6_0= ruleIQPattern )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:773:3: lv_iqpattern_6_0= ruleIQPattern
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:772:1: (lv_iqpattern_6_0= RULE_STRING )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:773:3: lv_iqpattern_6_0= RULE_STRING
             {
-             
-            	        newCompositeNode(grammarAccess.getIQPatternEventAccess().getIqpatternIQPatternParserRuleCall_6_0()); 
-            	    
-            pushFollow(FOLLOW_ruleIQPattern_in_ruleIQPatternEvent1809);
-            lv_iqpattern_6_0=ruleIQPattern();
+            lv_iqpattern_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleIQPatternEvent1805); 
 
-            state._fsp--;
-
+            			newLeafNode(lv_iqpattern_6_0, grammarAccess.getIQPatternEventAccess().getIqpatternSTRINGTerminalRuleCall_6_0()); 
+            		
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getIQPatternEventRule());
+            	            current = createModelElement(grammarAccess.getIQPatternEventRule());
             	        }
-                   		set(
+                   		setWithLastConsumed(
                    			current, 
                    			"iqpattern",
                     		lv_iqpattern_6_0, 
-                    		"IQPattern");
-            	        afterParserOrEnumRuleCall();
+                    		"STRING");
             	    
 
             }
@@ -1901,11 +1895,11 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,27,FOLLOW_27_in_ruleIQPatternEvent1821); 
+            otherlv_7=(Token)match(input,27,FOLLOW_27_in_ruleIQPatternEvent1822); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getIQPatternEventAccess().getChangeTypeKeyword_7());
                 
-            otherlv_8=(Token)match(input,22,FOLLOW_22_in_ruleIQPatternEvent1833); 
+            otherlv_8=(Token)match(input,22,FOLLOW_22_in_ruleIQPatternEvent1834); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getIQPatternEventAccess().getColonKeyword_8());
                 
@@ -1918,7 +1912,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getIQPatternEventAccess().getChangeTypeIQPatternChangeTypeEnumRuleCall_9_0()); 
             	    
-            pushFollow(FOLLOW_ruleIQPatternChangeType_in_ruleIQPatternEvent1854);
+            pushFollow(FOLLOW_ruleIQPatternChangeType_in_ruleIQPatternEvent1855);
             lv_changeType_9_0=ruleIQPatternChangeType();
 
             state._fsp--;
@@ -1940,7 +1934,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,18,FOLLOW_18_in_ruleIQPatternEvent1866); 
+            otherlv_10=(Token)match(input,18,FOLLOW_18_in_ruleIQPatternEvent1867); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getIQPatternEventAccess().getRightCurlyBracketKeyword_10());
                 
@@ -1977,13 +1971,13 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:829:2: iv_ruleComplexEvent= ruleComplexEvent EOF
             {
              newCompositeNode(grammarAccess.getComplexEventRule()); 
-            pushFollow(FOLLOW_ruleComplexEvent_in_entryRuleComplexEvent1902);
+            pushFollow(FOLLOW_ruleComplexEvent_in_entryRuleComplexEvent1903);
             iv_ruleComplexEvent=ruleComplexEvent();
 
             state._fsp--;
 
              current =iv_ruleComplexEvent; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleComplexEvent1912); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleComplexEvent1913); 
 
             }
 
@@ -2046,7 +2040,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getComplexEventAccess().getAnnotationsAnnotationsParserRuleCall_0_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleAnnotations_in_ruleComplexEvent1958);
+            	    pushFollow(FOLLOW_ruleAnnotations_in_ruleComplexEvent1959);
             	    lv_annotations_0_0=ruleAnnotations();
 
             	    state._fsp--;
@@ -2074,7 +2068,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_1=(Token)match(input,28,FOLLOW_28_in_ruleComplexEvent1971); 
+            otherlv_1=(Token)match(input,28,FOLLOW_28_in_ruleComplexEvent1972); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getComplexEventAccess().getComplexEventKeyword_1());
                 
@@ -2084,7 +2078,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:863:1: (lv_name_2_0= RULE_ID )
             // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:864:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleComplexEvent1988); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleComplexEvent1989); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getComplexEventAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -2113,7 +2107,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getComplexEventAccess().getParamlistCEParamlistParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleCEParamlist_in_ruleComplexEvent2014);
+            pushFollow(FOLLOW_ruleCEParamlist_in_ruleComplexEvent2015);
             lv_paramlist_3_0=ruleCEParamlist();
 
             state._fsp--;
@@ -2135,7 +2129,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleComplexEvent2026); 
+            otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleComplexEvent2027); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getComplexEventAccess().getLeftCurlyBracketKeyword_4());
                 
@@ -2160,7 +2154,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getComplexEventAccess().getComplexEventExpressionsComplexEventExpressionParserRuleCall_5_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleComplexEventExpression_in_ruleComplexEvent2047);
+            	    pushFollow(FOLLOW_ruleComplexEventExpression_in_ruleComplexEvent2048);
             	    lv_complexEventExpressions_5_0=ruleComplexEventExpression();
 
             	    state._fsp--;
@@ -2188,7 +2182,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,18,FOLLOW_18_in_ruleComplexEvent2060); 
+            otherlv_6=(Token)match(input,18,FOLLOW_18_in_ruleComplexEvent2061); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getComplexEventAccess().getRightCurlyBracketKeyword_6());
                 
@@ -2225,13 +2219,13 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:934:2: iv_ruleCEParamlist= ruleCEParamlist EOF
             {
              newCompositeNode(grammarAccess.getCEParamlistRule()); 
-            pushFollow(FOLLOW_ruleCEParamlist_in_entryRuleCEParamlist2096);
+            pushFollow(FOLLOW_ruleCEParamlist_in_entryRuleCEParamlist2097);
             iv_ruleCEParamlist=ruleCEParamlist();
 
             state._fsp--;
 
              current =iv_ruleCEParamlist; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCEParamlist2106); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCEParamlist2107); 
 
             }
 
@@ -2278,7 +2272,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleCEParamlist2152); 
+            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleCEParamlist2153); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getCEParamlistAccess().getLeftParenthesisKeyword_1());
                 
@@ -2303,7 +2297,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getCEParamlistAccess().getParamsEventParamWithTypeParserRuleCall_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleEventParamWithType_in_ruleCEParamlist2173);
+            	    pushFollow(FOLLOW_ruleEventParamWithType_in_ruleCEParamlist2174);
             	    lv_params_2_0=ruleEventParamWithType();
 
             	    state._fsp--;
@@ -2331,7 +2325,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_3=(Token)match(input,30,FOLLOW_30_in_ruleCEParamlist2186); 
+            otherlv_3=(Token)match(input,30,FOLLOW_30_in_ruleCEParamlist2187); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getCEParamlistAccess().getRightParenthesisKeyword_3());
                 
@@ -2368,13 +2362,13 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:987:2: iv_ruleEventParamWithType= ruleEventParamWithType EOF
             {
              newCompositeNode(grammarAccess.getEventParamWithTypeRule()); 
-            pushFollow(FOLLOW_ruleEventParamWithType_in_entryRuleEventParamWithType2222);
+            pushFollow(FOLLOW_ruleEventParamWithType_in_entryRuleEventParamWithType2223);
             iv_ruleEventParamWithType=ruleEventParamWithType();
 
             state._fsp--;
 
              current =iv_ruleEventParamWithType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEventParamWithType2232); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEventParamWithType2233); 
 
             }
 
@@ -2415,7 +2409,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:999:1: (lv_name_0_0= RULE_ID )
             // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1000:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEventParamWithType2274); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEventParamWithType2275); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getEventParamWithTypeAccess().getNameIDTerminalRuleCall_0_0()); 
             		
@@ -2435,7 +2429,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleEventParamWithType2291); 
+            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleEventParamWithType2292); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getEventParamWithTypeAccess().getColonKeyword_1());
                 
@@ -2450,7 +2444,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getEventParamWithTypeRule());
             	        }
                     
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEventParamWithType2311); 
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEventParamWithType2312); 
 
             		newLeafNode(otherlv_2, grammarAccess.getEventParamWithTypeAccess().getTypeEventCrossReference_2_0()); 
             	
@@ -2493,13 +2487,13 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1043:2: iv_ruleParameterFilter= ruleParameterFilter EOF
             {
              newCompositeNode(grammarAccess.getParameterFilterRule()); 
-            pushFollow(FOLLOW_ruleParameterFilter_in_entryRuleParameterFilter2347);
+            pushFollow(FOLLOW_ruleParameterFilter_in_entryRuleParameterFilter2348);
             iv_ruleParameterFilter=ruleParameterFilter();
 
             state._fsp--;
 
              current =iv_ruleParameterFilter; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleParameterFilter2357); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleParameterFilter2358); 
 
             }
 
@@ -2540,7 +2534,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1055:1: (lv_attributeName_0_0= RULE_ID )
             // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1056:3: lv_attributeName_0_0= RULE_ID
             {
-            lv_attributeName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleParameterFilter2399); 
+            lv_attributeName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleParameterFilter2400); 
 
             			newLeafNode(lv_attributeName_0_0, grammarAccess.getParameterFilterAccess().getAttributeNameIDTerminalRuleCall_0_0()); 
             		
@@ -2569,7 +2563,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getParameterFilterAccess().getParamFilterRuleParameterFilterRuleParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleParameterFilterRule_in_ruleParameterFilter2425);
+            pushFollow(FOLLOW_ruleParameterFilterRule_in_ruleParameterFilter2426);
             lv_paramFilterRule_1_0=ruleParameterFilterRule();
 
             state._fsp--;
@@ -2611,100 +2605,8 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleParameterFilter"
 
 
-    // $ANTLR start "entryRuleIQPattern"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1098:1: entryRuleIQPattern returns [EObject current=null] : iv_ruleIQPattern= ruleIQPattern EOF ;
-    public final EObject entryRuleIQPattern() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleIQPattern = null;
-
-
-        try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1099:2: (iv_ruleIQPattern= ruleIQPattern EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1100:2: iv_ruleIQPattern= ruleIQPattern EOF
-            {
-             newCompositeNode(grammarAccess.getIQPatternRule()); 
-            pushFollow(FOLLOW_ruleIQPattern_in_entryRuleIQPattern2461);
-            iv_ruleIQPattern=ruleIQPattern();
-
-            state._fsp--;
-
-             current =iv_ruleIQPattern; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIQPattern2471); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleIQPattern"
-
-
-    // $ANTLR start "ruleIQPattern"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1107:1: ruleIQPattern returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
-    public final EObject ruleIQPattern() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_name_0_0=null;
-
-         enterRule(); 
-            
-        try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1110:28: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1111:1: ( (lv_name_0_0= RULE_ID ) )
-            {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1111:1: ( (lv_name_0_0= RULE_ID ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1112:1: (lv_name_0_0= RULE_ID )
-            {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1112:1: (lv_name_0_0= RULE_ID )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1113:3: lv_name_0_0= RULE_ID
-            {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleIQPattern2512); 
-
-            			newLeafNode(lv_name_0_0, grammarAccess.getIQPatternAccess().getNameIDTerminalRuleCall_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getIQPatternRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"name",
-                    		lv_name_0_0, 
-                    		"ID");
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleIQPattern"
-
-
     // $ANTLR start "entryRuleAnnotations"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1137:1: entryRuleAnnotations returns [EObject current=null] : iv_ruleAnnotations= ruleAnnotations EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1098:1: entryRuleAnnotations returns [EObject current=null] : iv_ruleAnnotations= ruleAnnotations EOF ;
     public final EObject entryRuleAnnotations() throws RecognitionException {
         EObject current = null;
 
@@ -2712,17 +2614,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1138:2: (iv_ruleAnnotations= ruleAnnotations EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1139:2: iv_ruleAnnotations= ruleAnnotations EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1099:2: (iv_ruleAnnotations= ruleAnnotations EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1100:2: iv_ruleAnnotations= ruleAnnotations EOF
             {
              newCompositeNode(grammarAccess.getAnnotationsRule()); 
-            pushFollow(FOLLOW_ruleAnnotations_in_entryRuleAnnotations2552);
+            pushFollow(FOLLOW_ruleAnnotations_in_entryRuleAnnotations2462);
             iv_ruleAnnotations=ruleAnnotations();
 
             state._fsp--;
 
              current =iv_ruleAnnotations; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAnnotations2562); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAnnotations2472); 
 
             }
 
@@ -2740,7 +2642,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAnnotations"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1146:1: ruleAnnotations returns [EObject current=null] : (this_ContextAnnotation_0= ruleContextAnnotation | this_SamplingAnnotation_1= ruleSamplingAnnotation | this_PriorityAnnotation_2= rulePriorityAnnotation ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1107:1: ruleAnnotations returns [EObject current=null] : (this_ContextAnnotation_0= ruleContextAnnotation | this_SamplingAnnotation_1= ruleSamplingAnnotation | this_PriorityAnnotation_2= rulePriorityAnnotation ) ;
     public final EObject ruleAnnotations() throws RecognitionException {
         EObject current = null;
 
@@ -2754,10 +2656,10 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1149:28: ( (this_ContextAnnotation_0= ruleContextAnnotation | this_SamplingAnnotation_1= ruleSamplingAnnotation | this_PriorityAnnotation_2= rulePriorityAnnotation ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1150:1: (this_ContextAnnotation_0= ruleContextAnnotation | this_SamplingAnnotation_1= ruleSamplingAnnotation | this_PriorityAnnotation_2= rulePriorityAnnotation )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1110:28: ( (this_ContextAnnotation_0= ruleContextAnnotation | this_SamplingAnnotation_1= ruleSamplingAnnotation | this_PriorityAnnotation_2= rulePriorityAnnotation ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1111:1: (this_ContextAnnotation_0= ruleContextAnnotation | this_SamplingAnnotation_1= ruleSamplingAnnotation | this_PriorityAnnotation_2= rulePriorityAnnotation )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1150:1: (this_ContextAnnotation_0= ruleContextAnnotation | this_SamplingAnnotation_1= ruleSamplingAnnotation | this_PriorityAnnotation_2= rulePriorityAnnotation )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1111:1: (this_ContextAnnotation_0= ruleContextAnnotation | this_SamplingAnnotation_1= ruleSamplingAnnotation | this_PriorityAnnotation_2= rulePriorityAnnotation )
             int alt15=3;
             switch ( input.LA(1) ) {
             case 31:
@@ -2784,12 +2686,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             switch (alt15) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1151:5: this_ContextAnnotation_0= ruleContextAnnotation
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1112:5: this_ContextAnnotation_0= ruleContextAnnotation
                     {
                      
                             newCompositeNode(grammarAccess.getAnnotationsAccess().getContextAnnotationParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleContextAnnotation_in_ruleAnnotations2609);
+                    pushFollow(FOLLOW_ruleContextAnnotation_in_ruleAnnotations2519);
                     this_ContextAnnotation_0=ruleContextAnnotation();
 
                     state._fsp--;
@@ -2802,12 +2704,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1161:5: this_SamplingAnnotation_1= ruleSamplingAnnotation
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1122:5: this_SamplingAnnotation_1= ruleSamplingAnnotation
                     {
                      
                             newCompositeNode(grammarAccess.getAnnotationsAccess().getSamplingAnnotationParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleSamplingAnnotation_in_ruleAnnotations2636);
+                    pushFollow(FOLLOW_ruleSamplingAnnotation_in_ruleAnnotations2546);
                     this_SamplingAnnotation_1=ruleSamplingAnnotation();
 
                     state._fsp--;
@@ -2820,12 +2722,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1171:5: this_PriorityAnnotation_2= rulePriorityAnnotation
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1132:5: this_PriorityAnnotation_2= rulePriorityAnnotation
                     {
                      
                             newCompositeNode(grammarAccess.getAnnotationsAccess().getPriorityAnnotationParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_rulePriorityAnnotation_in_ruleAnnotations2663);
+                    pushFollow(FOLLOW_rulePriorityAnnotation_in_ruleAnnotations2573);
                     this_PriorityAnnotation_2=rulePriorityAnnotation();
 
                     state._fsp--;
@@ -2858,7 +2760,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleContextAnnotation"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1187:1: entryRuleContextAnnotation returns [EObject current=null] : iv_ruleContextAnnotation= ruleContextAnnotation EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1148:1: entryRuleContextAnnotation returns [EObject current=null] : iv_ruleContextAnnotation= ruleContextAnnotation EOF ;
     public final EObject entryRuleContextAnnotation() throws RecognitionException {
         EObject current = null;
 
@@ -2866,17 +2768,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1188:2: (iv_ruleContextAnnotation= ruleContextAnnotation EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1189:2: iv_ruleContextAnnotation= ruleContextAnnotation EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1149:2: (iv_ruleContextAnnotation= ruleContextAnnotation EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1150:2: iv_ruleContextAnnotation= ruleContextAnnotation EOF
             {
              newCompositeNode(grammarAccess.getContextAnnotationRule()); 
-            pushFollow(FOLLOW_ruleContextAnnotation_in_entryRuleContextAnnotation2698);
+            pushFollow(FOLLOW_ruleContextAnnotation_in_entryRuleContextAnnotation2608);
             iv_ruleContextAnnotation=ruleContextAnnotation();
 
             state._fsp--;
 
              current =iv_ruleContextAnnotation; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleContextAnnotation2708); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleContextAnnotation2618); 
 
             }
 
@@ -2894,7 +2796,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContextAnnotation"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1196:1: ruleContextAnnotation returns [EObject current=null] : (otherlv_0= '@Context' otherlv_1= '(' ( (lv_context_2_0= ruleContext ) ) otherlv_3= ')' ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1157:1: ruleContextAnnotation returns [EObject current=null] : (otherlv_0= '@Context' otherlv_1= '(' ( (lv_context_2_0= ruleContext ) ) otherlv_3= ')' ) ;
     public final EObject ruleContextAnnotation() throws RecognitionException {
         EObject current = null;
 
@@ -2907,30 +2809,30 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1199:28: ( (otherlv_0= '@Context' otherlv_1= '(' ( (lv_context_2_0= ruleContext ) ) otherlv_3= ')' ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1200:1: (otherlv_0= '@Context' otherlv_1= '(' ( (lv_context_2_0= ruleContext ) ) otherlv_3= ')' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1160:28: ( (otherlv_0= '@Context' otherlv_1= '(' ( (lv_context_2_0= ruleContext ) ) otherlv_3= ')' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1161:1: (otherlv_0= '@Context' otherlv_1= '(' ( (lv_context_2_0= ruleContext ) ) otherlv_3= ')' )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1200:1: (otherlv_0= '@Context' otherlv_1= '(' ( (lv_context_2_0= ruleContext ) ) otherlv_3= ')' )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1200:3: otherlv_0= '@Context' otherlv_1= '(' ( (lv_context_2_0= ruleContext ) ) otherlv_3= ')'
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1161:1: (otherlv_0= '@Context' otherlv_1= '(' ( (lv_context_2_0= ruleContext ) ) otherlv_3= ')' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1161:3: otherlv_0= '@Context' otherlv_1= '(' ( (lv_context_2_0= ruleContext ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleContextAnnotation2745); 
+            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleContextAnnotation2655); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getContextAnnotationAccess().getContextKeyword_0());
                 
-            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleContextAnnotation2757); 
+            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleContextAnnotation2667); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getContextAnnotationAccess().getLeftParenthesisKeyword_1());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1208:1: ( (lv_context_2_0= ruleContext ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1209:1: (lv_context_2_0= ruleContext )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1169:1: ( (lv_context_2_0= ruleContext ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1170:1: (lv_context_2_0= ruleContext )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1209:1: (lv_context_2_0= ruleContext )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1210:3: lv_context_2_0= ruleContext
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1170:1: (lv_context_2_0= ruleContext )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1171:3: lv_context_2_0= ruleContext
             {
              
             	        newCompositeNode(grammarAccess.getContextAnnotationAccess().getContextContextEnumRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleContext_in_ruleContextAnnotation2778);
+            pushFollow(FOLLOW_ruleContext_in_ruleContextAnnotation2688);
             lv_context_2_0=ruleContext();
 
             state._fsp--;
@@ -2952,7 +2854,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,30,FOLLOW_30_in_ruleContextAnnotation2790); 
+            otherlv_3=(Token)match(input,30,FOLLOW_30_in_ruleContextAnnotation2700); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getContextAnnotationAccess().getRightParenthesisKeyword_3());
                 
@@ -2977,7 +2879,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSamplingAnnotation"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1238:1: entryRuleSamplingAnnotation returns [EObject current=null] : iv_ruleSamplingAnnotation= ruleSamplingAnnotation EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1199:1: entryRuleSamplingAnnotation returns [EObject current=null] : iv_ruleSamplingAnnotation= ruleSamplingAnnotation EOF ;
     public final EObject entryRuleSamplingAnnotation() throws RecognitionException {
         EObject current = null;
 
@@ -2985,17 +2887,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1239:2: (iv_ruleSamplingAnnotation= ruleSamplingAnnotation EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1240:2: iv_ruleSamplingAnnotation= ruleSamplingAnnotation EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1200:2: (iv_ruleSamplingAnnotation= ruleSamplingAnnotation EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1201:2: iv_ruleSamplingAnnotation= ruleSamplingAnnotation EOF
             {
              newCompositeNode(grammarAccess.getSamplingAnnotationRule()); 
-            pushFollow(FOLLOW_ruleSamplingAnnotation_in_entryRuleSamplingAnnotation2826);
+            pushFollow(FOLLOW_ruleSamplingAnnotation_in_entryRuleSamplingAnnotation2736);
             iv_ruleSamplingAnnotation=ruleSamplingAnnotation();
 
             state._fsp--;
 
              current =iv_ruleSamplingAnnotation; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSamplingAnnotation2836); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSamplingAnnotation2746); 
 
             }
 
@@ -3013,7 +2915,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSamplingAnnotation"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1247:1: ruleSamplingAnnotation returns [EObject current=null] : (otherlv_0= '@SamplingTime' otherlv_1= '(' ( (lv_sampling_2_0= RULE_INT ) ) otherlv_3= ')' ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1208:1: ruleSamplingAnnotation returns [EObject current=null] : (otherlv_0= '@SamplingTime' otherlv_1= '(' ( (lv_sampling_2_0= RULE_INT ) ) otherlv_3= ')' ) ;
     public final EObject ruleSamplingAnnotation() throws RecognitionException {
         EObject current = null;
 
@@ -3025,27 +2927,27 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1250:28: ( (otherlv_0= '@SamplingTime' otherlv_1= '(' ( (lv_sampling_2_0= RULE_INT ) ) otherlv_3= ')' ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1251:1: (otherlv_0= '@SamplingTime' otherlv_1= '(' ( (lv_sampling_2_0= RULE_INT ) ) otherlv_3= ')' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1211:28: ( (otherlv_0= '@SamplingTime' otherlv_1= '(' ( (lv_sampling_2_0= RULE_INT ) ) otherlv_3= ')' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1212:1: (otherlv_0= '@SamplingTime' otherlv_1= '(' ( (lv_sampling_2_0= RULE_INT ) ) otherlv_3= ')' )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1251:1: (otherlv_0= '@SamplingTime' otherlv_1= '(' ( (lv_sampling_2_0= RULE_INT ) ) otherlv_3= ')' )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1251:3: otherlv_0= '@SamplingTime' otherlv_1= '(' ( (lv_sampling_2_0= RULE_INT ) ) otherlv_3= ')'
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1212:1: (otherlv_0= '@SamplingTime' otherlv_1= '(' ( (lv_sampling_2_0= RULE_INT ) ) otherlv_3= ')' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1212:3: otherlv_0= '@SamplingTime' otherlv_1= '(' ( (lv_sampling_2_0= RULE_INT ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleSamplingAnnotation2873); 
+            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleSamplingAnnotation2783); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSamplingAnnotationAccess().getSamplingTimeKeyword_0());
                 
-            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleSamplingAnnotation2885); 
+            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleSamplingAnnotation2795); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSamplingAnnotationAccess().getLeftParenthesisKeyword_1());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1259:1: ( (lv_sampling_2_0= RULE_INT ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1260:1: (lv_sampling_2_0= RULE_INT )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1220:1: ( (lv_sampling_2_0= RULE_INT ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1221:1: (lv_sampling_2_0= RULE_INT )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1260:1: (lv_sampling_2_0= RULE_INT )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1261:3: lv_sampling_2_0= RULE_INT
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1221:1: (lv_sampling_2_0= RULE_INT )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1222:3: lv_sampling_2_0= RULE_INT
             {
-            lv_sampling_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSamplingAnnotation2902); 
+            lv_sampling_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSamplingAnnotation2812); 
 
             			newLeafNode(lv_sampling_2_0, grammarAccess.getSamplingAnnotationAccess().getSamplingINTTerminalRuleCall_2_0()); 
             		
@@ -3065,7 +2967,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,30,FOLLOW_30_in_ruleSamplingAnnotation2919); 
+            otherlv_3=(Token)match(input,30,FOLLOW_30_in_ruleSamplingAnnotation2829); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getSamplingAnnotationAccess().getRightParenthesisKeyword_3());
                 
@@ -3090,7 +2992,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePriorityAnnotation"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1289:1: entryRulePriorityAnnotation returns [EObject current=null] : iv_rulePriorityAnnotation= rulePriorityAnnotation EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1250:1: entryRulePriorityAnnotation returns [EObject current=null] : iv_rulePriorityAnnotation= rulePriorityAnnotation EOF ;
     public final EObject entryRulePriorityAnnotation() throws RecognitionException {
         EObject current = null;
 
@@ -3098,17 +3000,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1290:2: (iv_rulePriorityAnnotation= rulePriorityAnnotation EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1291:2: iv_rulePriorityAnnotation= rulePriorityAnnotation EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1251:2: (iv_rulePriorityAnnotation= rulePriorityAnnotation EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1252:2: iv_rulePriorityAnnotation= rulePriorityAnnotation EOF
             {
              newCompositeNode(grammarAccess.getPriorityAnnotationRule()); 
-            pushFollow(FOLLOW_rulePriorityAnnotation_in_entryRulePriorityAnnotation2955);
+            pushFollow(FOLLOW_rulePriorityAnnotation_in_entryRulePriorityAnnotation2865);
             iv_rulePriorityAnnotation=rulePriorityAnnotation();
 
             state._fsp--;
 
              current =iv_rulePriorityAnnotation; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePriorityAnnotation2965); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePriorityAnnotation2875); 
 
             }
 
@@ -3126,7 +3028,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePriorityAnnotation"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1298:1: rulePriorityAnnotation returns [EObject current=null] : (otherlv_0= '@Priority' otherlv_1= '(' ( (lv_priority_2_0= RULE_INT ) ) otherlv_3= ')' ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1259:1: rulePriorityAnnotation returns [EObject current=null] : (otherlv_0= '@Priority' otherlv_1= '(' ( (lv_priority_2_0= RULE_INT ) ) otherlv_3= ')' ) ;
     public final EObject rulePriorityAnnotation() throws RecognitionException {
         EObject current = null;
 
@@ -3138,27 +3040,27 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1301:28: ( (otherlv_0= '@Priority' otherlv_1= '(' ( (lv_priority_2_0= RULE_INT ) ) otherlv_3= ')' ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1302:1: (otherlv_0= '@Priority' otherlv_1= '(' ( (lv_priority_2_0= RULE_INT ) ) otherlv_3= ')' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1262:28: ( (otherlv_0= '@Priority' otherlv_1= '(' ( (lv_priority_2_0= RULE_INT ) ) otherlv_3= ')' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1263:1: (otherlv_0= '@Priority' otherlv_1= '(' ( (lv_priority_2_0= RULE_INT ) ) otherlv_3= ')' )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1302:1: (otherlv_0= '@Priority' otherlv_1= '(' ( (lv_priority_2_0= RULE_INT ) ) otherlv_3= ')' )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1302:3: otherlv_0= '@Priority' otherlv_1= '(' ( (lv_priority_2_0= RULE_INT ) ) otherlv_3= ')'
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1263:1: (otherlv_0= '@Priority' otherlv_1= '(' ( (lv_priority_2_0= RULE_INT ) ) otherlv_3= ')' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1263:3: otherlv_0= '@Priority' otherlv_1= '(' ( (lv_priority_2_0= RULE_INT ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,33,FOLLOW_33_in_rulePriorityAnnotation3002); 
+            otherlv_0=(Token)match(input,33,FOLLOW_33_in_rulePriorityAnnotation2912); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getPriorityAnnotationAccess().getPriorityKeyword_0());
                 
-            otherlv_1=(Token)match(input,29,FOLLOW_29_in_rulePriorityAnnotation3014); 
+            otherlv_1=(Token)match(input,29,FOLLOW_29_in_rulePriorityAnnotation2924); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getPriorityAnnotationAccess().getLeftParenthesisKeyword_1());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1310:1: ( (lv_priority_2_0= RULE_INT ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1311:1: (lv_priority_2_0= RULE_INT )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1271:1: ( (lv_priority_2_0= RULE_INT ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1272:1: (lv_priority_2_0= RULE_INT )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1311:1: (lv_priority_2_0= RULE_INT )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1312:3: lv_priority_2_0= RULE_INT
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1272:1: (lv_priority_2_0= RULE_INT )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1273:3: lv_priority_2_0= RULE_INT
             {
-            lv_priority_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_rulePriorityAnnotation3031); 
+            lv_priority_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_rulePriorityAnnotation2941); 
 
             			newLeafNode(lv_priority_2_0, grammarAccess.getPriorityAnnotationAccess().getPriorityINTTerminalRuleCall_2_0()); 
             		
@@ -3178,7 +3080,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,30,FOLLOW_30_in_rulePriorityAnnotation3048); 
+            otherlv_3=(Token)match(input,30,FOLLOW_30_in_rulePriorityAnnotation2958); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getPriorityAnnotationAccess().getRightParenthesisKeyword_3());
                 
@@ -3203,7 +3105,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterFilterRule"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1340:1: entryRuleParameterFilterRule returns [EObject current=null] : iv_ruleParameterFilterRule= ruleParameterFilterRule EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1301:1: entryRuleParameterFilterRule returns [EObject current=null] : iv_ruleParameterFilterRule= ruleParameterFilterRule EOF ;
     public final EObject entryRuleParameterFilterRule() throws RecognitionException {
         EObject current = null;
 
@@ -3211,17 +3113,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1341:2: (iv_ruleParameterFilterRule= ruleParameterFilterRule EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1342:2: iv_ruleParameterFilterRule= ruleParameterFilterRule EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1302:2: (iv_ruleParameterFilterRule= ruleParameterFilterRule EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1303:2: iv_ruleParameterFilterRule= ruleParameterFilterRule EOF
             {
              newCompositeNode(grammarAccess.getParameterFilterRuleRule()); 
-            pushFollow(FOLLOW_ruleParameterFilterRule_in_entryRuleParameterFilterRule3084);
+            pushFollow(FOLLOW_ruleParameterFilterRule_in_entryRuleParameterFilterRule2994);
             iv_ruleParameterFilterRule=ruleParameterFilterRule();
 
             state._fsp--;
 
              current =iv_ruleParameterFilterRule; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleParameterFilterRule3094); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleParameterFilterRule3004); 
 
             }
 
@@ -3239,7 +3141,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterFilterRule"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1349:1: ruleParameterFilterRule returns [EObject current=null] : (this_RangeFilter_0= ruleRangeFilter | this_NumericFilter_1= ruleNumericFilter | this_LiteralFilter_2= ruleLiteralFilter ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1310:1: ruleParameterFilterRule returns [EObject current=null] : (this_RangeFilter_0= ruleRangeFilter | this_NumericFilter_1= ruleNumericFilter | this_LiteralFilter_2= ruleLiteralFilter ) ;
     public final EObject ruleParameterFilterRule() throws RecognitionException {
         EObject current = null;
 
@@ -3253,10 +3155,10 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1352:28: ( (this_RangeFilter_0= ruleRangeFilter | this_NumericFilter_1= ruleNumericFilter | this_LiteralFilter_2= ruleLiteralFilter ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1353:1: (this_RangeFilter_0= ruleRangeFilter | this_NumericFilter_1= ruleNumericFilter | this_LiteralFilter_2= ruleLiteralFilter )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1313:28: ( (this_RangeFilter_0= ruleRangeFilter | this_NumericFilter_1= ruleNumericFilter | this_LiteralFilter_2= ruleLiteralFilter ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1314:1: (this_RangeFilter_0= ruleRangeFilter | this_NumericFilter_1= ruleNumericFilter | this_LiteralFilter_2= ruleLiteralFilter )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1353:1: (this_RangeFilter_0= ruleRangeFilter | this_NumericFilter_1= ruleNumericFilter | this_LiteralFilter_2= ruleLiteralFilter )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1314:1: (this_RangeFilter_0= ruleRangeFilter | this_NumericFilter_1= ruleNumericFilter | this_LiteralFilter_2= ruleLiteralFilter )
             int alt16=3;
             switch ( input.LA(1) ) {
             case 47:
@@ -3308,12 +3210,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             switch (alt16) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1354:5: this_RangeFilter_0= ruleRangeFilter
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1315:5: this_RangeFilter_0= ruleRangeFilter
                     {
                      
                             newCompositeNode(grammarAccess.getParameterFilterRuleAccess().getRangeFilterParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleRangeFilter_in_ruleParameterFilterRule3141);
+                    pushFollow(FOLLOW_ruleRangeFilter_in_ruleParameterFilterRule3051);
                     this_RangeFilter_0=ruleRangeFilter();
 
                     state._fsp--;
@@ -3326,12 +3228,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1364:5: this_NumericFilter_1= ruleNumericFilter
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1325:5: this_NumericFilter_1= ruleNumericFilter
                     {
                      
                             newCompositeNode(grammarAccess.getParameterFilterRuleAccess().getNumericFilterParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleNumericFilter_in_ruleParameterFilterRule3168);
+                    pushFollow(FOLLOW_ruleNumericFilter_in_ruleParameterFilterRule3078);
                     this_NumericFilter_1=ruleNumericFilter();
 
                     state._fsp--;
@@ -3344,12 +3246,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1374:5: this_LiteralFilter_2= ruleLiteralFilter
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1335:5: this_LiteralFilter_2= ruleLiteralFilter
                     {
                      
                             newCompositeNode(grammarAccess.getParameterFilterRuleAccess().getLiteralFilterParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleLiteralFilter_in_ruleParameterFilterRule3195);
+                    pushFollow(FOLLOW_ruleLiteralFilter_in_ruleParameterFilterRule3105);
                     this_LiteralFilter_2=ruleLiteralFilter();
 
                     state._fsp--;
@@ -3382,7 +3284,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRangeFilter"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1390:1: entryRuleRangeFilter returns [EObject current=null] : iv_ruleRangeFilter= ruleRangeFilter EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1351:1: entryRuleRangeFilter returns [EObject current=null] : iv_ruleRangeFilter= ruleRangeFilter EOF ;
     public final EObject entryRuleRangeFilter() throws RecognitionException {
         EObject current = null;
 
@@ -3390,17 +3292,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1391:2: (iv_ruleRangeFilter= ruleRangeFilter EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1392:2: iv_ruleRangeFilter= ruleRangeFilter EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1352:2: (iv_ruleRangeFilter= ruleRangeFilter EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1353:2: iv_ruleRangeFilter= ruleRangeFilter EOF
             {
              newCompositeNode(grammarAccess.getRangeFilterRule()); 
-            pushFollow(FOLLOW_ruleRangeFilter_in_entryRuleRangeFilter3230);
+            pushFollow(FOLLOW_ruleRangeFilter_in_entryRuleRangeFilter3140);
             iv_ruleRangeFilter=ruleRangeFilter();
 
             state._fsp--;
 
              current =iv_ruleRangeFilter; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRangeFilter3240); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRangeFilter3150); 
 
             }
 
@@ -3418,7 +3320,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRangeFilter"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1399:1: ruleRangeFilter returns [EObject current=null] : ( ( (lv_neg_0_0= ruleNegationOpartor ) )? otherlv_1= 'in' ( (lv_range_2_0= ruleRange ) ) ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1360:1: ruleRangeFilter returns [EObject current=null] : ( ( (lv_neg_0_0= ruleNegationOpartor ) )? otherlv_1= 'in' ( (lv_range_2_0= ruleRange ) ) ) ;
     public final EObject ruleRangeFilter() throws RecognitionException {
         EObject current = null;
 
@@ -3431,13 +3333,13 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1402:28: ( ( ( (lv_neg_0_0= ruleNegationOpartor ) )? otherlv_1= 'in' ( (lv_range_2_0= ruleRange ) ) ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1403:1: ( ( (lv_neg_0_0= ruleNegationOpartor ) )? otherlv_1= 'in' ( (lv_range_2_0= ruleRange ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1363:28: ( ( ( (lv_neg_0_0= ruleNegationOpartor ) )? otherlv_1= 'in' ( (lv_range_2_0= ruleRange ) ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1364:1: ( ( (lv_neg_0_0= ruleNegationOpartor ) )? otherlv_1= 'in' ( (lv_range_2_0= ruleRange ) ) )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1403:1: ( ( (lv_neg_0_0= ruleNegationOpartor ) )? otherlv_1= 'in' ( (lv_range_2_0= ruleRange ) ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1403:2: ( (lv_neg_0_0= ruleNegationOpartor ) )? otherlv_1= 'in' ( (lv_range_2_0= ruleRange ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1364:1: ( ( (lv_neg_0_0= ruleNegationOpartor ) )? otherlv_1= 'in' ( (lv_range_2_0= ruleRange ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1364:2: ( (lv_neg_0_0= ruleNegationOpartor ) )? otherlv_1= 'in' ( (lv_range_2_0= ruleRange ) )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1403:2: ( (lv_neg_0_0= ruleNegationOpartor ) )?
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1364:2: ( (lv_neg_0_0= ruleNegationOpartor ) )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -3446,15 +3348,15 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1404:1: (lv_neg_0_0= ruleNegationOpartor )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1365:1: (lv_neg_0_0= ruleNegationOpartor )
                     {
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1404:1: (lv_neg_0_0= ruleNegationOpartor )
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1405:3: lv_neg_0_0= ruleNegationOpartor
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1365:1: (lv_neg_0_0= ruleNegationOpartor )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1366:3: lv_neg_0_0= ruleNegationOpartor
                     {
                      
                     	        newCompositeNode(grammarAccess.getRangeFilterAccess().getNegNegationOpartorParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNegationOpartor_in_ruleRangeFilter3286);
+                    pushFollow(FOLLOW_ruleNegationOpartor_in_ruleRangeFilter3196);
                     lv_neg_0_0=ruleNegationOpartor();
 
                     state._fsp--;
@@ -3479,20 +3381,20 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,34,FOLLOW_34_in_ruleRangeFilter3299); 
+            otherlv_1=(Token)match(input,34,FOLLOW_34_in_ruleRangeFilter3209); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getRangeFilterAccess().getInKeyword_1());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1425:1: ( (lv_range_2_0= ruleRange ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1426:1: (lv_range_2_0= ruleRange )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1386:1: ( (lv_range_2_0= ruleRange ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1387:1: (lv_range_2_0= ruleRange )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1426:1: (lv_range_2_0= ruleRange )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1427:3: lv_range_2_0= ruleRange
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1387:1: (lv_range_2_0= ruleRange )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1388:3: lv_range_2_0= ruleRange
             {
              
             	        newCompositeNode(grammarAccess.getRangeFilterAccess().getRangeRangeParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleRange_in_ruleRangeFilter3320);
+            pushFollow(FOLLOW_ruleRange_in_ruleRangeFilter3230);
             lv_range_2_0=ruleRange();
 
             state._fsp--;
@@ -3535,7 +3437,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRange"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1451:1: entryRuleRange returns [EObject current=null] : iv_ruleRange= ruleRange EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1412:1: entryRuleRange returns [EObject current=null] : iv_ruleRange= ruleRange EOF ;
     public final EObject entryRuleRange() throws RecognitionException {
         EObject current = null;
 
@@ -3543,17 +3445,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1452:2: (iv_ruleRange= ruleRange EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1453:2: iv_ruleRange= ruleRange EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1413:2: (iv_ruleRange= ruleRange EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1414:2: iv_ruleRange= ruleRange EOF
             {
              newCompositeNode(grammarAccess.getRangeRule()); 
-            pushFollow(FOLLOW_ruleRange_in_entryRuleRange3356);
+            pushFollow(FOLLOW_ruleRange_in_entryRuleRange3266);
             iv_ruleRange=ruleRange();
 
             state._fsp--;
 
              current =iv_ruleRange; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRange3366); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRange3276); 
 
             }
 
@@ -3571,7 +3473,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRange"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1460:1: ruleRange returns [EObject current=null] : (this_OpenOpen_0= ruleOpenOpen | this_OpenClosed_1= ruleOpenClosed | this_ClosedClosed_2= ruleClosedClosed | this_ClosedOpen_3= ruleClosedOpen ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1421:1: ruleRange returns [EObject current=null] : (this_OpenOpen_0= ruleOpenOpen | this_OpenClosed_1= ruleOpenClosed | this_ClosedClosed_2= ruleClosedClosed | this_ClosedOpen_3= ruleClosedOpen ) ;
     public final EObject ruleRange() throws RecognitionException {
         EObject current = null;
 
@@ -3587,20 +3489,20 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1463:28: ( (this_OpenOpen_0= ruleOpenOpen | this_OpenClosed_1= ruleOpenClosed | this_ClosedClosed_2= ruleClosedClosed | this_ClosedOpen_3= ruleClosedOpen ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1464:1: (this_OpenOpen_0= ruleOpenOpen | this_OpenClosed_1= ruleOpenClosed | this_ClosedClosed_2= ruleClosedClosed | this_ClosedOpen_3= ruleClosedOpen )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1424:28: ( (this_OpenOpen_0= ruleOpenOpen | this_OpenClosed_1= ruleOpenClosed | this_ClosedClosed_2= ruleClosedClosed | this_ClosedOpen_3= ruleClosedOpen ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1425:1: (this_OpenOpen_0= ruleOpenOpen | this_OpenClosed_1= ruleOpenClosed | this_ClosedClosed_2= ruleClosedClosed | this_ClosedOpen_3= ruleClosedOpen )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1464:1: (this_OpenOpen_0= ruleOpenOpen | this_OpenClosed_1= ruleOpenClosed | this_ClosedClosed_2= ruleClosedClosed | this_ClosedOpen_3= ruleClosedOpen )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1425:1: (this_OpenOpen_0= ruleOpenOpen | this_OpenClosed_1= ruleOpenClosed | this_ClosedClosed_2= ruleClosedClosed | this_ClosedOpen_3= ruleClosedOpen )
             int alt18=4;
             alt18 = dfa18.predict(input);
             switch (alt18) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1465:5: this_OpenOpen_0= ruleOpenOpen
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1426:5: this_OpenOpen_0= ruleOpenOpen
                     {
                      
                             newCompositeNode(grammarAccess.getRangeAccess().getOpenOpenParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleOpenOpen_in_ruleRange3413);
+                    pushFollow(FOLLOW_ruleOpenOpen_in_ruleRange3323);
                     this_OpenOpen_0=ruleOpenOpen();
 
                     state._fsp--;
@@ -3613,12 +3515,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1475:5: this_OpenClosed_1= ruleOpenClosed
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1436:5: this_OpenClosed_1= ruleOpenClosed
                     {
                      
                             newCompositeNode(grammarAccess.getRangeAccess().getOpenClosedParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleOpenClosed_in_ruleRange3440);
+                    pushFollow(FOLLOW_ruleOpenClosed_in_ruleRange3350);
                     this_OpenClosed_1=ruleOpenClosed();
 
                     state._fsp--;
@@ -3631,12 +3533,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1485:5: this_ClosedClosed_2= ruleClosedClosed
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1446:5: this_ClosedClosed_2= ruleClosedClosed
                     {
                      
                             newCompositeNode(grammarAccess.getRangeAccess().getClosedClosedParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleClosedClosed_in_ruleRange3467);
+                    pushFollow(FOLLOW_ruleClosedClosed_in_ruleRange3377);
                     this_ClosedClosed_2=ruleClosedClosed();
 
                     state._fsp--;
@@ -3649,12 +3551,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1495:5: this_ClosedOpen_3= ruleClosedOpen
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1456:5: this_ClosedOpen_3= ruleClosedOpen
                     {
                      
                             newCompositeNode(grammarAccess.getRangeAccess().getClosedOpenParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleClosedOpen_in_ruleRange3494);
+                    pushFollow(FOLLOW_ruleClosedOpen_in_ruleRange3404);
                     this_ClosedOpen_3=ruleClosedOpen();
 
                     state._fsp--;
@@ -3687,7 +3589,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOpenOpen"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1511:1: entryRuleOpenOpen returns [EObject current=null] : iv_ruleOpenOpen= ruleOpenOpen EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1472:1: entryRuleOpenOpen returns [EObject current=null] : iv_ruleOpenOpen= ruleOpenOpen EOF ;
     public final EObject entryRuleOpenOpen() throws RecognitionException {
         EObject current = null;
 
@@ -3695,17 +3597,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1512:2: (iv_ruleOpenOpen= ruleOpenOpen EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1513:2: iv_ruleOpenOpen= ruleOpenOpen EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1473:2: (iv_ruleOpenOpen= ruleOpenOpen EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1474:2: iv_ruleOpenOpen= ruleOpenOpen EOF
             {
              newCompositeNode(grammarAccess.getOpenOpenRule()); 
-            pushFollow(FOLLOW_ruleOpenOpen_in_entryRuleOpenOpen3529);
+            pushFollow(FOLLOW_ruleOpenOpen_in_entryRuleOpenOpen3439);
             iv_ruleOpenOpen=ruleOpenOpen();
 
             state._fsp--;
 
              current =iv_ruleOpenOpen; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOpenOpen3539); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOpenOpen3449); 
 
             }
 
@@ -3723,7 +3625,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOpenOpen"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1520:1: ruleOpenOpen returns [EObject current=null] : (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1481:1: ruleOpenOpen returns [EObject current=null] : (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' ) ;
     public final EObject ruleOpenOpen() throws RecognitionException {
         EObject current = null;
 
@@ -3738,26 +3640,26 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1523:28: ( (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1524:1: (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1484:28: ( (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1485:1: (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1524:1: (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1524:3: otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')'
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1485:1: (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1485:3: otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')'
             {
-            otherlv_0=(Token)match(input,29,FOLLOW_29_in_ruleOpenOpen3576); 
+            otherlv_0=(Token)match(input,29,FOLLOW_29_in_ruleOpenOpen3486); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getOpenOpenAccess().getLeftParenthesisKeyword_0());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1528:1: ( (lv_lowerBound_1_0= ruleDOUBLE ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1529:1: (lv_lowerBound_1_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1489:1: ( (lv_lowerBound_1_0= ruleDOUBLE ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1490:1: (lv_lowerBound_1_0= ruleDOUBLE )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1529:1: (lv_lowerBound_1_0= ruleDOUBLE )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1530:3: lv_lowerBound_1_0= ruleDOUBLE
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1490:1: (lv_lowerBound_1_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1491:3: lv_lowerBound_1_0= ruleDOUBLE
             {
              
             	        newCompositeNode(grammarAccess.getOpenOpenAccess().getLowerBoundDOUBLEParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleDOUBLE_in_ruleOpenOpen3597);
+            pushFollow(FOLLOW_ruleDOUBLE_in_ruleOpenOpen3507);
             lv_lowerBound_1_0=ruleDOUBLE();
 
             state._fsp--;
@@ -3779,20 +3681,20 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleOpenOpen3609); 
+            otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleOpenOpen3519); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getOpenOpenAccess().getCommaKeyword_2());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1550:1: ( (lv_upperBound_3_0= ruleDOUBLE ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1551:1: (lv_upperBound_3_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1511:1: ( (lv_upperBound_3_0= ruleDOUBLE ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1512:1: (lv_upperBound_3_0= ruleDOUBLE )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1551:1: (lv_upperBound_3_0= ruleDOUBLE )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1552:3: lv_upperBound_3_0= ruleDOUBLE
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1512:1: (lv_upperBound_3_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1513:3: lv_upperBound_3_0= ruleDOUBLE
             {
              
             	        newCompositeNode(grammarAccess.getOpenOpenAccess().getUpperBoundDOUBLEParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleDOUBLE_in_ruleOpenOpen3630);
+            pushFollow(FOLLOW_ruleDOUBLE_in_ruleOpenOpen3540);
             lv_upperBound_3_0=ruleDOUBLE();
 
             state._fsp--;
@@ -3814,7 +3716,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,30,FOLLOW_30_in_ruleOpenOpen3642); 
+            otherlv_4=(Token)match(input,30,FOLLOW_30_in_ruleOpenOpen3552); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getOpenOpenAccess().getRightParenthesisKeyword_4());
                 
@@ -3839,7 +3741,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOpenClosed"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1580:1: entryRuleOpenClosed returns [EObject current=null] : iv_ruleOpenClosed= ruleOpenClosed EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1541:1: entryRuleOpenClosed returns [EObject current=null] : iv_ruleOpenClosed= ruleOpenClosed EOF ;
     public final EObject entryRuleOpenClosed() throws RecognitionException {
         EObject current = null;
 
@@ -3847,17 +3749,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1581:2: (iv_ruleOpenClosed= ruleOpenClosed EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1582:2: iv_ruleOpenClosed= ruleOpenClosed EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1542:2: (iv_ruleOpenClosed= ruleOpenClosed EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1543:2: iv_ruleOpenClosed= ruleOpenClosed EOF
             {
              newCompositeNode(grammarAccess.getOpenClosedRule()); 
-            pushFollow(FOLLOW_ruleOpenClosed_in_entryRuleOpenClosed3678);
+            pushFollow(FOLLOW_ruleOpenClosed_in_entryRuleOpenClosed3588);
             iv_ruleOpenClosed=ruleOpenClosed();
 
             state._fsp--;
 
              current =iv_ruleOpenClosed; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOpenClosed3688); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOpenClosed3598); 
 
             }
 
@@ -3875,7 +3777,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOpenClosed"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1589:1: ruleOpenClosed returns [EObject current=null] : (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1550:1: ruleOpenClosed returns [EObject current=null] : (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' ) ;
     public final EObject ruleOpenClosed() throws RecognitionException {
         EObject current = null;
 
@@ -3890,26 +3792,26 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1592:28: ( (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1593:1: (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1553:28: ( (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1554:1: (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1593:1: (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1593:3: otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']'
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1554:1: (otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1554:3: otherlv_0= '(' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']'
             {
-            otherlv_0=(Token)match(input,29,FOLLOW_29_in_ruleOpenClosed3725); 
+            otherlv_0=(Token)match(input,29,FOLLOW_29_in_ruleOpenClosed3635); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getOpenClosedAccess().getLeftParenthesisKeyword_0());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1597:1: ( (lv_lowerBound_1_0= ruleDOUBLE ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1598:1: (lv_lowerBound_1_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1558:1: ( (lv_lowerBound_1_0= ruleDOUBLE ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1559:1: (lv_lowerBound_1_0= ruleDOUBLE )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1598:1: (lv_lowerBound_1_0= ruleDOUBLE )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1599:3: lv_lowerBound_1_0= ruleDOUBLE
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1559:1: (lv_lowerBound_1_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1560:3: lv_lowerBound_1_0= ruleDOUBLE
             {
              
             	        newCompositeNode(grammarAccess.getOpenClosedAccess().getLowerBoundDOUBLEParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleDOUBLE_in_ruleOpenClosed3746);
+            pushFollow(FOLLOW_ruleDOUBLE_in_ruleOpenClosed3656);
             lv_lowerBound_1_0=ruleDOUBLE();
 
             state._fsp--;
@@ -3931,20 +3833,20 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleOpenClosed3758); 
+            otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleOpenClosed3668); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getOpenClosedAccess().getCommaKeyword_2());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1619:1: ( (lv_upperBound_3_0= ruleDOUBLE ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1620:1: (lv_upperBound_3_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1580:1: ( (lv_upperBound_3_0= ruleDOUBLE ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1581:1: (lv_upperBound_3_0= ruleDOUBLE )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1620:1: (lv_upperBound_3_0= ruleDOUBLE )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1621:3: lv_upperBound_3_0= ruleDOUBLE
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1581:1: (lv_upperBound_3_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1582:3: lv_upperBound_3_0= ruleDOUBLE
             {
              
             	        newCompositeNode(grammarAccess.getOpenClosedAccess().getUpperBoundDOUBLEParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleDOUBLE_in_ruleOpenClosed3779);
+            pushFollow(FOLLOW_ruleDOUBLE_in_ruleOpenClosed3689);
             lv_upperBound_3_0=ruleDOUBLE();
 
             state._fsp--;
@@ -3966,7 +3868,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,36,FOLLOW_36_in_ruleOpenClosed3791); 
+            otherlv_4=(Token)match(input,36,FOLLOW_36_in_ruleOpenClosed3701); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getOpenClosedAccess().getRightSquareBracketKeyword_4());
                 
@@ -3991,7 +3893,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleClosedClosed"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1649:1: entryRuleClosedClosed returns [EObject current=null] : iv_ruleClosedClosed= ruleClosedClosed EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1610:1: entryRuleClosedClosed returns [EObject current=null] : iv_ruleClosedClosed= ruleClosedClosed EOF ;
     public final EObject entryRuleClosedClosed() throws RecognitionException {
         EObject current = null;
 
@@ -3999,17 +3901,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1650:2: (iv_ruleClosedClosed= ruleClosedClosed EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1651:2: iv_ruleClosedClosed= ruleClosedClosed EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1611:2: (iv_ruleClosedClosed= ruleClosedClosed EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1612:2: iv_ruleClosedClosed= ruleClosedClosed EOF
             {
              newCompositeNode(grammarAccess.getClosedClosedRule()); 
-            pushFollow(FOLLOW_ruleClosedClosed_in_entryRuleClosedClosed3827);
+            pushFollow(FOLLOW_ruleClosedClosed_in_entryRuleClosedClosed3737);
             iv_ruleClosedClosed=ruleClosedClosed();
 
             state._fsp--;
 
              current =iv_ruleClosedClosed; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleClosedClosed3837); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleClosedClosed3747); 
 
             }
 
@@ -4027,7 +3929,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClosedClosed"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1658:1: ruleClosedClosed returns [EObject current=null] : (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1619:1: ruleClosedClosed returns [EObject current=null] : (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' ) ;
     public final EObject ruleClosedClosed() throws RecognitionException {
         EObject current = null;
 
@@ -4042,26 +3944,26 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1661:28: ( (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1662:1: (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1622:28: ( (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1623:1: (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1662:1: (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1662:3: otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')'
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1623:1: (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1623:3: otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ')'
             {
-            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleClosedClosed3874); 
+            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleClosedClosed3784); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getClosedClosedAccess().getLeftSquareBracketKeyword_0());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1666:1: ( (lv_lowerBound_1_0= ruleDOUBLE ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1667:1: (lv_lowerBound_1_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1627:1: ( (lv_lowerBound_1_0= ruleDOUBLE ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1628:1: (lv_lowerBound_1_0= ruleDOUBLE )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1667:1: (lv_lowerBound_1_0= ruleDOUBLE )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1668:3: lv_lowerBound_1_0= ruleDOUBLE
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1628:1: (lv_lowerBound_1_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1629:3: lv_lowerBound_1_0= ruleDOUBLE
             {
              
             	        newCompositeNode(grammarAccess.getClosedClosedAccess().getLowerBoundDOUBLEParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleDOUBLE_in_ruleClosedClosed3895);
+            pushFollow(FOLLOW_ruleDOUBLE_in_ruleClosedClosed3805);
             lv_lowerBound_1_0=ruleDOUBLE();
 
             state._fsp--;
@@ -4083,20 +3985,20 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleClosedClosed3907); 
+            otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleClosedClosed3817); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getClosedClosedAccess().getCommaKeyword_2());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1688:1: ( (lv_upperBound_3_0= ruleDOUBLE ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1689:1: (lv_upperBound_3_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1649:1: ( (lv_upperBound_3_0= ruleDOUBLE ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1650:1: (lv_upperBound_3_0= ruleDOUBLE )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1689:1: (lv_upperBound_3_0= ruleDOUBLE )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1690:3: lv_upperBound_3_0= ruleDOUBLE
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1650:1: (lv_upperBound_3_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1651:3: lv_upperBound_3_0= ruleDOUBLE
             {
              
             	        newCompositeNode(grammarAccess.getClosedClosedAccess().getUpperBoundDOUBLEParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleDOUBLE_in_ruleClosedClosed3928);
+            pushFollow(FOLLOW_ruleDOUBLE_in_ruleClosedClosed3838);
             lv_upperBound_3_0=ruleDOUBLE();
 
             state._fsp--;
@@ -4118,7 +4020,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,30,FOLLOW_30_in_ruleClosedClosed3940); 
+            otherlv_4=(Token)match(input,30,FOLLOW_30_in_ruleClosedClosed3850); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getClosedClosedAccess().getRightParenthesisKeyword_4());
                 
@@ -4143,7 +4045,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleClosedOpen"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1718:1: entryRuleClosedOpen returns [EObject current=null] : iv_ruleClosedOpen= ruleClosedOpen EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1679:1: entryRuleClosedOpen returns [EObject current=null] : iv_ruleClosedOpen= ruleClosedOpen EOF ;
     public final EObject entryRuleClosedOpen() throws RecognitionException {
         EObject current = null;
 
@@ -4151,17 +4053,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1719:2: (iv_ruleClosedOpen= ruleClosedOpen EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1720:2: iv_ruleClosedOpen= ruleClosedOpen EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1680:2: (iv_ruleClosedOpen= ruleClosedOpen EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1681:2: iv_ruleClosedOpen= ruleClosedOpen EOF
             {
              newCompositeNode(grammarAccess.getClosedOpenRule()); 
-            pushFollow(FOLLOW_ruleClosedOpen_in_entryRuleClosedOpen3976);
+            pushFollow(FOLLOW_ruleClosedOpen_in_entryRuleClosedOpen3886);
             iv_ruleClosedOpen=ruleClosedOpen();
 
             state._fsp--;
 
              current =iv_ruleClosedOpen; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleClosedOpen3986); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleClosedOpen3896); 
 
             }
 
@@ -4179,7 +4081,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClosedOpen"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1727:1: ruleClosedOpen returns [EObject current=null] : (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1688:1: ruleClosedOpen returns [EObject current=null] : (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' ) ;
     public final EObject ruleClosedOpen() throws RecognitionException {
         EObject current = null;
 
@@ -4194,26 +4096,26 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1730:28: ( (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1731:1: (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1691:28: ( (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1692:1: (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1731:1: (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1731:3: otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']'
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1692:1: (otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1692:3: otherlv_0= '[' ( (lv_lowerBound_1_0= ruleDOUBLE ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleDOUBLE ) ) otherlv_4= ']'
             {
-            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleClosedOpen4023); 
+            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleClosedOpen3933); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getClosedOpenAccess().getLeftSquareBracketKeyword_0());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1735:1: ( (lv_lowerBound_1_0= ruleDOUBLE ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1736:1: (lv_lowerBound_1_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1696:1: ( (lv_lowerBound_1_0= ruleDOUBLE ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1697:1: (lv_lowerBound_1_0= ruleDOUBLE )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1736:1: (lv_lowerBound_1_0= ruleDOUBLE )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1737:3: lv_lowerBound_1_0= ruleDOUBLE
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1697:1: (lv_lowerBound_1_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1698:3: lv_lowerBound_1_0= ruleDOUBLE
             {
              
             	        newCompositeNode(grammarAccess.getClosedOpenAccess().getLowerBoundDOUBLEParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleDOUBLE_in_ruleClosedOpen4044);
+            pushFollow(FOLLOW_ruleDOUBLE_in_ruleClosedOpen3954);
             lv_lowerBound_1_0=ruleDOUBLE();
 
             state._fsp--;
@@ -4235,20 +4137,20 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleClosedOpen4056); 
+            otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleClosedOpen3966); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getClosedOpenAccess().getCommaKeyword_2());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1757:1: ( (lv_upperBound_3_0= ruleDOUBLE ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1758:1: (lv_upperBound_3_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1718:1: ( (lv_upperBound_3_0= ruleDOUBLE ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1719:1: (lv_upperBound_3_0= ruleDOUBLE )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1758:1: (lv_upperBound_3_0= ruleDOUBLE )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1759:3: lv_upperBound_3_0= ruleDOUBLE
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1719:1: (lv_upperBound_3_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1720:3: lv_upperBound_3_0= ruleDOUBLE
             {
              
             	        newCompositeNode(grammarAccess.getClosedOpenAccess().getUpperBoundDOUBLEParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleDOUBLE_in_ruleClosedOpen4077);
+            pushFollow(FOLLOW_ruleDOUBLE_in_ruleClosedOpen3987);
             lv_upperBound_3_0=ruleDOUBLE();
 
             state._fsp--;
@@ -4270,7 +4172,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,36,FOLLOW_36_in_ruleClosedOpen4089); 
+            otherlv_4=(Token)match(input,36,FOLLOW_36_in_ruleClosedOpen3999); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getClosedOpenAccess().getRightSquareBracketKeyword_4());
                 
@@ -4295,7 +4197,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumericFilter"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1787:1: entryRuleNumericFilter returns [EObject current=null] : iv_ruleNumericFilter= ruleNumericFilter EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1748:1: entryRuleNumericFilter returns [EObject current=null] : iv_ruleNumericFilter= ruleNumericFilter EOF ;
     public final EObject entryRuleNumericFilter() throws RecognitionException {
         EObject current = null;
 
@@ -4303,17 +4205,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1788:2: (iv_ruleNumericFilter= ruleNumericFilter EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1789:2: iv_ruleNumericFilter= ruleNumericFilter EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1749:2: (iv_ruleNumericFilter= ruleNumericFilter EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1750:2: iv_ruleNumericFilter= ruleNumericFilter EOF
             {
              newCompositeNode(grammarAccess.getNumericFilterRule()); 
-            pushFollow(FOLLOW_ruleNumericFilter_in_entryRuleNumericFilter4125);
+            pushFollow(FOLLOW_ruleNumericFilter_in_entryRuleNumericFilter4035);
             iv_ruleNumericFilter=ruleNumericFilter();
 
             state._fsp--;
 
              current =iv_ruleNumericFilter; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumericFilter4135); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumericFilter4045); 
 
             }
 
@@ -4331,7 +4233,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumericFilter"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1796:1: ruleNumericFilter returns [EObject current=null] : ( ( (lv_operator_0_0= ruleNumericOperator ) ) ( (lv_value_1_0= ruleDOUBLE ) ) ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1757:1: ruleNumericFilter returns [EObject current=null] : ( ( (lv_operator_0_0= ruleNumericOperator ) ) ( (lv_value_1_0= ruleDOUBLE ) ) ) ;
     public final EObject ruleNumericFilter() throws RecognitionException {
         EObject current = null;
 
@@ -4343,22 +4245,22 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1799:28: ( ( ( (lv_operator_0_0= ruleNumericOperator ) ) ( (lv_value_1_0= ruleDOUBLE ) ) ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1800:1: ( ( (lv_operator_0_0= ruleNumericOperator ) ) ( (lv_value_1_0= ruleDOUBLE ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1760:28: ( ( ( (lv_operator_0_0= ruleNumericOperator ) ) ( (lv_value_1_0= ruleDOUBLE ) ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1761:1: ( ( (lv_operator_0_0= ruleNumericOperator ) ) ( (lv_value_1_0= ruleDOUBLE ) ) )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1800:1: ( ( (lv_operator_0_0= ruleNumericOperator ) ) ( (lv_value_1_0= ruleDOUBLE ) ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1800:2: ( (lv_operator_0_0= ruleNumericOperator ) ) ( (lv_value_1_0= ruleDOUBLE ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1761:1: ( ( (lv_operator_0_0= ruleNumericOperator ) ) ( (lv_value_1_0= ruleDOUBLE ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1761:2: ( (lv_operator_0_0= ruleNumericOperator ) ) ( (lv_value_1_0= ruleDOUBLE ) )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1800:2: ( (lv_operator_0_0= ruleNumericOperator ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1801:1: (lv_operator_0_0= ruleNumericOperator )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1761:2: ( (lv_operator_0_0= ruleNumericOperator ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1762:1: (lv_operator_0_0= ruleNumericOperator )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1801:1: (lv_operator_0_0= ruleNumericOperator )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1802:3: lv_operator_0_0= ruleNumericOperator
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1762:1: (lv_operator_0_0= ruleNumericOperator )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1763:3: lv_operator_0_0= ruleNumericOperator
             {
              
             	        newCompositeNode(grammarAccess.getNumericFilterAccess().getOperatorNumericOperatorParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleNumericOperator_in_ruleNumericFilter4181);
+            pushFollow(FOLLOW_ruleNumericOperator_in_ruleNumericFilter4091);
             lv_operator_0_0=ruleNumericOperator();
 
             state._fsp--;
@@ -4380,16 +4282,16 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1818:2: ( (lv_value_1_0= ruleDOUBLE ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1819:1: (lv_value_1_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1779:2: ( (lv_value_1_0= ruleDOUBLE ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1780:1: (lv_value_1_0= ruleDOUBLE )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1819:1: (lv_value_1_0= ruleDOUBLE )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1820:3: lv_value_1_0= ruleDOUBLE
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1780:1: (lv_value_1_0= ruleDOUBLE )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1781:3: lv_value_1_0= ruleDOUBLE
             {
              
             	        newCompositeNode(grammarAccess.getNumericFilterAccess().getValueDOUBLEParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleDOUBLE_in_ruleNumericFilter4202);
+            pushFollow(FOLLOW_ruleDOUBLE_in_ruleNumericFilter4112);
             lv_value_1_0=ruleDOUBLE();
 
             state._fsp--;
@@ -4432,7 +4334,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumericOperator"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1844:1: entryRuleNumericOperator returns [String current=null] : iv_ruleNumericOperator= ruleNumericOperator EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1805:1: entryRuleNumericOperator returns [String current=null] : iv_ruleNumericOperator= ruleNumericOperator EOF ;
     public final String entryRuleNumericOperator() throws RecognitionException {
         String current = null;
 
@@ -4440,17 +4342,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1845:2: (iv_ruleNumericOperator= ruleNumericOperator EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1846:2: iv_ruleNumericOperator= ruleNumericOperator EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1806:2: (iv_ruleNumericOperator= ruleNumericOperator EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1807:2: iv_ruleNumericOperator= ruleNumericOperator EOF
             {
              newCompositeNode(grammarAccess.getNumericOperatorRule()); 
-            pushFollow(FOLLOW_ruleNumericOperator_in_entryRuleNumericOperator4239);
+            pushFollow(FOLLOW_ruleNumericOperator_in_entryRuleNumericOperator4149);
             iv_ruleNumericOperator=ruleNumericOperator();
 
             state._fsp--;
 
              current =iv_ruleNumericOperator.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumericOperator4250); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumericOperator4160); 
 
             }
 
@@ -4468,7 +4370,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumericOperator"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1853:1: ruleNumericOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '<' | kw= '=<' | kw= '==' | kw= '!=' | kw= '>=' | kw= '>' ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1814:1: ruleNumericOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '<' | kw= '=<' | kw= '==' | kw= '!=' | kw= '>=' | kw= '>' ) ;
     public final AntlrDatatypeRuleToken ruleNumericOperator() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4477,10 +4379,10 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1856:28: ( (kw= '<' | kw= '=<' | kw= '==' | kw= '!=' | kw= '>=' | kw= '>' ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1857:1: (kw= '<' | kw= '=<' | kw= '==' | kw= '!=' | kw= '>=' | kw= '>' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1817:28: ( (kw= '<' | kw= '=<' | kw= '==' | kw= '!=' | kw= '>=' | kw= '>' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1818:1: (kw= '<' | kw= '=<' | kw= '==' | kw= '!=' | kw= '>=' | kw= '>' )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1857:1: (kw= '<' | kw= '=<' | kw= '==' | kw= '!=' | kw= '>=' | kw= '>' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1818:1: (kw= '<' | kw= '=<' | kw= '==' | kw= '!=' | kw= '>=' | kw= '>' )
             int alt19=6;
             switch ( input.LA(1) ) {
             case 38:
@@ -4522,9 +4424,9 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             switch (alt19) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1858:2: kw= '<'
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1819:2: kw= '<'
                     {
-                    kw=(Token)match(input,38,FOLLOW_38_in_ruleNumericOperator4288); 
+                    kw=(Token)match(input,38,FOLLOW_38_in_ruleNumericOperator4198); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getNumericOperatorAccess().getLessThanSignKeyword_0()); 
@@ -4533,9 +4435,9 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1865:2: kw= '=<'
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1826:2: kw= '=<'
                     {
-                    kw=(Token)match(input,39,FOLLOW_39_in_ruleNumericOperator4307); 
+                    kw=(Token)match(input,39,FOLLOW_39_in_ruleNumericOperator4217); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getNumericOperatorAccess().getEqualsSignLessThanSignKeyword_1()); 
@@ -4544,9 +4446,9 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1872:2: kw= '=='
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1833:2: kw= '=='
                     {
-                    kw=(Token)match(input,40,FOLLOW_40_in_ruleNumericOperator4326); 
+                    kw=(Token)match(input,40,FOLLOW_40_in_ruleNumericOperator4236); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getNumericOperatorAccess().getEqualsSignEqualsSignKeyword_2()); 
@@ -4555,9 +4457,9 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1879:2: kw= '!='
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1840:2: kw= '!='
                     {
-                    kw=(Token)match(input,41,FOLLOW_41_in_ruleNumericOperator4345); 
+                    kw=(Token)match(input,41,FOLLOW_41_in_ruleNumericOperator4255); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getNumericOperatorAccess().getExclamationMarkEqualsSignKeyword_3()); 
@@ -4566,9 +4468,9 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1886:2: kw= '>='
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1847:2: kw= '>='
                     {
-                    kw=(Token)match(input,42,FOLLOW_42_in_ruleNumericOperator4364); 
+                    kw=(Token)match(input,42,FOLLOW_42_in_ruleNumericOperator4274); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getNumericOperatorAccess().getGreaterThanSignEqualsSignKeyword_4()); 
@@ -4577,9 +4479,9 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1893:2: kw= '>'
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1854:2: kw= '>'
                     {
-                    kw=(Token)match(input,43,FOLLOW_43_in_ruleNumericOperator4383); 
+                    kw=(Token)match(input,43,FOLLOW_43_in_ruleNumericOperator4293); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getNumericOperatorAccess().getGreaterThanSignKeyword_5()); 
@@ -4608,7 +4510,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLiteralFilter"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1906:1: entryRuleLiteralFilter returns [EObject current=null] : iv_ruleLiteralFilter= ruleLiteralFilter EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1867:1: entryRuleLiteralFilter returns [EObject current=null] : iv_ruleLiteralFilter= ruleLiteralFilter EOF ;
     public final EObject entryRuleLiteralFilter() throws RecognitionException {
         EObject current = null;
 
@@ -4616,17 +4518,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1907:2: (iv_ruleLiteralFilter= ruleLiteralFilter EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1908:2: iv_ruleLiteralFilter= ruleLiteralFilter EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1868:2: (iv_ruleLiteralFilter= ruleLiteralFilter EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1869:2: iv_ruleLiteralFilter= ruleLiteralFilter EOF
             {
              newCompositeNode(grammarAccess.getLiteralFilterRule()); 
-            pushFollow(FOLLOW_ruleLiteralFilter_in_entryRuleLiteralFilter4423);
+            pushFollow(FOLLOW_ruleLiteralFilter_in_entryRuleLiteralFilter4333);
             iv_ruleLiteralFilter=ruleLiteralFilter();
 
             state._fsp--;
 
              current =iv_ruleLiteralFilter; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteralFilter4433); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteralFilter4343); 
 
             }
 
@@ -4644,7 +4546,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLiteralFilter"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1915:1: ruleLiteralFilter returns [EObject current=null] : ( ( (lv_neg_0_0= ruleNegationOpartor ) )? ( (lv_operator_1_0= ruleLiteralOperator ) ) ( (lv_value_2_0= RULE_STRING ) ) ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1876:1: ruleLiteralFilter returns [EObject current=null] : ( ( (lv_neg_0_0= ruleNegationOpartor ) )? ( (lv_operator_1_0= ruleLiteralOperator ) ) ( (lv_value_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleLiteralFilter() throws RecognitionException {
         EObject current = null;
 
@@ -4657,13 +4559,13 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1918:28: ( ( ( (lv_neg_0_0= ruleNegationOpartor ) )? ( (lv_operator_1_0= ruleLiteralOperator ) ) ( (lv_value_2_0= RULE_STRING ) ) ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1919:1: ( ( (lv_neg_0_0= ruleNegationOpartor ) )? ( (lv_operator_1_0= ruleLiteralOperator ) ) ( (lv_value_2_0= RULE_STRING ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1879:28: ( ( ( (lv_neg_0_0= ruleNegationOpartor ) )? ( (lv_operator_1_0= ruleLiteralOperator ) ) ( (lv_value_2_0= RULE_STRING ) ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1880:1: ( ( (lv_neg_0_0= ruleNegationOpartor ) )? ( (lv_operator_1_0= ruleLiteralOperator ) ) ( (lv_value_2_0= RULE_STRING ) ) )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1919:1: ( ( (lv_neg_0_0= ruleNegationOpartor ) )? ( (lv_operator_1_0= ruleLiteralOperator ) ) ( (lv_value_2_0= RULE_STRING ) ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1919:2: ( (lv_neg_0_0= ruleNegationOpartor ) )? ( (lv_operator_1_0= ruleLiteralOperator ) ) ( (lv_value_2_0= RULE_STRING ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1880:1: ( ( (lv_neg_0_0= ruleNegationOpartor ) )? ( (lv_operator_1_0= ruleLiteralOperator ) ) ( (lv_value_2_0= RULE_STRING ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1880:2: ( (lv_neg_0_0= ruleNegationOpartor ) )? ( (lv_operator_1_0= ruleLiteralOperator ) ) ( (lv_value_2_0= RULE_STRING ) )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1919:2: ( (lv_neg_0_0= ruleNegationOpartor ) )?
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1880:2: ( (lv_neg_0_0= ruleNegationOpartor ) )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -4672,15 +4574,15 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             }
             switch (alt20) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1920:1: (lv_neg_0_0= ruleNegationOpartor )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1881:1: (lv_neg_0_0= ruleNegationOpartor )
                     {
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1920:1: (lv_neg_0_0= ruleNegationOpartor )
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1921:3: lv_neg_0_0= ruleNegationOpartor
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1881:1: (lv_neg_0_0= ruleNegationOpartor )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1882:3: lv_neg_0_0= ruleNegationOpartor
                     {
                      
                     	        newCompositeNode(grammarAccess.getLiteralFilterAccess().getNegNegationOpartorParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNegationOpartor_in_ruleLiteralFilter4479);
+                    pushFollow(FOLLOW_ruleNegationOpartor_in_ruleLiteralFilter4389);
                     lv_neg_0_0=ruleNegationOpartor();
 
                     state._fsp--;
@@ -4705,16 +4607,16 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1937:3: ( (lv_operator_1_0= ruleLiteralOperator ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1938:1: (lv_operator_1_0= ruleLiteralOperator )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1898:3: ( (lv_operator_1_0= ruleLiteralOperator ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1899:1: (lv_operator_1_0= ruleLiteralOperator )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1938:1: (lv_operator_1_0= ruleLiteralOperator )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1939:3: lv_operator_1_0= ruleLiteralOperator
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1899:1: (lv_operator_1_0= ruleLiteralOperator )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1900:3: lv_operator_1_0= ruleLiteralOperator
             {
              
             	        newCompositeNode(grammarAccess.getLiteralFilterAccess().getOperatorLiteralOperatorParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleLiteralOperator_in_ruleLiteralFilter4501);
+            pushFollow(FOLLOW_ruleLiteralOperator_in_ruleLiteralFilter4411);
             lv_operator_1_0=ruleLiteralOperator();
 
             state._fsp--;
@@ -4736,13 +4638,13 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1955:2: ( (lv_value_2_0= RULE_STRING ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1956:1: (lv_value_2_0= RULE_STRING )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1916:2: ( (lv_value_2_0= RULE_STRING ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1917:1: (lv_value_2_0= RULE_STRING )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1956:1: (lv_value_2_0= RULE_STRING )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1957:3: lv_value_2_0= RULE_STRING
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1917:1: (lv_value_2_0= RULE_STRING )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1918:3: lv_value_2_0= RULE_STRING
             {
-            lv_value_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleLiteralFilter4518); 
+            lv_value_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleLiteralFilter4428); 
 
             			newLeafNode(lv_value_2_0, grammarAccess.getLiteralFilterAccess().getValueSTRINGTerminalRuleCall_2_0()); 
             		
@@ -4783,7 +4685,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLiteralOperator"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1981:1: entryRuleLiteralOperator returns [String current=null] : iv_ruleLiteralOperator= ruleLiteralOperator EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1942:1: entryRuleLiteralOperator returns [String current=null] : iv_ruleLiteralOperator= ruleLiteralOperator EOF ;
     public final String entryRuleLiteralOperator() throws RecognitionException {
         String current = null;
 
@@ -4791,17 +4693,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1982:2: (iv_ruleLiteralOperator= ruleLiteralOperator EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1983:2: iv_ruleLiteralOperator= ruleLiteralOperator EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1943:2: (iv_ruleLiteralOperator= ruleLiteralOperator EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1944:2: iv_ruleLiteralOperator= ruleLiteralOperator EOF
             {
              newCompositeNode(grammarAccess.getLiteralOperatorRule()); 
-            pushFollow(FOLLOW_ruleLiteralOperator_in_entryRuleLiteralOperator4560);
+            pushFollow(FOLLOW_ruleLiteralOperator_in_entryRuleLiteralOperator4470);
             iv_ruleLiteralOperator=ruleLiteralOperator();
 
             state._fsp--;
 
              current =iv_ruleLiteralOperator.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteralOperator4571); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteralOperator4481); 
 
             }
 
@@ -4819,7 +4721,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLiteralOperator"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1990:1: ruleLiteralOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'contains' | kw= 'startsWith' | kw= 'endsWith' ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1951:1: ruleLiteralOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'contains' | kw= 'startsWith' | kw= 'endsWith' ) ;
     public final AntlrDatatypeRuleToken ruleLiteralOperator() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4828,10 +4730,10 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1993:28: ( (kw= 'contains' | kw= 'startsWith' | kw= 'endsWith' ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1994:1: (kw= 'contains' | kw= 'startsWith' | kw= 'endsWith' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1954:28: ( (kw= 'contains' | kw= 'startsWith' | kw= 'endsWith' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1955:1: (kw= 'contains' | kw= 'startsWith' | kw= 'endsWith' )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1994:1: (kw= 'contains' | kw= 'startsWith' | kw= 'endsWith' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1955:1: (kw= 'contains' | kw= 'startsWith' | kw= 'endsWith' )
             int alt21=3;
             switch ( input.LA(1) ) {
             case 44:
@@ -4858,9 +4760,9 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             switch (alt21) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1995:2: kw= 'contains'
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1956:2: kw= 'contains'
                     {
-                    kw=(Token)match(input,44,FOLLOW_44_in_ruleLiteralOperator4609); 
+                    kw=(Token)match(input,44,FOLLOW_44_in_ruleLiteralOperator4519); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLiteralOperatorAccess().getContainsKeyword_0()); 
@@ -4869,9 +4771,9 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2002:2: kw= 'startsWith'
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1963:2: kw= 'startsWith'
                     {
-                    kw=(Token)match(input,45,FOLLOW_45_in_ruleLiteralOperator4628); 
+                    kw=(Token)match(input,45,FOLLOW_45_in_ruleLiteralOperator4538); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLiteralOperatorAccess().getStartsWithKeyword_1()); 
@@ -4880,9 +4782,9 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2009:2: kw= 'endsWith'
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1970:2: kw= 'endsWith'
                     {
-                    kw=(Token)match(input,46,FOLLOW_46_in_ruleLiteralOperator4647); 
+                    kw=(Token)match(input,46,FOLLOW_46_in_ruleLiteralOperator4557); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLiteralOperatorAccess().getEndsWithKeyword_2()); 
@@ -4911,7 +4813,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNegationOpartor"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2022:1: entryRuleNegationOpartor returns [String current=null] : iv_ruleNegationOpartor= ruleNegationOpartor EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1983:1: entryRuleNegationOpartor returns [String current=null] : iv_ruleNegationOpartor= ruleNegationOpartor EOF ;
     public final String entryRuleNegationOpartor() throws RecognitionException {
         String current = null;
 
@@ -4919,17 +4821,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2023:2: (iv_ruleNegationOpartor= ruleNegationOpartor EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2024:2: iv_ruleNegationOpartor= ruleNegationOpartor EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1984:2: (iv_ruleNegationOpartor= ruleNegationOpartor EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1985:2: iv_ruleNegationOpartor= ruleNegationOpartor EOF
             {
              newCompositeNode(grammarAccess.getNegationOpartorRule()); 
-            pushFollow(FOLLOW_ruleNegationOpartor_in_entryRuleNegationOpartor4688);
+            pushFollow(FOLLOW_ruleNegationOpartor_in_entryRuleNegationOpartor4598);
             iv_ruleNegationOpartor=ruleNegationOpartor();
 
             state._fsp--;
 
              current =iv_ruleNegationOpartor.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNegationOpartor4699); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNegationOpartor4609); 
 
             }
 
@@ -4947,7 +4849,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNegationOpartor"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2031:1: ruleNegationOpartor returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'not' ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1992:1: ruleNegationOpartor returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'not' ;
     public final AntlrDatatypeRuleToken ruleNegationOpartor() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4956,10 +4858,10 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2034:28: (kw= 'not' )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2036:2: kw= 'not'
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1995:28: (kw= 'not' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:1997:2: kw= 'not'
             {
-            kw=(Token)match(input,47,FOLLOW_47_in_ruleNegationOpartor4736); 
+            kw=(Token)match(input,47,FOLLOW_47_in_ruleNegationOpartor4646); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getNegationOpartorAccess().getNotKeyword()); 
@@ -4982,7 +4884,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComplexEventExpression"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2049:1: entryRuleComplexEventExpression returns [EObject current=null] : iv_ruleComplexEventExpression= ruleComplexEventExpression EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2010:1: entryRuleComplexEventExpression returns [EObject current=null] : iv_ruleComplexEventExpression= ruleComplexEventExpression EOF ;
     public final EObject entryRuleComplexEventExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4990,17 +4892,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2050:2: (iv_ruleComplexEventExpression= ruleComplexEventExpression EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2051:2: iv_ruleComplexEventExpression= ruleComplexEventExpression EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2011:2: (iv_ruleComplexEventExpression= ruleComplexEventExpression EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2012:2: iv_ruleComplexEventExpression= ruleComplexEventExpression EOF
             {
              newCompositeNode(grammarAccess.getComplexEventExpressionRule()); 
-            pushFollow(FOLLOW_ruleComplexEventExpression_in_entryRuleComplexEventExpression4775);
+            pushFollow(FOLLOW_ruleComplexEventExpression_in_entryRuleComplexEventExpression4685);
             iv_ruleComplexEventExpression=ruleComplexEventExpression();
 
             state._fsp--;
 
              current =iv_ruleComplexEventExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleComplexEventExpression4785); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleComplexEventExpression4695); 
 
             }
 
@@ -5018,7 +4920,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComplexEventExpression"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2058:1: ruleComplexEventExpression returns [EObject current=null] : this_FollowsExpression_0= ruleFollowsExpression ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2019:1: ruleComplexEventExpression returns [EObject current=null] : this_FollowsExpression_0= ruleFollowsExpression ;
     public final EObject ruleComplexEventExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5028,13 +4930,13 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2061:28: (this_FollowsExpression_0= ruleFollowsExpression )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2063:5: this_FollowsExpression_0= ruleFollowsExpression
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2022:28: (this_FollowsExpression_0= ruleFollowsExpression )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2024:5: this_FollowsExpression_0= ruleFollowsExpression
             {
              
                     newCompositeNode(grammarAccess.getComplexEventExpressionAccess().getFollowsExpressionParserRuleCall()); 
                 
-            pushFollow(FOLLOW_ruleFollowsExpression_in_ruleComplexEventExpression4831);
+            pushFollow(FOLLOW_ruleFollowsExpression_in_ruleComplexEventExpression4741);
             this_FollowsExpression_0=ruleFollowsExpression();
 
             state._fsp--;
@@ -5061,7 +4963,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFollowsExpression"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2079:1: entryRuleFollowsExpression returns [EObject current=null] : iv_ruleFollowsExpression= ruleFollowsExpression EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2040:1: entryRuleFollowsExpression returns [EObject current=null] : iv_ruleFollowsExpression= ruleFollowsExpression EOF ;
     public final EObject entryRuleFollowsExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5069,17 +4971,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2080:2: (iv_ruleFollowsExpression= ruleFollowsExpression EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2081:2: iv_ruleFollowsExpression= ruleFollowsExpression EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2041:2: (iv_ruleFollowsExpression= ruleFollowsExpression EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2042:2: iv_ruleFollowsExpression= ruleFollowsExpression EOF
             {
              newCompositeNode(grammarAccess.getFollowsExpressionRule()); 
-            pushFollow(FOLLOW_ruleFollowsExpression_in_entryRuleFollowsExpression4865);
+            pushFollow(FOLLOW_ruleFollowsExpression_in_entryRuleFollowsExpression4775);
             iv_ruleFollowsExpression=ruleFollowsExpression();
 
             state._fsp--;
 
              current =iv_ruleFollowsExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFollowsExpression4875); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFollowsExpression4785); 
 
             }
 
@@ -5097,7 +4999,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFollowsExpression"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2088:1: ruleFollowsExpression returns [EObject current=null] : ( ( (lv_firstEvent_0_0= ruleEventWithMultiplicity ) ) ( (lv_events_1_0= ruleEventWithFollowsOperator ) )* ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2049:1: ruleFollowsExpression returns [EObject current=null] : ( ( (lv_firstEvent_0_0= ruleEventWithMultiplicity ) ) ( (lv_events_1_0= ruleEventWithFollowsOperator ) )* ) ;
     public final EObject ruleFollowsExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5109,22 +5011,22 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2091:28: ( ( ( (lv_firstEvent_0_0= ruleEventWithMultiplicity ) ) ( (lv_events_1_0= ruleEventWithFollowsOperator ) )* ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2092:1: ( ( (lv_firstEvent_0_0= ruleEventWithMultiplicity ) ) ( (lv_events_1_0= ruleEventWithFollowsOperator ) )* )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2052:28: ( ( ( (lv_firstEvent_0_0= ruleEventWithMultiplicity ) ) ( (lv_events_1_0= ruleEventWithFollowsOperator ) )* ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2053:1: ( ( (lv_firstEvent_0_0= ruleEventWithMultiplicity ) ) ( (lv_events_1_0= ruleEventWithFollowsOperator ) )* )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2092:1: ( ( (lv_firstEvent_0_0= ruleEventWithMultiplicity ) ) ( (lv_events_1_0= ruleEventWithFollowsOperator ) )* )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2092:2: ( (lv_firstEvent_0_0= ruleEventWithMultiplicity ) ) ( (lv_events_1_0= ruleEventWithFollowsOperator ) )*
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2053:1: ( ( (lv_firstEvent_0_0= ruleEventWithMultiplicity ) ) ( (lv_events_1_0= ruleEventWithFollowsOperator ) )* )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2053:2: ( (lv_firstEvent_0_0= ruleEventWithMultiplicity ) ) ( (lv_events_1_0= ruleEventWithFollowsOperator ) )*
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2092:2: ( (lv_firstEvent_0_0= ruleEventWithMultiplicity ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2093:1: (lv_firstEvent_0_0= ruleEventWithMultiplicity )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2053:2: ( (lv_firstEvent_0_0= ruleEventWithMultiplicity ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2054:1: (lv_firstEvent_0_0= ruleEventWithMultiplicity )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2093:1: (lv_firstEvent_0_0= ruleEventWithMultiplicity )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2094:3: lv_firstEvent_0_0= ruleEventWithMultiplicity
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2054:1: (lv_firstEvent_0_0= ruleEventWithMultiplicity )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2055:3: lv_firstEvent_0_0= ruleEventWithMultiplicity
             {
              
             	        newCompositeNode(grammarAccess.getFollowsExpressionAccess().getFirstEventEventWithMultiplicityParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleEventWithMultiplicity_in_ruleFollowsExpression4921);
+            pushFollow(FOLLOW_ruleEventWithMultiplicity_in_ruleFollowsExpression4831);
             lv_firstEvent_0_0=ruleEventWithMultiplicity();
 
             state._fsp--;
@@ -5146,7 +5048,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2110:2: ( (lv_events_1_0= ruleEventWithFollowsOperator ) )*
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2071:2: ( (lv_events_1_0= ruleEventWithFollowsOperator ) )*
             loop22:
             do {
                 int alt22=2;
@@ -5159,15 +5061,15 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
                 switch (alt22) {
             	case 1 :
-            	    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2111:1: (lv_events_1_0= ruleEventWithFollowsOperator )
+            	    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2072:1: (lv_events_1_0= ruleEventWithFollowsOperator )
             	    {
-            	    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2111:1: (lv_events_1_0= ruleEventWithFollowsOperator )
-            	    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2112:3: lv_events_1_0= ruleEventWithFollowsOperator
+            	    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2072:1: (lv_events_1_0= ruleEventWithFollowsOperator )
+            	    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2073:3: lv_events_1_0= ruleEventWithFollowsOperator
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getFollowsExpressionAccess().getEventsEventWithFollowsOperatorParserRuleCall_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleEventWithFollowsOperator_in_ruleFollowsExpression4942);
+            	    pushFollow(FOLLOW_ruleEventWithFollowsOperator_in_ruleFollowsExpression4852);
             	    lv_events_1_0=ruleEventWithFollowsOperator();
 
             	    state._fsp--;
@@ -5216,7 +5118,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEventWithFollowsOperator"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2136:1: entryRuleEventWithFollowsOperator returns [EObject current=null] : iv_ruleEventWithFollowsOperator= ruleEventWithFollowsOperator EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2097:1: entryRuleEventWithFollowsOperator returns [EObject current=null] : iv_ruleEventWithFollowsOperator= ruleEventWithFollowsOperator EOF ;
     public final EObject entryRuleEventWithFollowsOperator() throws RecognitionException {
         EObject current = null;
 
@@ -5224,17 +5126,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2137:2: (iv_ruleEventWithFollowsOperator= ruleEventWithFollowsOperator EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2138:2: iv_ruleEventWithFollowsOperator= ruleEventWithFollowsOperator EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2098:2: (iv_ruleEventWithFollowsOperator= ruleEventWithFollowsOperator EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2099:2: iv_ruleEventWithFollowsOperator= ruleEventWithFollowsOperator EOF
             {
              newCompositeNode(grammarAccess.getEventWithFollowsOperatorRule()); 
-            pushFollow(FOLLOW_ruleEventWithFollowsOperator_in_entryRuleEventWithFollowsOperator4979);
+            pushFollow(FOLLOW_ruleEventWithFollowsOperator_in_entryRuleEventWithFollowsOperator4889);
             iv_ruleEventWithFollowsOperator=ruleEventWithFollowsOperator();
 
             state._fsp--;
 
              current =iv_ruleEventWithFollowsOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEventWithFollowsOperator4989); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEventWithFollowsOperator4899); 
 
             }
 
@@ -5252,7 +5154,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEventWithFollowsOperator"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2145:1: ruleEventWithFollowsOperator returns [EObject current=null] : ( ( (lv_operator_0_0= ruleFollowsOperator ) ) ( (lv_event_1_0= ruleEventWithMultiplicity ) ) ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2106:1: ruleEventWithFollowsOperator returns [EObject current=null] : ( ( (lv_operator_0_0= ruleFollowsOperator ) ) ( (lv_event_1_0= ruleEventWithMultiplicity ) ) ) ;
     public final EObject ruleEventWithFollowsOperator() throws RecognitionException {
         EObject current = null;
 
@@ -5264,22 +5166,22 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2148:28: ( ( ( (lv_operator_0_0= ruleFollowsOperator ) ) ( (lv_event_1_0= ruleEventWithMultiplicity ) ) ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2149:1: ( ( (lv_operator_0_0= ruleFollowsOperator ) ) ( (lv_event_1_0= ruleEventWithMultiplicity ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2109:28: ( ( ( (lv_operator_0_0= ruleFollowsOperator ) ) ( (lv_event_1_0= ruleEventWithMultiplicity ) ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2110:1: ( ( (lv_operator_0_0= ruleFollowsOperator ) ) ( (lv_event_1_0= ruleEventWithMultiplicity ) ) )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2149:1: ( ( (lv_operator_0_0= ruleFollowsOperator ) ) ( (lv_event_1_0= ruleEventWithMultiplicity ) ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2149:2: ( (lv_operator_0_0= ruleFollowsOperator ) ) ( (lv_event_1_0= ruleEventWithMultiplicity ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2110:1: ( ( (lv_operator_0_0= ruleFollowsOperator ) ) ( (lv_event_1_0= ruleEventWithMultiplicity ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2110:2: ( (lv_operator_0_0= ruleFollowsOperator ) ) ( (lv_event_1_0= ruleEventWithMultiplicity ) )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2149:2: ( (lv_operator_0_0= ruleFollowsOperator ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2150:1: (lv_operator_0_0= ruleFollowsOperator )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2110:2: ( (lv_operator_0_0= ruleFollowsOperator ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2111:1: (lv_operator_0_0= ruleFollowsOperator )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2150:1: (lv_operator_0_0= ruleFollowsOperator )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2151:3: lv_operator_0_0= ruleFollowsOperator
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2111:1: (lv_operator_0_0= ruleFollowsOperator )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2112:3: lv_operator_0_0= ruleFollowsOperator
             {
              
             	        newCompositeNode(grammarAccess.getEventWithFollowsOperatorAccess().getOperatorFollowsOperatorParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleFollowsOperator_in_ruleEventWithFollowsOperator5035);
+            pushFollow(FOLLOW_ruleFollowsOperator_in_ruleEventWithFollowsOperator4945);
             lv_operator_0_0=ruleFollowsOperator();
 
             state._fsp--;
@@ -5301,16 +5203,16 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2167:2: ( (lv_event_1_0= ruleEventWithMultiplicity ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2168:1: (lv_event_1_0= ruleEventWithMultiplicity )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2128:2: ( (lv_event_1_0= ruleEventWithMultiplicity ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2129:1: (lv_event_1_0= ruleEventWithMultiplicity )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2168:1: (lv_event_1_0= ruleEventWithMultiplicity )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2169:3: lv_event_1_0= ruleEventWithMultiplicity
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2129:1: (lv_event_1_0= ruleEventWithMultiplicity )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2130:3: lv_event_1_0= ruleEventWithMultiplicity
             {
              
             	        newCompositeNode(grammarAccess.getEventWithFollowsOperatorAccess().getEventEventWithMultiplicityParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleEventWithMultiplicity_in_ruleEventWithFollowsOperator5056);
+            pushFollow(FOLLOW_ruleEventWithMultiplicity_in_ruleEventWithFollowsOperator4966);
             lv_event_1_0=ruleEventWithMultiplicity();
 
             state._fsp--;
@@ -5353,7 +5255,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFollowsOperator"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2193:1: entryRuleFollowsOperator returns [EObject current=null] : iv_ruleFollowsOperator= ruleFollowsOperator EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2154:1: entryRuleFollowsOperator returns [EObject current=null] : iv_ruleFollowsOperator= ruleFollowsOperator EOF ;
     public final EObject entryRuleFollowsOperator() throws RecognitionException {
         EObject current = null;
 
@@ -5361,17 +5263,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2194:2: (iv_ruleFollowsOperator= ruleFollowsOperator EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2195:2: iv_ruleFollowsOperator= ruleFollowsOperator EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2155:2: (iv_ruleFollowsOperator= ruleFollowsOperator EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2156:2: iv_ruleFollowsOperator= ruleFollowsOperator EOF
             {
              newCompositeNode(grammarAccess.getFollowsOperatorRule()); 
-            pushFollow(FOLLOW_ruleFollowsOperator_in_entryRuleFollowsOperator5092);
+            pushFollow(FOLLOW_ruleFollowsOperator_in_entryRuleFollowsOperator5002);
             iv_ruleFollowsOperator=ruleFollowsOperator();
 
             state._fsp--;
 
              current =iv_ruleFollowsOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFollowsOperator5102); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFollowsOperator5012); 
 
             }
 
@@ -5389,7 +5291,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFollowsOperator"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2202:1: ruleFollowsOperator returns [EObject current=null] : (this_FollowsOperatorNoTW_0= ruleFollowsOperatorNoTW | this_FollowsOperatorViaTW_1= ruleFollowsOperatorViaTW ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2163:1: ruleFollowsOperator returns [EObject current=null] : (this_FollowsOperatorNoTW_0= ruleFollowsOperatorNoTW | this_FollowsOperatorViaTW_1= ruleFollowsOperatorViaTW ) ;
     public final EObject ruleFollowsOperator() throws RecognitionException {
         EObject current = null;
 
@@ -5401,10 +5303,10 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2205:28: ( (this_FollowsOperatorNoTW_0= ruleFollowsOperatorNoTW | this_FollowsOperatorViaTW_1= ruleFollowsOperatorViaTW ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2206:1: (this_FollowsOperatorNoTW_0= ruleFollowsOperatorNoTW | this_FollowsOperatorViaTW_1= ruleFollowsOperatorViaTW )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2166:28: ( (this_FollowsOperatorNoTW_0= ruleFollowsOperatorNoTW | this_FollowsOperatorViaTW_1= ruleFollowsOperatorViaTW ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2167:1: (this_FollowsOperatorNoTW_0= ruleFollowsOperatorNoTW | this_FollowsOperatorViaTW_1= ruleFollowsOperatorViaTW )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2206:1: (this_FollowsOperatorNoTW_0= ruleFollowsOperatorNoTW | this_FollowsOperatorViaTW_1= ruleFollowsOperatorViaTW )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2167:1: (this_FollowsOperatorNoTW_0= ruleFollowsOperatorNoTW | this_FollowsOperatorViaTW_1= ruleFollowsOperatorViaTW )
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -5422,12 +5324,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             }
             switch (alt23) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2207:5: this_FollowsOperatorNoTW_0= ruleFollowsOperatorNoTW
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2168:5: this_FollowsOperatorNoTW_0= ruleFollowsOperatorNoTW
                     {
                      
                             newCompositeNode(grammarAccess.getFollowsOperatorAccess().getFollowsOperatorNoTWParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleFollowsOperatorNoTW_in_ruleFollowsOperator5149);
+                    pushFollow(FOLLOW_ruleFollowsOperatorNoTW_in_ruleFollowsOperator5059);
                     this_FollowsOperatorNoTW_0=ruleFollowsOperatorNoTW();
 
                     state._fsp--;
@@ -5440,12 +5342,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2217:5: this_FollowsOperatorViaTW_1= ruleFollowsOperatorViaTW
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2178:5: this_FollowsOperatorViaTW_1= ruleFollowsOperatorViaTW
                     {
                      
                             newCompositeNode(grammarAccess.getFollowsOperatorAccess().getFollowsOperatorViaTWParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleFollowsOperatorViaTW_in_ruleFollowsOperator5176);
+                    pushFollow(FOLLOW_ruleFollowsOperatorViaTW_in_ruleFollowsOperator5086);
                     this_FollowsOperatorViaTW_1=ruleFollowsOperatorViaTW();
 
                     state._fsp--;
@@ -5478,7 +5380,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFollowsOperatorNoTW"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2233:1: entryRuleFollowsOperatorNoTW returns [EObject current=null] : iv_ruleFollowsOperatorNoTW= ruleFollowsOperatorNoTW EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2194:1: entryRuleFollowsOperatorNoTW returns [EObject current=null] : iv_ruleFollowsOperatorNoTW= ruleFollowsOperatorNoTW EOF ;
     public final EObject entryRuleFollowsOperatorNoTW() throws RecognitionException {
         EObject current = null;
 
@@ -5486,17 +5388,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2234:2: (iv_ruleFollowsOperatorNoTW= ruleFollowsOperatorNoTW EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2235:2: iv_ruleFollowsOperatorNoTW= ruleFollowsOperatorNoTW EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2195:2: (iv_ruleFollowsOperatorNoTW= ruleFollowsOperatorNoTW EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2196:2: iv_ruleFollowsOperatorNoTW= ruleFollowsOperatorNoTW EOF
             {
              newCompositeNode(grammarAccess.getFollowsOperatorNoTWRule()); 
-            pushFollow(FOLLOW_ruleFollowsOperatorNoTW_in_entryRuleFollowsOperatorNoTW5211);
+            pushFollow(FOLLOW_ruleFollowsOperatorNoTW_in_entryRuleFollowsOperatorNoTW5121);
             iv_ruleFollowsOperatorNoTW=ruleFollowsOperatorNoTW();
 
             state._fsp--;
 
              current =iv_ruleFollowsOperatorNoTW; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFollowsOperatorNoTW5221); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFollowsOperatorNoTW5131); 
 
             }
 
@@ -5514,7 +5416,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFollowsOperatorNoTW"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2242:1: ruleFollowsOperatorNoTW returns [EObject current=null] : ( () otherlv_1= '->' ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2203:1: ruleFollowsOperatorNoTW returns [EObject current=null] : ( () otherlv_1= '->' ) ;
     public final EObject ruleFollowsOperatorNoTW() throws RecognitionException {
         EObject current = null;
 
@@ -5523,14 +5425,14 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2245:28: ( ( () otherlv_1= '->' ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2246:1: ( () otherlv_1= '->' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2206:28: ( ( () otherlv_1= '->' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2207:1: ( () otherlv_1= '->' )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2246:1: ( () otherlv_1= '->' )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2246:2: () otherlv_1= '->'
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2207:1: ( () otherlv_1= '->' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2207:2: () otherlv_1= '->'
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2246:2: ()
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2247:5: 
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2207:2: ()
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2208:5: 
             {
 
                     current = forceCreateModelElement(
@@ -5540,7 +5442,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,48,FOLLOW_48_in_ruleFollowsOperatorNoTW5267); 
+            otherlv_1=(Token)match(input,48,FOLLOW_48_in_ruleFollowsOperatorNoTW5177); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getFollowsOperatorNoTWAccess().getHyphenMinusGreaterThanSignKeyword_1());
                 
@@ -5565,7 +5467,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFollowsOperatorViaTW"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2264:1: entryRuleFollowsOperatorViaTW returns [EObject current=null] : iv_ruleFollowsOperatorViaTW= ruleFollowsOperatorViaTW EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2225:1: entryRuleFollowsOperatorViaTW returns [EObject current=null] : iv_ruleFollowsOperatorViaTW= ruleFollowsOperatorViaTW EOF ;
     public final EObject entryRuleFollowsOperatorViaTW() throws RecognitionException {
         EObject current = null;
 
@@ -5573,17 +5475,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2265:2: (iv_ruleFollowsOperatorViaTW= ruleFollowsOperatorViaTW EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2266:2: iv_ruleFollowsOperatorViaTW= ruleFollowsOperatorViaTW EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2226:2: (iv_ruleFollowsOperatorViaTW= ruleFollowsOperatorViaTW EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2227:2: iv_ruleFollowsOperatorViaTW= ruleFollowsOperatorViaTW EOF
             {
              newCompositeNode(grammarAccess.getFollowsOperatorViaTWRule()); 
-            pushFollow(FOLLOW_ruleFollowsOperatorViaTW_in_entryRuleFollowsOperatorViaTW5303);
+            pushFollow(FOLLOW_ruleFollowsOperatorViaTW_in_entryRuleFollowsOperatorViaTW5213);
             iv_ruleFollowsOperatorViaTW=ruleFollowsOperatorViaTW();
 
             state._fsp--;
 
              current =iv_ruleFollowsOperatorViaTW; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFollowsOperatorViaTW5313); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFollowsOperatorViaTW5223); 
 
             }
 
@@ -5601,7 +5503,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFollowsOperatorViaTW"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2273:1: ruleFollowsOperatorViaTW returns [EObject current=null] : (otherlv_0= '-[' ( (lv_timewindow_1_0= RULE_INT ) ) otherlv_2= ']->' ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2234:1: ruleFollowsOperatorViaTW returns [EObject current=null] : (otherlv_0= '-[' ( (lv_timewindow_1_0= RULE_INT ) ) otherlv_2= ']->' ) ;
     public final EObject ruleFollowsOperatorViaTW() throws RecognitionException {
         EObject current = null;
 
@@ -5612,23 +5514,23 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2276:28: ( (otherlv_0= '-[' ( (lv_timewindow_1_0= RULE_INT ) ) otherlv_2= ']->' ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2277:1: (otherlv_0= '-[' ( (lv_timewindow_1_0= RULE_INT ) ) otherlv_2= ']->' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2237:28: ( (otherlv_0= '-[' ( (lv_timewindow_1_0= RULE_INT ) ) otherlv_2= ']->' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2238:1: (otherlv_0= '-[' ( (lv_timewindow_1_0= RULE_INT ) ) otherlv_2= ']->' )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2277:1: (otherlv_0= '-[' ( (lv_timewindow_1_0= RULE_INT ) ) otherlv_2= ']->' )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2277:3: otherlv_0= '-[' ( (lv_timewindow_1_0= RULE_INT ) ) otherlv_2= ']->'
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2238:1: (otherlv_0= '-[' ( (lv_timewindow_1_0= RULE_INT ) ) otherlv_2= ']->' )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2238:3: otherlv_0= '-[' ( (lv_timewindow_1_0= RULE_INT ) ) otherlv_2= ']->'
             {
-            otherlv_0=(Token)match(input,49,FOLLOW_49_in_ruleFollowsOperatorViaTW5350); 
+            otherlv_0=(Token)match(input,49,FOLLOW_49_in_ruleFollowsOperatorViaTW5260); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getFollowsOperatorViaTWAccess().getHyphenMinusLeftSquareBracketKeyword_0());
                 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2281:1: ( (lv_timewindow_1_0= RULE_INT ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2282:1: (lv_timewindow_1_0= RULE_INT )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2242:1: ( (lv_timewindow_1_0= RULE_INT ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2243:1: (lv_timewindow_1_0= RULE_INT )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2282:1: (lv_timewindow_1_0= RULE_INT )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2283:3: lv_timewindow_1_0= RULE_INT
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2243:1: (lv_timewindow_1_0= RULE_INT )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2244:3: lv_timewindow_1_0= RULE_INT
             {
-            lv_timewindow_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFollowsOperatorViaTW5367); 
+            lv_timewindow_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFollowsOperatorViaTW5277); 
 
             			newLeafNode(lv_timewindow_1_0, grammarAccess.getFollowsOperatorViaTWAccess().getTimewindowINTTerminalRuleCall_1_0()); 
             		
@@ -5648,7 +5550,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,50,FOLLOW_50_in_ruleFollowsOperatorViaTW5384); 
+            otherlv_2=(Token)match(input,50,FOLLOW_50_in_ruleFollowsOperatorViaTW5294); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getFollowsOperatorViaTWAccess().getRightSquareBracketHyphenMinusGreaterThanSignKeyword_2());
                 
@@ -5673,7 +5575,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEventWithMultiplicity"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2311:1: entryRuleEventWithMultiplicity returns [EObject current=null] : iv_ruleEventWithMultiplicity= ruleEventWithMultiplicity EOF ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2272:1: entryRuleEventWithMultiplicity returns [EObject current=null] : iv_ruleEventWithMultiplicity= ruleEventWithMultiplicity EOF ;
     public final EObject entryRuleEventWithMultiplicity() throws RecognitionException {
         EObject current = null;
 
@@ -5681,17 +5583,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2312:2: (iv_ruleEventWithMultiplicity= ruleEventWithMultiplicity EOF )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2313:2: iv_ruleEventWithMultiplicity= ruleEventWithMultiplicity EOF
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2273:2: (iv_ruleEventWithMultiplicity= ruleEventWithMultiplicity EOF )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2274:2: iv_ruleEventWithMultiplicity= ruleEventWithMultiplicity EOF
             {
              newCompositeNode(grammarAccess.getEventWithMultiplicityRule()); 
-            pushFollow(FOLLOW_ruleEventWithMultiplicity_in_entryRuleEventWithMultiplicity5420);
+            pushFollow(FOLLOW_ruleEventWithMultiplicity_in_entryRuleEventWithMultiplicity5330);
             iv_ruleEventWithMultiplicity=ruleEventWithMultiplicity();
 
             state._fsp--;
 
              current =iv_ruleEventWithMultiplicity; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEventWithMultiplicity5430); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEventWithMultiplicity5340); 
 
             }
 
@@ -5709,7 +5611,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEventWithMultiplicity"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2320:1: ruleEventWithMultiplicity returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}' )? ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2281:1: ruleEventWithMultiplicity returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}' )? ) ;
     public final EObject ruleEventWithMultiplicity() throws RecognitionException {
         EObject current = null;
 
@@ -5721,24 +5623,24 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2323:28: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}' )? ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2324:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}' )? )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2284:28: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}' )? ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2285:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}' )? )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2324:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}' )? )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2324:2: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}' )?
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2285:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}' )? )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2285:2: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}' )?
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2324:2: ( (otherlv_0= RULE_ID ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2325:1: (otherlv_0= RULE_ID )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2285:2: ( (otherlv_0= RULE_ID ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2286:1: (otherlv_0= RULE_ID )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2325:1: (otherlv_0= RULE_ID )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2326:3: otherlv_0= RULE_ID
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2286:1: (otherlv_0= RULE_ID )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2287:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getEventWithMultiplicityRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEventWithMultiplicity5475); 
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEventWithMultiplicity5385); 
 
             		newLeafNode(otherlv_0, grammarAccess.getEventWithMultiplicityAccess().getEventEventParamWithTypeCrossReference_0_0()); 
             	
@@ -5748,7 +5650,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2337:2: (otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}' )?
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2298:2: (otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}' )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -5757,19 +5659,19 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             }
             switch (alt24) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2337:4: otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}'
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2298:4: otherlv_1= '{' ( (lv_multiplicity_2_0= RULE_INT ) ) otherlv_3= '}'
                     {
-                    otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleEventWithMultiplicity5488); 
+                    otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleEventWithMultiplicity5398); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getEventWithMultiplicityAccess().getLeftCurlyBracketKeyword_1_0());
                         
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2341:1: ( (lv_multiplicity_2_0= RULE_INT ) )
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2342:1: (lv_multiplicity_2_0= RULE_INT )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2302:1: ( (lv_multiplicity_2_0= RULE_INT ) )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2303:1: (lv_multiplicity_2_0= RULE_INT )
                     {
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2342:1: (lv_multiplicity_2_0= RULE_INT )
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2343:3: lv_multiplicity_2_0= RULE_INT
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2303:1: (lv_multiplicity_2_0= RULE_INT )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2304:3: lv_multiplicity_2_0= RULE_INT
                     {
-                    lv_multiplicity_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleEventWithMultiplicity5505); 
+                    lv_multiplicity_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleEventWithMultiplicity5415); 
 
                     			newLeafNode(lv_multiplicity_2_0, grammarAccess.getEventWithMultiplicityAccess().getMultiplicityINTTerminalRuleCall_1_1_0()); 
                     		
@@ -5789,7 +5691,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleEventWithMultiplicity5522); 
+                    otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleEventWithMultiplicity5432); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getEventWithMultiplicityAccess().getRightCurlyBracketKeyword_1_2());
                         
@@ -5820,7 +5722,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIQPatternChangeType"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2371:1: ruleIQPatternChangeType returns [Enumerator current=null] : ( (enumLiteral_0= 'FOUND' ) | (enumLiteral_1= 'LOST' ) ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2332:1: ruleIQPatternChangeType returns [Enumerator current=null] : ( (enumLiteral_0= 'FOUND' ) | (enumLiteral_1= 'LOST' ) ) ;
     public final Enumerator ruleIQPatternChangeType() throws RecognitionException {
         Enumerator current = null;
 
@@ -5829,10 +5731,10 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2373:28: ( ( (enumLiteral_0= 'FOUND' ) | (enumLiteral_1= 'LOST' ) ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2374:1: ( (enumLiteral_0= 'FOUND' ) | (enumLiteral_1= 'LOST' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2334:28: ( ( (enumLiteral_0= 'FOUND' ) | (enumLiteral_1= 'LOST' ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2335:1: ( (enumLiteral_0= 'FOUND' ) | (enumLiteral_1= 'LOST' ) )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2374:1: ( (enumLiteral_0= 'FOUND' ) | (enumLiteral_1= 'LOST' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2335:1: ( (enumLiteral_0= 'FOUND' ) | (enumLiteral_1= 'LOST' ) )
             int alt25=2;
             int LA25_0 = input.LA(1);
 
@@ -5850,12 +5752,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             }
             switch (alt25) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2374:2: (enumLiteral_0= 'FOUND' )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2335:2: (enumLiteral_0= 'FOUND' )
                     {
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2374:2: (enumLiteral_0= 'FOUND' )
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2374:4: enumLiteral_0= 'FOUND'
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2335:2: (enumLiteral_0= 'FOUND' )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2335:4: enumLiteral_0= 'FOUND'
                     {
-                    enumLiteral_0=(Token)match(input,51,FOLLOW_51_in_ruleIQPatternChangeType5574); 
+                    enumLiteral_0=(Token)match(input,51,FOLLOW_51_in_ruleIQPatternChangeType5484); 
 
                             current = grammarAccess.getIQPatternChangeTypeAccess().getFOUNDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getIQPatternChangeTypeAccess().getFOUNDEnumLiteralDeclaration_0()); 
@@ -5867,12 +5769,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2380:6: (enumLiteral_1= 'LOST' )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2341:6: (enumLiteral_1= 'LOST' )
                     {
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2380:6: (enumLiteral_1= 'LOST' )
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2380:8: enumLiteral_1= 'LOST'
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2341:6: (enumLiteral_1= 'LOST' )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2341:8: enumLiteral_1= 'LOST'
                     {
-                    enumLiteral_1=(Token)match(input,52,FOLLOW_52_in_ruleIQPatternChangeType5591); 
+                    enumLiteral_1=(Token)match(input,52,FOLLOW_52_in_ruleIQPatternChangeType5501); 
 
                             current = grammarAccess.getIQPatternChangeTypeAccess().getLOSTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getIQPatternChangeTypeAccess().getLOSTEnumLiteralDeclaration_1()); 
@@ -5904,7 +5806,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContext"
-    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2390:1: ruleContext returns [Enumerator current=null] : ( (enumLiteral_0= 'Chronicle' ) | (enumLiteral_1= 'Recent' ) | (enumLiteral_2= 'Unrestricted' ) ) ;
+    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2351:1: ruleContext returns [Enumerator current=null] : ( (enumLiteral_0= 'Chronicle' ) | (enumLiteral_1= 'Recent' ) | (enumLiteral_2= 'Unrestricted' ) ) ;
     public final Enumerator ruleContext() throws RecognitionException {
         Enumerator current = null;
 
@@ -5914,10 +5816,10 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2392:28: ( ( (enumLiteral_0= 'Chronicle' ) | (enumLiteral_1= 'Recent' ) | (enumLiteral_2= 'Unrestricted' ) ) )
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2393:1: ( (enumLiteral_0= 'Chronicle' ) | (enumLiteral_1= 'Recent' ) | (enumLiteral_2= 'Unrestricted' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2353:28: ( ( (enumLiteral_0= 'Chronicle' ) | (enumLiteral_1= 'Recent' ) | (enumLiteral_2= 'Unrestricted' ) ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2354:1: ( (enumLiteral_0= 'Chronicle' ) | (enumLiteral_1= 'Recent' ) | (enumLiteral_2= 'Unrestricted' ) )
             {
-            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2393:1: ( (enumLiteral_0= 'Chronicle' ) | (enumLiteral_1= 'Recent' ) | (enumLiteral_2= 'Unrestricted' ) )
+            // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2354:1: ( (enumLiteral_0= 'Chronicle' ) | (enumLiteral_1= 'Recent' ) | (enumLiteral_2= 'Unrestricted' ) )
             int alt26=3;
             switch ( input.LA(1) ) {
             case 53:
@@ -5944,12 +5846,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
 
             switch (alt26) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2393:2: (enumLiteral_0= 'Chronicle' )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2354:2: (enumLiteral_0= 'Chronicle' )
                     {
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2393:2: (enumLiteral_0= 'Chronicle' )
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2393:4: enumLiteral_0= 'Chronicle'
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2354:2: (enumLiteral_0= 'Chronicle' )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2354:4: enumLiteral_0= 'Chronicle'
                     {
-                    enumLiteral_0=(Token)match(input,53,FOLLOW_53_in_ruleContext5636); 
+                    enumLiteral_0=(Token)match(input,53,FOLLOW_53_in_ruleContext5546); 
 
                             current = grammarAccess.getContextAccess().getChronicleEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getContextAccess().getChronicleEnumLiteralDeclaration_0()); 
@@ -5961,12 +5863,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2399:6: (enumLiteral_1= 'Recent' )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2360:6: (enumLiteral_1= 'Recent' )
                     {
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2399:6: (enumLiteral_1= 'Recent' )
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2399:8: enumLiteral_1= 'Recent'
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2360:6: (enumLiteral_1= 'Recent' )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2360:8: enumLiteral_1= 'Recent'
                     {
-                    enumLiteral_1=(Token)match(input,54,FOLLOW_54_in_ruleContext5653); 
+                    enumLiteral_1=(Token)match(input,54,FOLLOW_54_in_ruleContext5563); 
 
                             current = grammarAccess.getContextAccess().getRecentEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getContextAccess().getRecentEnumLiteralDeclaration_1()); 
@@ -5978,12 +5880,12 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2405:6: (enumLiteral_2= 'Unrestricted' )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2366:6: (enumLiteral_2= 'Unrestricted' )
                     {
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2405:6: (enumLiteral_2= 'Unrestricted' )
-                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2405:8: enumLiteral_2= 'Unrestricted'
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2366:6: (enumLiteral_2= 'Unrestricted' )
+                    // ../hu.bme.mit.incquery.edl/src-gen/hu/bme/mit/incquery/vedl/parser/antlr/internal/InternalEdl.g:2366:8: enumLiteral_2= 'Unrestricted'
                     {
-                    enumLiteral_2=(Token)match(input,55,FOLLOW_55_in_ruleContext5670); 
+                    enumLiteral_2=(Token)match(input,55,FOLLOW_55_in_ruleContext5580); 
 
                             current = grammarAccess.getContextAccess().getUnrestrictedEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getContextAccess().getUnrestrictedEnumLiteralDeclaration_2()); 
@@ -6094,7 +5996,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
         "\1\45\2\4\2\43\4\4\1\43\1\44\1\43\1\44\1\4\2\uffff\1\4\2\uffff"+
         "\2\44";
     static final String DFA18_acceptS =
-        "\16\uffff\1\2\1\1\1\uffff\1\4\1\3\2\uffff";
+        "\16\uffff\1\1\1\2\1\uffff\1\3\1\4\2\uffff";
     static final String DFA18_specialS =
         "\25\uffff}>";
     static final String[] DFA18_transitionS = {
@@ -6108,17 +6010,17 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             "\1\13",
             "\1\14",
             "\1\6",
-            "\1\15\21\uffff\1\17\5\uffff\1\16",
+            "\1\15\21\uffff\1\16\5\uffff\1\17",
             "\1\10",
-            "\1\20\21\uffff\1\22\5\uffff\1\21",
+            "\1\20\21\uffff\1\21\5\uffff\1\22",
             "\1\23",
             "",
             "",
             "\1\24",
             "",
             "",
-            "\1\17\5\uffff\1\16",
-            "\1\22\5\uffff\1\21"
+            "\1\16\5\uffff\1\17",
+            "\1\21\5\uffff\1\22"
     };
 
     static final short[] DFA18_eot = DFA.unpackEncodedString(DFA18_eotS);
@@ -6151,7 +6053,7 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
             this.transition = DFA18_transition;
         }
         public String getDescription() {
-            return "1464:1: (this_OpenOpen_0= ruleOpenOpen | this_OpenClosed_1= ruleOpenClosed | this_ClosedClosed_2= ruleClosedClosed | this_ClosedOpen_3= ruleClosedOpen )";
+            return "1425:1: (this_OpenOpen_0= ruleOpenOpen | this_OpenClosed_1= ruleOpenClosed | this_ClosedClosed_2= ruleClosedClosed | this_ClosedOpen_3= ruleClosedOpen )";
         }
     }
  
@@ -6212,11 +6114,11 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_20_in_ruleAtomicEvent1463 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_17_in_ruleAtomicEvent1475 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_21_in_ruleAtomicEvent1487 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleAtomicEvent1499 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicEvent1519 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleAtomicEvent1531 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleAtomicEvent1543 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleAtomicEvent1560 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_22_in_ruleAtomicEvent1499 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleAtomicEvent1516 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleAtomicEvent1533 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleAtomicEvent1545 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicEvent1565 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_24_in_ruleAtomicEvent1577 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_17_in_ruleAtomicEvent1589 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleParameterFilter_in_ruleAtomicEvent1610 = new BitSet(new long[]{0x0000000000040020L});
@@ -6229,163 +6131,160 @@ public class InternalEdlParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_20_in_ruleIQPatternEvent1752 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_17_in_ruleIQPatternEvent1764 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_26_in_ruleIQPatternEvent1776 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleIQPatternEvent1788 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleIQPattern_in_ruleIQPatternEvent1809 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleIQPatternEvent1821 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleIQPatternEvent1833 = new BitSet(new long[]{0x0018000000000000L});
-    public static final BitSet FOLLOW_ruleIQPatternChangeType_in_ruleIQPatternEvent1854 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleIQPatternEvent1866 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComplexEvent_in_entryRuleComplexEvent1902 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleComplexEvent1912 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAnnotations_in_ruleComplexEvent1958 = new BitSet(new long[]{0x0000000390000000L});
-    public static final BitSet FOLLOW_28_in_ruleComplexEvent1971 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleComplexEvent1988 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_ruleCEParamlist_in_ruleComplexEvent2014 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleComplexEvent2026 = new BitSet(new long[]{0x0000000000040020L});
-    public static final BitSet FOLLOW_ruleComplexEventExpression_in_ruleComplexEvent2047 = new BitSet(new long[]{0x0000000000040020L});
-    public static final BitSet FOLLOW_18_in_ruleComplexEvent2060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCEParamlist_in_entryRuleCEParamlist2096 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCEParamlist2106 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleCEParamlist2152 = new BitSet(new long[]{0x0000000040000020L});
-    public static final BitSet FOLLOW_ruleEventParamWithType_in_ruleCEParamlist2173 = new BitSet(new long[]{0x0000000040000020L});
-    public static final BitSet FOLLOW_30_in_ruleCEParamlist2186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventParamWithType_in_entryRuleEventParamWithType2222 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEventParamWithType2232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEventParamWithType2274 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleEventParamWithType2291 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEventParamWithType2311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParameterFilter_in_entryRuleParameterFilter2347 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleParameterFilter2357 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleParameterFilter2399 = new BitSet(new long[]{0x0000FFC400000000L});
-    public static final BitSet FOLLOW_ruleParameterFilterRule_in_ruleParameterFilter2425 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIQPattern_in_entryRuleIQPattern2461 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIQPattern2471 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleIQPattern2512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAnnotations_in_entryRuleAnnotations2552 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAnnotations2562 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleContextAnnotation_in_ruleAnnotations2609 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSamplingAnnotation_in_ruleAnnotations2636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePriorityAnnotation_in_ruleAnnotations2663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleContextAnnotation_in_entryRuleContextAnnotation2698 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleContextAnnotation2708 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleContextAnnotation2745 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleContextAnnotation2757 = new BitSet(new long[]{0x00E0000000000000L});
-    public static final BitSet FOLLOW_ruleContext_in_ruleContextAnnotation2778 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleContextAnnotation2790 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSamplingAnnotation_in_entryRuleSamplingAnnotation2826 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSamplingAnnotation2836 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleSamplingAnnotation2873 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleSamplingAnnotation2885 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSamplingAnnotation2902 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleSamplingAnnotation2919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePriorityAnnotation_in_entryRulePriorityAnnotation2955 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePriorityAnnotation2965 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rulePriorityAnnotation3002 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_rulePriorityAnnotation3014 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_rulePriorityAnnotation3031 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_rulePriorityAnnotation3048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParameterFilterRule_in_entryRuleParameterFilterRule3084 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleParameterFilterRule3094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRangeFilter_in_ruleParameterFilterRule3141 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumericFilter_in_ruleParameterFilterRule3168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteralFilter_in_ruleParameterFilterRule3195 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRangeFilter_in_entryRuleRangeFilter3230 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRangeFilter3240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNegationOpartor_in_ruleRangeFilter3286 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleRangeFilter3299 = new BitSet(new long[]{0x0000002020000000L});
-    public static final BitSet FOLLOW_ruleRange_in_ruleRangeFilter3320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRange_in_entryRuleRange3356 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRange3366 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpenOpen_in_ruleRange3413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpenClosed_in_ruleRange3440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClosedClosed_in_ruleRange3467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClosedOpen_in_ruleRange3494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpenOpen_in_entryRuleOpenOpen3529 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOpenOpen3539 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleOpenOpen3576 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleOpenOpen3597 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleOpenOpen3609 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleOpenOpen3630 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleOpenOpen3642 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpenClosed_in_entryRuleOpenClosed3678 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOpenClosed3688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleOpenClosed3725 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleOpenClosed3746 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleOpenClosed3758 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleOpenClosed3779 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleOpenClosed3791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClosedClosed_in_entryRuleClosedClosed3827 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleClosedClosed3837 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleClosedClosed3874 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleClosedClosed3895 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleClosedClosed3907 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleClosedClosed3928 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleClosedClosed3940 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClosedOpen_in_entryRuleClosedOpen3976 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleClosedOpen3986 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleClosedOpen4023 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleClosedOpen4044 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleClosedOpen4056 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleClosedOpen4077 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleClosedOpen4089 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumericFilter_in_entryRuleNumericFilter4125 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumericFilter4135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumericOperator_in_ruleNumericFilter4181 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleNumericFilter4202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumericOperator_in_entryRuleNumericOperator4239 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumericOperator4250 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleNumericOperator4288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleNumericOperator4307 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleNumericOperator4326 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleNumericOperator4345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleNumericOperator4364 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_ruleNumericOperator4383 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteralFilter_in_entryRuleLiteralFilter4423 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLiteralFilter4433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNegationOpartor_in_ruleLiteralFilter4479 = new BitSet(new long[]{0x0000FFC400000000L});
-    public static final BitSet FOLLOW_ruleLiteralOperator_in_ruleLiteralFilter4501 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleLiteralFilter4518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteralOperator_in_entryRuleLiteralOperator4560 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLiteralOperator4571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_ruleLiteralOperator4609 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleLiteralOperator4628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_ruleLiteralOperator4647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNegationOpartor_in_entryRuleNegationOpartor4688 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNegationOpartor4699 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_ruleNegationOpartor4736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComplexEventExpression_in_entryRuleComplexEventExpression4775 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleComplexEventExpression4785 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFollowsExpression_in_ruleComplexEventExpression4831 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFollowsExpression_in_entryRuleFollowsExpression4865 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFollowsExpression4875 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventWithMultiplicity_in_ruleFollowsExpression4921 = new BitSet(new long[]{0x0003000000000002L});
-    public static final BitSet FOLLOW_ruleEventWithFollowsOperator_in_ruleFollowsExpression4942 = new BitSet(new long[]{0x0003000000000002L});
-    public static final BitSet FOLLOW_ruleEventWithFollowsOperator_in_entryRuleEventWithFollowsOperator4979 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEventWithFollowsOperator4989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFollowsOperator_in_ruleEventWithFollowsOperator5035 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleEventWithMultiplicity_in_ruleEventWithFollowsOperator5056 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFollowsOperator_in_entryRuleFollowsOperator5092 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFollowsOperator5102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFollowsOperatorNoTW_in_ruleFollowsOperator5149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFollowsOperatorViaTW_in_ruleFollowsOperator5176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFollowsOperatorNoTW_in_entryRuleFollowsOperatorNoTW5211 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFollowsOperatorNoTW5221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_ruleFollowsOperatorNoTW5267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFollowsOperatorViaTW_in_entryRuleFollowsOperatorViaTW5303 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFollowsOperatorViaTW5313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_ruleFollowsOperatorViaTW5350 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleFollowsOperatorViaTW5367 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_50_in_ruleFollowsOperatorViaTW5384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventWithMultiplicity_in_entryRuleEventWithMultiplicity5420 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEventWithMultiplicity5430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEventWithMultiplicity5475 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_17_in_ruleEventWithMultiplicity5488 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleEventWithMultiplicity5505 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleEventWithMultiplicity5522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_ruleIQPatternChangeType5574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_ruleIQPatternChangeType5591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_ruleContext5636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleContext5653 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleContext5670 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleIQPatternEvent1788 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleIQPatternEvent1805 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleIQPatternEvent1822 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleIQPatternEvent1834 = new BitSet(new long[]{0x0018000000000000L});
+    public static final BitSet FOLLOW_ruleIQPatternChangeType_in_ruleIQPatternEvent1855 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleIQPatternEvent1867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleComplexEvent_in_entryRuleComplexEvent1903 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleComplexEvent1913 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAnnotations_in_ruleComplexEvent1959 = new BitSet(new long[]{0x0000000390000000L});
+    public static final BitSet FOLLOW_28_in_ruleComplexEvent1972 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleComplexEvent1989 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_ruleCEParamlist_in_ruleComplexEvent2015 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleComplexEvent2027 = new BitSet(new long[]{0x0000000000040020L});
+    public static final BitSet FOLLOW_ruleComplexEventExpression_in_ruleComplexEvent2048 = new BitSet(new long[]{0x0000000000040020L});
+    public static final BitSet FOLLOW_18_in_ruleComplexEvent2061 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCEParamlist_in_entryRuleCEParamlist2097 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCEParamlist2107 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_ruleCEParamlist2153 = new BitSet(new long[]{0x0000000040000020L});
+    public static final BitSet FOLLOW_ruleEventParamWithType_in_ruleCEParamlist2174 = new BitSet(new long[]{0x0000000040000020L});
+    public static final BitSet FOLLOW_30_in_ruleCEParamlist2187 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventParamWithType_in_entryRuleEventParamWithType2223 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEventParamWithType2233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEventParamWithType2275 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleEventParamWithType2292 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEventParamWithType2312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParameterFilter_in_entryRuleParameterFilter2348 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleParameterFilter2358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleParameterFilter2400 = new BitSet(new long[]{0x0000FFC400000000L});
+    public static final BitSet FOLLOW_ruleParameterFilterRule_in_ruleParameterFilter2426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAnnotations_in_entryRuleAnnotations2462 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAnnotations2472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleContextAnnotation_in_ruleAnnotations2519 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSamplingAnnotation_in_ruleAnnotations2546 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePriorityAnnotation_in_ruleAnnotations2573 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleContextAnnotation_in_entryRuleContextAnnotation2608 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleContextAnnotation2618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleContextAnnotation2655 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleContextAnnotation2667 = new BitSet(new long[]{0x00E0000000000000L});
+    public static final BitSet FOLLOW_ruleContext_in_ruleContextAnnotation2688 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleContextAnnotation2700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSamplingAnnotation_in_entryRuleSamplingAnnotation2736 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSamplingAnnotation2746 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_ruleSamplingAnnotation2783 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleSamplingAnnotation2795 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSamplingAnnotation2812 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleSamplingAnnotation2829 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePriorityAnnotation_in_entryRulePriorityAnnotation2865 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePriorityAnnotation2875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rulePriorityAnnotation2912 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_rulePriorityAnnotation2924 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_rulePriorityAnnotation2941 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_rulePriorityAnnotation2958 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParameterFilterRule_in_entryRuleParameterFilterRule2994 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleParameterFilterRule3004 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRangeFilter_in_ruleParameterFilterRule3051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumericFilter_in_ruleParameterFilterRule3078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteralFilter_in_ruleParameterFilterRule3105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRangeFilter_in_entryRuleRangeFilter3140 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRangeFilter3150 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNegationOpartor_in_ruleRangeFilter3196 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_34_in_ruleRangeFilter3209 = new BitSet(new long[]{0x0000002020000000L});
+    public static final BitSet FOLLOW_ruleRange_in_ruleRangeFilter3230 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRange_in_entryRuleRange3266 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRange3276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpenOpen_in_ruleRange3323 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpenClosed_in_ruleRange3350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClosedClosed_in_ruleRange3377 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClosedOpen_in_ruleRange3404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpenOpen_in_entryRuleOpenOpen3439 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOpenOpen3449 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_ruleOpenOpen3486 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleOpenOpen3507 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleOpenOpen3519 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleOpenOpen3540 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleOpenOpen3552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpenClosed_in_entryRuleOpenClosed3588 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOpenClosed3598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_ruleOpenClosed3635 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleOpenClosed3656 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleOpenClosed3668 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleOpenClosed3689 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_ruleOpenClosed3701 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClosedClosed_in_entryRuleClosedClosed3737 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleClosedClosed3747 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleClosedClosed3784 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleClosedClosed3805 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleClosedClosed3817 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleClosedClosed3838 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleClosedClosed3850 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClosedOpen_in_entryRuleClosedOpen3886 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleClosedOpen3896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleClosedOpen3933 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleClosedOpen3954 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleClosedOpen3966 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleClosedOpen3987 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_ruleClosedOpen3999 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumericFilter_in_entryRuleNumericFilter4035 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumericFilter4045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumericOperator_in_ruleNumericFilter4091 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleDOUBLE_in_ruleNumericFilter4112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumericOperator_in_entryRuleNumericOperator4149 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumericOperator4160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleNumericOperator4198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleNumericOperator4217 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleNumericOperator4236 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleNumericOperator4255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleNumericOperator4274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_ruleNumericOperator4293 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteralFilter_in_entryRuleLiteralFilter4333 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLiteralFilter4343 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNegationOpartor_in_ruleLiteralFilter4389 = new BitSet(new long[]{0x0000FFC400000000L});
+    public static final BitSet FOLLOW_ruleLiteralOperator_in_ruleLiteralFilter4411 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleLiteralFilter4428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteralOperator_in_entryRuleLiteralOperator4470 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLiteralOperator4481 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleLiteralOperator4519 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleLiteralOperator4538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_ruleLiteralOperator4557 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNegationOpartor_in_entryRuleNegationOpartor4598 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNegationOpartor4609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_ruleNegationOpartor4646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleComplexEventExpression_in_entryRuleComplexEventExpression4685 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleComplexEventExpression4695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFollowsExpression_in_ruleComplexEventExpression4741 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFollowsExpression_in_entryRuleFollowsExpression4775 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFollowsExpression4785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventWithMultiplicity_in_ruleFollowsExpression4831 = new BitSet(new long[]{0x0003000000000002L});
+    public static final BitSet FOLLOW_ruleEventWithFollowsOperator_in_ruleFollowsExpression4852 = new BitSet(new long[]{0x0003000000000002L});
+    public static final BitSet FOLLOW_ruleEventWithFollowsOperator_in_entryRuleEventWithFollowsOperator4889 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEventWithFollowsOperator4899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFollowsOperator_in_ruleEventWithFollowsOperator4945 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleEventWithMultiplicity_in_ruleEventWithFollowsOperator4966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFollowsOperator_in_entryRuleFollowsOperator5002 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFollowsOperator5012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFollowsOperatorNoTW_in_ruleFollowsOperator5059 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFollowsOperatorViaTW_in_ruleFollowsOperator5086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFollowsOperatorNoTW_in_entryRuleFollowsOperatorNoTW5121 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFollowsOperatorNoTW5131 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleFollowsOperatorNoTW5177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFollowsOperatorViaTW_in_entryRuleFollowsOperatorViaTW5213 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFollowsOperatorViaTW5223 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_ruleFollowsOperatorViaTW5260 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleFollowsOperatorViaTW5277 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_50_in_ruleFollowsOperatorViaTW5294 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventWithMultiplicity_in_entryRuleEventWithMultiplicity5330 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEventWithMultiplicity5340 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEventWithMultiplicity5385 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_17_in_ruleEventWithMultiplicity5398 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleEventWithMultiplicity5415 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleEventWithMultiplicity5432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_ruleIQPatternChangeType5484 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_ruleIQPatternChangeType5501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_ruleContext5546 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_ruleContext5563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleContext5580 = new BitSet(new long[]{0x0000000000000002L});
 
 }

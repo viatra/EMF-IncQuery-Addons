@@ -127,7 +127,7 @@ public class EventModelManager {
 
 			CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(stateMachine);
 
-			Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(CepActivationStates.ACTIVE) {
+			Job<ObservedComplexEventPattern> job = new Job<? extends ObservedComplexEventPattern>(CepActivationStates.ACTIVE) {
 				@Override
 				protected void execute(Activation<? extends ObservedComplexEventPattern> activation, Context context) {
 					Logger.log(">>>>>>>>>>>>>>>CEP: Complex event pattern appeared: "

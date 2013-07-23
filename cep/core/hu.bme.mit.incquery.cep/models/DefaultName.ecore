@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="defaultname" nsURI="http://defaultname/1.0" nsPrefix="defaultname">
+  <eClassifiers xsi:type="ecore:EClass" name=": ComplexEventPattern">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id = ForwardGesturePattern"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Operator = ORDERED"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//%3A%20Timewindow"
+        eOpposite="#//%3A%20Timewindow/EReference5"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//%3A%20AtomicEventPattern"
+        eOpposite="#//%3A%20AtomicEventPattern/EReference0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//%3A%20AtomicEventPattern.1"
+        eOpposite="#//%3A%20AtomicEventPattern.1/EReference3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name=": AtomicEventPattern">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id = FSLost"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type = ForwardStart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//%3A%20ComplexEventPattern"
+        eOpposite="#//%3A%20ComplexEventPattern/EReference1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name=": AtomicEventPattern">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id = FEFound"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type = ForwardEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference3" eType="#//%3A%20ComplexEventPattern"
+        eOpposite="#//%3A%20ComplexEventPattern/EReference2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name=": Timewindow">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length = 2000"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference5" eType="#//%3A%20ComplexEventPattern"
+        eOpposite="#//%3A%20ComplexEventPattern/EReference0"/>
+  </eClassifiers>
+</ecore:EPackage>

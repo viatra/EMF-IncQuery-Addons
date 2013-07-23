@@ -25,7 +25,6 @@ import hu.bme.mit.incquery.vedl.edl.FollowsExpression;
 import hu.bme.mit.incquery.vedl.edl.FollowsOperator;
 import hu.bme.mit.incquery.vedl.edl.FollowsOperatorNoTW;
 import hu.bme.mit.incquery.vedl.edl.FollowsOperatorViaTW;
-import hu.bme.mit.incquery.vedl.edl.IQPattern;
 import hu.bme.mit.incquery.vedl.edl.IQPatternChangeType;
 import hu.bme.mit.incquery.vedl.edl.IQPatternEvent;
 import hu.bme.mit.incquery.vedl.edl.IQUsage;
@@ -149,13 +148,6 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
    * @generated
    */
   private EClass parameterFilterEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass iqPatternEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -552,9 +544,9 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAtomicEvent_Source()
+  public EAttribute getAtomicEvent_Id()
   {
-    return (EReference)atomicEventEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)atomicEventEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -562,9 +554,9 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAtomicEvent_Id()
+  public EReference getAtomicEvent_Source()
   {
-    return (EAttribute)atomicEventEClass.getEStructuralFeatures().get(2);
+    return (EReference)atomicEventEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -592,9 +584,9 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getIQPatternEvent_Iqpattern()
+  public EAttribute getIQPatternEvent_Iqpattern()
   {
-    return (EReference)iqPatternEventEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)iqPatternEventEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -725,26 +717,6 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
   public EReference getParameterFilter_ParamFilterRule()
   {
     return (EReference)parameterFilterEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getIQPattern()
-  {
-    return iqPatternEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getIQPattern_Name()
-  {
-    return (EAttribute)iqPatternEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1211,12 +1183,12 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
 
     atomicEventEClass = createEClass(ATOMIC_EVENT);
     createEReference(atomicEventEClass, ATOMIC_EVENT__ANNOTATIONS);
-    createEReference(atomicEventEClass, ATOMIC_EVENT__SOURCE);
     createEAttribute(atomicEventEClass, ATOMIC_EVENT__ID);
+    createEReference(atomicEventEClass, ATOMIC_EVENT__SOURCE);
     createEReference(atomicEventEClass, ATOMIC_EVENT__PARAMETER_FILTERS);
 
     iqPatternEventEClass = createEClass(IQ_PATTERN_EVENT);
-    createEReference(iqPatternEventEClass, IQ_PATTERN_EVENT__IQPATTERN);
+    createEAttribute(iqPatternEventEClass, IQ_PATTERN_EVENT__IQPATTERN);
     createEAttribute(iqPatternEventEClass, IQ_PATTERN_EVENT__CHANGE_TYPE);
 
     complexEventEClass = createEClass(COMPLEX_EVENT);
@@ -1234,9 +1206,6 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
     parameterFilterEClass = createEClass(PARAMETER_FILTER);
     createEAttribute(parameterFilterEClass, PARAMETER_FILTER__ATTRIBUTE_NAME);
     createEReference(parameterFilterEClass, PARAMETER_FILTER__PARAM_FILTER_RULE);
-
-    iqPatternEClass = createEClass(IQ_PATTERN);
-    createEAttribute(iqPatternEClass, IQ_PATTERN__NAME);
 
     annotationsEClass = createEClass(ANNOTATIONS);
 
@@ -1379,12 +1348,12 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
 
     initEClass(atomicEventEClass, AtomicEvent.class, "AtomicEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAtomicEvent_Annotations(), this.getAnnotations(), null, "annotations", null, 0, -1, AtomicEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAtomicEvent_Source(), theSrctPackage.getSource(), null, "source", null, 0, 1, AtomicEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAtomicEvent_Id(), ecorePackage.getEString(), "id", null, 0, 1, AtomicEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtomicEvent_Source(), theSrctPackage.getSource(), null, "source", null, 0, 1, AtomicEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtomicEvent_ParameterFilters(), this.getParameterFilter(), null, "parameterFilters", null, 0, -1, AtomicEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(iqPatternEventEClass, IQPatternEvent.class, "IQPatternEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIQPatternEvent_Iqpattern(), this.getIQPattern(), null, "iqpattern", null, 0, 1, IQPatternEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIQPatternEvent_Iqpattern(), ecorePackage.getEString(), "iqpattern", null, 0, 1, IQPatternEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIQPatternEvent_ChangeType(), this.getIQPatternChangeType(), "changeType", null, 0, 1, IQPatternEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(complexEventEClass, ComplexEvent.class, "ComplexEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1402,9 +1371,6 @@ public class EdlPackageImpl extends EPackageImpl implements EdlPackage
     initEClass(parameterFilterEClass, ParameterFilter.class, "ParameterFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParameterFilter_AttributeName(), ecorePackage.getEString(), "attributeName", null, 0, 1, ParameterFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getParameterFilter_ParamFilterRule(), this.getParameterFilterRule(), null, "paramFilterRule", null, 0, 1, ParameterFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(iqPatternEClass, IQPattern.class, "IQPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIQPattern_Name(), ecorePackage.getEString(), "name", null, 0, 1, IQPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(annotationsEClass, Annotations.class, "Annotations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

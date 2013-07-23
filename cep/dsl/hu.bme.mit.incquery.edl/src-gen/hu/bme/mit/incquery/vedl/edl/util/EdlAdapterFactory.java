@@ -140,11 +140,6 @@ public class EdlAdapterFactory extends AdapterFactoryImpl
         return createParameterFilterAdapter();
       }
       @Override
-      public Adapter caseIQPattern(IQPattern object)
-      {
-        return createIQPatternAdapter();
-      }
-      @Override
       public Adapter caseAnnotations(Annotations object)
       {
         return createAnnotationsAdapter();
@@ -457,21 +452,6 @@ public class EdlAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createParameterFilterAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.vedl.edl.IQPattern <em>IQ Pattern</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.vedl.edl.IQPattern
-   * @generated
-   */
-  public Adapter createIQPatternAdapter()
   {
     return null;
   }

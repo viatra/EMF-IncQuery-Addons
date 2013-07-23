@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_4p9GMPHlEeKJVsTz_NTgag" name="model">
+  <packagedElement xmi:type="uml:Component" xmi:id="_8CIi8PHlEeKJVsTz_NTgag" name="Component1"/>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_-5vpQPHlEeKJVsTz_NTgag" name="" classifier="_PhZYAPHmEeKJVsTz_NTgag"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ERrXQPHmEeKJVsTz_NTgag" name="ComplexEventPattern">
+    <ownedAttribute xmi:id="_Rr_nUPHmEeKJVsTz_NTgag" name="atomicPattern" type="_PhZYAPHmEeKJVsTz_NTgag" association="_RsAOYPHmEeKJVsTz_NTgag">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rr_nUfHmEeKJVsTz_NTgag" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rr_nUvHmEeKJVsTz_NTgag" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_GjIcgPHmEeKJVsTz_NTgag" name="" classifier="_ERrXQPHmEeKJVsTz_NTgag"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_PhZYAPHmEeKJVsTz_NTgag" name="AtomicPattern"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_RsAOYPHmEeKJVsTz_NTgag" name="complexEventPattern_atomicPattern_1" memberEnd="_RsAOYfHmEeKJVsTz_NTgag _Rr_nUPHmEeKJVsTz_NTgag">
+    <ownedEnd xmi:id="_RsAOYfHmEeKJVsTz_NTgag" name="complexEventPattern" type="_ERrXQPHmEeKJVsTz_NTgag" association="_RsAOYPHmEeKJVsTz_NTgag">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RsAOYvHmEeKJVsTz_NTgag" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RsAOY_HmEeKJVsTz_NTgag" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

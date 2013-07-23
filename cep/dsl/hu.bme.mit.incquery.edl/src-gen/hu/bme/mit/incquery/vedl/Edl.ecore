@@ -27,14 +27,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="AtomicEvent" eSuperTypes="#//AbstractAtomicEvent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
         eType="#//Annotations" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass ../../../../../../../hu.bme.mit.incquery.srct/src-gen/hu/bme/mit/incquery/srct/Srct.ecore#//Source"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass ../../../../../../../hu.bme.mit.incquery.srct/src-gen/hu/bme/mit/incquery/srct/Srct.ecore#//Source"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameterFilters" upperBound="-1"
         eType="#//ParameterFilter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IQPatternEvent" eSuperTypes="#//AbstractAtomicEvent">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="iqpattern" eType="#//IQPattern"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iqpattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="changeType" eType="#//IQPatternChangeType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComplexEvent" eSuperTypes="#//Event">
@@ -61,9 +60,6 @@
   <eClassifiers xsi:type="ecore:EEnum" name="IQPatternChangeType">
     <eLiterals name="FOUND" literal="FOUND"/>
     <eLiterals name="LOST" value="1" literal="LOST"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IQPattern">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Annotations"/>
   <eClassifiers xsi:type="ecore:EClass" name="ContextAnnotation" eSuperTypes="#//Annotations">

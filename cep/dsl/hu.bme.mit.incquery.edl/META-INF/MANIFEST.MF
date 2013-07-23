@@ -16,7 +16,9 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.emf.common,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
- hu.bme.mit.incquery.srct;bundle-version="1.0.0"
+ hu.bme.mit.incquery.srct;bundle-version="1.0.0",
+ org.eclipse.incquery.patternlanguage;bundle-version="0.7.1",
+ org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
@@ -30,6 +32,7 @@ Export-Package: hu.bme.mit.incquery.vedl,
  hu.bme.mit.incquery.vedl.parser.antlr,
  hu.bme.mit.incquery.vedl.parser.antlr.internal,
  hu.bme.mit.incquery.vedl.validation,
+ hu.bme.mit.incquery.vedl.formatting,
  hu.bme.mit.incquery.vedl.scoping,
  hu.bme.mit.incquery.vedl.generator,
- hu.bme.mit.incquery.vedl.formatting
+ hu.bme.mit.incquery.vedl.jvmmodel

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.bme.hu/mit/incquery/cep/dsl/EventPatternLanguage" 
+       class = "hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage"
+       genModel = "hu/bme/mit/incquery/cep/dsl/EventPatternLanguage.genmodel" /> 
+	
+  </extension>
+
+
+
+</plugin>

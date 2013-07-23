@@ -628,9 +628,9 @@ ruleAtomicEvent returns [EObject current=null]
     {
     	newLeafNode(otherlv_4, grammarAccess.getAtomicEventAccess().getLeftCurlyBracketKeyword_4());
     }
-	otherlv_5='source' 
+	otherlv_5='id' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getAtomicEventAccess().getSourceKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getAtomicEventAccess().getIdKeyword_5());
     }
 	otherlv_6=':' 
     {
@@ -638,30 +638,9 @@ ruleAtomicEvent returns [EObject current=null]
     }
 (
 (
+		lv_id_7_0=RULE_STRING
 		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAtomicEventRule());
-	        }
-        }
-	otherlv_7=RULE_ID
-	{
-		newLeafNode(otherlv_7, grammarAccess.getAtomicEventAccess().getSourceSourceCrossReference_7_0()); 
-	}
-
-)
-)	otherlv_8='id' 
-    {
-    	newLeafNode(otherlv_8, grammarAccess.getAtomicEventAccess().getIdKeyword_8());
-    }
-	otherlv_9=':' 
-    {
-    	newLeafNode(otherlv_9, grammarAccess.getAtomicEventAccess().getColonKeyword_9());
-    }
-(
-(
-		lv_id_10_0=RULE_STRING
-		{
-			newLeafNode(lv_id_10_0, grammarAccess.getAtomicEventAccess().getIdSTRINGTerminalRuleCall_10_0()); 
+			newLeafNode(lv_id_7_0, grammarAccess.getAtomicEventAccess().getIdSTRINGTerminalRuleCall_7_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -670,9 +649,30 @@ ruleAtomicEvent returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"id",
-        		lv_id_10_0, 
+        		lv_id_7_0, 
         		"STRING");
 	    }
+
+)
+)	otherlv_8='source' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getAtomicEventAccess().getSourceKeyword_8());
+    }
+	otherlv_9=':' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getAtomicEventAccess().getColonKeyword_9());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAtomicEventRule());
+	        }
+        }
+	otherlv_10=RULE_ID
+	{
+		newLeafNode(otherlv_10, grammarAccess.getAtomicEventAccess().getSourceSourceCrossReference_10_0()); 
+	}
 
 )
 )	otherlv_11='parameterFilters' 
@@ -770,19 +770,19 @@ ruleIQPatternEvent returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getIQPatternEventAccess().getIqpatternIQPatternParserRuleCall_6_0()); 
-	    }
-		lv_iqpattern_6_0=ruleIQPattern		{
+		lv_iqpattern_6_0=RULE_STRING
+		{
+			newLeafNode(lv_iqpattern_6_0, grammarAccess.getIQPatternEventAccess().getIqpatternSTRINGTerminalRuleCall_6_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIQPatternEventRule());
+	            $current = createModelElement(grammarAccess.getIQPatternEventRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"iqpattern",
         		lv_iqpattern_6_0, 
-        		"IQPattern");
-	        afterParserOrEnumRuleCall();
+        		"STRING");
 	    }
 
 )
@@ -1088,45 +1088,6 @@ ruleParameterFilter returns [EObject current=null]
 
 )
 ))
-;
-
-
-
-
-
-// Entry rule entryRuleIQPattern
-entryRuleIQPattern returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getIQPatternRule()); }
-	 iv_ruleIQPattern=ruleIQPattern 
-	 { $current=$iv_ruleIQPattern.current; } 
-	 EOF 
-;
-
-// Rule IQPattern
-ruleIQPattern returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-(
-		lv_name_0_0=RULE_ID
-		{
-			newLeafNode(lv_name_0_0, grammarAccess.getIQPatternAccess().getNameIDTerminalRuleCall_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getIQPatternRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"name",
-        		lv_name_0_0, 
-        		"ID");
-	    }
-
-)
-)
 ;
 
 

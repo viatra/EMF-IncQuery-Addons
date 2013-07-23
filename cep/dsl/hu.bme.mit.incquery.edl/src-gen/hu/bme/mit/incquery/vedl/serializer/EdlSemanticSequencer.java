@@ -16,7 +16,6 @@ import hu.bme.mit.incquery.vedl.edl.EventWithMultiplicity;
 import hu.bme.mit.incquery.vedl.edl.FollowsExpression;
 import hu.bme.mit.incquery.vedl.edl.FollowsOperatorNoTW;
 import hu.bme.mit.incquery.vedl.edl.FollowsOperatorViaTW;
-import hu.bme.mit.incquery.vedl.edl.IQPattern;
 import hu.bme.mit.incquery.vedl.edl.IQPatternEvent;
 import hu.bme.mit.incquery.vedl.edl.IQUsage;
 import hu.bme.mit.incquery.vedl.edl.LiteralFilter;
@@ -138,12 +137,6 @@ public class EdlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case EdlPackage.IQ_PATTERN:
-				if(context == grammarAccess.getIQPatternRule()) {
-					sequence_IQPattern(context, (IQPattern) semanticObject); 
-					return; 
-				}
-				else break;
 			case EdlPackage.IQ_PATTERN_EVENT:
 				if(context == grammarAccess.getAbstractAtomicEventRule() ||
 				   context == grammarAccess.getEventRule() ||
@@ -232,7 +225,7 @@ public class EdlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (annotations+=Annotations* name=ID source=[Source|ID] id=STRING parameterFilters+=ParameterFilter+)
+	 *     (annotations+=Annotations* name=ID id=STRING source=[Source|ID] parameterFilters+=ParameterFilter+)
 	 */
 	protected void sequence_AtomicEvent(EObject context, AtomicEvent semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -410,7 +403,7 @@ public class EdlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID iqpattern=IQPattern changeType=IQPatternChangeType)
+	 *     (name=ID iqpattern=STRING changeType=IQPatternChangeType)
 	 */
 	protected void sequence_IQPatternEvent(EObject context, IQPatternEvent semanticObject) {
 		if(errorAcceptor != null) {
@@ -424,24 +417,8 @@ public class EdlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getIQPatternEventAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getIQPatternEventAccess().getIqpatternIQPatternParserRuleCall_6_0(), semanticObject.getIqpattern());
+		feeder.accept(grammarAccess.getIQPatternEventAccess().getIqpatternSTRINGTerminalRuleCall_6_0(), semanticObject.getIqpattern());
 		feeder.accept(grammarAccess.getIQPatternEventAccess().getChangeTypeIQPatternChangeTypeEnumRuleCall_9_0(), semanticObject.getChangeType());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_IQPattern(EObject context, IQPattern semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EdlPackage.Literals.IQ_PATTERN__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EdlPackage.Literals.IQ_PATTERN__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getIQPatternAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

@@ -89,8 +89,8 @@ public class EdlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getEventsAssignment_4(), "rule__Model__EventsAssignment_4");
 					put(grammarAccess.getAtomicEventAccess().getAnnotationsAssignment_0(), "rule__AtomicEvent__AnnotationsAssignment_0");
 					put(grammarAccess.getAtomicEventAccess().getNameAssignment_2(), "rule__AtomicEvent__NameAssignment_2");
-					put(grammarAccess.getAtomicEventAccess().getSourceAssignment_7(), "rule__AtomicEvent__SourceAssignment_7");
-					put(grammarAccess.getAtomicEventAccess().getIdAssignment_10(), "rule__AtomicEvent__IdAssignment_10");
+					put(grammarAccess.getAtomicEventAccess().getIdAssignment_7(), "rule__AtomicEvent__IdAssignment_7");
+					put(grammarAccess.getAtomicEventAccess().getSourceAssignment_10(), "rule__AtomicEvent__SourceAssignment_10");
 					put(grammarAccess.getAtomicEventAccess().getParameterFiltersAssignment_13(), "rule__AtomicEvent__ParameterFiltersAssignment_13");
 					put(grammarAccess.getIQPatternEventAccess().getNameAssignment_1(), "rule__IQPatternEvent__NameAssignment_1");
 					put(grammarAccess.getIQPatternEventAccess().getIqpatternAssignment_6(), "rule__IQPatternEvent__IqpatternAssignment_6");
@@ -104,7 +104,6 @@ public class EdlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEventParamWithTypeAccess().getTypeAssignment_2(), "rule__EventParamWithType__TypeAssignment_2");
 					put(grammarAccess.getParameterFilterAccess().getAttributeNameAssignment_0(), "rule__ParameterFilter__AttributeNameAssignment_0");
 					put(grammarAccess.getParameterFilterAccess().getParamFilterRuleAssignment_1(), "rule__ParameterFilter__ParamFilterRuleAssignment_1");
-					put(grammarAccess.getIQPatternAccess().getNameAssignment(), "rule__IQPattern__NameAssignment");
 					put(grammarAccess.getContextAnnotationAccess().getContextAssignment_2(), "rule__ContextAnnotation__ContextAssignment_2");
 					put(grammarAccess.getSamplingAnnotationAccess().getSamplingAssignment_2(), "rule__SamplingAnnotation__SamplingAssignment_2");
 					put(grammarAccess.getPriorityAnnotationAccess().getPriorityAssignment_2(), "rule__PriorityAnnotation__PriorityAssignment_2");

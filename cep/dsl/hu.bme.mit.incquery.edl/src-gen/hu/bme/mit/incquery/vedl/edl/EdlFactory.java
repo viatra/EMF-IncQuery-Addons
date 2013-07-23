@@ -140,15 +140,6 @@ public interface EdlFactory extends EFactory
   ParameterFilter createParameterFilter();
 
   /**
-   * Returns a new object of class '<em>IQ Pattern</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>IQ Pattern</em>'.
-   * @generated
-   */
-  IQPattern createIQPattern();
-
-  /**
    * Returns a new object of class '<em>Annotations</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
