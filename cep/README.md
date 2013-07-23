@@ -7,7 +7,7 @@ Implementation
 --------------
 
 The main implementation is located in plugin **[hu.bme.mit.incquery.cep](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/hu.bme.mit.incquery.cep)** plugin. The appropriate unit tests are located in plugin **[hu.bme.mit.incquery.cep.tests](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/hu.bme.mit.incquery.cep.tests)**.
-There are also two DSLs for defining event patterns and event source types: **[hu.bme.mit.incquery.edl](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/hu.bme.mit.incquery.edl)** and **[hu.bme.mit.incquery.srct](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/hu.bme.mit.incquery.srct)** respectively.
+There is also a DSL for defining event patterns and event source types: **[hu.bme.mit.incquery.cep.dsl](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/hu.bme.mit.incquery.cep.dsl/hu.bme.mit.incquery.cep.dsl)**.
 
 For example codes see the **\*.examples.*** plugins:
 * **[hu.bme.mit.incquery.cep.examples.example1](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/hu.bme.mit.incquery.cep.examples.example1)** shows a simple use-case where atomic and complex event patterns are defined and recognized on the event stream among other events.
