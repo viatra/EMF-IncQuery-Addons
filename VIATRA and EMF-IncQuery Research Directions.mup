@@ -75,7 +75,7 @@
         },
         "attachment": {
           "contentType": "text/html",
-          "content": "Bergmann Gábor"
+          "content": "<ul><li>ember: Bergmann Gábor<br></li><li>ösztöndíj vége: 2013 december</li><li>publikálni kell (SCP, ASE rá van írva már, OCL-es lehet projekt után is, valszeg OCL2014 MODELS workshop lesz)</li><ul><li>blog van már róla, de annak a tartalma mind1</li></ul><li>Oszkárék egy közös nyelvre (Z3) mappelték az IQPL-t és az OCL-t is, Gaben feladata az OCL-IQPL mapping lesz</li><ul><li>kipróbálható implementáció is van</li></ul></ul>"
         }
       }
     },
@@ -133,7 +133,7 @@
         },
         "attachment": {
           "contentType": "text/html",
-          "content": "Horváth Ákos, Hegedüs Ábel,"
+          "content": "<ul><li>emberek: Horváth Ákos, Hegedüs Ábel, (Ráth István), Ökrös András<br></li><li>hallgatók: Búr Marci, Menyhért Ákos, Dóczi \"nemjuteszembe\" Róbert,</li><li>deadlines</li><ul><li>end of aug 2013: AS first, PDM final versions</li><li>end of oct 2013: AS final, IAM Xform first</li><li>feb 2014: IAM Xform</li></ul><li>folytatás: lesz (nagyon valószíoq)&nbsp;<br></li></ul>"
         }
       }
     },
