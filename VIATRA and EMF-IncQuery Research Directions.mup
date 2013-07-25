@@ -71,7 +71,7 @@
       "id": 17,
       "attr": {
         "style": {
-          "background": "#333399"
+          "background": "#ff00ff"
         },
         "attachment": {
           "contentType": "text/html",
@@ -129,7 +129,7 @@
       "id": 24,
       "attr": {
         "style": {
-          "background": "#333399"
+          "background": "#ff00ff"
         },
         "attachment": {
           "contentType": "text/html",
@@ -158,6 +158,15 @@
               "background": "#E0E0E0"
             }
           }
+        }
+      }
+    },
+    "47": {
+      "title": "MONDO",
+      "id": 37,
+      "attr": {
+        "style": {
+          "background": "#ff00ff"
         }
       }
     },
@@ -235,7 +244,7 @@
       "id": 21,
       "attr": {
         "style": {
-          "background": "#333399"
+          "background": "#ff00ff"
         },
         "attachment": {
           "contentType": "text/html",
@@ -300,6 +309,25 @@
         },
         "style": {
           "background": "#E0E0E0"
+        }
+      }
+    },
+    "-21.5": {
+      "title": "CERTIMOT",
+      "id": 35,
+      "ideas": {},
+      "attr": {
+        "style": {
+          "background": "#ff00ff"
+        }
+      }
+    },
+    "-22.5": {
+      "title": "CONCERTO",
+      "id": 38,
+      "attr": {
+        "style": {
+          "background": "#ff00ff"
         }
       }
     }
