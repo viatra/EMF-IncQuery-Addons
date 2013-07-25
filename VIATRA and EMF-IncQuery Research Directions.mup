@@ -167,6 +167,10 @@
       "attr": {
         "style": {
           "background": "#ff00ff"
+        },
+        "attachment": {
+          "contentType": "text/html",
+          "content": "<ul><li>2013 nov 1-gyel indul, 30 hónapos</li><li>3-4 gQbb terület a mi oldalunkon</li><ul><li>incquery-d (elosztott, inkrementális modell-lekérdezések) (9-10MM)</li><li>collaborative modeling (security) (18MM, WP lead)</li><li>scalable indexing, backend (9MM)</li><li>benchmark (valamelyik WP-be beleszuszakoljuk)</li></ul><li>TODO: ASE cikkre kerüljön MONDO acknowledgement</li></ul>"
         }
       }
     },
