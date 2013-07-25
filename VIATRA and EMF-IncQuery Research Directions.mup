@@ -62,7 +62,7 @@
         },
         "attachment": {
           "contentType": "text/html",
-          "content": "Szárnyas Gábor, Izsó Bence"
+          "content": "<ul><li>emberek: Szárnyas Gábor, Izsó Bence<br></li><li>BigMDE cikk, slideshow a slideshare-n</li></ul>"
         }
       }
     },
@@ -107,7 +107,7 @@
         },
         "attachment": {
           "contentType": "text/html",
-          "content": "Szabó Tamás"
+          "content": "Szabó Tamás<div>Ed Merks kollaboráció</div><div>licitáljunk ECE13 sessiont (lehetne a yFiles VIewers-hez is)</div>"
         }
       }
     },
@@ -215,7 +215,7 @@
             },
             "attachment": {
               "contentType": "text/html",
-              "content": "Dávid István, (Hegedüs Ábel)"
+              "content": "<ul><li>Dávid István, (Hegedüs Ábel)<br></li><li>MODELS workshop kész</li><li>esettanulmányt keresünk</li><ul><li>DEVS konferencia esettanulmányok</li></ul><li>jó lenne a trafó nyelven dolgozni</li></ul>"
             }
           }
         },
@@ -229,7 +229,7 @@
           "attr": {
             "attachment": {
               "contentType": "text/html",
-              "content": "Nagy András&nbsp;Szabolcs, Földényi Miklós, Horváth Ákos, (Hegedüs Ábel)"
+              "content": "<ul><li>emberek: Nagy András&nbsp;Szabolcs, Földényi Miklós, Horváth Ákos, (Hegedüs Ábel)<br></li><li>EMF (EVM) alapú változat készül, egyre jobb állapotban van</li><li>trafó nyelv ide is jó volna</li><li>aktuális innováció: többszálúság</li><li>példák kellenek</li><ul><li>incquery-d allokáció (Bence, Ákos)</li><li>TODO Ákos: el kellene kérni Joost v. P. benchmarkját</li></ul><li>sebesség: 4-6 ezer TR/Sec</li></ul>"
             },
             "style": {
               "background": "#333399"
@@ -266,7 +266,7 @@
         },
         "attachment": {
           "contentType": "text/html",
-          "content": "Ráth istván, Ujhelyi Zoltán, Hegedüs Ábel, Horváth Ákos"
+          "content": "<ul><li>emberek: Ráth istván, Ujhelyi Zoltán, Hegedüs Ábel, Horváth Ákos<br></li><li><br></li></ul>"
         }
       },
       "ideas": {
@@ -298,7 +298,7 @@
         },
         "attachment": {
           "contentType": "text/html",
-          "content": "Debreceni Csaba, Horváth Ákos, (Hegedüs Ábel,&nbsp;Ráth istván?)"
+          "content": "<ul><li>Debreceni Csaba, Horváth Ákos, (Hegedüs Ábel,&nbsp;Ráth istván?)<br></li><li>meg kell keresni a közös pontokat a Viewers-szel</li></ul>"
         }
       }
     },
