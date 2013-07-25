@@ -278,7 +278,7 @@
       "attr": {
         "attachment": {
           "contentType": "text/html",
-          "content": "Semeráth Oszkár, Varró Dániel, (Horváth Ákos)"
+          "content": "Semeráth Oszkár, Varró Dániel, (Horváth Ákos), Szatmári Zoli, Barta Ági"
         },
         "style": {
           "background": "#333399"
@@ -319,6 +319,10 @@
       "attr": {
         "style": {
           "background": "#ff00ff"
+        },
+        "attachment": {
+          "contentType": "text/html",
+          "content": "Dependencies:&nbsp;<div><ul><li>EVM (TODO: publication)<br></li></ul><div>Deliverables:</div><div><ul><li>end of Aug 2013</li><li>final: end of 2013 (not official yet)</li></ul></div><div><br></div></div>"
         }
       }
     },
