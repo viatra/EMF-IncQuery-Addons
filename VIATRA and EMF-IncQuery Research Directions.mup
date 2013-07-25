@@ -298,7 +298,7 @@
         },
         "attachment": {
           "contentType": "text/html",
-          "content": "<ul><li>Debreceni Csaba, Horváth Ákos, (Hegedüs Ábel,&nbsp;Ráth istván?)<br></li><li>meg kell keresni a közös pontokat a Viewers-szel</li></ul>"
+          "content": "<ul><li>Debreceni Csaba, Horváth Ákos, (Hegedüs Ábel,&nbsp;Ráth istván)<br></li><li>meg kell keresni a közös pontokat a Viewers-szel</li><li>cél: TDK, doktorandusznak is jönne<br></li><li>példák: absztrakciós jellegq, egyirányú szinkronizáció</li><ul><li>simulink2fam</li><li>statechart-to-akármi (promela) - \"hibrid\"</li></ul><li>(távolabbi) xcore integráció</li></ul>"
         }
       }
     },
