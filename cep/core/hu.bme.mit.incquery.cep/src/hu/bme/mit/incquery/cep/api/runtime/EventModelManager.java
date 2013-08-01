@@ -62,6 +62,7 @@ import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedSc
 import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory;
 import org.eclipse.incquery.runtime.evm.update.UpdateCompleteProvider;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.omg.CORBA.OMGVMCID;
 
 import com.google.common.collect.Sets;
 
@@ -126,9 +127,9 @@ public class EventModelManager {
 			wasEnabled.put(stateMachine, true);
 
 			CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(stateMachine);
-
-			Job<ObservedComplexEventPattern> job = new Job<? extends ObservedComplexEventPattern>(CepActivationStates.ACTIVE) {
-				@Override
+		
+			Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(CepActivationStates.ACTIVE) {
+				
 				protected void execute(Activation<? extends ObservedComplexEventPattern> activation, Context context) {
 					Logger.log(">>>>>>>>>>>>>>>CEP: Complex event pattern appeared: "
 							+ activation.getAtom().getObservedEventPattern().getId());
