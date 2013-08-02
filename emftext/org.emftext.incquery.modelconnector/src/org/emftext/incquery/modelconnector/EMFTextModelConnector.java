@@ -1,10 +1,24 @@
+/*******************************************************************************
+ * Copyright (c) 2006-2013
+ * Software Technology Group, Dresden University of Technology
+ * DevBoost GmbH, Berlin, Amtsgericht Charlottenburg, HRB 140026
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   Software Technology Group - TU Dresden, Germany;
+ *   DevBoost GmbH - Berlin, Germany
+ *      - initial API and implementation
+ ******************************************************************************/
 package org.emftext.incquery.modelconnector;
 
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.incquery.runtime.api.IModelConnectorTypeEnum;
 import org.eclipse.incquery.tooling.ui.queryexplorer.adapters.EMFModelConnector;
-import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.emftext.access.resource.IEditor;
 import org.emftext.access.resource.ILocationMap;
@@ -13,11 +27,12 @@ import org.emftext.access.resource.IResource;
 public class EMFTextModelConnector extends EMFModelConnector {
 
 	private IEditor emftextEditor;
+	private ITextEditor textEditor;
 
-	public EMFTextModelConnector(IEditorPart editorPart, IEditor emftextEditor) {
-		super(editorPart);
+	public EMFTextModelConnector(ITextEditor textEditor, IEditor emftextEditor) {
+		super(textEditor);
 		this.emftextEditor = emftextEditor;
-		this.editorPart = editorPart;
+		this.textEditor = textEditor;
 	}
 
 	@Override
@@ -27,10 +42,10 @@ public class EMFTextModelConnector extends EMFModelConnector {
 		case RESOURCE:
 			result = emftextEditor.getResource();
 			break;
-			
+
 		case RESOURCESET:
 			result = emftextEditor.getResource().getResourceSet();
-			
+
 		}
 		return result;
 	}
@@ -44,8 +59,8 @@ public class EMFTextModelConnector extends EMFModelConnector {
 			EObject eObject = (EObject) locationObjects[0];
 			int start = locationMap.getCharStart(eObject);
 			int end = locationMap.getCharEnd(eObject);
-			((ITextEditor) editorPart).selectAndReveal(start, end - start + 1);
-		} 
+			textEditor.selectAndReveal(start, end - start + 1);
+		}
 	}
 
 	private boolean objectsAreEObjects(Object[] locationObjects) {

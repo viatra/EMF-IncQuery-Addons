@@ -2,12 +2,12 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.eclipse.core.runtime.adapters">
+        point="org.eclipse.core.runtime.adapters">
       <factory
-            adaptableType="org.eclipse.ui.IEditorPart"
-            class="org.emftext.incquery.modelconnector.ModelConnectorAdapterFactoryForEMFTextEditors">
+           adaptableType="org.eclipse.ui.texteditor.ITextEditor"
+           class="org.emftext.incquery.modelconnector.ModelConnectorAdapterFactoryForEMFTextEditors">
          <adapter
-               type="org.eclipse.incquery.runtime.api.IModelConnector">
+              type="org.eclipse.incquery.runtime.api.IModelConnector">
          </adapter>
       </factory>
    </extension>
