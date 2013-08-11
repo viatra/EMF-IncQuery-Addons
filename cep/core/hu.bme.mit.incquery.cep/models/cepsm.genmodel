@@ -62,6 +62,7 @@
       <genEnumLiterals ecoreEnumLiteral="InternalSM.ecore#//EventProcessingContext/CHRONICLE"/>
       <genEnumLiterals ecoreEnumLiteral="InternalSM.ecore#//EventProcessingContext/RECENT"/>
       <genEnumLiterals ecoreEnumLiteral="InternalSM.ecore#//EventProcessingContext/UNRESTRICTED"/>
+      <genEnumLiterals ecoreEnumLiteral="InternalSM.ecore#//EventProcessingContext/IMMEDIATE"/>
     </genEnums>
     <genClasses ecoreClass="InternalSM.ecore#//State">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InternalSM.ecore#//State/outTransitions"/>

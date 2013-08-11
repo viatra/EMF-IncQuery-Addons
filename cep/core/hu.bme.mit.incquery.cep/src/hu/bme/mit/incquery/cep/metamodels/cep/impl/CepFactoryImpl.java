@@ -2,6 +2,7 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.cep.impl;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.*;
 import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.CepFactory;
 import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
@@ -32,7 +33,7 @@ public class CepFactoryImpl extends EFactoryImpl implements CepFactory {
 	 */
 	public static CepFactory init() {
 		try {
-			CepFactory theCepFactory = (CepFactory)EPackage.Registry.INSTANCE.getEFactory("cep.meta"); 
+			CepFactory theCepFactory = (CepFactory)EPackage.Registry.INSTANCE.getEFactory(CepPackage.eNS_URI);
 			if (theCepFactory != null) {
 				return theCepFactory;
 			}

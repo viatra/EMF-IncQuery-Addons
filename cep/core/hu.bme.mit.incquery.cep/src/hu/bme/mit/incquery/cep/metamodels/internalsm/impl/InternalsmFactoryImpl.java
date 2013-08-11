@@ -2,6 +2,7 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
+import hu.bme.mit.incquery.cep.metamodels.internalsm.*;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
@@ -42,7 +43,7 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 	 */
 	public static InternalsmFactory init() {
 		try {
-			InternalsmFactory theInternalsmFactory = (InternalsmFactory)EPackage.Registry.INSTANCE.getEFactory("sm.meta"); 
+			InternalsmFactory theInternalsmFactory = (InternalsmFactory)EPackage.Registry.INSTANCE.getEFactory(InternalsmPackage.eNS_URI);
 			if (theInternalsmFactory != null) {
 				return theInternalsmFactory;
 			}

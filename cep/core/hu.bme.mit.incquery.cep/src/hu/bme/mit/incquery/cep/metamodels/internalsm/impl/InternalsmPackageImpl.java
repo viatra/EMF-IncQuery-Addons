@@ -778,6 +778,7 @@ public class InternalsmPackageImpl extends EPackageImpl implements InternalsmPac
 		addEEnumLiteral(eventProcessingContextEEnum, EventProcessingContext.CHRONICLE);
 		addEEnumLiteral(eventProcessingContextEEnum, EventProcessingContext.RECENT);
 		addEEnumLiteral(eventProcessingContextEEnum, EventProcessingContext.UNRESTRICTED);
+		addEEnumLiteral(eventProcessingContextEEnum, EventProcessingContext.IMMEDIATE);
 
 		// Create resource
 		createResource(eNS_URI);

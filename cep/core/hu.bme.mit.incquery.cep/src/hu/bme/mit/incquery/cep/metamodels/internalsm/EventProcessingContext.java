@@ -46,7 +46,15 @@ public enum EventProcessingContext implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNRESTRICTED(2, "UNRESTRICTED", "UNRESTRICTED");
+	UNRESTRICTED(2, "UNRESTRICTED", "UNRESTRICTED"), /**
+	 * The '<em><b>IMMEDIATE</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #IMMEDIATE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	IMMEDIATE(3, "IMMEDIATE", "IMMEDIATE");
 
 	/**
 	 * The '<em><b>CHRONICLE</b></em>' literal value.
@@ -94,6 +102,21 @@ public enum EventProcessingContext implements Enumerator {
 	public static final int UNRESTRICTED_VALUE = 2;
 
 	/**
+	 * The '<em><b>IMMEDIATE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>IMMEDIATE</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #IMMEDIATE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int IMMEDIATE_VALUE = 3;
+
+	/**
 	 * An array of all the '<em><b>Event Processing Context</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,6 +127,7 @@ public enum EventProcessingContext implements Enumerator {
 			CHRONICLE,
 			RECENT,
 			UNRESTRICTED,
+			IMMEDIATE,
 		};
 
 	/**
@@ -157,6 +181,7 @@ public enum EventProcessingContext implements Enumerator {
 			case CHRONICLE_VALUE: return CHRONICLE;
 			case RECENT_VALUE: return RECENT;
 			case UNRESTRICTED_VALUE: return UNRESTRICTED;
+			case IMMEDIATE_VALUE: return IMMEDIATE;
 		}
 		return null;
 	}

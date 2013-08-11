@@ -2,6 +2,7 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.util;
 
+import hu.bme.mit.incquery.cep.metamodels.internalsm.*;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;

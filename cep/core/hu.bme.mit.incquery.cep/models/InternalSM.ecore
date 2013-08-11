@@ -92,5 +92,6 @@
     <eLiterals name="CHRONICLE"/>
     <eLiterals name="RECENT" value="1"/>
     <eLiterals name="UNRESTRICTED" value="2"/>
+    <eLiterals name="IMMEDIATE" value="3" literal="IMMEDIATE"/>
   </eClassifiers>
 </ecore:EPackage>

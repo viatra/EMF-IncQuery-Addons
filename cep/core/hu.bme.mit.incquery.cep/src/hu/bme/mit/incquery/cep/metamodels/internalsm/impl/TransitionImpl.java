@@ -77,7 +77,7 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 */
 	public State getPreState() {
 		if (eContainerFeatureID() != InternalsmPackage.TRANSITION__PRE_STATE) return null;
-		return (State)eContainer();
+		return (State)eInternalContainer();
 	}
 
 	/**

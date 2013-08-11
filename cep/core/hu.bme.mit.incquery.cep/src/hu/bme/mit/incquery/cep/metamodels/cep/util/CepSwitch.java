@@ -2,6 +2,7 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.cep.util;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.*;
 import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
