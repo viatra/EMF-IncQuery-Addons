@@ -1,16 +1,16 @@
 package hu.bme.mit.incquery.cep.api.runtime;
 
 import hu.bme.mit.incquery.cep.api.EventPatternAutomatonOptions;
+import hu.bme.mit.incquery.cep.api.eventcontext.EventProcessingStrategyFactory;
+import hu.bme.mit.incquery.cep.api.eventcontext.IEventProcessingStrategy;
 import hu.bme.mit.incquery.cep.api.evm.CepActivationStates;
 import hu.bme.mit.incquery.cep.api.evm.CepEventSourceSpecification;
 import hu.bme.mit.incquery.cep.api.evm.CepEventType;
 import hu.bme.mit.incquery.cep.api.evm.CepRealm;
 import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
-import hu.bme.mit.incquery.cep.api.strategy.EventProcessingStrategyFactory;
-import hu.bme.mit.incquery.cep.api.strategy.IEventProcessingStrategy;
-import hu.bme.mit.incquery.cep.api.strategy.Strategy;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
@@ -62,7 +62,6 @@ import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedSc
 import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory;
 import org.eclipse.incquery.runtime.evm.update.UpdateCompleteProvider;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.omg.CORBA.OMGVMCID;
 
 import com.google.common.collect.Sets;
 
@@ -88,8 +87,12 @@ public class EventModelManager {
 			updateCompleted();
 		}
 	}
-
-	public EventModelManager(Strategy strategy) {
+	
+	public EventModelManager() {
+		this(null);
+	}
+	
+	public EventModelManager(EventProcessingContext context) {
 		model = SM_FACTORY.createInternalExecutionModel();
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
@@ -97,7 +100,7 @@ public class EventModelManager {
 		resourceSet = new ResourceSetImpl();
 		smModelResource = resourceSet.createResource(URI.createURI("cep/sm.cep"));
 		smModelResource.getContents().add(model);
-		this.strategy = EventProcessingStrategyFactory.getStrategy(strategy, this);
+		this.strategy = EventProcessingStrategyFactory.getStrategy(context, this);
 		this.realm = new CepRealm();
 
 		Adapter adapter = new AdapterImpl() {

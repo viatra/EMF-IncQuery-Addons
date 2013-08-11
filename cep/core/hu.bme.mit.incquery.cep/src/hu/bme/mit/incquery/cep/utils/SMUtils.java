@@ -14,6 +14,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
+import hu.bme.mit.incquery.cep.runtime.evaluation.StateMachineBuilder;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

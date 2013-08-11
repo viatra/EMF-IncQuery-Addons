@@ -11,9 +11,7 @@ import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
-
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
-
 import hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -22,7 +20,6 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**

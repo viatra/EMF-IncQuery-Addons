@@ -2,15 +2,29 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.*;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintType;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**

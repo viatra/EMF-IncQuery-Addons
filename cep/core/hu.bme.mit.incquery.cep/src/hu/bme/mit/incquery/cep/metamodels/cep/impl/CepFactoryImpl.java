@@ -2,15 +2,19 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.cep.impl;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.*;
+import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
+import hu.bme.mit.incquery.cep.metamodels.cep.CepFactory;
+import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
+import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
+import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
+import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**

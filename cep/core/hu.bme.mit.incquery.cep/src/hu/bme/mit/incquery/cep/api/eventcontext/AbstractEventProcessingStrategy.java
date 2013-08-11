@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.api.strategy;
+package hu.bme.mit.incquery.cep.api.eventcontext;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;

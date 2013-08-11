@@ -7,9 +7,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
 
 /**

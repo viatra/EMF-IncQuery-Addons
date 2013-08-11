@@ -1,9 +1,9 @@
 package hu.bme.mit.incquery.cep.api;
 
-import java.util.Calendar;
-
 import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
 import hu.bme.mit.incquery.cep.api.runtime.EventQueue;
+
+import java.util.Calendar;
 
 /**
  * Adapters delegating events from a given realm must extend this class.

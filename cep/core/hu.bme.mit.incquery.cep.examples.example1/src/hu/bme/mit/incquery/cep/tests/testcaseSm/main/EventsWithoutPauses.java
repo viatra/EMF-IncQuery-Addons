@@ -2,7 +2,6 @@ package hu.bme.mit.incquery.cep.tests.testcaseSm.main;
 
 import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
 import hu.bme.mit.incquery.cep.api.runtime.EventQueue;
-import hu.bme.mit.incquery.cep.api.strategy.Strategy;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.A;
@@ -47,7 +46,7 @@ public class EventsWithoutPauses {
 		List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
 		eventPatterns.add(dabcPattern);
 		
-		manager = new EventModelManager(Strategy.getDefault());
+		manager = new EventModelManager();
 		manager.assignEventPatterns(eventPatterns);
 		
 		System.err.println("DIAG: Test starting.\n");

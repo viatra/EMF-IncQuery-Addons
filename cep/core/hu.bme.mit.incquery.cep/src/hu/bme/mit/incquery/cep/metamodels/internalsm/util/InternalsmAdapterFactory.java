@@ -2,13 +2,22 @@
  */
 package hu.bme.mit.incquery.cep.metamodels.internalsm.util;
 
-import hu.bme.mit.incquery.cep.metamodels.internalsm.*;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

@@ -1,20 +1,20 @@
 package hu.bme.mit.incquery.cep.api;
 
-import hu.bme.mit.incquery.cep.api.strategy.Strategy;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering;
 
 public class EventPatternAutomatonOptions {
-	NoiseFiltering noiseFiltering;
-	Strategy strategy;
-	int priority;
+	private NoiseFiltering noiseFiltering;
+	private EventProcessingContext context;
+	private int priority;
 
 	public static EventPatternAutomatonOptions getDefault() {
-		return new EventPatternAutomatonOptions(NoiseFiltering.OFF, Strategy.CHRONICLE, 0);
+		return new EventPatternAutomatonOptions(NoiseFiltering.OFF, EventProcessingContext.CHRONICLE, 0);
 	}
 
-	public EventPatternAutomatonOptions(NoiseFiltering noiseFiltering, Strategy strategy, int priority) {
+	public EventPatternAutomatonOptions(NoiseFiltering noiseFiltering, EventProcessingContext context, int priority) {
 		this.noiseFiltering = noiseFiltering;
-		this.strategy = strategy;
+		this.context = context;
 		this.priority = priority;
 	}
 
@@ -26,12 +26,12 @@ public class EventPatternAutomatonOptions {
 		this.noiseFiltering = noiseFiltering;
 	}
 
-	public Strategy getStrategy() {
-		return strategy;
+	public EventProcessingContext getContext() {
+		return context;
 	}
 
-	public void setStrategy(Strategy strategy) {
-		this.strategy = strategy;
+	public void setContext(EventProcessingContext context) {
+		this.context = context;
 	}
 
 	public int getPriority() {
