@@ -1,5 +1,6 @@
-package hu.bme.mit.incquery.cep.api.eventcontext;
+package hu.bme.mit.incquery.cep.api.eventprocessingstrategy;
 
+import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
@@ -15,6 +16,16 @@ import org.eclipse.emf.common.util.EList;
 import com.google.common.base.Preconditions;
 
 public abstract class AbstractEventProcessingStrategy implements IEventProcessingStrategy {
+
+	private EventModelManager eventModelManager;
+
+	public AbstractEventProcessingStrategy(EventModelManager eventModelManager) {
+		this.eventModelManager = eventModelManager;
+	}
+
+	protected EventModelManager getEventModelManager() {
+		return this.eventModelManager;
+	}
 
 	protected long getCurrentTimeStamp() {
 		Calendar c = Calendar.getInstance();

@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.api.eventcontext;
+package hu.bme.mit.incquery.cep.api.eventprocessingstrategy;
 
 import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
@@ -12,12 +12,16 @@ public class EventProcessingStrategyFactory {
 		switch (context) {
 		case CHRONICLE:
 			return new ChronicleStrategy(eventModelManager);
+		case STRICT_IMMEDIATE:
+			return new StrictImmediateStrategy(eventModelManager);
+		case IMMEDIATE:
+			return new NormalImmediateStrategy(eventModelManager);
 		case RECENT:
-			return null; // return new RecentStrategy();
+			throw new IllegalArgumentException();	// NOT IMPLEMENTED YET
 		case UNRESTRICTED:
-			return null; // return new UnrestrictedStrategy();
+			throw new IllegalArgumentException();	// NOT IMPLEMENTED YET
 		default:
-			return null; // shall not happen
+			throw new IllegalArgumentException();	// SHALL NOT HAPPEN
 		}
 	}
 }

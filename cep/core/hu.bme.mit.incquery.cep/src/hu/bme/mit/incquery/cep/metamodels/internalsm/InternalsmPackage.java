@@ -451,22 +451,13 @@ public interface InternalsmPackage extends EPackage {
 	int STATE_MACHINE__EVENT_PATTERN = 1;
 
 	/**
-	 * The feature id for the '<em><b>Noise Filtering</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_MACHINE__NOISE_FILTERING = 2;
-
-	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE__PRIORITY = 3;
+	int STATE_MACHINE__PRIORITY = 2;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' attribute.
@@ -475,7 +466,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE__CONTEXT = 4;
+	int STATE_MACHINE__CONTEXT = 3;
 
 	/**
 	 * The number of structural features of the '<em>State Machine</em>' class.
@@ -484,7 +475,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE_FEATURE_COUNT = 5;
+	int STATE_MACHINE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalExecutionModelImpl <em>Internal Execution Model</em>}' class.
@@ -691,17 +682,6 @@ public interface InternalsmPackage extends EPackage {
 	int TIME_CONSTRAINT_TYPE = 12;
 
 	/**
-	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering <em>Noise Filtering</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getNoiseFiltering()
-	 * @generated
-	 */
-	int NOISE_FILTERING = 13;
-
-
-	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext <em>Event Processing Context</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -709,7 +689,7 @@ public interface InternalsmPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getEventProcessingContext()
 	 * @generated
 	 */
-	int EVENT_PROCESSING_CONTEXT = 14;
+	int EVENT_PROCESSING_CONTEXT = 13;
 
 
 	/**
@@ -915,17 +895,6 @@ public interface InternalsmPackage extends EPackage {
 	EReference getStateMachine_EventPattern();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getNoiseFiltering <em>Noise Filtering</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Noise Filtering</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getNoiseFiltering()
-	 * @see #getStateMachine()
-	 * @generated
-	 */
-	EAttribute getStateMachine_NoiseFiltering();
-
-	/**
 	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getPriority <em>Priority</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1098,17 +1067,6 @@ public interface InternalsmPackage extends EPackage {
 	EClass getTimeConstraint();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getType()
-	 * @see #getTimeConstraint()
-	 * @generated
-	 */
-	EAttribute getTimeConstraint_Type();
-
-	/**
 	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getTimeConstraintSpecification <em>Time Constraint Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1118,6 +1076,17 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTimeConstraint_TimeConstraintSpecification();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getType()
+	 * @see #getTimeConstraint()
+	 * @generated
+	 */
+	EAttribute getTimeConstraint_Type();
 
 	/**
 	 * Returns the meta object for enum '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator <em>Numeric Compare Operator</em>}'.
@@ -1138,16 +1107,6 @@ public interface InternalsmPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getTimeConstraintType();
-
-	/**
-	 * Returns the meta object for enum '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering <em>Noise Filtering</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Noise Filtering</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering
-	 * @generated
-	 */
-	EEnum getNoiseFiltering();
 
 	/**
 	 * Returns the meta object for enum '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext <em>Event Processing Context</em>}'.
@@ -1348,14 +1307,6 @@ public interface InternalsmPackage extends EPackage {
 		EReference STATE_MACHINE__EVENT_PATTERN = eINSTANCE.getStateMachine_EventPattern();
 
 		/**
-		 * The meta object literal for the '<em><b>Noise Filtering</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STATE_MACHINE__NOISE_FILTERING = eINSTANCE.getStateMachine_NoiseFiltering();
-
-		/**
 		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1492,20 +1443,20 @@ public interface InternalsmPackage extends EPackage {
 		EClass TIME_CONSTRAINT = eINSTANCE.getTimeConstraint();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TIME_CONSTRAINT__TYPE = eINSTANCE.getTimeConstraint_Type();
-
-		/**
 		 * The meta object literal for the '<em><b>Time Constraint Specification</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference TIME_CONSTRAINT__TIME_CONSTRAINT_SPECIFICATION = eINSTANCE.getTimeConstraint_TimeConstraintSpecification();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_CONSTRAINT__TYPE = eINSTANCE.getTimeConstraint_Type();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator <em>Numeric Compare Operator</em>}' enum.
@@ -1526,16 +1477,6 @@ public interface InternalsmPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum TIME_CONSTRAINT_TYPE = eINSTANCE.getTimeConstraintType();
-
-		/**
-		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering <em>Noise Filtering</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering
-		 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl#getNoiseFiltering()
-		 * @generated
-		 */
-		EEnum NOISE_FILTERING = eINSTANCE.getNoiseFiltering();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext <em>Event Processing Context</em>}' enum.

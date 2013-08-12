@@ -11,7 +11,9 @@ import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
+
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
+
 import hu.bme.mit.incquery.cep.metamodels.internalsm.impl.InternalsmPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -20,6 +22,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -158,7 +161,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEventPattern_StateMachines() {
+	public EReference getEventPattern_StateMachine() {
 		return (EReference)eventPatternEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -335,7 +338,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 
 		// Create classes and their features
 		eventPatternEClass = createEClass(EVENT_PATTERN);
-		createEReference(eventPatternEClass, EVENT_PATTERN__STATE_MACHINES);
+		createEReference(eventPatternEClass, EVENT_PATTERN__STATE_MACHINE);
 		createEAttribute(eventPatternEClass, EVENT_PATTERN__ID);
 		createEAttribute(eventPatternEClass, EVENT_PATTERN__HOLDING_TIME);
 
@@ -397,7 +400,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(eventPatternEClass, EventPattern.class, "EventPattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEventPattern_StateMachines(), theInternalsmPackage.getStateMachine(), theInternalsmPackage.getStateMachine_EventPattern(), "stateMachines", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEventPattern_StateMachine(), theInternalsmPackage.getStateMachine(), theInternalsmPackage.getStateMachine_EventPattern(), "stateMachine", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEventPattern_Id(), ecorePackage.getEString(), "id", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEventPattern_HoldingTime(), ecorePackage.getELong(), "holdingTime", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

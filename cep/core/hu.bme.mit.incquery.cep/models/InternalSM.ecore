@@ -37,9 +37,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
         eType="#//State" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventPattern" lowerBound="1"
-        eType="ecore:EClass CEPMeta.ecore#//EventPattern" eOpposite="CEPMeta.ecore#//EventPattern/stateMachines"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noiseFiltering" lowerBound="1"
-        eType="#//NoiseFiltering"/>
+        eType="ecore:EClass CEPMeta.ecore#//EventPattern" eOpposite="CEPMeta.ecore#//EventPattern/stateMachine"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" eType="#//EventProcessingContext"/>
   </eClassifiers>
@@ -83,15 +81,11 @@
         lowerBound="1" eType="#//TimeConstraintSpecification"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TimeConstraintType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="NoiseFiltering">
-    <eLiterals name="OFF"/>
-    <eLiterals name="NORMAL" value="1"/>
-    <eLiterals name="STRICT" value="2"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EventProcessingContext">
     <eLiterals name="CHRONICLE"/>
     <eLiterals name="RECENT" value="1"/>
     <eLiterals name="UNRESTRICTED" value="2"/>
     <eLiterals name="IMMEDIATE" value="3" literal="IMMEDIATE"/>
+    <eLiterals name="STRICT_IMMEDIATE" value="4" literal="STRICT_IMMEDIATE"/>
   </eClassifiers>
 </ecore:EPackage>

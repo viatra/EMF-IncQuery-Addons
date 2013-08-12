@@ -3,29 +3,14 @@
 package hu.bme.mit.incquery.cep.metamodels.internalsm.impl;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.*;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.Guard;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.NumericCompareOperator;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintType;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
@@ -100,8 +85,6 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 				return createNumericCompareOperatorFromString(eDataType, initialValue);
 			case InternalsmPackage.TIME_CONSTRAINT_TYPE:
 				return createTimeConstraintTypeFromString(eDataType, initialValue);
-			case InternalsmPackage.NOISE_FILTERING:
-				return createNoiseFilteringFromString(eDataType, initialValue);
 			case InternalsmPackage.EVENT_PROCESSING_CONTEXT:
 				return createEventProcessingContextFromString(eDataType, initialValue);
 			default:
@@ -121,8 +104,6 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 				return convertNumericCompareOperatorToString(eDataType, instanceValue);
 			case InternalsmPackage.TIME_CONSTRAINT_TYPE:
 				return convertTimeConstraintTypeToString(eDataType, instanceValue);
-			case InternalsmPackage.NOISE_FILTERING:
-				return convertNoiseFilteringToString(eDataType, instanceValue);
 			case InternalsmPackage.EVENT_PROCESSING_CONTEXT:
 				return convertEventProcessingContextToString(eDataType, instanceValue);
 			default:
@@ -277,26 +258,6 @@ public class InternalsmFactoryImpl extends EFactoryImpl implements InternalsmFac
 	 * @generated
 	 */
 	public String convertTimeConstraintTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NoiseFiltering createNoiseFilteringFromString(EDataType eDataType, String initialValue) {
-		NoiseFiltering result = NoiseFiltering.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertNoiseFilteringToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

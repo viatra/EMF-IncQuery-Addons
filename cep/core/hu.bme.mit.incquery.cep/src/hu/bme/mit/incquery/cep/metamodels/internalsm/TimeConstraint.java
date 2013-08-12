@@ -23,6 +23,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface TimeConstraint extends EObject {
 	/**
+	 * Returns the value of the '<em><b>Time Constraint Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Time Constraint Specification</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Time Constraint Specification</em>' reference.
+	 * @see #setTimeConstraintSpecification(TimeConstraintSpecification)
+	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getTimeConstraint_TimeConstraintSpecification()
+	 * @model required="true"
+	 * @generated
+	 */
+	TimeConstraintSpecification getTimeConstraintSpecification();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getTimeConstraintSpecification <em>Time Constraint Specification</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Time Constraint Specification</em>' reference.
+	 * @see #getTimeConstraintSpecification()
+	 * @generated
+	 */
+	void setTimeConstraintSpecification(TimeConstraintSpecification value);
+
+	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintType}.
 	 * <!-- begin-user-doc -->
@@ -50,31 +76,5 @@ public interface TimeConstraint extends EObject {
 	 * @generated
 	 */
 	void setType(TimeConstraintType value);
-
-	/**
-	 * Returns the value of the '<em><b>Time Constraint Specification</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Time Constraint Specification</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Time Constraint Specification</em>' reference.
-	 * @see #setTimeConstraintSpecification(TimeConstraintSpecification)
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getTimeConstraint_TimeConstraintSpecification()
-	 * @model required="true"
-	 * @generated
-	 */
-	TimeConstraintSpecification getTimeConstraintSpecification();
-
-	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint#getTimeConstraintSpecification <em>Time Constraint Specification</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time Constraint Specification</em>' reference.
-	 * @see #getTimeConstraintSpecification()
-	 * @generated
-	 */
-	void setTimeConstraintSpecification(TimeConstraintSpecification value);
 
 } // TimeConstraint

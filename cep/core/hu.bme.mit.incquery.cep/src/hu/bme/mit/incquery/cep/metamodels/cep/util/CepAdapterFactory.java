@@ -3,17 +3,12 @@
 package hu.bme.mit.incquery.cep.metamodels.cep.util;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.*;
-import hu.bme.mit.incquery.cep.metamodels.cep.AtomicEventPattern;
-import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
-import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
-import hu.bme.mit.incquery.cep.metamodels.cep.Event;
-import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
-import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
-import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

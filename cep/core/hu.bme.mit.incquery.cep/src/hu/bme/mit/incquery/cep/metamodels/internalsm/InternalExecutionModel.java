@@ -5,6 +5,7 @@ package hu.bme.mit.incquery.cep.metamodels.internalsm;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

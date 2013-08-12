@@ -67,7 +67,6 @@ public class StateMachineBuilder {
 		sm.setEventPattern(rootPattern);
 
 		if (options != null) {
-			sm.setNoiseFiltering(options.getNoiseFiltering());
 			sm.setPriority(options.getPriority());
 		}
 

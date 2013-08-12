@@ -5,6 +5,7 @@ package hu.bme.mit.incquery.cep.metamodels.internalsm;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getStates <em>States</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern <em>Event Pattern</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getNoiseFiltering <em>Noise Filtering</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getPriority <em>Priority</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getContext <em>Context</em>}</li>
  * </ul>
@@ -46,7 +46,7 @@ public interface StateMachine extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Event Pattern</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines <em>State Machines</em>}'.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachine <em>State Machine</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Event Pattern</em>' reference isn't clear,
@@ -56,8 +56,8 @@ public interface StateMachine extends EObject {
 	 * @return the value of the '<em>Event Pattern</em>' reference.
 	 * @see #setEventPattern(EventPattern)
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getStateMachine_EventPattern()
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines
-	 * @model opposite="stateMachines" required="true"
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachine
+	 * @model opposite="stateMachine" required="true"
 	 * @generated
 	 */
 	EventPattern getEventPattern();
@@ -71,35 +71,6 @@ public interface StateMachine extends EObject {
 	 * @generated
 	 */
 	void setEventPattern(EventPattern value);
-
-	/**
-	 * Returns the value of the '<em><b>Noise Filtering</b></em>' attribute.
-	 * The literals are from the enumeration {@link hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Noise Filtering</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Noise Filtering</em>' attribute.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering
-	 * @see #setNoiseFiltering(NoiseFiltering)
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage#getStateMachine_NoiseFiltering()
-	 * @model required="true"
-	 * @generated
-	 */
-	NoiseFiltering getNoiseFiltering();
-
-	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getNoiseFiltering <em>Noise Filtering</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Noise Filtering</em>' attribute.
-	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering
-	 * @see #getNoiseFiltering()
-	 * @generated
-	 */
-	void setNoiseFiltering(NoiseFiltering value);
 
 	/**
 	 * Returns the value of the '<em><b>Priority</b></em>' attribute.

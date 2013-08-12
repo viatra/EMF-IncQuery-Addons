@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines <em>State Machines</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachine <em>State Machine</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getId <em>Id</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getHoldingTime <em>Holding Time</em>}</li>
  * </ul>
@@ -26,32 +26,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EventPattern extends EObject {
 	/**
-	 * Returns the value of the '<em><b>State Machines</b></em>' reference.
+	 * Returns the value of the '<em><b>State Machine</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern <em>Event Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>State Machines</em>' reference isn't clear,
+	 * If the meaning of the '<em>State Machine</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>State Machines</em>' reference.
-	 * @see #setStateMachines(StateMachine)
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getEventPattern_StateMachines()
+	 * @return the value of the '<em>State Machine</em>' reference.
+	 * @see #setStateMachine(StateMachine)
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.CepPackage#getEventPattern_StateMachine()
 	 * @see hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine#getEventPattern
 	 * @model opposite="eventPattern"
 	 * @generated
 	 */
-	StateMachine getStateMachines();
+	StateMachine getStateMachine();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines <em>State Machines</em>}' reference.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachine <em>State Machine</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>State Machines</em>' reference.
-	 * @see #getStateMachines()
+	 * @param value the new value of the '<em>State Machine</em>' reference.
+	 * @see #getStateMachine()
 	 * @generated
 	 */
-	void setStateMachines(StateMachine value);
+	void setStateMachine(StateMachine value);
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.

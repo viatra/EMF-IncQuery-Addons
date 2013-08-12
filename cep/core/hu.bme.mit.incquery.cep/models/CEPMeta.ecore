@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cep" nsURI="cep.meta" nsPrefix="hu.bme.mit.incquery.metamodels">
   <eClassifiers xsi:type="ecore:EClass" name="EventPattern" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachines" eType="ecore:EClass InternalSM.ecore#//StateMachine"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachine" eType="ecore:EClass InternalSM.ecore#//StateMachine"
         eOpposite="InternalSM.ecore#//StateMachine/eventPattern"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="holdingTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>

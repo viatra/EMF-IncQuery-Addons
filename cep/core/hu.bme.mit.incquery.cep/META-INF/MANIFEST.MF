@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: hu.bme.mit.incquery.cep.api,
- hu.bme.mit.incquery.cep.api.eventcontext,
+ hu.bme.mit.incquery.cep.api.eventprocessingstrategy,
  hu.bme.mit.incquery.cep.api.evm,
  hu.bme.mit.incquery.cep.api.runtime,
  hu.bme.mit.incquery.cep.metamodels.cep,

@@ -67,13 +67,13 @@ public interface CepPackage extends EPackage {
 	int EVENT_PATTERN = 0;
 
 	/**
-	 * The feature id for the '<em><b>State Machines</b></em>' reference.
+	 * The feature id for the '<em><b>State Machine</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_PATTERN__STATE_MACHINES = 0;
+	int EVENT_PATTERN__STATE_MACHINE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -113,13 +113,13 @@ public interface CepPackage extends EPackage {
 	int ATOMIC_EVENT_PATTERN = 1;
 
 	/**
-	 * The feature id for the '<em><b>State Machines</b></em>' reference.
+	 * The feature id for the '<em><b>State Machine</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_EVENT_PATTERN__STATE_MACHINES = EVENT_PATTERN__STATE_MACHINES;
+	int ATOMIC_EVENT_PATTERN__STATE_MACHINE = EVENT_PATTERN__STATE_MACHINE;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -168,13 +168,13 @@ public interface CepPackage extends EPackage {
 	int COMPLEX_EVENT_PATTERN = 2;
 
 	/**
-	 * The feature id for the '<em><b>State Machines</b></em>' reference.
+	 * The feature id for the '<em><b>State Machine</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_EVENT_PATTERN__STATE_MACHINES = EVENT_PATTERN__STATE_MACHINES;
+	int COMPLEX_EVENT_PATTERN__STATE_MACHINE = EVENT_PATTERN__STATE_MACHINE;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -345,15 +345,15 @@ public interface CepPackage extends EPackage {
 	EClass getEventPattern();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines <em>State Machines</em>}'.
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachine <em>State Machine</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>State Machines</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachines()
+	 * @return the meta object for the reference '<em>State Machine</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getStateMachine()
 	 * @see #getEventPattern()
 	 * @generated
 	 */
-	EReference getEventPattern_StateMachines();
+	EReference getEventPattern_StateMachine();
 
 	/**
 	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.metamodels.cep.EventPattern#getId <em>Id</em>}'.
@@ -558,12 +558,12 @@ public interface CepPackage extends EPackage {
 		EClass EVENT_PATTERN = eINSTANCE.getEventPattern();
 
 		/**
-		 * The meta object literal for the '<em><b>State Machines</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>State Machine</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EVENT_PATTERN__STATE_MACHINES = eINSTANCE.getEventPattern_StateMachines();
+		EReference EVENT_PATTERN__STATE_MACHINE = eINSTANCE.getEventPattern_StateMachine();
 
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.

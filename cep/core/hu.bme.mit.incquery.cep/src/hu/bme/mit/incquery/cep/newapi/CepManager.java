@@ -1,12 +1,10 @@
 package hu.bme.mit.incquery.cep.newapi;
 
-import java.util.List;
-
 import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
-import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
-import hu.bme.mit.incquery.cep.metamodels.internalsm.NoiseFiltering;
+
+import java.util.List;
 
 /**
  * Wrapper facade for the real event processing manager.
@@ -37,7 +35,7 @@ public class CepManager {
 	// business data
 	public void addEventPattern(EventPattern eventPattern) {
 		// The NoiseFiltering parameter will be obsolete
-		eventModelManager.assignEventPattern(eventPattern, NoiseFiltering.OFF);
+		eventModelManager.assignEventPattern(eventPattern);
 	}
 
 	public void removeEventPattern(EventPattern eventPattern) {

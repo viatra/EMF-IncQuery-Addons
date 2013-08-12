@@ -8,8 +8,10 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintType;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
@@ -82,27 +84,6 @@ public class TimeConstraintImpl extends EObjectImpl implements TimeConstraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeConstraintType getType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(TimeConstraintType newType) {
-		TimeConstraintType oldType = type;
-		type = newType == null ? TYPE_EDEFAULT : newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.TIME_CONSTRAINT__TYPE, oldType, type));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public TimeConstraintSpecification getTimeConstraintSpecification() {
 		if (timeConstraintSpecification != null && timeConstraintSpecification.eIsProxy()) {
 			InternalEObject oldTimeConstraintSpecification = (InternalEObject)timeConstraintSpecification;
@@ -134,6 +115,27 @@ public class TimeConstraintImpl extends EObjectImpl implements TimeConstraint {
 		timeConstraintSpecification = newTimeConstraintSpecification;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.TIME_CONSTRAINT__TIME_CONSTRAINT_SPECIFICATION, oldTimeConstraintSpecification, timeConstraintSpecification));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TimeConstraintType getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(TimeConstraintType newType) {
+		TimeConstraintType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InternalsmPackage.TIME_CONSTRAINT__TYPE, oldType, type));
 	}
 
 	/**
