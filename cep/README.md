@@ -21,6 +21,7 @@ Roadmap/TODO
 ------------
 
 **Latest enhancements:**
+* 08.12. Noise filtering is now implemented via the IMMEDIATE and STRICT_IMMEDIATE EventProcessingContexts
 * 06.30. noise filtering
 * 06.29. DSL improvements: follows operator (+timewindows), syntax coloring
 * 06.29. fixed token handling issue causing wrongly fired tokens
@@ -29,15 +30,15 @@ Roadmap/TODO
 * 06.22. handling both ordered and unordered cases with time windows
 
 **In progress:**
-* replace Strategy with the generated EventProcessingContext
 * make noise filtering more efficient
-* elaborate the JNect demo (robot)
-* enable discretization
 * complete the examples and unit tests
 * define the language for modeling event patterns over EMF models
  * reuse the concepts of event-driven model transformations and the pattern language of IncQuery
 
 **Future work:**
+* [d] replace the bare Java code in the process at the following points:
+ * time constraint checks
+ * state machines without enabled transitions (see: wasEnabled map in the Manager)
 * [r/d] enable defining more compound events, i.e. using measurments (as of CEDL)
  * e.g. instead of having an IQPattern_Found and an IQPattern_Lost event, define one event containing the Found/Lost parameter
  * this would require more advanced guard handling on the transitions
