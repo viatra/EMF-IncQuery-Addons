@@ -54,7 +54,7 @@ public class EventsWithTimewindows {
 		eventQueue.push(new D(source));
 		eventQueue.push(new B(source));
 		eventQueue.push(new C(source));
-		Thread.sleep(1495l);
+		Thread.sleep(1400l); //this parameter is heavily dependent on the performance bottlenecks
 		eventQueue.push(new A(source));
 		
 		System.err.println("\nDIAG: Test finished.");

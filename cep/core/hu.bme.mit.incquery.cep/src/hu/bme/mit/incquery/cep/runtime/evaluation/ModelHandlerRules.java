@@ -61,18 +61,17 @@ public class ModelHandlerRules {
 			@Override
 			public void process(FinishedStateMachineMatch match) {
 				StateMachine sm = match.getSm();
-				// log(sm);
 
 				FinalState finalState = eventModelManager.getFinalStatesForStatemachines().get(sm);
 
 				finalState.getEventTokens().remove(0);
-				
+
 				// forward the observed pattern in a DTO
 				ObservedComplexEventPattern observedPattern = new SimpleObservedComplexEventPattern(
 						sm.getEventPattern());
-				
+
 				eventModelManager.callbackOnPatternRecognition(observedPattern);
-				
+
 				eventModelManager.getRealm().forwardObservedEventPattern(observedPattern);
 			}
 
@@ -82,31 +81,10 @@ public class ModelHandlerRules {
 		jobs.add(new StatelessJob<FinishedStateMachineMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
 		RuleSpecification<FinishedStateMachineMatch> spec = Rules.newSimpleMatcherRuleSpecification(
-		// FinishedStateMachineMatcher.querySpecification(),
-		// Lifecycles.getDefault(false, false), jobs);
 				FinishedStateMachineMatcher.querySpecification(), DefaultActivationLifeCycle.DEFAULT, jobs);
 
 		return spec;
 	}
-
-	// private void log(StateMachine sm){
-	// System.err.println("\tIQ: " + sm.getEventPattern().getId() +
-	// " MATCHED!");
-	// }
-	//
-	// private void log(EventToken et) {
-	// System.err.println("\tIQ: Events recorded by the CurrentStateVisitor: ");
-	// Object recordedEvents = et.getEventCollection().getRecordedEvents();
-	// if (!(recordedEvents instanceof Multimap<?, ?>)) {
-	// return;
-	// }
-	// @SuppressWarnings("unchecked")
-	// Multimap<String, Event> eventMap = (Multimap<String, Event>)
-	// et.getEventCollection().getRecordedEvents();
-	// for (Event event : eventMap.values()) {
-	// System.err.println("\t\t" + event.getTypeId());
-	// }
-	// }
 
 	public RuleSpecification<EnabledTransitionMatch> getEnabledTransitionsRule() throws IncQueryException {
 		IMatchProcessor<EnabledTransitionMatch> processor = new IMatchProcessor<EnabledTransitionMatch>() {
@@ -124,18 +102,10 @@ public class ModelHandlerRules {
 		jobs.add(new StatelessJob<EnabledTransitionMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
 		RuleSpecification<EnabledTransitionMatch> spec = Rules.newSimpleMatcherRuleSpecification(
-		// EnabledTransitionMatcher.querySpecification(),
-		// Lifecycles.getDefault(false, false), jobs);
 				EnabledTransitionMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
 
 		return spec;
 	}
-
-	// private void log(Transition t) {
-	// StateMachine sm = (StateMachine) t.getPostState().eContainer();
-	// System.err.println("\tIQ: enabled transition in SM for pattern "
-	// + sm.getEventPattern().getClass().getSimpleName());
-	// }
 
 	public RuleSpecification<TokenInTrapStateMatch> getTokenInTrapStateRule() throws IncQueryException {
 		IMatchProcessor<TokenInTrapStateMatch> processor = new IMatchProcessor<TokenInTrapStateMatch>() {
@@ -160,8 +130,6 @@ public class ModelHandlerRules {
 		jobs.add(new StatelessJob<TokenInTrapStateMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
 		RuleSpecification<TokenInTrapStateMatch> spec = Rules.newSimpleMatcherRuleSpecification(
-		// TokenInTrapStateMatcher.querySpecification(),
-		// Lifecycles.getDefault(false, false), jobs);
 				TokenInTrapStateMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
 
 		return spec;
@@ -191,8 +159,6 @@ public class ModelHandlerRules {
 		jobs.add(new StatelessJob<PartiallyMatchedEventPatternMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
 		RuleSpecification<PartiallyMatchedEventPatternMatch> spec = Rules.newSimpleMatcherRuleSpecification(
-		// TokenInTrapStateMatcher.querySpecification(),
-		// Lifecycles.getDefault(false, false), jobs);
 				PartiallyMatchedEventPatternMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
 
 		return spec;
