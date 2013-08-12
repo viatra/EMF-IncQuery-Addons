@@ -66,19 +66,21 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import com.google.common.collect.Sets;
 
 public class EventModelManager {
-	private InternalExecutionModel model;
-	private IncQueryEngine engine;
 	private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
+	
+	private InternalExecutionModel model;
 	private Resource smModelResource;
+	private ResourceSet resourceSet;
+	
+	private IncQueryEngine engine;
 	private IEventProcessingStrategy strategy;
 	private ExecutionSchema lowLevelExecutionSchema;
 	private ExecutionSchema topLevelExecutionSchema;
-	private CepRealm realm;
 	private UpdateCompleteProviderExtension updateCompleteProvider;
-	private ResourceSet resourceSet;
+	
+	private CepRealm realm;
 	private Map<StateMachine, FinalState> finalStatesForStatemachines = new LinkedHashMap<StateMachine, FinalState>();
 	private Map<StateMachine, InitState> initStatesForStatemachines = new LinkedHashMap<StateMachine, InitState>();
-	// private boolean wasEnabled = false;
 	private Map<StateMachine, Boolean> wasEnabled = new LinkedHashMap<StateMachine, Boolean>();
 	private NoiseFiltering noiseFiltering;
 
@@ -87,12 +89,8 @@ public class EventModelManager {
 			updateCompleted();
 		}
 	}
-	
-	public EventModelManager() {
-		this(null);
-	}
-	
-	public EventModelManager(EventProcessingContext context) {
+
+	private void prepareModel() {
 		model = SM_FACTORY.createInternalExecutionModel();
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
@@ -100,8 +98,10 @@ public class EventModelManager {
 		resourceSet = new ResourceSetImpl();
 		smModelResource = resourceSet.createResource(URI.createURI("cep/sm.cep"));
 		smModelResource.getContents().add(model);
-		this.strategy = EventProcessingStrategyFactory.getStrategy(context, this);
-		this.realm = new CepRealm();
+	}
+
+	public EventModelManager() {
+		prepareModel();
 
 		Adapter adapter = new AdapterImpl() {
 			@Override
@@ -118,11 +118,25 @@ public class EventModelManager {
 			}
 		};
 		EventQueue.getInstance().eAdapters().add(adapter);
+		
+		//assigning the default Context and Strategy - can be overridden via #setEventProcessingContext()
+		this.strategy = EventProcessingStrategyFactory.getStrategy(EventProcessingContext.CHRONICLE, this);
+		this.realm = new CepRealm();
 	}
 
+	public void setEventProcessingContext(EventProcessingContext context) {
+		this.strategy = EventProcessingStrategyFactory.getStrategy(EventProcessingContext.CHRONICLE, this);
+	}
+
+	/**
+	 * @deprecated Since the NoiseFiltering will be obsolete
+	 * @param eventPatternsWithOptions
+	 */
+	@Deprecated
 	public void assignEventPatterns(Map<EventPattern, EventPatternAutomatonOptions> eventPatternsWithOptions) {
 		Set<RuleSpecification<?>> rules = new HashSet<RuleSpecification<?>>();
 
+		
 		for (EventPattern eventPattern : eventPatternsWithOptions.keySet()) {
 			EventPatternAutomatonOptions options = eventPatternsWithOptions.get(eventPattern);
 			StateMachine stateMachine = getStateMachine(eventPattern, options);
@@ -130,9 +144,9 @@ public class EventModelManager {
 			wasEnabled.put(stateMachine, true);
 
 			CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(stateMachine);
-		
+
 			Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(CepActivationStates.ACTIVE) {
-				
+
 				protected void execute(Activation<? extends ObservedComplexEventPattern> activation, Context context) {
 					Logger.log(">>>>>>>>>>>>>>>CEP: Complex event pattern appeared: "
 							+ activation.getAtom().getObservedEventPattern().getId());
@@ -256,7 +270,7 @@ public class EventModelManager {
 	private void handleNoiseFiltering() {
 		for (StateMachine stateMachine : model.getStateMachines()) {
 			// if noise filtering is not turned off AND if the SM wasn't updated
-			if ((noiseFiltering != null) && !noiseFiltering.equals(NoiseFiltering.OFF)
+			if ((stateMachine.getNoiseFiltering() != null) && !stateMachine.getNoiseFiltering().equals(NoiseFiltering.OFF)
 					&& !(wasEnabled.containsKey(stateMachine) && wasEnabled.get(stateMachine))) {
 				String id = stateMachine.getEventPattern().getId();
 				System.out.println("\t\t\t>>>>>>>>>No suitable update in the SM : " + id + ". It's going to be reset.");

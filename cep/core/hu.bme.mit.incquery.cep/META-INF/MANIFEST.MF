@@ -16,6 +16,8 @@ Export-Package: hu.bme.mit.incquery.cep.api,
  hu.bme.mit.incquery.cep.metamodels.internalsm,
  hu.bme.mit.incquery.cep.metamodels.internalsm.impl,
  hu.bme.mit.incquery.cep.metamodels.internalsm.util,
+ hu.bme.mit.incquery.cep.newapi,
+ hu.bme.mit.incquery.cep.newapi.wrappers,
  hu.bme.mit.incquery.cep.runtime.evaluation.queries,
  hu.bme.mit.incquery.cep.runtime.evaluation.queries.util
 Require-Bundle: org.eclipse.core.runtime,
@@ -25,5 +27,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.incquery.runtime;bundle-version="0.7.0",
  org.eclipse.incquery.runtime.evm;bundle-version="0.7.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Import-Package: org.eclipse.ui.plugin
 Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.ui.plugin

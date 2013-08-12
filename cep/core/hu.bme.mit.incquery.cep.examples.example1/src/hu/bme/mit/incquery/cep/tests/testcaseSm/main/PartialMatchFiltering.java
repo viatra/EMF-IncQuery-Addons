@@ -40,7 +40,7 @@ public class PartialMatchFiltering {
 	@Test
 	public void test() throws InterruptedException, IncQueryException {
 		manager = new EventModelManager();
-		manager.assignEventPattern(abcPattern, NoiseFiltering.OFF);
+		manager.assignEventPattern(abcPattern, NoiseFiltering.STRICT);
 
 		System.err.println("DIAG: Test starting.\n");
 

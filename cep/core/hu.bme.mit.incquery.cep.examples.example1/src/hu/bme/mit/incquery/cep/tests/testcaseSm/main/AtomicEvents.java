@@ -4,6 +4,7 @@ import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
 import hu.bme.mit.incquery.cep.api.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.A;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.B;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.C;
@@ -47,6 +48,7 @@ public class AtomicEvents {
 		eventPatterns.add(aPattern);
 		
 		manager = new EventModelManager();
+		manager.setEventProcessingContext(EventProcessingContext.CHRONICLE);
 		manager.assignEventPatterns(eventPatterns);
 		
 		System.err.println("DIAG: Test starting.\n");

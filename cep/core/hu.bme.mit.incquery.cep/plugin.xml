@@ -147,33 +147,4 @@
       </matcher>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated cepsm -->
-      <package
-            uri="cep.meta"
-            class="hu.bme.mit.incquery.cep.metamodels.cep.CepPackage"
-            genModel="models/cepsm.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.extension_parser">
-      <!-- @generated cepsm -->
-      <parser
-            type="cep"
-            class="hu.bme.mit.incquery.cep.metamodels.cep.util.CepResourceFactoryImpl"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated cepsm -->
-      <package
-            uri="sm.meta"
-            class="hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage"
-            genModel="models/cepsm.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.extension_parser">
-      <!-- @generated cepsm -->
-      <parser
-            type="internalsm"
-            class="hu.bme.mit.incquery.cep.metamodels.internalsm.util.InternalsmResourceFactoryImpl"/>
-   </extension>
 </plugin>
