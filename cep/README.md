@@ -12,7 +12,7 @@ There is also a DSL for defining event patterns and event source types: **[hu.bm
 For example codes see the **\*.examples.*** plugins:
 * **[hu.bme.mit.incquery.cep.examples.example1](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/hu.bme.mit.incquery.cep.examples.example1)** shows a simple use-case where atomic and complex event patterns are defined and recognized on the event stream among other events.
 * **[hu.bme.mit.incquery.cep.examples.evm.integration](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/hu.bme.mit.incquery.cep.examples.evm.integration)** presents an example for integrating  VIATRA-CEP and VIATRA-EVM.
-* **[hu.bme.mit.incquery.cep.dls.examples.](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/hu.bme.mit.incquery.cep.dsl.examples)** contains examples for event pattern description DSL.
+* **[hu.bme.mit.incquery.cep.dls.examples](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/hu.bme.mit.incquery.cep.dsl.examples)** contains examples for event pattern description DSL.
 
 Demo
 --------------
