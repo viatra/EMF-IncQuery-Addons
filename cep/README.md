@@ -12,6 +12,7 @@ There is also a DSL for defining event patterns and event source types: **[hu.bm
 For example codes see the **\*.examples.*** plugins:
 * **[hu.bme.mit.incquery.cep.examples.example1](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/hu.bme.mit.incquery.cep.examples.example1)** shows a simple use-case where atomic and complex event patterns are defined and recognized on the event stream among other events.
 * **[hu.bme.mit.incquery.cep.examples.evm.integration](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/hu.bme.mit.incquery.cep.examples.evm.integration)** presents an example for integrating  VIATRA-CEP and VIATRA-EVM.
+* **[hu.bme.mit.incquery.cep.dls.examples.](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/hu.bme.mit.incquery.cep.dsl.examples)** contains examples for event pattern description DSL.
 
 Demo
 --------------
@@ -21,19 +22,14 @@ Roadmap/TODO
 ------------
 
 **Latest enhancements:**
+* 09.06. Changes in the action descriptions of patterns
 * 08.12. Noise filtering is now implemented via the IMMEDIATE and STRICT_IMMEDIATE EventProcessingContexts
-* 06.30. noise filtering
-* 06.29. DSL improvements: follows operator (+timewindows), syntax coloring
-* 06.29. fixed token handling issue causing wrongly fired tokens
-* 06.27. initial commit for the DSLs
-* 06.26. duplicate handling fixed on state machine level
-* 06.22. handling both ordered and unordered cases with time windows
 
 **In progress:**
-* make noise filtering more efficient
-* complete the examples and unit tests
 * define the language for modeling event patterns over EMF models
  * reuse the concepts of event-driven model transformations and the pattern language of IncQuery
+* make noise filtering more efficient
+* complete the examples and unit tests
 
 **Future work:**
 * [d] replace the bare Java code in the process at the following points:
