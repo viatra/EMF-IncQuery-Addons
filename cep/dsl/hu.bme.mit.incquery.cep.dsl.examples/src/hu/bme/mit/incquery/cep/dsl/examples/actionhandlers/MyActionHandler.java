@@ -1,4 +1,4 @@
-package srcodes;
+package hu.bme.mit.incquery.cep.dsl.examples.actionhandlers;
 
 public class MyActionHandler {
 	public void handleAction(int id) {
