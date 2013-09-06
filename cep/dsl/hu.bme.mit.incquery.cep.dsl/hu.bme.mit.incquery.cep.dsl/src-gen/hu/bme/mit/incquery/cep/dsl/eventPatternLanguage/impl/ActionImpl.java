@@ -3,7 +3,6 @@
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Action;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Event;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -13,38 +12,41 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Event</b></em>'.
+ * An implementation of the model object '<em><b>Action</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventImpl#getActionDefinition <em>Action Definition</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ActionImpl#getAction <em>Action</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EventImpl extends EventModelElementsImpl implements Event
+public class ActionImpl extends MinimalEObjectImpl.Container implements Action
 {
   /**
-   * The cached value of the '{@link #getActionDefinition() <em>Action Definition</em>}' containment reference.
+   * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getActionDefinition()
+   * @see #getAction()
    * @generated
    * @ordered
    */
-  protected Action actionDefinition;
+  protected XExpression action;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EventImpl()
+  protected ActionImpl()
   {
     super();
   }
@@ -57,7 +59,7 @@ public class EventImpl extends EventModelElementsImpl implements Event
   @Override
   protected EClass eStaticClass()
   {
-    return EventPatternLanguagePackage.Literals.EVENT;
+    return EventPatternLanguagePackage.Literals.ACTION;
   }
 
   /**
@@ -65,9 +67,9 @@ public class EventImpl extends EventModelElementsImpl implements Event
    * <!-- end-user-doc -->
    * @generated
    */
-  public Action getActionDefinition()
+  public XExpression getAction()
   {
-    return actionDefinition;
+    return action;
   }
 
   /**
@@ -75,13 +77,13 @@ public class EventImpl extends EventModelElementsImpl implements Event
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetActionDefinition(Action newActionDefinition, NotificationChain msgs)
+  public NotificationChain basicSetAction(XExpression newAction, NotificationChain msgs)
   {
-    Action oldActionDefinition = actionDefinition;
-    actionDefinition = newActionDefinition;
+    XExpression oldAction = action;
+    action = newAction;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT__ACTION_DEFINITION, oldActionDefinition, newActionDefinition);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.ACTION__ACTION, oldAction, newAction);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +94,20 @@ public class EventImpl extends EventModelElementsImpl implements Event
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setActionDefinition(Action newActionDefinition)
+  public void setAction(XExpression newAction)
   {
-    if (newActionDefinition != actionDefinition)
+    if (newAction != action)
     {
       NotificationChain msgs = null;
-      if (actionDefinition != null)
-        msgs = ((InternalEObject)actionDefinition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT__ACTION_DEFINITION, null, msgs);
-      if (newActionDefinition != null)
-        msgs = ((InternalEObject)newActionDefinition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT__ACTION_DEFINITION, null, msgs);
-      msgs = basicSetActionDefinition(newActionDefinition, msgs);
+      if (action != null)
+        msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.ACTION__ACTION, null, msgs);
+      if (newAction != null)
+        msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.ACTION__ACTION, null, msgs);
+      msgs = basicSetAction(newAction, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT__ACTION_DEFINITION, newActionDefinition, newActionDefinition));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.ACTION__ACTION, newAction, newAction));
   }
 
   /**
@@ -118,8 +120,8 @@ public class EventImpl extends EventModelElementsImpl implements Event
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT__ACTION_DEFINITION:
-        return basicSetActionDefinition(null, msgs);
+      case EventPatternLanguagePackage.ACTION__ACTION:
+        return basicSetAction(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +136,8 @@ public class EventImpl extends EventModelElementsImpl implements Event
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT__ACTION_DEFINITION:
-        return getActionDefinition();
+      case EventPatternLanguagePackage.ACTION__ACTION:
+        return getAction();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +152,8 @@ public class EventImpl extends EventModelElementsImpl implements Event
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT__ACTION_DEFINITION:
-        setActionDefinition((Action)newValue);
+      case EventPatternLanguagePackage.ACTION__ACTION:
+        setAction((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +169,8 @@ public class EventImpl extends EventModelElementsImpl implements Event
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT__ACTION_DEFINITION:
-        setActionDefinition((Action)null);
+      case EventPatternLanguagePackage.ACTION__ACTION:
+        setAction((XExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,10 +186,10 @@ public class EventImpl extends EventModelElementsImpl implements Event
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT__ACTION_DEFINITION:
-        return actionDefinition != null;
+      case EventPatternLanguagePackage.ACTION__ACTION:
+        return action != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //EventImpl
+} //ActionImpl

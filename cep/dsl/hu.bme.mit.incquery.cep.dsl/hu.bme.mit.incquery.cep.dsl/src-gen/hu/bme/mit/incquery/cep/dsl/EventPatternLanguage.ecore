@@ -20,7 +20,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="EventModelElements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//EventModelElements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//EventModelElements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionDefinition" eType="#//Action"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractAtomicEvent" eSuperTypes="#//Event"/>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicEvent" eSuperTypes="#//AbstractAtomicEvent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
@@ -33,6 +36,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="IQPatternEvent" eSuperTypes="#//AbstractAtomicEvent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iqpattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="changeType" eType="#//IQPatternChangeType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="ecore:EClass ../../../../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComplexEvent" eSuperTypes="#//Event">
     <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"

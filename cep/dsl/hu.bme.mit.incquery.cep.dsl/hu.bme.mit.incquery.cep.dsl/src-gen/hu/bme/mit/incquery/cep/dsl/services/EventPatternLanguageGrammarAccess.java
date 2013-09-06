@@ -297,18 +297,20 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		private final Assignment cParameterFiltersAssignment_13 = (Assignment)cGroup.eContents().get(13);
 		private final RuleCall cParameterFiltersParameterFilterParserRuleCall_13_0 = (RuleCall)cParameterFiltersAssignment_13.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cActionDefinitionAssignment_15 = (Assignment)cGroup.eContents().get(15);
+		private final RuleCall cActionDefinitionActionParserRuleCall_15_0 = (RuleCall)cActionDefinitionAssignment_15.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//AtomicEvent:
 		//
 		//	annotations+=Annotations* "AtomicEvent" name=ID "()" "{" "id" ":" id=STRING "source" ":" source=[Source]
 		//
-		//	"parameterFilters" "{" parameterFilters+=ParameterFilter+ "}" "}";
+		//	"parameterFilters" "{" parameterFilters+=ParameterFilter+ "}" actionDefinition=Action? "}";
 		public ParserRule getRule() { return rule; }
 
 		//annotations+=Annotations* "AtomicEvent" name=ID "()" "{" "id" ":" id=STRING "source" ":" source=[Source]
 		//
-		//"parameterFilters" "{" parameterFilters+=ParameterFilter+ "}" "}"
+		//"parameterFilters" "{" parameterFilters+=ParameterFilter+ "}" actionDefinition=Action? "}"
 		public Group getGroup() { return cGroup; }
 
 		//annotations+=Annotations*
@@ -374,8 +376,14 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
 
+		//actionDefinition=Action?
+		public Assignment getActionDefinitionAssignment_15() { return cActionDefinitionAssignment_15; }
+
+		//Action
+		public RuleCall getActionDefinitionActionParserRuleCall_15_0() { return cActionDefinitionActionParserRuleCall_15_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
+		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
 	}
 
 	public class IQPatternEventElements extends AbstractParserRuleElementFinder {
@@ -386,7 +394,7 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftParenthesisRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cIQPatternRefKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cIncQueryPatternRefKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cIqpatternAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cIqpatternSTRINGTerminalRuleCall_6_0 = (RuleCall)cIqpatternAssignment_6.eContents().get(0);
@@ -394,18 +402,20 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		private final Keyword cColonKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Assignment cChangeTypeAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final RuleCall cChangeTypeIQPatternChangeTypeEnumRuleCall_9_0 = (RuleCall)cChangeTypeAssignment_9.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cActionDefinitionAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cActionDefinitionActionParserRuleCall_10_0 = (RuleCall)cActionDefinitionAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//IQPatternEvent:
 		//
-		//	"IQPatternEvent" name=ID "()" "{" "IQPatternRef" ":" iqpattern= //[iqpl::Pattern]
+		//	"IQPatternEvent" name=ID "()" "{" "incQueryPatternRef" ":" iqpattern= //[iqpl::Pattern]
 		//
-		//	STRING "ChangeType" ":" changeType=IQPatternChangeType "}";
+		//	STRING "changeType" ":" changeType=IQPatternChangeType actionDefinition=Action? "}";
 		public ParserRule getRule() { return rule; }
 
-		//"IQPatternEvent" name=ID "()" "{" "IQPatternRef" ":" iqpattern= //[iqpl::Pattern]
+		//"IQPatternEvent" name=ID "()" "{" "incQueryPatternRef" ":" iqpattern= //[iqpl::Pattern]
 		//
-		//STRING "ChangeType" ":" changeType=IQPatternChangeType "}"
+		//STRING "changeType" ":" changeType=IQPatternChangeType actionDefinition=Action? "}"
 		public Group getGroup() { return cGroup; }
 
 		//"IQPatternEvent"
@@ -423,8 +433,8 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//"IQPatternRef"
-		public Keyword getIQPatternRefKeyword_4() { return cIQPatternRefKeyword_4; }
+		//"incQueryPatternRef"
+		public Keyword getIncQueryPatternRefKeyword_4() { return cIncQueryPatternRefKeyword_4; }
 
 		//":"
 		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
@@ -439,7 +449,7 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		//STRING
 		public RuleCall getIqpatternSTRINGTerminalRuleCall_6_0() { return cIqpatternSTRINGTerminalRuleCall_6_0; }
 
-		//"ChangeType"
+		//"changeType"
 		public Keyword getChangeTypeKeyword_7() { return cChangeTypeKeyword_7; }
 
 		//":"
@@ -451,8 +461,51 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		//IQPatternChangeType
 		public RuleCall getChangeTypeIQPatternChangeTypeEnumRuleCall_9_0() { return cChangeTypeIQPatternChangeTypeEnumRuleCall_9_0; }
 
+		//actionDefinition=Action?
+		public Assignment getActionDefinitionAssignment_10() { return cActionDefinitionAssignment_10; }
+
+		//Action
+		public RuleCall getActionDefinitionActionParserRuleCall_10_0() { return cActionDefinitionActionParserRuleCall_10_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+	}
+
+	public class ActionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Action");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cActionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cActionXExpressionParserRuleCall_2_0 = (RuleCall)cActionAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//Action:
+		//
+		//	"action" "{" action=XExpression "}" ";";
+		public ParserRule getRule() { return rule; }
+
+		//"action" "{" action=XExpression "}" ";"
+		public Group getGroup() { return cGroup; }
+
+		//"action"
+		public Keyword getActionKeyword_0() { return cActionKeyword_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+
+		//action=XExpression
+		public Assignment getActionAssignment_2() { return cActionAssignment_2; }
+
+		//XExpression
+		public RuleCall getActionXExpressionParserRuleCall_2_0() { return cActionXExpressionParserRuleCall_2_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+
+		//";"
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 
 	public class ComplexEventElements extends AbstractParserRuleElementFinder {
@@ -468,18 +521,20 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cComplexEventExpressionsAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cComplexEventExpressionsComplexEventExpressionParserRuleCall_5_0 = (RuleCall)cComplexEventExpressionsAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cActionDefinitionAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cActionDefinitionActionParserRuleCall_6_0 = (RuleCall)cActionDefinitionAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ComplexEvent:
 		//
 		//	annotations+=Annotations* "ComplexEvent" name=ID paramlist=CEParamlist "{"
 		//
-		//	complexEventExpressions+=ComplexEventExpression* "}";
+		//	complexEventExpressions+=ComplexEventExpression* actionDefinition=Action? "}";
 		public ParserRule getRule() { return rule; }
 
 		//annotations+=Annotations* "ComplexEvent" name=ID paramlist=CEParamlist "{"
 		//
-		//complexEventExpressions+=ComplexEventExpression* "}"
+		//complexEventExpressions+=ComplexEventExpression* actionDefinition=Action? "}"
 		public Group getGroup() { return cGroup; }
 
 		//annotations+=Annotations*
@@ -512,8 +567,14 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		//ComplexEventExpression
 		public RuleCall getComplexEventExpressionsComplexEventExpressionParserRuleCall_5_0() { return cComplexEventExpressionsComplexEventExpressionParserRuleCall_5_0; }
 
+		//actionDefinition=Action?
+		public Assignment getActionDefinitionAssignment_6() { return cActionDefinitionAssignment_6; }
+
+		//Action
+		public RuleCall getActionDefinitionActionParserRuleCall_6_0() { return cActionDefinitionActionParserRuleCall_6_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class CEParamlistElements extends AbstractParserRuleElementFinder {
@@ -523,14 +584,18 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cParamsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cParamsEventParamWithTypeParserRuleCall_2_0 = (RuleCall)cParamsAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaSpaceKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cParamsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cParamsEventParamWithTypeParserRuleCall_3_1_0 = (RuleCall)cParamsAssignment_3_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//CEParamlist:
 		//
-		//	{CEParamlist} "(" params+=EventParamWithType* ")";
+		//	{CEParamlist} "(" params+=EventParamWithType (", " params+=EventParamWithType)* ")";
 		public ParserRule getRule() { return rule; }
 
-		//{CEParamlist} "(" params+=EventParamWithType* ")"
+		//{CEParamlist} "(" params+=EventParamWithType (", " params+=EventParamWithType)* ")"
 		public Group getGroup() { return cGroup; }
 
 		//{CEParamlist}
@@ -539,14 +604,26 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//params+=EventParamWithType*
+		//params+=EventParamWithType
 		public Assignment getParamsAssignment_2() { return cParamsAssignment_2; }
 
 		//EventParamWithType
 		public RuleCall getParamsEventParamWithTypeParserRuleCall_2_0() { return cParamsEventParamWithTypeParserRuleCall_2_0; }
 
+		//(", " params+=EventParamWithType)*
+		public Group getGroup_3() { return cGroup_3; }
+
+		//", "
+		public Keyword getCommaSpaceKeyword_3_0() { return cCommaSpaceKeyword_3_0; }
+
+		//params+=EventParamWithType
+		public Assignment getParamsAssignment_3_1() { return cParamsAssignment_3_1; }
+
+		//EventParamWithType
+		public RuleCall getParamsEventParamWithTypeParserRuleCall_3_1_0() { return cParamsEventParamWithTypeParserRuleCall_3_1_0; }
+
 		//")"
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
 
 	public class EventParamWithTypeElements extends AbstractParserRuleElementFinder {
@@ -1335,13 +1412,13 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		
 		//Source:
 		//
-		//	"source" name=ID "{" ("register" adapter+=Adapter)+ "}";
+		//	"Source" name=ID "{" ("register" adapter+=Adapter)+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"source" name=ID "{" ("register" adapter+=Adapter)+ "}"
+		//"Source" name=ID "{" ("register" adapter+=Adapter)+ "}"
 		public Group getGroup() { return cGroup; }
 
-		//"source"
+		//"Source"
 		public Keyword getSourceKeyword_0() { return cSourceKeyword_0; }
 
 		//name=ID
@@ -1463,6 +1540,7 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 	private AbstractAtomicEventElements pAbstractAtomicEvent;
 	private AtomicEventElements pAtomicEvent;
 	private IQPatternEventElements pIQPatternEvent;
+	private ActionElements pAction;
 	private ComplexEventElements pComplexEvent;
 	private CEParamlistElements pCEParamlist;
 	private EventParamWithTypeElements pEventParamWithType;
@@ -1637,7 +1715,7 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 	//
 	//	annotations+=Annotations* "AtomicEvent" name=ID "()" "{" "id" ":" id=STRING "source" ":" source=[Source]
 	//
-	//	"parameterFilters" "{" parameterFilters+=ParameterFilter+ "}" "}";
+	//	"parameterFilters" "{" parameterFilters+=ParameterFilter+ "}" actionDefinition=Action? "}";
 	public AtomicEventElements getAtomicEventAccess() {
 		return (pAtomicEvent != null) ? pAtomicEvent : (pAtomicEvent = new AtomicEventElements());
 	}
@@ -1648,9 +1726,9 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 	//IQPatternEvent:
 	//
-	//	"IQPatternEvent" name=ID "()" "{" "IQPatternRef" ":" iqpattern= //[iqpl::Pattern]
+	//	"IQPatternEvent" name=ID "()" "{" "incQueryPatternRef" ":" iqpattern= //[iqpl::Pattern]
 	//
-	//	STRING "ChangeType" ":" changeType=IQPatternChangeType "}";
+	//	STRING "changeType" ":" changeType=IQPatternChangeType actionDefinition=Action? "}";
 	public IQPatternEventElements getIQPatternEventAccess() {
 		return (pIQPatternEvent != null) ? pIQPatternEvent : (pIQPatternEvent = new IQPatternEventElements());
 	}
@@ -1659,11 +1737,22 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		return getIQPatternEventAccess().getRule();
 	}
 
+	//Action:
+	//
+	//	"action" "{" action=XExpression "}" ";";
+	public ActionElements getActionAccess() {
+		return (pAction != null) ? pAction : (pAction = new ActionElements());
+	}
+	
+	public ParserRule getActionRule() {
+		return getActionAccess().getRule();
+	}
+
 	//ComplexEvent:
 	//
 	//	annotations+=Annotations* "ComplexEvent" name=ID paramlist=CEParamlist "{"
 	//
-	//	complexEventExpressions+=ComplexEventExpression* "}";
+	//	complexEventExpressions+=ComplexEventExpression* actionDefinition=Action? "}";
 	public ComplexEventElements getComplexEventAccess() {
 		return (pComplexEvent != null) ? pComplexEvent : (pComplexEvent = new ComplexEventElements());
 	}
@@ -1674,7 +1763,7 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 	//CEParamlist:
 	//
-	//	{CEParamlist} "(" params+=EventParamWithType* ")";
+	//	{CEParamlist} "(" params+=EventParamWithType (", " params+=EventParamWithType)* ")";
 	public CEParamlistElements getCEParamlistAccess() {
 		return (pCEParamlist != null) ? pCEParamlist : (pCEParamlist = new CEParamlistElements());
 	}
@@ -1982,7 +2071,7 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 	//Source:
 	//
-	//	"source" name=ID "{" ("register" adapter+=Adapter)+ "}";
+	//	"Source" name=ID "{" ("register" adapter+=Adapter)+ "}";
 	public SourceElements getSourceAccess() {
 		return (pSource != null) ? pSource : (pSource = new SourceElements());
 	}

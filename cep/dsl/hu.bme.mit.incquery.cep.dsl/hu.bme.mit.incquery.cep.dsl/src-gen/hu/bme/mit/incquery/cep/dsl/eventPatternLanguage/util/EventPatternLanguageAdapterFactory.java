@@ -120,6 +120,11 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
         return createIQPatternEventAdapter();
       }
       @Override
+      public Adapter caseAction(Action object)
+      {
+        return createActionAdapter();
+      }
+      @Override
       public Adapter caseComplexEvent(ComplexEvent object)
       {
         return createComplexEventAdapter();
@@ -402,6 +407,21 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIQPatternEventAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Action <em>Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Action
+   * @generated
+   */
+  public Adapter createActionAdapter()
   {
     return null;
   }

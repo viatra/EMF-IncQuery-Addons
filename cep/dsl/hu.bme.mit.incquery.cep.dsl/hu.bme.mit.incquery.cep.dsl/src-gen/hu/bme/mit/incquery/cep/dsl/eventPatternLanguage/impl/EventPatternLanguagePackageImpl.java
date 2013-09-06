@@ -3,6 +3,7 @@
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AbstractAtomicEvent;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Action;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Adapter;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Annotations;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEvent;
@@ -49,6 +50,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.xtext.xbase.XbasePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,6 +123,13 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * @generated
    */
   private EClass iqPatternEventEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -365,6 +375,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
 
     isInited = true;
 
+    // Initialize simple dependencies
+    XbasePackage.eINSTANCE.eClass();
+
     // Create package meta-data objects
     theEventPatternLanguagePackage.createPackageContents();
 
@@ -515,6 +528,16 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getEvent_ActionDefinition()
+  {
+    return (EReference)eventEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAbstractAtomicEvent()
   {
     return abstractAtomicEventEClass;
@@ -598,6 +621,26 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
   public EAttribute getIQPatternEvent_ChangeType()
   {
     return (EAttribute)iqPatternEventEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAction()
+  {
+    return actionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAction_Action()
+  {
+    return (EReference)actionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1218,6 +1261,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     createEAttribute(eventModelElementsEClass, EVENT_MODEL_ELEMENTS__NAME);
 
     eventEClass = createEClass(EVENT);
+    createEReference(eventEClass, EVENT__ACTION_DEFINITION);
 
     abstractAtomicEventEClass = createEClass(ABSTRACT_ATOMIC_EVENT);
 
@@ -1230,6 +1274,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     iqPatternEventEClass = createEClass(IQ_PATTERN_EVENT);
     createEAttribute(iqPatternEventEClass, IQ_PATTERN_EVENT__IQPATTERN);
     createEAttribute(iqPatternEventEClass, IQ_PATTERN_EVENT__CHANGE_TYPE);
+
+    actionEClass = createEClass(ACTION);
+    createEReference(actionEClass, ACTION__ACTION);
 
     complexEventEClass = createEClass(COMPLEX_EVENT);
     createEReference(complexEventEClass, COMPLEX_EVENT__ANNOTATIONS);
@@ -1341,6 +1388,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     setNsPrefix(eNS_PREFIX);
     setNsURI(eNS_URI);
 
+    // Obtain other dependent packages
+    XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
+
     // Create type parameters
 
     // Set bounds for type parameters
@@ -1387,6 +1437,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     initEAttribute(getEventModelElements_Name(), ecorePackage.getEString(), "name", null, 0, 1, EventModelElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEvent_ActionDefinition(), this.getAction(), null, "actionDefinition", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractAtomicEventEClass, AbstractAtomicEvent.class, "AbstractAtomicEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1399,6 +1450,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     initEClass(iqPatternEventEClass, IQPatternEvent.class, "IQPatternEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIQPatternEvent_Iqpattern(), ecorePackage.getEString(), "iqpattern", null, 0, 1, IQPatternEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIQPatternEvent_ChangeType(), this.getIQPatternChangeType(), "changeType", null, 0, 1, IQPatternEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAction_Action(), theXbasePackage.getXExpression(), null, "action", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(complexEventEClass, ComplexEvent.class, "ComplexEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComplexEvent_Annotations(), this.getAnnotations(), null, "annotations", null, 0, -1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

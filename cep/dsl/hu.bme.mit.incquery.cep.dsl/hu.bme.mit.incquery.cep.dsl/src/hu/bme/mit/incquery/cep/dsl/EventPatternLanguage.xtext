@@ -50,23 +50,32 @@ AtomicEvent:
 		'parameterFilters' '{'
 			parameterFilters+=ParameterFilter+
 		'}'
+		(actionDefinition = Action)?
 	'}';
 
 IQPatternEvent:
 	'IQPatternEvent' name=ID '()' '{'
-		'IQPatternRef' ':' iqpattern=STRING//[iqpl::Pattern]
-		'ChangeType' ':' changeType=IQPatternChangeType
+		'incQueryPatternRef' ':' iqpattern=STRING//[iqpl::Pattern]
+		'changeType' ':' changeType=IQPatternChangeType
+		(actionDefinition = Action)?
 	'}';
+
+Action:
+	'action' '{'
+		action = XExpression
+	'}'';'
+;
 
 ComplexEvent:
 	annotations+=Annotations*
 	'ComplexEvent' name=ID paramlist=CEParamlist '{'
 		complexEventExpressions+=ComplexEventExpression*
+		(actionDefinition = Action)?
 	'}';
 
 CEParamlist:
 	{CEParamlist}
-	'(' params+=EventParamWithType* ')';
+	'(' params+=EventParamWithType (', 'params+=EventParamWithType)* ')';
 
 EventParamWithType:
 	name=ID ':' type=[Event];
@@ -152,7 +161,7 @@ EventWithMultiplicity:
 	event=[EventParamWithType] ('{' multiplicity=INT '}')?;
 	
 Source:
-	'source' name=ID '{'
+	'Source' name=ID '{'
 		('register' adapter+=Adapter)+
 	'}'
 ;

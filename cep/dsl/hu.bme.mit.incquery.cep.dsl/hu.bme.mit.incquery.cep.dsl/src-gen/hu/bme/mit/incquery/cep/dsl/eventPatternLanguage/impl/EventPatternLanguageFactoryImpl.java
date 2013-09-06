@@ -74,6 +74,7 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
       case EventPatternLanguagePackage.ABSTRACT_ATOMIC_EVENT: return createAbstractAtomicEvent();
       case EventPatternLanguagePackage.ATOMIC_EVENT: return createAtomicEvent();
       case EventPatternLanguagePackage.IQ_PATTERN_EVENT: return createIQPatternEvent();
+      case EventPatternLanguagePackage.ACTION: return createAction();
       case EventPatternLanguagePackage.COMPLEX_EVENT: return createComplexEvent();
       case EventPatternLanguagePackage.CE_PARAMLIST: return createCEParamlist();
       case EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE: return createEventParamWithType();
@@ -240,6 +241,17 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
   {
     IQPatternEventImpl iqPatternEvent = new IQPatternEventImpl();
     return iqPatternEvent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Action createAction()
+  {
+    ActionImpl action = new ActionImpl();
+    return action;
   }
 
   /**

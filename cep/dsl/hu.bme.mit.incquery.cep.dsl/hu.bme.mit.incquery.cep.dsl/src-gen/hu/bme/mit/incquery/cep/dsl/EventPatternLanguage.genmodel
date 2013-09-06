@@ -5,7 +5,7 @@
     forceOverwrite="true" modelName="EventPatternLanguage" updateClasspath="false"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="5.0"
     copyrightFields="false" editPluginID="hu.bme.mit.incquery.cep.dsl.edit" editorPluginID="hu.bme.mit.incquery.cep.dsl.editor"
-    runtimeVersion="2.9">
+    runtimeVersion="2.9" usedGenPackages="../../../../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
   <genPackages prefix="EventPatternLanguage" basePackage="hu.bme.mit.incquery.cep.dsl"
       disposableProviderFactory="true" fileExtensions="vepl" ecorePackage="EventPatternLanguage.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="EventPatternLanguage.ecore#//IQPatternChangeType">
@@ -32,7 +32,9 @@
     <genClasses ecoreClass="EventPatternLanguage.ecore#//EventModelElements">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//EventModelElements/name"/>
     </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//Event"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//Event">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//Event/actionDefinition"/>
+    </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//AbstractAtomicEvent"/>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//AtomicEvent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//AtomicEvent/annotations"/>
@@ -43,6 +45,9 @@
     <genClasses ecoreClass="EventPatternLanguage.ecore#//IQPatternEvent">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//IQPatternEvent/iqpattern"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//IQPatternEvent/changeType"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//Action">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//Action/action"/>
     </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//ComplexEvent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//ComplexEvent/annotations"/>
