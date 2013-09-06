@@ -1,0 +1,51 @@
+package hu.bme.mit.testpackage
+
+uses-eventsources hu.bme.mit.incquery.sources.*
+uses-incquery-patterns hu.bme.mit.incquery.patterns.*
+
+@Context(Chronicle)
+@SamplingTime(5000)
+EventModel testModel{
+    
+    AtomicEvent atomicEvent1(){
+        id: "helloWorld"
+        source : myEventRealm
+		parameterFilters {
+			testAttribute not in [1,22]
+			testAttribute2 != 2
+			testAttribute3 contains "test"
+		}
+		action {
+			new srcodes.MyActionHandler	//TODO method call here
+		};
+    }
+
+	IQPatternEvent myCustomPatternAppeared() {
+		incQueryPatternRef : "myCustomEiqPattern" /* not necessary to write fully qualified references */
+		changeType : FOUND
+	}
+
+    @Context(Recent)
+    @Priority(10)
+    ComplexEvent myComplexEvent(e1 : myCustomPatternAppeared, a : atomicEvent1){
+    	e1{2}-[1200]->a{2}-[1000]->e1 //events following each other with time windows
+    }
+    
+    @Priority(0)
+    ComplexEvent anotherComplexEvent(ce : myComplexEvent, a : atomicEvent1){
+    	ce{2}->a //a reused complex event followed by an atomic event, no time window
+    }
+
+	Source myEventRealm {
+		register "ViatraCepAdapter.java"
+	}
+
+	Source mySecondEventRealm {
+		register "Adapter1.java"
+		register "Adapter1.java"
+	}
+	
+	Source test1 {
+		register "adapter4.java"
+	}
+}
