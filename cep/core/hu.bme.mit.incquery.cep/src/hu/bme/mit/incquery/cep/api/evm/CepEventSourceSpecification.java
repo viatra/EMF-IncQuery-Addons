@@ -26,7 +26,7 @@ public class CepEventSourceSpecification implements EventSourceSpecification<Obs
 		return new AbstractRuleInstanceBuilder<ObservedComplexEventPattern>() {
 			@Override
 			public void prepareRuleInstance(RuleInstance<ObservedComplexEventPattern> ruleInstance,
-					EventFilter<ObservedComplexEventPattern> filter) {
+					EventFilter<? super ObservedComplexEventPattern> filter) {
 				CepEventSource source = new CepEventSource(CepEventSourceSpecification.this, (CepRealm) realm);
 				CepEventHandler handler = new CepEventHandler(source, ruleInstance);
 				source.setStateMachine(stateMachine);

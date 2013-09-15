@@ -169,7 +169,7 @@ public class EventModelManager {
 					updateCompleteProvider);
 			topLevelExecutionSchema = EventDrivenVM.createExecutionSchema(realm, schedulerFactory,
 					Collections.<RuleSpecification<?>> emptySet());
-			topLevelExecutionSchema.addRule(ruleSpec, false);
+			topLevelExecutionSchema.addRule(ruleSpec);
 		}
 
 		try {

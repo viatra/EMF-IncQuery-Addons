@@ -80,7 +80,7 @@ public class ModelHandlerRules {
 		Set<Job<FinishedStateMachineMatch>> jobs = new HashSet<Job<FinishedStateMachineMatch>>();
 		jobs.add(new StatelessJob<FinishedStateMachineMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
-		RuleSpecification<FinishedStateMachineMatch> spec = Rules.newSimpleMatcherRuleSpecification(
+		RuleSpecification<FinishedStateMachineMatch> spec = Rules.newMatcherRuleSpecification(
 				FinishedStateMachineMatcher.querySpecification(), DefaultActivationLifeCycle.DEFAULT, jobs);
 
 		return spec;
@@ -101,7 +101,7 @@ public class ModelHandlerRules {
 		Set<Job<EnabledTransitionMatch>> jobs = new HashSet<Job<EnabledTransitionMatch>>();
 		jobs.add(new StatelessJob<EnabledTransitionMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
-		RuleSpecification<EnabledTransitionMatch> spec = Rules.newSimpleMatcherRuleSpecification(
+		RuleSpecification<EnabledTransitionMatch> spec = Rules.newMatcherRuleSpecification(
 				EnabledTransitionMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
 
 		return spec;
@@ -129,7 +129,7 @@ public class ModelHandlerRules {
 		Set<Job<TokenInTrapStateMatch>> jobs = new HashSet<Job<TokenInTrapStateMatch>>();
 		jobs.add(new StatelessJob<TokenInTrapStateMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
-		RuleSpecification<TokenInTrapStateMatch> spec = Rules.newSimpleMatcherRuleSpecification(
+		RuleSpecification<TokenInTrapStateMatch> spec = Rules.newMatcherRuleSpecification(
 				TokenInTrapStateMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
 
 		return spec;
@@ -158,7 +158,7 @@ public class ModelHandlerRules {
 		Set<Job<PartiallyMatchedEventPatternMatch>> jobs = new HashSet<Job<PartiallyMatchedEventPatternMatch>>();
 		jobs.add(new StatelessJob<PartiallyMatchedEventPatternMatch>(IncQueryActivationStateEnum.APPEARED, processor));
 
-		RuleSpecification<PartiallyMatchedEventPatternMatch> spec = Rules.newSimpleMatcherRuleSpecification(
+		RuleSpecification<PartiallyMatchedEventPatternMatch> spec = Rules.newMatcherRuleSpecification(
 				PartiallyMatchedEventPatternMatcher.querySpecification(), Lifecycles.getDefault(false, false), jobs);
 
 		return spec;
