@@ -22,6 +22,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see EventHandledByEventTokenProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class EventHandledByEventTokenMatch extends BasePatternMatch {
   private EventToken fEt;
   
@@ -149,6 +150,8 @@ public abstract class EventHandledByEventTokenMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends EventHandledByEventTokenMatch {
     Mutable(final EventToken pEt, final Event pE) {
       super(pEt, pE);
@@ -161,6 +164,8 @@ public abstract class EventHandledByEventTokenMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends EventHandledByEventTokenMatch {
     Immutable(final EventToken pEt, final Event pE) {
       super(pEt, pE);

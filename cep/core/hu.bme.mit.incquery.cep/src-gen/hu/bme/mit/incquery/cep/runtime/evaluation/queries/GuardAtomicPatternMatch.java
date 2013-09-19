@@ -22,6 +22,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see GuardAtomicPatternProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class GuardAtomicPatternMatch extends BasePatternMatch {
   private Guard fGuard;
   
@@ -149,6 +150,8 @@ public abstract class GuardAtomicPatternMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends GuardAtomicPatternMatch {
     Mutable(final Guard pGuard, final AtomicEventPattern pAtomicPattern) {
       super(pGuard, pAtomicPattern);
@@ -161,6 +164,8 @@ public abstract class GuardAtomicPatternMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends GuardAtomicPatternMatch {
     Immutable(final Guard pGuard, final AtomicEventPattern pAtomicPattern) {
       super(pGuard, pAtomicPattern);

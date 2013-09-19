@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see EventHandledByStateMatch
  * 
  */
+@SuppressWarnings("all")
 public final class EventHandledByStateQuerySpecification extends BaseGeneratedQuerySpecification<EventHandledByStateMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class EventHandledByStateQuerySpecification extends BaseGeneratedQu
   private EventHandledByStateQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<EventHandledByStateQuerySpecification> {
     @Override
     public EventHandledByStateQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class EventHandledByStateQuerySpecification extends BaseGeneratedQu
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static EventHandledByStateQuerySpecification INSTANCE = make();
     

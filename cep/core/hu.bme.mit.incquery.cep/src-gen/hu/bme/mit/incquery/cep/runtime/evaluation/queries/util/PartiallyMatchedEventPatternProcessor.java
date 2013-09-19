@@ -11,6 +11,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class PartiallyMatchedEventPatternProcessor implements IMatchProcessor<PartiallyMatchedEventPatternMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -22,7 +23,7 @@ public abstract class PartiallyMatchedEventPatternProcessor implements IMatchPro
   
   @Override
   public void process(final PartiallyMatchedEventPatternMatch match) {
-    process(match.getEt(), match.getS());  				
+    process(match.getEt(), match.getS());
     
   }
 }

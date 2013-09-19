@@ -37,7 +37,17 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see GuardAtomicPatternQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class GuardAtomicPatternMatcher extends BaseMatcher<GuardAtomicPatternMatch> {
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<GuardAtomicPatternMatcher> querySpecification() throws IncQueryException {
+    return GuardAtomicPatternQuerySpecification.instance();
+  }
+  
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
@@ -297,14 +307,5 @@ public class GuardAtomicPatternMatcher extends BaseMatcher<GuardAtomicPatternMat
     	return null;
     }
     
-  }
-  
-  /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<GuardAtomicPatternMatcher> querySpecification() throws IncQueryException {
-    return GuardAtomicPatternQuerySpecification.instance();
   }
 }

@@ -22,6 +22,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see PartiallyMatchedEventPatternProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class PartiallyMatchedEventPatternMatch extends BasePatternMatch {
   private EventToken fEt;
   
@@ -149,6 +150,8 @@ public abstract class PartiallyMatchedEventPatternMatch extends BasePatternMatch
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends PartiallyMatchedEventPatternMatch {
     Mutable(final EventToken pEt, final State pS) {
       super(pEt, pS);
@@ -161,6 +164,8 @@ public abstract class PartiallyMatchedEventPatternMatch extends BasePatternMatch
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends PartiallyMatchedEventPatternMatch {
     Immutable(final EventToken pEt, final State pS) {
       super(pEt, pS);

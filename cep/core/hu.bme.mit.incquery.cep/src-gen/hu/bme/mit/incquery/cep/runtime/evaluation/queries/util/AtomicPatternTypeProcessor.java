@@ -10,6 +10,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class AtomicPatternTypeProcessor implements IMatchProcessor<AtomicPatternTypeMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -21,7 +22,7 @@ public abstract class AtomicPatternTypeProcessor implements IMatchProcessor<Atom
   
   @Override
   public void process(final AtomicPatternTypeMatch match) {
-    process(match.getA(), match.getT());  				
+    process(match.getA(), match.getT());
     
   }
 }

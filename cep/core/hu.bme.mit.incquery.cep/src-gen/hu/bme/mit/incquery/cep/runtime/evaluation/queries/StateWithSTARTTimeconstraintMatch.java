@@ -22,6 +22,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see StateWithSTARTTimeconstraintProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class StateWithSTARTTimeconstraintMatch extends BasePatternMatch {
   private State fS;
   
@@ -149,6 +150,8 @@ public abstract class StateWithSTARTTimeconstraintMatch extends BasePatternMatch
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends StateWithSTARTTimeconstraintMatch {
     Mutable(final State pS, final TimeConstraint pTc) {
       super(pS, pTc);
@@ -161,6 +164,8 @@ public abstract class StateWithSTARTTimeconstraintMatch extends BasePatternMatch
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends StateWithSTARTTimeconstraintMatch {
     Immutable(final State pS, final TimeConstraint pTc) {
       super(pS, pTc);

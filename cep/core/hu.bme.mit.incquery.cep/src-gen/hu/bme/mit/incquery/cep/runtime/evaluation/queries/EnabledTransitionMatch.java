@@ -22,6 +22,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see EnabledTransitionProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class EnabledTransitionMatch extends BasePatternMatch {
   private Transition fT;
   
@@ -149,6 +150,8 @@ public abstract class EnabledTransitionMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends EnabledTransitionMatch {
     Mutable(final Transition pT, final EventToken pEt) {
       super(pT, pEt);
@@ -161,6 +164,8 @@ public abstract class EnabledTransitionMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends EnabledTransitionMatch {
     Immutable(final Transition pT, final EventToken pEt) {
       super(pT, pEt);

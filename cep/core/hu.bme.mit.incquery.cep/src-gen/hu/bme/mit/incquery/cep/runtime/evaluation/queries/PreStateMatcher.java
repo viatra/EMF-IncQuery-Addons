@@ -37,7 +37,17 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see PreStateQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class PreStateMatcher extends BaseMatcher<PreStateMatch> {
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<PreStateMatcher> querySpecification() throws IncQueryException {
+    return PreStateQuerySpecification.instance();
+  }
+  
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
@@ -297,14 +307,5 @@ public class PreStateMatcher extends BaseMatcher<PreStateMatch> {
     	return null;
     }
     
-  }
-  
-  /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<PreStateMatcher> querySpecification() throws IncQueryException {
-    return PreStateQuerySpecification.instance();
   }
 }

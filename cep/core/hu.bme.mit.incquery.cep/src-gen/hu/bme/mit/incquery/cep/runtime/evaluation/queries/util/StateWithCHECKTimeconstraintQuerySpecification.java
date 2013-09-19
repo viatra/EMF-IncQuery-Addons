@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see StateWithCHECKTimeconstraintMatch
  * 
  */
+@SuppressWarnings("all")
 public final class StateWithCHECKTimeconstraintQuerySpecification extends BaseGeneratedQuerySpecification<StateWithCHECKTimeconstraintMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class StateWithCHECKTimeconstraintQuerySpecification extends BaseGe
   private StateWithCHECKTimeconstraintQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<StateWithCHECKTimeconstraintQuerySpecification> {
     @Override
     public StateWithCHECKTimeconstraintQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class StateWithCHECKTimeconstraintQuerySpecification extends BaseGe
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static StateWithCHECKTimeconstraintQuerySpecification INSTANCE = make();
     

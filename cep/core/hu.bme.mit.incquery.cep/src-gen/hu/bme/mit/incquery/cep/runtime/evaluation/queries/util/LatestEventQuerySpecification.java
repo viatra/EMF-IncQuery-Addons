@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see LatestEventMatch
  * 
  */
+@SuppressWarnings("all")
 public final class LatestEventQuerySpecification extends BaseGeneratedQuerySpecification<LatestEventMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class LatestEventQuerySpecification extends BaseGeneratedQuerySpeci
   private LatestEventQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<LatestEventQuerySpecification> {
     @Override
     public LatestEventQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class LatestEventQuerySpecification extends BaseGeneratedQuerySpeci
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static LatestEventQuerySpecification INSTANCE = make();
     

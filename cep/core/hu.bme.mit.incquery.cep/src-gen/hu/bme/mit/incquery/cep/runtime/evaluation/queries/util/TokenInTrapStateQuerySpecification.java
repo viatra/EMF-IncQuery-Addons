@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see TokenInTrapStateMatch
  * 
  */
+@SuppressWarnings("all")
 public final class TokenInTrapStateQuerySpecification extends BaseGeneratedQuerySpecification<TokenInTrapStateMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class TokenInTrapStateQuerySpecification extends BaseGeneratedQuery
   private TokenInTrapStateQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<TokenInTrapStateQuerySpecification> {
     @Override
     public TokenInTrapStateQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class TokenInTrapStateQuerySpecification extends BaseGeneratedQuery
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static TokenInTrapStateQuerySpecification INSTANCE = make();
     

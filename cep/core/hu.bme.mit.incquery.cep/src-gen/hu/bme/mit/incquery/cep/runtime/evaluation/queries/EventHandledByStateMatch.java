@@ -22,6 +22,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see EventHandledByStateProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class EventHandledByStateMatch extends BasePatternMatch {
   private State fS;
   
@@ -149,6 +150,8 @@ public abstract class EventHandledByStateMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends EventHandledByStateMatch {
     Mutable(final State pS, final Event pE) {
       super(pS, pE);
@@ -161,6 +164,8 @@ public abstract class EventHandledByStateMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends EventHandledByStateMatch {
     Immutable(final State pS, final Event pE) {
       super(pS, pE);

@@ -21,6 +21,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see AtomicPatternTypeProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class AtomicPatternTypeMatch extends BasePatternMatch {
   private AtomicEventPattern fA;
   
@@ -148,6 +149,8 @@ public abstract class AtomicPatternTypeMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends AtomicPatternTypeMatch {
     Mutable(final AtomicEventPattern pA, final String pT) {
       super(pA, pT);
@@ -160,6 +163,8 @@ public abstract class AtomicPatternTypeMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends AtomicPatternTypeMatch {
     Immutable(final AtomicEventPattern pA, final String pT) {
       super(pA, pT);

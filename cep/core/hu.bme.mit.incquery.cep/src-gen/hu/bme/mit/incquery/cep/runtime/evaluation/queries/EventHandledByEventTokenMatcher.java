@@ -37,7 +37,17 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see EventHandledByEventTokenQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByEventTokenMatch> {
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<EventHandledByEventTokenMatcher> querySpecification() throws IncQueryException {
+    return EventHandledByEventTokenQuerySpecification.instance();
+  }
+  
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
@@ -297,14 +307,5 @@ public class EventHandledByEventTokenMatcher extends BaseMatcher<EventHandledByE
     	return null;
     }
     
-  }
-  
-  /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<EventHandledByEventTokenMatcher> querySpecification() throws IncQueryException {
-    return EventHandledByEventTokenQuerySpecification.instance();
   }
 }

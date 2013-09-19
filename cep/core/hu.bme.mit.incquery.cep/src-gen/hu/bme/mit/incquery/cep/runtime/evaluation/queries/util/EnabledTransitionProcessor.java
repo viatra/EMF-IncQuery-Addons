@@ -11,6 +11,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class EnabledTransitionProcessor implements IMatchProcessor<EnabledTransitionMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -22,7 +23,7 @@ public abstract class EnabledTransitionProcessor implements IMatchProcessor<Enab
   
   @Override
   public void process(final EnabledTransitionMatch match) {
-    process(match.getT(), match.getEt());  				
+    process(match.getT(), match.getEt());
     
   }
 }

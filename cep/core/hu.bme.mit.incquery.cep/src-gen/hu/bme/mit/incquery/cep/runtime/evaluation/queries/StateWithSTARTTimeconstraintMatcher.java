@@ -38,7 +38,17 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see StateWithSTARTTimeconstraintQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class StateWithSTARTTimeconstraintMatcher extends BaseMatcher<StateWithSTARTTimeconstraintMatch> {
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<StateWithSTARTTimeconstraintMatcher> querySpecification() throws IncQueryException {
+    return StateWithSTARTTimeconstraintQuerySpecification.instance();
+  }
+  
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
@@ -298,14 +308,5 @@ public class StateWithSTARTTimeconstraintMatcher extends BaseMatcher<StateWithST
     	return null;
     }
     
-  }
-  
-  /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<StateWithSTARTTimeconstraintMatcher> querySpecification() throws IncQueryException {
-    return StateWithSTARTTimeconstraintQuerySpecification.instance();
   }
 }

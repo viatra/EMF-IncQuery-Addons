@@ -42,7 +42,17 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see EnabledTransitionQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch> {
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<EnabledTransitionMatcher> querySpecification() throws IncQueryException {
+    return EnabledTransitionQuerySpecification.instance();
+  }
+  
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
@@ -302,14 +312,5 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
     	return null;
     }
     
-  }
-  
-  /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<EnabledTransitionMatcher> querySpecification() throws IncQueryException {
-    return EnabledTransitionQuerySpecification.instance();
   }
 }

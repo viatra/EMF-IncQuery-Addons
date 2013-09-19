@@ -36,7 +36,17 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see InitStateQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class InitStateMatcher extends BaseMatcher<InitStateMatch> {
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<InitStateMatcher> querySpecification() throws IncQueryException {
+    return InitStateQuerySpecification.instance();
+  }
+  
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
@@ -230,14 +240,5 @@ public class InitStateMatcher extends BaseMatcher<InitStateMatch> {
     	return null;
     }
     
-  }
-  
-  /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<InitStateMatcher> querySpecification() throws IncQueryException {
-    return InitStateQuerySpecification.instance();
   }
 }

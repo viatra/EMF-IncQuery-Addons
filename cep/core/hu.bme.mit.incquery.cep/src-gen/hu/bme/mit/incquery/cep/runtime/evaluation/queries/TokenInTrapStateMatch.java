@@ -21,6 +21,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see TokenInTrapStateProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class TokenInTrapStateMatch extends BasePatternMatch {
   private EventToken fEt;
   
@@ -125,6 +126,8 @@ public abstract class TokenInTrapStateMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends TokenInTrapStateMatch {
     Mutable(final EventToken pEt) {
       super(pEt);
@@ -137,6 +140,8 @@ public abstract class TokenInTrapStateMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends TokenInTrapStateMatch {
     Immutable(final EventToken pEt) {
       super(pEt);

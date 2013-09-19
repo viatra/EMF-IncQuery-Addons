@@ -22,6 +22,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see FinalStateProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class FinalStateMatch extends BasePatternMatch {
   private State fS;
   
@@ -149,6 +150,8 @@ public abstract class FinalStateMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends FinalStateMatch {
     Mutable(final State pS, final EventToken pEt) {
       super(pS, pEt);
@@ -161,6 +164,8 @@ public abstract class FinalStateMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends FinalStateMatch {
     Immutable(final State pS, final EventToken pEt) {
       super(pS, pEt);

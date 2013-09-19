@@ -38,7 +38,17 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see PartiallyMatchedEventPatternQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class PartiallyMatchedEventPatternMatcher extends BaseMatcher<PartiallyMatchedEventPatternMatch> {
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<PartiallyMatchedEventPatternMatcher> querySpecification() throws IncQueryException {
+    return PartiallyMatchedEventPatternQuerySpecification.instance();
+  }
+  
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
@@ -298,14 +308,5 @@ public class PartiallyMatchedEventPatternMatcher extends BaseMatcher<PartiallyMa
     	return null;
     }
     
-  }
-  
-  /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<PartiallyMatchedEventPatternMatcher> querySpecification() throws IncQueryException {
-    return PartiallyMatchedEventPatternQuerySpecification.instance();
   }
 }

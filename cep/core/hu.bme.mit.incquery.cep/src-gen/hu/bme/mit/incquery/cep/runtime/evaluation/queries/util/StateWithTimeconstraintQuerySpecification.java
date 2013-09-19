@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see StateWithTimeconstraintMatch
  * 
  */
+@SuppressWarnings("all")
 public final class StateWithTimeconstraintQuerySpecification extends BaseGeneratedQuerySpecification<StateWithTimeconstraintMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class StateWithTimeconstraintQuerySpecification extends BaseGenerat
   private StateWithTimeconstraintQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<StateWithTimeconstraintQuerySpecification> {
     @Override
     public StateWithTimeconstraintQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class StateWithTimeconstraintQuerySpecification extends BaseGenerat
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static StateWithTimeconstraintQuerySpecification INSTANCE = make();
     

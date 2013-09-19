@@ -22,6 +22,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see StateWithCHECKTimeconstraintProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class StateWithCHECKTimeconstraintMatch extends BasePatternMatch {
   private State fS;
   
@@ -149,6 +150,8 @@ public abstract class StateWithCHECKTimeconstraintMatch extends BasePatternMatch
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends StateWithCHECKTimeconstraintMatch {
     Mutable(final State pS, final TimeConstraint pTc) {
       super(pS, pTc);
@@ -161,6 +164,8 @@ public abstract class StateWithCHECKTimeconstraintMatch extends BasePatternMatch
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends StateWithCHECKTimeconstraintMatch {
     Immutable(final State pS, final TimeConstraint pTc) {
       super(pS, pTc);

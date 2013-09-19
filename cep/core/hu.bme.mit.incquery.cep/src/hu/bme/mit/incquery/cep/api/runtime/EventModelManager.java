@@ -19,7 +19,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
-import hu.bme.mit.incquery.cep.runtime.evaluation.ModelHandlerRules;
+import hu.bme.mit.incquery.cep.runtime.evaluation.ModelHandlerRules2;
 import hu.bme.mit.incquery.cep.runtime.evaluation.StateMachineBuilder;
 import hu.bme.mit.incquery.cep.utils.Logger;
 import hu.bme.mit.incquery.cep.utils.SMUtils;
@@ -176,7 +176,8 @@ public class EventModelManager {
 			engine = IncQueryEngineManager.getInstance().getIncQueryEngine(resourceSet);
 			ISchedulerFactory schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine.getBaseIndex());
 
-			ModelHandlerRules mhr = new ModelHandlerRules(this);
+			//ModelHandlerRules mhr = new ModelHandlerRules(this);
+			ModelHandlerRules2 mhr = new ModelHandlerRules2(this);
 			FixedPriorityConflictResolver fixedPriorityResolver = ConflictResolvers.createFixedPriorityResolver();
 
 			for (RuleSpecification<?> ruleSpec : mhr.getModelHandlers().keySet()) {

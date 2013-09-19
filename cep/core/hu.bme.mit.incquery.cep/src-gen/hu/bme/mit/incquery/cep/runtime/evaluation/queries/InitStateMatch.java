@@ -21,6 +21,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see InitStateProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class InitStateMatch extends BasePatternMatch {
   private InitState fS;
   
@@ -125,6 +126,8 @@ public abstract class InitStateMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends InitStateMatch {
     Mutable(final InitState pS) {
       super(pS);
@@ -137,6 +140,8 @@ public abstract class InitStateMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends InitStateMatch {
     Immutable(final InitState pS) {
       super(pS);

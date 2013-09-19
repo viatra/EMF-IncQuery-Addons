@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see EnabledTransitionMatch
  * 
  */
+@SuppressWarnings("all")
 public final class EnabledTransitionQuerySpecification extends BaseGeneratedQuerySpecification<EnabledTransitionMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class EnabledTransitionQuerySpecification extends BaseGeneratedQuer
   private EnabledTransitionQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<EnabledTransitionQuerySpecification> {
     @Override
     public EnabledTransitionQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class EnabledTransitionQuerySpecification extends BaseGeneratedQuer
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static EnabledTransitionQuerySpecification INSTANCE = make();
     

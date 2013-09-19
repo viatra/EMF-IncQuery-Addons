@@ -21,6 +21,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see LatestEventProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class LatestEventMatch extends BasePatternMatch {
   private Event fE;
   
@@ -125,6 +126,8 @@ public abstract class LatestEventMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends LatestEventMatch {
     Mutable(final Event pE) {
       super(pE);
@@ -137,6 +140,8 @@ public abstract class LatestEventMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends LatestEventMatch {
     Immutable(final Event pE) {
       super(pE);

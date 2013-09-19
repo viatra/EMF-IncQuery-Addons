@@ -11,6 +11,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class StateWithSTOPTimeconstraintProcessor implements IMatchProcessor<StateWithSTOPTimeconstraintMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -22,7 +23,7 @@ public abstract class StateWithSTOPTimeconstraintProcessor implements IMatchProc
   
   @Override
   public void process(final StateWithSTOPTimeconstraintMatch match) {
-    process(match.getS(), match.getTc());  				
+    process(match.getS(), match.getTc());
     
   }
 }

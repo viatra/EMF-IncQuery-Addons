@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see GuardAtomicPatternMatch
  * 
  */
+@SuppressWarnings("all")
 public final class GuardAtomicPatternQuerySpecification extends BaseGeneratedQuerySpecification<GuardAtomicPatternMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class GuardAtomicPatternQuerySpecification extends BaseGeneratedQue
   private GuardAtomicPatternQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<GuardAtomicPatternQuerySpecification> {
     @Override
     public GuardAtomicPatternQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class GuardAtomicPatternQuerySpecification extends BaseGeneratedQue
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static GuardAtomicPatternQuerySpecification INSTANCE = make();
     

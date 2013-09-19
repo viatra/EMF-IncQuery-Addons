@@ -11,6 +11,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class FinalStateProcessor implements IMatchProcessor<FinalStateMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -22,7 +23,7 @@ public abstract class FinalStateProcessor implements IMatchProcessor<FinalStateM
   
   @Override
   public void process(final FinalStateMatch match) {
-    process(match.getS(), match.getEt());  				
+    process(match.getS(), match.getEt());
     
   }
 }

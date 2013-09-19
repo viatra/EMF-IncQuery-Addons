@@ -21,6 +21,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see TransitionProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class TransitionMatch extends BasePatternMatch {
   private Transition fT;
   
@@ -125,6 +126,8 @@ public abstract class TransitionMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends TransitionMatch {
     Mutable(final Transition pT) {
       super(pT);
@@ -137,6 +140,8 @@ public abstract class TransitionMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends TransitionMatch {
     Immutable(final Transition pT) {
       super(pT);

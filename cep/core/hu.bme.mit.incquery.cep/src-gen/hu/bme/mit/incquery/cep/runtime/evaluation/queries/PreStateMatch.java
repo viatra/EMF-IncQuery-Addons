@@ -22,6 +22,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see PreStateProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class PreStateMatch extends BasePatternMatch {
   private Transition fT;
   
@@ -149,6 +150,8 @@ public abstract class PreStateMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends PreStateMatch {
     Mutable(final Transition pT, final State pS) {
       super(pT, pS);
@@ -161,6 +164,8 @@ public abstract class PreStateMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends PreStateMatch {
     Immutable(final Transition pT, final State pS) {
       super(pT, pS);

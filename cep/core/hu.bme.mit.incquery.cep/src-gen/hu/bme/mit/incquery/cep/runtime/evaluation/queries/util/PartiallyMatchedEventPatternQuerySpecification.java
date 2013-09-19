@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see PartiallyMatchedEventPatternMatch
  * 
  */
+@SuppressWarnings("all")
 public final class PartiallyMatchedEventPatternQuerySpecification extends BaseGeneratedQuerySpecification<PartiallyMatchedEventPatternMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class PartiallyMatchedEventPatternQuerySpecification extends BaseGe
   private PartiallyMatchedEventPatternQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<PartiallyMatchedEventPatternQuerySpecification> {
     @Override
     public PartiallyMatchedEventPatternQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class PartiallyMatchedEventPatternQuerySpecification extends BaseGe
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static PartiallyMatchedEventPatternQuerySpecification INSTANCE = make();
     

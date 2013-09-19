@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see PreStateMatch
  * 
  */
+@SuppressWarnings("all")
 public final class PreStateQuerySpecification extends BaseGeneratedQuerySpecification<PreStateMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class PreStateQuerySpecification extends BaseGeneratedQuerySpecific
   private PreStateQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<PreStateQuerySpecification> {
     @Override
     public PreStateQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class PreStateQuerySpecification extends BaseGeneratedQuerySpecific
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static PreStateQuerySpecification INSTANCE = make();
     

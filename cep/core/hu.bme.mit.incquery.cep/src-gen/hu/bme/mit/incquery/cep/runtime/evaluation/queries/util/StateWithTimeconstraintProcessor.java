@@ -11,6 +11,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class StateWithTimeconstraintProcessor implements IMatchProcessor<StateWithTimeconstraintMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -22,7 +23,7 @@ public abstract class StateWithTimeconstraintProcessor implements IMatchProcesso
   
   @Override
   public void process(final StateWithTimeconstraintMatch match) {
-    process(match.getS(), match.getTc());  				
+    process(match.getS(), match.getTc());
     
   }
 }

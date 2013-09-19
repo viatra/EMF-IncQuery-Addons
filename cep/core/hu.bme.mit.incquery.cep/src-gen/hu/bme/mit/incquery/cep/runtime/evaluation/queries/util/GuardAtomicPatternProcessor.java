@@ -11,6 +11,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class GuardAtomicPatternProcessor implements IMatchProcessor<GuardAtomicPatternMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -22,7 +23,7 @@ public abstract class GuardAtomicPatternProcessor implements IMatchProcessor<Gua
   
   @Override
   public void process(final GuardAtomicPatternMatch match) {
-    process(match.getGuard(), match.getAtomicPattern());  				
+    process(match.getGuard(), match.getAtomicPattern());
     
   }
 }
