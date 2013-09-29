@@ -45,7 +45,7 @@ class ModelHandlerRules2 {
 
 		newMatcherRuleSpecification(
 			EnabledTransitionMatcher::querySpecification,
-			DefaultActivationLifeCycle::DEFAULT,
+			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))
 		)
 	}
@@ -80,7 +80,7 @@ class ModelHandlerRules2 {
 
 		newMatcherRuleSpecification(
 			TokenInTrapStateMatcher::querySpecification,
-			DefaultActivationLifeCycle::DEFAULT,
+			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))
 		)
 	}
