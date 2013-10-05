@@ -19,7 +19,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
-import hu.bme.mit.incquery.cep.runtime.evaluation.ModelHandlingWithViatra;
+import hu.bme.mit.incquery.cep.runtime.evaluation.ModelHandlingWithViatraApi2;
 import hu.bme.mit.incquery.cep.runtime.evaluation.StateMachineBuilder;
 import hu.bme.mit.incquery.cep.utils.Logger;
 import hu.bme.mit.incquery.cep.utils.SMUtils;
@@ -217,8 +217,14 @@ public class EventModelManager {
             /**
              * v3: model handling by the VIATRA-EMF API
              */
-            ModelHandlingWithViatra mhrViatra = new ModelHandlingWithViatra(this);
-            mhrViatra.registerRules();
+//            ModelHandlingWithViatra mhrViatra = new ModelHandlingWithViatra(this);
+//            mhrViatra.registerRules();
+            
+            /**
+             * v4: model handling by the VIATRA-EMF API
+             */
+            ModelHandlingWithViatraApi2 mhrViatraApi2 = new ModelHandlingWithViatraApi2(this);
+            mhrViatraApi2.registerRules();
 
         } catch (Exception e) {
             e.printStackTrace();

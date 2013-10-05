@@ -8,16 +8,14 @@ import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatch
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.FinishedStateMachineMatcher
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.TokenInTrapStateMatcher
 import java.util.Map
-import org.eclipse.incquery.runtime.api.IncQueryEngineManager
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification
-import org.eclipse.incquery.runtime.evm.specific.ConflictResolvers
-import org.eclipse.incquery.runtime.evm.specific.ExecutionSchemas
-import org.eclipse.incquery.runtime.evm.specific.Schedulers
 import org.eclipse.viatra2.emf.runtime.rules.EventDrivenTransformationRuleGroup
 import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory
+import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformation
+import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformation.GlobalConflictResolver
+import org.eclipse.incquery.runtime.evm.specific.ConflictResolvers
 
-class ModelHandlingWithViatra {
-//	extension EventDrivenTransformation transformation
+class ModelHandlingWithViatraApi2 {
 	extension EventDrivenTransformationRuleFactory ruleFactory = new EventDrivenTransformationRuleFactory
 
 	@Property EventModelManager eventModelManager;
@@ -25,7 +23,6 @@ class ModelHandlingWithViatra {
 
 	new(EventModelManager eventModelManager) {
 		this.eventModelManager = eventModelManager;
-//		transformation = new EventDrivenTransformation(eventModelManager.resourceSet)
 	}
 
 	def getRules() {
@@ -37,27 +34,30 @@ class ModelHandlingWithViatra {
 	}
 
 	def registerRules() {
-		val engine = IncQueryEngineManager.getInstance().getIncQueryEngine(eventModelManager.resourceSet);
+		EventDrivenTransformation.forResource(eventModelManager.resourceSet).addRules(rules).create()
+	}
 
-		val schedulerFactory = Schedulers.getIQBaseSchedulerFactory(engine.getBaseIndex());
+	def registerRulesWithAutomatedPriorities() {
+		EventDrivenTransformation.forResource(eventModelManager.resourceSet).addRules(rules).
+			setConflictResolver(GlobalConflictResolver.FIXED_PRIORITY_CONFLICT_RESOLVER).create()
+	}
+
+	def registerRulesWithCustomPriorities() {
 		val fixedPriorityResolver = ConflictResolvers.createFixedPriorityResolver();
-
-		val executionSchema = ExecutionSchemas.createIncQueryExecutionSchema(engine, schedulerFactory,
-			rules.ruleSpecifications);
-
 		fixedPriorityResolver.setPriority(createEnabledTransitionRule.ruleSpecification, 100)
 		fixedPriorityResolver.setPriority(createFinishedStateMachineRule.ruleSpecification, 50)
 		fixedPriorityResolver.setPriority(createTokenInTrapStateRule.ruleSpecification, 0)
 
-		executionSchema.setConflictResolver(fixedPriorityResolver);
+		EventDrivenTransformation.forResource(eventModelManager.resourceSet).addRules(rules).
+			setConflictResolver(fixedPriorityResolver).create()
 	}
 
-	val createEnabledTransitionRule = ruleFactory.createRule(//"enabled transition rule",
+	val createEnabledTransitionRule = ruleFactory.createRule( //"enabled transition rule",
 		EnabledTransitionMatcher::querySpecification) [
 		eventModelManager.strategy.fireTransition(t, et)
 	]
 
-	val createFinishedStateMachineRule = ruleFactory.createRule(//"finished statemachine rule",
+	val createFinishedStateMachineRule = ruleFactory.createRule( //"finished statemachine rule",
 		FinishedStateMachineMatcher::querySpecification) [
 		eventModelManager.finalStatesForStatemachines.get(sm).eventTokens.remove(0)
 		var observedPattern = new SimpleObservedComplexEventPattern(sm.eventPattern)
@@ -65,7 +65,7 @@ class ModelHandlingWithViatra {
 		eventModelManager.realm.forwardObservedEventPattern(observedPattern)
 	]
 
-	val createTokenInTrapStateRule = ruleFactory.createRule(//"trap state rule",
+	val createTokenInTrapStateRule = ruleFactory.createRule( //"trap state rule",
 		TokenInTrapStateMatcher::querySpecification) [
 		var currentState = et.currentState
 		if (!(currentState instanceof TrapState)) {
