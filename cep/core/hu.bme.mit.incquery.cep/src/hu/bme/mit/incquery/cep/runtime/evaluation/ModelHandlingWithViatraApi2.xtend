@@ -7,13 +7,14 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatcher
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.FinishedStateMachineMatcher
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.TokenInTrapStateMatcher
+import java.util.ArrayList
 import java.util.Map
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification
+import org.eclipse.incquery.runtime.evm.specific.ConflictResolvers
 import org.eclipse.viatra2.emf.runtime.rules.EventDrivenTransformationRuleGroup
 import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory
 import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformation
-import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformation.GlobalConflictResolver
-import org.eclipse.incquery.runtime.evm.specific.ConflictResolvers
+import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.RuleOrderBasedFixedPriorityResolver
 
 class ModelHandlingWithViatraApi2 {
 	extension EventDrivenTransformationRuleFactory ruleFactory = new EventDrivenTransformationRuleFactory
@@ -37,11 +38,6 @@ class ModelHandlingWithViatraApi2 {
 		EventDrivenTransformation.forResource(eventModelManager.resourceSet).addRules(rules).create()
 	}
 
-	def registerRulesWithAutomatedPriorities() {
-		EventDrivenTransformation.forResource(eventModelManager.resourceSet).addRules(rules).
-			setConflictResolver(GlobalConflictResolver.FIXED_PRIORITY_CONFLICT_RESOLVER).create()
-	}
-
 	def registerRulesWithCustomPriorities() {
 		val fixedPriorityResolver = ConflictResolvers.createFixedPriorityResolver();
 		fixedPriorityResolver.setPriority(createEnabledTransitionRule.ruleSpecification, 100)
@@ -50,6 +46,14 @@ class ModelHandlingWithViatraApi2 {
 
 		EventDrivenTransformation.forResource(eventModelManager.resourceSet).addRules(rules).
 			setConflictResolver(fixedPriorityResolver).create()
+	}
+
+	def registerRulesWithAutomatedPriorities() {
+		val resolver = new RuleOrderBasedFixedPriorityResolver()
+		resolver.setPriorities(new ArrayList(rules.ruleSpecifications), true)
+
+		EventDrivenTransformation.forResource(eventModelManager.resourceSet).addRules(rules).
+			setConflictResolver(resolver).create()
 	}
 
 	val createEnabledTransitionRule = ruleFactory.createRule( //"enabled transition rule",

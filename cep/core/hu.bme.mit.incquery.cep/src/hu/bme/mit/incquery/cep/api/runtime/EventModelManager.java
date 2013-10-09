@@ -224,7 +224,7 @@ public class EventModelManager {
              * v4: model handling by the VIATRA-EMF API
              */
             ModelHandlingWithViatraApi2 mhrViatraApi2 = new ModelHandlingWithViatraApi2(this);
-            mhrViatraApi2.registerRules();
+            mhrViatraApi2.registerRulesWithAutomatedPriorities();
 
         } catch (Exception e) {
             e.printStackTrace();
