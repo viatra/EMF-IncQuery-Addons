@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class EventWithMultiplicityImpl extends MinimalEObjectImpl.Container implements EventWithMultiplicity
+public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implements EventWithMultiplicity
 {
   /**
    * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.

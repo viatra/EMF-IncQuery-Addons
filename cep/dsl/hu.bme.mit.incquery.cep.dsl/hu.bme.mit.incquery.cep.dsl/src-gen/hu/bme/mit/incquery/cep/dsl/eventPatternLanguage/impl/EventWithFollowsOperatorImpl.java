@@ -4,7 +4,7 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithFollowsOperator;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerEventStructure;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperator;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -50,7 +50,7 @@ public class EventWithFollowsOperatorImpl extends MinimalEObjectImpl.Container i
    * @generated
    * @ordered
    */
-  protected EventWithMultiplicity event;
+  protected FollowerEventStructure event;
 
   /**
    * <!-- begin-user-doc -->
@@ -126,7 +126,7 @@ public class EventWithFollowsOperatorImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventWithMultiplicity getEvent()
+  public FollowerEventStructure getEvent()
   {
     return event;
   }
@@ -136,9 +136,9 @@ public class EventWithFollowsOperatorImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetEvent(EventWithMultiplicity newEvent, NotificationChain msgs)
+  public NotificationChain basicSetEvent(FollowerEventStructure newEvent, NotificationChain msgs)
   {
-    EventWithMultiplicity oldEvent = event;
+    FollowerEventStructure oldEvent = event;
     event = newEvent;
     if (eNotificationRequired())
     {
@@ -153,7 +153,7 @@ public class EventWithFollowsOperatorImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEvent(EventWithMultiplicity newEvent)
+  public void setEvent(FollowerEventStructure newEvent)
   {
     if (newEvent != event)
     {
@@ -219,7 +219,7 @@ public class EventWithFollowsOperatorImpl extends MinimalEObjectImpl.Container i
         setOperator((FollowsOperator)newValue);
         return;
       case EventPatternLanguagePackage.EVENT_WITH_FOLLOWS_OPERATOR__EVENT:
-        setEvent((EventWithMultiplicity)newValue);
+        setEvent((FollowerEventStructure)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -239,7 +239,7 @@ public class EventWithFollowsOperatorImpl extends MinimalEObjectImpl.Container i
         setOperator((FollowsOperator)null);
         return;
       case EventPatternLanguagePackage.EVENT_WITH_FOLLOWS_OPERATOR__EVENT:
-        setEvent((EventWithMultiplicity)null);
+        setEvent((FollowerEventStructure)null);
         return;
     }
     super.eUnset(featureID);

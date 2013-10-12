@@ -2,14 +2,13 @@ package hu.bme.mit.incquery.cep.dsl.serializer;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Action;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Adapter;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEvent;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.CEParamlist;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ClosedClosed;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ClosedOpen;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEvent;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ContextAnnotation;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventParamWithType;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
@@ -26,9 +25,8 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.NumericFilter;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OpenClosed;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OpenOpen;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ParameterFilter;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PriorityAnnotation;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.RangeFilter;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.SamplingAnnotation;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Source;
 import hu.bme.mit.incquery.cep.dsl.services.EventPatternLanguageGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -92,12 +90,6 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == EventPatternLanguagePackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case EventPatternLanguagePackage.ACTION:
-				if(context == grammarAccess.getActionRule()) {
-					sequence_Action(context, (Action) semanticObject); 
-					return; 
-				}
-				else break;
 			case EventPatternLanguagePackage.ADAPTER:
 				if(context == grammarAccess.getAdapterRule()) {
 					sequence_Adapter(context, (Adapter) semanticObject); 
@@ -108,8 +100,15 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 				if(context == grammarAccess.getAbstractAtomicEventRule() ||
 				   context == grammarAccess.getAtomicEventRule() ||
 				   context == grammarAccess.getEventRule() ||
-				   context == grammarAccess.getEventModelElementsRule()) {
+				   context == grammarAccess.getModelElementsRule()) {
 					sequence_AtomicEvent(context, (AtomicEvent) semanticObject); 
+					return; 
+				}
+				else break;
+			case EventPatternLanguagePackage.BRANCH_EXPRESSION:
+				if(context == grammarAccess.getBranchExpressionRule() ||
+				   context == grammarAccess.getFollowerEventStructureRule()) {
+					sequence_BranchExpression(context, (BranchExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -136,15 +135,8 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 			case EventPatternLanguagePackage.COMPLEX_EVENT:
 				if(context == grammarAccess.getComplexEventRule() ||
 				   context == grammarAccess.getEventRule() ||
-				   context == grammarAccess.getEventModelElementsRule()) {
+				   context == grammarAccess.getModelElementsRule()) {
 					sequence_ComplexEvent(context, (ComplexEvent) semanticObject); 
-					return; 
-				}
-				else break;
-			case EventPatternLanguagePackage.CONTEXT_ANNOTATION:
-				if(context == grammarAccess.getAnnotationsRule() ||
-				   context == grammarAccess.getContextAnnotationRule()) {
-					sequence_ContextAnnotation(context, (ContextAnnotation) semanticObject); 
 					return; 
 				}
 				else break;
@@ -174,7 +166,8 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 				}
 				else break;
 			case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY:
-				if(context == grammarAccess.getEventWithMultiplicityRule()) {
+				if(context == grammarAccess.getEventWithMultiplicityRule() ||
+				   context == grammarAccess.getFollowerEventStructureRule()) {
 					sequence_EventWithMultiplicity(context, (EventWithMultiplicity) semanticObject); 
 					return; 
 				}
@@ -203,8 +196,8 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 			case EventPatternLanguagePackage.IQ_PATTERN_EVENT:
 				if(context == grammarAccess.getAbstractAtomicEventRule() ||
 				   context == grammarAccess.getEventRule() ||
-				   context == grammarAccess.getEventModelElementsRule() ||
-				   context == grammarAccess.getIQPatternEventRule()) {
+				   context == grammarAccess.getIQPatternEventRule() ||
+				   context == grammarAccess.getModelElementsRule()) {
 					sequence_IQPatternEvent(context, (IQPatternEvent) semanticObject); 
 					return; 
 				}
@@ -250,13 +243,6 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 					return; 
 				}
 				else break;
-			case EventPatternLanguagePackage.PRIORITY_ANNOTATION:
-				if(context == grammarAccess.getAnnotationsRule() ||
-				   context == grammarAccess.getPriorityAnnotationRule()) {
-					sequence_PriorityAnnotation(context, (PriorityAnnotation) semanticObject); 
-					return; 
-				}
-				else break;
 			case EventPatternLanguagePackage.RANGE_FILTER:
 				if(context == grammarAccess.getParameterFilterRuleRule() ||
 				   context == grammarAccess.getRangeFilterRule()) {
@@ -264,15 +250,15 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 					return; 
 				}
 				else break;
-			case EventPatternLanguagePackage.SAMPLING_ANNOTATION:
-				if(context == grammarAccess.getAnnotationsRule() ||
-				   context == grammarAccess.getSamplingAnnotationRule()) {
-					sequence_SamplingAnnotation(context, (SamplingAnnotation) semanticObject); 
+			case EventPatternLanguagePackage.RULE:
+				if(context == grammarAccess.getModelElementsRule() ||
+				   context == grammarAccess.getRuleRule()) {
+					sequence_Rule(context, (Rule) semanticObject); 
 					return; 
 				}
 				else break;
 			case EventPatternLanguagePackage.SOURCE:
-				if(context == grammarAccess.getEventModelElementsRule() ||
+				if(context == grammarAccess.getModelElementsRule() ||
 				   context == grammarAccess.getSourceRule()) {
 					sequence_Source(context, (Source) semanticObject); 
 					return; 
@@ -1222,22 +1208,6 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     action=XExpression
-	 */
-	protected void sequence_Action(EObject context, Action semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EventPatternLanguagePackage.Literals.ACTION__ACTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EventPatternLanguagePackage.Literals.ACTION__ACTION));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActionAccess().getActionXExpressionParserRuleCall_2_0(), semanticObject.getAction());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     name=STRING
 	 */
 	protected void sequence_Adapter(EObject context, Adapter semanticObject) {
@@ -1254,16 +1224,18 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         annotations+=Annotations* 
-	 *         name=ID 
-	 *         id=STRING 
-	 *         source=[Source|ID] 
-	 *         parameterFilters+=ParameterFilter+ 
-	 *         actionDefinition=Action?
-	 *     )
+	 *     (name=ID source=[Source|ID] parameterFilters+=ParameterFilter+)
 	 */
 	protected void sequence_AtomicEvent(EObject context, AtomicEvent semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (branches+=[EventParamWithType|ID] branches+=[EventParamWithType|ID]+)
+	 */
+	protected void sequence_BranchExpression(EObject context, BranchExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1317,7 +1289,7 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (annotations+=Annotations* name=ID paramlist=CEParamlist complexEventExpressions+=ComplexEventExpression* actionDefinition=Action?)
+	 *     (name=ID paramlist=CEParamlist priority=INT complexEventExpressions+=ComplexEventExpression*)
 	 */
 	protected void sequence_ComplexEvent(EObject context, ComplexEvent semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1326,23 +1298,7 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     context=Context
-	 */
-	protected void sequence_ContextAnnotation(EObject context, ContextAnnotation semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EventPatternLanguagePackage.Literals.CONTEXT_ANNOTATION__CONTEXT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EventPatternLanguagePackage.Literals.CONTEXT_ANNOTATION__CONTEXT));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getContextAnnotationAccess().getContextContextEnumRuleCall_2_0(), semanticObject.getContext());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (packageName=QualifiedName? usages+=Usage* annotations+=Annotations* name=ID events+=EventModelElements*)
+	 *     (packageName=QualifiedName? usages+=Usage* name=ID events+=ModelElements*)
 	 */
 	protected void sequence_EventModel(EObject context, EventModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1386,7 +1342,7 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (operator=FollowsOperator event=EventWithMultiplicity)
+	 *     (operator=FollowsOperator event=FollowerEventStructure)
 	 */
 	protected void sequence_EventWithFollowsOperator(EObject context, EventWithFollowsOperator semanticObject) {
 		if(errorAcceptor != null) {
@@ -1398,7 +1354,7 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getEventWithFollowsOperatorAccess().getOperatorFollowsOperatorParserRuleCall_0_0(), semanticObject.getOperator());
-		feeder.accept(grammarAccess.getEventWithFollowsOperatorAccess().getEventEventWithMultiplicityParserRuleCall_1_0(), semanticObject.getEvent());
+		feeder.accept(grammarAccess.getEventWithFollowsOperatorAccess().getEventFollowerEventStructureParserRuleCall_1_0(), semanticObject.getEvent());
 		feeder.finish();
 	}
 	
@@ -1448,10 +1404,23 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID iqpattern=STRING changeType=IQPatternChangeType actionDefinition=Action?)
+	 *     (name=ID iqpattern=STRING changeType=IQPatternChangeType)
 	 */
 	protected void sequence_IQPatternEvent(EObject context, IQPatternEvent semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, EventPatternLanguagePackage.Literals.MODEL_ELEMENTS__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EventPatternLanguagePackage.Literals.MODEL_ELEMENTS__NAME));
+			if(transientValues.isValueTransient(semanticObject, EventPatternLanguagePackage.Literals.IQ_PATTERN_EVENT__IQPATTERN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EventPatternLanguagePackage.Literals.IQ_PATTERN_EVENT__IQPATTERN));
+			if(transientValues.isValueTransient(semanticObject, EventPatternLanguagePackage.Literals.IQ_PATTERN_EVENT__CHANGE_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EventPatternLanguagePackage.Literals.IQ_PATTERN_EVENT__CHANGE_TYPE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getIQPatternEventAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getIQPatternEventAccess().getIqpatternSTRINGTerminalRuleCall_6_0(), semanticObject.getIqpattern());
+		feeder.accept(grammarAccess.getIQPatternEventAccess().getChangeTypeIQPatternChangeTypeEnumRuleCall_9_0(), semanticObject.getChangeType());
+		feeder.finish();
 	}
 	
 	
@@ -1558,22 +1527,6 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     priority=INT
-	 */
-	protected void sequence_PriorityAnnotation(EObject context, PriorityAnnotation semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EventPatternLanguagePackage.Literals.PRIORITY_ANNOTATION__PRIORITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EventPatternLanguagePackage.Literals.PRIORITY_ANNOTATION__PRIORITY));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPriorityAnnotationAccess().getPriorityINTTerminalRuleCall_2_0(), semanticObject.getPriority());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (neg=NegationOpartor? range=Range)
 	 */
 	protected void sequence_RangeFilter(EObject context, RangeFilter semanticObject) {
@@ -1583,17 +1536,10 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     sampling=INT
+	 *     (name=ID? events+=[Event|ID] events+=[Event|ID]* action=XExpression)
 	 */
-	protected void sequence_SamplingAnnotation(EObject context, SamplingAnnotation semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EventPatternLanguagePackage.Literals.SAMPLING_ANNOTATION__SAMPLING) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EventPatternLanguagePackage.Literals.SAMPLING_ANNOTATION__SAMPLING));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSamplingAnnotationAccess().getSamplingINTTerminalRuleCall_2_0(), semanticObject.getSampling());
-		feeder.finish();
+	protected void sequence_Rule(EObject context, Rule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

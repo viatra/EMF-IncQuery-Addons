@@ -2,8 +2,8 @@
  */
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Annotations;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerEventStructure;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -11,21 +11,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Annotations</b></em>'.
+ * An implementation of the model object '<em><b>Follower Event Structure</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class AnnotationsImpl extends MinimalEObjectImpl.Container implements Annotations
+public class FollowerEventStructureImpl extends MinimalEObjectImpl.Container implements FollowerEventStructure
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AnnotationsImpl()
+  protected FollowerEventStructureImpl()
   {
     super();
   }
@@ -38,7 +38,7 @@ public class AnnotationsImpl extends MinimalEObjectImpl.Container implements Ann
   @Override
   protected EClass eStaticClass()
   {
-    return EventPatternLanguagePackage.Literals.ANNOTATIONS;
+    return EventPatternLanguagePackage.Literals.FOLLOWER_EVENT_STRUCTURE;
   }
 
-} //AnnotationsImpl
+} //FollowerEventStructureImpl

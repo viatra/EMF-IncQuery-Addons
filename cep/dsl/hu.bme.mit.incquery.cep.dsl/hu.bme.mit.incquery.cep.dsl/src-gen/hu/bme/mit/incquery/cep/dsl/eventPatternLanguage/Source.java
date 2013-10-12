@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Source extends EventModelElements
+public interface Source extends ModelElements
 {
   /**
    * Returns the value of the '<em><b>Adapter</b></em>' containment reference list.

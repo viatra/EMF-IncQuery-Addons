@@ -102,10 +102,10 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventPatternLanguagePackage.EVENT_MODEL_ELEMENTS:
+      case EventPatternLanguagePackage.MODEL_ELEMENTS:
       {
-        EventModelElements eventModelElements = (EventModelElements)theEObject;
-        T result = caseEventModelElements(eventModelElements);
+        ModelElements modelElements = (ModelElements)theEObject;
+        T result = caseModelElements(modelElements);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -113,7 +113,7 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
       {
         Event event = (Event)theEObject;
         T result = caseEvent(event);
-        if (result == null) result = caseEventModelElements(event);
+        if (result == null) result = caseModelElements(event);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -122,7 +122,7 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
         AbstractAtomicEvent abstractAtomicEvent = (AbstractAtomicEvent)theEObject;
         T result = caseAbstractAtomicEvent(abstractAtomicEvent);
         if (result == null) result = caseEvent(abstractAtomicEvent);
-        if (result == null) result = caseEventModelElements(abstractAtomicEvent);
+        if (result == null) result = caseModelElements(abstractAtomicEvent);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -132,7 +132,7 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
         T result = caseAtomicEvent(atomicEvent);
         if (result == null) result = caseAbstractAtomicEvent(atomicEvent);
         if (result == null) result = caseEvent(atomicEvent);
-        if (result == null) result = caseEventModelElements(atomicEvent);
+        if (result == null) result = caseModelElements(atomicEvent);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -142,14 +142,7 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
         T result = caseIQPatternEvent(iqPatternEvent);
         if (result == null) result = caseAbstractAtomicEvent(iqPatternEvent);
         if (result == null) result = caseEvent(iqPatternEvent);
-        if (result == null) result = caseEventModelElements(iqPatternEvent);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EventPatternLanguagePackage.ACTION:
-      {
-        Action action = (Action)theEObject;
-        T result = caseAction(action);
+        if (result == null) result = caseModelElements(iqPatternEvent);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -158,7 +151,15 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
         ComplexEvent complexEvent = (ComplexEvent)theEObject;
         T result = caseComplexEvent(complexEvent);
         if (result == null) result = caseEvent(complexEvent);
-        if (result == null) result = caseEventModelElements(complexEvent);
+        if (result == null) result = caseModelElements(complexEvent);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventPatternLanguagePackage.RULE:
+      {
+        Rule rule = (Rule)theEObject;
+        T result = caseRule(rule);
+        if (result == null) result = caseModelElements(rule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -180,37 +181,6 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
       {
         ParameterFilter parameterFilter = (ParameterFilter)theEObject;
         T result = caseParameterFilter(parameterFilter);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EventPatternLanguagePackage.ANNOTATIONS:
-      {
-        Annotations annotations = (Annotations)theEObject;
-        T result = caseAnnotations(annotations);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EventPatternLanguagePackage.CONTEXT_ANNOTATION:
-      {
-        ContextAnnotation contextAnnotation = (ContextAnnotation)theEObject;
-        T result = caseContextAnnotation(contextAnnotation);
-        if (result == null) result = caseAnnotations(contextAnnotation);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EventPatternLanguagePackage.SAMPLING_ANNOTATION:
-      {
-        SamplingAnnotation samplingAnnotation = (SamplingAnnotation)theEObject;
-        T result = caseSamplingAnnotation(samplingAnnotation);
-        if (result == null) result = caseAnnotations(samplingAnnotation);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EventPatternLanguagePackage.PRIORITY_ANNOTATION:
-      {
-        PriorityAnnotation priorityAnnotation = (PriorityAnnotation)theEObject;
-        T result = casePriorityAnnotation(priorityAnnotation);
-        if (result == null) result = caseAnnotations(priorityAnnotation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -329,10 +299,26 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EventPatternLanguagePackage.FOLLOWER_EVENT_STRUCTURE:
+      {
+        FollowerEventStructure followerEventStructure = (FollowerEventStructure)theEObject;
+        T result = caseFollowerEventStructure(followerEventStructure);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventPatternLanguagePackage.BRANCH_EXPRESSION:
+      {
+        BranchExpression branchExpression = (BranchExpression)theEObject;
+        T result = caseBranchExpression(branchExpression);
+        if (result == null) result = caseFollowerEventStructure(branchExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY:
       {
         EventWithMultiplicity eventWithMultiplicity = (EventWithMultiplicity)theEObject;
         T result = caseEventWithMultiplicity(eventWithMultiplicity);
+        if (result == null) result = caseFollowerEventStructure(eventWithMultiplicity);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -340,7 +326,7 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
       {
         Source source = (Source)theEObject;
         T result = caseSource(source);
-        if (result == null) result = caseEventModelElements(source);
+        if (result == null) result = caseModelElements(source);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -420,17 +406,17 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Event Model Elements</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Model Elements</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Event Model Elements</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Model Elements</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEventModelElements(EventModelElements object)
+  public T caseModelElements(ModelElements object)
   {
     return null;
   }
@@ -500,22 +486,6 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Action</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAction(Action object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Complex Event</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -527,6 +497,22 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseComplexEvent(ComplexEvent object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRule(Rule object)
   {
     return null;
   }
@@ -575,70 +561,6 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseParameterFilter(ParameterFilter object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Annotations</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Annotations</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAnnotations(Annotations object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Context Annotation</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Context Annotation</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseContextAnnotation(ContextAnnotation object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Sampling Annotation</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sampling Annotation</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSamplingAnnotation(SamplingAnnotation object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Priority Annotation</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Priority Annotation</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePriorityAnnotation(PriorityAnnotation object)
   {
     return null;
   }
@@ -879,6 +801,38 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseFollowsOperatorViaTW(FollowsOperatorViaTW object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Follower Event Structure</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Follower Event Structure</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFollowerEventStructure(FollowerEventStructure object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Branch Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Branch Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBranchExpression(BranchExpression object)
   {
     return null;
   }

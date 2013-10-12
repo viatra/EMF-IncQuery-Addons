@@ -12,8 +12,8 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEvent#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEvent#getParamlist <em>Paramlist</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEvent#getPriority <em>Priority</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEvent#getComplexEventExpressions <em>Complex Event Expressions</em>}</li>
  * </ul>
  * </p>
@@ -24,22 +24,6 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ComplexEvent extends Event
 {
-  /**
-   * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
-   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Annotations}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Annotations</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Annotations</em>' containment reference list.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getComplexEvent_Annotations()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Annotations> getAnnotations();
-
   /**
    * Returns the value of the '<em><b>Paramlist</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -65,6 +49,32 @@ public interface ComplexEvent extends Event
    * @generated
    */
   void setParamlist(CEParamlist value);
+
+  /**
+   * Returns the value of the '<em><b>Priority</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Priority</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Priority</em>' attribute.
+   * @see #setPriority(int)
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getComplexEvent_Priority()
+   * @model
+   * @generated
+   */
+  int getPriority();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEvent#getPriority <em>Priority</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Priority</em>' attribute.
+   * @see #getPriority()
+   * @generated
+   */
+  void setPriority(int value);
 
   /**
    * Returns the value of the '<em><b>Complex Event Expressions</b></em>' containment reference list.

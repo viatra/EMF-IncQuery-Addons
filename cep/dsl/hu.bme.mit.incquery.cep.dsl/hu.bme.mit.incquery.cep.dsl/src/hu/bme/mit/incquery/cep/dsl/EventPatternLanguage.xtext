@@ -9,9 +9,8 @@ generate eventPatternLanguage "http://www.bme.hu/mit/incquery/cep/dsl/EventPatte
 EventModel hidden(WS, ML_COMMENT, SL_COMMENT):
 	('package' packageName=QualifiedName)?
 	usages+=Usage*
-	annotations+=Annotations*
 	'EventModel' name=ID '{'
-		events+=EventModelElements*
+		events+=ModelElements*
 	'}';
 
 DOUBLE returns ecore::EDouble:
@@ -32,8 +31,8 @@ IQUsage:
 EventSourceUsage:
 	'uses-eventsources' importedNamespace=QualifiedNameWithWildcard;
 
-EventModelElements:
-	Event | Source
+ModelElements:
+	Event | Rule | Source
 ;
 
 Event:
@@ -43,35 +42,33 @@ AbstractAtomicEvent:
 	AtomicEvent | IQPatternEvent;
 
 AtomicEvent:
-	annotations+=Annotations*
 	'AtomicEvent' name=ID '()' '{'
-		'id' ':' id=STRING
 		'source' ':' source=[Source]
 		'parameterFilters' '{'
 			parameterFilters+=ParameterFilter+
 		'}'
-		(actionDefinition = Action)?
 	'}';
 
 IQPatternEvent:
 	'IQPatternEvent' name=ID '()' '{'
 		'incQueryPatternRef' ':' iqpattern=STRING//[iqpl::Pattern]
 		'changeType' ':' changeType=IQPatternChangeType
-		(actionDefinition = Action)?
 	'}';
-
-Action:
-	'action' '{'
-		action = XExpression
-	'}'';'
-;
 
 ComplexEvent:
-	annotations+=Annotations*
 	'ComplexEvent' name=ID paramlist=CEParamlist '{'
+		'priority'':' priority=INT
 		complexEventExpressions+=ComplexEventExpression*
-		(actionDefinition = Action)?
 	'}';
+
+Rule:
+	'Rule' (name=ID)? '{'
+		'events' ':' events+=[Event] (', 'events+=[Event])*
+		'action' '{'
+			action = XExpression
+		'}'
+	'}'
+;
 
 CEParamlist:
 	{CEParamlist}
@@ -86,20 +83,8 @@ ParameterFilter:
 enum IQPatternChangeType:
 	FOUND | LOST;
 
-Annotations:
-	ContextAnnotation | SamplingAnnotation | PriorityAnnotation;
 
-ContextAnnotation:
-	'@Context' '(' context=Context ')';
 
-enum Context:
-	Chronicle | Recent | Unrestricted;
-
-SamplingAnnotation:
-	'@SamplingTime' '(' sampling=INT ')';
-
-PriorityAnnotation:
-	'@Priority' '(' priority=INT ')';
 
 ParameterFilterRule:
 	RangeFilter | NumericFilter | LiteralFilter;
@@ -138,14 +123,14 @@ NegationOpartor:
 	'not';
 
 ComplexEventExpression:
-	FollowsExpression //| ConcurrentExpression
+	FollowsExpression
 ;
 
 FollowsExpression:
 	firstEvent+=EventWithMultiplicity (events+=EventWithFollowsOperator)*;
 
 EventWithFollowsOperator:
-	operator=FollowsOperator event=EventWithMultiplicity;
+	operator=FollowsOperator event=FollowerEventStructure;
 
 FollowsOperator:
 	FollowsOperatorNoTW | FollowsOperatorViaTW;
@@ -156,6 +141,14 @@ FollowsOperatorNoTW:
 
 FollowsOperatorViaTW:
 	'-[' timewindow=INT ']->';
+
+FollowerEventStructure:
+	BranchExpression | EventWithMultiplicity
+;
+
+BranchExpression:
+	'('branches+=[EventParamWithType] ('OR' branches+=[EventParamWithType])+')'
+;
 
 EventWithMultiplicity:
 	event=[EventParamWithType] ('{' multiplicity=INT '}')?;

@@ -2,7 +2,6 @@
  */
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface EventWithMultiplicity extends EObject
+public interface EventWithMultiplicity extends FollowerEventStructure
 {
   /**
    * Returns the value of the '<em><b>Event</b></em>' reference.

@@ -58,12 +58,12 @@ public interface EventWithFollowsOperator extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Event</em>' containment reference.
-   * @see #setEvent(EventWithMultiplicity)
+   * @see #setEvent(FollowerEventStructure)
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventWithFollowsOperator_Event()
    * @model containment="true"
    * @generated
    */
-  EventWithMultiplicity getEvent();
+  FollowerEventStructure getEvent();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithFollowsOperator#getEvent <em>Event</em>}' containment reference.
@@ -73,6 +73,6 @@ public interface EventWithFollowsOperator extends EObject
    * @see #getEvent()
    * @generated
    */
-  void setEvent(EventWithMultiplicity value);
+  void setEvent(FollowerEventStructure value);
 
 } // EventWithFollowsOperator

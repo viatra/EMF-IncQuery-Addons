@@ -3,55 +3,56 @@
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.SamplingAnnotation;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElements;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Sampling Annotation</b></em>'.
+ * An implementation of the model object '<em><b>Model Elements</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.SamplingAnnotationImpl#getSampling <em>Sampling</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ModelElementsImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SamplingAnnotationImpl extends AnnotationsImpl implements SamplingAnnotation
+public class ModelElementsImpl extends MinimalEObjectImpl.Container implements ModelElements
 {
   /**
-   * The default value of the '{@link #getSampling() <em>Sampling</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSampling()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final int SAMPLING_EDEFAULT = 0;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getSampling() <em>Sampling</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSampling()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected int sampling = SAMPLING_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SamplingAnnotationImpl()
+  protected ModelElementsImpl()
   {
     super();
   }
@@ -64,7 +65,7 @@ public class SamplingAnnotationImpl extends AnnotationsImpl implements SamplingA
   @Override
   protected EClass eStaticClass()
   {
-    return EventPatternLanguagePackage.Literals.SAMPLING_ANNOTATION;
+    return EventPatternLanguagePackage.Literals.MODEL_ELEMENTS;
   }
 
   /**
@@ -72,9 +73,9 @@ public class SamplingAnnotationImpl extends AnnotationsImpl implements SamplingA
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getSampling()
+  public String getName()
   {
-    return sampling;
+    return name;
   }
 
   /**
@@ -82,12 +83,12 @@ public class SamplingAnnotationImpl extends AnnotationsImpl implements SamplingA
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSampling(int newSampling)
+  public void setName(String newName)
   {
-    int oldSampling = sampling;
-    sampling = newSampling;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.SAMPLING_ANNOTATION__SAMPLING, oldSampling, sampling));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.MODEL_ELEMENTS__NAME, oldName, name));
   }
 
   /**
@@ -100,8 +101,8 @@ public class SamplingAnnotationImpl extends AnnotationsImpl implements SamplingA
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.SAMPLING_ANNOTATION__SAMPLING:
-        return getSampling();
+      case EventPatternLanguagePackage.MODEL_ELEMENTS__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -116,8 +117,8 @@ public class SamplingAnnotationImpl extends AnnotationsImpl implements SamplingA
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.SAMPLING_ANNOTATION__SAMPLING:
-        setSampling((Integer)newValue);
+      case EventPatternLanguagePackage.MODEL_ELEMENTS__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -133,8 +134,8 @@ public class SamplingAnnotationImpl extends AnnotationsImpl implements SamplingA
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.SAMPLING_ANNOTATION__SAMPLING:
-        setSampling(SAMPLING_EDEFAULT);
+      case EventPatternLanguagePackage.MODEL_ELEMENTS__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -150,8 +151,8 @@ public class SamplingAnnotationImpl extends AnnotationsImpl implements SamplingA
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.SAMPLING_ANNOTATION__SAMPLING:
-        return sampling != SAMPLING_EDEFAULT;
+      case EventPatternLanguagePackage.MODEL_ELEMENTS__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -167,10 +168,10 @@ public class SamplingAnnotationImpl extends AnnotationsImpl implements SamplingA
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (sampling: ");
-    result.append(sampling);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }
 
-} //SamplingAnnotationImpl
+} //ModelElementsImpl

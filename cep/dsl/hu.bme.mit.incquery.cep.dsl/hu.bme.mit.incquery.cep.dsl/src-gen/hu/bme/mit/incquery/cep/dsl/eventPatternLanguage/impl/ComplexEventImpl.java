@@ -2,7 +2,6 @@
  */
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Annotations;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.CEParamlist;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEvent;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventExpression;
@@ -30,8 +29,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ComplexEventImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ComplexEventImpl#getParamlist <em>Paramlist</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ComplexEventImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ComplexEventImpl#getComplexEventExpressions <em>Complex Event Expressions</em>}</li>
  * </ul>
  * </p>
@@ -41,16 +40,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ComplexEventImpl extends EventImpl implements ComplexEvent
 {
   /**
-   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAnnotations()
-   * @generated
-   * @ordered
-   */
-  protected EList<Annotations> annotations;
-
-  /**
    * The cached value of the '{@link #getParamlist() <em>Paramlist</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -59,6 +48,26 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
    * @ordered
    */
   protected CEParamlist paramlist;
+
+  /**
+   * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPriority()
+   * @generated
+   * @ordered
+   */
+  protected static final int PRIORITY_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPriority()
+   * @generated
+   * @ordered
+   */
+  protected int priority = PRIORITY_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getComplexEventExpressions() <em>Complex Event Expressions</em>}' containment reference list.
@@ -89,20 +98,6 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
   protected EClass eStaticClass()
   {
     return EventPatternLanguagePackage.Literals.COMPLEX_EVENT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Annotations> getAnnotations()
-  {
-    if (annotations == null)
-    {
-      annotations = new EObjectContainmentEList<Annotations>(Annotations.class, this, EventPatternLanguagePackage.COMPLEX_EVENT__ANNOTATIONS);
-    }
-    return annotations;
   }
 
   /**
@@ -158,6 +153,29 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getPriority()
+  {
+    return priority;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPriority(int newPriority)
+  {
+    int oldPriority = priority;
+    priority = newPriority;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.COMPLEX_EVENT__PRIORITY, oldPriority, priority));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<ComplexEventExpression> getComplexEventExpressions()
   {
     if (complexEventExpressions == null)
@@ -177,8 +195,6 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.COMPLEX_EVENT__ANNOTATIONS:
-        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
       case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST:
         return basicSetParamlist(null, msgs);
       case EventPatternLanguagePackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS:
@@ -197,10 +213,10 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.COMPLEX_EVENT__ANNOTATIONS:
-        return getAnnotations();
       case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST:
         return getParamlist();
+      case EventPatternLanguagePackage.COMPLEX_EVENT__PRIORITY:
+        return getPriority();
       case EventPatternLanguagePackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS:
         return getComplexEventExpressions();
     }
@@ -218,12 +234,11 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.COMPLEX_EVENT__ANNOTATIONS:
-        getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends Annotations>)newValue);
-        return;
       case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST:
         setParamlist((CEParamlist)newValue);
+        return;
+      case EventPatternLanguagePackage.COMPLEX_EVENT__PRIORITY:
+        setPriority((Integer)newValue);
         return;
       case EventPatternLanguagePackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS:
         getComplexEventExpressions().clear();
@@ -243,11 +258,11 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.COMPLEX_EVENT__ANNOTATIONS:
-        getAnnotations().clear();
-        return;
       case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST:
         setParamlist((CEParamlist)null);
+        return;
+      case EventPatternLanguagePackage.COMPLEX_EVENT__PRIORITY:
+        setPriority(PRIORITY_EDEFAULT);
         return;
       case EventPatternLanguagePackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS:
         getComplexEventExpressions().clear();
@@ -266,14 +281,31 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.COMPLEX_EVENT__ANNOTATIONS:
-        return annotations != null && !annotations.isEmpty();
       case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST:
         return paramlist != null;
+      case EventPatternLanguagePackage.COMPLEX_EVENT__PRIORITY:
+        return priority != PRIORITY_EDEFAULT;
       case EventPatternLanguagePackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS:
         return complexEventExpressions != null && !complexEventExpressions.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (priority: ");
+    result.append(priority);
+    result.append(')');
+    return result.toString();
   }
 
 } //ComplexEventImpl

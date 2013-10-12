@@ -3,26 +3,23 @@
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AbstractAtomicEvent;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Action;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Adapter;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Annotations;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEvent;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.CEParamlist;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ClosedClosed;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ClosedOpen;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEvent;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventExpression;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Context;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ContextAnnotation;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Event;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModelElements;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventParamWithType;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguageFactory;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventSourceUsage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithFollowsOperator;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerEventStructure;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperator;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorNoTW;
@@ -31,15 +28,15 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternChangeType;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEvent;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQUsage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.LiteralFilter;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElements;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.NumericFilter;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OpenClosed;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OpenOpen;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ParameterFilter;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ParameterFilterRule;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PriorityAnnotation;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Range;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.RangeFilter;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.SamplingAnnotation;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Source;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Usage;
 
@@ -94,7 +91,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass eventModelElementsEClass = null;
+  private EClass modelElementsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -129,14 +126,14 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass actionEClass = null;
+  private EClass complexEventEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass complexEventEClass = null;
+  private EClass ruleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -158,34 +155,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * @generated
    */
   private EClass parameterFilterEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass annotationsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass contextAnnotationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass samplingAnnotationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass priorityAnnotationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -297,6 +266,20 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass followerEventStructureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass branchExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass eventWithMultiplicityEClass = null;
 
   /**
@@ -319,13 +302,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * @generated
    */
   private EEnum iqPatternChangeTypeEEnum = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EEnum contextEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -428,19 +404,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEventModel_Annotations()
-  {
-    return (EReference)eventModelEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getEventModel_Name()
   {
-    return (EAttribute)eventModelEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)eventModelEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -450,7 +416,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    */
   public EReference getEventModel_Events()
   {
-    return (EReference)eventModelEClass.getEStructuralFeatures().get(4);
+    return (EReference)eventModelEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -498,9 +464,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEventModelElements()
+  public EClass getModelElements()
   {
-    return eventModelElementsEClass;
+    return modelElementsEClass;
   }
 
   /**
@@ -508,9 +474,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEventModelElements_Name()
+  public EAttribute getModelElements_Name()
   {
-    return (EAttribute)eventModelElementsEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)modelElementsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -521,16 +487,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
   public EClass getEvent()
   {
     return eventEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getEvent_ActionDefinition()
-  {
-    return (EReference)eventEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -558,7 +514,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAtomicEvent_Annotations()
+  public EReference getAtomicEvent_Source()
   {
     return (EReference)atomicEventEClass.getEStructuralFeatures().get(0);
   }
@@ -568,29 +524,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAtomicEvent_Id()
-  {
-    return (EAttribute)atomicEventEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAtomicEvent_Source()
-  {
-    return (EReference)atomicEventEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getAtomicEvent_ParameterFilters()
   {
-    return (EReference)atomicEventEClass.getEStructuralFeatures().get(3);
+    return (EReference)atomicEventEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -628,26 +564,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAction()
-  {
-    return actionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAction_Action()
-  {
-    return (EReference)actionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getComplexEvent()
   {
     return complexEventEClass;
@@ -658,7 +574,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComplexEvent_Annotations()
+  public EReference getComplexEvent_Paramlist()
   {
     return (EReference)complexEventEClass.getEStructuralFeatures().get(0);
   }
@@ -668,9 +584,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComplexEvent_Paramlist()
+  public EAttribute getComplexEvent_Priority()
   {
-    return (EReference)complexEventEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)complexEventEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -681,6 +597,36 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
   public EReference getComplexEvent_ComplexEventExpressions()
   {
     return (EReference)complexEventEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRule()
+  {
+    return ruleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRule_Events()
+  {
+    return (EReference)ruleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRule_Action()
+  {
+    return (EReference)ruleEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -761,76 +707,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
   public EReference getParameterFilter_ParamFilterRule()
   {
     return (EReference)parameterFilterEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getAnnotations()
-  {
-    return annotationsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getContextAnnotation()
-  {
-    return contextAnnotationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getContextAnnotation_Context()
-  {
-    return (EAttribute)contextAnnotationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getSamplingAnnotation()
-  {
-    return samplingAnnotationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getSamplingAnnotation_Sampling()
-  {
-    return (EAttribute)samplingAnnotationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getPriorityAnnotation()
-  {
-    return priorityAnnotationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getPriorityAnnotation_Priority()
-  {
-    return (EAttribute)priorityAnnotationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1128,6 +1004,36 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getFollowerEventStructure()
+  {
+    return followerEventStructureEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBranchExpression()
+  {
+    return branchExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBranchExpression_Branches()
+  {
+    return (EReference)branchExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getEventWithMultiplicity()
   {
     return eventWithMultiplicityEClass;
@@ -1208,16 +1114,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getContext()
-  {
-    return contextEEnum;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EventPatternLanguageFactory getEventPatternLanguageFactory()
   {
     return (EventPatternLanguageFactory)getEFactoryInstance();
@@ -1246,7 +1142,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     eventModelEClass = createEClass(EVENT_MODEL);
     createEAttribute(eventModelEClass, EVENT_MODEL__PACKAGE_NAME);
     createEReference(eventModelEClass, EVENT_MODEL__USAGES);
-    createEReference(eventModelEClass, EVENT_MODEL__ANNOTATIONS);
     createEAttribute(eventModelEClass, EVENT_MODEL__NAME);
     createEReference(eventModelEClass, EVENT_MODEL__EVENTS);
 
@@ -1257,17 +1152,14 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
 
     eventSourceUsageEClass = createEClass(EVENT_SOURCE_USAGE);
 
-    eventModelElementsEClass = createEClass(EVENT_MODEL_ELEMENTS);
-    createEAttribute(eventModelElementsEClass, EVENT_MODEL_ELEMENTS__NAME);
+    modelElementsEClass = createEClass(MODEL_ELEMENTS);
+    createEAttribute(modelElementsEClass, MODEL_ELEMENTS__NAME);
 
     eventEClass = createEClass(EVENT);
-    createEReference(eventEClass, EVENT__ACTION_DEFINITION);
 
     abstractAtomicEventEClass = createEClass(ABSTRACT_ATOMIC_EVENT);
 
     atomicEventEClass = createEClass(ATOMIC_EVENT);
-    createEReference(atomicEventEClass, ATOMIC_EVENT__ANNOTATIONS);
-    createEAttribute(atomicEventEClass, ATOMIC_EVENT__ID);
     createEReference(atomicEventEClass, ATOMIC_EVENT__SOURCE);
     createEReference(atomicEventEClass, ATOMIC_EVENT__PARAMETER_FILTERS);
 
@@ -1275,13 +1167,14 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     createEAttribute(iqPatternEventEClass, IQ_PATTERN_EVENT__IQPATTERN);
     createEAttribute(iqPatternEventEClass, IQ_PATTERN_EVENT__CHANGE_TYPE);
 
-    actionEClass = createEClass(ACTION);
-    createEReference(actionEClass, ACTION__ACTION);
-
     complexEventEClass = createEClass(COMPLEX_EVENT);
-    createEReference(complexEventEClass, COMPLEX_EVENT__ANNOTATIONS);
     createEReference(complexEventEClass, COMPLEX_EVENT__PARAMLIST);
+    createEAttribute(complexEventEClass, COMPLEX_EVENT__PRIORITY);
     createEReference(complexEventEClass, COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS);
+
+    ruleEClass = createEClass(RULE);
+    createEReference(ruleEClass, RULE__EVENTS);
+    createEReference(ruleEClass, RULE__ACTION);
 
     ceParamlistEClass = createEClass(CE_PARAMLIST);
     createEReference(ceParamlistEClass, CE_PARAMLIST__PARAMS);
@@ -1293,17 +1186,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     parameterFilterEClass = createEClass(PARAMETER_FILTER);
     createEAttribute(parameterFilterEClass, PARAMETER_FILTER__ATTRIBUTE_NAME);
     createEReference(parameterFilterEClass, PARAMETER_FILTER__PARAM_FILTER_RULE);
-
-    annotationsEClass = createEClass(ANNOTATIONS);
-
-    contextAnnotationEClass = createEClass(CONTEXT_ANNOTATION);
-    createEAttribute(contextAnnotationEClass, CONTEXT_ANNOTATION__CONTEXT);
-
-    samplingAnnotationEClass = createEClass(SAMPLING_ANNOTATION);
-    createEAttribute(samplingAnnotationEClass, SAMPLING_ANNOTATION__SAMPLING);
-
-    priorityAnnotationEClass = createEClass(PRIORITY_ANNOTATION);
-    createEAttribute(priorityAnnotationEClass, PRIORITY_ANNOTATION__PRIORITY);
 
     parameterFilterRuleEClass = createEClass(PARAMETER_FILTER_RULE);
 
@@ -1349,6 +1231,11 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     followsOperatorViaTWEClass = createEClass(FOLLOWS_OPERATOR_VIA_TW);
     createEAttribute(followsOperatorViaTWEClass, FOLLOWS_OPERATOR_VIA_TW__TIMEWINDOW);
 
+    followerEventStructureEClass = createEClass(FOLLOWER_EVENT_STRUCTURE);
+
+    branchExpressionEClass = createEClass(BRANCH_EXPRESSION);
+    createEReference(branchExpressionEClass, BRANCH_EXPRESSION__BRANCHES);
+
     eventWithMultiplicityEClass = createEClass(EVENT_WITH_MULTIPLICITY);
     createEReference(eventWithMultiplicityEClass, EVENT_WITH_MULTIPLICITY__EVENT);
     createEAttribute(eventWithMultiplicityEClass, EVENT_WITH_MULTIPLICITY__MULTIPLICITY);
@@ -1361,7 +1248,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
 
     // Create enums
     iqPatternChangeTypeEEnum = createEEnum(IQ_PATTERN_CHANGE_TYPE);
-    contextEEnum = createEEnum(CONTEXT);
   }
 
   /**
@@ -1398,14 +1284,12 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     // Add supertypes to classes
     iqUsageEClass.getESuperTypes().add(this.getUsage());
     eventSourceUsageEClass.getESuperTypes().add(this.getUsage());
-    eventEClass.getESuperTypes().add(this.getEventModelElements());
+    eventEClass.getESuperTypes().add(this.getModelElements());
     abstractAtomicEventEClass.getESuperTypes().add(this.getEvent());
     atomicEventEClass.getESuperTypes().add(this.getAbstractAtomicEvent());
     iqPatternEventEClass.getESuperTypes().add(this.getAbstractAtomicEvent());
     complexEventEClass.getESuperTypes().add(this.getEvent());
-    contextAnnotationEClass.getESuperTypes().add(this.getAnnotations());
-    samplingAnnotationEClass.getESuperTypes().add(this.getAnnotations());
-    priorityAnnotationEClass.getESuperTypes().add(this.getAnnotations());
+    ruleEClass.getESuperTypes().add(this.getModelElements());
     rangeFilterEClass.getESuperTypes().add(this.getParameterFilterRule());
     openOpenEClass.getESuperTypes().add(this.getRange());
     openClosedEClass.getESuperTypes().add(this.getRange());
@@ -1416,15 +1300,16 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     followsExpressionEClass.getESuperTypes().add(this.getComplexEventExpression());
     followsOperatorNoTWEClass.getESuperTypes().add(this.getFollowsOperator());
     followsOperatorViaTWEClass.getESuperTypes().add(this.getFollowsOperator());
-    sourceEClass.getESuperTypes().add(this.getEventModelElements());
+    branchExpressionEClass.getESuperTypes().add(this.getFollowerEventStructure());
+    eventWithMultiplicityEClass.getESuperTypes().add(this.getFollowerEventStructure());
+    sourceEClass.getESuperTypes().add(this.getModelElements());
 
     // Initialize classes and features; add operations and parameters
     initEClass(eventModelEClass, EventModel.class, "EventModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEventModel_PackageName(), ecorePackage.getEString(), "packageName", null, 0, 1, EventModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEventModel_Usages(), this.getUsage(), null, "usages", null, 0, -1, EventModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEventModel_Annotations(), this.getAnnotations(), null, "annotations", null, 0, -1, EventModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEventModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, EventModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEventModel_Events(), this.getEventModelElements(), null, "events", null, 0, -1, EventModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEventModel_Events(), this.getModelElements(), null, "events", null, 0, -1, EventModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(usageEClass, Usage.class, "Usage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getUsage_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Usage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1433,17 +1318,14 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
 
     initEClass(eventSourceUsageEClass, EventSourceUsage.class, "EventSourceUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(eventModelElementsEClass, EventModelElements.class, "EventModelElements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEventModelElements_Name(), ecorePackage.getEString(), "name", null, 0, 1, EventModelElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(modelElementsEClass, ModelElements.class, "ModelElements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getModelElements_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModelElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEvent_ActionDefinition(), this.getAction(), null, "actionDefinition", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractAtomicEventEClass, AbstractAtomicEvent.class, "AbstractAtomicEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(atomicEventEClass, AtomicEvent.class, "AtomicEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAtomicEvent_Annotations(), this.getAnnotations(), null, "annotations", null, 0, -1, AtomicEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAtomicEvent_Id(), ecorePackage.getEString(), "id", null, 0, 1, AtomicEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtomicEvent_Source(), this.getSource(), null, "source", null, 0, 1, AtomicEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtomicEvent_ParameterFilters(), this.getParameterFilter(), null, "parameterFilters", null, 0, -1, AtomicEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1451,13 +1333,14 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     initEAttribute(getIQPatternEvent_Iqpattern(), ecorePackage.getEString(), "iqpattern", null, 0, 1, IQPatternEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIQPatternEvent_ChangeType(), this.getIQPatternChangeType(), "changeType", null, 0, 1, IQPatternEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAction_Action(), theXbasePackage.getXExpression(), null, "action", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(complexEventEClass, ComplexEvent.class, "ComplexEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComplexEvent_Annotations(), this.getAnnotations(), null, "annotations", null, 0, -1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComplexEvent_Paramlist(), this.getCEParamlist(), null, "paramlist", null, 0, 1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComplexEvent_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComplexEvent_ComplexEventExpressions(), this.getComplexEventExpression(), null, "complexEventExpressions", null, 0, -1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRule_Events(), this.getEvent(), null, "events", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_Action(), theXbasePackage.getXExpression(), null, "action", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ceParamlistEClass, CEParamlist.class, "CEParamlist", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCEParamlist_Params(), this.getEventParamWithType(), null, "params", null, 0, -1, CEParamlist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1469,17 +1352,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     initEClass(parameterFilterEClass, ParameterFilter.class, "ParameterFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParameterFilter_AttributeName(), ecorePackage.getEString(), "attributeName", null, 0, 1, ParameterFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getParameterFilter_ParamFilterRule(), this.getParameterFilterRule(), null, "paramFilterRule", null, 0, 1, ParameterFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(annotationsEClass, Annotations.class, "Annotations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(contextAnnotationEClass, ContextAnnotation.class, "ContextAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getContextAnnotation_Context(), this.getContext(), "context", null, 0, 1, ContextAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(samplingAnnotationEClass, SamplingAnnotation.class, "SamplingAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSamplingAnnotation_Sampling(), ecorePackage.getEInt(), "sampling", null, 0, 1, SamplingAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(priorityAnnotationEClass, PriorityAnnotation.class, "PriorityAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPriorityAnnotation_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, PriorityAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterFilterRuleEClass, ParameterFilterRule.class, "ParameterFilterRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1516,7 +1388,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
 
     initEClass(eventWithFollowsOperatorEClass, EventWithFollowsOperator.class, "EventWithFollowsOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEventWithFollowsOperator_Operator(), this.getFollowsOperator(), null, "operator", null, 0, 1, EventWithFollowsOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEventWithFollowsOperator_Event(), this.getEventWithMultiplicity(), null, "event", null, 0, 1, EventWithFollowsOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEventWithFollowsOperator_Event(), this.getFollowerEventStructure(), null, "event", null, 0, 1, EventWithFollowsOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(followsOperatorEClass, FollowsOperator.class, "FollowsOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1524,6 +1396,11 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
 
     initEClass(followsOperatorViaTWEClass, FollowsOperatorViaTW.class, "FollowsOperatorViaTW", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFollowsOperatorViaTW_Timewindow(), ecorePackage.getEInt(), "timewindow", null, 0, 1, FollowsOperatorViaTW.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(followerEventStructureEClass, FollowerEventStructure.class, "FollowerEventStructure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(branchExpressionEClass, BranchExpression.class, "BranchExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBranchExpression_Branches(), this.getEventParamWithType(), null, "branches", null, 0, -1, BranchExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventWithMultiplicityEClass, EventWithMultiplicity.class, "EventWithMultiplicity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEventWithMultiplicity_Event(), this.getEventParamWithType(), null, "event", null, 0, 1, EventWithMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1539,11 +1416,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     initEEnum(iqPatternChangeTypeEEnum, IQPatternChangeType.class, "IQPatternChangeType");
     addEEnumLiteral(iqPatternChangeTypeEEnum, IQPatternChangeType.FOUND);
     addEEnumLiteral(iqPatternChangeTypeEEnum, IQPatternChangeType.LOST);
-
-    initEEnum(contextEEnum, Context.class, "Context");
-    addEEnumLiteral(contextEEnum, Context.CHRONICLE);
-    addEEnumLiteral(contextEEnum, Context.RECENT);
-    addEEnumLiteral(contextEEnum, Context.UNRESTRICTED);
 
     // Create resource
     createResource(eNS_URI);

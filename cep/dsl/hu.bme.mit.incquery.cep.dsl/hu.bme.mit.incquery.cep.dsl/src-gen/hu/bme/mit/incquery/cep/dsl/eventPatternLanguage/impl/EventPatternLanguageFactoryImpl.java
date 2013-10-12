@@ -69,20 +69,16 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
       case EventPatternLanguagePackage.USAGE: return createUsage();
       case EventPatternLanguagePackage.IQ_USAGE: return createIQUsage();
       case EventPatternLanguagePackage.EVENT_SOURCE_USAGE: return createEventSourceUsage();
-      case EventPatternLanguagePackage.EVENT_MODEL_ELEMENTS: return createEventModelElements();
+      case EventPatternLanguagePackage.MODEL_ELEMENTS: return createModelElements();
       case EventPatternLanguagePackage.EVENT: return createEvent();
       case EventPatternLanguagePackage.ABSTRACT_ATOMIC_EVENT: return createAbstractAtomicEvent();
       case EventPatternLanguagePackage.ATOMIC_EVENT: return createAtomicEvent();
       case EventPatternLanguagePackage.IQ_PATTERN_EVENT: return createIQPatternEvent();
-      case EventPatternLanguagePackage.ACTION: return createAction();
       case EventPatternLanguagePackage.COMPLEX_EVENT: return createComplexEvent();
+      case EventPatternLanguagePackage.RULE: return createRule();
       case EventPatternLanguagePackage.CE_PARAMLIST: return createCEParamlist();
       case EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE: return createEventParamWithType();
       case EventPatternLanguagePackage.PARAMETER_FILTER: return createParameterFilter();
-      case EventPatternLanguagePackage.ANNOTATIONS: return createAnnotations();
-      case EventPatternLanguagePackage.CONTEXT_ANNOTATION: return createContextAnnotation();
-      case EventPatternLanguagePackage.SAMPLING_ANNOTATION: return createSamplingAnnotation();
-      case EventPatternLanguagePackage.PRIORITY_ANNOTATION: return createPriorityAnnotation();
       case EventPatternLanguagePackage.PARAMETER_FILTER_RULE: return createParameterFilterRule();
       case EventPatternLanguagePackage.RANGE_FILTER: return createRangeFilter();
       case EventPatternLanguagePackage.RANGE: return createRange();
@@ -98,6 +94,8 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
       case EventPatternLanguagePackage.FOLLOWS_OPERATOR: return createFollowsOperator();
       case EventPatternLanguagePackage.FOLLOWS_OPERATOR_NO_TW: return createFollowsOperatorNoTW();
       case EventPatternLanguagePackage.FOLLOWS_OPERATOR_VIA_TW: return createFollowsOperatorViaTW();
+      case EventPatternLanguagePackage.FOLLOWER_EVENT_STRUCTURE: return createFollowerEventStructure();
+      case EventPatternLanguagePackage.BRANCH_EXPRESSION: return createBranchExpression();
       case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY: return createEventWithMultiplicity();
       case EventPatternLanguagePackage.SOURCE: return createSource();
       case EventPatternLanguagePackage.ADAPTER: return createAdapter();
@@ -118,8 +116,6 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
     {
       case EventPatternLanguagePackage.IQ_PATTERN_CHANGE_TYPE:
         return createIQPatternChangeTypeFromString(eDataType, initialValue);
-      case EventPatternLanguagePackage.CONTEXT:
-        return createContextFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -137,8 +133,6 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
     {
       case EventPatternLanguagePackage.IQ_PATTERN_CHANGE_TYPE:
         return convertIQPatternChangeTypeToString(eDataType, instanceValue);
-      case EventPatternLanguagePackage.CONTEXT:
-        return convertContextToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -193,10 +187,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventModelElements createEventModelElements()
+  public ModelElements createModelElements()
   {
-    EventModelElementsImpl eventModelElements = new EventModelElementsImpl();
-    return eventModelElements;
+    ModelElementsImpl modelElements = new ModelElementsImpl();
+    return modelElements;
   }
 
   /**
@@ -248,10 +242,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public Action createAction()
+  public ComplexEvent createComplexEvent()
   {
-    ActionImpl action = new ActionImpl();
-    return action;
+    ComplexEventImpl complexEvent = new ComplexEventImpl();
+    return complexEvent;
   }
 
   /**
@@ -259,10 +253,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public ComplexEvent createComplexEvent()
+  public Rule createRule()
   {
-    ComplexEventImpl complexEvent = new ComplexEventImpl();
-    return complexEvent;
+    RuleImpl rule = new RuleImpl();
+    return rule;
   }
 
   /**
@@ -296,50 +290,6 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
   {
     ParameterFilterImpl parameterFilter = new ParameterFilterImpl();
     return parameterFilter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Annotations createAnnotations()
-  {
-    AnnotationsImpl annotations = new AnnotationsImpl();
-    return annotations;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ContextAnnotation createContextAnnotation()
-  {
-    ContextAnnotationImpl contextAnnotation = new ContextAnnotationImpl();
-    return contextAnnotation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SamplingAnnotation createSamplingAnnotation()
-  {
-    SamplingAnnotationImpl samplingAnnotation = new SamplingAnnotationImpl();
-    return samplingAnnotation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PriorityAnnotation createPriorityAnnotation()
-  {
-    PriorityAnnotationImpl priorityAnnotation = new PriorityAnnotationImpl();
-    return priorityAnnotation;
   }
 
   /**
@@ -512,6 +462,28 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
+  public FollowerEventStructure createFollowerEventStructure()
+  {
+    FollowerEventStructureImpl followerEventStructure = new FollowerEventStructureImpl();
+    return followerEventStructure;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BranchExpression createBranchExpression()
+  {
+    BranchExpressionImpl branchExpression = new BranchExpressionImpl();
+    return branchExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EventWithMultiplicity createEventWithMultiplicity()
   {
     EventWithMultiplicityImpl eventWithMultiplicity = new EventWithMultiplicityImpl();
@@ -558,28 +530,6 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * @generated
    */
   public String convertIQPatternChangeTypeToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Context createContextFromString(EDataType eDataType, String initialValue)
-  {
-    Context result = Context.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertContextToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

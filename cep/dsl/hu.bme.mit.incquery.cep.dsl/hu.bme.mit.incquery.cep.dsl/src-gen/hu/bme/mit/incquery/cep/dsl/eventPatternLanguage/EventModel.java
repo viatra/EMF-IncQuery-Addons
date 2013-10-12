@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel#getPackageName <em>Package Name</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel#getUsages <em>Usages</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel#getEvents <em>Events</em>}</li>
  * </ul>
@@ -71,22 +70,6 @@ public interface EventModel extends EObject
   EList<Usage> getUsages();
 
   /**
-   * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
-   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Annotations}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Annotations</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Annotations</em>' containment reference list.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventModel_Annotations()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Annotations> getAnnotations();
-
-  /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
@@ -114,7 +97,7 @@ public interface EventModel extends EObject
 
   /**
    * Returns the value of the '<em><b>Events</b></em>' containment reference list.
-   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModelElements}.
+   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElements}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Events</em>' containment reference list isn't clear,
@@ -126,6 +109,6 @@ public interface EventModel extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<EventModelElements> getEvents();
+  EList<ModelElements> getEvents();
 
 } // EventModel

@@ -2,7 +2,6 @@
  */
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Annotations;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEvent;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ParameterFilter;
@@ -30,8 +29,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.AtomicEventImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.AtomicEventImpl#getId <em>Id</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.AtomicEventImpl#getSource <em>Source</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.AtomicEventImpl#getParameterFilters <em>Parameter Filters</em>}</li>
  * </ul>
@@ -41,36 +38,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEvent
 {
-  /**
-   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAnnotations()
-   * @generated
-   * @ordered
-   */
-  protected EList<Annotations> annotations;
-
-  /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
-  protected static final String ID_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
-  protected String id = ID_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
    * <!-- begin-user-doc -->
@@ -110,43 +77,6 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
   protected EClass eStaticClass()
   {
     return EventPatternLanguagePackage.Literals.ATOMIC_EVENT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Annotations> getAnnotations()
-  {
-    if (annotations == null)
-    {
-      annotations = new EObjectContainmentEList<Annotations>(Annotations.class, this, EventPatternLanguagePackage.ATOMIC_EVENT__ANNOTATIONS);
-    }
-    return annotations;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getId()
-  {
-    return id;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setId(String newId)
-  {
-    String oldId = id;
-    id = newId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.ATOMIC_EVENT__ID, oldId, id));
   }
 
   /**
@@ -216,8 +146,6 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.ATOMIC_EVENT__ANNOTATIONS:
-        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
       case EventPatternLanguagePackage.ATOMIC_EVENT__PARAMETER_FILTERS:
         return ((InternalEList<?>)getParameterFilters()).basicRemove(otherEnd, msgs);
     }
@@ -234,10 +162,6 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.ATOMIC_EVENT__ANNOTATIONS:
-        return getAnnotations();
-      case EventPatternLanguagePackage.ATOMIC_EVENT__ID:
-        return getId();
       case EventPatternLanguagePackage.ATOMIC_EVENT__SOURCE:
         if (resolve) return getSource();
         return basicGetSource();
@@ -258,13 +182,6 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.ATOMIC_EVENT__ANNOTATIONS:
-        getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends Annotations>)newValue);
-        return;
-      case EventPatternLanguagePackage.ATOMIC_EVENT__ID:
-        setId((String)newValue);
-        return;
       case EventPatternLanguagePackage.ATOMIC_EVENT__SOURCE:
         setSource((Source)newValue);
         return;
@@ -286,12 +203,6 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.ATOMIC_EVENT__ANNOTATIONS:
-        getAnnotations().clear();
-        return;
-      case EventPatternLanguagePackage.ATOMIC_EVENT__ID:
-        setId(ID_EDEFAULT);
-        return;
       case EventPatternLanguagePackage.ATOMIC_EVENT__SOURCE:
         setSource((Source)null);
         return;
@@ -312,33 +223,12 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.ATOMIC_EVENT__ANNOTATIONS:
-        return annotations != null && !annotations.isEmpty();
-      case EventPatternLanguagePackage.ATOMIC_EVENT__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
       case EventPatternLanguagePackage.ATOMIC_EVENT__SOURCE:
         return source != null;
       case EventPatternLanguagePackage.ATOMIC_EVENT__PARAMETER_FILTERS:
         return parameterFilters != null && !parameterFilters.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (id: ");
-    result.append(id);
-    result.append(')');
-    return result.toString();
   }
 
 } //AtomicEventImpl

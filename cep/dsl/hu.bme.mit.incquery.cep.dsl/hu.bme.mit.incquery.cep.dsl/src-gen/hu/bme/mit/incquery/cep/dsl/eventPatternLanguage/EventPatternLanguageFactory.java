@@ -59,13 +59,13 @@ public interface EventPatternLanguageFactory extends EFactory
   EventSourceUsage createEventSourceUsage();
 
   /**
-   * Returns a new object of class '<em>Event Model Elements</em>'.
+   * Returns a new object of class '<em>Model Elements</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event Model Elements</em>'.
+   * @return a new object of class '<em>Model Elements</em>'.
    * @generated
    */
-  EventModelElements createEventModelElements();
+  ModelElements createModelElements();
 
   /**
    * Returns a new object of class '<em>Event</em>'.
@@ -104,15 +104,6 @@ public interface EventPatternLanguageFactory extends EFactory
   IQPatternEvent createIQPatternEvent();
 
   /**
-   * Returns a new object of class '<em>Action</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action</em>'.
-   * @generated
-   */
-  Action createAction();
-
-  /**
    * Returns a new object of class '<em>Complex Event</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -120,6 +111,15 @@ public interface EventPatternLanguageFactory extends EFactory
    * @generated
    */
   ComplexEvent createComplexEvent();
+
+  /**
+   * Returns a new object of class '<em>Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rule</em>'.
+   * @generated
+   */
+  Rule createRule();
 
   /**
    * Returns a new object of class '<em>CE Paramlist</em>'.
@@ -147,42 +147,6 @@ public interface EventPatternLanguageFactory extends EFactory
    * @generated
    */
   ParameterFilter createParameterFilter();
-
-  /**
-   * Returns a new object of class '<em>Annotations</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Annotations</em>'.
-   * @generated
-   */
-  Annotations createAnnotations();
-
-  /**
-   * Returns a new object of class '<em>Context Annotation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Context Annotation</em>'.
-   * @generated
-   */
-  ContextAnnotation createContextAnnotation();
-
-  /**
-   * Returns a new object of class '<em>Sampling Annotation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sampling Annotation</em>'.
-   * @generated
-   */
-  SamplingAnnotation createSamplingAnnotation();
-
-  /**
-   * Returns a new object of class '<em>Priority Annotation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Priority Annotation</em>'.
-   * @generated
-   */
-  PriorityAnnotation createPriorityAnnotation();
 
   /**
    * Returns a new object of class '<em>Parameter Filter Rule</em>'.
@@ -318,6 +282,24 @@ public interface EventPatternLanguageFactory extends EFactory
    * @generated
    */
   FollowsOperatorViaTW createFollowsOperatorViaTW();
+
+  /**
+   * Returns a new object of class '<em>Follower Event Structure</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Follower Event Structure</em>'.
+   * @generated
+   */
+  FollowerEventStructure createFollowerEventStructure();
+
+  /**
+   * Returns a new object of class '<em>Branch Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Branch Expression</em>'.
+   * @generated
+   */
+  BranchExpression createBranchExpression();
 
   /**
    * Returns a new object of class '<em>Event With Multiplicity</em>'.

@@ -2,10 +2,9 @@
  */
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Annotations;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModelElements;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElements;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Usage;
 
 import java.util.Collection;
@@ -33,7 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventModelImpl#getPackageName <em>Package Name</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventModelImpl#getUsages <em>Usages</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventModelImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventModelImpl#getEvents <em>Events</em>}</li>
  * </ul>
@@ -74,16 +72,6 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
   protected EList<Usage> usages;
 
   /**
-   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAnnotations()
-   * @generated
-   * @ordered
-   */
-  protected EList<Annotations> annotations;
-
-  /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -111,7 +99,7 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
    * @generated
    * @ordered
    */
-  protected EList<EventModelElements> events;
+  protected EList<ModelElements> events;
 
   /**
    * <!-- begin-user-doc -->
@@ -176,20 +164,6 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Annotations> getAnnotations()
-  {
-    if (annotations == null)
-    {
-      annotations = new EObjectContainmentEList<Annotations>(Annotations.class, this, EventPatternLanguagePackage.EVENT_MODEL__ANNOTATIONS);
-    }
-    return annotations;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getName()
   {
     return name;
@@ -213,11 +187,11 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EventModelElements> getEvents()
+  public EList<ModelElements> getEvents()
   {
     if (events == null)
     {
-      events = new EObjectContainmentEList<EventModelElements>(EventModelElements.class, this, EventPatternLanguagePackage.EVENT_MODEL__EVENTS);
+      events = new EObjectContainmentEList<ModelElements>(ModelElements.class, this, EventPatternLanguagePackage.EVENT_MODEL__EVENTS);
     }
     return events;
   }
@@ -234,8 +208,6 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
     {
       case EventPatternLanguagePackage.EVENT_MODEL__USAGES:
         return ((InternalEList<?>)getUsages()).basicRemove(otherEnd, msgs);
-      case EventPatternLanguagePackage.EVENT_MODEL__ANNOTATIONS:
-        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
       case EventPatternLanguagePackage.EVENT_MODEL__EVENTS:
         return ((InternalEList<?>)getEvents()).basicRemove(otherEnd, msgs);
     }
@@ -256,8 +228,6 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
         return getPackageName();
       case EventPatternLanguagePackage.EVENT_MODEL__USAGES:
         return getUsages();
-      case EventPatternLanguagePackage.EVENT_MODEL__ANNOTATIONS:
-        return getAnnotations();
       case EventPatternLanguagePackage.EVENT_MODEL__NAME:
         return getName();
       case EventPatternLanguagePackage.EVENT_MODEL__EVENTS:
@@ -284,16 +254,12 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
         getUsages().clear();
         getUsages().addAll((Collection<? extends Usage>)newValue);
         return;
-      case EventPatternLanguagePackage.EVENT_MODEL__ANNOTATIONS:
-        getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends Annotations>)newValue);
-        return;
       case EventPatternLanguagePackage.EVENT_MODEL__NAME:
         setName((String)newValue);
         return;
       case EventPatternLanguagePackage.EVENT_MODEL__EVENTS:
         getEvents().clear();
-        getEvents().addAll((Collection<? extends EventModelElements>)newValue);
+        getEvents().addAll((Collection<? extends ModelElements>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -314,9 +280,6 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
         return;
       case EventPatternLanguagePackage.EVENT_MODEL__USAGES:
         getUsages().clear();
-        return;
-      case EventPatternLanguagePackage.EVENT_MODEL__ANNOTATIONS:
-        getAnnotations().clear();
         return;
       case EventPatternLanguagePackage.EVENT_MODEL__NAME:
         setName(NAME_EDEFAULT);
@@ -342,8 +305,6 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
         return PACKAGE_NAME_EDEFAULT == null ? packageName != null : !PACKAGE_NAME_EDEFAULT.equals(packageName);
       case EventPatternLanguagePackage.EVENT_MODEL__USAGES:
         return usages != null && !usages.isEmpty();
-      case EventPatternLanguagePackage.EVENT_MODEL__ANNOTATIONS:
-        return annotations != null && !annotations.isEmpty();
       case EventPatternLanguagePackage.EVENT_MODEL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case EventPatternLanguagePackage.EVENT_MODEL__EVENTS:
