@@ -47,8 +47,4 @@ EventModel testModel{
 		register "Adapter1.java"
 		register "Adapter1.java"
 	}
-	
-	Source test1 {
-		register "adapter4.java"
-	}
 }
