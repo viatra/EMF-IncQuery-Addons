@@ -22,6 +22,7 @@ Roadmap/TODO
 ------------
 
 **Latest enhancements:**
+* 10.12. DSL improvements: branched expressions, rules for associating patterns with actions, removed annotations
 * 09.06. Changes in the action descriptions of patterns
 * 08.12. Noise filtering is now implemented via the IMMEDIATE and STRICT_IMMEDIATE EventProcessingContexts
 
