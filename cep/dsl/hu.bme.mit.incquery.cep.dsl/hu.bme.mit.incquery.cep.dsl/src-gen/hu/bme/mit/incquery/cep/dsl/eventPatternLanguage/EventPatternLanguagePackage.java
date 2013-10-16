@@ -1180,7 +1180,7 @@ public interface EventPatternLanguagePackage extends EPackage
   int BRANCH_EXPRESSION = 32;
 
   /**
-   * The feature id for the '<em><b>Branches</b></em>' reference list.
+   * The feature id for the '<em><b>Branches</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1198,14 +1198,14 @@ public interface EventPatternLanguagePackage extends EPackage
   int BRANCH_EXPRESSION_FEATURE_COUNT = FOLLOWER_EVENT_STRUCTURE_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventWithMultiplicityImpl <em>Event With Multiplicity</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterWithMultiplicityImpl <em>Event Typed Parameter With Multiplicity</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventWithMultiplicityImpl
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getEventWithMultiplicity()
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterWithMultiplicityImpl
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getEventTypedParameterWithMultiplicity()
    * @generated
    */
-  int EVENT_WITH_MULTIPLICITY = 33;
+  int EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY = 33;
 
   /**
    * The feature id for the '<em><b>Event</b></em>' reference.
@@ -1214,7 +1214,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_WITH_MULTIPLICITY__EVENT = FOLLOWER_EVENT_STRUCTURE_FEATURE_COUNT + 0;
+  int EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT = FOLLOWER_EVENT_STRUCTURE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference.
@@ -1223,7 +1223,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_WITH_MULTIPLICITY__PARAMETERS = FOLLOWER_EVENT_STRUCTURE_FEATURE_COUNT + 1;
+  int EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS = FOLLOWER_EVENT_STRUCTURE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
@@ -1232,16 +1232,16 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_WITH_MULTIPLICITY__MULTIPLICITY = FOLLOWER_EVENT_STRUCTURE_FEATURE_COUNT + 2;
+  int EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY = FOLLOWER_EVENT_STRUCTURE_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Event With Multiplicity</em>' class.
+   * The number of structural features of the '<em>Event Typed Parameter With Multiplicity</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_WITH_MULTIPLICITY_FEATURE_COUNT = FOLLOWER_EVENT_STRUCTURE_FEATURE_COUNT + 3;
+  int EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY_FEATURE_COUNT = FOLLOWER_EVENT_STRUCTURE_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.PatternCallParameterListImpl <em>Pattern Call Parameter List</em>}' class.
@@ -2124,10 +2124,10 @@ public interface EventPatternLanguagePackage extends EPackage
   EClass getBranchExpression();
 
   /**
-   * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression#getBranches <em>Branches</em>}'.
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression#getBranches <em>Branches</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Branches</em>'.
+   * @return the meta object for the containment reference list '<em>Branches</em>'.
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression#getBranches()
    * @see #getBranchExpression()
    * @generated
@@ -2135,47 +2135,47 @@ public interface EventPatternLanguagePackage extends EPackage
   EReference getBranchExpression_Branches();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity <em>Event With Multiplicity</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity <em>Event Typed Parameter With Multiplicity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Event With Multiplicity</em>'.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity
+   * @return the meta object for class '<em>Event Typed Parameter With Multiplicity</em>'.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity
    * @generated
    */
-  EClass getEventWithMultiplicity();
+  EClass getEventTypedParameterWithMultiplicity();
 
   /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity#getEvent <em>Event</em>}'.
+   * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getEvent <em>Event</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Event</em>'.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity#getEvent()
-   * @see #getEventWithMultiplicity()
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getEvent()
+   * @see #getEventTypedParameterWithMultiplicity()
    * @generated
    */
-  EReference getEventWithMultiplicity_Event();
+  EReference getEventTypedParameterWithMultiplicity_Event();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity#getParameters <em>Parameters</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getParameters <em>Parameters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Parameters</em>'.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity#getParameters()
-   * @see #getEventWithMultiplicity()
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getParameters()
+   * @see #getEventTypedParameterWithMultiplicity()
    * @generated
    */
-  EReference getEventWithMultiplicity_Parameters();
+  EReference getEventTypedParameterWithMultiplicity_Parameters();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity#getMultiplicity <em>Multiplicity</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getMultiplicity <em>Multiplicity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Multiplicity</em>'.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity#getMultiplicity()
-   * @see #getEventWithMultiplicity()
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getMultiplicity()
+   * @see #getEventTypedParameterWithMultiplicity()
    * @generated
    */
-  EAttribute getEventWithMultiplicity_Multiplicity();
+  EAttribute getEventTypedParameterWithMultiplicity_Multiplicity();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameterList <em>Pattern Call Parameter List</em>}'.
@@ -2929,7 +2929,7 @@ public interface EventPatternLanguagePackage extends EPackage
     EClass BRANCH_EXPRESSION = eINSTANCE.getBranchExpression();
 
     /**
-     * The meta object literal for the '<em><b>Branches</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Branches</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2937,14 +2937,14 @@ public interface EventPatternLanguagePackage extends EPackage
     EReference BRANCH_EXPRESSION__BRANCHES = eINSTANCE.getBranchExpression_Branches();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventWithMultiplicityImpl <em>Event With Multiplicity</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterWithMultiplicityImpl <em>Event Typed Parameter With Multiplicity</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventWithMultiplicityImpl
-     * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getEventWithMultiplicity()
+     * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterWithMultiplicityImpl
+     * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getEventTypedParameterWithMultiplicity()
      * @generated
      */
-    EClass EVENT_WITH_MULTIPLICITY = eINSTANCE.getEventWithMultiplicity();
+    EClass EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY = eINSTANCE.getEventTypedParameterWithMultiplicity();
 
     /**
      * The meta object literal for the '<em><b>Event</b></em>' reference feature.
@@ -2952,7 +2952,7 @@ public interface EventPatternLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EVENT_WITH_MULTIPLICITY__EVENT = eINSTANCE.getEventWithMultiplicity_Event();
+    EReference EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT = eINSTANCE.getEventTypedParameterWithMultiplicity_Event();
 
     /**
      * The meta object literal for the '<em><b>Parameters</b></em>' containment reference feature.
@@ -2960,7 +2960,7 @@ public interface EventPatternLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EVENT_WITH_MULTIPLICITY__PARAMETERS = eINSTANCE.getEventWithMultiplicity_Parameters();
+    EReference EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS = eINSTANCE.getEventTypedParameterWithMultiplicity_Parameters();
 
     /**
      * The meta object literal for the '<em><b>Multiplicity</b></em>' attribute feature.
@@ -2968,7 +2968,7 @@ public interface EventPatternLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EVENT_WITH_MULTIPLICITY__MULTIPLICITY = eINSTANCE.getEventWithMultiplicity_Multiplicity();
+    EAttribute EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY = eINSTANCE.getEventTypedParameterWithMultiplicity_Multiplicity();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.PatternCallParameterListImpl <em>Pattern Call Parameter List</em>}' class.

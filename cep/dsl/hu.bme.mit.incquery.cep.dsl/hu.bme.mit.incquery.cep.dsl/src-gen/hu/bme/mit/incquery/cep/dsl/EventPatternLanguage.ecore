@@ -97,7 +97,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ComplexEventExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="FollowsExpression" eSuperTypes="#//ComplexEventExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="firstEvent" upperBound="-1"
-        eType="#//EventWithMultiplicity" containment="true"/>
+        eType="#//EventTypedParameterWithMultiplicity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
         eType="#//EventWithFollowsOperator" containment="true"/>
   </eClassifiers>
@@ -114,10 +114,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FollowerEventStructure"/>
   <eClassifiers xsi:type="ecore:EClass" name="BranchExpression" eSuperTypes="#//FollowerEventStructure">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="branches" unique="false"
-        upperBound="-1" eType="#//EventTypedParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="branches" upperBound="-1"
+        eType="#//EventTypedParameterWithMultiplicity" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EventWithMultiplicity" eSuperTypes="#//FollowerEventStructure">
+  <eClassifiers xsi:type="ecore:EClass" name="EventTypedParameterWithMultiplicity"
+      eSuperTypes="#//FollowerEventStructure">
     <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//EventTypedParameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" eType="#//PatternCallParameterList"
         containment="true"/>

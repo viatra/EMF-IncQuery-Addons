@@ -1,7 +1,6 @@
 package hu.bme.mit.testpackage
 
 uses-incquery-patterns hu.bme.mit.incquery.patterns.*
-uses-eventsources hu.bme.mit.incquery.cep.dsl.examples.sources.*
 
 EventModel testModel{
 	
@@ -30,7 +29,7 @@ EventModel testModel{
     
     ComplexEvent anotherComplexEvent(ce1 : myComplexEvent1, ce2 : myComplexEvent2, a : atomicEvent1){
     	priority: 0
-    	definition: a-> (ce1 OR ce2)
+    	definition: a{2}->(ce1{3} OR ce2{5})
     }
    
 //    Rule {

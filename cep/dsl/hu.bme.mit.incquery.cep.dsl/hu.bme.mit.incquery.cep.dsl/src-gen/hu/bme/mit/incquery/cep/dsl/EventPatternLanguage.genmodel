@@ -103,12 +103,12 @@
     </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowerEventStructure"/>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//BranchExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//BranchExpression/branches"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//BranchExpression/branches"/>
     </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//EventWithMultiplicity">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventWithMultiplicity/event"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventWithMultiplicity/parameters"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//EventWithMultiplicity/multiplicity"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//EventTypedParameterWithMultiplicity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventTypedParameterWithMultiplicity/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventTypedParameterWithMultiplicity/parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//EventTypedParameterWithMultiplicity/multiplicity"/>
     </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//PatternCallParameterList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//PatternCallParameterList/parameters"/>

@@ -320,13 +320,13 @@ public interface EventPatternLanguageFactory extends EFactory
   BranchExpression createBranchExpression();
 
   /**
-   * Returns a new object of class '<em>Event With Multiplicity</em>'.
+   * Returns a new object of class '<em>Event Typed Parameter With Multiplicity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event With Multiplicity</em>'.
+   * @return a new object of class '<em>Event Typed Parameter With Multiplicity</em>'.
    * @generated
    */
-  EventWithMultiplicity createEventWithMultiplicity();
+  EventTypedParameterWithMultiplicity createEventTypedParameterWithMultiplicity();
 
   /**
    * Returns a new object of class '<em>Pattern Call Parameter List</em>'.

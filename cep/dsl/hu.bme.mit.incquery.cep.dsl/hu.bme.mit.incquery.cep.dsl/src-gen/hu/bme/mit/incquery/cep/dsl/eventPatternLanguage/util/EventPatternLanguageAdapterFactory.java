@@ -240,9 +240,9 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
         return createBranchExpressionAdapter();
       }
       @Override
-      public Adapter caseEventWithMultiplicity(EventWithMultiplicity object)
+      public Adapter caseEventTypedParameterWithMultiplicity(EventTypedParameterWithMultiplicity object)
       {
-        return createEventWithMultiplicityAdapter();
+        return createEventTypedParameterWithMultiplicityAdapter();
       }
       @Override
       public Adapter casePatternCallParameterList(PatternCallParameterList object)
@@ -782,16 +782,16 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity <em>Event With Multiplicity</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity <em>Event Typed Parameter With Multiplicity</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity
    * @generated
    */
-  public Adapter createEventWithMultiplicityAdapter()
+  public Adapter createEventTypedParameterWithMultiplicityAdapter()
   {
     return null;
   }

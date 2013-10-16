@@ -116,9 +116,9 @@ public class EventPatternLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFollowsOperatorViaTWAccess().getGroup(), "rule__FollowsOperatorViaTW__Group__0");
 					put(grammarAccess.getBranchExpressionAccess().getGroup(), "rule__BranchExpression__Group__0");
 					put(grammarAccess.getBranchExpressionAccess().getGroup_2(), "rule__BranchExpression__Group_2__0");
-					put(grammarAccess.getEventWithMultiplicityAccess().getGroup(), "rule__EventWithMultiplicity__Group__0");
-					put(grammarAccess.getEventWithMultiplicityAccess().getGroup_1(), "rule__EventWithMultiplicity__Group_1__0");
-					put(grammarAccess.getEventWithMultiplicityAccess().getGroup_2(), "rule__EventWithMultiplicity__Group_2__0");
+					put(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getGroup(), "rule__EventTypedParameterWithMultiplicity__Group__0");
+					put(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getGroup_1(), "rule__EventTypedParameterWithMultiplicity__Group_1__0");
+					put(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getGroup_2(), "rule__EventTypedParameterWithMultiplicity__Group_2__0");
 					put(grammarAccess.getPatternCallParameterListAccess().getGroup(), "rule__PatternCallParameterList__Group__0");
 					put(grammarAccess.getPatternCallParameterListAccess().getGroup_2(), "rule__PatternCallParameterList__Group_2__0");
 					put(grammarAccess.getPatternCallParameterAccess().getGroup(), "rule__PatternCallParameter__Group__0");
@@ -331,9 +331,9 @@ public class EventPatternLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFollowsOperatorViaTWAccess().getTimewindowAssignment_1(), "rule__FollowsOperatorViaTW__TimewindowAssignment_1");
 					put(grammarAccess.getBranchExpressionAccess().getBranchesAssignment_1(), "rule__BranchExpression__BranchesAssignment_1");
 					put(grammarAccess.getBranchExpressionAccess().getBranchesAssignment_2_1(), "rule__BranchExpression__BranchesAssignment_2_1");
-					put(grammarAccess.getEventWithMultiplicityAccess().getEventAssignment_0(), "rule__EventWithMultiplicity__EventAssignment_0");
-					put(grammarAccess.getEventWithMultiplicityAccess().getParametersAssignment_1_1(), "rule__EventWithMultiplicity__ParametersAssignment_1_1");
-					put(grammarAccess.getEventWithMultiplicityAccess().getMultiplicityAssignment_2_1(), "rule__EventWithMultiplicity__MultiplicityAssignment_2_1");
+					put(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventAssignment_0(), "rule__EventTypedParameterWithMultiplicity__EventAssignment_0");
+					put(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getParametersAssignment_1_1(), "rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1");
+					put(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getMultiplicityAssignment_2_1(), "rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1");
 					put(grammarAccess.getPatternCallParameterListAccess().getParametersAssignment_1(), "rule__PatternCallParameterList__ParametersAssignment_1");
 					put(grammarAccess.getPatternCallParameterListAccess().getParametersAssignment_2_1(), "rule__PatternCallParameterList__ParametersAssignment_2_1");
 					put(grammarAccess.getPatternCallParameterAccess().getNameAssignment_1(), "rule__PatternCallParameter__NameAssignment_1");

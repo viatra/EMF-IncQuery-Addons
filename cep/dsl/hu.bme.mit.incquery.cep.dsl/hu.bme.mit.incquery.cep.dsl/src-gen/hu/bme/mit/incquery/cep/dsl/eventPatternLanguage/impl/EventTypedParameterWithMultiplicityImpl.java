@@ -4,7 +4,7 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameter;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameterList;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -17,20 +17,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Event With Multiplicity</b></em>'.
+ * An implementation of the model object '<em><b>Event Typed Parameter With Multiplicity</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventWithMultiplicityImpl#getEvent <em>Event</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventWithMultiplicityImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventWithMultiplicityImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterWithMultiplicityImpl#getEvent <em>Event</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterWithMultiplicityImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterWithMultiplicityImpl#getMultiplicity <em>Multiplicity</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implements EventWithMultiplicity
+public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStructureImpl implements EventTypedParameterWithMultiplicity
 {
   /**
    * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.
@@ -77,7 +77,7 @@ public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implem
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EventWithMultiplicityImpl()
+  protected EventTypedParameterWithMultiplicityImpl()
   {
     super();
   }
@@ -90,7 +90,7 @@ public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implem
   @Override
   protected EClass eStaticClass()
   {
-    return EventPatternLanguagePackage.Literals.EVENT_WITH_MULTIPLICITY;
+    return EventPatternLanguagePackage.Literals.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY;
   }
 
   /**
@@ -107,7 +107,7 @@ public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implem
       if (event != oldEvent)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__EVENT, oldEvent, event));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT, oldEvent, event));
       }
     }
     return event;
@@ -133,7 +133,7 @@ public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implem
     EventTypedParameter oldEvent = event;
     event = newEvent;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__EVENT, oldEvent, event));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT, oldEvent, event));
   }
 
   /**
@@ -157,7 +157,7 @@ public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implem
     parameters = newParameters;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__PARAMETERS, oldParameters, newParameters);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS, oldParameters, newParameters);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -174,14 +174,14 @@ public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implem
     {
       NotificationChain msgs = null;
       if (parameters != null)
-        msgs = ((InternalEObject)parameters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__PARAMETERS, null, msgs);
+        msgs = ((InternalEObject)parameters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS, null, msgs);
       if (newParameters != null)
-        msgs = ((InternalEObject)newParameters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__PARAMETERS, null, msgs);
+        msgs = ((InternalEObject)newParameters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS, null, msgs);
       msgs = basicSetParameters(newParameters, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__PARAMETERS, newParameters, newParameters));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS, newParameters, newParameters));
   }
 
   /**
@@ -204,7 +204,7 @@ public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implem
     int oldMultiplicity = multiplicity;
     multiplicity = newMultiplicity;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__MULTIPLICITY, oldMultiplicity, multiplicity));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY, oldMultiplicity, multiplicity));
   }
 
   /**
@@ -217,7 +217,7 @@ public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implem
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__PARAMETERS:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS:
         return basicSetParameters(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -233,12 +233,12 @@ public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implem
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__EVENT:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT:
         if (resolve) return getEvent();
         return basicGetEvent();
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__PARAMETERS:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS:
         return getParameters();
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__MULTIPLICITY:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY:
         return getMultiplicity();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -254,13 +254,13 @@ public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implem
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__EVENT:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT:
         setEvent((EventTypedParameter)newValue);
         return;
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__PARAMETERS:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS:
         setParameters((PatternCallParameterList)newValue);
         return;
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__MULTIPLICITY:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY:
         setMultiplicity((Integer)newValue);
         return;
     }
@@ -277,13 +277,13 @@ public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implem
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__EVENT:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT:
         setEvent((EventTypedParameter)null);
         return;
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__PARAMETERS:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS:
         setParameters((PatternCallParameterList)null);
         return;
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__MULTIPLICITY:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY:
         setMultiplicity(MULTIPLICITY_EDEFAULT);
         return;
     }
@@ -300,11 +300,11 @@ public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implem
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__EVENT:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT:
         return event != null;
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__PARAMETERS:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS:
         return parameters != null;
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY__MULTIPLICITY:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY:
         return multiplicity != MULTIPLICITY_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -327,4 +327,4 @@ public class EventWithMultiplicityImpl extends FollowerEventStructureImpl implem
     return result.toString();
   }
 
-} //EventWithMultiplicityImpl
+} //EventTypedParameterWithMultiplicityImpl

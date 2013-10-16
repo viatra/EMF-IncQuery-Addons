@@ -17,8 +17,8 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguageFact
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventSourceUsage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameter;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithFollowsOperator;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerEventStructure;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperator;
@@ -300,7 +300,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass eventWithMultiplicityEClass = null;
+  private EClass eventTypedParameterWithMultiplicityEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1128,9 +1128,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEventWithMultiplicity()
+  public EClass getEventTypedParameterWithMultiplicity()
   {
-    return eventWithMultiplicityEClass;
+    return eventTypedParameterWithMultiplicityEClass;
   }
 
   /**
@@ -1138,9 +1138,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEventWithMultiplicity_Event()
+  public EReference getEventTypedParameterWithMultiplicity_Event()
   {
-    return (EReference)eventWithMultiplicityEClass.getEStructuralFeatures().get(0);
+    return (EReference)eventTypedParameterWithMultiplicityEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1148,9 +1148,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEventWithMultiplicity_Parameters()
+  public EReference getEventTypedParameterWithMultiplicity_Parameters()
   {
-    return (EReference)eventWithMultiplicityEClass.getEStructuralFeatures().get(1);
+    return (EReference)eventTypedParameterWithMultiplicityEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1158,9 +1158,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEventWithMultiplicity_Multiplicity()
+  public EAttribute getEventTypedParameterWithMultiplicity_Multiplicity()
   {
-    return (EAttribute)eventWithMultiplicityEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)eventTypedParameterWithMultiplicityEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1388,10 +1388,10 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     branchExpressionEClass = createEClass(BRANCH_EXPRESSION);
     createEReference(branchExpressionEClass, BRANCH_EXPRESSION__BRANCHES);
 
-    eventWithMultiplicityEClass = createEClass(EVENT_WITH_MULTIPLICITY);
-    createEReference(eventWithMultiplicityEClass, EVENT_WITH_MULTIPLICITY__EVENT);
-    createEReference(eventWithMultiplicityEClass, EVENT_WITH_MULTIPLICITY__PARAMETERS);
-    createEAttribute(eventWithMultiplicityEClass, EVENT_WITH_MULTIPLICITY__MULTIPLICITY);
+    eventTypedParameterWithMultiplicityEClass = createEClass(EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY);
+    createEReference(eventTypedParameterWithMultiplicityEClass, EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT);
+    createEReference(eventTypedParameterWithMultiplicityEClass, EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS);
+    createEAttribute(eventTypedParameterWithMultiplicityEClass, EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY);
 
     patternCallParameterListEClass = createEClass(PATTERN_CALL_PARAMETER_LIST);
     createEReference(patternCallParameterListEClass, PATTERN_CALL_PARAMETER_LIST__PARAMETERS);
@@ -1461,7 +1461,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     followsOperatorNoTWEClass.getESuperTypes().add(this.getFollowsOperator());
     followsOperatorViaTWEClass.getESuperTypes().add(this.getFollowsOperator());
     branchExpressionEClass.getESuperTypes().add(this.getFollowerEventStructure());
-    eventWithMultiplicityEClass.getESuperTypes().add(this.getFollowerEventStructure());
+    eventTypedParameterWithMultiplicityEClass.getESuperTypes().add(this.getFollowerEventStructure());
     sourceEClass.getESuperTypes().add(this.getModelElements());
 
     // Initialize classes and features; add operations and parameters
@@ -1551,7 +1551,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     initEClass(complexEventExpressionEClass, ComplexEventExpression.class, "ComplexEventExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(followsExpressionEClass, FollowsExpression.class, "FollowsExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFollowsExpression_FirstEvent(), this.getEventWithMultiplicity(), null, "firstEvent", null, 0, -1, FollowsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFollowsExpression_FirstEvent(), this.getEventTypedParameterWithMultiplicity(), null, "firstEvent", null, 0, -1, FollowsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFollowsExpression_Events(), this.getEventWithFollowsOperator(), null, "events", null, 0, -1, FollowsExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventWithFollowsOperatorEClass, EventWithFollowsOperator.class, "EventWithFollowsOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1568,12 +1568,12 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     initEClass(followerEventStructureEClass, FollowerEventStructure.class, "FollowerEventStructure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(branchExpressionEClass, BranchExpression.class, "BranchExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBranchExpression_Branches(), this.getEventTypedParameter(), null, "branches", null, 0, -1, BranchExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBranchExpression_Branches(), this.getEventTypedParameterWithMultiplicity(), null, "branches", null, 0, -1, BranchExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(eventWithMultiplicityEClass, EventWithMultiplicity.class, "EventWithMultiplicity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEventWithMultiplicity_Event(), this.getEventTypedParameter(), null, "event", null, 0, 1, EventWithMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEventWithMultiplicity_Parameters(), this.getPatternCallParameterList(), null, "parameters", null, 0, 1, EventWithMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEventWithMultiplicity_Multiplicity(), ecorePackage.getEInt(), "multiplicity", null, 0, 1, EventWithMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eventTypedParameterWithMultiplicityEClass, EventTypedParameterWithMultiplicity.class, "EventTypedParameterWithMultiplicity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEventTypedParameterWithMultiplicity_Event(), this.getEventTypedParameter(), null, "event", null, 0, 1, EventTypedParameterWithMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEventTypedParameterWithMultiplicity_Parameters(), this.getPatternCallParameterList(), null, "parameters", null, 0, 1, EventTypedParameterWithMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEventTypedParameterWithMultiplicity_Multiplicity(), ecorePackage.getEInt(), "multiplicity", null, 0, 1, EventTypedParameterWithMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(patternCallParameterListEClass, PatternCallParameterList.class, "PatternCallParameterList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPatternCallParameterList_Parameters(), this.getPatternCallParameter(), null, "parameters", null, 0, -1, PatternCallParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

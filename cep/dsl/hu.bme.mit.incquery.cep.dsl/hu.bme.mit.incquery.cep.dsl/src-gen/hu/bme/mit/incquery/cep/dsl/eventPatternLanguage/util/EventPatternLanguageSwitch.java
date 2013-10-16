@@ -328,11 +328,11 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY:
       {
-        EventWithMultiplicity eventWithMultiplicity = (EventWithMultiplicity)theEObject;
-        T result = caseEventWithMultiplicity(eventWithMultiplicity);
-        if (result == null) result = caseFollowerEventStructure(eventWithMultiplicity);
+        EventTypedParameterWithMultiplicity eventTypedParameterWithMultiplicity = (EventTypedParameterWithMultiplicity)theEObject;
+        T result = caseEventTypedParameterWithMultiplicity(eventTypedParameterWithMultiplicity);
+        if (result == null) result = caseFollowerEventStructure(eventTypedParameterWithMultiplicity);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -898,17 +898,17 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Event With Multiplicity</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Event Typed Parameter With Multiplicity</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Event With Multiplicity</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Event Typed Parameter With Multiplicity</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEventWithMultiplicity(EventWithMultiplicity object)
+  public T caseEventTypedParameterWithMultiplicity(EventTypedParameterWithMultiplicity object)
   {
     return null;
   }

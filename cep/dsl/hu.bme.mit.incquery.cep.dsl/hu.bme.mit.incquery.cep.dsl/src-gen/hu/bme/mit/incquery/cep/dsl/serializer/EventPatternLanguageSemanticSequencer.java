@@ -13,8 +13,8 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventParameterList;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventSourceUsage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameter;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithFollowsOperator;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorNoTW;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorViaTW;
@@ -163,16 +163,16 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 					return; 
 				}
 				else break;
-			case EventPatternLanguagePackage.EVENT_WITH_FOLLOWS_OPERATOR:
-				if(context == grammarAccess.getEventWithFollowsOperatorRule()) {
-					sequence_EventWithFollowsOperator(context, (EventWithFollowsOperator) semanticObject); 
+			case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY:
+				if(context == grammarAccess.getEventTypedParameterWithMultiplicityRule() ||
+				   context == grammarAccess.getFollowerEventStructureRule()) {
+					sequence_EventTypedParameterWithMultiplicity(context, (EventTypedParameterWithMultiplicity) semanticObject); 
 					return; 
 				}
 				else break;
-			case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY:
-				if(context == grammarAccess.getEventWithMultiplicityRule() ||
-				   context == grammarAccess.getFollowerEventStructureRule()) {
-					sequence_EventWithMultiplicity(context, (EventWithMultiplicity) semanticObject); 
+			case EventPatternLanguagePackage.EVENT_WITH_FOLLOWS_OPERATOR:
+				if(context == grammarAccess.getEventWithFollowsOperatorRule()) {
+					sequence_EventWithFollowsOperator(context, (EventWithFollowsOperator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1261,7 +1261,7 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (branches+=[EventTypedParameter|ID] branches+=[EventTypedParameter|ID]+)
+	 *     (branches+=EventTypedParameterWithMultiplicity branches+=EventTypedParameterWithMultiplicity+)
 	 */
 	protected void sequence_BranchExpression(EObject context, BranchExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1351,6 +1351,15 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
+	 *     (event=[EventTypedParameter|ID] parameters=PatternCallParameterList? multiplicity=INT?)
+	 */
+	protected void sequence_EventTypedParameterWithMultiplicity(EObject context, EventTypedParameterWithMultiplicity semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=ID type=[Event|ID])
 	 */
 	protected void sequence_EventTypedParameter(EObject context, EventTypedParameter semanticObject) {
@@ -1389,16 +1398,7 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (event=[EventTypedParameter|ID] parameters=PatternCallParameterList? multiplicity=INT?)
-	 */
-	protected void sequence_EventWithMultiplicity(EObject context, EventWithMultiplicity semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (firstEvent+=EventWithMultiplicity events+=EventWithFollowsOperator*)
+	 *     (firstEvent+=EventTypedParameterWithMultiplicity events+=EventWithFollowsOperator*)
 	 */
 	protected void sequence_FollowsExpression(EObject context, FollowsExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

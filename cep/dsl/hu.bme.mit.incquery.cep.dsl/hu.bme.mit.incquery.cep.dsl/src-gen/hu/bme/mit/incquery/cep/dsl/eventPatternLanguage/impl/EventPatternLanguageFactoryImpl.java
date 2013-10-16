@@ -98,7 +98,7 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
       case EventPatternLanguagePackage.FOLLOWS_OPERATOR_VIA_TW: return createFollowsOperatorViaTW();
       case EventPatternLanguagePackage.FOLLOWER_EVENT_STRUCTURE: return createFollowerEventStructure();
       case EventPatternLanguagePackage.BRANCH_EXPRESSION: return createBranchExpression();
-      case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY: return createEventWithMultiplicity();
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY: return createEventTypedParameterWithMultiplicity();
       case EventPatternLanguagePackage.PATTERN_CALL_PARAMETER_LIST: return createPatternCallParameterList();
       case EventPatternLanguagePackage.PATTERN_CALL_PARAMETER: return createPatternCallParameter();
       case EventPatternLanguagePackage.SOURCE: return createSource();
@@ -510,10 +510,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventWithMultiplicity createEventWithMultiplicity()
+  public EventTypedParameterWithMultiplicity createEventTypedParameterWithMultiplicity()
   {
-    EventWithMultiplicityImpl eventWithMultiplicity = new EventWithMultiplicityImpl();
-    return eventWithMultiplicity;
+    EventTypedParameterWithMultiplicityImpl eventTypedParameterWithMultiplicity = new EventTypedParameterWithMultiplicityImpl();
+    return eventTypedParameterWithMultiplicity;
   }
 
   /**

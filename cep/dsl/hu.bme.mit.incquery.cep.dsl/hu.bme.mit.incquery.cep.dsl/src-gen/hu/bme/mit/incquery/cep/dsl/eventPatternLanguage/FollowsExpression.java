@@ -25,7 +25,7 @@ public interface FollowsExpression extends ComplexEventExpression
 {
   /**
    * Returns the value of the '<em><b>First Event</b></em>' containment reference list.
-   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity}.
+   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>First Event</em>' containment reference list isn't clear,
@@ -37,7 +37,7 @@ public interface FollowsExpression extends ComplexEventExpression
    * @model containment="true"
    * @generated
    */
-  EList<EventWithMultiplicity> getFirstEvent();
+  EList<EventTypedParameterWithMultiplicity> getFirstEvent();
 
   /**
    * Returns the value of the '<em><b>Events</b></em>' containment reference list.

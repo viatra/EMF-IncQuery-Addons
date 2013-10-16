@@ -4,15 +4,19 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameter;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity;
 
 import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,14 +34,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 public class BranchExpressionImpl extends FollowerEventStructureImpl implements BranchExpression
 {
   /**
-   * The cached value of the '{@link #getBranches() <em>Branches</em>}' reference list.
+   * The cached value of the '{@link #getBranches() <em>Branches</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getBranches()
    * @generated
    * @ordered
    */
-  protected EList<EventTypedParameter> branches;
+  protected EList<EventTypedParameterWithMultiplicity> branches;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,13 +69,29 @@ public class BranchExpressionImpl extends FollowerEventStructureImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EventTypedParameter> getBranches()
+  public EList<EventTypedParameterWithMultiplicity> getBranches()
   {
     if (branches == null)
     {
-      branches = new EObjectResolvingEList<EventTypedParameter>(EventTypedParameter.class, this, EventPatternLanguagePackage.BRANCH_EXPRESSION__BRANCHES);
+      branches = new EObjectContainmentEList<EventTypedParameterWithMultiplicity>(EventTypedParameterWithMultiplicity.class, this, EventPatternLanguagePackage.BRANCH_EXPRESSION__BRANCHES);
     }
     return branches;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case EventPatternLanguagePackage.BRANCH_EXPRESSION__BRANCHES:
+        return ((InternalEList<?>)getBranches()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -103,7 +123,7 @@ public class BranchExpressionImpl extends FollowerEventStructureImpl implements 
     {
       case EventPatternLanguagePackage.BRANCH_EXPRESSION__BRANCHES:
         getBranches().clear();
-        getBranches().addAll((Collection<? extends EventTypedParameter>)newValue);
+        getBranches().addAll((Collection<? extends EventTypedParameterWithMultiplicity>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

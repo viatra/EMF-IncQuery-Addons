@@ -153,7 +153,7 @@ ComplexEventExpression:
 ;
 
 FollowsExpression:
-	firstEvent+=EventWithMultiplicity (events+=EventWithFollowsOperator)*;
+	firstEvent+=EventTypedParameterWithMultiplicity (events+=EventWithFollowsOperator)*;
 
 EventWithFollowsOperator:
 	operator=FollowsOperator event=FollowerEventStructure;
@@ -169,14 +169,14 @@ FollowsOperatorViaTW:
 	'-[' timewindow=INT ']->';
 
 FollowerEventStructure:
-	BranchExpression | EventWithMultiplicity
+	BranchExpression | EventTypedParameterWithMultiplicity
 ;
 
 BranchExpression:
-	'('branches+=[EventTypedParameter] ('OR' branches+=[EventTypedParameter])+')'
+	'('branches+=EventTypedParameterWithMultiplicity ('OR' branches+=EventTypedParameterWithMultiplicity)+')'
 ;
 
-EventWithMultiplicity:
+EventTypedParameterWithMultiplicity:
 	event=[EventTypedParameter]('('parameters=PatternCallParameterList?')')? ('{' multiplicity=INT '}')?;
 	
 PatternCallParameterList:

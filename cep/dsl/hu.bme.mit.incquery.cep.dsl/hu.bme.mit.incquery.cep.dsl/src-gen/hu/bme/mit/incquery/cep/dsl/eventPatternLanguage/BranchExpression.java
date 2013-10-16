@@ -23,19 +23,19 @@ import org.eclipse.emf.common.util.EList;
 public interface BranchExpression extends FollowerEventStructure
 {
   /**
-   * Returns the value of the '<em><b>Branches</b></em>' reference list.
-   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameter}.
+   * Returns the value of the '<em><b>Branches</b></em>' containment reference list.
+   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Branches</em>' reference list isn't clear,
+   * If the meaning of the '<em>Branches</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Branches</em>' reference list.
+   * @return the value of the '<em>Branches</em>' containment reference list.
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getBranchExpression_Branches()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  EList<EventTypedParameter> getBranches();
+  EList<EventTypedParameterWithMultiplicity> getBranches();
 
 } // BranchExpression

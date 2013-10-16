@@ -3,8 +3,8 @@
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithFollowsOperator;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression;
 
 import java.util.Collection;
@@ -43,7 +43,7 @@ public class FollowsExpressionImpl extends ComplexEventExpressionImpl implements
    * @generated
    * @ordered
    */
-  protected EList<EventWithMultiplicity> firstEvent;
+  protected EList<EventTypedParameterWithMultiplicity> firstEvent;
 
   /**
    * The cached value of the '{@link #getEvents() <em>Events</em>}' containment reference list.
@@ -81,11 +81,11 @@ public class FollowsExpressionImpl extends ComplexEventExpressionImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EventWithMultiplicity> getFirstEvent()
+  public EList<EventTypedParameterWithMultiplicity> getFirstEvent()
   {
     if (firstEvent == null)
     {
-      firstEvent = new EObjectContainmentEList<EventWithMultiplicity>(EventWithMultiplicity.class, this, EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FIRST_EVENT);
+      firstEvent = new EObjectContainmentEList<EventTypedParameterWithMultiplicity>(EventTypedParameterWithMultiplicity.class, this, EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FIRST_EVENT);
     }
     return firstEvent;
   }
@@ -153,7 +153,7 @@ public class FollowsExpressionImpl extends ComplexEventExpressionImpl implements
     {
       case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FIRST_EVENT:
         getFirstEvent().clear();
-        getFirstEvent().addAll((Collection<? extends EventWithMultiplicity>)newValue);
+        getFirstEvent().addAll((Collection<? extends EventTypedParameterWithMultiplicity>)newValue);
         return;
       case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__EVENTS:
         getEvents().clear();

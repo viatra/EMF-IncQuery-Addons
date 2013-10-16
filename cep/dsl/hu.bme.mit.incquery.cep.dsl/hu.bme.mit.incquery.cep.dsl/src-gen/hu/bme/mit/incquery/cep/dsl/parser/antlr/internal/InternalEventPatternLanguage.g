@@ -2052,9 +2052,9 @@ ruleFollowsExpression returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFollowsExpressionAccess().getFirstEventEventWithMultiplicityParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getFollowsExpressionAccess().getFirstEventEventTypedParameterWithMultiplicityParserRuleCall_0_0()); 
 	    }
-		lv_firstEvent_0_0=ruleEventWithMultiplicity		{
+		lv_firstEvent_0_0=ruleEventTypedParameterWithMultiplicity		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFollowsExpressionRule());
 	        }
@@ -2062,7 +2062,7 @@ ruleFollowsExpression returns [EObject current=null]
        			$current, 
        			"firstEvent",
         		lv_firstEvent_0_0, 
-        		"EventWithMultiplicity");
+        		"EventTypedParameterWithMultiplicity");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2293,11 +2293,11 @@ ruleFollowerEventStructure returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getFollowerEventStructureAccess().getEventWithMultiplicityParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getFollowerEventStructureAccess().getEventTypedParameterWithMultiplicityParserRuleCall_1()); 
     }
-    this_EventWithMultiplicity_1=ruleEventWithMultiplicity
+    this_EventTypedParameterWithMultiplicity_1=ruleEventTypedParameterWithMultiplicity
     { 
-        $current = $this_EventWithMultiplicity_1.current; 
+        $current = $this_EventTypedParameterWithMultiplicity_1.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -2327,15 +2327,20 @@ ruleBranchExpression returns [EObject current=null]
     }
 (
 (
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getBranchExpressionRule());
+		{ 
+	        newCompositeNode(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterWithMultiplicityParserRuleCall_1_0()); 
+	    }
+		lv_branches_1_0=ruleEventTypedParameterWithMultiplicity		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBranchExpressionRule());
 	        }
-        }
-	otherlv_1=RULE_ID
-	{
-		newLeafNode(otherlv_1, grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterCrossReference_1_0()); 
-	}
+       		add(
+       			$current, 
+       			"branches",
+        		lv_branches_1_0, 
+        		"EventTypedParameterWithMultiplicity");
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 )(	otherlv_2='OR' 
@@ -2344,15 +2349,20 @@ ruleBranchExpression returns [EObject current=null]
     }
 (
 (
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getBranchExpressionRule());
+		{ 
+	        newCompositeNode(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterWithMultiplicityParserRuleCall_2_1_0()); 
+	    }
+		lv_branches_3_0=ruleEventTypedParameterWithMultiplicity		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBranchExpressionRule());
 	        }
-        }
-	otherlv_3=RULE_ID
-	{
-		newLeafNode(otherlv_3, grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterCrossReference_2_1_0()); 
-	}
+       		add(
+       			$current, 
+       			"branches",
+        		lv_branches_3_0, 
+        		"EventTypedParameterWithMultiplicity");
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 ))+	otherlv_4=')' 
@@ -2366,17 +2376,17 @@ ruleBranchExpression returns [EObject current=null]
 
 
 
-// Entry rule entryRuleEventWithMultiplicity
-entryRuleEventWithMultiplicity returns [EObject current=null] 
+// Entry rule entryRuleEventTypedParameterWithMultiplicity
+entryRuleEventTypedParameterWithMultiplicity returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getEventWithMultiplicityRule()); }
-	 iv_ruleEventWithMultiplicity=ruleEventWithMultiplicity 
-	 { $current=$iv_ruleEventWithMultiplicity.current; } 
+	{ newCompositeNode(grammarAccess.getEventTypedParameterWithMultiplicityRule()); }
+	 iv_ruleEventTypedParameterWithMultiplicity=ruleEventTypedParameterWithMultiplicity 
+	 { $current=$iv_ruleEventTypedParameterWithMultiplicity.current; } 
 	 EOF 
 ;
 
-// Rule EventWithMultiplicity
-ruleEventWithMultiplicity returns [EObject current=null] 
+// Rule EventTypedParameterWithMultiplicity
+ruleEventTypedParameterWithMultiplicity returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
@@ -2384,27 +2394,27 @@ ruleEventWithMultiplicity returns [EObject current=null]
 (
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getEventWithMultiplicityRule());
+	            $current = createModelElement(grammarAccess.getEventTypedParameterWithMultiplicityRule());
 	        }
         }
 	otherlv_0=RULE_ID
 	{
-		newLeafNode(otherlv_0, grammarAccess.getEventWithMultiplicityAccess().getEventEventTypedParameterCrossReference_0_0()); 
+		newLeafNode(otherlv_0, grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventEventTypedParameterCrossReference_0_0()); 
 	}
 
 )
 )(	otherlv_1='(' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getEventWithMultiplicityAccess().getLeftParenthesisKeyword_1_0());
+    	newLeafNode(otherlv_1, grammarAccess.getEventTypedParameterWithMultiplicityAccess().getLeftParenthesisKeyword_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEventWithMultiplicityAccess().getParametersPatternCallParameterListParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getParametersPatternCallParameterListParserRuleCall_1_1_0()); 
 	    }
 		lv_parameters_2_0=rulePatternCallParameterList		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getEventWithMultiplicityRule());
+	            $current = createModelElementForParent(grammarAccess.getEventTypedParameterWithMultiplicityRule());
 	        }
        		set(
        			$current, 
@@ -2417,21 +2427,21 @@ ruleEventWithMultiplicity returns [EObject current=null]
 )
 )?	otherlv_3=')' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getEventWithMultiplicityAccess().getRightParenthesisKeyword_1_2());
+    	newLeafNode(otherlv_3, grammarAccess.getEventTypedParameterWithMultiplicityAccess().getRightParenthesisKeyword_1_2());
     }
 )?(	otherlv_4='{' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getEventWithMultiplicityAccess().getLeftCurlyBracketKeyword_2_0());
+    	newLeafNode(otherlv_4, grammarAccess.getEventTypedParameterWithMultiplicityAccess().getLeftCurlyBracketKeyword_2_0());
     }
 (
 (
 		lv_multiplicity_5_0=RULE_INT
 		{
-			newLeafNode(lv_multiplicity_5_0, grammarAccess.getEventWithMultiplicityAccess().getMultiplicityINTTerminalRuleCall_2_1_0()); 
+			newLeafNode(lv_multiplicity_5_0, grammarAccess.getEventTypedParameterWithMultiplicityAccess().getMultiplicityINTTerminalRuleCall_2_1_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getEventWithMultiplicityRule());
+	            $current = createModelElement(grammarAccess.getEventTypedParameterWithMultiplicityRule());
 	        }
        		setWithLastConsumed(
        			$current, 
@@ -2443,7 +2453,7 @@ ruleEventWithMultiplicity returns [EObject current=null]
 )
 )	otherlv_6='}' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getEventWithMultiplicityAccess().getRightCurlyBracketKeyword_2_2());
+    	newLeafNode(otherlv_6, grammarAccess.getEventTypedParameterWithMultiplicityAccess().getRightCurlyBracketKeyword_2_2());
     }
 )?)
 ;

@@ -3302,25 +3302,25 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
     // $ANTLR end "ruleBranchExpression"
 
 
-    // $ANTLR start "entryRuleEventWithMultiplicity"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1099:1: entryRuleEventWithMultiplicity : ruleEventWithMultiplicity EOF ;
-    public final void entryRuleEventWithMultiplicity() throws RecognitionException {
+    // $ANTLR start "entryRuleEventTypedParameterWithMultiplicity"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1099:1: entryRuleEventTypedParameterWithMultiplicity : ruleEventTypedParameterWithMultiplicity EOF ;
+    public final void entryRuleEventTypedParameterWithMultiplicity() throws RecognitionException {
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1100:1: ( ruleEventWithMultiplicity EOF )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1101:1: ruleEventWithMultiplicity EOF
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1100:1: ( ruleEventTypedParameterWithMultiplicity EOF )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1101:1: ruleEventTypedParameterWithMultiplicity EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityRule()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityRule()); 
             }
-            pushFollow(FOLLOW_ruleEventWithMultiplicity_in_entryRuleEventWithMultiplicity2288);
-            ruleEventWithMultiplicity();
+            pushFollow(FOLLOW_ruleEventTypedParameterWithMultiplicity_in_entryRuleEventTypedParameterWithMultiplicity2288);
+            ruleEventTypedParameterWithMultiplicity();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityRule()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEventWithMultiplicity2295); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEventTypedParameterWithMultiplicity2295); if (state.failed) return ;
 
             }
 
@@ -3333,30 +3333,30 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "entryRuleEventWithMultiplicity"
+    // $ANTLR end "entryRuleEventTypedParameterWithMultiplicity"
 
 
-    // $ANTLR start "ruleEventWithMultiplicity"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1108:1: ruleEventWithMultiplicity : ( ( rule__EventWithMultiplicity__Group__0 ) ) ;
-    public final void ruleEventWithMultiplicity() throws RecognitionException {
+    // $ANTLR start "ruleEventTypedParameterWithMultiplicity"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1108:1: ruleEventTypedParameterWithMultiplicity : ( ( rule__EventTypedParameterWithMultiplicity__Group__0 ) ) ;
+    public final void ruleEventTypedParameterWithMultiplicity() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1112:2: ( ( ( rule__EventWithMultiplicity__Group__0 ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1113:1: ( ( rule__EventWithMultiplicity__Group__0 ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1112:2: ( ( ( rule__EventTypedParameterWithMultiplicity__Group__0 ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1113:1: ( ( rule__EventTypedParameterWithMultiplicity__Group__0 ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1113:1: ( ( rule__EventWithMultiplicity__Group__0 ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1114:1: ( rule__EventWithMultiplicity__Group__0 )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1113:1: ( ( rule__EventTypedParameterWithMultiplicity__Group__0 ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1114:1: ( rule__EventTypedParameterWithMultiplicity__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getGroup()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getGroup()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1115:1: ( rule__EventWithMultiplicity__Group__0 )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1115:2: rule__EventWithMultiplicity__Group__0
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1115:1: ( rule__EventTypedParameterWithMultiplicity__Group__0 )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1115:2: rule__EventTypedParameterWithMultiplicity__Group__0
             {
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group__0_in_ruleEventWithMultiplicity2321);
-            rule__EventWithMultiplicity__Group__0();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group__0_in_ruleEventTypedParameterWithMultiplicity2321);
+            rule__EventTypedParameterWithMultiplicity__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -3364,7 +3364,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getGroup()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getGroup()); 
             }
 
             }
@@ -3384,7 +3384,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "ruleEventWithMultiplicity"
+    // $ANTLR end "ruleEventTypedParameterWithMultiplicity"
 
 
     // $ANTLR start "entryRulePatternCallParameterList"
@@ -10634,13 +10634,13 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__FollowerEventStructure__Alternatives"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:3480:1: rule__FollowerEventStructure__Alternatives : ( ( ruleBranchExpression ) | ( ruleEventWithMultiplicity ) );
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:3480:1: rule__FollowerEventStructure__Alternatives : ( ( ruleBranchExpression ) | ( ruleEventTypedParameterWithMultiplicity ) );
     public final void rule__FollowerEventStructure__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:3484:1: ( ( ruleBranchExpression ) | ( ruleEventWithMultiplicity ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:3484:1: ( ( ruleBranchExpression ) | ( ruleEventTypedParameterWithMultiplicity ) )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -10682,21 +10682,21 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:3491:6: ( ruleEventWithMultiplicity )
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:3491:6: ( ruleEventTypedParameterWithMultiplicity )
                     {
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:3491:6: ( ruleEventWithMultiplicity )
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:3492:1: ruleEventWithMultiplicity
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:3491:6: ( ruleEventTypedParameterWithMultiplicity )
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:3492:1: ruleEventTypedParameterWithMultiplicity
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getFollowerEventStructureAccess().getEventWithMultiplicityParserRuleCall_1()); 
+                       before(grammarAccess.getFollowerEventStructureAccess().getEventTypedParameterWithMultiplicityParserRuleCall_1()); 
                     }
-                    pushFollow(FOLLOW_ruleEventWithMultiplicity_in_rule__FollowerEventStructure__Alternatives7430);
-                    ruleEventWithMultiplicity();
+                    pushFollow(FOLLOW_ruleEventTypedParameterWithMultiplicity_in_rule__FollowerEventStructure__Alternatives7430);
+                    ruleEventTypedParameterWithMultiplicity();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getFollowerEventStructureAccess().getEventWithMultiplicityParserRuleCall_1()); 
+                       after(grammarAccess.getFollowerEventStructureAccess().getEventTypedParameterWithMultiplicityParserRuleCall_1()); 
                     }
 
                     }
@@ -10735,11 +10735,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
                 {
                 int LA11_1 = input.LA(2);
 
-                if ( (LA11_1==EOF||(LA11_1>=RULE_ID && LA11_1<=RULE_STRING)||(LA11_1>=15 && LA11_1<=17)||(LA11_1>=19 && LA11_1<=22)||(LA11_1>=26 && LA11_1<=52)||(LA11_1>=56 && LA11_1<=57)||(LA11_1>=62 && LA11_1<=63)||LA11_1==65||(LA11_1>=78 && LA11_1<=79)||(LA11_1>=85 && LA11_1<=105)||(LA11_1>=108 && LA11_1<=109)||(LA11_1>=111 && LA11_1<=112)) ) {
-                    alt11=2;
-                }
-                else if ( (LA11_1==14) ) {
+                if ( (LA11_1==14) ) {
                     alt11=1;
+                }
+                else if ( (LA11_1==EOF||(LA11_1>=RULE_ID && LA11_1<=RULE_STRING)||(LA11_1>=15 && LA11_1<=17)||(LA11_1>=19 && LA11_1<=22)||(LA11_1>=26 && LA11_1<=52)||(LA11_1>=56 && LA11_1<=57)||(LA11_1>=62 && LA11_1<=63)||LA11_1==65||(LA11_1>=78 && LA11_1<=79)||(LA11_1>=85 && LA11_1<=105)||(LA11_1>=108 && LA11_1<=109)||(LA11_1>=111 && LA11_1<=112)) ) {
+                    alt11=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -10754,11 +10754,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
                 {
                 int LA11_2 = input.LA(2);
 
-                if ( (LA11_2==14) ) {
-                    alt11=1;
-                }
-                else if ( (LA11_2==EOF||(LA11_2>=RULE_ID && LA11_2<=RULE_STRING)||(LA11_2>=15 && LA11_2<=17)||(LA11_2>=19 && LA11_2<=22)||(LA11_2>=26 && LA11_2<=52)||(LA11_2>=56 && LA11_2<=57)||(LA11_2>=62 && LA11_2<=63)||LA11_2==65||(LA11_2>=78 && LA11_2<=79)||(LA11_2>=85 && LA11_2<=105)||(LA11_2>=108 && LA11_2<=109)||(LA11_2>=111 && LA11_2<=112)) ) {
+                if ( (LA11_2==EOF||(LA11_2>=RULE_ID && LA11_2<=RULE_STRING)||(LA11_2>=15 && LA11_2<=17)||(LA11_2>=19 && LA11_2<=22)||(LA11_2>=26 && LA11_2<=52)||(LA11_2>=56 && LA11_2<=57)||(LA11_2>=62 && LA11_2<=63)||LA11_2==65||(LA11_2>=78 && LA11_2<=79)||(LA11_2>=85 && LA11_2<=105)||(LA11_2>=108 && LA11_2<=109)||(LA11_2>=111 && LA11_2<=112)) ) {
                     alt11=2;
+                }
+                else if ( (LA11_2==14) ) {
+                    alt11=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -10773,11 +10773,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
                 {
                 int LA11_3 = input.LA(2);
 
-                if ( (LA11_3==EOF||(LA11_3>=RULE_ID && LA11_3<=RULE_STRING)||(LA11_3>=15 && LA11_3<=17)||(LA11_3>=19 && LA11_3<=22)||(LA11_3>=26 && LA11_3<=52)||(LA11_3>=56 && LA11_3<=57)||(LA11_3>=62 && LA11_3<=63)||LA11_3==65||(LA11_3>=78 && LA11_3<=79)||(LA11_3>=85 && LA11_3<=105)||(LA11_3>=108 && LA11_3<=109)||(LA11_3>=111 && LA11_3<=112)) ) {
-                    alt11=2;
-                }
-                else if ( (LA11_3==14) ) {
+                if ( (LA11_3==14) ) {
                     alt11=1;
+                }
+                else if ( (LA11_3==EOF||(LA11_3>=RULE_ID && LA11_3<=RULE_STRING)||(LA11_3>=15 && LA11_3<=17)||(LA11_3>=19 && LA11_3<=22)||(LA11_3>=26 && LA11_3<=52)||(LA11_3>=56 && LA11_3<=57)||(LA11_3>=62 && LA11_3<=63)||LA11_3==65||(LA11_3>=78 && LA11_3<=79)||(LA11_3>=85 && LA11_3<=105)||(LA11_3>=108 && LA11_3<=109)||(LA11_3>=111 && LA11_3<=112)) ) {
+                    alt11=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -10811,11 +10811,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
                 {
                 int LA11_5 = input.LA(2);
 
-                if ( (LA11_5==EOF||(LA11_5>=RULE_ID && LA11_5<=RULE_STRING)||(LA11_5>=15 && LA11_5<=17)||(LA11_5>=19 && LA11_5<=22)||(LA11_5>=26 && LA11_5<=52)||(LA11_5>=56 && LA11_5<=57)||(LA11_5>=62 && LA11_5<=63)||LA11_5==65||(LA11_5>=78 && LA11_5<=79)||(LA11_5>=85 && LA11_5<=105)||(LA11_5>=108 && LA11_5<=109)||(LA11_5>=111 && LA11_5<=112)) ) {
-                    alt11=2;
-                }
-                else if ( (LA11_5==14) ) {
+                if ( (LA11_5==14) ) {
                     alt11=1;
+                }
+                else if ( (LA11_5==EOF||(LA11_5>=RULE_ID && LA11_5<=RULE_STRING)||(LA11_5>=15 && LA11_5<=17)||(LA11_5>=19 && LA11_5<=22)||(LA11_5>=26 && LA11_5<=52)||(LA11_5>=56 && LA11_5<=57)||(LA11_5>=62 && LA11_5<=63)||LA11_5==65||(LA11_5>=78 && LA11_5<=79)||(LA11_5>=85 && LA11_5<=105)||(LA11_5>=108 && LA11_5<=109)||(LA11_5>=111 && LA11_5<=112)) ) {
+                    alt11=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -13413,11 +13413,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
                 if ( (LA30_2==RULE_ID) ) {
                     int LA30_3 = input.LA(3);
 
-                    if ( ((LA30_3>=14 && LA30_3<=17)||(LA30_3>=19 && LA30_3<=22)||(LA30_3>=26 && LA30_3<=43)||LA30_3==45||(LA30_3>=62 && LA30_3<=63)||LA30_3==79||(LA30_3>=85 && LA30_3<=86)||(LA30_3>=108 && LA30_3<=109)) ) {
-                        alt30=1;
-                    }
-                    else if ( (LA30_3==65) ) {
+                    if ( (LA30_3==65) ) {
                         alt30=2;
+                    }
+                    else if ( ((LA30_3>=14 && LA30_3<=17)||(LA30_3>=19 && LA30_3<=22)||(LA30_3>=26 && LA30_3<=43)||LA30_3==45||(LA30_3>=62 && LA30_3<=63)||LA30_3==79||(LA30_3>=85 && LA30_3<=86)||(LA30_3>=108 && LA30_3<=109)) ) {
+                        alt30=1;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return ;}
@@ -26564,23 +26564,23 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
     // $ANTLR end "rule__BranchExpression__Group_2__1__Impl"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group__0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8918:1: rule__EventWithMultiplicity__Group__0 : rule__EventWithMultiplicity__Group__0__Impl rule__EventWithMultiplicity__Group__1 ;
-    public final void rule__EventWithMultiplicity__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group__0"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8918:1: rule__EventTypedParameterWithMultiplicity__Group__0 : rule__EventTypedParameterWithMultiplicity__Group__0__Impl rule__EventTypedParameterWithMultiplicity__Group__1 ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8922:1: ( rule__EventWithMultiplicity__Group__0__Impl rule__EventWithMultiplicity__Group__1 )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8923:2: rule__EventWithMultiplicity__Group__0__Impl rule__EventWithMultiplicity__Group__1
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8922:1: ( rule__EventTypedParameterWithMultiplicity__Group__0__Impl rule__EventTypedParameterWithMultiplicity__Group__1 )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8923:2: rule__EventTypedParameterWithMultiplicity__Group__0__Impl rule__EventTypedParameterWithMultiplicity__Group__1
             {
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group__0__Impl_in_rule__EventWithMultiplicity__Group__018495);
-            rule__EventWithMultiplicity__Group__0__Impl();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group__0__Impl_in_rule__EventTypedParameterWithMultiplicity__Group__018495);
+            rule__EventTypedParameterWithMultiplicity__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group__1_in_rule__EventWithMultiplicity__Group__018498);
-            rule__EventWithMultiplicity__Group__1();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group__1_in_rule__EventTypedParameterWithMultiplicity__Group__018498);
+            rule__EventTypedParameterWithMultiplicity__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -26599,30 +26599,30 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group__0"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group__0"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group__0__Impl"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8930:1: rule__EventWithMultiplicity__Group__0__Impl : ( ( rule__EventWithMultiplicity__EventAssignment_0 ) ) ;
-    public final void rule__EventWithMultiplicity__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group__0__Impl"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8930:1: rule__EventTypedParameterWithMultiplicity__Group__0__Impl : ( ( rule__EventTypedParameterWithMultiplicity__EventAssignment_0 ) ) ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8934:1: ( ( ( rule__EventWithMultiplicity__EventAssignment_0 ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8935:1: ( ( rule__EventWithMultiplicity__EventAssignment_0 ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8934:1: ( ( ( rule__EventTypedParameterWithMultiplicity__EventAssignment_0 ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8935:1: ( ( rule__EventTypedParameterWithMultiplicity__EventAssignment_0 ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8935:1: ( ( rule__EventWithMultiplicity__EventAssignment_0 ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8936:1: ( rule__EventWithMultiplicity__EventAssignment_0 )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8935:1: ( ( rule__EventTypedParameterWithMultiplicity__EventAssignment_0 ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8936:1: ( rule__EventTypedParameterWithMultiplicity__EventAssignment_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getEventAssignment_0()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventAssignment_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8937:1: ( rule__EventWithMultiplicity__EventAssignment_0 )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8937:2: rule__EventWithMultiplicity__EventAssignment_0
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8937:1: ( rule__EventTypedParameterWithMultiplicity__EventAssignment_0 )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8937:2: rule__EventTypedParameterWithMultiplicity__EventAssignment_0
             {
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__EventAssignment_0_in_rule__EventWithMultiplicity__Group__0__Impl18525);
-            rule__EventWithMultiplicity__EventAssignment_0();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__EventAssignment_0_in_rule__EventTypedParameterWithMultiplicity__Group__0__Impl18525);
+            rule__EventTypedParameterWithMultiplicity__EventAssignment_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -26630,7 +26630,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getEventAssignment_0()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventAssignment_0()); 
             }
 
             }
@@ -26650,26 +26650,26 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group__0__Impl"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group__0__Impl"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group__1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8947:1: rule__EventWithMultiplicity__Group__1 : rule__EventWithMultiplicity__Group__1__Impl rule__EventWithMultiplicity__Group__2 ;
-    public final void rule__EventWithMultiplicity__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group__1"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8947:1: rule__EventTypedParameterWithMultiplicity__Group__1 : rule__EventTypedParameterWithMultiplicity__Group__1__Impl rule__EventTypedParameterWithMultiplicity__Group__2 ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8951:1: ( rule__EventWithMultiplicity__Group__1__Impl rule__EventWithMultiplicity__Group__2 )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8952:2: rule__EventWithMultiplicity__Group__1__Impl rule__EventWithMultiplicity__Group__2
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8951:1: ( rule__EventTypedParameterWithMultiplicity__Group__1__Impl rule__EventTypedParameterWithMultiplicity__Group__2 )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8952:2: rule__EventTypedParameterWithMultiplicity__Group__1__Impl rule__EventTypedParameterWithMultiplicity__Group__2
             {
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group__1__Impl_in_rule__EventWithMultiplicity__Group__118555);
-            rule__EventWithMultiplicity__Group__1__Impl();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group__1__Impl_in_rule__EventTypedParameterWithMultiplicity__Group__118555);
+            rule__EventTypedParameterWithMultiplicity__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group__2_in_rule__EventWithMultiplicity__Group__118558);
-            rule__EventWithMultiplicity__Group__2();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group__2_in_rule__EventTypedParameterWithMultiplicity__Group__118558);
+            rule__EventTypedParameterWithMultiplicity__Group__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -26688,26 +26688,26 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group__1"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group__1"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group__1__Impl"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8959:1: rule__EventWithMultiplicity__Group__1__Impl : ( ( rule__EventWithMultiplicity__Group_1__0 )? ) ;
-    public final void rule__EventWithMultiplicity__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group__1__Impl"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8959:1: rule__EventTypedParameterWithMultiplicity__Group__1__Impl : ( ( rule__EventTypedParameterWithMultiplicity__Group_1__0 )? ) ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8963:1: ( ( ( rule__EventWithMultiplicity__Group_1__0 )? ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8964:1: ( ( rule__EventWithMultiplicity__Group_1__0 )? )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8963:1: ( ( ( rule__EventTypedParameterWithMultiplicity__Group_1__0 )? ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8964:1: ( ( rule__EventTypedParameterWithMultiplicity__Group_1__0 )? )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8964:1: ( ( rule__EventWithMultiplicity__Group_1__0 )? )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8965:1: ( rule__EventWithMultiplicity__Group_1__0 )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8964:1: ( ( rule__EventTypedParameterWithMultiplicity__Group_1__0 )? )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8965:1: ( rule__EventTypedParameterWithMultiplicity__Group_1__0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getGroup_1()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getGroup_1()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8966:1: ( rule__EventWithMultiplicity__Group_1__0 )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8966:1: ( rule__EventTypedParameterWithMultiplicity__Group_1__0 )?
             int alt66=2;
             int LA66_0 = input.LA(1);
 
@@ -26716,10 +26716,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
             }
             switch (alt66) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8966:2: rule__EventWithMultiplicity__Group_1__0
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8966:2: rule__EventTypedParameterWithMultiplicity__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__EventWithMultiplicity__Group_1__0_in_rule__EventWithMultiplicity__Group__1__Impl18585);
-                    rule__EventWithMultiplicity__Group_1__0();
+                    pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_1__0_in_rule__EventTypedParameterWithMultiplicity__Group__1__Impl18585);
+                    rule__EventTypedParameterWithMultiplicity__Group_1__0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -26730,7 +26730,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getGroup_1()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getGroup_1()); 
             }
 
             }
@@ -26750,21 +26750,21 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group__1__Impl"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group__1__Impl"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group__2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8976:1: rule__EventWithMultiplicity__Group__2 : rule__EventWithMultiplicity__Group__2__Impl ;
-    public final void rule__EventWithMultiplicity__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group__2"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8976:1: rule__EventTypedParameterWithMultiplicity__Group__2 : rule__EventTypedParameterWithMultiplicity__Group__2__Impl ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8980:1: ( rule__EventWithMultiplicity__Group__2__Impl )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8981:2: rule__EventWithMultiplicity__Group__2__Impl
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8980:1: ( rule__EventTypedParameterWithMultiplicity__Group__2__Impl )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8981:2: rule__EventTypedParameterWithMultiplicity__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group__2__Impl_in_rule__EventWithMultiplicity__Group__218616);
-            rule__EventWithMultiplicity__Group__2__Impl();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group__2__Impl_in_rule__EventTypedParameterWithMultiplicity__Group__218616);
+            rule__EventTypedParameterWithMultiplicity__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -26783,26 +26783,26 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group__2"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group__2"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group__2__Impl"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8987:1: rule__EventWithMultiplicity__Group__2__Impl : ( ( rule__EventWithMultiplicity__Group_2__0 )? ) ;
-    public final void rule__EventWithMultiplicity__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group__2__Impl"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8987:1: rule__EventTypedParameterWithMultiplicity__Group__2__Impl : ( ( rule__EventTypedParameterWithMultiplicity__Group_2__0 )? ) ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8991:1: ( ( ( rule__EventWithMultiplicity__Group_2__0 )? ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8992:1: ( ( rule__EventWithMultiplicity__Group_2__0 )? )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8991:1: ( ( ( rule__EventTypedParameterWithMultiplicity__Group_2__0 )? ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8992:1: ( ( rule__EventTypedParameterWithMultiplicity__Group_2__0 )? )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8992:1: ( ( rule__EventWithMultiplicity__Group_2__0 )? )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8993:1: ( rule__EventWithMultiplicity__Group_2__0 )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8992:1: ( ( rule__EventTypedParameterWithMultiplicity__Group_2__0 )? )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8993:1: ( rule__EventTypedParameterWithMultiplicity__Group_2__0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getGroup_2()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getGroup_2()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8994:1: ( rule__EventWithMultiplicity__Group_2__0 )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8994:1: ( rule__EventTypedParameterWithMultiplicity__Group_2__0 )?
             int alt67=2;
             int LA67_0 = input.LA(1);
 
@@ -26811,10 +26811,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
             }
             switch (alt67) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8994:2: rule__EventWithMultiplicity__Group_2__0
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:8994:2: rule__EventTypedParameterWithMultiplicity__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__EventWithMultiplicity__Group_2__0_in_rule__EventWithMultiplicity__Group__2__Impl18643);
-                    rule__EventWithMultiplicity__Group_2__0();
+                    pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_2__0_in_rule__EventTypedParameterWithMultiplicity__Group__2__Impl18643);
+                    rule__EventTypedParameterWithMultiplicity__Group_2__0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -26825,7 +26825,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getGroup_2()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getGroup_2()); 
             }
 
             }
@@ -26845,26 +26845,26 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group__2__Impl"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group__2__Impl"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group_1__0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9010:1: rule__EventWithMultiplicity__Group_1__0 : rule__EventWithMultiplicity__Group_1__0__Impl rule__EventWithMultiplicity__Group_1__1 ;
-    public final void rule__EventWithMultiplicity__Group_1__0() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group_1__0"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9010:1: rule__EventTypedParameterWithMultiplicity__Group_1__0 : rule__EventTypedParameterWithMultiplicity__Group_1__0__Impl rule__EventTypedParameterWithMultiplicity__Group_1__1 ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9014:1: ( rule__EventWithMultiplicity__Group_1__0__Impl rule__EventWithMultiplicity__Group_1__1 )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9015:2: rule__EventWithMultiplicity__Group_1__0__Impl rule__EventWithMultiplicity__Group_1__1
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9014:1: ( rule__EventTypedParameterWithMultiplicity__Group_1__0__Impl rule__EventTypedParameterWithMultiplicity__Group_1__1 )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9015:2: rule__EventTypedParameterWithMultiplicity__Group_1__0__Impl rule__EventTypedParameterWithMultiplicity__Group_1__1
             {
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group_1__0__Impl_in_rule__EventWithMultiplicity__Group_1__018680);
-            rule__EventWithMultiplicity__Group_1__0__Impl();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_1__0__Impl_in_rule__EventTypedParameterWithMultiplicity__Group_1__018680);
+            rule__EventTypedParameterWithMultiplicity__Group_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group_1__1_in_rule__EventWithMultiplicity__Group_1__018683);
-            rule__EventWithMultiplicity__Group_1__1();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_1__1_in_rule__EventTypedParameterWithMultiplicity__Group_1__018683);
+            rule__EventTypedParameterWithMultiplicity__Group_1__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -26883,12 +26883,12 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group_1__0"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group_1__0"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group_1__0__Impl"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9022:1: rule__EventWithMultiplicity__Group_1__0__Impl : ( '(' ) ;
-    public final void rule__EventWithMultiplicity__Group_1__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group_1__0__Impl"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9022:1: rule__EventTypedParameterWithMultiplicity__Group_1__0__Impl : ( '(' ) ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -26900,11 +26900,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
             // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9028:1: '('
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getLeftParenthesisKeyword_1_0()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getLeftParenthesisKeyword_1_0()); 
             }
-            match(input,62,FOLLOW_62_in_rule__EventWithMultiplicity__Group_1__0__Impl18711); if (state.failed) return ;
+            match(input,62,FOLLOW_62_in_rule__EventTypedParameterWithMultiplicity__Group_1__0__Impl18711); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getLeftParenthesisKeyword_1_0()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getLeftParenthesisKeyword_1_0()); 
             }
 
             }
@@ -26924,26 +26924,26 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group_1__0__Impl"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group_1__0__Impl"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group_1__1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9041:1: rule__EventWithMultiplicity__Group_1__1 : rule__EventWithMultiplicity__Group_1__1__Impl rule__EventWithMultiplicity__Group_1__2 ;
-    public final void rule__EventWithMultiplicity__Group_1__1() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group_1__1"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9041:1: rule__EventTypedParameterWithMultiplicity__Group_1__1 : rule__EventTypedParameterWithMultiplicity__Group_1__1__Impl rule__EventTypedParameterWithMultiplicity__Group_1__2 ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9045:1: ( rule__EventWithMultiplicity__Group_1__1__Impl rule__EventWithMultiplicity__Group_1__2 )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9046:2: rule__EventWithMultiplicity__Group_1__1__Impl rule__EventWithMultiplicity__Group_1__2
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9045:1: ( rule__EventTypedParameterWithMultiplicity__Group_1__1__Impl rule__EventTypedParameterWithMultiplicity__Group_1__2 )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9046:2: rule__EventTypedParameterWithMultiplicity__Group_1__1__Impl rule__EventTypedParameterWithMultiplicity__Group_1__2
             {
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group_1__1__Impl_in_rule__EventWithMultiplicity__Group_1__118742);
-            rule__EventWithMultiplicity__Group_1__1__Impl();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_1__1__Impl_in_rule__EventTypedParameterWithMultiplicity__Group_1__118742);
+            rule__EventTypedParameterWithMultiplicity__Group_1__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group_1__2_in_rule__EventWithMultiplicity__Group_1__118745);
-            rule__EventWithMultiplicity__Group_1__2();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_1__2_in_rule__EventTypedParameterWithMultiplicity__Group_1__118745);
+            rule__EventTypedParameterWithMultiplicity__Group_1__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -26962,26 +26962,26 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group_1__1"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group_1__1"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group_1__1__Impl"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9053:1: rule__EventWithMultiplicity__Group_1__1__Impl : ( ( rule__EventWithMultiplicity__ParametersAssignment_1_1 )? ) ;
-    public final void rule__EventWithMultiplicity__Group_1__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group_1__1__Impl"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9053:1: rule__EventTypedParameterWithMultiplicity__Group_1__1__Impl : ( ( rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1 )? ) ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9057:1: ( ( ( rule__EventWithMultiplicity__ParametersAssignment_1_1 )? ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9058:1: ( ( rule__EventWithMultiplicity__ParametersAssignment_1_1 )? )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9057:1: ( ( ( rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1 )? ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9058:1: ( ( rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1 )? )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9058:1: ( ( rule__EventWithMultiplicity__ParametersAssignment_1_1 )? )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9059:1: ( rule__EventWithMultiplicity__ParametersAssignment_1_1 )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9058:1: ( ( rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1 )? )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9059:1: ( rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getParametersAssignment_1_1()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getParametersAssignment_1_1()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9060:1: ( rule__EventWithMultiplicity__ParametersAssignment_1_1 )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9060:1: ( rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1 )?
             int alt68=2;
             int LA68_0 = input.LA(1);
 
@@ -26990,10 +26990,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
             }
             switch (alt68) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9060:2: rule__EventWithMultiplicity__ParametersAssignment_1_1
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9060:2: rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1
                     {
-                    pushFollow(FOLLOW_rule__EventWithMultiplicity__ParametersAssignment_1_1_in_rule__EventWithMultiplicity__Group_1__1__Impl18772);
-                    rule__EventWithMultiplicity__ParametersAssignment_1_1();
+                    pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1_in_rule__EventTypedParameterWithMultiplicity__Group_1__1__Impl18772);
+                    rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -27004,7 +27004,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getParametersAssignment_1_1()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getParametersAssignment_1_1()); 
             }
 
             }
@@ -27024,21 +27024,21 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group_1__1__Impl"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group_1__1__Impl"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group_1__2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9070:1: rule__EventWithMultiplicity__Group_1__2 : rule__EventWithMultiplicity__Group_1__2__Impl ;
-    public final void rule__EventWithMultiplicity__Group_1__2() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group_1__2"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9070:1: rule__EventTypedParameterWithMultiplicity__Group_1__2 : rule__EventTypedParameterWithMultiplicity__Group_1__2__Impl ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9074:1: ( rule__EventWithMultiplicity__Group_1__2__Impl )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9075:2: rule__EventWithMultiplicity__Group_1__2__Impl
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9074:1: ( rule__EventTypedParameterWithMultiplicity__Group_1__2__Impl )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9075:2: rule__EventTypedParameterWithMultiplicity__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group_1__2__Impl_in_rule__EventWithMultiplicity__Group_1__218803);
-            rule__EventWithMultiplicity__Group_1__2__Impl();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_1__2__Impl_in_rule__EventTypedParameterWithMultiplicity__Group_1__218803);
+            rule__EventTypedParameterWithMultiplicity__Group_1__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -27057,12 +27057,12 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group_1__2"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group_1__2"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group_1__2__Impl"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9081:1: rule__EventWithMultiplicity__Group_1__2__Impl : ( ')' ) ;
-    public final void rule__EventWithMultiplicity__Group_1__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group_1__2__Impl"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9081:1: rule__EventTypedParameterWithMultiplicity__Group_1__2__Impl : ( ')' ) ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -27074,11 +27074,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
             // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9087:1: ')'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getRightParenthesisKeyword_1_2()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getRightParenthesisKeyword_1_2()); 
             }
-            match(input,63,FOLLOW_63_in_rule__EventWithMultiplicity__Group_1__2__Impl18831); if (state.failed) return ;
+            match(input,63,FOLLOW_63_in_rule__EventTypedParameterWithMultiplicity__Group_1__2__Impl18831); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getRightParenthesisKeyword_1_2()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getRightParenthesisKeyword_1_2()); 
             }
 
             }
@@ -27098,26 +27098,26 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group_1__2__Impl"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group_1__2__Impl"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group_2__0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9106:1: rule__EventWithMultiplicity__Group_2__0 : rule__EventWithMultiplicity__Group_2__0__Impl rule__EventWithMultiplicity__Group_2__1 ;
-    public final void rule__EventWithMultiplicity__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group_2__0"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9106:1: rule__EventTypedParameterWithMultiplicity__Group_2__0 : rule__EventTypedParameterWithMultiplicity__Group_2__0__Impl rule__EventTypedParameterWithMultiplicity__Group_2__1 ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9110:1: ( rule__EventWithMultiplicity__Group_2__0__Impl rule__EventWithMultiplicity__Group_2__1 )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9111:2: rule__EventWithMultiplicity__Group_2__0__Impl rule__EventWithMultiplicity__Group_2__1
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9110:1: ( rule__EventTypedParameterWithMultiplicity__Group_2__0__Impl rule__EventTypedParameterWithMultiplicity__Group_2__1 )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9111:2: rule__EventTypedParameterWithMultiplicity__Group_2__0__Impl rule__EventTypedParameterWithMultiplicity__Group_2__1
             {
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group_2__0__Impl_in_rule__EventWithMultiplicity__Group_2__018868);
-            rule__EventWithMultiplicity__Group_2__0__Impl();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_2__0__Impl_in_rule__EventTypedParameterWithMultiplicity__Group_2__018868);
+            rule__EventTypedParameterWithMultiplicity__Group_2__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group_2__1_in_rule__EventWithMultiplicity__Group_2__018871);
-            rule__EventWithMultiplicity__Group_2__1();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_2__1_in_rule__EventTypedParameterWithMultiplicity__Group_2__018871);
+            rule__EventTypedParameterWithMultiplicity__Group_2__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -27136,12 +27136,12 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group_2__0"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group_2__0"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group_2__0__Impl"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9118:1: rule__EventWithMultiplicity__Group_2__0__Impl : ( '{' ) ;
-    public final void rule__EventWithMultiplicity__Group_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group_2__0__Impl"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9118:1: rule__EventTypedParameterWithMultiplicity__Group_2__0__Impl : ( '{' ) ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -27153,11 +27153,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
             // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9124:1: '{'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getLeftCurlyBracketKeyword_2_0()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getLeftCurlyBracketKeyword_2_0()); 
             }
-            match(input,56,FOLLOW_56_in_rule__EventWithMultiplicity__Group_2__0__Impl18899); if (state.failed) return ;
+            match(input,56,FOLLOW_56_in_rule__EventTypedParameterWithMultiplicity__Group_2__0__Impl18899); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getLeftCurlyBracketKeyword_2_0()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getLeftCurlyBracketKeyword_2_0()); 
             }
 
             }
@@ -27177,26 +27177,26 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group_2__0__Impl"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group_2__0__Impl"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group_2__1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9137:1: rule__EventWithMultiplicity__Group_2__1 : rule__EventWithMultiplicity__Group_2__1__Impl rule__EventWithMultiplicity__Group_2__2 ;
-    public final void rule__EventWithMultiplicity__Group_2__1() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group_2__1"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9137:1: rule__EventTypedParameterWithMultiplicity__Group_2__1 : rule__EventTypedParameterWithMultiplicity__Group_2__1__Impl rule__EventTypedParameterWithMultiplicity__Group_2__2 ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9141:1: ( rule__EventWithMultiplicity__Group_2__1__Impl rule__EventWithMultiplicity__Group_2__2 )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9142:2: rule__EventWithMultiplicity__Group_2__1__Impl rule__EventWithMultiplicity__Group_2__2
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9141:1: ( rule__EventTypedParameterWithMultiplicity__Group_2__1__Impl rule__EventTypedParameterWithMultiplicity__Group_2__2 )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9142:2: rule__EventTypedParameterWithMultiplicity__Group_2__1__Impl rule__EventTypedParameterWithMultiplicity__Group_2__2
             {
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group_2__1__Impl_in_rule__EventWithMultiplicity__Group_2__118930);
-            rule__EventWithMultiplicity__Group_2__1__Impl();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_2__1__Impl_in_rule__EventTypedParameterWithMultiplicity__Group_2__118930);
+            rule__EventTypedParameterWithMultiplicity__Group_2__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group_2__2_in_rule__EventWithMultiplicity__Group_2__118933);
-            rule__EventWithMultiplicity__Group_2__2();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_2__2_in_rule__EventTypedParameterWithMultiplicity__Group_2__118933);
+            rule__EventTypedParameterWithMultiplicity__Group_2__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -27215,30 +27215,30 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group_2__1"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group_2__1"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group_2__1__Impl"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9149:1: rule__EventWithMultiplicity__Group_2__1__Impl : ( ( rule__EventWithMultiplicity__MultiplicityAssignment_2_1 ) ) ;
-    public final void rule__EventWithMultiplicity__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group_2__1__Impl"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9149:1: rule__EventTypedParameterWithMultiplicity__Group_2__1__Impl : ( ( rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1 ) ) ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9153:1: ( ( ( rule__EventWithMultiplicity__MultiplicityAssignment_2_1 ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9154:1: ( ( rule__EventWithMultiplicity__MultiplicityAssignment_2_1 ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9153:1: ( ( ( rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1 ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9154:1: ( ( rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1 ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9154:1: ( ( rule__EventWithMultiplicity__MultiplicityAssignment_2_1 ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9155:1: ( rule__EventWithMultiplicity__MultiplicityAssignment_2_1 )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9154:1: ( ( rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1 ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9155:1: ( rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getMultiplicityAssignment_2_1()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getMultiplicityAssignment_2_1()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9156:1: ( rule__EventWithMultiplicity__MultiplicityAssignment_2_1 )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9156:2: rule__EventWithMultiplicity__MultiplicityAssignment_2_1
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9156:1: ( rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1 )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9156:2: rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__MultiplicityAssignment_2_1_in_rule__EventWithMultiplicity__Group_2__1__Impl18960);
-            rule__EventWithMultiplicity__MultiplicityAssignment_2_1();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1_in_rule__EventTypedParameterWithMultiplicity__Group_2__1__Impl18960);
+            rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -27246,7 +27246,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getMultiplicityAssignment_2_1()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getMultiplicityAssignment_2_1()); 
             }
 
             }
@@ -27266,21 +27266,21 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group_2__1__Impl"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group_2__1__Impl"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group_2__2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9166:1: rule__EventWithMultiplicity__Group_2__2 : rule__EventWithMultiplicity__Group_2__2__Impl ;
-    public final void rule__EventWithMultiplicity__Group_2__2() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group_2__2"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9166:1: rule__EventTypedParameterWithMultiplicity__Group_2__2 : rule__EventTypedParameterWithMultiplicity__Group_2__2__Impl ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9170:1: ( rule__EventWithMultiplicity__Group_2__2__Impl )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9171:2: rule__EventWithMultiplicity__Group_2__2__Impl
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9170:1: ( rule__EventTypedParameterWithMultiplicity__Group_2__2__Impl )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9171:2: rule__EventTypedParameterWithMultiplicity__Group_2__2__Impl
             {
-            pushFollow(FOLLOW_rule__EventWithMultiplicity__Group_2__2__Impl_in_rule__EventWithMultiplicity__Group_2__218990);
-            rule__EventWithMultiplicity__Group_2__2__Impl();
+            pushFollow(FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_2__2__Impl_in_rule__EventTypedParameterWithMultiplicity__Group_2__218990);
+            rule__EventTypedParameterWithMultiplicity__Group_2__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -27299,12 +27299,12 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group_2__2"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group_2__2"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__Group_2__2__Impl"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9177:1: rule__EventWithMultiplicity__Group_2__2__Impl : ( '}' ) ;
-    public final void rule__EventWithMultiplicity__Group_2__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__Group_2__2__Impl"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9177:1: rule__EventTypedParameterWithMultiplicity__Group_2__2__Impl : ( '}' ) ;
+    public final void rule__EventTypedParameterWithMultiplicity__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -27316,11 +27316,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
             // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:9183:1: '}'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getRightCurlyBracketKeyword_2_2()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getRightCurlyBracketKeyword_2_2()); 
             }
-            match(input,57,FOLLOW_57_in_rule__EventWithMultiplicity__Group_2__2__Impl19018); if (state.failed) return ;
+            match(input,57,FOLLOW_57_in_rule__EventTypedParameterWithMultiplicity__Group_2__2__Impl19018); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getRightCurlyBracketKeyword_2_2()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getRightCurlyBracketKeyword_2_2()); 
             }
 
             }
@@ -27340,7 +27340,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__Group_2__2__Impl"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__Group_2__2__Impl"
 
 
     // $ANTLR start "rule__PatternCallParameterList__Group__0"
@@ -62372,28 +62372,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__FollowsExpression__FirstEventAssignment_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:21939:1: rule__FollowsExpression__FirstEventAssignment_0 : ( ruleEventWithMultiplicity ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:21939:1: rule__FollowsExpression__FirstEventAssignment_0 : ( ruleEventTypedParameterWithMultiplicity ) ;
     public final void rule__FollowsExpression__FirstEventAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:21943:1: ( ( ruleEventWithMultiplicity ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:21944:1: ( ruleEventWithMultiplicity )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:21943:1: ( ( ruleEventTypedParameterWithMultiplicity ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:21944:1: ( ruleEventTypedParameterWithMultiplicity )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:21944:1: ( ruleEventWithMultiplicity )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:21945:1: ruleEventWithMultiplicity
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:21944:1: ( ruleEventTypedParameterWithMultiplicity )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:21945:1: ruleEventTypedParameterWithMultiplicity
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFollowsExpressionAccess().getFirstEventEventWithMultiplicityParserRuleCall_0_0()); 
+               before(grammarAccess.getFollowsExpressionAccess().getFirstEventEventTypedParameterWithMultiplicityParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleEventWithMultiplicity_in_rule__FollowsExpression__FirstEventAssignment_044155);
-            ruleEventWithMultiplicity();
+            pushFollow(FOLLOW_ruleEventTypedParameterWithMultiplicity_in_rule__FollowsExpression__FirstEventAssignment_044155);
+            ruleEventTypedParameterWithMultiplicity();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFollowsExpressionAccess().getFirstEventEventWithMultiplicityParserRuleCall_0_0()); 
+               after(grammarAccess.getFollowsExpressionAccess().getFirstEventEventTypedParameterWithMultiplicityParserRuleCall_0_0()); 
             }
 
             }
@@ -62593,36 +62593,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__BranchExpression__BranchesAssignment_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22014:1: rule__BranchExpression__BranchesAssignment_1 : ( ( RULE_ID ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22014:1: rule__BranchExpression__BranchesAssignment_1 : ( ruleEventTypedParameterWithMultiplicity ) ;
     public final void rule__BranchExpression__BranchesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22018:1: ( ( ( RULE_ID ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22019:1: ( ( RULE_ID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22018:1: ( ( ruleEventTypedParameterWithMultiplicity ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22019:1: ( ruleEventTypedParameterWithMultiplicity )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22019:1: ( ( RULE_ID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22020:1: ( RULE_ID )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterCrossReference_1_0()); 
-            }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22021:1: ( RULE_ID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22022:1: RULE_ID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22019:1: ( ruleEventTypedParameterWithMultiplicity )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22020:1: ruleEventTypedParameterWithMultiplicity
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterIDTerminalRuleCall_1_0_1()); 
+               before(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterWithMultiplicityParserRuleCall_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__BranchExpression__BranchesAssignment_144314); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterIDTerminalRuleCall_1_0_1()); 
-            }
+            pushFollow(FOLLOW_ruleEventTypedParameterWithMultiplicity_in_rule__BranchExpression__BranchesAssignment_144310);
+            ruleEventTypedParameterWithMultiplicity();
 
-            }
-
+            state._fsp--;
+            if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterCrossReference_1_0()); 
+               after(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterWithMultiplicityParserRuleCall_1_0()); 
             }
 
             }
@@ -62646,36 +62638,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__BranchExpression__BranchesAssignment_2_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22033:1: rule__BranchExpression__BranchesAssignment_2_1 : ( ( RULE_ID ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22029:1: rule__BranchExpression__BranchesAssignment_2_1 : ( ruleEventTypedParameterWithMultiplicity ) ;
     public final void rule__BranchExpression__BranchesAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22037:1: ( ( ( RULE_ID ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22038:1: ( ( RULE_ID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22033:1: ( ( ruleEventTypedParameterWithMultiplicity ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22034:1: ( ruleEventTypedParameterWithMultiplicity )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22038:1: ( ( RULE_ID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22039:1: ( RULE_ID )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterCrossReference_2_1_0()); 
-            }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22040:1: ( RULE_ID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22041:1: RULE_ID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22034:1: ( ruleEventTypedParameterWithMultiplicity )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22035:1: ruleEventTypedParameterWithMultiplicity
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterIDTerminalRuleCall_2_1_0_1()); 
+               before(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterWithMultiplicityParserRuleCall_2_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__BranchExpression__BranchesAssignment_2_144353); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterIDTerminalRuleCall_2_1_0_1()); 
-            }
+            pushFollow(FOLLOW_ruleEventTypedParameterWithMultiplicity_in_rule__BranchExpression__BranchesAssignment_2_144341);
+            ruleEventTypedParameterWithMultiplicity();
 
-            }
-
+            state._fsp--;
+            if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterCrossReference_2_1_0()); 
+               after(grammarAccess.getBranchExpressionAccess().getBranchesEventTypedParameterWithMultiplicityParserRuleCall_2_1_0()); 
             }
 
             }
@@ -62698,37 +62682,37 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
     // $ANTLR end "rule__BranchExpression__BranchesAssignment_2_1"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__EventAssignment_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22052:1: rule__EventWithMultiplicity__EventAssignment_0 : ( ( RULE_ID ) ) ;
-    public final void rule__EventWithMultiplicity__EventAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__EventAssignment_0"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22044:1: rule__EventTypedParameterWithMultiplicity__EventAssignment_0 : ( ( RULE_ID ) ) ;
+    public final void rule__EventTypedParameterWithMultiplicity__EventAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22056:1: ( ( ( RULE_ID ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22057:1: ( ( RULE_ID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22048:1: ( ( ( RULE_ID ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22049:1: ( ( RULE_ID ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22057:1: ( ( RULE_ID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22058:1: ( RULE_ID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22049:1: ( ( RULE_ID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22050:1: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getEventEventTypedParameterCrossReference_0_0()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventEventTypedParameterCrossReference_0_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22059:1: ( RULE_ID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22060:1: RULE_ID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22051:1: ( RULE_ID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22052:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getEventEventTypedParameterIDTerminalRuleCall_0_0_1()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventEventTypedParameterIDTerminalRuleCall_0_0_1()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EventWithMultiplicity__EventAssignment_044392); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EventTypedParameterWithMultiplicity__EventAssignment_044376); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getEventEventTypedParameterIDTerminalRuleCall_0_0_1()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventEventTypedParameterIDTerminalRuleCall_0_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getEventEventTypedParameterCrossReference_0_0()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventEventTypedParameterCrossReference_0_0()); 
             }
 
             }
@@ -62748,32 +62732,32 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__EventAssignment_0"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__EventAssignment_0"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__ParametersAssignment_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22071:1: rule__EventWithMultiplicity__ParametersAssignment_1_1 : ( rulePatternCallParameterList ) ;
-    public final void rule__EventWithMultiplicity__ParametersAssignment_1_1() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22063:1: rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1 : ( rulePatternCallParameterList ) ;
+    public final void rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22075:1: ( ( rulePatternCallParameterList ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22076:1: ( rulePatternCallParameterList )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22067:1: ( ( rulePatternCallParameterList ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22068:1: ( rulePatternCallParameterList )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22076:1: ( rulePatternCallParameterList )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22077:1: rulePatternCallParameterList
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22068:1: ( rulePatternCallParameterList )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22069:1: rulePatternCallParameterList
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getParametersPatternCallParameterListParserRuleCall_1_1_0()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getParametersPatternCallParameterListParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_rulePatternCallParameterList_in_rule__EventWithMultiplicity__ParametersAssignment_1_144427);
+            pushFollow(FOLLOW_rulePatternCallParameterList_in_rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_144411);
             rulePatternCallParameterList();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getParametersPatternCallParameterListParserRuleCall_1_1_0()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getParametersPatternCallParameterListParserRuleCall_1_1_0()); 
             }
 
             }
@@ -62793,28 +62777,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__ParametersAssignment_1_1"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1"
 
 
-    // $ANTLR start "rule__EventWithMultiplicity__MultiplicityAssignment_2_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22086:1: rule__EventWithMultiplicity__MultiplicityAssignment_2_1 : ( RULE_INT ) ;
-    public final void rule__EventWithMultiplicity__MultiplicityAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1"
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22078:1: rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1 : ( RULE_INT ) ;
+    public final void rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22090:1: ( ( RULE_INT ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22091:1: ( RULE_INT )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22082:1: ( ( RULE_INT ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22083:1: ( RULE_INT )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22091:1: ( RULE_INT )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22092:1: RULE_INT
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22083:1: ( RULE_INT )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22084:1: RULE_INT
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEventWithMultiplicityAccess().getMultiplicityINTTerminalRuleCall_2_1_0()); 
+               before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getMultiplicityINTTerminalRuleCall_2_1_0()); 
             }
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__EventWithMultiplicity__MultiplicityAssignment_2_144458); if (state.failed) return ;
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_144442); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEventWithMultiplicityAccess().getMultiplicityINTTerminalRuleCall_2_1_0()); 
+               after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getMultiplicityINTTerminalRuleCall_2_1_0()); 
             }
 
             }
@@ -62834,26 +62818,26 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__EventWithMultiplicity__MultiplicityAssignment_2_1"
+    // $ANTLR end "rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1"
 
 
     // $ANTLR start "rule__PatternCallParameterList__ParametersAssignment_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22101:1: rule__PatternCallParameterList__ParametersAssignment_1 : ( rulePatternCallParameter ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22093:1: rule__PatternCallParameterList__ParametersAssignment_1 : ( rulePatternCallParameter ) ;
     public final void rule__PatternCallParameterList__ParametersAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22105:1: ( ( rulePatternCallParameter ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22106:1: ( rulePatternCallParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22097:1: ( ( rulePatternCallParameter ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22098:1: ( rulePatternCallParameter )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22106:1: ( rulePatternCallParameter )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22107:1: rulePatternCallParameter
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22098:1: ( rulePatternCallParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22099:1: rulePatternCallParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPatternCallParameterListAccess().getParametersPatternCallParameterParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_rulePatternCallParameter_in_rule__PatternCallParameterList__ParametersAssignment_144489);
+            pushFollow(FOLLOW_rulePatternCallParameter_in_rule__PatternCallParameterList__ParametersAssignment_144473);
             rulePatternCallParameter();
 
             state._fsp--;
@@ -62883,22 +62867,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__PatternCallParameterList__ParametersAssignment_2_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22116:1: rule__PatternCallParameterList__ParametersAssignment_2_1 : ( rulePatternCallParameter ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22108:1: rule__PatternCallParameterList__ParametersAssignment_2_1 : ( rulePatternCallParameter ) ;
     public final void rule__PatternCallParameterList__ParametersAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22120:1: ( ( rulePatternCallParameter ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22121:1: ( rulePatternCallParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22112:1: ( ( rulePatternCallParameter ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22113:1: ( rulePatternCallParameter )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22121:1: ( rulePatternCallParameter )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22122:1: rulePatternCallParameter
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22113:1: ( rulePatternCallParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22114:1: rulePatternCallParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPatternCallParameterListAccess().getParametersPatternCallParameterParserRuleCall_2_1_0()); 
             }
-            pushFollow(FOLLOW_rulePatternCallParameter_in_rule__PatternCallParameterList__ParametersAssignment_2_144520);
+            pushFollow(FOLLOW_rulePatternCallParameter_in_rule__PatternCallParameterList__ParametersAssignment_2_144504);
             rulePatternCallParameter();
 
             state._fsp--;
@@ -62928,22 +62912,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__PatternCallParameter__NameAssignment_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22131:1: rule__PatternCallParameter__NameAssignment_1 : ( RULE_ID ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22123:1: rule__PatternCallParameter__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__PatternCallParameter__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22135:1: ( ( RULE_ID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22136:1: ( RULE_ID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22127:1: ( ( RULE_ID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22128:1: ( RULE_ID )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22136:1: ( RULE_ID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22137:1: RULE_ID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22128:1: ( RULE_ID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22129:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPatternCallParameterAccess().getNameIDTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__PatternCallParameter__NameAssignment_144551); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__PatternCallParameter__NameAssignment_144535); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPatternCallParameterAccess().getNameIDTerminalRuleCall_1_0()); 
             }
@@ -62969,22 +62953,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__Source__NameAssignment_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22146:1: rule__Source__NameAssignment_1 : ( RULE_ID ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22138:1: rule__Source__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Source__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22150:1: ( ( RULE_ID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22151:1: ( RULE_ID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22142:1: ( ( RULE_ID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22143:1: ( RULE_ID )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22151:1: ( RULE_ID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22152:1: RULE_ID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22143:1: ( RULE_ID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22144:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSourceAccess().getNameIDTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Source__NameAssignment_144582); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Source__NameAssignment_144566); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSourceAccess().getNameIDTerminalRuleCall_1_0()); 
             }
@@ -63010,22 +62994,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__Source__AdapterAssignment_3_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22161:1: rule__Source__AdapterAssignment_3_1 : ( ruleAdapter ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22153:1: rule__Source__AdapterAssignment_3_1 : ( ruleAdapter ) ;
     public final void rule__Source__AdapterAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22165:1: ( ( ruleAdapter ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22166:1: ( ruleAdapter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22157:1: ( ( ruleAdapter ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22158:1: ( ruleAdapter )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22166:1: ( ruleAdapter )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22167:1: ruleAdapter
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22158:1: ( ruleAdapter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22159:1: ruleAdapter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSourceAccess().getAdapterAdapterParserRuleCall_3_1_0()); 
             }
-            pushFollow(FOLLOW_ruleAdapter_in_rule__Source__AdapterAssignment_3_144613);
+            pushFollow(FOLLOW_ruleAdapter_in_rule__Source__AdapterAssignment_3_144597);
             ruleAdapter();
 
             state._fsp--;
@@ -63055,22 +63039,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__Adapter__NameAssignment"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22176:1: rule__Adapter__NameAssignment : ( ruleQualifiedName ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22168:1: rule__Adapter__NameAssignment : ( ruleQualifiedName ) ;
     public final void rule__Adapter__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22180:1: ( ( ruleQualifiedName ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22181:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22172:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22173:1: ( ruleQualifiedName )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22181:1: ( ruleQualifiedName )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22182:1: ruleQualifiedName
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22173:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22174:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAdapterAccess().getNameQualifiedNameParserRuleCall_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Adapter__NameAssignment44644);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Adapter__NameAssignment44628);
             ruleQualifiedName();
 
             state._fsp--;
@@ -63100,28 +63084,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XAssignment__FeatureAssignment_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22191:1: rule__XAssignment__FeatureAssignment_0_1 : ( ( ruleFeatureCallID ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22183:1: rule__XAssignment__FeatureAssignment_0_1 : ( ( ruleFeatureCallID ) ) ;
     public final void rule__XAssignment__FeatureAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22195:1: ( ( ( ruleFeatureCallID ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22196:1: ( ( ruleFeatureCallID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22187:1: ( ( ( ruleFeatureCallID ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22188:1: ( ( ruleFeatureCallID ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22196:1: ( ( ruleFeatureCallID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22197:1: ( ruleFeatureCallID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22188:1: ( ( ruleFeatureCallID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22189:1: ( ruleFeatureCallID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAssignmentAccess().getFeatureJvmIdentifiableElementCrossReference_0_1_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22198:1: ( ruleFeatureCallID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22199:1: ruleFeatureCallID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22190:1: ( ruleFeatureCallID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22191:1: ruleFeatureCallID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAssignmentAccess().getFeatureJvmIdentifiableElementFeatureCallIDParserRuleCall_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleFeatureCallID_in_rule__XAssignment__FeatureAssignment_0_144679);
+            pushFollow(FOLLOW_ruleFeatureCallID_in_rule__XAssignment__FeatureAssignment_0_144663);
             ruleFeatureCallID();
 
             state._fsp--;
@@ -63157,22 +63141,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XAssignment__ValueAssignment_0_3"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22210:1: rule__XAssignment__ValueAssignment_0_3 : ( ruleXAssignment ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22202:1: rule__XAssignment__ValueAssignment_0_3 : ( ruleXAssignment ) ;
     public final void rule__XAssignment__ValueAssignment_0_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22214:1: ( ( ruleXAssignment ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22215:1: ( ruleXAssignment )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22206:1: ( ( ruleXAssignment ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22207:1: ( ruleXAssignment )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22215:1: ( ruleXAssignment )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22216:1: ruleXAssignment
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22207:1: ( ruleXAssignment )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22208:1: ruleXAssignment
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAssignmentAccess().getValueXAssignmentParserRuleCall_0_3_0()); 
             }
-            pushFollow(FOLLOW_ruleXAssignment_in_rule__XAssignment__ValueAssignment_0_344714);
+            pushFollow(FOLLOW_ruleXAssignment_in_rule__XAssignment__ValueAssignment_0_344698);
             ruleXAssignment();
 
             state._fsp--;
@@ -63202,28 +63186,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XAssignment__FeatureAssignment_1_1_0_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22225:1: rule__XAssignment__FeatureAssignment_1_1_0_0_1 : ( ( ruleOpMultiAssign ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22217:1: rule__XAssignment__FeatureAssignment_1_1_0_0_1 : ( ( ruleOpMultiAssign ) ) ;
     public final void rule__XAssignment__FeatureAssignment_1_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22229:1: ( ( ( ruleOpMultiAssign ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22230:1: ( ( ruleOpMultiAssign ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22221:1: ( ( ( ruleOpMultiAssign ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22222:1: ( ( ruleOpMultiAssign ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22230:1: ( ( ruleOpMultiAssign ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22231:1: ( ruleOpMultiAssign )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22222:1: ( ( ruleOpMultiAssign ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22223:1: ( ruleOpMultiAssign )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAssignmentAccess().getFeatureJvmIdentifiableElementCrossReference_1_1_0_0_1_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22232:1: ( ruleOpMultiAssign )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22233:1: ruleOpMultiAssign
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22224:1: ( ruleOpMultiAssign )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22225:1: ruleOpMultiAssign
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAssignmentAccess().getFeatureJvmIdentifiableElementOpMultiAssignParserRuleCall_1_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpMultiAssign_in_rule__XAssignment__FeatureAssignment_1_1_0_0_144749);
+            pushFollow(FOLLOW_ruleOpMultiAssign_in_rule__XAssignment__FeatureAssignment_1_1_0_0_144733);
             ruleOpMultiAssign();
 
             state._fsp--;
@@ -63259,22 +63243,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XAssignment__RightOperandAssignment_1_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22244:1: rule__XAssignment__RightOperandAssignment_1_1_1 : ( ruleXAssignment ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22236:1: rule__XAssignment__RightOperandAssignment_1_1_1 : ( ruleXAssignment ) ;
     public final void rule__XAssignment__RightOperandAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22248:1: ( ( ruleXAssignment ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22249:1: ( ruleXAssignment )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22240:1: ( ( ruleXAssignment ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22241:1: ( ruleXAssignment )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22249:1: ( ruleXAssignment )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22250:1: ruleXAssignment
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22241:1: ( ruleXAssignment )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22242:1: ruleXAssignment
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAssignmentAccess().getRightOperandXAssignmentParserRuleCall_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXAssignment_in_rule__XAssignment__RightOperandAssignment_1_1_144784);
+            pushFollow(FOLLOW_ruleXAssignment_in_rule__XAssignment__RightOperandAssignment_1_1_144768);
             ruleXAssignment();
 
             state._fsp--;
@@ -63304,28 +63288,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XOrExpression__FeatureAssignment_1_0_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22259:1: rule__XOrExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpOr ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22251:1: rule__XOrExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpOr ) ) ;
     public final void rule__XOrExpression__FeatureAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22263:1: ( ( ( ruleOpOr ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22264:1: ( ( ruleOpOr ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22255:1: ( ( ( ruleOpOr ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22256:1: ( ( ruleOpOr ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22264:1: ( ( ruleOpOr ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22265:1: ( ruleOpOr )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22256:1: ( ( ruleOpOr ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22257:1: ( ruleOpOr )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXOrExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_1_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22266:1: ( ruleOpOr )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22267:1: ruleOpOr
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22258:1: ( ruleOpOr )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22259:1: ruleOpOr
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXOrExpressionAccess().getFeatureJvmIdentifiableElementOpOrParserRuleCall_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpOr_in_rule__XOrExpression__FeatureAssignment_1_0_0_144819);
+            pushFollow(FOLLOW_ruleOpOr_in_rule__XOrExpression__FeatureAssignment_1_0_0_144803);
             ruleOpOr();
 
             state._fsp--;
@@ -63361,22 +63345,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XOrExpression__RightOperandAssignment_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22278:1: rule__XOrExpression__RightOperandAssignment_1_1 : ( ruleXAndExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22270:1: rule__XOrExpression__RightOperandAssignment_1_1 : ( ruleXAndExpression ) ;
     public final void rule__XOrExpression__RightOperandAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22282:1: ( ( ruleXAndExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22283:1: ( ruleXAndExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22274:1: ( ( ruleXAndExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22275:1: ( ruleXAndExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22283:1: ( ruleXAndExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22284:1: ruleXAndExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22275:1: ( ruleXAndExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22276:1: ruleXAndExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXOrExpressionAccess().getRightOperandXAndExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXAndExpression_in_rule__XOrExpression__RightOperandAssignment_1_144854);
+            pushFollow(FOLLOW_ruleXAndExpression_in_rule__XOrExpression__RightOperandAssignment_1_144838);
             ruleXAndExpression();
 
             state._fsp--;
@@ -63406,28 +63390,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XAndExpression__FeatureAssignment_1_0_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22293:1: rule__XAndExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpAnd ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22285:1: rule__XAndExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpAnd ) ) ;
     public final void rule__XAndExpression__FeatureAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22297:1: ( ( ( ruleOpAnd ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22298:1: ( ( ruleOpAnd ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22289:1: ( ( ( ruleOpAnd ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22290:1: ( ( ruleOpAnd ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22298:1: ( ( ruleOpAnd ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22299:1: ( ruleOpAnd )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22290:1: ( ( ruleOpAnd ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22291:1: ( ruleOpAnd )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAndExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_1_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22300:1: ( ruleOpAnd )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22301:1: ruleOpAnd
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22292:1: ( ruleOpAnd )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22293:1: ruleOpAnd
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAndExpressionAccess().getFeatureJvmIdentifiableElementOpAndParserRuleCall_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpAnd_in_rule__XAndExpression__FeatureAssignment_1_0_0_144889);
+            pushFollow(FOLLOW_ruleOpAnd_in_rule__XAndExpression__FeatureAssignment_1_0_0_144873);
             ruleOpAnd();
 
             state._fsp--;
@@ -63463,22 +63447,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XAndExpression__RightOperandAssignment_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22312:1: rule__XAndExpression__RightOperandAssignment_1_1 : ( ruleXEqualityExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22304:1: rule__XAndExpression__RightOperandAssignment_1_1 : ( ruleXEqualityExpression ) ;
     public final void rule__XAndExpression__RightOperandAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22316:1: ( ( ruleXEqualityExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22317:1: ( ruleXEqualityExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22308:1: ( ( ruleXEqualityExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22309:1: ( ruleXEqualityExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22317:1: ( ruleXEqualityExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22318:1: ruleXEqualityExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22309:1: ( ruleXEqualityExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22310:1: ruleXEqualityExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAndExpressionAccess().getRightOperandXEqualityExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXEqualityExpression_in_rule__XAndExpression__RightOperandAssignment_1_144924);
+            pushFollow(FOLLOW_ruleXEqualityExpression_in_rule__XAndExpression__RightOperandAssignment_1_144908);
             ruleXEqualityExpression();
 
             state._fsp--;
@@ -63508,28 +63492,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XEqualityExpression__FeatureAssignment_1_0_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22327:1: rule__XEqualityExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpEquality ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22319:1: rule__XEqualityExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpEquality ) ) ;
     public final void rule__XEqualityExpression__FeatureAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22331:1: ( ( ( ruleOpEquality ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22332:1: ( ( ruleOpEquality ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22323:1: ( ( ( ruleOpEquality ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22324:1: ( ( ruleOpEquality ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22332:1: ( ( ruleOpEquality ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22333:1: ( ruleOpEquality )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22324:1: ( ( ruleOpEquality ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22325:1: ( ruleOpEquality )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXEqualityExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_1_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22334:1: ( ruleOpEquality )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22335:1: ruleOpEquality
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22326:1: ( ruleOpEquality )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22327:1: ruleOpEquality
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXEqualityExpressionAccess().getFeatureJvmIdentifiableElementOpEqualityParserRuleCall_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpEquality_in_rule__XEqualityExpression__FeatureAssignment_1_0_0_144959);
+            pushFollow(FOLLOW_ruleOpEquality_in_rule__XEqualityExpression__FeatureAssignment_1_0_0_144943);
             ruleOpEquality();
 
             state._fsp--;
@@ -63565,22 +63549,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XEqualityExpression__RightOperandAssignment_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22346:1: rule__XEqualityExpression__RightOperandAssignment_1_1 : ( ruleXRelationalExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22338:1: rule__XEqualityExpression__RightOperandAssignment_1_1 : ( ruleXRelationalExpression ) ;
     public final void rule__XEqualityExpression__RightOperandAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22350:1: ( ( ruleXRelationalExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22351:1: ( ruleXRelationalExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22342:1: ( ( ruleXRelationalExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22343:1: ( ruleXRelationalExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22351:1: ( ruleXRelationalExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22352:1: ruleXRelationalExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22343:1: ( ruleXRelationalExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22344:1: ruleXRelationalExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXEqualityExpressionAccess().getRightOperandXRelationalExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXRelationalExpression_in_rule__XEqualityExpression__RightOperandAssignment_1_144994);
+            pushFollow(FOLLOW_ruleXRelationalExpression_in_rule__XEqualityExpression__RightOperandAssignment_1_144978);
             ruleXRelationalExpression();
 
             state._fsp--;
@@ -63610,22 +63594,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XRelationalExpression__TypeAssignment_1_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22361:1: rule__XRelationalExpression__TypeAssignment_1_0_1 : ( ruleJvmTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22353:1: rule__XRelationalExpression__TypeAssignment_1_0_1 : ( ruleJvmTypeReference ) ;
     public final void rule__XRelationalExpression__TypeAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22365:1: ( ( ruleJvmTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22366:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22357:1: ( ( ruleJvmTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22358:1: ( ruleJvmTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22366:1: ( ruleJvmTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22367:1: ruleJvmTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22358:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22359:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXRelationalExpressionAccess().getTypeJvmTypeReferenceParserRuleCall_1_0_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XRelationalExpression__TypeAssignment_1_0_145025);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XRelationalExpression__TypeAssignment_1_0_145009);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -63655,28 +63639,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XRelationalExpression__FeatureAssignment_1_1_0_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22376:1: rule__XRelationalExpression__FeatureAssignment_1_1_0_0_1 : ( ( ruleOpCompare ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22368:1: rule__XRelationalExpression__FeatureAssignment_1_1_0_0_1 : ( ( ruleOpCompare ) ) ;
     public final void rule__XRelationalExpression__FeatureAssignment_1_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22380:1: ( ( ( ruleOpCompare ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22381:1: ( ( ruleOpCompare ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22372:1: ( ( ( ruleOpCompare ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22373:1: ( ( ruleOpCompare ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22381:1: ( ( ruleOpCompare ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22382:1: ( ruleOpCompare )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22373:1: ( ( ruleOpCompare ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22374:1: ( ruleOpCompare )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXRelationalExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_1_0_0_1_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22383:1: ( ruleOpCompare )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22384:1: ruleOpCompare
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22375:1: ( ruleOpCompare )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22376:1: ruleOpCompare
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXRelationalExpressionAccess().getFeatureJvmIdentifiableElementOpCompareParserRuleCall_1_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpCompare_in_rule__XRelationalExpression__FeatureAssignment_1_1_0_0_145060);
+            pushFollow(FOLLOW_ruleOpCompare_in_rule__XRelationalExpression__FeatureAssignment_1_1_0_0_145044);
             ruleOpCompare();
 
             state._fsp--;
@@ -63712,22 +63696,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XRelationalExpression__RightOperandAssignment_1_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22395:1: rule__XRelationalExpression__RightOperandAssignment_1_1_1 : ( ruleXOtherOperatorExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22387:1: rule__XRelationalExpression__RightOperandAssignment_1_1_1 : ( ruleXOtherOperatorExpression ) ;
     public final void rule__XRelationalExpression__RightOperandAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22399:1: ( ( ruleXOtherOperatorExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22400:1: ( ruleXOtherOperatorExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22391:1: ( ( ruleXOtherOperatorExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22392:1: ( ruleXOtherOperatorExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22400:1: ( ruleXOtherOperatorExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22401:1: ruleXOtherOperatorExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22392:1: ( ruleXOtherOperatorExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22393:1: ruleXOtherOperatorExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXRelationalExpressionAccess().getRightOperandXOtherOperatorExpressionParserRuleCall_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXOtherOperatorExpression_in_rule__XRelationalExpression__RightOperandAssignment_1_1_145095);
+            pushFollow(FOLLOW_ruleXOtherOperatorExpression_in_rule__XRelationalExpression__RightOperandAssignment_1_1_145079);
             ruleXOtherOperatorExpression();
 
             state._fsp--;
@@ -63757,28 +63741,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22410:1: rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpOther ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22402:1: rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpOther ) ) ;
     public final void rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22414:1: ( ( ( ruleOpOther ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22415:1: ( ( ruleOpOther ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22406:1: ( ( ( ruleOpOther ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22407:1: ( ( ruleOpOther ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22415:1: ( ( ruleOpOther ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22416:1: ( ruleOpOther )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22407:1: ( ( ruleOpOther ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22408:1: ( ruleOpOther )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXOtherOperatorExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_1_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22417:1: ( ruleOpOther )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22418:1: ruleOpOther
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22409:1: ( ruleOpOther )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22410:1: ruleOpOther
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXOtherOperatorExpressionAccess().getFeatureJvmIdentifiableElementOpOtherParserRuleCall_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpOther_in_rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_145130);
+            pushFollow(FOLLOW_ruleOpOther_in_rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_145114);
             ruleOpOther();
 
             state._fsp--;
@@ -63814,22 +63798,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XOtherOperatorExpression__RightOperandAssignment_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22429:1: rule__XOtherOperatorExpression__RightOperandAssignment_1_1 : ( ruleXAdditiveExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22421:1: rule__XOtherOperatorExpression__RightOperandAssignment_1_1 : ( ruleXAdditiveExpression ) ;
     public final void rule__XOtherOperatorExpression__RightOperandAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22433:1: ( ( ruleXAdditiveExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22434:1: ( ruleXAdditiveExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22425:1: ( ( ruleXAdditiveExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22426:1: ( ruleXAdditiveExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22434:1: ( ruleXAdditiveExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22435:1: ruleXAdditiveExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22426:1: ( ruleXAdditiveExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22427:1: ruleXAdditiveExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXOtherOperatorExpressionAccess().getRightOperandXAdditiveExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXAdditiveExpression_in_rule__XOtherOperatorExpression__RightOperandAssignment_1_145165);
+            pushFollow(FOLLOW_ruleXAdditiveExpression_in_rule__XOtherOperatorExpression__RightOperandAssignment_1_145149);
             ruleXAdditiveExpression();
 
             state._fsp--;
@@ -63859,28 +63843,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XAdditiveExpression__FeatureAssignment_1_0_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22444:1: rule__XAdditiveExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpAdd ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22436:1: rule__XAdditiveExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpAdd ) ) ;
     public final void rule__XAdditiveExpression__FeatureAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22448:1: ( ( ( ruleOpAdd ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22449:1: ( ( ruleOpAdd ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22440:1: ( ( ( ruleOpAdd ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22441:1: ( ( ruleOpAdd ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22449:1: ( ( ruleOpAdd ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22450:1: ( ruleOpAdd )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22441:1: ( ( ruleOpAdd ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22442:1: ( ruleOpAdd )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAdditiveExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_1_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22451:1: ( ruleOpAdd )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22452:1: ruleOpAdd
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22443:1: ( ruleOpAdd )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22444:1: ruleOpAdd
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAdditiveExpressionAccess().getFeatureJvmIdentifiableElementOpAddParserRuleCall_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpAdd_in_rule__XAdditiveExpression__FeatureAssignment_1_0_0_145200);
+            pushFollow(FOLLOW_ruleOpAdd_in_rule__XAdditiveExpression__FeatureAssignment_1_0_0_145184);
             ruleOpAdd();
 
             state._fsp--;
@@ -63916,22 +63900,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XAdditiveExpression__RightOperandAssignment_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22463:1: rule__XAdditiveExpression__RightOperandAssignment_1_1 : ( ruleXMultiplicativeExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22455:1: rule__XAdditiveExpression__RightOperandAssignment_1_1 : ( ruleXMultiplicativeExpression ) ;
     public final void rule__XAdditiveExpression__RightOperandAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22467:1: ( ( ruleXMultiplicativeExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22468:1: ( ruleXMultiplicativeExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22459:1: ( ( ruleXMultiplicativeExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22460:1: ( ruleXMultiplicativeExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22468:1: ( ruleXMultiplicativeExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22469:1: ruleXMultiplicativeExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22460:1: ( ruleXMultiplicativeExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22461:1: ruleXMultiplicativeExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAdditiveExpressionAccess().getRightOperandXMultiplicativeExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXMultiplicativeExpression_in_rule__XAdditiveExpression__RightOperandAssignment_1_145235);
+            pushFollow(FOLLOW_ruleXMultiplicativeExpression_in_rule__XAdditiveExpression__RightOperandAssignment_1_145219);
             ruleXMultiplicativeExpression();
 
             state._fsp--;
@@ -63961,28 +63945,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22478:1: rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpMulti ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22470:1: rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpMulti ) ) ;
     public final void rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22482:1: ( ( ( ruleOpMulti ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22483:1: ( ( ruleOpMulti ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22474:1: ( ( ( ruleOpMulti ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22475:1: ( ( ruleOpMulti ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22483:1: ( ( ruleOpMulti ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22484:1: ( ruleOpMulti )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22475:1: ( ( ruleOpMulti ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22476:1: ( ruleOpMulti )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMultiplicativeExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_1_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22485:1: ( ruleOpMulti )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22486:1: ruleOpMulti
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22477:1: ( ruleOpMulti )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22478:1: ruleOpMulti
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMultiplicativeExpressionAccess().getFeatureJvmIdentifiableElementOpMultiParserRuleCall_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpMulti_in_rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_145270);
+            pushFollow(FOLLOW_ruleOpMulti_in_rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_145254);
             ruleOpMulti();
 
             state._fsp--;
@@ -64018,22 +64002,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMultiplicativeExpression__RightOperandAssignment_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22497:1: rule__XMultiplicativeExpression__RightOperandAssignment_1_1 : ( ruleXUnaryOperation ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22489:1: rule__XMultiplicativeExpression__RightOperandAssignment_1_1 : ( ruleXUnaryOperation ) ;
     public final void rule__XMultiplicativeExpression__RightOperandAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22501:1: ( ( ruleXUnaryOperation ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22502:1: ( ruleXUnaryOperation )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22493:1: ( ( ruleXUnaryOperation ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22494:1: ( ruleXUnaryOperation )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22502:1: ( ruleXUnaryOperation )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22503:1: ruleXUnaryOperation
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22494:1: ( ruleXUnaryOperation )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22495:1: ruleXUnaryOperation
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMultiplicativeExpressionAccess().getRightOperandXUnaryOperationParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXUnaryOperation_in_rule__XMultiplicativeExpression__RightOperandAssignment_1_145305);
+            pushFollow(FOLLOW_ruleXUnaryOperation_in_rule__XMultiplicativeExpression__RightOperandAssignment_1_145289);
             ruleXUnaryOperation();
 
             state._fsp--;
@@ -64063,28 +64047,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XUnaryOperation__FeatureAssignment_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22512:1: rule__XUnaryOperation__FeatureAssignment_0_1 : ( ( ruleOpUnary ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22504:1: rule__XUnaryOperation__FeatureAssignment_0_1 : ( ( ruleOpUnary ) ) ;
     public final void rule__XUnaryOperation__FeatureAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22516:1: ( ( ( ruleOpUnary ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22517:1: ( ( ruleOpUnary ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22508:1: ( ( ( ruleOpUnary ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22509:1: ( ( ruleOpUnary ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22517:1: ( ( ruleOpUnary ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22518:1: ( ruleOpUnary )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22509:1: ( ( ruleOpUnary ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22510:1: ( ruleOpUnary )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXUnaryOperationAccess().getFeatureJvmIdentifiableElementCrossReference_0_1_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22519:1: ( ruleOpUnary )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22520:1: ruleOpUnary
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22511:1: ( ruleOpUnary )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22512:1: ruleOpUnary
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXUnaryOperationAccess().getFeatureJvmIdentifiableElementOpUnaryParserRuleCall_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpUnary_in_rule__XUnaryOperation__FeatureAssignment_0_145340);
+            pushFollow(FOLLOW_ruleOpUnary_in_rule__XUnaryOperation__FeatureAssignment_0_145324);
             ruleOpUnary();
 
             state._fsp--;
@@ -64120,22 +64104,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XUnaryOperation__OperandAssignment_0_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22531:1: rule__XUnaryOperation__OperandAssignment_0_2 : ( ruleXUnaryOperation ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22523:1: rule__XUnaryOperation__OperandAssignment_0_2 : ( ruleXUnaryOperation ) ;
     public final void rule__XUnaryOperation__OperandAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22535:1: ( ( ruleXUnaryOperation ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22536:1: ( ruleXUnaryOperation )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22527:1: ( ( ruleXUnaryOperation ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22528:1: ( ruleXUnaryOperation )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22536:1: ( ruleXUnaryOperation )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22537:1: ruleXUnaryOperation
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22528:1: ( ruleXUnaryOperation )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22529:1: ruleXUnaryOperation
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXUnaryOperationAccess().getOperandXUnaryOperationParserRuleCall_0_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXUnaryOperation_in_rule__XUnaryOperation__OperandAssignment_0_245375);
+            pushFollow(FOLLOW_ruleXUnaryOperation_in_rule__XUnaryOperation__OperandAssignment_0_245359);
             ruleXUnaryOperation();
 
             state._fsp--;
@@ -64165,22 +64149,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XCastedExpression__TypeAssignment_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22546:1: rule__XCastedExpression__TypeAssignment_1_1 : ( ruleJvmTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22538:1: rule__XCastedExpression__TypeAssignment_1_1 : ( ruleJvmTypeReference ) ;
     public final void rule__XCastedExpression__TypeAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22550:1: ( ( ruleJvmTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22551:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22542:1: ( ( ruleJvmTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22543:1: ( ruleJvmTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22551:1: ( ruleJvmTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22552:1: ruleJvmTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22543:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22544:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXCastedExpressionAccess().getTypeJvmTypeReferenceParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XCastedExpression__TypeAssignment_1_145406);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XCastedExpression__TypeAssignment_1_145390);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -64210,28 +64194,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMemberFeatureCall__ExplicitStaticAssignment_1_0_0_0_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22561:1: rule__XMemberFeatureCall__ExplicitStaticAssignment_1_0_0_0_1_1 : ( ( '::' ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22553:1: rule__XMemberFeatureCall__ExplicitStaticAssignment_1_0_0_0_1_1 : ( ( '::' ) ) ;
     public final void rule__XMemberFeatureCall__ExplicitStaticAssignment_1_0_0_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22565:1: ( ( ( '::' ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22566:1: ( ( '::' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22557:1: ( ( ( '::' ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22558:1: ( ( '::' ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22566:1: ( ( '::' ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22567:1: ( '::' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXMemberFeatureCallAccess().getExplicitStaticColonColonKeyword_1_0_0_0_1_1_0()); 
-            }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22568:1: ( '::' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22569:1: '::'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22558:1: ( ( '::' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22559:1: ( '::' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getExplicitStaticColonColonKeyword_1_0_0_0_1_1_0()); 
             }
-            match(input,108,FOLLOW_108_in_rule__XMemberFeatureCall__ExplicitStaticAssignment_1_0_0_0_1_145442); if (state.failed) return ;
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22560:1: ( '::' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22561:1: '::'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXMemberFeatureCallAccess().getExplicitStaticColonColonKeyword_1_0_0_0_1_1_0()); 
+            }
+            match(input,108,FOLLOW_108_in_rule__XMemberFeatureCall__ExplicitStaticAssignment_1_0_0_0_1_145426); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXMemberFeatureCallAccess().getExplicitStaticColonColonKeyword_1_0_0_0_1_1_0()); 
             }
@@ -64263,28 +64247,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22584:1: rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_2 : ( ( ruleFeatureCallID ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22576:1: rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_2 : ( ( ruleFeatureCallID ) ) ;
     public final void rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22588:1: ( ( ( ruleFeatureCallID ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22589:1: ( ( ruleFeatureCallID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22580:1: ( ( ( ruleFeatureCallID ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22581:1: ( ( ruleFeatureCallID ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22589:1: ( ( ruleFeatureCallID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22590:1: ( ruleFeatureCallID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22581:1: ( ( ruleFeatureCallID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22582:1: ( ruleFeatureCallID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_0_2_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22591:1: ( ruleFeatureCallID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22592:1: ruleFeatureCallID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22583:1: ( ruleFeatureCallID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22584:1: ruleFeatureCallID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getFeatureJvmIdentifiableElementFeatureCallIDParserRuleCall_1_0_0_0_2_0_1()); 
             }
-            pushFollow(FOLLOW_ruleFeatureCallID_in_rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_245485);
+            pushFollow(FOLLOW_ruleFeatureCallID_in_rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_245469);
             ruleFeatureCallID();
 
             state._fsp--;
@@ -64320,22 +64304,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMemberFeatureCall__ValueAssignment_1_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22603:1: rule__XMemberFeatureCall__ValueAssignment_1_0_1 : ( ruleXAssignment ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22595:1: rule__XMemberFeatureCall__ValueAssignment_1_0_1 : ( ruleXAssignment ) ;
     public final void rule__XMemberFeatureCall__ValueAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22607:1: ( ( ruleXAssignment ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22608:1: ( ruleXAssignment )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22599:1: ( ( ruleXAssignment ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22600:1: ( ruleXAssignment )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22608:1: ( ruleXAssignment )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22609:1: ruleXAssignment
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22600:1: ( ruleXAssignment )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22601:1: ruleXAssignment
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getValueXAssignmentParserRuleCall_1_0_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXAssignment_in_rule__XMemberFeatureCall__ValueAssignment_1_0_145520);
+            pushFollow(FOLLOW_ruleXAssignment_in_rule__XMemberFeatureCall__ValueAssignment_1_0_145504);
             ruleXAssignment();
 
             state._fsp--;
@@ -64365,28 +64349,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22618:1: rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_1 : ( ( '?.' ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22610:1: rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_1 : ( ( '?.' ) ) ;
     public final void rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22622:1: ( ( ( '?.' ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22623:1: ( ( '?.' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22614:1: ( ( ( '?.' ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22615:1: ( ( '?.' ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22623:1: ( ( '?.' ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22624:1: ( '?.' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXMemberFeatureCallAccess().getNullSafeQuestionMarkFullStopKeyword_1_1_0_0_1_1_0()); 
-            }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22625:1: ( '?.' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22626:1: '?.'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22615:1: ( ( '?.' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22616:1: ( '?.' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getNullSafeQuestionMarkFullStopKeyword_1_1_0_0_1_1_0()); 
             }
-            match(input,109,FOLLOW_109_in_rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_145556); if (state.failed) return ;
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22617:1: ( '?.' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22618:1: '?.'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXMemberFeatureCallAccess().getNullSafeQuestionMarkFullStopKeyword_1_1_0_0_1_1_0()); 
+            }
+            match(input,109,FOLLOW_109_in_rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_145540); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXMemberFeatureCallAccess().getNullSafeQuestionMarkFullStopKeyword_1_1_0_0_1_1_0()); 
             }
@@ -64418,28 +64402,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMemberFeatureCall__ExplicitStaticAssignment_1_1_0_0_1_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22641:1: rule__XMemberFeatureCall__ExplicitStaticAssignment_1_1_0_0_1_2 : ( ( '::' ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22633:1: rule__XMemberFeatureCall__ExplicitStaticAssignment_1_1_0_0_1_2 : ( ( '::' ) ) ;
     public final void rule__XMemberFeatureCall__ExplicitStaticAssignment_1_1_0_0_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22645:1: ( ( ( '::' ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22646:1: ( ( '::' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22637:1: ( ( ( '::' ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22638:1: ( ( '::' ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22646:1: ( ( '::' ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22647:1: ( '::' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXMemberFeatureCallAccess().getExplicitStaticColonColonKeyword_1_1_0_0_1_2_0()); 
-            }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22648:1: ( '::' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22649:1: '::'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22638:1: ( ( '::' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22639:1: ( '::' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getExplicitStaticColonColonKeyword_1_1_0_0_1_2_0()); 
             }
-            match(input,108,FOLLOW_108_in_rule__XMemberFeatureCall__ExplicitStaticAssignment_1_1_0_0_1_245600); if (state.failed) return ;
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22640:1: ( '::' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22641:1: '::'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXMemberFeatureCallAccess().getExplicitStaticColonColonKeyword_1_1_0_0_1_2_0()); 
+            }
+            match(input,108,FOLLOW_108_in_rule__XMemberFeatureCall__ExplicitStaticAssignment_1_1_0_0_1_245584); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXMemberFeatureCallAccess().getExplicitStaticColonColonKeyword_1_1_0_0_1_2_0()); 
             }
@@ -64471,22 +64455,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22664:1: rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22656:1: rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22668:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22669:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22660:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22661:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22669:1: ( ruleJvmArgumentTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22670:1: ruleJvmArgumentTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22661:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22662:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_1_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_145639);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_145623);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -64516,22 +64500,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22679:1: rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22671:1: rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22683:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22684:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22675:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22676:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22684:1: ( ruleJvmArgumentTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22685:1: ruleJvmArgumentTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22676:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22677:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_1_1_1_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_145670);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_145654);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -64561,28 +64545,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMemberFeatureCall__FeatureAssignment_1_1_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22694:1: rule__XMemberFeatureCall__FeatureAssignment_1_1_2 : ( ( ruleFeatureCallID ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22686:1: rule__XMemberFeatureCall__FeatureAssignment_1_1_2 : ( ( ruleFeatureCallID ) ) ;
     public final void rule__XMemberFeatureCall__FeatureAssignment_1_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22698:1: ( ( ( ruleFeatureCallID ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22699:1: ( ( ruleFeatureCallID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22690:1: ( ( ( ruleFeatureCallID ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22691:1: ( ( ruleFeatureCallID ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22699:1: ( ( ruleFeatureCallID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22700:1: ( ruleFeatureCallID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22691:1: ( ( ruleFeatureCallID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22692:1: ( ruleFeatureCallID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getFeatureJvmIdentifiableElementCrossReference_1_1_2_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22701:1: ( ruleFeatureCallID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22702:1: ruleFeatureCallID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22693:1: ( ruleFeatureCallID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22694:1: ruleFeatureCallID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getFeatureJvmIdentifiableElementFeatureCallIDParserRuleCall_1_1_2_0_1()); 
             }
-            pushFollow(FOLLOW_ruleFeatureCallID_in_rule__XMemberFeatureCall__FeatureAssignment_1_1_245705);
+            pushFollow(FOLLOW_ruleFeatureCallID_in_rule__XMemberFeatureCall__FeatureAssignment_1_1_245689);
             ruleFeatureCallID();
 
             state._fsp--;
@@ -64618,28 +64602,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22713:1: rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_0 : ( ( '(' ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22705:1: rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_0 : ( ( '(' ) ) ;
     public final void rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22717:1: ( ( ( '(' ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22718:1: ( ( '(' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22709:1: ( ( ( '(' ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22710:1: ( ( '(' ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22718:1: ( ( '(' ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22719:1: ( '(' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXMemberFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_1_1_3_0_0()); 
-            }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22720:1: ( '(' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22721:1: '('
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22710:1: ( ( '(' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22711:1: ( '(' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_1_1_3_0_0()); 
             }
-            match(input,62,FOLLOW_62_in_rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_045745); if (state.failed) return ;
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22712:1: ( '(' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22713:1: '('
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXMemberFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_1_1_3_0_0()); 
+            }
+            match(input,62,FOLLOW_62_in_rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_045729); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXMemberFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_1_1_3_0_0()); 
             }
@@ -64671,22 +64655,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22736:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_0 : ( ruleXShortClosure ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22728:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_0 : ( ruleXShortClosure ) ;
     public final void rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22740:1: ( ( ruleXShortClosure ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22741:1: ( ruleXShortClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22732:1: ( ( ruleXShortClosure ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22733:1: ( ruleXShortClosure )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22741:1: ( ruleXShortClosure )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22742:1: ruleXShortClosure
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22733:1: ( ruleXShortClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22734:1: ruleXShortClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getMemberCallArgumentsXShortClosureParserRuleCall_1_1_3_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXShortClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_045784);
+            pushFollow(FOLLOW_ruleXShortClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_045768);
             ruleXShortClosure();
 
             state._fsp--;
@@ -64716,22 +64700,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22751:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_0 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22743:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_0 : ( ruleXExpression ) ;
     public final void rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22755:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22756:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22747:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22748:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22756:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22757:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22748:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22749:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getMemberCallArgumentsXExpressionParserRuleCall_1_1_3_1_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_045815);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_045799);
             ruleXExpression();
 
             state._fsp--;
@@ -64761,22 +64745,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22766:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_1 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22758:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_1 : ( ruleXExpression ) ;
     public final void rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22770:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22771:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22762:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22763:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22771:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22772:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22763:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22764:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getMemberCallArgumentsXExpressionParserRuleCall_1_1_3_1_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_145846);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_145830);
             ruleXExpression();
 
             state._fsp--;
@@ -64806,22 +64790,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_4"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22781:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_4 : ( ruleXClosure ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22773:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_4 : ( ruleXClosure ) ;
     public final void rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22785:1: ( ( ruleXClosure ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22786:1: ( ruleXClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22777:1: ( ( ruleXClosure ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22778:1: ( ruleXClosure )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22786:1: ( ruleXClosure )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22787:1: ruleXClosure
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22778:1: ( ruleXClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22779:1: ruleXClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getMemberCallArgumentsXClosureParserRuleCall_1_1_4_0()); 
             }
-            pushFollow(FOLLOW_ruleXClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_445877);
+            pushFollow(FOLLOW_ruleXClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_445861);
             ruleXClosure();
 
             state._fsp--;
@@ -64851,22 +64835,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XSetLiteral__ElementsAssignment_3_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22796:1: rule__XSetLiteral__ElementsAssignment_3_0 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22788:1: rule__XSetLiteral__ElementsAssignment_3_0 : ( ruleXExpression ) ;
     public final void rule__XSetLiteral__ElementsAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22800:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22801:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22792:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22793:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22801:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22802:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22793:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22794:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSetLiteralAccess().getElementsXExpressionParserRuleCall_3_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XSetLiteral__ElementsAssignment_3_045908);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XSetLiteral__ElementsAssignment_3_045892);
             ruleXExpression();
 
             state._fsp--;
@@ -64896,22 +64880,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XSetLiteral__ElementsAssignment_3_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22811:1: rule__XSetLiteral__ElementsAssignment_3_1_1 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22803:1: rule__XSetLiteral__ElementsAssignment_3_1_1 : ( ruleXExpression ) ;
     public final void rule__XSetLiteral__ElementsAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22815:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22816:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22807:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22808:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22816:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22817:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22808:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22809:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSetLiteralAccess().getElementsXExpressionParserRuleCall_3_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XSetLiteral__ElementsAssignment_3_1_145939);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XSetLiteral__ElementsAssignment_3_1_145923);
             ruleXExpression();
 
             state._fsp--;
@@ -64941,22 +64925,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XListLiteral__ElementsAssignment_3_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22826:1: rule__XListLiteral__ElementsAssignment_3_0 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22818:1: rule__XListLiteral__ElementsAssignment_3_0 : ( ruleXExpression ) ;
     public final void rule__XListLiteral__ElementsAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22830:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22831:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22822:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22823:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22831:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22832:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22823:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22824:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXListLiteralAccess().getElementsXExpressionParserRuleCall_3_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XListLiteral__ElementsAssignment_3_045970);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XListLiteral__ElementsAssignment_3_045954);
             ruleXExpression();
 
             state._fsp--;
@@ -64986,22 +64970,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XListLiteral__ElementsAssignment_3_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22841:1: rule__XListLiteral__ElementsAssignment_3_1_1 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22833:1: rule__XListLiteral__ElementsAssignment_3_1_1 : ( ruleXExpression ) ;
     public final void rule__XListLiteral__ElementsAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22845:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22846:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22837:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22838:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22846:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22847:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22838:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22839:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXListLiteralAccess().getElementsXExpressionParserRuleCall_3_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XListLiteral__ElementsAssignment_3_1_146001);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XListLiteral__ElementsAssignment_3_1_145985);
             ruleXExpression();
 
             state._fsp--;
@@ -65031,22 +65015,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22856:1: rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_0 : ( ruleJvmFormalParameter ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22848:1: rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_0 : ( ruleJvmFormalParameter ) ;
     public final void rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22860:1: ( ( ruleJvmFormalParameter ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22861:1: ( ruleJvmFormalParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22852:1: ( ( ruleJvmFormalParameter ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22853:1: ( ruleJvmFormalParameter )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22861:1: ( ruleJvmFormalParameter )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22862:1: ruleJvmFormalParameter
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22853:1: ( ruleJvmFormalParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22854:1: ruleJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXClosureAccess().getDeclaredFormalParametersJvmFormalParameterParserRuleCall_1_0_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_046032);
+            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_046016);
             ruleJvmFormalParameter();
 
             state._fsp--;
@@ -65076,22 +65060,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22871:1: rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_1_1 : ( ruleJvmFormalParameter ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22863:1: rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_1_1 : ( ruleJvmFormalParameter ) ;
     public final void rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22875:1: ( ( ruleJvmFormalParameter ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22876:1: ( ruleJvmFormalParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22867:1: ( ( ruleJvmFormalParameter ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22868:1: ( ruleJvmFormalParameter )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22876:1: ( ruleJvmFormalParameter )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22877:1: ruleJvmFormalParameter
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22868:1: ( ruleJvmFormalParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22869:1: ruleJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXClosureAccess().getDeclaredFormalParametersJvmFormalParameterParserRuleCall_1_0_0_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_1_146063);
+            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_1_146047);
             ruleJvmFormalParameter();
 
             state._fsp--;
@@ -65121,28 +65105,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XClosure__ExplicitSyntaxAssignment_1_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22886:1: rule__XClosure__ExplicitSyntaxAssignment_1_0_1 : ( ( '|' ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22878:1: rule__XClosure__ExplicitSyntaxAssignment_1_0_1 : ( ( '|' ) ) ;
     public final void rule__XClosure__ExplicitSyntaxAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22890:1: ( ( ( '|' ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22891:1: ( ( '|' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22882:1: ( ( ( '|' ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22883:1: ( ( '|' ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22891:1: ( ( '|' ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22892:1: ( '|' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXClosureAccess().getExplicitSyntaxVerticalLineKeyword_1_0_1_0()); 
-            }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22893:1: ( '|' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22894:1: '|'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22883:1: ( ( '|' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22884:1: ( '|' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXClosureAccess().getExplicitSyntaxVerticalLineKeyword_1_0_1_0()); 
             }
-            match(input,110,FOLLOW_110_in_rule__XClosure__ExplicitSyntaxAssignment_1_0_146099); if (state.failed) return ;
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22885:1: ( '|' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22886:1: '|'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXClosureAccess().getExplicitSyntaxVerticalLineKeyword_1_0_1_0()); 
+            }
+            match(input,110,FOLLOW_110_in_rule__XClosure__ExplicitSyntaxAssignment_1_0_146083); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXClosureAccess().getExplicitSyntaxVerticalLineKeyword_1_0_1_0()); 
             }
@@ -65174,22 +65158,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XClosure__ExpressionAssignment_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22909:1: rule__XClosure__ExpressionAssignment_2 : ( ruleXExpressionInClosure ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22901:1: rule__XClosure__ExpressionAssignment_2 : ( ruleXExpressionInClosure ) ;
     public final void rule__XClosure__ExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22913:1: ( ( ruleXExpressionInClosure ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22914:1: ( ruleXExpressionInClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22905:1: ( ( ruleXExpressionInClosure ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22906:1: ( ruleXExpressionInClosure )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22914:1: ( ruleXExpressionInClosure )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22915:1: ruleXExpressionInClosure
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22906:1: ( ruleXExpressionInClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22907:1: ruleXExpressionInClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXClosureAccess().getExpressionXExpressionInClosureParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpressionInClosure_in_rule__XClosure__ExpressionAssignment_246138);
+            pushFollow(FOLLOW_ruleXExpressionInClosure_in_rule__XClosure__ExpressionAssignment_246122);
             ruleXExpressionInClosure();
 
             state._fsp--;
@@ -65219,22 +65203,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XExpressionInClosure__ExpressionsAssignment_1_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22924:1: rule__XExpressionInClosure__ExpressionsAssignment_1_0 : ( ruleXExpressionInsideBlock ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22916:1: rule__XExpressionInClosure__ExpressionsAssignment_1_0 : ( ruleXExpressionInsideBlock ) ;
     public final void rule__XExpressionInClosure__ExpressionsAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22928:1: ( ( ruleXExpressionInsideBlock ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22929:1: ( ruleXExpressionInsideBlock )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22920:1: ( ( ruleXExpressionInsideBlock ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22921:1: ( ruleXExpressionInsideBlock )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22929:1: ( ruleXExpressionInsideBlock )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22930:1: ruleXExpressionInsideBlock
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22921:1: ( ruleXExpressionInsideBlock )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22922:1: ruleXExpressionInsideBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpressionInClosureAccess().getExpressionsXExpressionInsideBlockParserRuleCall_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpressionInsideBlock_in_rule__XExpressionInClosure__ExpressionsAssignment_1_046169);
+            pushFollow(FOLLOW_ruleXExpressionInsideBlock_in_rule__XExpressionInClosure__ExpressionsAssignment_1_046153);
             ruleXExpressionInsideBlock();
 
             state._fsp--;
@@ -65264,22 +65248,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22939:1: rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_0 : ( ruleJvmFormalParameter ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22931:1: rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_0 : ( ruleJvmFormalParameter ) ;
     public final void rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22943:1: ( ( ruleJvmFormalParameter ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22944:1: ( ruleJvmFormalParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22935:1: ( ( ruleJvmFormalParameter ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22936:1: ( ruleJvmFormalParameter )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22944:1: ( ruleJvmFormalParameter )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22945:1: ruleJvmFormalParameter
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22936:1: ( ruleJvmFormalParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22937:1: ruleJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXShortClosureAccess().getDeclaredFormalParametersJvmFormalParameterParserRuleCall_0_0_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_046200);
+            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_046184);
             ruleJvmFormalParameter();
 
             state._fsp--;
@@ -65309,22 +65293,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22954:1: rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_1 : ( ruleJvmFormalParameter ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22946:1: rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_1 : ( ruleJvmFormalParameter ) ;
     public final void rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22958:1: ( ( ruleJvmFormalParameter ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22959:1: ( ruleJvmFormalParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22950:1: ( ( ruleJvmFormalParameter ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22951:1: ( ruleJvmFormalParameter )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22959:1: ( ruleJvmFormalParameter )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22960:1: ruleJvmFormalParameter
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22951:1: ( ruleJvmFormalParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22952:1: ruleJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXShortClosureAccess().getDeclaredFormalParametersJvmFormalParameterParserRuleCall_0_0_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_146231);
+            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_146215);
             ruleJvmFormalParameter();
 
             state._fsp--;
@@ -65354,28 +65338,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XShortClosure__ExplicitSyntaxAssignment_0_0_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22969:1: rule__XShortClosure__ExplicitSyntaxAssignment_0_0_2 : ( ( '|' ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22961:1: rule__XShortClosure__ExplicitSyntaxAssignment_0_0_2 : ( ( '|' ) ) ;
     public final void rule__XShortClosure__ExplicitSyntaxAssignment_0_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22973:1: ( ( ( '|' ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22974:1: ( ( '|' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22965:1: ( ( ( '|' ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22966:1: ( ( '|' ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22974:1: ( ( '|' ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22975:1: ( '|' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXShortClosureAccess().getExplicitSyntaxVerticalLineKeyword_0_0_2_0()); 
-            }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22976:1: ( '|' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22977:1: '|'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22966:1: ( ( '|' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22967:1: ( '|' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXShortClosureAccess().getExplicitSyntaxVerticalLineKeyword_0_0_2_0()); 
             }
-            match(input,110,FOLLOW_110_in_rule__XShortClosure__ExplicitSyntaxAssignment_0_0_246267); if (state.failed) return ;
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22968:1: ( '|' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22969:1: '|'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXShortClosureAccess().getExplicitSyntaxVerticalLineKeyword_0_0_2_0()); 
+            }
+            match(input,110,FOLLOW_110_in_rule__XShortClosure__ExplicitSyntaxAssignment_0_0_246251); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXShortClosureAccess().getExplicitSyntaxVerticalLineKeyword_0_0_2_0()); 
             }
@@ -65407,22 +65391,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XShortClosure__ExpressionAssignment_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22992:1: rule__XShortClosure__ExpressionAssignment_1 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22984:1: rule__XShortClosure__ExpressionAssignment_1 : ( ruleXExpression ) ;
     public final void rule__XShortClosure__ExpressionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22996:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22997:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22988:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22989:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22997:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22998:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22989:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22990:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXShortClosureAccess().getExpressionXExpressionParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XShortClosure__ExpressionAssignment_146306);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XShortClosure__ExpressionAssignment_146290);
             ruleXExpression();
 
             state._fsp--;
@@ -65452,22 +65436,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XIfExpression__IfAssignment_3"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23007:1: rule__XIfExpression__IfAssignment_3 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:22999:1: rule__XIfExpression__IfAssignment_3 : ( ruleXExpression ) ;
     public final void rule__XIfExpression__IfAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23011:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23012:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23003:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23004:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23012:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23013:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23004:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23005:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIfExpressionAccess().getIfXExpressionParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__IfAssignment_346337);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__IfAssignment_346321);
             ruleXExpression();
 
             state._fsp--;
@@ -65497,22 +65481,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XIfExpression__ThenAssignment_5"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23022:1: rule__XIfExpression__ThenAssignment_5 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23014:1: rule__XIfExpression__ThenAssignment_5 : ( ruleXExpression ) ;
     public final void rule__XIfExpression__ThenAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23026:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23027:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23018:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23019:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23027:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23028:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23019:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23020:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIfExpressionAccess().getThenXExpressionParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__ThenAssignment_546368);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__ThenAssignment_546352);
             ruleXExpression();
 
             state._fsp--;
@@ -65542,22 +65526,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XIfExpression__ElseAssignment_6_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23037:1: rule__XIfExpression__ElseAssignment_6_1 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23029:1: rule__XIfExpression__ElseAssignment_6_1 : ( ruleXExpression ) ;
     public final void rule__XIfExpression__ElseAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23041:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23042:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23033:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23034:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23042:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23043:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23034:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23035:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIfExpressionAccess().getElseXExpressionParserRuleCall_6_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__ElseAssignment_6_146399);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__ElseAssignment_6_146383);
             ruleXExpression();
 
             state._fsp--;
@@ -65587,22 +65571,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XSwitchExpression__LocalVarNameAssignment_2_0_0_0_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23052:1: rule__XSwitchExpression__LocalVarNameAssignment_2_0_0_0_0 : ( ruleValidID ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23044:1: rule__XSwitchExpression__LocalVarNameAssignment_2_0_0_0_0 : ( ruleValidID ) ;
     public final void rule__XSwitchExpression__LocalVarNameAssignment_2_0_0_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23056:1: ( ( ruleValidID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23057:1: ( ruleValidID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23048:1: ( ( ruleValidID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23049:1: ( ruleValidID )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23057:1: ( ruleValidID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23058:1: ruleValidID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23049:1: ( ruleValidID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23050:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSwitchExpressionAccess().getLocalVarNameValidIDParserRuleCall_2_0_0_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__XSwitchExpression__LocalVarNameAssignment_2_0_0_0_046430);
+            pushFollow(FOLLOW_ruleValidID_in_rule__XSwitchExpression__LocalVarNameAssignment_2_0_0_0_046414);
             ruleValidID();
 
             state._fsp--;
@@ -65632,22 +65616,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XSwitchExpression__SwitchAssignment_2_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23067:1: rule__XSwitchExpression__SwitchAssignment_2_0_1 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23059:1: rule__XSwitchExpression__SwitchAssignment_2_0_1 : ( ruleXExpression ) ;
     public final void rule__XSwitchExpression__SwitchAssignment_2_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23071:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23072:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23063:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23064:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23072:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23073:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23064:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23065:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSwitchExpressionAccess().getSwitchXExpressionParserRuleCall_2_0_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XSwitchExpression__SwitchAssignment_2_0_146461);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XSwitchExpression__SwitchAssignment_2_0_146445);
             ruleXExpression();
 
             state._fsp--;
@@ -65677,22 +65661,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XSwitchExpression__LocalVarNameAssignment_2_1_0_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23082:1: rule__XSwitchExpression__LocalVarNameAssignment_2_1_0_0_1 : ( ruleValidID ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23074:1: rule__XSwitchExpression__LocalVarNameAssignment_2_1_0_0_1 : ( ruleValidID ) ;
     public final void rule__XSwitchExpression__LocalVarNameAssignment_2_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23086:1: ( ( ruleValidID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23087:1: ( ruleValidID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23078:1: ( ( ruleValidID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23079:1: ( ruleValidID )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23087:1: ( ruleValidID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23088:1: ruleValidID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23079:1: ( ruleValidID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23080:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSwitchExpressionAccess().getLocalVarNameValidIDParserRuleCall_2_1_0_0_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__XSwitchExpression__LocalVarNameAssignment_2_1_0_0_146492);
+            pushFollow(FOLLOW_ruleValidID_in_rule__XSwitchExpression__LocalVarNameAssignment_2_1_0_0_146476);
             ruleValidID();
 
             state._fsp--;
@@ -65722,22 +65706,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XSwitchExpression__SwitchAssignment_2_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23097:1: rule__XSwitchExpression__SwitchAssignment_2_1_1 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23089:1: rule__XSwitchExpression__SwitchAssignment_2_1_1 : ( ruleXExpression ) ;
     public final void rule__XSwitchExpression__SwitchAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23101:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23102:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23093:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23094:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23102:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23103:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23094:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23095:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSwitchExpressionAccess().getSwitchXExpressionParserRuleCall_2_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XSwitchExpression__SwitchAssignment_2_1_146523);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XSwitchExpression__SwitchAssignment_2_1_146507);
             ruleXExpression();
 
             state._fsp--;
@@ -65767,22 +65751,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XSwitchExpression__CasesAssignment_4"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23112:1: rule__XSwitchExpression__CasesAssignment_4 : ( ruleXCasePart ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23104:1: rule__XSwitchExpression__CasesAssignment_4 : ( ruleXCasePart ) ;
     public final void rule__XSwitchExpression__CasesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23116:1: ( ( ruleXCasePart ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23117:1: ( ruleXCasePart )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23108:1: ( ( ruleXCasePart ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23109:1: ( ruleXCasePart )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23117:1: ( ruleXCasePart )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23118:1: ruleXCasePart
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23109:1: ( ruleXCasePart )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23110:1: ruleXCasePart
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSwitchExpressionAccess().getCasesXCasePartParserRuleCall_4_0()); 
             }
-            pushFollow(FOLLOW_ruleXCasePart_in_rule__XSwitchExpression__CasesAssignment_446554);
+            pushFollow(FOLLOW_ruleXCasePart_in_rule__XSwitchExpression__CasesAssignment_446538);
             ruleXCasePart();
 
             state._fsp--;
@@ -65812,22 +65796,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XSwitchExpression__DefaultAssignment_5_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23127:1: rule__XSwitchExpression__DefaultAssignment_5_2 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23119:1: rule__XSwitchExpression__DefaultAssignment_5_2 : ( ruleXExpression ) ;
     public final void rule__XSwitchExpression__DefaultAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23131:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23132:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23123:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23124:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23132:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23133:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23124:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23125:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSwitchExpressionAccess().getDefaultXExpressionParserRuleCall_5_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XSwitchExpression__DefaultAssignment_5_246585);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XSwitchExpression__DefaultAssignment_5_246569);
             ruleXExpression();
 
             state._fsp--;
@@ -65857,22 +65841,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XCasePart__TypeGuardAssignment_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23142:1: rule__XCasePart__TypeGuardAssignment_0 : ( ruleJvmTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23134:1: rule__XCasePart__TypeGuardAssignment_0 : ( ruleJvmTypeReference ) ;
     public final void rule__XCasePart__TypeGuardAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23146:1: ( ( ruleJvmTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23147:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23138:1: ( ( ruleJvmTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23139:1: ( ruleJvmTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23147:1: ( ruleJvmTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23148:1: ruleJvmTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23139:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23140:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXCasePartAccess().getTypeGuardJvmTypeReferenceParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XCasePart__TypeGuardAssignment_046616);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XCasePart__TypeGuardAssignment_046600);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -65902,22 +65886,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XCasePart__CaseAssignment_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23157:1: rule__XCasePart__CaseAssignment_1_1 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23149:1: rule__XCasePart__CaseAssignment_1_1 : ( ruleXExpression ) ;
     public final void rule__XCasePart__CaseAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23161:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23162:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23153:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23154:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23162:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23163:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23154:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23155:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXCasePartAccess().getCaseXExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XCasePart__CaseAssignment_1_146647);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XCasePart__CaseAssignment_1_146631);
             ruleXExpression();
 
             state._fsp--;
@@ -65947,22 +65931,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XCasePart__ThenAssignment_3"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23172:1: rule__XCasePart__ThenAssignment_3 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23164:1: rule__XCasePart__ThenAssignment_3 : ( ruleXExpression ) ;
     public final void rule__XCasePart__ThenAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23176:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23177:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23168:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23169:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23177:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23178:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23169:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23170:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXCasePartAccess().getThenXExpressionParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XCasePart__ThenAssignment_346678);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XCasePart__ThenAssignment_346662);
             ruleXExpression();
 
             state._fsp--;
@@ -65992,22 +65976,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XForLoopExpression__DeclaredParamAssignment_3"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23187:1: rule__XForLoopExpression__DeclaredParamAssignment_3 : ( ruleJvmFormalParameter ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23179:1: rule__XForLoopExpression__DeclaredParamAssignment_3 : ( ruleJvmFormalParameter ) ;
     public final void rule__XForLoopExpression__DeclaredParamAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23191:1: ( ( ruleJvmFormalParameter ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23192:1: ( ruleJvmFormalParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23183:1: ( ( ruleJvmFormalParameter ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23184:1: ( ruleJvmFormalParameter )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23192:1: ( ruleJvmFormalParameter )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23193:1: ruleJvmFormalParameter
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23184:1: ( ruleJvmFormalParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23185:1: ruleJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXForLoopExpressionAccess().getDeclaredParamJvmFormalParameterParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XForLoopExpression__DeclaredParamAssignment_346709);
+            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XForLoopExpression__DeclaredParamAssignment_346693);
             ruleJvmFormalParameter();
 
             state._fsp--;
@@ -66037,22 +66021,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XForLoopExpression__ForExpressionAssignment_5"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23202:1: rule__XForLoopExpression__ForExpressionAssignment_5 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23194:1: rule__XForLoopExpression__ForExpressionAssignment_5 : ( ruleXExpression ) ;
     public final void rule__XForLoopExpression__ForExpressionAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23206:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23207:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23198:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23199:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23207:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23208:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23199:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23200:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXForLoopExpressionAccess().getForExpressionXExpressionParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XForLoopExpression__ForExpressionAssignment_546740);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XForLoopExpression__ForExpressionAssignment_546724);
             ruleXExpression();
 
             state._fsp--;
@@ -66082,22 +66066,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XForLoopExpression__EachExpressionAssignment_7"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23217:1: rule__XForLoopExpression__EachExpressionAssignment_7 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23209:1: rule__XForLoopExpression__EachExpressionAssignment_7 : ( ruleXExpression ) ;
     public final void rule__XForLoopExpression__EachExpressionAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23221:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23222:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23213:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23214:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23222:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23223:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23214:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23215:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXForLoopExpressionAccess().getEachExpressionXExpressionParserRuleCall_7_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XForLoopExpression__EachExpressionAssignment_746771);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XForLoopExpression__EachExpressionAssignment_746755);
             ruleXExpression();
 
             state._fsp--;
@@ -66127,22 +66111,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XWhileExpression__PredicateAssignment_3"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23232:1: rule__XWhileExpression__PredicateAssignment_3 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23224:1: rule__XWhileExpression__PredicateAssignment_3 : ( ruleXExpression ) ;
     public final void rule__XWhileExpression__PredicateAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23236:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23237:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23228:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23229:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23237:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23238:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23229:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23230:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXWhileExpressionAccess().getPredicateXExpressionParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XWhileExpression__PredicateAssignment_346802);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XWhileExpression__PredicateAssignment_346786);
             ruleXExpression();
 
             state._fsp--;
@@ -66172,22 +66156,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XWhileExpression__BodyAssignment_5"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23247:1: rule__XWhileExpression__BodyAssignment_5 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23239:1: rule__XWhileExpression__BodyAssignment_5 : ( ruleXExpression ) ;
     public final void rule__XWhileExpression__BodyAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23251:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23252:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23243:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23244:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23252:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23253:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23244:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23245:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXWhileExpressionAccess().getBodyXExpressionParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XWhileExpression__BodyAssignment_546833);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XWhileExpression__BodyAssignment_546817);
             ruleXExpression();
 
             state._fsp--;
@@ -66217,22 +66201,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XDoWhileExpression__BodyAssignment_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23262:1: rule__XDoWhileExpression__BodyAssignment_2 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23254:1: rule__XDoWhileExpression__BodyAssignment_2 : ( ruleXExpression ) ;
     public final void rule__XDoWhileExpression__BodyAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23266:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23267:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23258:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23259:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23267:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23268:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23259:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23260:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXDoWhileExpressionAccess().getBodyXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__BodyAssignment_246864);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__BodyAssignment_246848);
             ruleXExpression();
 
             state._fsp--;
@@ -66262,22 +66246,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XDoWhileExpression__PredicateAssignment_5"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23277:1: rule__XDoWhileExpression__PredicateAssignment_5 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23269:1: rule__XDoWhileExpression__PredicateAssignment_5 : ( ruleXExpression ) ;
     public final void rule__XDoWhileExpression__PredicateAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23281:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23282:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23273:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23274:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23282:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23283:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23274:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23275:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXDoWhileExpressionAccess().getPredicateXExpressionParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__PredicateAssignment_546895);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__PredicateAssignment_546879);
             ruleXExpression();
 
             state._fsp--;
@@ -66307,22 +66291,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XBlockExpression__ExpressionsAssignment_2_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23292:1: rule__XBlockExpression__ExpressionsAssignment_2_0 : ( ruleXExpressionInsideBlock ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23284:1: rule__XBlockExpression__ExpressionsAssignment_2_0 : ( ruleXExpressionInsideBlock ) ;
     public final void rule__XBlockExpression__ExpressionsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23296:1: ( ( ruleXExpressionInsideBlock ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23297:1: ( ruleXExpressionInsideBlock )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23288:1: ( ( ruleXExpressionInsideBlock ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23289:1: ( ruleXExpressionInsideBlock )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23297:1: ( ruleXExpressionInsideBlock )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23298:1: ruleXExpressionInsideBlock
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23289:1: ( ruleXExpressionInsideBlock )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23290:1: ruleXExpressionInsideBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXBlockExpressionAccess().getExpressionsXExpressionInsideBlockParserRuleCall_2_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpressionInsideBlock_in_rule__XBlockExpression__ExpressionsAssignment_2_046926);
+            pushFollow(FOLLOW_ruleXExpressionInsideBlock_in_rule__XBlockExpression__ExpressionsAssignment_2_046910);
             ruleXExpressionInsideBlock();
 
             state._fsp--;
@@ -66352,28 +66336,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XVariableDeclaration__WriteableAssignment_1_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23307:1: rule__XVariableDeclaration__WriteableAssignment_1_0 : ( ( 'var' ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23299:1: rule__XVariableDeclaration__WriteableAssignment_1_0 : ( ( 'var' ) ) ;
     public final void rule__XVariableDeclaration__WriteableAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23311:1: ( ( ( 'var' ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23312:1: ( ( 'var' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23303:1: ( ( ( 'var' ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23304:1: ( ( 'var' ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23312:1: ( ( 'var' ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23313:1: ( 'var' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXVariableDeclarationAccess().getWriteableVarKeyword_1_0_0()); 
-            }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23314:1: ( 'var' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23315:1: 'var'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23304:1: ( ( 'var' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23305:1: ( 'var' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXVariableDeclarationAccess().getWriteableVarKeyword_1_0_0()); 
             }
-            match(input,111,FOLLOW_111_in_rule__XVariableDeclaration__WriteableAssignment_1_046962); if (state.failed) return ;
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23306:1: ( 'var' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23307:1: 'var'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXVariableDeclarationAccess().getWriteableVarKeyword_1_0_0()); 
+            }
+            match(input,111,FOLLOW_111_in_rule__XVariableDeclaration__WriteableAssignment_1_046946); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXVariableDeclarationAccess().getWriteableVarKeyword_1_0_0()); 
             }
@@ -66405,22 +66389,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XVariableDeclaration__TypeAssignment_2_0_0_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23330:1: rule__XVariableDeclaration__TypeAssignment_2_0_0_0 : ( ruleJvmTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23322:1: rule__XVariableDeclaration__TypeAssignment_2_0_0_0 : ( ruleJvmTypeReference ) ;
     public final void rule__XVariableDeclaration__TypeAssignment_2_0_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23334:1: ( ( ruleJvmTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23335:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23326:1: ( ( ruleJvmTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23327:1: ( ruleJvmTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23335:1: ( ruleJvmTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23336:1: ruleJvmTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23327:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23328:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXVariableDeclarationAccess().getTypeJvmTypeReferenceParserRuleCall_2_0_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XVariableDeclaration__TypeAssignment_2_0_0_047001);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XVariableDeclaration__TypeAssignment_2_0_0_046985);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -66450,22 +66434,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XVariableDeclaration__NameAssignment_2_0_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23345:1: rule__XVariableDeclaration__NameAssignment_2_0_0_1 : ( ruleValidID ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23337:1: rule__XVariableDeclaration__NameAssignment_2_0_0_1 : ( ruleValidID ) ;
     public final void rule__XVariableDeclaration__NameAssignment_2_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23349:1: ( ( ruleValidID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23350:1: ( ruleValidID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23341:1: ( ( ruleValidID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23342:1: ( ruleValidID )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23350:1: ( ruleValidID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23351:1: ruleValidID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23342:1: ( ruleValidID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23343:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXVariableDeclarationAccess().getNameValidIDParserRuleCall_2_0_0_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_0_0_147032);
+            pushFollow(FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_0_0_147016);
             ruleValidID();
 
             state._fsp--;
@@ -66495,22 +66479,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XVariableDeclaration__NameAssignment_2_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23360:1: rule__XVariableDeclaration__NameAssignment_2_1 : ( ruleValidID ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23352:1: rule__XVariableDeclaration__NameAssignment_2_1 : ( ruleValidID ) ;
     public final void rule__XVariableDeclaration__NameAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23364:1: ( ( ruleValidID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23365:1: ( ruleValidID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23356:1: ( ( ruleValidID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23357:1: ( ruleValidID )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23365:1: ( ruleValidID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23366:1: ruleValidID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23357:1: ( ruleValidID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23358:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXVariableDeclarationAccess().getNameValidIDParserRuleCall_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_147063);
+            pushFollow(FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_147047);
             ruleValidID();
 
             state._fsp--;
@@ -66540,22 +66524,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XVariableDeclaration__RightAssignment_3_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23375:1: rule__XVariableDeclaration__RightAssignment_3_1 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23367:1: rule__XVariableDeclaration__RightAssignment_3_1 : ( ruleXExpression ) ;
     public final void rule__XVariableDeclaration__RightAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23379:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23380:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23371:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23372:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23380:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23381:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23372:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23373:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXVariableDeclarationAccess().getRightXExpressionParserRuleCall_3_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XVariableDeclaration__RightAssignment_3_147094);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XVariableDeclaration__RightAssignment_3_147078);
             ruleXExpression();
 
             state._fsp--;
@@ -66585,22 +66569,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JvmFormalParameter__ParameterTypeAssignment_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23390:1: rule__JvmFormalParameter__ParameterTypeAssignment_0 : ( ruleJvmTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23382:1: rule__JvmFormalParameter__ParameterTypeAssignment_0 : ( ruleJvmTypeReference ) ;
     public final void rule__JvmFormalParameter__ParameterTypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23394:1: ( ( ruleJvmTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23395:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23386:1: ( ( ruleJvmTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23387:1: ( ruleJvmTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23395:1: ( ruleJvmTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23396:1: ruleJvmTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23387:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23388:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmFormalParameterAccess().getParameterTypeJvmTypeReferenceParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmFormalParameter__ParameterTypeAssignment_047125);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmFormalParameter__ParameterTypeAssignment_047109);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -66630,22 +66614,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JvmFormalParameter__NameAssignment_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23405:1: rule__JvmFormalParameter__NameAssignment_1 : ( ruleValidID ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23397:1: rule__JvmFormalParameter__NameAssignment_1 : ( ruleValidID ) ;
     public final void rule__JvmFormalParameter__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23409:1: ( ( ruleValidID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23410:1: ( ruleValidID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23401:1: ( ( ruleValidID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23402:1: ( ruleValidID )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23410:1: ( ruleValidID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23411:1: ruleValidID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23402:1: ( ruleValidID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23403:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmFormalParameterAccess().getNameValidIDParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__JvmFormalParameter__NameAssignment_147156);
+            pushFollow(FOLLOW_ruleValidID_in_rule__JvmFormalParameter__NameAssignment_147140);
             ruleValidID();
 
             state._fsp--;
@@ -66675,22 +66659,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__FullJvmFormalParameter__ParameterTypeAssignment_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23420:1: rule__FullJvmFormalParameter__ParameterTypeAssignment_0 : ( ruleJvmTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23412:1: rule__FullJvmFormalParameter__ParameterTypeAssignment_0 : ( ruleJvmTypeReference ) ;
     public final void rule__FullJvmFormalParameter__ParameterTypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23424:1: ( ( ruleJvmTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23425:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23416:1: ( ( ruleJvmTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23417:1: ( ruleJvmTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23425:1: ( ruleJvmTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23426:1: ruleJvmTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23417:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23418:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFullJvmFormalParameterAccess().getParameterTypeJvmTypeReferenceParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__FullJvmFormalParameter__ParameterTypeAssignment_047187);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__FullJvmFormalParameter__ParameterTypeAssignment_047171);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -66720,22 +66704,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__FullJvmFormalParameter__NameAssignment_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23435:1: rule__FullJvmFormalParameter__NameAssignment_1 : ( ruleValidID ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23427:1: rule__FullJvmFormalParameter__NameAssignment_1 : ( ruleValidID ) ;
     public final void rule__FullJvmFormalParameter__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23439:1: ( ( ruleValidID ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23440:1: ( ruleValidID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23431:1: ( ( ruleValidID ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23432:1: ( ruleValidID )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23440:1: ( ruleValidID )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23441:1: ruleValidID
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23432:1: ( ruleValidID )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23433:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFullJvmFormalParameterAccess().getNameValidIDParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__FullJvmFormalParameter__NameAssignment_147218);
+            pushFollow(FOLLOW_ruleValidID_in_rule__FullJvmFormalParameter__NameAssignment_147202);
             ruleValidID();
 
             state._fsp--;
@@ -66765,22 +66749,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XFeatureCall__TypeArgumentsAssignment_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23450:1: rule__XFeatureCall__TypeArgumentsAssignment_1_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23442:1: rule__XFeatureCall__TypeArgumentsAssignment_1_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__XFeatureCall__TypeArgumentsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23454:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23455:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23446:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23447:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23455:1: ( ruleJvmArgumentTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23456:1: ruleJvmArgumentTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23447:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23448:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_1_147249);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_1_147233);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -66810,22 +66794,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XFeatureCall__TypeArgumentsAssignment_1_2_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23465:1: rule__XFeatureCall__TypeArgumentsAssignment_1_2_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23457:1: rule__XFeatureCall__TypeArgumentsAssignment_1_2_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__XFeatureCall__TypeArgumentsAssignment_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23469:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23470:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23461:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23462:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23470:1: ( ruleJvmArgumentTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23471:1: ruleJvmArgumentTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23462:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23463:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_1_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_1_2_147280);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_1_2_147264);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -66855,28 +66839,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XFeatureCall__FeatureAssignment_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23480:1: rule__XFeatureCall__FeatureAssignment_2 : ( ( ruleIdOrSuper ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23472:1: rule__XFeatureCall__FeatureAssignment_2 : ( ( ruleIdOrSuper ) ) ;
     public final void rule__XFeatureCall__FeatureAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23484:1: ( ( ( ruleIdOrSuper ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23485:1: ( ( ruleIdOrSuper ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23476:1: ( ( ( ruleIdOrSuper ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23477:1: ( ( ruleIdOrSuper ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23485:1: ( ( ruleIdOrSuper ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23486:1: ( ruleIdOrSuper )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23477:1: ( ( ruleIdOrSuper ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23478:1: ( ruleIdOrSuper )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getFeatureJvmIdentifiableElementCrossReference_2_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23487:1: ( ruleIdOrSuper )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23488:1: ruleIdOrSuper
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23479:1: ( ruleIdOrSuper )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23480:1: ruleIdOrSuper
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getFeatureJvmIdentifiableElementIdOrSuperParserRuleCall_2_0_1()); 
             }
-            pushFollow(FOLLOW_ruleIdOrSuper_in_rule__XFeatureCall__FeatureAssignment_247315);
+            pushFollow(FOLLOW_ruleIdOrSuper_in_rule__XFeatureCall__FeatureAssignment_247299);
             ruleIdOrSuper();
 
             state._fsp--;
@@ -66912,28 +66896,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XFeatureCall__ExplicitOperationCallAssignment_3_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23499:1: rule__XFeatureCall__ExplicitOperationCallAssignment_3_0 : ( ( '(' ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23491:1: rule__XFeatureCall__ExplicitOperationCallAssignment_3_0 : ( ( '(' ) ) ;
     public final void rule__XFeatureCall__ExplicitOperationCallAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23503:1: ( ( ( '(' ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23504:1: ( ( '(' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23495:1: ( ( ( '(' ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23496:1: ( ( '(' ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23504:1: ( ( '(' ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23505:1: ( '(' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_3_0_0()); 
-            }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23506:1: ( '(' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23507:1: '('
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23496:1: ( ( '(' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23497:1: ( '(' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_3_0_0()); 
             }
-            match(input,62,FOLLOW_62_in_rule__XFeatureCall__ExplicitOperationCallAssignment_3_047355); if (state.failed) return ;
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23498:1: ( '(' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23499:1: '('
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_3_0_0()); 
+            }
+            match(input,62,FOLLOW_62_in_rule__XFeatureCall__ExplicitOperationCallAssignment_3_047339); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_3_0_0()); 
             }
@@ -66965,22 +66949,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23522:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_0 : ( ruleXShortClosure ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23514:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_0 : ( ruleXShortClosure ) ;
     public final void rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23526:1: ( ( ruleXShortClosure ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23527:1: ( ruleXShortClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23518:1: ( ( ruleXShortClosure ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23519:1: ( ruleXShortClosure )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23527:1: ( ruleXShortClosure )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23528:1: ruleXShortClosure
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23519:1: ( ruleXShortClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23520:1: ruleXShortClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getFeatureCallArgumentsXShortClosureParserRuleCall_3_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXShortClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_047394);
+            pushFollow(FOLLOW_ruleXShortClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_047378);
             ruleXShortClosure();
 
             state._fsp--;
@@ -67010,22 +66994,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23537:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_0 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23529:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_0 : ( ruleXExpression ) ;
     public final void rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23541:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23542:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23533:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23534:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23542:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23543:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23534:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23535:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getFeatureCallArgumentsXExpressionParserRuleCall_3_1_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_047425);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_047409);
             ruleXExpression();
 
             state._fsp--;
@@ -67055,22 +67039,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23552:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_1_1 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23544:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_1_1 : ( ruleXExpression ) ;
     public final void rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23556:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23557:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23548:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23549:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23557:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23558:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23549:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23550:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getFeatureCallArgumentsXExpressionParserRuleCall_3_1_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_1_147456);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_1_147440);
             ruleXExpression();
 
             state._fsp--;
@@ -67100,22 +67084,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XFeatureCall__FeatureCallArgumentsAssignment_4"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23567:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_4 : ( ruleXClosure ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23559:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_4 : ( ruleXClosure ) ;
     public final void rule__XFeatureCall__FeatureCallArgumentsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23571:1: ( ( ruleXClosure ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23572:1: ( ruleXClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23563:1: ( ( ruleXClosure ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23564:1: ( ruleXClosure )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23572:1: ( ruleXClosure )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23573:1: ruleXClosure
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23564:1: ( ruleXClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23565:1: ruleXClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getFeatureCallArgumentsXClosureParserRuleCall_4_0()); 
             }
-            pushFollow(FOLLOW_ruleXClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_447487);
+            pushFollow(FOLLOW_ruleXClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_447471);
             ruleXClosure();
 
             state._fsp--;
@@ -67145,28 +67129,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XConstructorCall__ConstructorAssignment_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23582:1: rule__XConstructorCall__ConstructorAssignment_2 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23574:1: rule__XConstructorCall__ConstructorAssignment_2 : ( ( ruleQualifiedName ) ) ;
     public final void rule__XConstructorCall__ConstructorAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23586:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23587:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23578:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23579:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23587:1: ( ( ruleQualifiedName ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23588:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23579:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23580:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getConstructorJvmConstructorCrossReference_2_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23589:1: ( ruleQualifiedName )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23590:1: ruleQualifiedName
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23581:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23582:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getConstructorJvmConstructorQualifiedNameParserRuleCall_2_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XConstructorCall__ConstructorAssignment_247522);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XConstructorCall__ConstructorAssignment_247506);
             ruleQualifiedName();
 
             state._fsp--;
@@ -67202,22 +67186,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XConstructorCall__TypeArgumentsAssignment_3_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23601:1: rule__XConstructorCall__TypeArgumentsAssignment_3_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23593:1: rule__XConstructorCall__TypeArgumentsAssignment_3_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__XConstructorCall__TypeArgumentsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23605:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23606:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23597:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23598:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23606:1: ( ruleJvmArgumentTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23607:1: ruleJvmArgumentTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23598:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23599:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_3_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_147557);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_147541);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -67247,22 +67231,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XConstructorCall__TypeArgumentsAssignment_3_2_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23616:1: rule__XConstructorCall__TypeArgumentsAssignment_3_2_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23608:1: rule__XConstructorCall__TypeArgumentsAssignment_3_2_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__XConstructorCall__TypeArgumentsAssignment_3_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23620:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23621:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23612:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23613:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23621:1: ( ruleJvmArgumentTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23622:1: ruleJvmArgumentTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23613:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23614:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_3_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_2_147588);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_2_147572);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -67292,22 +67276,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XConstructorCall__ArgumentsAssignment_4_1_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23631:1: rule__XConstructorCall__ArgumentsAssignment_4_1_0 : ( ruleXShortClosure ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23623:1: rule__XConstructorCall__ArgumentsAssignment_4_1_0 : ( ruleXShortClosure ) ;
     public final void rule__XConstructorCall__ArgumentsAssignment_4_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23635:1: ( ( ruleXShortClosure ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23636:1: ( ruleXShortClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23627:1: ( ( ruleXShortClosure ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23628:1: ( ruleXShortClosure )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23636:1: ( ruleXShortClosure )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23637:1: ruleXShortClosure
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23628:1: ( ruleXShortClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23629:1: ruleXShortClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getArgumentsXShortClosureParserRuleCall_4_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXShortClosure_in_rule__XConstructorCall__ArgumentsAssignment_4_1_047619);
+            pushFollow(FOLLOW_ruleXShortClosure_in_rule__XConstructorCall__ArgumentsAssignment_4_1_047603);
             ruleXShortClosure();
 
             state._fsp--;
@@ -67337,22 +67321,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XConstructorCall__ArgumentsAssignment_4_1_1_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23646:1: rule__XConstructorCall__ArgumentsAssignment_4_1_1_0 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23638:1: rule__XConstructorCall__ArgumentsAssignment_4_1_1_0 : ( ruleXExpression ) ;
     public final void rule__XConstructorCall__ArgumentsAssignment_4_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23650:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23651:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23642:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23643:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23651:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23652:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23643:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23644:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getArgumentsXExpressionParserRuleCall_4_1_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_4_1_1_047650);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_4_1_1_047634);
             ruleXExpression();
 
             state._fsp--;
@@ -67382,22 +67366,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XConstructorCall__ArgumentsAssignment_4_1_1_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23661:1: rule__XConstructorCall__ArgumentsAssignment_4_1_1_1_1 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23653:1: rule__XConstructorCall__ArgumentsAssignment_4_1_1_1_1 : ( ruleXExpression ) ;
     public final void rule__XConstructorCall__ArgumentsAssignment_4_1_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23665:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23666:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23657:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23658:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23666:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23667:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23658:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23659:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getArgumentsXExpressionParserRuleCall_4_1_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_4_1_1_1_147681);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_4_1_1_1_147665);
             ruleXExpression();
 
             state._fsp--;
@@ -67427,22 +67411,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XConstructorCall__ArgumentsAssignment_5"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23676:1: rule__XConstructorCall__ArgumentsAssignment_5 : ( ruleXClosure ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23668:1: rule__XConstructorCall__ArgumentsAssignment_5 : ( ruleXClosure ) ;
     public final void rule__XConstructorCall__ArgumentsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23680:1: ( ( ruleXClosure ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23681:1: ( ruleXClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23672:1: ( ( ruleXClosure ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23673:1: ( ruleXClosure )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23681:1: ( ruleXClosure )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23682:1: ruleXClosure
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23673:1: ( ruleXClosure )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23674:1: ruleXClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getArgumentsXClosureParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleXClosure_in_rule__XConstructorCall__ArgumentsAssignment_547712);
+            pushFollow(FOLLOW_ruleXClosure_in_rule__XConstructorCall__ArgumentsAssignment_547696);
             ruleXClosure();
 
             state._fsp--;
@@ -67472,28 +67456,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XBooleanLiteral__IsTrueAssignment_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23691:1: rule__XBooleanLiteral__IsTrueAssignment_1_1 : ( ( 'true' ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23683:1: rule__XBooleanLiteral__IsTrueAssignment_1_1 : ( ( 'true' ) ) ;
     public final void rule__XBooleanLiteral__IsTrueAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23695:1: ( ( ( 'true' ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23696:1: ( ( 'true' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23687:1: ( ( ( 'true' ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23688:1: ( ( 'true' ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23696:1: ( ( 'true' ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23697:1: ( 'true' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXBooleanLiteralAccess().getIsTrueTrueKeyword_1_1_0()); 
-            }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23698:1: ( 'true' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23699:1: 'true'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23688:1: ( ( 'true' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23689:1: ( 'true' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXBooleanLiteralAccess().getIsTrueTrueKeyword_1_1_0()); 
             }
-            match(input,112,FOLLOW_112_in_rule__XBooleanLiteral__IsTrueAssignment_1_147748); if (state.failed) return ;
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23690:1: ( 'true' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23691:1: 'true'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXBooleanLiteralAccess().getIsTrueTrueKeyword_1_1_0()); 
+            }
+            match(input,112,FOLLOW_112_in_rule__XBooleanLiteral__IsTrueAssignment_1_147732); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXBooleanLiteralAccess().getIsTrueTrueKeyword_1_1_0()); 
             }
@@ -67525,22 +67509,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XNumberLiteral__ValueAssignment_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23714:1: rule__XNumberLiteral__ValueAssignment_1 : ( ruleNumber ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23706:1: rule__XNumberLiteral__ValueAssignment_1 : ( ruleNumber ) ;
     public final void rule__XNumberLiteral__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23718:1: ( ( ruleNumber ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23719:1: ( ruleNumber )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23710:1: ( ( ruleNumber ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23711:1: ( ruleNumber )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23719:1: ( ruleNumber )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23720:1: ruleNumber
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23711:1: ( ruleNumber )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23712:1: ruleNumber
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXNumberLiteralAccess().getValueNumberParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleNumber_in_rule__XNumberLiteral__ValueAssignment_147787);
+            pushFollow(FOLLOW_ruleNumber_in_rule__XNumberLiteral__ValueAssignment_147771);
             ruleNumber();
 
             state._fsp--;
@@ -67570,22 +67554,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XStringLiteral__ValueAssignment_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23729:1: rule__XStringLiteral__ValueAssignment_1 : ( RULE_STRING ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23721:1: rule__XStringLiteral__ValueAssignment_1 : ( RULE_STRING ) ;
     public final void rule__XStringLiteral__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23733:1: ( ( RULE_STRING ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23734:1: ( RULE_STRING )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23725:1: ( ( RULE_STRING ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23726:1: ( RULE_STRING )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23734:1: ( RULE_STRING )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23735:1: RULE_STRING
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23726:1: ( RULE_STRING )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23727:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXStringLiteralAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__XStringLiteral__ValueAssignment_147818); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__XStringLiteral__ValueAssignment_147802); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXStringLiteralAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             }
@@ -67611,28 +67595,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XTypeLiteral__TypeAssignment_3"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23744:1: rule__XTypeLiteral__TypeAssignment_3 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23736:1: rule__XTypeLiteral__TypeAssignment_3 : ( ( ruleQualifiedName ) ) ;
     public final void rule__XTypeLiteral__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23748:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23749:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23740:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23741:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23749:1: ( ( ruleQualifiedName ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23750:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23741:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23742:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTypeLiteralAccess().getTypeJvmTypeCrossReference_3_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23751:1: ( ruleQualifiedName )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23752:1: ruleQualifiedName
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23743:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23744:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTypeLiteralAccess().getTypeJvmTypeQualifiedNameParserRuleCall_3_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XTypeLiteral__TypeAssignment_347853);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XTypeLiteral__TypeAssignment_347837);
             ruleQualifiedName();
 
             state._fsp--;
@@ -67668,22 +67652,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XTypeLiteral__ArrayDimensionsAssignment_4"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23763:1: rule__XTypeLiteral__ArrayDimensionsAssignment_4 : ( ruleArrayBrackets ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23755:1: rule__XTypeLiteral__ArrayDimensionsAssignment_4 : ( ruleArrayBrackets ) ;
     public final void rule__XTypeLiteral__ArrayDimensionsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23767:1: ( ( ruleArrayBrackets ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23768:1: ( ruleArrayBrackets )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23759:1: ( ( ruleArrayBrackets ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23760:1: ( ruleArrayBrackets )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23768:1: ( ruleArrayBrackets )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23769:1: ruleArrayBrackets
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23760:1: ( ruleArrayBrackets )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23761:1: ruleArrayBrackets
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTypeLiteralAccess().getArrayDimensionsArrayBracketsParserRuleCall_4_0()); 
             }
-            pushFollow(FOLLOW_ruleArrayBrackets_in_rule__XTypeLiteral__ArrayDimensionsAssignment_447888);
+            pushFollow(FOLLOW_ruleArrayBrackets_in_rule__XTypeLiteral__ArrayDimensionsAssignment_447872);
             ruleArrayBrackets();
 
             state._fsp--;
@@ -67713,22 +67697,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XThrowExpression__ExpressionAssignment_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23778:1: rule__XThrowExpression__ExpressionAssignment_2 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23770:1: rule__XThrowExpression__ExpressionAssignment_2 : ( ruleXExpression ) ;
     public final void rule__XThrowExpression__ExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23782:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23783:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23774:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23775:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23783:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23784:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23775:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23776:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXThrowExpressionAccess().getExpressionXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XThrowExpression__ExpressionAssignment_247919);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XThrowExpression__ExpressionAssignment_247903);
             ruleXExpression();
 
             state._fsp--;
@@ -67758,22 +67742,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XReturnExpression__ExpressionAssignment_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23793:1: rule__XReturnExpression__ExpressionAssignment_2 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23785:1: rule__XReturnExpression__ExpressionAssignment_2 : ( ruleXExpression ) ;
     public final void rule__XReturnExpression__ExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23797:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23798:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23789:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23790:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23798:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23799:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23790:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23791:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXReturnExpressionAccess().getExpressionXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XReturnExpression__ExpressionAssignment_247950);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XReturnExpression__ExpressionAssignment_247934);
             ruleXExpression();
 
             state._fsp--;
@@ -67803,22 +67787,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XTryCatchFinallyExpression__ExpressionAssignment_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23808:1: rule__XTryCatchFinallyExpression__ExpressionAssignment_2 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23800:1: rule__XTryCatchFinallyExpression__ExpressionAssignment_2 : ( ruleXExpression ) ;
     public final void rule__XTryCatchFinallyExpression__ExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23812:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23813:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23804:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23805:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23813:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23814:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23805:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23806:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTryCatchFinallyExpressionAccess().getExpressionXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__ExpressionAssignment_247981);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__ExpressionAssignment_247965);
             ruleXExpression();
 
             state._fsp--;
@@ -67848,22 +67832,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23823:1: rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_0 : ( ruleXCatchClause ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23815:1: rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_0 : ( ruleXCatchClause ) ;
     public final void rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23827:1: ( ( ruleXCatchClause ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23828:1: ( ruleXCatchClause )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23819:1: ( ( ruleXCatchClause ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23820:1: ( ruleXCatchClause )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23828:1: ( ruleXCatchClause )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23829:1: ruleXCatchClause
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23820:1: ( ruleXCatchClause )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23821:1: ruleXCatchClause
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTryCatchFinallyExpressionAccess().getCatchClausesXCatchClauseParserRuleCall_3_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXCatchClause_in_rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_048012);
+            pushFollow(FOLLOW_ruleXCatchClause_in_rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_047996);
             ruleXCatchClause();
 
             state._fsp--;
@@ -67893,22 +67877,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23838:1: rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_1 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23830:1: rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_1 : ( ruleXExpression ) ;
     public final void rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23842:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23843:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23834:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23835:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23843:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23844:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23835:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23836:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyExpressionXExpressionParserRuleCall_3_0_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_148043);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_148027);
             ruleXExpression();
 
             state._fsp--;
@@ -67938,22 +67922,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23853:1: rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_1 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23845:1: rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_1 : ( ruleXExpression ) ;
     public final void rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23857:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23858:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23849:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23850:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23858:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23859:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23850:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23851:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyExpressionXExpressionParserRuleCall_3_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_148074);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_148058);
             ruleXExpression();
 
             state._fsp--;
@@ -67983,22 +67967,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XCatchClause__DeclaredParamAssignment_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23868:1: rule__XCatchClause__DeclaredParamAssignment_2 : ( ruleFullJvmFormalParameter ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23860:1: rule__XCatchClause__DeclaredParamAssignment_2 : ( ruleFullJvmFormalParameter ) ;
     public final void rule__XCatchClause__DeclaredParamAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23872:1: ( ( ruleFullJvmFormalParameter ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23873:1: ( ruleFullJvmFormalParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23864:1: ( ( ruleFullJvmFormalParameter ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23865:1: ( ruleFullJvmFormalParameter )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23873:1: ( ruleFullJvmFormalParameter )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23874:1: ruleFullJvmFormalParameter
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23865:1: ( ruleFullJvmFormalParameter )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23866:1: ruleFullJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXCatchClauseAccess().getDeclaredParamFullJvmFormalParameterParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleFullJvmFormalParameter_in_rule__XCatchClause__DeclaredParamAssignment_248105);
+            pushFollow(FOLLOW_ruleFullJvmFormalParameter_in_rule__XCatchClause__DeclaredParamAssignment_248089);
             ruleFullJvmFormalParameter();
 
             state._fsp--;
@@ -68028,22 +68012,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XCatchClause__ExpressionAssignment_4"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23883:1: rule__XCatchClause__ExpressionAssignment_4 : ( ruleXExpression ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23875:1: rule__XCatchClause__ExpressionAssignment_4 : ( ruleXExpression ) ;
     public final void rule__XCatchClause__ExpressionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23887:1: ( ( ruleXExpression ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23888:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23879:1: ( ( ruleXExpression ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23880:1: ( ruleXExpression )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23888:1: ( ruleXExpression )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23889:1: ruleXExpression
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23880:1: ( ruleXExpression )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23881:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXCatchClauseAccess().getExpressionXExpressionParserRuleCall_4_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XCatchClause__ExpressionAssignment_448136);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XCatchClause__ExpressionAssignment_448120);
             ruleXExpression();
 
             state._fsp--;
@@ -68073,22 +68057,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23898:1: rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0 : ( ruleJvmTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23890:1: rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0 : ( ruleJvmTypeReference ) ;
     public final void rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23902:1: ( ( ruleJvmTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23903:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23894:1: ( ( ruleJvmTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23895:1: ( ruleJvmTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23903:1: ( ruleJvmTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23904:1: ruleJvmTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23895:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23896:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_048167);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_048151);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -68118,22 +68102,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23913:1: rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1 : ( ruleJvmTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23905:1: rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1 : ( ruleJvmTypeReference ) ;
     public final void rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23917:1: ( ( ruleJvmTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23918:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23909:1: ( ( ruleJvmTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23910:1: ( ruleJvmTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23918:1: ( ruleJvmTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23919:1: ruleJvmTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23910:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23911:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_148198);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_148182);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -68163,22 +68147,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XFunctionTypeRef__ReturnTypeAssignment_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23928:1: rule__XFunctionTypeRef__ReturnTypeAssignment_2 : ( ruleJvmTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23920:1: rule__XFunctionTypeRef__ReturnTypeAssignment_2 : ( ruleJvmTypeReference ) ;
     public final void rule__XFunctionTypeRef__ReturnTypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23932:1: ( ( ruleJvmTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23933:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23924:1: ( ( ruleJvmTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23925:1: ( ruleJvmTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23933:1: ( ruleJvmTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23934:1: ruleJvmTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23925:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23926:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFunctionTypeRefAccess().getReturnTypeJvmTypeReferenceParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ReturnTypeAssignment_248229);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ReturnTypeAssignment_248213);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -68208,28 +68192,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__TypeAssignment_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23943:1: rule__JvmParameterizedTypeReference__TypeAssignment_0 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23935:1: rule__JvmParameterizedTypeReference__TypeAssignment_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__JvmParameterizedTypeReference__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23947:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23948:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23939:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23940:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23948:1: ( ( ruleQualifiedName ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23949:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23940:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23941:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_0_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23950:1: ( ruleQualifiedName )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23951:1: ruleQualifiedName
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23942:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23943:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeQualifiedNameParserRuleCall_0_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__JvmParameterizedTypeReference__TypeAssignment_048264);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__JvmParameterizedTypeReference__TypeAssignment_048248);
             ruleQualifiedName();
 
             state._fsp--;
@@ -68265,22 +68249,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23962:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23954:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23966:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23967:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23958:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23959:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23967:1: ( ruleJvmArgumentTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23968:1: ruleJvmArgumentTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23959:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23960:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_148299);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_148283);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -68310,22 +68294,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23977:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23969:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23981:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23982:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23973:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23974:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23982:1: ( ruleJvmArgumentTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23983:1: ruleJvmArgumentTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23974:1: ( ruleJvmArgumentTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23975:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_148330);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_148314);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -68355,22 +68339,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23992:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0 : ( ruleJvmUpperBound ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23984:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0 : ( ruleJvmUpperBound ) ;
     public final void rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23996:1: ( ( ruleJvmUpperBound ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23997:1: ( ruleJvmUpperBound )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23988:1: ( ( ruleJvmUpperBound ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23989:1: ( ruleJvmUpperBound )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23997:1: ( ruleJvmUpperBound )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23998:1: ruleJvmUpperBound
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23989:1: ( ruleJvmUpperBound )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23990:1: ruleJvmUpperBound
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmUpperBoundParserRuleCall_2_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmUpperBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_048361);
+            pushFollow(FOLLOW_ruleJvmUpperBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_048345);
             ruleJvmUpperBound();
 
             state._fsp--;
@@ -68400,22 +68384,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24007:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1 : ( ruleJvmLowerBound ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:23999:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1 : ( ruleJvmLowerBound ) ;
     public final void rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24011:1: ( ( ruleJvmLowerBound ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24012:1: ( ruleJvmLowerBound )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24003:1: ( ( ruleJvmLowerBound ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24004:1: ( ruleJvmLowerBound )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24012:1: ( ruleJvmLowerBound )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24013:1: ruleJvmLowerBound
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24004:1: ( ruleJvmLowerBound )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24005:1: ruleJvmLowerBound
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmLowerBoundParserRuleCall_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmLowerBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_148392);
+            pushFollow(FOLLOW_ruleJvmLowerBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_148376);
             ruleJvmLowerBound();
 
             state._fsp--;
@@ -68445,22 +68429,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JvmUpperBound__TypeReferenceAssignment_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24022:1: rule__JvmUpperBound__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24014:1: rule__JvmUpperBound__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
     public final void rule__JvmUpperBound__TypeReferenceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24026:1: ( ( ruleJvmTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24027:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24018:1: ( ( ruleJvmTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24019:1: ( ruleJvmTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24027:1: ( ruleJvmTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24028:1: ruleJvmTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24019:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24020:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmUpperBoundAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBound__TypeReferenceAssignment_148423);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBound__TypeReferenceAssignment_148407);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -68490,22 +68474,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JvmUpperBoundAnded__TypeReferenceAssignment_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24037:1: rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24029:1: rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
     public final void rule__JvmUpperBoundAnded__TypeReferenceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24041:1: ( ( ruleJvmTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24042:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24033:1: ( ( ruleJvmTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24034:1: ( ruleJvmTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24042:1: ( ruleJvmTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24043:1: ruleJvmTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24034:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24035:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmUpperBoundAndedAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBoundAnded__TypeReferenceAssignment_148454);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBoundAnded__TypeReferenceAssignment_148438);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -68535,22 +68519,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JvmLowerBound__TypeReferenceAssignment_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24052:1: rule__JvmLowerBound__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24044:1: rule__JvmLowerBound__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
     public final void rule__JvmLowerBound__TypeReferenceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24056:1: ( ( ruleJvmTypeReference ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24057:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24048:1: ( ( ruleJvmTypeReference ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24049:1: ( ruleJvmTypeReference )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24057:1: ( ruleJvmTypeReference )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24058:1: ruleJvmTypeReference
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24049:1: ( ruleJvmTypeReference )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24050:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmLowerBoundAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmLowerBound__TypeReferenceAssignment_148485);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmLowerBound__TypeReferenceAssignment_148469);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -68580,28 +68564,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XImportDeclaration__StaticAssignment_1_0_0"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24072:1: rule__XImportDeclaration__StaticAssignment_1_0_0 : ( ( 'static' ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24064:1: rule__XImportDeclaration__StaticAssignment_1_0_0 : ( ( 'static' ) ) ;
     public final void rule__XImportDeclaration__StaticAssignment_1_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24076:1: ( ( ( 'static' ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24077:1: ( ( 'static' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24068:1: ( ( ( 'static' ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24069:1: ( ( 'static' ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24077:1: ( ( 'static' ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24078:1: ( 'static' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXImportDeclarationAccess().getStaticStaticKeyword_1_0_0_0()); 
-            }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24079:1: ( 'static' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24080:1: 'static'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24069:1: ( ( 'static' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24070:1: ( 'static' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getStaticStaticKeyword_1_0_0_0()); 
             }
-            match(input,48,FOLLOW_48_in_rule__XImportDeclaration__StaticAssignment_1_0_048526); if (state.failed) return ;
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24071:1: ( 'static' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24072:1: 'static'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXImportDeclarationAccess().getStaticStaticKeyword_1_0_0_0()); 
+            }
+            match(input,48,FOLLOW_48_in_rule__XImportDeclaration__StaticAssignment_1_0_048510); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXImportDeclarationAccess().getStaticStaticKeyword_1_0_0_0()); 
             }
@@ -68633,28 +68617,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XImportDeclaration__ExtensionAssignment_1_0_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24095:1: rule__XImportDeclaration__ExtensionAssignment_1_0_1 : ( ( 'extension' ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24087:1: rule__XImportDeclaration__ExtensionAssignment_1_0_1 : ( ( 'extension' ) ) ;
     public final void rule__XImportDeclaration__ExtensionAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24099:1: ( ( ( 'extension' ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24100:1: ( ( 'extension' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24091:1: ( ( ( 'extension' ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24092:1: ( ( 'extension' ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24100:1: ( ( 'extension' ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24101:1: ( 'extension' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXImportDeclarationAccess().getExtensionExtensionKeyword_1_0_1_0()); 
-            }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24102:1: ( 'extension' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24103:1: 'extension'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24092:1: ( ( 'extension' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24093:1: ( 'extension' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getExtensionExtensionKeyword_1_0_1_0()); 
             }
-            match(input,50,FOLLOW_50_in_rule__XImportDeclaration__ExtensionAssignment_1_0_148570); if (state.failed) return ;
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24094:1: ( 'extension' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24095:1: 'extension'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXImportDeclarationAccess().getExtensionExtensionKeyword_1_0_1_0()); 
+            }
+            match(input,50,FOLLOW_50_in_rule__XImportDeclaration__ExtensionAssignment_1_0_148554); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXImportDeclarationAccess().getExtensionExtensionKeyword_1_0_1_0()); 
             }
@@ -68686,28 +68670,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XImportDeclaration__ImportedTypeAssignment_1_0_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24118:1: rule__XImportDeclaration__ImportedTypeAssignment_1_0_2 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24110:1: rule__XImportDeclaration__ImportedTypeAssignment_1_0_2 : ( ( ruleQualifiedName ) ) ;
     public final void rule__XImportDeclaration__ImportedTypeAssignment_1_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24122:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24123:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24114:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24115:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24123:1: ( ( ruleQualifiedName ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24124:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24115:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24116:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeCrossReference_1_0_2_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24125:1: ( ruleQualifiedName )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24126:1: ruleQualifiedName
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24117:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24118:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeQualifiedNameParserRuleCall_1_0_2_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XImportDeclaration__ImportedTypeAssignment_1_0_248613);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XImportDeclaration__ImportedTypeAssignment_1_0_248597);
             ruleQualifiedName();
 
             state._fsp--;
@@ -68743,28 +68727,28 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XImportDeclaration__ImportedTypeAssignment_1_1"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24137:1: rule__XImportDeclaration__ImportedTypeAssignment_1_1 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24129:1: rule__XImportDeclaration__ImportedTypeAssignment_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__XImportDeclaration__ImportedTypeAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24141:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24142:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24133:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24134:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24142:1: ( ( ruleQualifiedName ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24143:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24134:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24135:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeCrossReference_1_1_0()); 
             }
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24144:1: ( ruleQualifiedName )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24145:1: ruleQualifiedName
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24136:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24137:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeQualifiedNameParserRuleCall_1_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XImportDeclaration__ImportedTypeAssignment_1_148652);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XImportDeclaration__ImportedTypeAssignment_1_148636);
             ruleQualifiedName();
 
             state._fsp--;
@@ -68800,22 +68784,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__XImportDeclaration__ImportedNamespaceAssignment_1_2"
-    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24156:1: rule__XImportDeclaration__ImportedNamespaceAssignment_1_2 : ( ruleQualifiedNameWithWildcard ) ;
+    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24148:1: rule__XImportDeclaration__ImportedNamespaceAssignment_1_2 : ( ruleQualifiedNameWithWildcard ) ;
     public final void rule__XImportDeclaration__ImportedNamespaceAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24160:1: ( ( ruleQualifiedNameWithWildcard ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24161:1: ( ruleQualifiedNameWithWildcard )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24152:1: ( ( ruleQualifiedNameWithWildcard ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24153:1: ( ruleQualifiedNameWithWildcard )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24161:1: ( ruleQualifiedNameWithWildcard )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24162:1: ruleQualifiedNameWithWildcard
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24153:1: ( ruleQualifiedNameWithWildcard )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24154:1: ruleQualifiedNameWithWildcard
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_2_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_rule__XImportDeclaration__ImportedNamespaceAssignment_1_248687);
+            pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_rule__XImportDeclaration__ImportedNamespaceAssignment_1_248671);
             ruleQualifiedNameWithWildcard();
 
             state._fsp--;
@@ -70394,23 +70378,23 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
     static final String DFA46_eotS =
         "\7\uffff";
     static final String DFA46_eofS =
-        "\2\uffff\1\4\3\uffff\1\4";
+        "\2\uffff\1\4\2\uffff\1\4\1\uffff";
     static final String DFA46_minS =
-        "\1\4\1\uffff\1\55\1\4\2\uffff\1\55";
+        "\1\4\1\uffff\1\55\1\4\1\uffff\1\55\1\uffff";
     static final String DFA46_maxS =
-        "\1\60\1\uffff\1\131\1\50\2\uffff\1\131";
+        "\1\60\1\uffff\1\131\1\50\1\uffff\1\131\1\uffff";
     static final String DFA46_acceptS =
-        "\1\uffff\1\1\2\uffff\1\2\1\3\1\uffff";
+        "\1\uffff\1\1\2\uffff\1\2\1\uffff\1\3";
     static final String DFA46_specialS =
         "\7\uffff}>";
     static final String[] DFA46_transitionS = {
             "\1\2\53\uffff\1\1",
             "",
             "\1\3\53\uffff\1\4",
-            "\1\6\43\uffff\1\5",
+            "\1\5\43\uffff\1\6",
             "",
-            "",
-            "\1\3\53\uffff\1\4"
+            "\1\3\53\uffff\1\4",
+            ""
     };
 
     static final short[] DFA46_eot = DFA.unpackEncodedString(DFA46_eotS);
@@ -70457,7 +70441,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
     static final String DFA76_acceptS =
         "\1\uffff\1\2\11\uffff\1\1";
     static final String DFA76_specialS =
-        "\2\uffff\1\6\1\4\1\1\1\7\1\3\1\10\1\2\1\5\1\0\1\uffff}>";
+        "\2\uffff\1\10\1\4\1\7\1\3\1\6\1\5\1\1\1\0\1\2\1\uffff}>";
     static final String[] DFA76_transitionS = {
             "\5\1\6\uffff\2\1\1\3\1\uffff\3\1\1\2\3\uffff\5\1\1\4\1\5\1"+
             "\6\1\7\1\10\1\11\1\12\17\1\3\uffff\2\1\4\uffff\2\1\1\uffff\1"+
@@ -70512,10 +70496,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA76_10 = input.LA(1);
+                        int LA76_9 = input.LA(1);
 
                          
-                        int index76_10 = input.index();
+                        int index76_9 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred121_InternalEventPatternLanguage()) ) {s = 11;}
@@ -70523,25 +70507,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index76_10);
+                        input.seek(index76_9);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA76_4 = input.LA(1);
-
-                         
-                        int index76_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred121_InternalEventPatternLanguage()) ) {s = 11;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index76_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA76_8 = input.LA(1);
 
                          
@@ -70556,11 +70525,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
                         input.seek(index76_8);
                         if ( s>=0 ) return s;
                         break;
-                    case 3 : 
-                        int LA76_6 = input.LA(1);
+                    case 2 : 
+                        int LA76_10 = input.LA(1);
 
                          
-                        int index76_6 = input.index();
+                        int index76_10 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred121_InternalEventPatternLanguage()) ) {s = 11;}
@@ -70568,7 +70537,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index76_6);
+                        input.seek(index76_10);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA76_5 = input.LA(1);
+
+                         
+                        int index76_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred121_InternalEventPatternLanguage()) ) {s = 11;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index76_5);
                         if ( s>=0 ) return s;
                         break;
                     case 4 : 
@@ -70587,51 +70571,6 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
                         if ( s>=0 ) return s;
                         break;
                     case 5 : 
-                        int LA76_9 = input.LA(1);
-
-                         
-                        int index76_9 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred121_InternalEventPatternLanguage()) ) {s = 11;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index76_9);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 6 : 
-                        int LA76_2 = input.LA(1);
-
-                         
-                        int index76_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred121_InternalEventPatternLanguage()) ) {s = 11;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index76_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 7 : 
-                        int LA76_5 = input.LA(1);
-
-                         
-                        int index76_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred121_InternalEventPatternLanguage()) ) {s = 11;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index76_5);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 8 : 
                         int LA76_7 = input.LA(1);
 
                          
@@ -70644,6 +70583,51 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
 
                          
                         input.seek(index76_7);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA76_6 = input.LA(1);
+
+                         
+                        int index76_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred121_InternalEventPatternLanguage()) ) {s = 11;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index76_6);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
+                        int LA76_4 = input.LA(1);
+
+                         
+                        int index76_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred121_InternalEventPatternLanguage()) ) {s = 11;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index76_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 8 : 
+                        int LA76_2 = input.LA(1);
+
+                         
+                        int index76_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred121_InternalEventPatternLanguage()) ) {s = 11;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index76_2);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -72701,9 +72685,9 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
     public static final BitSet FOLLOW_ruleBranchExpression_in_entryRuleBranchExpression2228 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBranchExpression2235 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BranchExpression__Group__0_in_ruleBranchExpression2261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventWithMultiplicity_in_entryRuleEventWithMultiplicity2288 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEventWithMultiplicity2295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group__0_in_ruleEventWithMultiplicity2321 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventTypedParameterWithMultiplicity_in_entryRuleEventTypedParameterWithMultiplicity2288 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEventTypedParameterWithMultiplicity2295 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group__0_in_ruleEventTypedParameterWithMultiplicity2321 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePatternCallParameterList_in_entryRulePatternCallParameterList2348 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePatternCallParameterList2355 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PatternCallParameterList__Group__0_in_rulePatternCallParameterList2381 = new BitSet(new long[]{0x0000000000000002L});
@@ -72952,7 +72936,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
     public static final BitSet FOLLOW_ruleFollowsOperatorNoTW_in_rule__FollowsOperator__Alternatives7364 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFollowsOperatorViaTW_in_rule__FollowsOperator__Alternatives7381 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBranchExpression_in_rule__FollowerEventStructure__Alternatives7413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventWithMultiplicity_in_rule__FollowerEventStructure__Alternatives7430 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventTypedParameterWithMultiplicity_in_rule__FollowerEventStructure__Alternatives7430 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XAssignment__Group_0__0_in_rule__XAssignment__Alternatives7462 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XAssignment__Group_1__0_in_rule__XAssignment__Alternatives7480 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_26_in_rule__OpMultiAssign__Alternatives7514 = new BitSet(new long[]{0x0000000000000002L});
@@ -73433,30 +73417,30 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
     public static final BitSet FOLLOW_82_in_rule__BranchExpression__Group_2__0__Impl18403 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BranchExpression__Group_2__1__Impl_in_rule__BranchExpression__Group_2__118434 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BranchExpression__BranchesAssignment_2_1_in_rule__BranchExpression__Group_2__1__Impl18461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group__0__Impl_in_rule__EventWithMultiplicity__Group__018495 = new BitSet(new long[]{0x4100000000000000L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group__1_in_rule__EventWithMultiplicity__Group__018498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__EventAssignment_0_in_rule__EventWithMultiplicity__Group__0__Impl18525 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group__1__Impl_in_rule__EventWithMultiplicity__Group__118555 = new BitSet(new long[]{0x4100000000000000L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group__2_in_rule__EventWithMultiplicity__Group__118558 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group_1__0_in_rule__EventWithMultiplicity__Group__1__Impl18585 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group__2__Impl_in_rule__EventWithMultiplicity__Group__218616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group_2__0_in_rule__EventWithMultiplicity__Group__2__Impl18643 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group_1__0__Impl_in_rule__EventWithMultiplicity__Group_1__018680 = new BitSet(new long[]{0x8000000000000010L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group_1__1_in_rule__EventWithMultiplicity__Group_1__018683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_rule__EventWithMultiplicity__Group_1__0__Impl18711 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group_1__1__Impl_in_rule__EventWithMultiplicity__Group_1__118742 = new BitSet(new long[]{0x8000000000000010L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group_1__2_in_rule__EventWithMultiplicity__Group_1__118745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__ParametersAssignment_1_1_in_rule__EventWithMultiplicity__Group_1__1__Impl18772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group_1__2__Impl_in_rule__EventWithMultiplicity__Group_1__218803 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_rule__EventWithMultiplicity__Group_1__2__Impl18831 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group_2__0__Impl_in_rule__EventWithMultiplicity__Group_2__018868 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group_2__1_in_rule__EventWithMultiplicity__Group_2__018871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_rule__EventWithMultiplicity__Group_2__0__Impl18899 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group_2__1__Impl_in_rule__EventWithMultiplicity__Group_2__118930 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group_2__2_in_rule__EventWithMultiplicity__Group_2__118933 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__MultiplicityAssignment_2_1_in_rule__EventWithMultiplicity__Group_2__1__Impl18960 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventWithMultiplicity__Group_2__2__Impl_in_rule__EventWithMultiplicity__Group_2__218990 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_57_in_rule__EventWithMultiplicity__Group_2__2__Impl19018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group__0__Impl_in_rule__EventTypedParameterWithMultiplicity__Group__018495 = new BitSet(new long[]{0x4100000000000000L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group__1_in_rule__EventTypedParameterWithMultiplicity__Group__018498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__EventAssignment_0_in_rule__EventTypedParameterWithMultiplicity__Group__0__Impl18525 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group__1__Impl_in_rule__EventTypedParameterWithMultiplicity__Group__118555 = new BitSet(new long[]{0x4100000000000000L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group__2_in_rule__EventTypedParameterWithMultiplicity__Group__118558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_1__0_in_rule__EventTypedParameterWithMultiplicity__Group__1__Impl18585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group__2__Impl_in_rule__EventTypedParameterWithMultiplicity__Group__218616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_2__0_in_rule__EventTypedParameterWithMultiplicity__Group__2__Impl18643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_1__0__Impl_in_rule__EventTypedParameterWithMultiplicity__Group_1__018680 = new BitSet(new long[]{0x8000000000000010L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_1__1_in_rule__EventTypedParameterWithMultiplicity__Group_1__018683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_rule__EventTypedParameterWithMultiplicity__Group_1__0__Impl18711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_1__1__Impl_in_rule__EventTypedParameterWithMultiplicity__Group_1__118742 = new BitSet(new long[]{0x8000000000000010L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_1__2_in_rule__EventTypedParameterWithMultiplicity__Group_1__118745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_1_in_rule__EventTypedParameterWithMultiplicity__Group_1__1__Impl18772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_1__2__Impl_in_rule__EventTypedParameterWithMultiplicity__Group_1__218803 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_rule__EventTypedParameterWithMultiplicity__Group_1__2__Impl18831 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_2__0__Impl_in_rule__EventTypedParameterWithMultiplicity__Group_2__018868 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_2__1_in_rule__EventTypedParameterWithMultiplicity__Group_2__018871 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_rule__EventTypedParameterWithMultiplicity__Group_2__0__Impl18899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_2__1__Impl_in_rule__EventTypedParameterWithMultiplicity__Group_2__118930 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_2__2_in_rule__EventTypedParameterWithMultiplicity__Group_2__118933 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_1_in_rule__EventTypedParameterWithMultiplicity__Group_2__1__Impl18960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventTypedParameterWithMultiplicity__Group_2__2__Impl_in_rule__EventTypedParameterWithMultiplicity__Group_2__218990 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_57_in_rule__EventTypedParameterWithMultiplicity__Group_2__2__Impl19018 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PatternCallParameterList__Group__0__Impl_in_rule__PatternCallParameterList__Group__019055 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__PatternCallParameterList__Group__1_in_rule__PatternCallParameterList__Group__019058 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PatternCallParameterList__Group__1__Impl_in_rule__PatternCallParameterList__Group__119116 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
@@ -74458,143 +74442,143 @@ public class InternalEventPatternLanguageParser extends AbstractInternalContentA
     public static final BitSet FOLLOW_ruleNegationOpartor_in_rule__LiteralFilter__NegAssignment_044062 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleLiteralOperator_in_rule__LiteralFilter__OperatorAssignment_144093 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__LiteralFilter__ValueAssignment_244124 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventWithMultiplicity_in_rule__FollowsExpression__FirstEventAssignment_044155 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventTypedParameterWithMultiplicity_in_rule__FollowsExpression__FirstEventAssignment_044155 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEventWithFollowsOperator_in_rule__FollowsExpression__EventsAssignment_144186 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFollowsOperator_in_rule__EventWithFollowsOperator__OperatorAssignment_044217 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFollowerEventStructure_in_rule__EventWithFollowsOperator__EventAssignment_144248 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_rule__FollowsOperatorViaTW__TimewindowAssignment_144279 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__BranchExpression__BranchesAssignment_144314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__BranchExpression__BranchesAssignment_2_144353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EventWithMultiplicity__EventAssignment_044392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePatternCallParameterList_in_rule__EventWithMultiplicity__ParametersAssignment_1_144427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__EventWithMultiplicity__MultiplicityAssignment_2_144458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePatternCallParameter_in_rule__PatternCallParameterList__ParametersAssignment_144489 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePatternCallParameter_in_rule__PatternCallParameterList__ParametersAssignment_2_144520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__PatternCallParameter__NameAssignment_144551 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Source__NameAssignment_144582 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAdapter_in_rule__Source__AdapterAssignment_3_144613 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Adapter__NameAssignment44644 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeatureCallID_in_rule__XAssignment__FeatureAssignment_0_144679 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXAssignment_in_rule__XAssignment__ValueAssignment_0_344714 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpMultiAssign_in_rule__XAssignment__FeatureAssignment_1_1_0_0_144749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXAssignment_in_rule__XAssignment__RightOperandAssignment_1_1_144784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpOr_in_rule__XOrExpression__FeatureAssignment_1_0_0_144819 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXAndExpression_in_rule__XOrExpression__RightOperandAssignment_1_144854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpAnd_in_rule__XAndExpression__FeatureAssignment_1_0_0_144889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXEqualityExpression_in_rule__XAndExpression__RightOperandAssignment_1_144924 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpEquality_in_rule__XEqualityExpression__FeatureAssignment_1_0_0_144959 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXRelationalExpression_in_rule__XEqualityExpression__RightOperandAssignment_1_144994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XRelationalExpression__TypeAssignment_1_0_145025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpCompare_in_rule__XRelationalExpression__FeatureAssignment_1_1_0_0_145060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXOtherOperatorExpression_in_rule__XRelationalExpression__RightOperandAssignment_1_1_145095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpOther_in_rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_145130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXAdditiveExpression_in_rule__XOtherOperatorExpression__RightOperandAssignment_1_145165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpAdd_in_rule__XAdditiveExpression__FeatureAssignment_1_0_0_145200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_rule__XAdditiveExpression__RightOperandAssignment_1_145235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpMulti_in_rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_145270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXUnaryOperation_in_rule__XMultiplicativeExpression__RightOperandAssignment_1_145305 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpUnary_in_rule__XUnaryOperation__FeatureAssignment_0_145340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXUnaryOperation_in_rule__XUnaryOperation__OperandAssignment_0_245375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XCastedExpression__TypeAssignment_1_145406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_108_in_rule__XMemberFeatureCall__ExplicitStaticAssignment_1_0_0_0_1_145442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeatureCallID_in_rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_245485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXAssignment_in_rule__XMemberFeatureCall__ValueAssignment_1_0_145520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_109_in_rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_145556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_108_in_rule__XMemberFeatureCall__ExplicitStaticAssignment_1_1_0_0_1_245600 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_145639 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_145670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeatureCallID_in_rule__XMemberFeatureCall__FeatureAssignment_1_1_245705 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_045745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXShortClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_045784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_045815 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_145846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_445877 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSetLiteral__ElementsAssignment_3_045908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSetLiteral__ElementsAssignment_3_1_145939 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XListLiteral__ElementsAssignment_3_045970 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XListLiteral__ElementsAssignment_3_1_146001 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_046032 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_1_146063 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_110_in_rule__XClosure__ExplicitSyntaxAssignment_1_0_146099 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpressionInClosure_in_rule__XClosure__ExpressionAssignment_246138 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_rule__XExpressionInClosure__ExpressionsAssignment_1_046169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_046200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_146231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_110_in_rule__XShortClosure__ExplicitSyntaxAssignment_0_0_246267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XShortClosure__ExpressionAssignment_146306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__IfAssignment_346337 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__ThenAssignment_546368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__ElseAssignment_6_146399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__XSwitchExpression__LocalVarNameAssignment_2_0_0_0_046430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSwitchExpression__SwitchAssignment_2_0_146461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__XSwitchExpression__LocalVarNameAssignment_2_1_0_0_146492 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSwitchExpression__SwitchAssignment_2_1_146523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXCasePart_in_rule__XSwitchExpression__CasesAssignment_446554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSwitchExpression__DefaultAssignment_5_246585 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XCasePart__TypeGuardAssignment_046616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XCasePart__CaseAssignment_1_146647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XCasePart__ThenAssignment_346678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XForLoopExpression__DeclaredParamAssignment_346709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XForLoopExpression__ForExpressionAssignment_546740 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XForLoopExpression__EachExpressionAssignment_746771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XWhileExpression__PredicateAssignment_346802 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XWhileExpression__BodyAssignment_546833 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__BodyAssignment_246864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__PredicateAssignment_546895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_rule__XBlockExpression__ExpressionsAssignment_2_046926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_111_in_rule__XVariableDeclaration__WriteableAssignment_1_046962 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XVariableDeclaration__TypeAssignment_2_0_0_047001 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_0_0_147032 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_147063 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XVariableDeclaration__RightAssignment_3_147094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmFormalParameter__ParameterTypeAssignment_047125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__JvmFormalParameter__NameAssignment_147156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__FullJvmFormalParameter__ParameterTypeAssignment_047187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__FullJvmFormalParameter__NameAssignment_147218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_1_147249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_1_2_147280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdOrSuper_in_rule__XFeatureCall__FeatureAssignment_247315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_rule__XFeatureCall__ExplicitOperationCallAssignment_3_047355 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXShortClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_047394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_047425 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_1_147456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_447487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XConstructorCall__ConstructorAssignment_247522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_147557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_2_147588 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXShortClosure_in_rule__XConstructorCall__ArgumentsAssignment_4_1_047619 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_4_1_1_047650 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_4_1_1_1_147681 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXClosure_in_rule__XConstructorCall__ArgumentsAssignment_547712 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_112_in_rule__XBooleanLiteral__IsTrueAssignment_1_147748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumber_in_rule__XNumberLiteral__ValueAssignment_147787 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__XStringLiteral__ValueAssignment_147818 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XTypeLiteral__TypeAssignment_347853 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrayBrackets_in_rule__XTypeLiteral__ArrayDimensionsAssignment_447888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XThrowExpression__ExpressionAssignment_247919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XReturnExpression__ExpressionAssignment_247950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__ExpressionAssignment_247981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXCatchClause_in_rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_048012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_148043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_148074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_rule__XCatchClause__DeclaredParamAssignment_248105 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XCatchClause__ExpressionAssignment_448136 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_048167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_148198 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ReturnTypeAssignment_248229 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__JvmParameterizedTypeReference__TypeAssignment_048264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_148299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_148330 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmUpperBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_048361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmLowerBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_148392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBound__TypeReferenceAssignment_148423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBoundAnded__TypeReferenceAssignment_148454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmLowerBound__TypeReferenceAssignment_148485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_rule__XImportDeclaration__StaticAssignment_1_0_048526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_rule__XImportDeclaration__ExtensionAssignment_1_0_148570 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XImportDeclaration__ImportedTypeAssignment_1_0_248613 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XImportDeclaration__ImportedTypeAssignment_1_148652 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_rule__XImportDeclaration__ImportedNamespaceAssignment_1_248687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventTypedParameterWithMultiplicity_in_rule__BranchExpression__BranchesAssignment_144310 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventTypedParameterWithMultiplicity_in_rule__BranchExpression__BranchesAssignment_2_144341 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EventTypedParameterWithMultiplicity__EventAssignment_044376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePatternCallParameterList_in_rule__EventTypedParameterWithMultiplicity__ParametersAssignment_1_144411 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__EventTypedParameterWithMultiplicity__MultiplicityAssignment_2_144442 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePatternCallParameter_in_rule__PatternCallParameterList__ParametersAssignment_144473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePatternCallParameter_in_rule__PatternCallParameterList__ParametersAssignment_2_144504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__PatternCallParameter__NameAssignment_144535 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Source__NameAssignment_144566 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAdapter_in_rule__Source__AdapterAssignment_3_144597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Adapter__NameAssignment44628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeatureCallID_in_rule__XAssignment__FeatureAssignment_0_144663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXAssignment_in_rule__XAssignment__ValueAssignment_0_344698 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpMultiAssign_in_rule__XAssignment__FeatureAssignment_1_1_0_0_144733 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXAssignment_in_rule__XAssignment__RightOperandAssignment_1_1_144768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpOr_in_rule__XOrExpression__FeatureAssignment_1_0_0_144803 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXAndExpression_in_rule__XOrExpression__RightOperandAssignment_1_144838 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpAnd_in_rule__XAndExpression__FeatureAssignment_1_0_0_144873 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXEqualityExpression_in_rule__XAndExpression__RightOperandAssignment_1_144908 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpEquality_in_rule__XEqualityExpression__FeatureAssignment_1_0_0_144943 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXRelationalExpression_in_rule__XEqualityExpression__RightOperandAssignment_1_144978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XRelationalExpression__TypeAssignment_1_0_145009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpCompare_in_rule__XRelationalExpression__FeatureAssignment_1_1_0_0_145044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXOtherOperatorExpression_in_rule__XRelationalExpression__RightOperandAssignment_1_1_145079 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpOther_in_rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_145114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXAdditiveExpression_in_rule__XOtherOperatorExpression__RightOperandAssignment_1_145149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpAdd_in_rule__XAdditiveExpression__FeatureAssignment_1_0_0_145184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_rule__XAdditiveExpression__RightOperandAssignment_1_145219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpMulti_in_rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_145254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXUnaryOperation_in_rule__XMultiplicativeExpression__RightOperandAssignment_1_145289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpUnary_in_rule__XUnaryOperation__FeatureAssignment_0_145324 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXUnaryOperation_in_rule__XUnaryOperation__OperandAssignment_0_245359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XCastedExpression__TypeAssignment_1_145390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_108_in_rule__XMemberFeatureCall__ExplicitStaticAssignment_1_0_0_0_1_145426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeatureCallID_in_rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_245469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXAssignment_in_rule__XMemberFeatureCall__ValueAssignment_1_0_145504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_109_in_rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_145540 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_108_in_rule__XMemberFeatureCall__ExplicitStaticAssignment_1_1_0_0_1_245584 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_145623 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_145654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeatureCallID_in_rule__XMemberFeatureCall__FeatureAssignment_1_1_245689 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_045729 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXShortClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_045768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_045799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_145830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_445861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSetLiteral__ElementsAssignment_3_045892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSetLiteral__ElementsAssignment_3_1_145923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XListLiteral__ElementsAssignment_3_045954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XListLiteral__ElementsAssignment_3_1_145985 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_046016 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_1_0_0_1_146047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_110_in_rule__XClosure__ExplicitSyntaxAssignment_1_0_146083 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpressionInClosure_in_rule__XClosure__ExpressionAssignment_246122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_rule__XExpressionInClosure__ExpressionsAssignment_1_046153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_046184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_146215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_110_in_rule__XShortClosure__ExplicitSyntaxAssignment_0_0_246251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XShortClosure__ExpressionAssignment_146290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__IfAssignment_346321 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__ThenAssignment_546352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__ElseAssignment_6_146383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__XSwitchExpression__LocalVarNameAssignment_2_0_0_0_046414 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSwitchExpression__SwitchAssignment_2_0_146445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__XSwitchExpression__LocalVarNameAssignment_2_1_0_0_146476 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSwitchExpression__SwitchAssignment_2_1_146507 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXCasePart_in_rule__XSwitchExpression__CasesAssignment_446538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSwitchExpression__DefaultAssignment_5_246569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XCasePart__TypeGuardAssignment_046600 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XCasePart__CaseAssignment_1_146631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XCasePart__ThenAssignment_346662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XForLoopExpression__DeclaredParamAssignment_346693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XForLoopExpression__ForExpressionAssignment_546724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XForLoopExpression__EachExpressionAssignment_746755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XWhileExpression__PredicateAssignment_346786 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XWhileExpression__BodyAssignment_546817 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__BodyAssignment_246848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__PredicateAssignment_546879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_rule__XBlockExpression__ExpressionsAssignment_2_046910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_111_in_rule__XVariableDeclaration__WriteableAssignment_1_046946 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XVariableDeclaration__TypeAssignment_2_0_0_046985 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_0_0_147016 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_147047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XVariableDeclaration__RightAssignment_3_147078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmFormalParameter__ParameterTypeAssignment_047109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__JvmFormalParameter__NameAssignment_147140 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__FullJvmFormalParameter__ParameterTypeAssignment_047171 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__FullJvmFormalParameter__NameAssignment_147202 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_1_147233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_1_2_147264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIdOrSuper_in_rule__XFeatureCall__FeatureAssignment_247299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_rule__XFeatureCall__ExplicitOperationCallAssignment_3_047339 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXShortClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_047378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_047409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_3_1_1_1_147440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_447471 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XConstructorCall__ConstructorAssignment_247506 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_147541 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_2_147572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXShortClosure_in_rule__XConstructorCall__ArgumentsAssignment_4_1_047603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_4_1_1_047634 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_4_1_1_1_147665 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXClosure_in_rule__XConstructorCall__ArgumentsAssignment_547696 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_112_in_rule__XBooleanLiteral__IsTrueAssignment_1_147732 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumber_in_rule__XNumberLiteral__ValueAssignment_147771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__XStringLiteral__ValueAssignment_147802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XTypeLiteral__TypeAssignment_347837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrayBrackets_in_rule__XTypeLiteral__ArrayDimensionsAssignment_447872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XThrowExpression__ExpressionAssignment_247903 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XReturnExpression__ExpressionAssignment_247934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__ExpressionAssignment_247965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXCatchClause_in_rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_047996 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_148027 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_148058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_rule__XCatchClause__DeclaredParamAssignment_248089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XCatchClause__ExpressionAssignment_448120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_048151 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_148182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ReturnTypeAssignment_248213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__JvmParameterizedTypeReference__TypeAssignment_048248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_148283 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_148314 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmUpperBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_048345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmLowerBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_148376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBound__TypeReferenceAssignment_148407 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBoundAnded__TypeReferenceAssignment_148438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmLowerBound__TypeReferenceAssignment_148469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_rule__XImportDeclaration__StaticAssignment_1_0_048510 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__XImportDeclaration__ExtensionAssignment_1_0_148554 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XImportDeclaration__ImportedTypeAssignment_1_0_248597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XImportDeclaration__ImportedTypeAssignment_1_148636 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_rule__XImportDeclaration__ImportedNamespaceAssignment_1_248671 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OpOther__Group_6_1_0__0_in_synpred39_InternalEventPatternLanguage8071 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_0_in_synpred51_InternalEventPatternLanguage8574 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XVariableDeclaration__Group_2_0__0_in_synpred74_InternalEventPatternLanguage9199 = new BitSet(new long[]{0x0000000000000002L});

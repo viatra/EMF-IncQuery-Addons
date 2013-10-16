@@ -5,23 +5,23 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Event With Multiplicity</b></em>'.
+ * A representation of the model object '<em><b>Event Typed Parameter With Multiplicity</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity#getEvent <em>Event</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity#getParameters <em>Parameters</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getEvent <em>Event</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getMultiplicity <em>Multiplicity</em>}</li>
  * </ul>
  * </p>
  *
- * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventWithMultiplicity()
+ * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventTypedParameterWithMultiplicity()
  * @model
  * @generated
  */
-public interface EventWithMultiplicity extends FollowerEventStructure
+public interface EventTypedParameterWithMultiplicity extends FollowerEventStructure
 {
   /**
    * Returns the value of the '<em><b>Event</b></em>' reference.
@@ -33,14 +33,14 @@ public interface EventWithMultiplicity extends FollowerEventStructure
    * <!-- end-user-doc -->
    * @return the value of the '<em>Event</em>' reference.
    * @see #setEvent(EventTypedParameter)
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventWithMultiplicity_Event()
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventTypedParameterWithMultiplicity_Event()
    * @model
    * @generated
    */
   EventTypedParameter getEvent();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity#getEvent <em>Event</em>}' reference.
+   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getEvent <em>Event</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Event</em>' reference.
@@ -59,14 +59,14 @@ public interface EventWithMultiplicity extends FollowerEventStructure
    * <!-- end-user-doc -->
    * @return the value of the '<em>Parameters</em>' containment reference.
    * @see #setParameters(PatternCallParameterList)
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventWithMultiplicity_Parameters()
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventTypedParameterWithMultiplicity_Parameters()
    * @model containment="true"
    * @generated
    */
   PatternCallParameterList getParameters();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity#getParameters <em>Parameters</em>}' containment reference.
+   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getParameters <em>Parameters</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Parameters</em>' containment reference.
@@ -85,14 +85,14 @@ public interface EventWithMultiplicity extends FollowerEventStructure
    * <!-- end-user-doc -->
    * @return the value of the '<em>Multiplicity</em>' attribute.
    * @see #setMultiplicity(int)
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventWithMultiplicity_Multiplicity()
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventTypedParameterWithMultiplicity_Multiplicity()
    * @model
    * @generated
    */
   int getMultiplicity();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithMultiplicity#getMultiplicity <em>Multiplicity</em>}' attribute.
+   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getMultiplicity <em>Multiplicity</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Multiplicity</em>' attribute.
@@ -101,4 +101,4 @@ public interface EventWithMultiplicity extends FollowerEventStructure
    */
   void setMultiplicity(int value);
 
-} // EventWithMultiplicity
+} // EventTypedParameterWithMultiplicity
