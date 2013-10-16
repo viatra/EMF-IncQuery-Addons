@@ -76,10 +76,12 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
       case EventPatternLanguagePackage.IQ_PATTERN_EVENT: return createIQPatternEvent();
       case EventPatternLanguagePackage.COMPLEX_EVENT: return createComplexEvent();
       case EventPatternLanguagePackage.RULE: return createRule();
-      case EventPatternLanguagePackage.CE_PARAMLIST: return createCEParamlist();
-      case EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE: return createEventParamWithType();
-      case EventPatternLanguagePackage.PARAMETER_FILTER: return createParameterFilter();
-      case EventPatternLanguagePackage.PARAMETER_FILTER_RULE: return createParameterFilterRule();
+      case EventPatternLanguagePackage.TYPED_PARAMETER_LIST: return createTypedParameterList();
+      case EventPatternLanguagePackage.TYPED_PARAMETER: return createTypedParameter();
+      case EventPatternLanguagePackage.EVENT_PARAMETER_LIST: return createEventParameterList();
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER: return createEventTypedParameter();
+      case EventPatternLanguagePackage.STATIC_BINDING: return createStaticBinding();
+      case EventPatternLanguagePackage.STATIC_BINDING_RULE: return createStaticBindingRule();
       case EventPatternLanguagePackage.RANGE_FILTER: return createRangeFilter();
       case EventPatternLanguagePackage.RANGE: return createRange();
       case EventPatternLanguagePackage.OPEN_OPEN: return createOpenOpen();
@@ -97,6 +99,8 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
       case EventPatternLanguagePackage.FOLLOWER_EVENT_STRUCTURE: return createFollowerEventStructure();
       case EventPatternLanguagePackage.BRANCH_EXPRESSION: return createBranchExpression();
       case EventPatternLanguagePackage.EVENT_WITH_MULTIPLICITY: return createEventWithMultiplicity();
+      case EventPatternLanguagePackage.PATTERN_CALL_PARAMETER_LIST: return createPatternCallParameterList();
+      case EventPatternLanguagePackage.PATTERN_CALL_PARAMETER: return createPatternCallParameter();
       case EventPatternLanguagePackage.SOURCE: return createSource();
       case EventPatternLanguagePackage.ADAPTER: return createAdapter();
       default:
@@ -264,10 +268,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public CEParamlist createCEParamlist()
+  public TypedParameterList createTypedParameterList()
   {
-    CEParamlistImpl ceParamlist = new CEParamlistImpl();
-    return ceParamlist;
+    TypedParameterListImpl typedParameterList = new TypedParameterListImpl();
+    return typedParameterList;
   }
 
   /**
@@ -275,10 +279,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventParamWithType createEventParamWithType()
+  public TypedParameter createTypedParameter()
   {
-    EventParamWithTypeImpl eventParamWithType = new EventParamWithTypeImpl();
-    return eventParamWithType;
+    TypedParameterImpl typedParameter = new TypedParameterImpl();
+    return typedParameter;
   }
 
   /**
@@ -286,10 +290,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public ParameterFilter createParameterFilter()
+  public EventParameterList createEventParameterList()
   {
-    ParameterFilterImpl parameterFilter = new ParameterFilterImpl();
-    return parameterFilter;
+    EventParameterListImpl eventParameterList = new EventParameterListImpl();
+    return eventParameterList;
   }
 
   /**
@@ -297,10 +301,32 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public ParameterFilterRule createParameterFilterRule()
+  public EventTypedParameter createEventTypedParameter()
   {
-    ParameterFilterRuleImpl parameterFilterRule = new ParameterFilterRuleImpl();
-    return parameterFilterRule;
+    EventTypedParameterImpl eventTypedParameter = new EventTypedParameterImpl();
+    return eventTypedParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StaticBinding createStaticBinding()
+  {
+    StaticBindingImpl staticBinding = new StaticBindingImpl();
+    return staticBinding;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StaticBindingRule createStaticBindingRule()
+  {
+    StaticBindingRuleImpl staticBindingRule = new StaticBindingRuleImpl();
+    return staticBindingRule;
   }
 
   /**
@@ -488,6 +514,28 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
   {
     EventWithMultiplicityImpl eventWithMultiplicity = new EventWithMultiplicityImpl();
     return eventWithMultiplicity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PatternCallParameterList createPatternCallParameterList()
+  {
+    PatternCallParameterListImpl patternCallParameterList = new PatternCallParameterListImpl();
+    return patternCallParameterList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PatternCallParameter createPatternCallParameter()
+  {
+    PatternCallParameterImpl patternCallParameter = new PatternCallParameterImpl();
+    return patternCallParameter;
   }
 
   /**

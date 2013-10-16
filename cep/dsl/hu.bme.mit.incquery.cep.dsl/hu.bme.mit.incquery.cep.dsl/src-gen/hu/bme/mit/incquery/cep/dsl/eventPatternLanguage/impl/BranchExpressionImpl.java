@@ -3,8 +3,8 @@
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventParamWithType;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameter;
 
 import java.util.Collection;
 
@@ -37,7 +37,7 @@ public class BranchExpressionImpl extends FollowerEventStructureImpl implements 
    * @generated
    * @ordered
    */
-  protected EList<EventParamWithType> branches;
+  protected EList<EventTypedParameter> branches;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,11 +65,11 @@ public class BranchExpressionImpl extends FollowerEventStructureImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EventParamWithType> getBranches()
+  public EList<EventTypedParameter> getBranches()
   {
     if (branches == null)
     {
-      branches = new EObjectResolvingEList<EventParamWithType>(EventParamWithType.class, this, EventPatternLanguagePackage.BRANCH_EXPRESSION__BRANCHES);
+      branches = new EObjectResolvingEList<EventTypedParameter>(EventTypedParameter.class, this, EventPatternLanguagePackage.BRANCH_EXPRESSION__BRANCHES);
     }
     return branches;
   }
@@ -103,7 +103,7 @@ public class BranchExpressionImpl extends FollowerEventStructureImpl implements 
     {
       case EventPatternLanguagePackage.BRANCH_EXPRESSION__BRANCHES:
         getBranches().clear();
-        getBranches().addAll((Collection<? extends EventParamWithType>)newValue);
+        getBranches().addAll((Collection<? extends EventTypedParameter>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

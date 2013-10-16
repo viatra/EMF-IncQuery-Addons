@@ -19,18 +19,21 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//ModelElements"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractAtomicEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractAtomicEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" eType="#//TypedParameterList"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicEvent" eSuperTypes="#//AbstractAtomicEvent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Source"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterFilters" upperBound="-1"
-        eType="#//ParameterFilter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="staticBindings" upperBound="-1"
+        eType="#//StaticBinding" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IQPatternEvent" eSuperTypes="#//AbstractAtomicEvent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iqpattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="changeType" eType="#//IQPatternChangeType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComplexEvent" eSuperTypes="#//Event">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="paramlist" eType="#//CEParamlist"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" eType="#//EventParameterList"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="complexEventExpressions"
@@ -42,25 +45,34 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="ecore:EClass ../../../../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CEParamlist">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
-        eType="#//EventParamWithType" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EventParamWithType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Event"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterFilter">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="paramFilterRule" eType="#//ParameterFilterRule"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="IQPatternChangeType">
     <eLiterals name="FOUND" literal="FOUND"/>
     <eLiterals name="LOST" value="1" literal="LOST"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterFilterRule"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RangeFilter" eSuperTypes="#//ParameterFilterRule">
+  <eClassifiers xsi:type="ecore:EClass" name="TypedParameterList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//TypedParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedParameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass ../../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmTypeReference"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventParameterList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//EventTypedParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventTypedParameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StaticBinding">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="#//TypedParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bindingRule" eType="#//StaticBindingRule"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StaticBindingRule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RangeFilter" eSuperTypes="#//StaticBindingRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="neg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="range" eType="#//Range"
         containment="true"/>
@@ -73,11 +85,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="OpenClosed" eSuperTypes="#//Range"/>
   <eClassifiers xsi:type="ecore:EClass" name="ClosedClosed" eSuperTypes="#//Range"/>
   <eClassifiers xsi:type="ecore:EClass" name="ClosedOpen" eSuperTypes="#//Range"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NumericFilter" eSuperTypes="#//ParameterFilterRule">
+  <eClassifiers xsi:type="ecore:EClass" name="NumericFilter" eSuperTypes="#//StaticBindingRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LiteralFilter" eSuperTypes="#//ParameterFilterRule">
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralFilter" eSuperTypes="#//StaticBindingRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="neg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -103,11 +115,20 @@
   <eClassifiers xsi:type="ecore:EClass" name="FollowerEventStructure"/>
   <eClassifiers xsi:type="ecore:EClass" name="BranchExpression" eSuperTypes="#//FollowerEventStructure">
     <eStructuralFeatures xsi:type="ecore:EReference" name="branches" unique="false"
-        upperBound="-1" eType="#//EventParamWithType"/>
+        upperBound="-1" eType="#//EventTypedParameter"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventWithMultiplicity" eSuperTypes="#//FollowerEventStructure">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//EventParamWithType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//EventTypedParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" eType="#//PatternCallParameterList"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PatternCallParameterList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//PatternCallParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PatternCallParameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Source" eSuperTypes="#//ModelElements">
     <eStructuralFeatures xsi:type="ecore:EReference" name="adapter" upperBound="-1"

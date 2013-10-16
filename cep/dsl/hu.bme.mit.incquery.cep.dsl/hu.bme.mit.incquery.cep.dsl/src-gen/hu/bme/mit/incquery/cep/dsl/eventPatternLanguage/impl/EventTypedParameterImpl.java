@@ -3,8 +3,8 @@
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Event;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventParamWithType;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameter;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -16,19 +16,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Event Param With Type</b></em>'.
+ * An implementation of the model object '<em><b>Event Typed Parameter</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventParamWithTypeImpl#getName <em>Name</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventParamWithTypeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EventParamWithTypeImpl extends MinimalEObjectImpl.Container implements EventParamWithType
+public class EventTypedParameterImpl extends MinimalEObjectImpl.Container implements EventTypedParameter
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -65,7 +65,7 @@ public class EventParamWithTypeImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EventParamWithTypeImpl()
+  protected EventTypedParameterImpl()
   {
     super();
   }
@@ -78,7 +78,7 @@ public class EventParamWithTypeImpl extends MinimalEObjectImpl.Container impleme
   @Override
   protected EClass eStaticClass()
   {
-    return EventPatternLanguagePackage.Literals.EVENT_PARAM_WITH_TYPE;
+    return EventPatternLanguagePackage.Literals.EVENT_TYPED_PARAMETER;
   }
 
   /**
@@ -101,7 +101,7 @@ public class EventParamWithTypeImpl extends MinimalEObjectImpl.Container impleme
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__NAME, oldName, name));
   }
 
   /**
@@ -118,7 +118,7 @@ public class EventParamWithTypeImpl extends MinimalEObjectImpl.Container impleme
       if (type != oldType)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE__TYPE, oldType, type));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__TYPE, oldType, type));
       }
     }
     return type;
@@ -144,7 +144,7 @@ public class EventParamWithTypeImpl extends MinimalEObjectImpl.Container impleme
     Event oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE__TYPE, oldType, type));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__TYPE, oldType, type));
   }
 
   /**
@@ -157,9 +157,9 @@ public class EventParamWithTypeImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE__NAME:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__NAME:
         return getName();
-      case EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE__TYPE:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__TYPE:
         if (resolve) return getType();
         return basicGetType();
     }
@@ -176,10 +176,10 @@ public class EventParamWithTypeImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE__NAME:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__NAME:
         setName((String)newValue);
         return;
-      case EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE__TYPE:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__TYPE:
         setType((Event)newValue);
         return;
     }
@@ -196,10 +196,10 @@ public class EventParamWithTypeImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE__NAME:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE__TYPE:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__TYPE:
         setType((Event)null);
         return;
     }
@@ -216,9 +216,9 @@ public class EventParamWithTypeImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE__NAME:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE__TYPE:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__TYPE:
         return type != null;
     }
     return super.eIsSet(featureID);
@@ -241,4 +241,4 @@ public class EventParamWithTypeImpl extends MinimalEObjectImpl.Container impleme
     return result.toString();
   }
 
-} //EventParamWithTypeImpl
+} //EventTypedParameterImpl

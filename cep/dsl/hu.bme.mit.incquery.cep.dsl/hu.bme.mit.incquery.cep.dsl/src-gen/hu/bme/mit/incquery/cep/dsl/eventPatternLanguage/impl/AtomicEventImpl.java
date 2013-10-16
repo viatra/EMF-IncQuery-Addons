@@ -4,8 +4,8 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEvent;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ParameterFilter;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Source;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.StaticBinding;
 
 import java.util.Collection;
 
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.AtomicEventImpl#getSource <em>Source</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.AtomicEventImpl#getParameterFilters <em>Parameter Filters</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.AtomicEventImpl#getStaticBindings <em>Static Bindings</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,14 +49,14 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
   protected Source source;
 
   /**
-   * The cached value of the '{@link #getParameterFilters() <em>Parameter Filters</em>}' containment reference list.
+   * The cached value of the '{@link #getStaticBindings() <em>Static Bindings</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParameterFilters()
+   * @see #getStaticBindings()
    * @generated
    * @ordered
    */
-  protected EList<ParameterFilter> parameterFilters;
+  protected EList<StaticBinding> staticBindings;
 
   /**
    * <!-- begin-user-doc -->
@@ -127,13 +127,13 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ParameterFilter> getParameterFilters()
+  public EList<StaticBinding> getStaticBindings()
   {
-    if (parameterFilters == null)
+    if (staticBindings == null)
     {
-      parameterFilters = new EObjectContainmentEList<ParameterFilter>(ParameterFilter.class, this, EventPatternLanguagePackage.ATOMIC_EVENT__PARAMETER_FILTERS);
+      staticBindings = new EObjectContainmentEList<StaticBinding>(StaticBinding.class, this, EventPatternLanguagePackage.ATOMIC_EVENT__STATIC_BINDINGS);
     }
-    return parameterFilters;
+    return staticBindings;
   }
 
   /**
@@ -146,8 +146,8 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.ATOMIC_EVENT__PARAMETER_FILTERS:
-        return ((InternalEList<?>)getParameterFilters()).basicRemove(otherEnd, msgs);
+      case EventPatternLanguagePackage.ATOMIC_EVENT__STATIC_BINDINGS:
+        return ((InternalEList<?>)getStaticBindings()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -165,8 +165,8 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
       case EventPatternLanguagePackage.ATOMIC_EVENT__SOURCE:
         if (resolve) return getSource();
         return basicGetSource();
-      case EventPatternLanguagePackage.ATOMIC_EVENT__PARAMETER_FILTERS:
-        return getParameterFilters();
+      case EventPatternLanguagePackage.ATOMIC_EVENT__STATIC_BINDINGS:
+        return getStaticBindings();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -185,9 +185,9 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
       case EventPatternLanguagePackage.ATOMIC_EVENT__SOURCE:
         setSource((Source)newValue);
         return;
-      case EventPatternLanguagePackage.ATOMIC_EVENT__PARAMETER_FILTERS:
-        getParameterFilters().clear();
-        getParameterFilters().addAll((Collection<? extends ParameterFilter>)newValue);
+      case EventPatternLanguagePackage.ATOMIC_EVENT__STATIC_BINDINGS:
+        getStaticBindings().clear();
+        getStaticBindings().addAll((Collection<? extends StaticBinding>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -206,8 +206,8 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
       case EventPatternLanguagePackage.ATOMIC_EVENT__SOURCE:
         setSource((Source)null);
         return;
-      case EventPatternLanguagePackage.ATOMIC_EVENT__PARAMETER_FILTERS:
-        getParameterFilters().clear();
+      case EventPatternLanguagePackage.ATOMIC_EVENT__STATIC_BINDINGS:
+        getStaticBindings().clear();
         return;
     }
     super.eUnset(featureID);
@@ -225,8 +225,8 @@ public class AtomicEventImpl extends AbstractAtomicEventImpl implements AtomicEv
     {
       case EventPatternLanguagePackage.ATOMIC_EVENT__SOURCE:
         return source != null;
-      case EventPatternLanguagePackage.ATOMIC_EVENT__PARAMETER_FILTERS:
-        return parameterFilters != null && !parameterFilters.isEmpty();
+      case EventPatternLanguagePackage.ATOMIC_EVENT__STATIC_BINDINGS:
+        return staticBindings != null && !staticBindings.isEmpty();
     }
     return super.eIsSet(featureID);
   }

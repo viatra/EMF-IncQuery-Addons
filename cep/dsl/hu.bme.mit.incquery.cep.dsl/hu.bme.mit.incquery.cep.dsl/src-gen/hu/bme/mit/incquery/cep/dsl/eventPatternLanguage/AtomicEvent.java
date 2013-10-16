@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEvent#getSource <em>Source</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEvent#getParameterFilters <em>Parameter Filters</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEvent#getStaticBindings <em>Static Bindings</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,19 +50,19 @@ public interface AtomicEvent extends AbstractAtomicEvent
   void setSource(Source value);
 
   /**
-   * Returns the value of the '<em><b>Parameter Filters</b></em>' containment reference list.
-   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ParameterFilter}.
+   * Returns the value of the '<em><b>Static Bindings</b></em>' containment reference list.
+   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.StaticBinding}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Parameter Filters</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Static Bindings</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Parameter Filters</em>' containment reference list.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getAtomicEvent_ParameterFilters()
+   * @return the value of the '<em>Static Bindings</em>' containment reference list.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getAtomicEvent_StaticBindings()
    * @model containment="true"
    * @generated
    */
-  EList<ParameterFilter> getParameterFilters();
+  EList<StaticBinding> getStaticBindings();
 
 } // AtomicEvent

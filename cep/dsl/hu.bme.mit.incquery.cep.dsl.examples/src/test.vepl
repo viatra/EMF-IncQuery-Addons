@@ -1,50 +1,46 @@
 package hu.bme.mit.testpackage
 
 uses-incquery-patterns hu.bme.mit.incquery.patterns.*
+uses-eventsources hu.bme.mit.incquery.cep.dsl.examples.sources.*
 
 EventModel testModel{
-    AtomicEvent atomicEvent1(){
-        source : myEventRealm
-		parameterFilters {
-			testAttribute not in [1,22]
+	
+	AtomicEvent atomicEvent1(testAttribute : int, testAttribute2 : int, testAttribute3 : String){
+        source : exampleSource
+		staticBinding {
+			testAttribute not in [1, 22]
 			testAttribute2 != 2
-			testAttribute3 contains "test"
 		}
     }
 
-	IQPatternEvent myCustomPatternAppeared() {
-		incQueryPatternRef : "myCustomEiqPattern" /* not necessary to write fully qualified references */
-		changeType : FOUND
+	IQPatternEvent myCustomPatternAppeared(){
+		iqPatternRef : "myCustomEiqPattern" /* not necessary to write fully qualified references */
+		iqChangeType : FOUND
 	}
 
     ComplexEvent myComplexEvent1(e1 : myCustomPatternAppeared, a : atomicEvent1){
     	priority: 10
-    	e1{2}-[1200]->a{2}-[1000]->e1 //events following each other with time windows
+    	definition: e1{2}-[1200]->a{2}-[1000]->e1 //events following each other with time windows
     }
     
     ComplexEvent myComplexEvent2(e1 : myCustomPatternAppeared, a : atomicEvent1){
     	priority: 20
-    	e1-[1200]->a
+    	definition: e1-[1200]->a
     }
     
     ComplexEvent anotherComplexEvent(ce1 : myComplexEvent1, ce2 : myComplexEvent2, a : atomicEvent1){
     	priority: 0
-    	a-> (ce1 OR ce2)
+    	definition: a-> (ce1 OR ce2)
     }
-    
-//    rule {
-//    	event: anotherComplexEvent
+   
+//    Rule {
+//    	events: anotherComplexEvent
 //    	action {
 //    		//TODO
 //    	}
 //    }
 
-	Source myEventRealm {
-		register "ViatraCepAdapter.java"
-	}
-
-	Source mySecondEventRealm {
-		register "Adapter1.java"
-		register "Adapter1.java"
+	Source exampleSource{
+		register hu.bme.mit.incquery.cep.dsl.examples.sources.MyExampleAdapter
 	}
 }

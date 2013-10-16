@@ -3,7 +3,7 @@
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ParameterFilterRule;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.StaticBindingRule;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -11,21 +11,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Parameter Filter Rule</b></em>'.
+ * An implementation of the model object '<em><b>Static Binding Rule</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ParameterFilterRuleImpl extends MinimalEObjectImpl.Container implements ParameterFilterRule
+public class StaticBindingRuleImpl extends MinimalEObjectImpl.Container implements StaticBindingRule
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ParameterFilterRuleImpl()
+  protected StaticBindingRuleImpl()
   {
     super();
   }
@@ -38,7 +38,7 @@ public class ParameterFilterRuleImpl extends MinimalEObjectImpl.Container implem
   @Override
   protected EClass eStaticClass()
   {
-    return EventPatternLanguagePackage.Literals.PARAMETER_FILTER_RULE;
+    return EventPatternLanguagePackage.Literals.STATIC_BINDING_RULE;
   }
 
-} //ParameterFilterRuleImpl
+} //StaticBindingRuleImpl

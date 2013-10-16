@@ -1,0 +1,31 @@
+package hu.bme.mit.testpackage
+
+uses-incquery-patterns hu.bme.mit.incquery.patterns.*
+
+EventModel testModel{
+	AtomicEvent atomicEvent1(testAttribute0:Integer, testAttribute1:Integer, testAttribute2:String){
+		source: myEventRealm
+		staticBinding {
+			/* testAttribute0 != 2 */ // not compulsory to declare filters on all parameters
+			testAttribute1 not contains "alma"
+			testAttribute2 not in [0.1, 2.9]
+		}
+	}
+
+	IQPatternEvent myCustomPatternAppeared(X: Object, I: Integer) {
+		iqPatternRef : "myCustomEiqPattern(X, I)" // parameter bound to IQ pattern parameter
+		iqChangeType : FOUND
+	}
+	
+	ComplexEvent myComplexEvent1(e1:myCustomPatternAppeared, a:atomicEvent1){
+		priority : 10
+		definition: e1(A1, I) -[1200]-> a(I, _K, _L) -[1000]-> e1(A2, I)
+		// here, A1 and A2 mean that we are looking for two _different_ EObjects
+		// I is a bound parameter that has to represent the same integer value throughout the sequence
+		// _K and _L are "dontcare" values that can be mapped to anything
+	}
+	
+	Source myEventRealm {
+		register "ViatraCepAdapter.java"
+	}
+}

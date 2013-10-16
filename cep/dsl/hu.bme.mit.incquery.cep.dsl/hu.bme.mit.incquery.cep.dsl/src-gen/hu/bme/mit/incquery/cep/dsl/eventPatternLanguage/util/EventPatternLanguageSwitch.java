@@ -163,31 +163,45 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventPatternLanguagePackage.CE_PARAMLIST:
+      case EventPatternLanguagePackage.TYPED_PARAMETER_LIST:
       {
-        CEParamlist ceParamlist = (CEParamlist)theEObject;
-        T result = caseCEParamlist(ceParamlist);
+        TypedParameterList typedParameterList = (TypedParameterList)theEObject;
+        T result = caseTypedParameterList(typedParameterList);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventPatternLanguagePackage.EVENT_PARAM_WITH_TYPE:
+      case EventPatternLanguagePackage.TYPED_PARAMETER:
       {
-        EventParamWithType eventParamWithType = (EventParamWithType)theEObject;
-        T result = caseEventParamWithType(eventParamWithType);
+        TypedParameter typedParameter = (TypedParameter)theEObject;
+        T result = caseTypedParameter(typedParameter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventPatternLanguagePackage.PARAMETER_FILTER:
+      case EventPatternLanguagePackage.EVENT_PARAMETER_LIST:
       {
-        ParameterFilter parameterFilter = (ParameterFilter)theEObject;
-        T result = caseParameterFilter(parameterFilter);
+        EventParameterList eventParameterList = (EventParameterList)theEObject;
+        T result = caseEventParameterList(eventParameterList);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventPatternLanguagePackage.PARAMETER_FILTER_RULE:
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER:
       {
-        ParameterFilterRule parameterFilterRule = (ParameterFilterRule)theEObject;
-        T result = caseParameterFilterRule(parameterFilterRule);
+        EventTypedParameter eventTypedParameter = (EventTypedParameter)theEObject;
+        T result = caseEventTypedParameter(eventTypedParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventPatternLanguagePackage.STATIC_BINDING:
+      {
+        StaticBinding staticBinding = (StaticBinding)theEObject;
+        T result = caseStaticBinding(staticBinding);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventPatternLanguagePackage.STATIC_BINDING_RULE:
+      {
+        StaticBindingRule staticBindingRule = (StaticBindingRule)theEObject;
+        T result = caseStaticBindingRule(staticBindingRule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -195,7 +209,7 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
       {
         RangeFilter rangeFilter = (RangeFilter)theEObject;
         T result = caseRangeFilter(rangeFilter);
-        if (result == null) result = caseParameterFilterRule(rangeFilter);
+        if (result == null) result = caseStaticBindingRule(rangeFilter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -242,7 +256,7 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
       {
         NumericFilter numericFilter = (NumericFilter)theEObject;
         T result = caseNumericFilter(numericFilter);
-        if (result == null) result = caseParameterFilterRule(numericFilter);
+        if (result == null) result = caseStaticBindingRule(numericFilter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -250,7 +264,7 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
       {
         LiteralFilter literalFilter = (LiteralFilter)theEObject;
         T result = caseLiteralFilter(literalFilter);
-        if (result == null) result = caseParameterFilterRule(literalFilter);
+        if (result == null) result = caseStaticBindingRule(literalFilter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -319,6 +333,20 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
         EventWithMultiplicity eventWithMultiplicity = (EventWithMultiplicity)theEObject;
         T result = caseEventWithMultiplicity(eventWithMultiplicity);
         if (result == null) result = caseFollowerEventStructure(eventWithMultiplicity);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventPatternLanguagePackage.PATTERN_CALL_PARAMETER_LIST:
+      {
+        PatternCallParameterList patternCallParameterList = (PatternCallParameterList)theEObject;
+        T result = casePatternCallParameterList(patternCallParameterList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventPatternLanguagePackage.PATTERN_CALL_PARAMETER:
+      {
+        PatternCallParameter patternCallParameter = (PatternCallParameter)theEObject;
+        T result = casePatternCallParameter(patternCallParameter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -518,65 +546,97 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>CE Paramlist</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Typed Parameter List</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>CE Paramlist</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Typed Parameter List</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCEParamlist(CEParamlist object)
+  public T caseTypedParameterList(TypedParameterList object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Event Param With Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Typed Parameter</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Event Param With Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Typed Parameter</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEventParamWithType(EventParamWithType object)
+  public T caseTypedParameter(TypedParameter object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Parameter Filter</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Event Parameter List</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Parameter Filter</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Event Parameter List</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseParameterFilter(ParameterFilter object)
+  public T caseEventParameterList(EventParameterList object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Parameter Filter Rule</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Event Typed Parameter</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Parameter Filter Rule</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Event Typed Parameter</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseParameterFilterRule(ParameterFilterRule object)
+  public T caseEventTypedParameter(EventTypedParameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Static Binding</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Static Binding</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStaticBinding(StaticBinding object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Static Binding Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Static Binding Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStaticBindingRule(StaticBindingRule object)
   {
     return null;
   }
@@ -849,6 +909,38 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEventWithMultiplicity(EventWithMultiplicity object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pattern Call Parameter List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pattern Call Parameter List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePatternCallParameterList(PatternCallParameterList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pattern Call Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pattern Call Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePatternCallParameter(PatternCallParameter object)
   {
     return null;
   }

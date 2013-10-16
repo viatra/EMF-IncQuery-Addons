@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class NumericFilterImpl extends ParameterFilterRuleImpl implements NumericFilter
+public class NumericFilterImpl extends StaticBindingRuleImpl implements NumericFilter
 {
   /**
    * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.

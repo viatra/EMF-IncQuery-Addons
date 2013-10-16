@@ -2,9 +2,9 @@
  */
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.CEParamlist;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventParamWithType;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TypedParameter;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TypedParameterList;
 
 import java.util.Collection;
 
@@ -22,35 +22,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>CE Paramlist</b></em>'.
+ * An implementation of the model object '<em><b>Typed Parameter List</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.CEParamlistImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.TypedParameterListImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CEParamlistImpl extends MinimalEObjectImpl.Container implements CEParamlist
+public class TypedParameterListImpl extends MinimalEObjectImpl.Container implements TypedParameterList
 {
   /**
-   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
+   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParams()
+   * @see #getParameters()
    * @generated
    * @ordered
    */
-  protected EList<EventParamWithType> params;
+  protected EList<TypedParameter> parameters;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected CEParamlistImpl()
+  protected TypedParameterListImpl()
   {
     super();
   }
@@ -63,7 +63,7 @@ public class CEParamlistImpl extends MinimalEObjectImpl.Container implements CEP
   @Override
   protected EClass eStaticClass()
   {
-    return EventPatternLanguagePackage.Literals.CE_PARAMLIST;
+    return EventPatternLanguagePackage.Literals.TYPED_PARAMETER_LIST;
   }
 
   /**
@@ -71,13 +71,13 @@ public class CEParamlistImpl extends MinimalEObjectImpl.Container implements CEP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EventParamWithType> getParams()
+  public EList<TypedParameter> getParameters()
   {
-    if (params == null)
+    if (parameters == null)
     {
-      params = new EObjectContainmentEList<EventParamWithType>(EventParamWithType.class, this, EventPatternLanguagePackage.CE_PARAMLIST__PARAMS);
+      parameters = new EObjectContainmentEList<TypedParameter>(TypedParameter.class, this, EventPatternLanguagePackage.TYPED_PARAMETER_LIST__PARAMETERS);
     }
-    return params;
+    return parameters;
   }
 
   /**
@@ -90,8 +90,8 @@ public class CEParamlistImpl extends MinimalEObjectImpl.Container implements CEP
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.CE_PARAMLIST__PARAMS:
-        return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
+      case EventPatternLanguagePackage.TYPED_PARAMETER_LIST__PARAMETERS:
+        return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class CEParamlistImpl extends MinimalEObjectImpl.Container implements CEP
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.CE_PARAMLIST__PARAMS:
-        return getParams();
+      case EventPatternLanguagePackage.TYPED_PARAMETER_LIST__PARAMETERS:
+        return getParameters();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class CEParamlistImpl extends MinimalEObjectImpl.Container implements CEP
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.CE_PARAMLIST__PARAMS:
-        getParams().clear();
-        getParams().addAll((Collection<? extends EventParamWithType>)newValue);
+      case EventPatternLanguagePackage.TYPED_PARAMETER_LIST__PARAMETERS:
+        getParameters().clear();
+        getParameters().addAll((Collection<? extends TypedParameter>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class CEParamlistImpl extends MinimalEObjectImpl.Container implements CEP
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.CE_PARAMLIST__PARAMS:
-        getParams().clear();
+      case EventPatternLanguagePackage.TYPED_PARAMETER_LIST__PARAMETERS:
+        getParameters().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,10 +158,10 @@ public class CEParamlistImpl extends MinimalEObjectImpl.Container implements CEP
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.CE_PARAMLIST__PARAMS:
-        return params != null && !params.isEmpty();
+      case EventPatternLanguagePackage.TYPED_PARAMETER_LIST__PARAMETERS:
+        return parameters != null && !parameters.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //CEParamlistImpl
+} //TypedParameterListImpl

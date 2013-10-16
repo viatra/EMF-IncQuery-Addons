@@ -24,7 +24,7 @@ public interface BranchExpression extends FollowerEventStructure
 {
   /**
    * Returns the value of the '<em><b>Branches</b></em>' reference list.
-   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventParamWithType}.
+   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameter}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Branches</em>' reference list isn't clear,
@@ -36,6 +36,6 @@ public interface BranchExpression extends FollowerEventStructure
    * @model
    * @generated
    */
-  EList<EventParamWithType> getBranches();
+  EList<EventTypedParameter> getBranches();
 
 } // BranchExpression

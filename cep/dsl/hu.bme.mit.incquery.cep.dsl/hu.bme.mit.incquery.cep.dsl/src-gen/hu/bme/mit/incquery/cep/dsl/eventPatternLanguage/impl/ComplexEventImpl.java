@@ -2,9 +2,9 @@
  */
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.CEParamlist;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEvent;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventExpression;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventParameterList;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
 
 import java.util.Collection;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ComplexEventImpl#getParamlist <em>Paramlist</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ComplexEventImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ComplexEventImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ComplexEventImpl#getComplexEventExpressions <em>Complex Event Expressions</em>}</li>
  * </ul>
@@ -40,14 +40,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ComplexEventImpl extends EventImpl implements ComplexEvent
 {
   /**
-   * The cached value of the '{@link #getParamlist() <em>Paramlist</em>}' containment reference.
+   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParamlist()
+   * @see #getParameters()
    * @generated
    * @ordered
    */
-  protected CEParamlist paramlist;
+  protected EventParameterList parameters;
 
   /**
    * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
@@ -105,9 +105,9 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
    * <!-- end-user-doc -->
    * @generated
    */
-  public CEParamlist getParamlist()
+  public EventParameterList getParameters()
   {
-    return paramlist;
+    return parameters;
   }
 
   /**
@@ -115,13 +115,13 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetParamlist(CEParamlist newParamlist, NotificationChain msgs)
+  public NotificationChain basicSetParameters(EventParameterList newParameters, NotificationChain msgs)
   {
-    CEParamlist oldParamlist = paramlist;
-    paramlist = newParamlist;
+    EventParameterList oldParameters = parameters;
+    parameters = newParameters;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST, oldParamlist, newParamlist);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.COMPLEX_EVENT__PARAMETERS, oldParameters, newParameters);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -132,20 +132,20 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setParamlist(CEParamlist newParamlist)
+  public void setParameters(EventParameterList newParameters)
   {
-    if (newParamlist != paramlist)
+    if (newParameters != parameters)
     {
       NotificationChain msgs = null;
-      if (paramlist != null)
-        msgs = ((InternalEObject)paramlist).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST, null, msgs);
-      if (newParamlist != null)
-        msgs = ((InternalEObject)newParamlist).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST, null, msgs);
-      msgs = basicSetParamlist(newParamlist, msgs);
+      if (parameters != null)
+        msgs = ((InternalEObject)parameters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.COMPLEX_EVENT__PARAMETERS, null, msgs);
+      if (newParameters != null)
+        msgs = ((InternalEObject)newParameters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.COMPLEX_EVENT__PARAMETERS, null, msgs);
+      msgs = basicSetParameters(newParameters, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST, newParamlist, newParamlist));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.COMPLEX_EVENT__PARAMETERS, newParameters, newParameters));
   }
 
   /**
@@ -195,8 +195,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST:
-        return basicSetParamlist(null, msgs);
+      case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMETERS:
+        return basicSetParameters(null, msgs);
       case EventPatternLanguagePackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS:
         return ((InternalEList<?>)getComplexEventExpressions()).basicRemove(otherEnd, msgs);
     }
@@ -213,8 +213,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST:
-        return getParamlist();
+      case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMETERS:
+        return getParameters();
       case EventPatternLanguagePackage.COMPLEX_EVENT__PRIORITY:
         return getPriority();
       case EventPatternLanguagePackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS:
@@ -234,8 +234,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST:
-        setParamlist((CEParamlist)newValue);
+      case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMETERS:
+        setParameters((EventParameterList)newValue);
         return;
       case EventPatternLanguagePackage.COMPLEX_EVENT__PRIORITY:
         setPriority((Integer)newValue);
@@ -258,8 +258,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST:
-        setParamlist((CEParamlist)null);
+      case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMETERS:
+        setParameters((EventParameterList)null);
         return;
       case EventPatternLanguagePackage.COMPLEX_EVENT__PRIORITY:
         setPriority(PRIORITY_EDEFAULT);
@@ -281,8 +281,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMLIST:
-        return paramlist != null;
+      case EventPatternLanguagePackage.COMPLEX_EVENT__PARAMETERS:
+        return parameters != null;
       case EventPatternLanguagePackage.COMPLEX_EVENT__PRIORITY:
         return priority != PRIORITY_EDEFAULT;
       case EventPatternLanguagePackage.COMPLEX_EVENT__COMPLEX_EVENT_EXPRESSIONS:

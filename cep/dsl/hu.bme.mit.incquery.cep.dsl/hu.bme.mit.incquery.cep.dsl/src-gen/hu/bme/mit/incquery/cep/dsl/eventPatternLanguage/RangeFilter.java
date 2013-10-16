@@ -20,7 +20,7 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage;
  * @model
  * @generated
  */
-public interface RangeFilter extends ParameterFilterRule
+public interface RangeFilter extends StaticBindingRule
 {
   /**
    * Returns the value of the '<em><b>Neg</b></em>' attribute.

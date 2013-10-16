@@ -122,40 +122,58 @@ public interface EventPatternLanguageFactory extends EFactory
   Rule createRule();
 
   /**
-   * Returns a new object of class '<em>CE Paramlist</em>'.
+   * Returns a new object of class '<em>Typed Parameter List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>CE Paramlist</em>'.
+   * @return a new object of class '<em>Typed Parameter List</em>'.
    * @generated
    */
-  CEParamlist createCEParamlist();
+  TypedParameterList createTypedParameterList();
 
   /**
-   * Returns a new object of class '<em>Event Param With Type</em>'.
+   * Returns a new object of class '<em>Typed Parameter</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event Param With Type</em>'.
+   * @return a new object of class '<em>Typed Parameter</em>'.
    * @generated
    */
-  EventParamWithType createEventParamWithType();
+  TypedParameter createTypedParameter();
 
   /**
-   * Returns a new object of class '<em>Parameter Filter</em>'.
+   * Returns a new object of class '<em>Event Parameter List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Parameter Filter</em>'.
+   * @return a new object of class '<em>Event Parameter List</em>'.
    * @generated
    */
-  ParameterFilter createParameterFilter();
+  EventParameterList createEventParameterList();
 
   /**
-   * Returns a new object of class '<em>Parameter Filter Rule</em>'.
+   * Returns a new object of class '<em>Event Typed Parameter</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Parameter Filter Rule</em>'.
+   * @return a new object of class '<em>Event Typed Parameter</em>'.
    * @generated
    */
-  ParameterFilterRule createParameterFilterRule();
+  EventTypedParameter createEventTypedParameter();
+
+  /**
+   * Returns a new object of class '<em>Static Binding</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Static Binding</em>'.
+   * @generated
+   */
+  StaticBinding createStaticBinding();
+
+  /**
+   * Returns a new object of class '<em>Static Binding Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Static Binding Rule</em>'.
+   * @generated
+   */
+  StaticBindingRule createStaticBindingRule();
 
   /**
    * Returns a new object of class '<em>Range Filter</em>'.
@@ -309,6 +327,24 @@ public interface EventPatternLanguageFactory extends EFactory
    * @generated
    */
   EventWithMultiplicity createEventWithMultiplicity();
+
+  /**
+   * Returns a new object of class '<em>Pattern Call Parameter List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pattern Call Parameter List</em>'.
+   * @generated
+   */
+  PatternCallParameterList createPatternCallParameterList();
+
+  /**
+   * Returns a new object of class '<em>Pattern Call Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pattern Call Parameter</em>'.
+   * @generated
+   */
+  PatternCallParameter createPatternCallParameter();
 
   /**
    * Returns a new object of class '<em>Source</em>'.

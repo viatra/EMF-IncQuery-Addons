@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class LiteralFilterImpl extends ParameterFilterRuleImpl implements LiteralFilter
+public class LiteralFilterImpl extends StaticBindingRuleImpl implements LiteralFilter
 {
   /**
    * The default value of the '{@link #getNeg() <em>Neg</em>}' attribute.

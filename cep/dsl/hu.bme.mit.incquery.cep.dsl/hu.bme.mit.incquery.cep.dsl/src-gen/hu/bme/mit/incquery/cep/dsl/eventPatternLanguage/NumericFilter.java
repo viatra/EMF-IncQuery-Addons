@@ -20,7 +20,7 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage;
  * @model
  * @generated
  */
-public interface NumericFilter extends ParameterFilterRule
+public interface NumericFilter extends StaticBindingRule
 {
   /**
    * Returns the value of the '<em><b>Operator</b></em>' attribute.
