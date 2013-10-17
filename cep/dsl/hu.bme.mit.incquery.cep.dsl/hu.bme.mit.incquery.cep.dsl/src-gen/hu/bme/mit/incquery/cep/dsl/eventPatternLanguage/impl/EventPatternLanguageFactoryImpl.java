@@ -66,20 +66,41 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
     switch (eClass.getClassifierID())
     {
       case EventPatternLanguagePackage.EVENT_MODEL: return createEventModel();
+      case EventPatternLanguagePackage.PACKAGED_MODEL: return createPackagedModel();
       case EventPatternLanguagePackage.USAGE: return createUsage();
-      case EventPatternLanguagePackage.IQ_USAGE: return createIQUsage();
-      case EventPatternLanguagePackage.EVENT_SOURCE_USAGE: return createEventSourceUsage();
-      case EventPatternLanguagePackage.MODEL_ELEMENTS: return createModelElements();
-      case EventPatternLanguagePackage.EVENT: return createEvent();
-      case EventPatternLanguagePackage.ABSTRACT_ATOMIC_EVENT: return createAbstractAtomicEvent();
-      case EventPatternLanguagePackage.ATOMIC_EVENT: return createAtomicEvent();
-      case EventPatternLanguagePackage.IQ_PATTERN_EVENT: return createIQPatternEvent();
-      case EventPatternLanguagePackage.COMPLEX_EVENT: return createComplexEvent();
+      case EventPatternLanguagePackage.MODEL_ELEMENT: return createModelElement();
+      case EventPatternLanguagePackage.EVENT_PATTERN: return createEventPattern();
+      case EventPatternLanguagePackage.ABSTRACT_ATOMIC_EVENT_PATTERN: return createAbstractAtomicEventPattern();
+      case EventPatternLanguagePackage.ATOMIC_EVENT_PATTERN: return createAtomicEventPattern();
+      case EventPatternLanguagePackage.IQ_PATTERN_EVENT_PATTERN: return createIQPatternEventPattern();
+      case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN: return createComplexEventPattern();
       case EventPatternLanguagePackage.RULE: return createRule();
+      case EventPatternLanguagePackage.ON_APPEAR_RULE: return createOnAppearRule();
+      case EventPatternLanguagePackage.FAIL_DIAGNOSTIC_RULE: return createFailDiagnosticRule();
       case EventPatternLanguagePackage.TYPED_PARAMETER_LIST: return createTypedParameterList();
       case EventPatternLanguagePackage.TYPED_PARAMETER: return createTypedParameter();
-      case EventPatternLanguagePackage.EVENT_PARAMETER_LIST: return createEventParameterList();
+      case EventPatternLanguagePackage.EVENT_PATTERN_PARAMETER_LIST: return createEventPatternParameterList();
       case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER: return createEventTypedParameter();
+      case EventPatternLanguagePackage.PARAMETRIZED_INC_QUERY_PATTERN_REFERENCE: return createParametrizedIncQueryPatternReference();
+      case EventPatternLanguagePackage.MULTIPLICITY: return createMultiplicity();
+      case EventPatternLanguagePackage.TIMEWINDOW: return createTimewindow();
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY: return createEventTypedParameterWithMultiplicity();
+      case EventPatternLanguagePackage.PATTERN_CALL_PARAMETER_LIST: return createPatternCallParameterList();
+      case EventPatternLanguagePackage.PATTERN_CALL_PARAMETER: return createPatternCallParameter();
+      case EventPatternLanguagePackage.COMPLEX_EVENT_EXPRESSION: return createComplexEventExpression();
+      case EventPatternLanguagePackage.AUGMENTED_EXPRESSION: return createAugmentedExpression();
+      case EventPatternLanguagePackage.TIMED_EXPRESSION: return createTimedExpression();
+      case EventPatternLanguagePackage.MULTIPLICITY_EXPRESSION: return createMultiplicityExpression();
+      case EventPatternLanguagePackage.TIMED_MULTIPLICITY_EXPRESSION: return createTimedMultiplicityExpression();
+      case EventPatternLanguagePackage.EXPRESSION: return createExpression();
+      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION: return createFollowsExpression();
+      case EventPatternLanguagePackage.FOLLOWER_EXPRESSION: return createFollowerExpression();
+      case EventPatternLanguagePackage.FOLLOWER_EVENT_STRUCTURE: return createFollowerEventStructure();
+      case EventPatternLanguagePackage.INNER_BRANCH_EXPRESSION: return createInnerBranchExpression();
+      case EventPatternLanguagePackage.BRANCH_EXPRESSION: return createBranchExpression();
+      case EventPatternLanguagePackage.FOLLOWS_OPERATOR: return createFollowsOperator();
+      case EventPatternLanguagePackage.FOLLOWS_OPERATOR_NO_TW: return createFollowsOperatorNoTW();
+      case EventPatternLanguagePackage.FOLLOWS_OPERATOR_VIA_TW: return createFollowsOperatorViaTW();
       case EventPatternLanguagePackage.STATIC_BINDING: return createStaticBinding();
       case EventPatternLanguagePackage.STATIC_BINDING_RULE: return createStaticBindingRule();
       case EventPatternLanguagePackage.RANGE_FILTER: return createRangeFilter();
@@ -90,17 +111,6 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
       case EventPatternLanguagePackage.CLOSED_OPEN: return createClosedOpen();
       case EventPatternLanguagePackage.NUMERIC_FILTER: return createNumericFilter();
       case EventPatternLanguagePackage.LITERAL_FILTER: return createLiteralFilter();
-      case EventPatternLanguagePackage.COMPLEX_EVENT_EXPRESSION: return createComplexEventExpression();
-      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION: return createFollowsExpression();
-      case EventPatternLanguagePackage.EVENT_WITH_FOLLOWS_OPERATOR: return createEventWithFollowsOperator();
-      case EventPatternLanguagePackage.FOLLOWS_OPERATOR: return createFollowsOperator();
-      case EventPatternLanguagePackage.FOLLOWS_OPERATOR_NO_TW: return createFollowsOperatorNoTW();
-      case EventPatternLanguagePackage.FOLLOWS_OPERATOR_VIA_TW: return createFollowsOperatorViaTW();
-      case EventPatternLanguagePackage.FOLLOWER_EVENT_STRUCTURE: return createFollowerEventStructure();
-      case EventPatternLanguagePackage.BRANCH_EXPRESSION: return createBranchExpression();
-      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY: return createEventTypedParameterWithMultiplicity();
-      case EventPatternLanguagePackage.PATTERN_CALL_PARAMETER_LIST: return createPatternCallParameterList();
-      case EventPatternLanguagePackage.PATTERN_CALL_PARAMETER: return createPatternCallParameter();
       case EventPatternLanguagePackage.SOURCE: return createSource();
       case EventPatternLanguagePackage.ADAPTER: return createAdapter();
       default:
@@ -158,6 +168,17 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
+  public PackagedModel createPackagedModel()
+  {
+    PackagedModelImpl packagedModel = new PackagedModelImpl();
+    return packagedModel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Usage createUsage()
   {
     UsageImpl usage = new UsageImpl();
@@ -169,10 +190,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public IQUsage createIQUsage()
+  public ModelElement createModelElement()
   {
-    IQUsageImpl iqUsage = new IQUsageImpl();
-    return iqUsage;
+    ModelElementImpl modelElement = new ModelElementImpl();
+    return modelElement;
   }
 
   /**
@@ -180,10 +201,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventSourceUsage createEventSourceUsage()
+  public EventPattern createEventPattern()
   {
-    EventSourceUsageImpl eventSourceUsage = new EventSourceUsageImpl();
-    return eventSourceUsage;
+    EventPatternImpl eventPattern = new EventPatternImpl();
+    return eventPattern;
   }
 
   /**
@@ -191,10 +212,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public ModelElements createModelElements()
+  public AbstractAtomicEventPattern createAbstractAtomicEventPattern()
   {
-    ModelElementsImpl modelElements = new ModelElementsImpl();
-    return modelElements;
+    AbstractAtomicEventPatternImpl abstractAtomicEventPattern = new AbstractAtomicEventPatternImpl();
+    return abstractAtomicEventPattern;
   }
 
   /**
@@ -202,10 +223,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public Event createEvent()
+  public AtomicEventPattern createAtomicEventPattern()
   {
-    EventImpl event = new EventImpl();
-    return event;
+    AtomicEventPatternImpl atomicEventPattern = new AtomicEventPatternImpl();
+    return atomicEventPattern;
   }
 
   /**
@@ -213,10 +234,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public AbstractAtomicEvent createAbstractAtomicEvent()
+  public IQPatternEventPattern createIQPatternEventPattern()
   {
-    AbstractAtomicEventImpl abstractAtomicEvent = new AbstractAtomicEventImpl();
-    return abstractAtomicEvent;
+    IQPatternEventPatternImpl iqPatternEventPattern = new IQPatternEventPatternImpl();
+    return iqPatternEventPattern;
   }
 
   /**
@@ -224,32 +245,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public AtomicEvent createAtomicEvent()
+  public ComplexEventPattern createComplexEventPattern()
   {
-    AtomicEventImpl atomicEvent = new AtomicEventImpl();
-    return atomicEvent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public IQPatternEvent createIQPatternEvent()
-  {
-    IQPatternEventImpl iqPatternEvent = new IQPatternEventImpl();
-    return iqPatternEvent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ComplexEvent createComplexEvent()
-  {
-    ComplexEventImpl complexEvent = new ComplexEventImpl();
-    return complexEvent;
+    ComplexEventPatternImpl complexEventPattern = new ComplexEventPatternImpl();
+    return complexEventPattern;
   }
 
   /**
@@ -261,6 +260,28 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
   {
     RuleImpl rule = new RuleImpl();
     return rule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OnAppearRule createOnAppearRule()
+  {
+    OnAppearRuleImpl onAppearRule = new OnAppearRuleImpl();
+    return onAppearRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FailDiagnosticRule createFailDiagnosticRule()
+  {
+    FailDiagnosticRuleImpl failDiagnosticRule = new FailDiagnosticRuleImpl();
+    return failDiagnosticRule;
   }
 
   /**
@@ -290,10 +311,10 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventParameterList createEventParameterList()
+  public EventPatternParameterList createEventPatternParameterList()
   {
-    EventParameterListImpl eventParameterList = new EventParameterListImpl();
-    return eventParameterList;
+    EventPatternParameterListImpl eventPatternParameterList = new EventPatternParameterListImpl();
+    return eventPatternParameterList;
   }
 
   /**
@@ -305,6 +326,226 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
   {
     EventTypedParameterImpl eventTypedParameter = new EventTypedParameterImpl();
     return eventTypedParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ParametrizedIncQueryPatternReference createParametrizedIncQueryPatternReference()
+  {
+    ParametrizedIncQueryPatternReferenceImpl parametrizedIncQueryPatternReference = new ParametrizedIncQueryPatternReferenceImpl();
+    return parametrizedIncQueryPatternReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Multiplicity createMultiplicity()
+  {
+    MultiplicityImpl multiplicity = new MultiplicityImpl();
+    return multiplicity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Timewindow createTimewindow()
+  {
+    TimewindowImpl timewindow = new TimewindowImpl();
+    return timewindow;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EventTypedParameterWithMultiplicity createEventTypedParameterWithMultiplicity()
+  {
+    EventTypedParameterWithMultiplicityImpl eventTypedParameterWithMultiplicity = new EventTypedParameterWithMultiplicityImpl();
+    return eventTypedParameterWithMultiplicity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PatternCallParameterList createPatternCallParameterList()
+  {
+    PatternCallParameterListImpl patternCallParameterList = new PatternCallParameterListImpl();
+    return patternCallParameterList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PatternCallParameter createPatternCallParameter()
+  {
+    PatternCallParameterImpl patternCallParameter = new PatternCallParameterImpl();
+    return patternCallParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ComplexEventExpression createComplexEventExpression()
+  {
+    ComplexEventExpressionImpl complexEventExpression = new ComplexEventExpressionImpl();
+    return complexEventExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AugmentedExpression createAugmentedExpression()
+  {
+    AugmentedExpressionImpl augmentedExpression = new AugmentedExpressionImpl();
+    return augmentedExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TimedExpression createTimedExpression()
+  {
+    TimedExpressionImpl timedExpression = new TimedExpressionImpl();
+    return timedExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MultiplicityExpression createMultiplicityExpression()
+  {
+    MultiplicityExpressionImpl multiplicityExpression = new MultiplicityExpressionImpl();
+    return multiplicityExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TimedMultiplicityExpression createTimedMultiplicityExpression()
+  {
+    TimedMultiplicityExpressionImpl timedMultiplicityExpression = new TimedMultiplicityExpressionImpl();
+    return timedMultiplicityExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression createExpression()
+  {
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FollowsExpression createFollowsExpression()
+  {
+    FollowsExpressionImpl followsExpression = new FollowsExpressionImpl();
+    return followsExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FollowerExpression createFollowerExpression()
+  {
+    FollowerExpressionImpl followerExpression = new FollowerExpressionImpl();
+    return followerExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FollowerEventStructure createFollowerEventStructure()
+  {
+    FollowerEventStructureImpl followerEventStructure = new FollowerEventStructureImpl();
+    return followerEventStructure;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InnerBranchExpression createInnerBranchExpression()
+  {
+    InnerBranchExpressionImpl innerBranchExpression = new InnerBranchExpressionImpl();
+    return innerBranchExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BranchExpression createBranchExpression()
+  {
+    BranchExpressionImpl branchExpression = new BranchExpressionImpl();
+    return branchExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FollowsOperator createFollowsOperator()
+  {
+    FollowsOperatorImpl followsOperator = new FollowsOperatorImpl();
+    return followsOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FollowsOperatorNoTW createFollowsOperatorNoTW()
+  {
+    FollowsOperatorNoTWImpl followsOperatorNoTW = new FollowsOperatorNoTWImpl();
+    return followsOperatorNoTW;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FollowsOperatorViaTW createFollowsOperatorViaTW()
+  {
+    FollowsOperatorViaTWImpl followsOperatorViaTW = new FollowsOperatorViaTWImpl();
+    return followsOperatorViaTW;
   }
 
   /**
@@ -415,127 +656,6 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
   {
     LiteralFilterImpl literalFilter = new LiteralFilterImpl();
     return literalFilter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ComplexEventExpression createComplexEventExpression()
-  {
-    ComplexEventExpressionImpl complexEventExpression = new ComplexEventExpressionImpl();
-    return complexEventExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FollowsExpression createFollowsExpression()
-  {
-    FollowsExpressionImpl followsExpression = new FollowsExpressionImpl();
-    return followsExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EventWithFollowsOperator createEventWithFollowsOperator()
-  {
-    EventWithFollowsOperatorImpl eventWithFollowsOperator = new EventWithFollowsOperatorImpl();
-    return eventWithFollowsOperator;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FollowsOperator createFollowsOperator()
-  {
-    FollowsOperatorImpl followsOperator = new FollowsOperatorImpl();
-    return followsOperator;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FollowsOperatorNoTW createFollowsOperatorNoTW()
-  {
-    FollowsOperatorNoTWImpl followsOperatorNoTW = new FollowsOperatorNoTWImpl();
-    return followsOperatorNoTW;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FollowsOperatorViaTW createFollowsOperatorViaTW()
-  {
-    FollowsOperatorViaTWImpl followsOperatorViaTW = new FollowsOperatorViaTWImpl();
-    return followsOperatorViaTW;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FollowerEventStructure createFollowerEventStructure()
-  {
-    FollowerEventStructureImpl followerEventStructure = new FollowerEventStructureImpl();
-    return followerEventStructure;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BranchExpression createBranchExpression()
-  {
-    BranchExpressionImpl branchExpression = new BranchExpressionImpl();
-    return branchExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EventTypedParameterWithMultiplicity createEventTypedParameterWithMultiplicity()
-  {
-    EventTypedParameterWithMultiplicityImpl eventTypedParameterWithMultiplicity = new EventTypedParameterWithMultiplicityImpl();
-    return eventTypedParameterWithMultiplicity;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PatternCallParameterList createPatternCallParameterList()
-  {
-    PatternCallParameterListImpl patternCallParameterList = new PatternCallParameterListImpl();
-    return patternCallParameterList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PatternCallParameter createPatternCallParameter()
-  {
-    PatternCallParameterImpl patternCallParameter = new PatternCallParameterImpl();
-    return patternCallParameter;
   }
 
   /**

@@ -12,8 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression#getFirstEvent <em>First Event</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression#getEvents <em>Events</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression#getFollowerExpressions <em>Follower Expressions</em>}</li>
  * </ul>
  * </p>
  *
@@ -21,38 +20,22 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface FollowsExpression extends ComplexEventExpression
+public interface FollowsExpression extends Expression
 {
   /**
-   * Returns the value of the '<em><b>First Event</b></em>' containment reference list.
-   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity}.
+   * Returns the value of the '<em><b>Follower Expressions</b></em>' containment reference list.
+   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerExpression}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>First Event</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Follower Expressions</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>First Event</em>' containment reference list.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getFollowsExpression_FirstEvent()
+   * @return the value of the '<em>Follower Expressions</em>' containment reference list.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getFollowsExpression_FollowerExpressions()
    * @model containment="true"
    * @generated
    */
-  EList<EventTypedParameterWithMultiplicity> getFirstEvent();
-
-  /**
-   * Returns the value of the '<em><b>Events</b></em>' containment reference list.
-   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithFollowsOperator}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Events</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Events</em>' containment reference list.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getFollowsExpression_Events()
-   * @model containment="true"
-   * @generated
-   */
-  EList<EventWithFollowsOperator> getEvents();
+  EList<FollowerExpression> getFollowerExpressions();
 
 } // FollowsExpression

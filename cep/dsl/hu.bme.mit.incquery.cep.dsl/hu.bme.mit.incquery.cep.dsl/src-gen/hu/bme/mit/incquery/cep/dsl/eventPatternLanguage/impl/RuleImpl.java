@@ -2,7 +2,7 @@
  */
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Event;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule;
 
@@ -29,24 +29,24 @@ import org.eclipse.xtext.xbase.XExpression;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.RuleImpl#getEvents <em>Events</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.RuleImpl#getEventPatterns <em>Event Patterns</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.RuleImpl#getAction <em>Action</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RuleImpl extends ModelElementsImpl implements Rule
+public class RuleImpl extends ModelElementImpl implements Rule
 {
   /**
-   * The cached value of the '{@link #getEvents() <em>Events</em>}' reference list.
+   * The cached value of the '{@link #getEventPatterns() <em>Event Patterns</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEvents()
+   * @see #getEventPatterns()
    * @generated
    * @ordered
    */
-  protected EList<Event> events;
+  protected EList<EventPattern> eventPatterns;
 
   /**
    * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
@@ -84,13 +84,13 @@ public class RuleImpl extends ModelElementsImpl implements Rule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Event> getEvents()
+  public EList<EventPattern> getEventPatterns()
   {
-    if (events == null)
+    if (eventPatterns == null)
     {
-      events = new EObjectResolvingEList<Event>(Event.class, this, EventPatternLanguagePackage.RULE__EVENTS);
+      eventPatterns = new EObjectResolvingEList<EventPattern>(EventPattern.class, this, EventPatternLanguagePackage.RULE__EVENT_PATTERNS);
     }
-    return events;
+    return eventPatterns;
   }
 
   /**
@@ -167,8 +167,8 @@ public class RuleImpl extends ModelElementsImpl implements Rule
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.RULE__EVENTS:
-        return getEvents();
+      case EventPatternLanguagePackage.RULE__EVENT_PATTERNS:
+        return getEventPatterns();
       case EventPatternLanguagePackage.RULE__ACTION:
         return getAction();
     }
@@ -186,9 +186,9 @@ public class RuleImpl extends ModelElementsImpl implements Rule
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.RULE__EVENTS:
-        getEvents().clear();
-        getEvents().addAll((Collection<? extends Event>)newValue);
+      case EventPatternLanguagePackage.RULE__EVENT_PATTERNS:
+        getEventPatterns().clear();
+        getEventPatterns().addAll((Collection<? extends EventPattern>)newValue);
         return;
       case EventPatternLanguagePackage.RULE__ACTION:
         setAction((XExpression)newValue);
@@ -207,8 +207,8 @@ public class RuleImpl extends ModelElementsImpl implements Rule
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.RULE__EVENTS:
-        getEvents().clear();
+      case EventPatternLanguagePackage.RULE__EVENT_PATTERNS:
+        getEventPatterns().clear();
         return;
       case EventPatternLanguagePackage.RULE__ACTION:
         setAction((XExpression)null);
@@ -227,8 +227,8 @@ public class RuleImpl extends ModelElementsImpl implements Rule
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.RULE__EVENTS:
-        return events != null && !events.isEmpty();
+      case EventPatternLanguagePackage.RULE__EVENT_PATTERNS:
+        return eventPatterns != null && !eventPatterns.isEmpty();
       case EventPatternLanguagePackage.RULE__ACTION:
         return action != null;
     }

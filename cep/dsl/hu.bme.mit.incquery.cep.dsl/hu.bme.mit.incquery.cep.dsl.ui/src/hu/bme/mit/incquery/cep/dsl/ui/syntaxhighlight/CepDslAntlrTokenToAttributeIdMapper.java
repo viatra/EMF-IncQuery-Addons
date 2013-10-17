@@ -13,9 +13,9 @@ public class CepDslAntlrTokenToAttributeIdMapper extends
 	protected String calculateId(String tokenName, int tokenType) {
 		String calculateId = super.calculateId(tokenName, tokenType);
 
-		if (getApostrophedKeyword(IQPatternChangeType.FOUND.getLiteral())
+		if (getApostrophedKeyword(IQPatternChangeType.NEW_MATCH_FOUND.getLiteral())
 				.equals(tokenName)
-				|| getApostrophedKeyword(IQPatternChangeType.LOST.getLiteral())
+				|| getApostrophedKeyword(IQPatternChangeType.EXISTING_MATCH_LOST.getLiteral())
 						.equals(tokenName)) {
 			return CepDslHighlightingConfiguration.EDL_ENUM_ID;
 		}

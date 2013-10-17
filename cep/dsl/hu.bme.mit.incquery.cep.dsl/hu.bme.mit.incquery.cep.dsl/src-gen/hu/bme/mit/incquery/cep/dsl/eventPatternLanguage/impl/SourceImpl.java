@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class SourceImpl extends ModelElementsImpl implements Source
+public class SourceImpl extends ModelElementImpl implements Source
 {
   /**
    * The cached value of the '{@link #getAdapter() <em>Adapter</em>}' containment reference list.

@@ -58,12 +58,12 @@ public interface EventTypedParameter extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' reference.
-   * @see #setType(Event)
+   * @see #setType(EventPattern)
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventTypedParameter_Type()
    * @model
    * @generated
    */
-  Event getType();
+  EventPattern getType();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameter#getType <em>Type</em>}' reference.
@@ -73,6 +73,6 @@ public interface EventTypedParameter extends EObject
    * @see #getType()
    * @generated
    */
-  void setType(Event value);
+  void setType(EventPattern value);
 
 } // EventTypedParameter

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transaction
+Bundle-SymbolicName: hu.bme.mit.incquery.cep.casestudy.transaction;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: hu.bme.mit.incquery.cep.casestudy.transaction.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ hu.bme.mit.incquery.cep;bundle-version="1.0.0",
+ hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns;bundle-version="0.0.1",
+ hu.bme.mit.incquery.cep.casestudy.transaction.metamodel;bundle-version="0.1.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

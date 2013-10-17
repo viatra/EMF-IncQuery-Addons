@@ -7,66 +7,76 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate eventPatternLanguage "http://www.bme.hu/mit/incquery/cep/dsl/EventPatternLanguage"
 
 EventModel:
-	('package' packageName=QualifiedName)?
+	packagedModel=PackagedModel
+;
+
+PackagedModel:
+	'package' name=QualifiedName
 	usages+=Usage*
-	'EventModel' name=ID '{'
-		events+=ModelElements*
-	'}';
+	modelElements+=ModelElement*	
+;
 
 DOUBLE returns ecore::EDouble:
 	('-')? INT('.' INT)?;
 
-//QualifiedName:
-//	ID ('.' ID)*;
-//
-//QualifiedNameWithWildcard:
-//	QualifiedName '.*'?;
-
 Usage:
-	IQUsage | EventSourceUsage;
+	'uses' importedNamespace=QualifiedNameWithWildcard;
 
-IQUsage:
-	'uses-incquery-patterns' importedNamespace=QualifiedNameWithWildcard;
-
-EventSourceUsage:
-	'uses-eventsources' importedNamespace=QualifiedNameWithWildcard;
-
-ModelElements:
-	Event | Rule | Source
+ModelElement:
+	EventPattern | Rule | Source
 ;
 
-Event:
-	AbstractAtomicEvent | ComplexEvent;
 
 
-/*******************************************BASIC EVENT TYPE ELEMENTS*******************************************/
-AbstractAtomicEvent:
-	AtomicEvent | IQPatternEvent;
+/*******************************************MAIN MODEL ELEMENTS*******************************************/
+
+EventPattern:
+	AbstractAtomicEventPattern | ComplexEventPattern
+;
+
+AbstractAtomicEventPattern:
+	AtomicEventPattern | IQPatternEventPattern
+;
 	
-AtomicEvent:
+AtomicEventPattern:
 	'AtomicEvent' name=ID '('parameters=TypedParameterList?')' '{'
-		'source' ':' source=[Source]
-		'staticBinding' '{'
+		('source' ':' source=[Source])?
+		('staticBinding' '{'
 			staticBindings += StaticBinding*
-		'}'
-	'}';
+		'}')?
+	'}'
+;
 	
-IQPatternEvent:
+IQPatternEventPattern:
 	'IQPatternEvent' name=ID '('parameters=TypedParameterList?')' '{'
-		'iqPatternRef' ':' iqpattern=STRING//[iqpl::Pattern]
-		'iqChangeType' ':' changeType=IQPatternChangeType
-	'}';
+		'iqPatternRef' ':' iqPatternRef=ParametrizedIncQueryPatternReference
+		'iqChangeType' ':' iqChangeType=IQPatternChangeType
+	'}'
+;
 
-
-ComplexEvent:
-	'ComplexEvent' name=ID '('parameters=EventParameterList?')' '{'
-		'priority'':' priority=INT
-		'definition'':'complexEventExpressions+=ComplexEventExpression*
-	'}';
+ComplexEventPattern:
+	'ComplexEvent' name=ID '('parameters=EventPatternParameterList?')' '{'
+		('priority'':' priority=INT)?
+		('definition'':'complexEventExpressions=ComplexEventExpression)?
+	'}'
+;
 
 Rule:
-	'Rule' (name=ID)? '{'
-		'events' ':' events+=[Event] (', 'events+=[Event])*
+	OnAppearRule | FailDiagnosticRule
+;
+
+OnAppearRule:
+	'RuleOnAppear' (name=ID)? '{'
+		'events' ':' eventPatterns+=[EventPattern] (', 'eventPatterns+=[EventPattern])*
+		'action' '{'
+			action = XExpression
+		'}'
+	'}'
+;
+
+FailDiagnosticRule:
+	'RuleOnFail' (name=ID)? '{'
+		'events' ':' eventPatterns+=[EventPattern] (', 'eventPatterns+=[EventPattern])*
 		'action' '{'
 			action = XExpression
 		'}'
@@ -78,12 +88,13 @@ Rule:
 	
 /*******************************************IQ PATTERN ELEMENTS*******************************************/
 enum IQPatternChangeType:
-	FOUND | LOST;
+	NEW_MATCH_FOUND | EXISTING_MATCH_LOST 
+;
 /*******************************************IQ PATTERN ELEMENTS*******************************************/
 
 
 
-/*******************************************FUNCTION ARGUMEN PARAMETERS*******************************************/
+/*******************************************FUNCTION ARGUMENT PARAMETERS*******************************************/
 TypedParameterList:
 	{TypedParameterList}
 	parameters+=TypedParameter (', ' parameters+=TypedParameter)*
@@ -94,91 +105,36 @@ TypedParameter:
 	name=ID ':' type = JvmTypeReference
 ;
 
-EventParameterList:
-	{EventParameterList}
+EventPatternParameterList:
+	{EventPatternParameterList}
 	parameters+=EventTypedParameter (', ' parameters+=EventTypedParameter)*
 ;
 
 EventTypedParameter:
 	{EventTypedParameter}
-	name=ID ':' type=[Event];
+	name=ID ':' type=[EventPattern]
+;
 /*******************************************FUNCTION ARGUMEN PARAMETERS*******************************************/
 
-
-/*******************************************STATIC BINDING ELEMENTS*******************************************/
-StaticBinding:
-	parameter=[TypedParameter] bindingRule=StaticBindingRule;
-
-StaticBindingRule:
-	RangeFilter | NumericFilter | LiteralFilter;
-
-RangeFilter:
-	(neg=NegationOpartor)? "in" range=Range;
-
-Range:
-	OpenOpen | OpenClosed | ClosedClosed | ClosedOpen;
-
-OpenOpen:
-	'(' lowerBound=DOUBLE ', ' upperBound=DOUBLE ')';
-
-OpenClosed:
-	'(' lowerBound=DOUBLE ', ' upperBound=DOUBLE ']';
-
-ClosedClosed:
-	'[' lowerBound=DOUBLE ', ' upperBound=DOUBLE ')';
-
-ClosedOpen:
-	'[' lowerBound=DOUBLE ', ' upperBound=DOUBLE ']';
-
-NumericFilter:
-	operator=NumericOperator value=DOUBLE;
-
-NumericOperator:
-	'<' | '=<' | '==' | '!=' | '>=' | '>';
-
-LiteralFilter:
-	(neg=NegationOpartor)? operator=LiteralOperator value=STRING;
-
-LiteralOperator:
-	'contains' | 'startsWith' | 'endsWith';
-
-NegationOpartor:
-	'not';
-/*******************************************STATIC BINDING ELEMENTS*******************************************/
-
+/*******************************************INCQUERY INTEGRATION*******************************************/
+ParametrizedIncQueryPatternReference:
+	iqpattern=[iqpl::Pattern]('('parameterList=PatternCallParameterList?')')?
+;
+/*******************************************INCQUERY INTEGRATION*******************************************/
 
 /*******************************************COMPLEX EVENT EXPRESSIONS*******************************************/
-ComplexEventExpression:
-	FollowsExpression
+Multiplicity:
+	'{'multiplicity=INT'}'
 ;
 
-FollowsExpression:
-	firstEvent+=EventTypedParameterWithMultiplicity (events+=EventWithFollowsOperator)*;
-
-EventWithFollowsOperator:
-	operator=FollowsOperator event=FollowerEventStructure;
-
-FollowsOperator:
-	FollowsOperatorNoTW | FollowsOperatorViaTW;
-
-FollowsOperatorNoTW:
-	{FollowsOperatorNoTW}
-	'->';
-
-FollowsOperatorViaTW:
-	'-[' timewindow=INT ']->';
-
-FollowerEventStructure:
-	BranchExpression | EventTypedParameterWithMultiplicity
-;
-
-BranchExpression:
-	'('branches+=EventTypedParameterWithMultiplicity ('OR' branches+=EventTypedParameterWithMultiplicity)+')'
+Timewindow:
+	'['length=INT']'
 ;
 
 EventTypedParameterWithMultiplicity:
-	event=[EventTypedParameter]('('parameters=PatternCallParameterList?')')? ('{' multiplicity=INT '}')?;
-	
+	eventPattern=[EventTypedParameter]('('parameterList=PatternCallParameterList?')')? (multiplicity=Multiplicity)?
+;
+
 PatternCallParameterList:
 	{PatternCallParameterList}
 	parameters+=PatternCallParameter (', ' parameters+=PatternCallParameter)*
@@ -189,8 +145,121 @@ PatternCallParameter:
 	name=ID
 ;
 
+ComplexEventExpression:
+	Expression | AugmentedExpression
+;
+
+AugmentedExpression:
+	TimedExpression | MultiplicityExpression | TimedMultiplicityExpression
+;
+
+TimedExpression:
+	'('expression=Expression')' timewindow=Timewindow
+;
+
+MultiplicityExpression:
+	'('expression=Expression')' multiplicity=Multiplicity
+;
+
+TimedMultiplicityExpression:
+	'('expression=Expression')' multiplicity=Multiplicity timewindow=Timewindow
+;
+
+Expression:
+	FollowsExpression | BranchExpression
+;
+
+FollowsExpression:
+	{FollowsExpression}
+	eventPatterns+=EventTypedParameterWithMultiplicity (followerExpressions+=FollowerExpression)+
+;
+
+FollowerExpression:
+	followsOperator=FollowsOperator eventPattern=FollowerEventStructure
+;
+
+FollowerEventStructure:
+        InnerBranchExpression | EventTypedParameterWithMultiplicity
+;
+
+InnerBranchExpression:
+	'('expression=BranchExpression')'
+;
+
+BranchExpression:
+	{BranchExpression}
+	eventPatterns+=EventTypedParameterWithMultiplicity ('OR' eventPatterns+=EventTypedParameterWithMultiplicity)+
+;
+
+FollowsOperator:
+        FollowsOperatorNoTW | FollowsOperatorViaTW
+;
+
+FollowsOperatorNoTW:
+        {FollowsOperatorNoTW}
+        '->'
+;
+
+FollowsOperatorViaTW:
+        '-[' timewindow=INT ']->'
+;
+
+
 
 /*******************************************COMPLEX EVENT EXPRESSIONS*******************************************/
+
+/*******************************************STATIC BINDING ELEMENTS*******************************************/
+StaticBinding:
+	parameter=[TypedParameter] bindingRule=StaticBindingRule
+;
+
+StaticBindingRule:
+	RangeFilter | NumericFilter | LiteralFilter
+;
+
+RangeFilter:
+	(neg=NegationOpartor)? "in" range=Range
+;
+
+Range:
+	OpenOpen | OpenClosed | ClosedClosed | ClosedOpen
+;
+
+OpenOpen:
+	'(' lowerBound=DOUBLE ', ' upperBound=DOUBLE ')'
+;
+
+OpenClosed:
+	'(' lowerBound=DOUBLE ', ' upperBound=DOUBLE ']'
+;
+
+ClosedClosed:
+	'[' lowerBound=DOUBLE ', ' upperBound=DOUBLE ')'
+;
+
+ClosedOpen:
+	'[' lowerBound=DOUBLE ', ' upperBound=DOUBLE ']';
+
+NumericFilter:
+	operator=NumericOperator value=DOUBLE
+;
+
+NumericOperator:
+	'<' | '=<' | '==' | '!=' | '>=' | '>'
+;
+
+LiteralFilter:
+	(neg=NegationOpartor)? operator=LiteralOperator value=STRING
+;
+
+LiteralOperator:
+	'contains' | 'startsWith' | 'endsWith'
+;
+
+NegationOpartor:
+	'not'
+;
+/*******************************************STATIC BINDING ELEMENTS*******************************************/
 
 
 /*******************************************STRUCTURAL/INTEGRATION FEATURES*******************************************/

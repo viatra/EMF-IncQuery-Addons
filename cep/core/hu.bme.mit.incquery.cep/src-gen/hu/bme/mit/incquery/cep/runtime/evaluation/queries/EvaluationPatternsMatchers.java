@@ -29,40 +29,16 @@ public final class EvaluationPatternsMatchers {
     
   }
   
-  public FinishedStateMachineMatcher getFinishedStateMachineMatcher() throws IncQueryException {
-    return FinishedStateMachineMatcher.on(engine);
-  }
-  
-  public AtomicPatternTypeMatcher getAtomicPatternTypeMatcher() throws IncQueryException {
-    return AtomicPatternTypeMatcher.on(engine);
-  }
-  
-  public InitStateMatcher getInitStateMatcher() throws IncQueryException {
-    return InitStateMatcher.on(engine);
-  }
-  
-  public StateWithSTOPTimeconstraintMatcher getStateWithSTOPTimeconstraintMatcher() throws IncQueryException {
-    return StateWithSTOPTimeconstraintMatcher.on(engine);
-  }
-  
-  public PreStateMatcher getPreStateMatcher() throws IncQueryException {
-    return PreStateMatcher.on(engine);
-  }
-  
-  public TokenInTrapStateMatcher getTokenInTrapStateMatcher() throws IncQueryException {
-    return TokenInTrapStateMatcher.on(engine);
+  public EnabledTransitionMatcher getEnabledTransitionMatcher() throws IncQueryException {
+    return EnabledTransitionMatcher.on(engine);
   }
   
   public LatestEventMatcher getLatestEventMatcher() throws IncQueryException {
     return LatestEventMatcher.on(engine);
   }
   
-  public FinalStateMatcher getFinalStateMatcher() throws IncQueryException {
-    return FinalStateMatcher.on(engine);
-  }
-  
-  public StateWithCHECKTimeconstraintMatcher getStateWithCHECKTimeconstraintMatcher() throws IncQueryException {
-    return StateWithCHECKTimeconstraintMatcher.on(engine);
+  public FinishedStateMachineMatcher getFinishedStateMachineMatcher() throws IncQueryException {
+    return FinishedStateMachineMatcher.on(engine);
   }
   
   public GuardAtomicPatternMatcher getGuardAtomicPatternMatcher() throws IncQueryException {
@@ -73,20 +49,24 @@ public final class EvaluationPatternsMatchers {
     return PartiallyMatchedEventPatternMatcher.on(engine);
   }
   
-  public StateWithTimeconstraintMatcher getStateWithTimeconstraintMatcher() throws IncQueryException {
-    return StateWithTimeconstraintMatcher.on(engine);
+  public InitStateMatcher getInitStateMatcher() throws IncQueryException {
+    return InitStateMatcher.on(engine);
   }
   
-  public StateWithSTARTTimeconstraintMatcher getStateWithSTARTTimeconstraintMatcher() throws IncQueryException {
-    return StateWithSTARTTimeconstraintMatcher.on(engine);
+  public FinalStateMatcher getFinalStateMatcher() throws IncQueryException {
+    return FinalStateMatcher.on(engine);
+  }
+  
+  public TokenInTrapStateMatcher getTokenInTrapStateMatcher() throws IncQueryException {
+    return TokenInTrapStateMatcher.on(engine);
+  }
+  
+  public StateWithCHECKTimeconstraintMatcher getStateWithCHECKTimeconstraintMatcher() throws IncQueryException {
+    return StateWithCHECKTimeconstraintMatcher.on(engine);
   }
   
   public EventHandledByStateMatcher getEventHandledByStateMatcher() throws IncQueryException {
     return EventHandledByStateMatcher.on(engine);
-  }
-  
-  public EnabledTransitionMatcher getEnabledTransitionMatcher() throws IncQueryException {
-    return EnabledTransitionMatcher.on(engine);
   }
   
   public TransitionMatcher getTransitionMatcher() throws IncQueryException {
@@ -95,5 +75,25 @@ public final class EvaluationPatternsMatchers {
   
   public EventHandledByEventTokenMatcher getEventHandledByEventTokenMatcher() throws IncQueryException {
     return EventHandledByEventTokenMatcher.on(engine);
+  }
+  
+  public AtomicPatternTypeMatcher getAtomicPatternTypeMatcher() throws IncQueryException {
+    return AtomicPatternTypeMatcher.on(engine);
+  }
+  
+  public PreStateMatcher getPreStateMatcher() throws IncQueryException {
+    return PreStateMatcher.on(engine);
+  }
+  
+  public StateWithTimeconstraintMatcher getStateWithTimeconstraintMatcher() throws IncQueryException {
+    return StateWithTimeconstraintMatcher.on(engine);
+  }
+  
+  public StateWithSTOPTimeconstraintMatcher getStateWithSTOPTimeconstraintMatcher() throws IncQueryException {
+    return StateWithSTOPTimeconstraintMatcher.on(engine);
+  }
+  
+  public StateWithSTARTTimeconstraintMatcher getStateWithSTARTTimeconstraintMatcher() throws IncQueryException {
+    return StateWithSTARTTimeconstraintMatcher.on(engine);
   }
 }

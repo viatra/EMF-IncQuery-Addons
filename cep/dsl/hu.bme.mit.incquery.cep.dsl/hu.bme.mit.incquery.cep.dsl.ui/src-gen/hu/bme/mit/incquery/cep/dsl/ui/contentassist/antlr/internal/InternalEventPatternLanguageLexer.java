@@ -95,7 +95,6 @@ public class InternalEventPatternLanguageLexer extends Lexer {
     public static final int T__111=111;
     public static final int T__110=110;
     public static final int RULE_INT=6;
-    public static final int T__112=112;
     public static final int T__50=50;
     public static final int T__42=42;
     public static final int T__43=43;
@@ -971,10 +970,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:51:7: ( 'FOUND' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:51:9: 'FOUND'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:51:7: ( 'NEW_MATCH_FOUND' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:51:9: 'NEW_MATCH_FOUND'
             {
-            match("FOUND"); 
+            match("NEW_MATCH_FOUND"); 
 
 
             }
@@ -992,10 +991,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:52:7: ( 'LOST' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:52:9: 'LOST'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:52:7: ( 'EXISTING_MATCH_LOST' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:52:9: 'EXISTING_MATCH_LOST'
             {
-            match("LOST"); 
+            match("EXISTING_MATCH_LOST"); 
 
 
             }
@@ -1013,10 +1012,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:53:7: ( 'EventModel' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:53:9: 'EventModel'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:53:7: ( 'package' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:53:9: 'package'
             {
-            match("EventModel"); 
+            match("package"); 
 
 
             }
@@ -1034,10 +1033,11 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:54:7: ( '{' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:54:9: '{'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:54:7: ( 'uses' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:54:9: 'uses'
             {
-            match('{'); 
+            match("uses"); 
+
 
             }
 
@@ -1054,10 +1054,11 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:55:7: ( '}' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:55:9: '}'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:55:7: ( 'AtomicEvent' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:55:9: 'AtomicEvent'
             {
-            match('}'); 
+            match("AtomicEvent"); 
+
 
             }
 
@@ -1074,11 +1075,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:56:7: ( 'package' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:56:9: 'package'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:56:7: ( '(' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:56:9: '('
             {
-            match("package"); 
-
+            match('('); 
 
             }
 
@@ -1095,11 +1095,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:57:7: ( 'uses-incquery-patterns' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:57:9: 'uses-incquery-patterns'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:57:7: ( ')' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:57:9: ')'
             {
-            match("uses-incquery-patterns"); 
-
+            match(')'); 
 
             }
 
@@ -1116,11 +1115,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:58:7: ( 'uses-eventsources' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:58:9: 'uses-eventsources'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:58:7: ( '{' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:58:9: '{'
             {
-            match("uses-eventsources"); 
-
+            match('{'); 
 
             }
 
@@ -1137,11 +1135,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:59:7: ( 'AtomicEvent' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:59:9: 'AtomicEvent'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:59:7: ( '}' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:59:9: '}'
             {
-            match("AtomicEvent"); 
-
+            match('}'); 
 
             }
 
@@ -1158,10 +1155,11 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:60:7: ( '(' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:60:9: '('
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:60:7: ( 'source' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:60:9: 'source'
             {
-            match('('); 
+            match("source"); 
+
 
             }
 
@@ -1178,10 +1176,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:61:7: ( ')' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:61:9: ')'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:61:7: ( ':' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:61:9: ':'
             {
-            match(')'); 
+            match(':'); 
 
             }
 
@@ -1198,10 +1196,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:62:7: ( 'source' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:62:9: 'source'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:62:7: ( 'staticBinding' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:62:9: 'staticBinding'
             {
-            match("source"); 
+            match("staticBinding"); 
 
 
             }
@@ -1219,10 +1217,11 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:63:7: ( ':' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:63:9: ':'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:63:7: ( 'IQPatternEvent' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:63:9: 'IQPatternEvent'
             {
-            match(':'); 
+            match("IQPatternEvent"); 
+
 
             }
 
@@ -1239,10 +1238,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:64:7: ( 'staticBinding' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:64:9: 'staticBinding'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:64:7: ( 'iqPatternRef' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:64:9: 'iqPatternRef'
             {
-            match("staticBinding"); 
+            match("iqPatternRef"); 
 
 
             }
@@ -1260,10 +1259,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:65:7: ( 'IQPatternEvent' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:65:9: 'IQPatternEvent'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:65:7: ( 'iqChangeType' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:65:9: 'iqChangeType'
             {
-            match("IQPatternEvent"); 
+            match("iqChangeType"); 
 
 
             }
@@ -1281,10 +1280,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:66:7: ( 'iqPatternRef' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:66:9: 'iqPatternRef'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:66:7: ( 'ComplexEvent' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:66:9: 'ComplexEvent'
             {
-            match("iqPatternRef"); 
+            match("ComplexEvent"); 
 
 
             }
@@ -1302,10 +1301,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:67:7: ( 'iqChangeType' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:67:9: 'iqChangeType'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:67:7: ( 'priority' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:67:9: 'priority'
             {
-            match("iqChangeType"); 
+            match("priority"); 
 
 
             }
@@ -1323,10 +1322,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:68:7: ( 'ComplexEvent' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:68:9: 'ComplexEvent'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:68:7: ( 'definition' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:68:9: 'definition'
             {
-            match("ComplexEvent"); 
+            match("definition"); 
 
 
             }
@@ -1344,10 +1343,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:69:7: ( 'priority' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:69:9: 'priority'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:69:7: ( 'RuleOnAppear' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:69:9: 'RuleOnAppear'
             {
-            match("priority"); 
+            match("RuleOnAppear"); 
 
 
             }
@@ -1365,10 +1364,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:70:7: ( 'definition' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:70:9: 'definition'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:70:7: ( 'events' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:70:9: 'events'
             {
-            match("definition"); 
+            match("events"); 
 
 
             }
@@ -1386,10 +1385,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:71:7: ( 'Rule' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:71:9: 'Rule'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:71:7: ( 'action' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:71:9: 'action'
             {
-            match("Rule"); 
+            match("action"); 
 
 
             }
@@ -1407,10 +1406,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:72:7: ( 'events' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:72:9: 'events'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:72:7: ( ', ' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:72:9: ', '
             {
-            match("events"); 
+            match(", "); 
 
 
             }
@@ -1428,10 +1427,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:73:7: ( 'action' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:73:9: 'action'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:73:7: ( 'RuleOnFail' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:73:9: 'RuleOnFail'
             {
-            match("action"); 
+            match("RuleOnFail"); 
 
 
             }
@@ -1449,11 +1448,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:74:7: ( ', ' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:74:9: ', '
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:74:7: ( '[' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:74:9: '['
             {
-            match(", "); 
-
+            match('['); 
 
             }
 
@@ -1470,11 +1468,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:75:7: ( 'in' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:75:9: 'in'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:75:7: ( ']' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:75:9: ']'
             {
-            match("in"); 
-
+            match(']'); 
 
             }
 
@@ -1491,10 +1488,11 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:76:7: ( ']' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:76:9: ']'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:76:7: ( 'OR' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:76:9: 'OR'
             {
-            match(']'); 
+            match("OR"); 
+
 
             }
 
@@ -1511,10 +1509,11 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:77:7: ( '[' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:77:9: '['
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:77:7: ( '-[' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:77:9: '-['
             {
-            match('['); 
+            match("-["); 
+
 
             }
 
@@ -1531,10 +1530,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:78:7: ( '-[' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:78:9: '-['
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:78:7: ( ']->' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:78:9: ']->'
             {
-            match("-["); 
+            match("]->"); 
 
 
             }
@@ -1552,10 +1551,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:79:7: ( ']->' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:79:9: ']->'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:79:7: ( 'in' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:79:9: 'in'
             {
-            match("]->"); 
+            match("in"); 
 
 
             }
@@ -1573,10 +1572,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:80:7: ( 'OR' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:80:9: 'OR'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:80:7: ( 'Source' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:80:9: 'Source'
             {
-            match("OR"); 
+            match("Source"); 
 
 
             }
@@ -1594,10 +1593,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:81:7: ( 'Source' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:81:9: 'Source'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:81:7: ( 'register' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:81:9: 'register'
             {
-            match("Source"); 
+            match("register"); 
 
 
             }
@@ -1615,10 +1614,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:82:7: ( 'register' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:82:9: 'register'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:82:7: ( 'instanceof' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:82:9: 'instanceof'
             {
-            match("register"); 
+            match("instanceof"); 
 
 
             }
@@ -1636,10 +1635,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:83:7: ( 'instanceof' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:83:9: 'instanceof'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:83:7: ( 'as' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:83:9: 'as'
             {
-            match("instanceof"); 
+            match("as"); 
 
 
             }
@@ -1657,11 +1656,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:84:7: ( 'as' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:84:9: 'as'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:84:7: ( ',' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:84:9: ','
             {
-            match("as"); 
-
+            match(','); 
 
             }
 
@@ -1678,10 +1676,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:85:7: ( ',' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:85:9: ','
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:85:7: ( '#' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:85:9: '#'
             {
-            match(','); 
+            match('#'); 
 
             }
 
@@ -1698,10 +1696,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:86:7: ( '#' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:86:9: '#'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:86:7: ( ';' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:86:9: ';'
             {
-            match('#'); 
+            match(';'); 
 
             }
 
@@ -1718,10 +1716,11 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:87:7: ( ';' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:87:9: ';'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:87:7: ( 'if' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:87:9: 'if'
             {
-            match(';'); 
+            match("if"); 
+
 
             }
 
@@ -1738,10 +1737,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:88:7: ( 'if' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:88:9: 'if'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:88:7: ( 'else' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:88:9: 'else'
             {
-            match("if"); 
+            match("else"); 
 
 
             }
@@ -1759,10 +1758,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:89:7: ( 'else' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:89:9: 'else'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:89:7: ( 'switch' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:89:9: 'switch'
             {
-            match("else"); 
+            match("switch"); 
 
 
             }
@@ -1780,10 +1779,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:90:7: ( 'switch' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:90:9: 'switch'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:90:7: ( 'default' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:90:9: 'default'
             {
-            match("switch"); 
+            match("default"); 
 
 
             }
@@ -1801,10 +1800,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:91:7: ( 'default' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:91:9: 'default'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:91:7: ( 'case' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:91:9: 'case'
             {
-            match("default"); 
+            match("case"); 
 
 
             }
@@ -1822,10 +1821,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:92:7: ( 'case' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:92:9: 'case'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:92:7: ( 'for' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:92:9: 'for'
             {
-            match("case"); 
+            match("for"); 
 
 
             }
@@ -1843,10 +1842,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:93:7: ( 'for' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:93:9: 'for'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:93:7: ( 'while' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:93:9: 'while'
             {
-            match("for"); 
+            match("while"); 
 
 
             }
@@ -1864,10 +1863,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:94:7: ( 'while' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:94:9: 'while'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:94:7: ( 'do' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:94:9: 'do'
             {
-            match("while"); 
+            match("do"); 
 
 
             }
@@ -1885,10 +1884,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:95:7: ( 'do' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:95:9: 'do'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:95:7: ( 'new' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:95:9: 'new'
             {
-            match("do"); 
+            match("new"); 
 
 
             }
@@ -1906,10 +1905,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:96:7: ( 'new' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:96:9: 'new'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:96:7: ( 'null' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:96:9: 'null'
             {
-            match("new"); 
+            match("null"); 
 
 
             }
@@ -1927,10 +1926,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:97:7: ( 'null' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:97:9: 'null'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:97:7: ( 'typeof' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:97:9: 'typeof'
             {
-            match("null"); 
+            match("typeof"); 
 
 
             }
@@ -1948,10 +1947,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:98:8: ( 'typeof' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:98:10: 'typeof'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:98:8: ( 'throw' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:98:10: 'throw'
             {
-            match("typeof"); 
+            match("throw"); 
 
 
             }
@@ -1969,10 +1968,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:99:8: ( 'throw' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:99:10: 'throw'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:99:8: ( 'return' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:99:10: 'return'
             {
-            match("throw"); 
+            match("return"); 
 
 
             }
@@ -1990,10 +1989,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:100:8: ( 'return' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:100:10: 'return'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:100:8: ( 'try' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:100:10: 'try'
             {
-            match("return"); 
+            match("try"); 
 
 
             }
@@ -2011,10 +2010,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:101:8: ( 'try' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:101:10: 'try'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:101:8: ( 'finally' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:101:10: 'finally'
             {
-            match("try"); 
+            match("finally"); 
 
 
             }
@@ -2032,10 +2031,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:102:8: ( 'finally' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:102:10: 'finally'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:102:8: ( 'catch' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:102:10: 'catch'
             {
-            match("finally"); 
+            match("catch"); 
 
 
             }
@@ -2053,11 +2052,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:103:8: ( 'catch' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:103:10: 'catch'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:103:8: ( '?' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:103:10: '?'
             {
-            match("catch"); 
-
+            match('?'); 
 
             }
 
@@ -2074,10 +2072,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__106;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:104:8: ( '?' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:104:10: '?'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:104:8: ( '&' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:104:10: '&'
             {
-            match('?'); 
+            match('&'); 
 
             }
 
@@ -2094,10 +2092,11 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__107;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:105:8: ( '&' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:105:10: '&'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:105:8: ( '::' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:105:10: '::'
             {
-            match('&'); 
+            match("::"); 
+
 
             }
 
@@ -2114,10 +2113,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__108;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:106:8: ( '::' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:106:10: '::'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:106:8: ( '?.' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:106:10: '?.'
             {
-            match("::"); 
+            match("?."); 
 
 
             }
@@ -2135,11 +2134,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__109;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:107:8: ( '?.' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:107:10: '?.'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:107:8: ( '|' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:107:10: '|'
             {
-            match("?."); 
-
+            match('|'); 
 
             }
 
@@ -2156,10 +2154,11 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__110;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:108:8: ( '|' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:108:10: '|'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:108:8: ( 'var' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:108:10: 'var'
             {
-            match('|'); 
+            match("var"); 
+
 
             }
 
@@ -2176,29 +2175,8 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = T__111;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:109:8: ( 'var' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:109:10: 'var'
-            {
-            match("var"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__111"
-
-    // $ANTLR start "T__112"
-    public final void mT__112() throws RecognitionException {
-        try {
-            int _type = T__112;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:110:8: ( 'true' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:110:10: 'true'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:109:8: ( 'true' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:109:10: 'true'
             {
             match("true"); 
 
@@ -2211,17 +2189,17 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__112"
+    // $ANTLR end "T__111"
 
     // $ANTLR start "RULE_HEX"
     public final void mRULE_HEX() throws RecognitionException {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24164:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24164:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25868:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25868:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24164:12: ( '0x' | '0X' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25868:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -2249,7 +2227,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24164:13: '0x'
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25868:13: '0x'
                     {
                     match("0x"); 
 
@@ -2257,7 +2235,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24164:18: '0X'
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25868:18: '0X'
                     {
                     match("0X"); 
 
@@ -2267,7 +2245,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
 
             }
 
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24164:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25868:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -2305,7 +2283,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24164:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25868:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -2314,10 +2292,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24164:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25868:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24164:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25868:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -2335,7 +2313,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24164:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25868:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -2359,7 +2337,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24164:84: ( 'l' | 'L' )
+                            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25868:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -2398,11 +2376,11 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24166:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24166:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25870:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25870:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24166:21: ( '0' .. '9' | '_' )*
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25870:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -2451,11 +2429,11 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24168:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24168:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25872:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25872:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24168:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25872:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2464,7 +2442,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24168:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25872:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2475,7 +2453,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24168:36: ( '+' | '-' )?
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25872:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2508,7 +2486,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
 
             }
 
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24168:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25872:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -2520,7 +2498,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24168:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25872:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2544,7 +2522,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24168:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25872:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2577,10 +2555,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24170:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24170:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25874:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25874:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24170:11: ( '^' )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25874:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2589,7 +2567,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24170:11: '^'
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25874:11: '^'
                     {
                     match('^'); 
 
@@ -2607,7 +2585,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24170:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25874:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2656,10 +2634,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24172:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24172:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25876:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25876:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24172:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25876:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2677,10 +2655,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24172:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25876:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24172:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25876:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2696,7 +2674,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24172:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25876:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2712,7 +2690,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24172:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25876:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2737,10 +2715,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24172:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25876:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24172:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25876:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -2756,7 +2734,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24172:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25876:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2772,7 +2750,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24172:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25876:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2815,12 +2793,12 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24174:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24174:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25878:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25878:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24174:24: ( options {greedy=false; } : . )*
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25878:24: ( options {greedy=false; } : . )*
             loop14:
             do {
                 int alt14=2;
@@ -2845,7 +2823,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24174:52: .
+            	    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25878:52: .
             	    {
             	    matchAny(); 
 
@@ -2875,12 +2853,12 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24176:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24176:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25880:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25880:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24176:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25880:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -2893,7 +2871,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24176:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25880:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2913,7 +2891,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24176:40: ( ( '\\r' )? '\\n' )?
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25880:40: ( ( '\\r' )? '\\n' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2922,9 +2900,9 @@ public class InternalEventPatternLanguageLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24176:41: ( '\\r' )? '\\n'
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25880:41: ( '\\r' )? '\\n'
                     {
-                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24176:41: ( '\\r' )?
+                    // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25880:41: ( '\\r' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -2933,7 +2911,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24176:41: '\\r'
+                            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25880:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2965,10 +2943,10 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24178:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24178:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25882:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25882:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24178:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25882:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt18=0;
             loop18:
             do {
@@ -3022,8 +3000,8 @@ public class InternalEventPatternLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24180:16: ( . )
-            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:24180:18: .
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25884:16: ( . )
+            // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:25884:18: .
             {
             matchAny(); 
 
@@ -3038,8 +3016,8 @@ public class InternalEventPatternLanguageLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt19=109;
+        // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt19=108;
         alt19 = dfa19.predict(input);
         switch (alt19) {
             case 1 :
@@ -3736,70 +3714,63 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                 }
                 break;
             case 100 :
-                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:616: T__112
-                {
-                mT__112(); 
-
-                }
-                break;
-            case 101 :
-                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:623: RULE_HEX
+                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:616: RULE_HEX
                 {
                 mRULE_HEX(); 
 
                 }
                 break;
-            case 102 :
-                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:632: RULE_INT
+            case 101 :
+                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:625: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 103 :
-                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:641: RULE_DECIMAL
+            case 102 :
+                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:634: RULE_DECIMAL
                 {
                 mRULE_DECIMAL(); 
 
                 }
                 break;
-            case 104 :
-                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:654: RULE_ID
+            case 103 :
+                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:647: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 105 :
-                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:662: RULE_STRING
+            case 104 :
+                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:655: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 106 :
-                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:674: RULE_ML_COMMENT
+            case 105 :
+                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:667: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 107 :
-                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:690: RULE_SL_COMMENT
+            case 106 :
+                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:683: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 108 :
-                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:706: RULE_WS
+            case 107 :
+                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:699: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 109 :
-                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:714: RULE_ANY_OTHER
+            case 108 :
+                // ../hu.bme.mit.incquery.cep.dsl.ui/src-gen/hu/bme/mit/incquery/cep/dsl/ui/contentassist/antlr/internal/InternalEventPatternLanguage.g:1:707: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -3813,222 +3784,225 @@ public class InternalEventPatternLanguageLexer extends Lexer {
 
     protected DFA19 dfa19 = new DFA19(this);
     static final String DFA19_eotS =
-        "\1\uffff\1\72\1\76\1\100\1\102\1\105\1\107\1\111\3\72\1\125\1\131"+
-        "\1\133\1\136\1\140\1\143\1\uffff\6\72\2\uffff\3\72\2\uffff\1\171"+
-        "\5\72\1\u0082\1\u0084\1\uffff\3\72\2\uffff\2\72\2\u0091\1\66\1\uffff"+
-        "\2\66\2\uffff\3\72\2\uffff\1\u0099\6\uffff\1\u009b\2\uffff\1\u009d"+
-        "\3\uffff\12\72\6\uffff\1\u00aa\12\uffff\3\72\1\u00b1\1\u00b2\6\72"+
-        "\2\uffff\4\72\4\uffff\3\72\1\u00c0\2\72\1\u00c3\5\uffff\1\u00c4"+
-        "\2\72\2\uffff\4\72\1\uffff\1\u0091\4\uffff\1\u00cd\1\u00ce\1\72"+
-        "\6\uffff\13\72\2\uffff\1\u00dc\1\u00dd\4\72\2\uffff\1\72\1\u00e3"+
-        "\13\72\1\uffff\2\72\2\uffff\6\72\1\u00f8\1\72\2\uffff\1\u00fa\1"+
-        "\72\1\u00fc\11\72\1\u0106\2\uffff\5\72\1\uffff\2\72\1\u010e\11\72"+
-        "\1\u0118\7\72\1\uffff\1\u0120\1\uffff\1\72\1\uffff\1\u0122\2\72"+
-        "\1\u0125\5\72\1\uffff\4\72\1\u0130\1\72\1\u0132\1\uffff\3\72\1\uffff"+
-        "\5\72\1\uffff\4\72\1\u0141\1\72\1\u0143\1\uffff\1\72\1\uffff\1\72"+
-        "\1\u0147\1\uffff\1\u0148\1\u0149\3\72\1\u014d\1\u014e\3\72\1\uffff"+
-        "\1\72\1\uffff\3\72\2\uffff\5\72\1\u015b\1\u015c\1\72\1\u015e\1\uffff"+
-        "\1\u015f\1\uffff\3\72\3\uffff\1\72\1\u0164\1\72\2\uffff\3\72\1\u0169"+
-        "\1\72\1\u016b\5\72\1\u0171\2\uffff\1\72\2\uffff\1\u0173\2\72\1\u0176"+
-        "\1\uffff\4\72\1\uffff\1\72\1\uffff\1\u017c\4\72\1\uffff\1\u0181"+
-        "\1\uffff\2\72\1\uffff\1\u0184\4\72\1\uffff\4\72\1\uffff\1\u018d"+
-        "\1\72\1\uffff\2\72\1\u0191\1\u0192\3\72\1\u0196\1\uffff\3\72\2\uffff"+
-        "\1\u019a\2\72\1\uffff\1\72\1\u019e\1\u019f\1\uffff\1\72\1\u01a1"+
-        "\1\u01a2\2\uffff\1\72\2\uffff\1\u01a4\1\uffff";
+        "\1\uffff\1\71\1\75\1\77\1\101\1\104\1\106\1\110\3\71\1\124\1\130"+
+        "\1\132\1\135\1\137\1\142\1\uffff\10\71\4\uffff\1\167\5\71\1\u0080"+
+        "\1\uffff\1\u0083\3\71\2\uffff\2\71\2\u008f\1\65\1\uffff\2\65\2\uffff"+
+        "\3\71\2\uffff\1\u0097\6\uffff\1\u0099\2\uffff\1\u009b\3\uffff\12"+
+        "\71\6\uffff\1\u00a8\12\uffff\3\71\1\u00af\1\u00b0\11\71\6\uffff"+
+        "\3\71\1\u00bd\2\71\1\u00c0\5\uffff\1\u00c1\2\71\2\uffff\4\71\1\uffff"+
+        "\1\u008f\4\uffff\1\u00ca\1\u00cb\1\71\6\uffff\13\71\2\uffff\1\u00d9"+
+        "\1\u00da\4\71\2\uffff\1\71\1\u00e0\12\71\1\uffff\2\71\2\uffff\6"+
+        "\71\1\u00f4\1\71\2\uffff\1\u00f6\1\71\1\u00f8\11\71\1\u0102\2\uffff"+
+        "\5\71\1\uffff\5\71\1\u010d\15\71\1\uffff\1\u011b\1\uffff\1\71\1"+
+        "\uffff\1\u011d\2\71\1\u0120\5\71\1\uffff\4\71\1\u012b\5\71\1\uffff"+
+        "\12\71\1\u013b\1\71\1\u013d\1\uffff\1\71\1\uffff\1\71\1\u0141\1"+
+        "\uffff\1\u0142\1\u0143\3\71\1\u0147\1\u0148\3\71\1\uffff\13\71\1"+
+        "\u0158\1\u0159\1\71\1\u015b\1\uffff\1\u015c\1\uffff\3\71\3\uffff"+
+        "\1\71\1\u0161\1\71\2\uffff\3\71\1\u0166\2\71\1\u0169\5\71\1\u016f"+
+        "\2\71\2\uffff\1\71\2\uffff\1\u0173\2\71\1\u0176\1\uffff\4\71\1\uffff"+
+        "\2\71\1\uffff\1\u017d\4\71\1\uffff\2\71\1\u0184\1\uffff\2\71\1\uffff"+
+        "\1\u0187\5\71\1\uffff\6\71\1\uffff\1\u0193\1\71\1\uffff\2\71\1\u0197"+
+        "\5\71\1\u019d\1\71\1\u019f\1\uffff\3\71\1\uffff\2\71\1\u01a5\2\71"+
+        "\1\uffff\1\71\1\uffff\1\71\1\u01aa\1\u01ab\2\71\1\uffff\1\71\1\u01af"+
+        "\1\u01b0\1\u01b1\2\uffff\3\71\3\uffff\2\71\1\u01b7\1\u01b8\1\71"+
+        "\2\uffff\3\71\1\u01bd\1\uffff";
     static final String DFA19_eofS =
-        "\u01a5\uffff";
+        "\u01be\uffff";
     static final String DFA19_minS =
         "\1\0\1\145\1\74\1\174\1\46\3\75\1\141\1\157\1\154\2\75\2\56\2\52"+
-        "\1\uffff\1\141\1\146\1\141\2\117\1\166\2\uffff\1\141\1\163\1\164"+
-        "\2\uffff\1\72\1\121\1\157\1\145\1\165\1\143\1\40\1\55\1\uffff\1"+
-        "\122\1\157\1\145\2\uffff\2\150\2\60\1\44\1\uffff\2\0\2\uffff\1\164"+
-        "\1\167\1\154\2\uffff\1\75\6\uffff\1\76\2\uffff\1\75\3\uffff\1\156"+
-        "\1\163\1\141\1\160\1\165\1\151\1\144\1\164\1\145\1\163\6\uffff\1"+
-        "\74\12\uffff\1\154\1\160\1\103\2\44\1\154\1\162\1\156\1\125\1\123"+
-        "\1\145\2\uffff\1\143\1\151\1\145\1\157\4\uffff\1\120\1\155\1\146"+
-        "\1\44\1\154\1\164\1\44\5\uffff\1\44\1\165\1\147\2\uffff\1\151\1"+
-        "\160\1\162\1\165\1\uffff\1\60\4\uffff\2\44\1\154\6\uffff\1\164\1"+
-        "\145\1\143\1\162\1\145\1\162\1\164\1\163\1\145\1\156\1\145\2\uffff"+
-        "\2\44\1\157\1\141\1\150\1\164\2\uffff\1\163\1\44\1\141\1\116\1\124"+
-        "\1\156\1\153\1\157\1\163\1\155\1\141\1\160\1\141\1\uffff\1\145\1"+
-        "\151\2\uffff\1\162\1\151\1\165\1\154\1\145\1\157\1\44\1\145\2\uffff"+
-        "\1\44\1\141\1\44\1\150\1\164\1\151\1\162\2\143\1\127\1\156\1\164"+
-        "\1\44\2\uffff\1\162\1\164\2\141\1\145\1\uffff\1\154\1\104\1\44\1"+
-        "\164\1\141\1\162\1\55\1\151\1\164\1\154\1\156\1\165\1\44\1\157\1"+
-        "\143\1\163\1\162\1\145\1\157\1\167\1\uffff\1\44\1\uffff\1\151\1"+
-        "\uffff\1\44\1\163\1\143\1\44\1\145\1\150\1\151\1\144\1\163\1\uffff"+
-        "\2\164\2\156\1\44\1\154\1\44\1\uffff\1\115\1\147\1\151\1\145\1\143"+
-        "\1\164\1\145\1\151\1\154\1\uffff\1\156\1\145\1\164\1\156\1\44\1"+
-        "\146\1\44\1\uffff\1\156\1\uffff\1\127\1\44\1\uffff\2\44\1\164\1"+
-        "\163\1\151\2\44\1\145\1\147\1\143\1\uffff\1\171\1\uffff\1\157\1"+
-        "\145\1\164\2\uffff\1\105\1\145\1\170\2\164\2\44\1\145\1\44\1\uffff"+
-        "\1\44\1\uffff\1\163\2\151\3\uffff\1\150\1\44\1\157\2\uffff\1\162"+
-        "\2\145\1\44\1\144\1\44\1\171\1\166\1\162\1\105\1\151\1\44\2\uffff"+
-        "\1\162\2\uffff\1\44\1\164\1\156\1\44\1\uffff\2\156\1\124\1\157\1"+
-        "\uffff\1\145\1\uffff\1\44\1\145\1\156\1\166\1\157\1\uffff\1\44\1"+
-        "\uffff\1\150\1\144\1\uffff\1\44\1\122\1\171\1\146\1\154\1\uffff"+
-        "\1\156\1\105\1\145\1\156\1\uffff\1\44\1\151\1\uffff\1\145\1\160"+
-        "\2\44\1\164\1\166\1\156\1\44\1\uffff\1\156\1\146\1\145\2\uffff\1"+
-        "\44\1\145\1\164\1\uffff\1\147\2\44\1\uffff\1\156\2\44\2\uffff\1"+
-        "\164\2\uffff\1\44\1\uffff";
+        "\1\uffff\1\141\1\146\1\141\1\105\1\130\1\141\1\163\1\164\4\uffff"+
+        "\1\72\1\121\1\157\1\145\1\165\1\143\1\40\1\uffff\1\55\1\122\1\157"+
+        "\1\145\2\uffff\2\150\2\60\1\44\1\uffff\2\0\2\uffff\1\164\1\167\1"+
+        "\154\2\uffff\1\75\6\uffff\1\76\2\uffff\1\75\3\uffff\1\156\1\163"+
+        "\1\141\1\160\1\165\1\151\1\144\1\164\1\145\1\163\6\uffff\1\74\12"+
+        "\uffff\1\154\1\160\1\103\2\44\1\154\1\162\1\156\1\127\1\111\1\143"+
+        "\1\151\1\145\1\157\6\uffff\1\120\1\155\1\146\1\44\1\154\1\164\1"+
+        "\44\5\uffff\1\44\1\165\1\147\2\uffff\1\151\1\160\1\162\1\165\1\uffff"+
+        "\1\60\4\uffff\2\44\1\154\6\uffff\1\164\1\145\1\143\1\162\1\145\1"+
+        "\162\1\164\1\163\1\145\1\156\1\145\2\uffff\2\44\1\157\1\141\1\150"+
+        "\1\164\2\uffff\1\163\1\44\1\141\1\137\1\123\1\153\1\157\1\163\1"+
+        "\155\1\141\1\160\1\141\1\uffff\1\145\1\151\2\uffff\1\162\1\151\1"+
+        "\165\1\154\1\145\1\157\1\44\1\145\2\uffff\1\44\1\141\1\44\1\150"+
+        "\1\164\1\151\1\162\2\143\1\127\1\156\1\164\1\44\2\uffff\1\162\1"+
+        "\164\2\141\1\145\1\uffff\1\154\1\115\1\124\1\141\1\162\1\44\1\151"+
+        "\1\164\1\154\1\156\1\165\1\117\1\157\1\143\1\163\1\162\1\145\1\157"+
+        "\1\167\1\uffff\1\44\1\uffff\1\151\1\uffff\1\44\1\163\1\143\1\44"+
+        "\1\145\1\150\1\151\1\144\1\163\1\uffff\2\164\2\156\1\44\1\154\1"+
+        "\101\1\111\1\147\1\151\1\uffff\1\143\1\164\1\145\1\151\1\154\2\156"+
+        "\1\145\1\164\1\156\1\44\1\146\1\44\1\uffff\1\156\1\uffff\1\127\1"+
+        "\44\1\uffff\2\44\1\164\1\163\1\151\2\44\1\145\1\147\1\143\1\uffff"+
+        "\1\171\1\124\1\116\1\145\1\164\1\105\1\145\1\170\2\164\1\101\2\44"+
+        "\1\145\1\44\1\uffff\1\44\1\uffff\1\163\2\151\3\uffff\1\150\1\44"+
+        "\1\157\2\uffff\1\162\2\145\1\44\1\103\1\107\1\44\1\171\1\166\1\162"+
+        "\1\105\1\151\1\44\1\160\1\141\2\uffff\1\162\2\uffff\1\44\1\164\1"+
+        "\156\1\44\1\uffff\2\156\1\124\1\157\1\uffff\1\110\1\137\1\uffff"+
+        "\1\44\1\145\1\156\1\166\1\157\1\uffff\1\160\1\151\1\44\1\uffff\1"+
+        "\150\1\144\1\uffff\1\44\1\122\1\171\1\146\1\137\1\115\1\uffff\1"+
+        "\156\1\105\1\145\1\156\1\145\1\154\1\uffff\1\44\1\151\1\uffff\1"+
+        "\145\1\160\1\44\1\106\1\101\1\164\1\166\1\156\1\44\1\141\1\44\1"+
+        "\uffff\1\156\1\146\1\145\1\uffff\1\117\1\124\1\44\1\145\1\164\1"+
+        "\uffff\1\162\1\uffff\1\147\2\44\1\125\1\103\1\uffff\1\156\3\44\2"+
+        "\uffff\1\116\1\110\1\164\3\uffff\1\104\1\137\2\44\1\114\2\uffff"+
+        "\1\117\1\123\1\124\1\44\1\uffff";
     static final String DFA19_maxS =
         "\1\uffff\1\165\1\76\1\174\1\46\1\76\2\75\1\157\1\167\1\170\1\75"+
-        "\1\133\1\56\1\72\1\52\1\57\1\uffff\1\141\1\161\1\157\2\117\1\166"+
-        "\2\uffff\1\162\1\163\1\164\2\uffff\1\72\1\121\2\157\1\165\1\163"+
-        "\1\40\1\55\1\uffff\1\122\1\157\1\145\2\uffff\1\150\1\171\1\170\1"+
-        "\154\1\172\1\uffff\2\uffff\2\uffff\1\164\1\167\1\154\2\uffff\1\75"+
-        "\6\uffff\1\76\2\uffff\1\75\3\uffff\1\156\1\164\1\141\1\160\1\165"+
-        "\1\151\1\144\1\164\1\145\1\163\6\uffff\1\74\12\uffff\1\162\1\160"+
-        "\1\120\2\172\1\154\1\162\1\156\1\125\1\123\1\145\2\uffff\1\143\1"+
-        "\151\1\145\1\157\4\uffff\1\120\1\155\1\146\1\172\1\154\1\164\1\172"+
-        "\5\uffff\1\172\1\165\1\164\2\uffff\1\151\1\160\1\162\1\171\1\uffff"+
-        "\1\154\4\uffff\2\172\1\154\6\uffff\1\164\1\145\1\143\1\164\1\145"+
-        "\1\162\1\164\1\163\1\145\1\156\1\145\2\uffff\2\172\1\157\1\141\1"+
-        "\150\1\164\2\uffff\1\163\1\172\1\141\1\116\1\124\1\156\1\153\1\157"+
-        "\1\163\1\155\1\141\1\160\1\151\1\uffff\1\145\1\151\2\uffff\1\162"+
-        "\1\151\1\165\1\154\1\145\1\157\1\172\1\145\2\uffff\1\172\1\141\1"+
-        "\172\1\150\1\164\1\151\1\162\2\143\1\127\1\156\1\164\1\172\2\uffff"+
-        "\1\162\1\164\2\141\1\145\1\uffff\1\154\1\104\1\172\1\164\1\141\1"+
-        "\162\1\55\1\151\1\164\1\154\1\156\1\165\1\172\1\157\1\143\1\163"+
-        "\1\162\1\145\1\157\1\167\1\uffff\1\172\1\uffff\1\151\1\uffff\1\172"+
-        "\1\163\1\143\1\172\1\145\1\150\1\151\2\163\1\uffff\2\164\2\156\1"+
-        "\172\1\154\1\172\1\uffff\1\115\1\147\2\151\1\143\1\164\1\145\1\151"+
-        "\1\154\1\uffff\1\156\1\145\1\164\1\156\1\172\1\146\1\172\1\uffff"+
-        "\1\156\1\uffff\1\127\1\172\1\uffff\2\172\1\164\1\163\1\151\2\172"+
-        "\1\145\1\147\1\143\1\uffff\1\171\1\uffff\1\157\1\145\1\164\2\uffff"+
-        "\1\105\1\145\1\170\2\164\2\172\1\145\1\172\1\uffff\1\172\1\uffff"+
-        "\1\163\2\151\3\uffff\1\150\1\172\1\157\2\uffff\1\162\2\145\1\172"+
-        "\1\144\1\172\1\171\1\166\1\162\1\105\1\151\1\172\2\uffff\1\162\2"+
-        "\uffff\1\172\1\164\1\156\1\172\1\uffff\2\156\1\124\1\157\1\uffff"+
-        "\1\145\1\uffff\1\172\1\145\1\156\1\166\1\157\1\uffff\1\172\1\uffff"+
-        "\1\150\1\144\1\uffff\1\172\1\122\1\171\1\146\1\154\1\uffff\1\156"+
-        "\1\105\1\145\1\156\1\uffff\1\172\1\151\1\uffff\1\145\1\160\2\172"+
-        "\1\164\1\166\1\156\1\172\1\uffff\1\156\1\146\1\145\2\uffff\1\172"+
-        "\1\145\1\164\1\uffff\1\147\2\172\1\uffff\1\156\2\172\2\uffff\1\164"+
-        "\2\uffff\1\172\1\uffff";
+        "\1\133\1\56\1\72\1\52\1\57\1\uffff\1\141\1\161\1\157\1\105\1\130"+
+        "\1\162\1\163\1\164\4\uffff\1\72\1\121\2\157\1\165\1\163\1\40\1\uffff"+
+        "\1\55\1\122\1\157\1\145\2\uffff\1\150\1\171\1\170\1\154\1\172\1"+
+        "\uffff\2\uffff\2\uffff\1\164\1\167\1\154\2\uffff\1\75\6\uffff\1"+
+        "\76\2\uffff\1\75\3\uffff\1\156\1\164\1\141\1\160\1\165\1\151\1\144"+
+        "\1\164\1\145\1\163\6\uffff\1\74\12\uffff\1\162\1\160\1\120\2\172"+
+        "\1\154\1\162\1\156\1\127\1\111\1\143\1\151\1\145\1\157\6\uffff\1"+
+        "\120\1\155\1\146\1\172\1\154\1\164\1\172\5\uffff\1\172\1\165\1\164"+
+        "\2\uffff\1\151\1\160\1\162\1\171\1\uffff\1\154\4\uffff\2\172\1\154"+
+        "\6\uffff\1\164\1\145\1\143\1\164\1\145\1\162\1\164\1\163\1\145\1"+
+        "\156\1\145\2\uffff\2\172\1\157\1\141\1\150\1\164\2\uffff\1\163\1"+
+        "\172\1\141\1\137\1\123\1\153\1\157\1\163\1\155\1\141\1\160\1\151"+
+        "\1\uffff\1\145\1\151\2\uffff\1\162\1\151\1\165\1\154\1\145\1\157"+
+        "\1\172\1\145\2\uffff\1\172\1\141\1\172\1\150\1\164\1\151\1\162\2"+
+        "\143\1\127\1\156\1\164\1\172\2\uffff\1\162\1\164\2\141\1\145\1\uffff"+
+        "\1\154\1\115\1\124\1\141\1\162\1\172\1\151\1\164\1\154\1\156\1\165"+
+        "\1\117\1\157\1\143\1\163\1\162\1\145\1\157\1\167\1\uffff\1\172\1"+
+        "\uffff\1\151\1\uffff\1\172\1\163\1\143\1\172\1\145\1\150\1\151\2"+
+        "\163\1\uffff\2\164\2\156\1\172\1\154\1\101\1\111\1\147\1\151\1\uffff"+
+        "\1\143\1\164\1\145\1\151\1\154\2\156\1\145\1\164\1\156\1\172\1\146"+
+        "\1\172\1\uffff\1\156\1\uffff\1\127\1\172\1\uffff\2\172\1\164\1\163"+
+        "\1\151\2\172\1\145\1\147\1\143\1\uffff\1\171\1\124\1\116\1\145\1"+
+        "\164\1\105\1\145\1\170\2\164\1\106\2\172\1\145\1\172\1\uffff\1\172"+
+        "\1\uffff\1\163\2\151\3\uffff\1\150\1\172\1\157\2\uffff\1\162\2\145"+
+        "\1\172\1\103\1\107\1\172\1\171\1\166\1\162\1\105\1\151\1\172\1\160"+
+        "\1\141\2\uffff\1\162\2\uffff\1\172\1\164\1\156\1\172\1\uffff\2\156"+
+        "\1\124\1\157\1\uffff\1\110\1\137\1\uffff\1\172\1\145\1\156\1\166"+
+        "\1\157\1\uffff\1\160\1\151\1\172\1\uffff\1\150\1\144\1\uffff\1\172"+
+        "\1\122\1\171\1\146\1\137\1\115\1\uffff\1\156\1\105\1\145\1\156\1"+
+        "\145\1\154\1\uffff\1\172\1\151\1\uffff\1\145\1\160\1\172\1\106\1"+
+        "\101\1\164\1\166\1\156\1\172\1\141\1\172\1\uffff\1\156\1\146\1\145"+
+        "\1\uffff\1\117\1\124\1\172\1\145\1\164\1\uffff\1\162\1\uffff\1\147"+
+        "\2\172\1\125\1\103\1\uffff\1\156\3\172\2\uffff\1\116\1\110\1\164"+
+        "\3\uffff\1\104\1\137\2\172\1\114\2\uffff\1\117\1\123\1\124\1\172"+
+        "\1\uffff";
     static final String DFA19_acceptS =
-        "\21\uffff\1\37\6\uffff\1\54\1\55\3\uffff\1\62\1\63\10\uffff\1\103"+
-        "\3\uffff\1\114\1\115\5\uffff\1\150\2\uffff\1\154\1\155\3\uffff\1"+
-        "\150\1\6\1\uffff\1\26\1\2\1\3\1\142\1\4\1\137\1\uffff\1\27\1\5\1"+
-        "\uffff\1\40\1\11\1\12\12\uffff\1\16\1\32\1\17\1\23\1\104\1\33\1"+
-        "\uffff\1\41\1\30\1\141\1\136\1\35\1\34\1\152\1\153\1\36\1\37\13"+
-        "\uffff\1\54\1\55\4\uffff\1\62\1\63\1\140\1\65\7\uffff\1\100\1\113"+
-        "\1\105\1\102\1\103\3\uffff\1\114\1\115\4\uffff\1\145\1\uffff\1\146"+
-        "\1\147\1\151\1\154\3\uffff\1\20\1\7\1\31\1\22\1\21\1\10\13\uffff"+
-        "\1\24\1\25\6\uffff\1\101\1\116\15\uffff\1\125\2\uffff\1\112\1\106"+
-        "\10\uffff\1\1\1\126\15\uffff\1\42\1\143\5\uffff\1\123\24\uffff\1"+
-        "\133\1\uffff\1\127\1\uffff\1\122\11\uffff\1\117\7\uffff\1\52\11"+
-        "\uffff\1\75\7\uffff\1\144\1\uffff\1\135\2\uffff\1\47\12\uffff\1"+
-        "\50\1\uffff\1\51\3\uffff\1\57\1\60\11\uffff\1\124\1\uffff\1\131"+
-        "\3\uffff\1\44\1\64\1\120\3\uffff\1\76\1\45\14\uffff\1\77\1\107\1"+
-        "\uffff\1\132\1\130\4\uffff\1\43\4\uffff\1\134\1\uffff\1\56\5\uffff"+
-        "\1\121\1\uffff\1\13\2\uffff\1\15\5\uffff\1\73\4\uffff\1\110\2\uffff"+
-        "\1\46\10\uffff\1\14\3\uffff\1\111\1\53\3\uffff\1\74\3\uffff\1\61"+
-        "\3\uffff\1\70\1\71\1\uffff\1\72\1\66\1\uffff\1\67";
+        "\21\uffff\1\37\10\uffff\1\56\1\57\1\60\1\61\7\uffff\1\100\4\uffff"+
+        "\1\113\1\114\5\uffff\1\147\2\uffff\1\153\1\154\3\uffff\1\147\1\6"+
+        "\1\uffff\1\26\1\2\1\3\1\141\1\4\1\136\1\uffff\1\27\1\5\1\uffff\1"+
+        "\40\1\11\1\12\12\uffff\1\16\1\32\1\17\1\23\1\103\1\33\1\uffff\1"+
+        "\41\1\30\1\140\1\135\1\35\1\34\1\151\1\152\1\36\1\37\16\uffff\1"+
+        "\56\1\57\1\60\1\61\1\137\1\63\7\uffff\1\76\1\112\1\100\1\104\1\101"+
+        "\3\uffff\1\113\1\114\4\uffff\1\144\1\uffff\1\145\1\146\1\150\1\153"+
+        "\3\uffff\1\20\1\7\1\31\1\22\1\21\1\10\13\uffff\1\24\1\25\6\uffff"+
+        "\1\105\1\115\14\uffff\1\124\2\uffff\1\111\1\102\10\uffff\1\1\1\125"+
+        "\15\uffff\1\42\1\142\5\uffff\1\122\23\uffff\1\132\1\uffff\1\126"+
+        "\1\uffff\1\121\11\uffff\1\116\12\uffff\1\54\15\uffff\1\143\1\uffff"+
+        "\1\134\2\uffff\1\47\12\uffff\1\50\17\uffff\1\123\1\uffff\1\130\3"+
+        "\uffff\1\44\1\62\1\117\3\uffff\1\74\1\45\17\uffff\1\75\1\106\1\uffff"+
+        "\1\131\1\127\4\uffff\1\43\4\uffff\1\133\2\uffff\1\53\5\uffff\1\120"+
+        "\3\uffff\1\13\2\uffff\1\15\6\uffff\1\71\6\uffff\1\107\2\uffff\1"+
+        "\46\13\uffff\1\14\3\uffff\1\110\5\uffff\1\72\1\uffff\1\77\5\uffff"+
+        "\1\55\4\uffff\1\66\1\67\3\uffff\1\70\1\73\1\64\5\uffff\1\65\1\51"+
+        "\4\uffff\1\52";
     static final String DFA19_specialS =
-        "\1\0\62\uffff\1\1\1\2\u0170\uffff}>";
+        "\1\0\61\uffff\1\2\1\1\u018a\uffff}>";
     static final String[] DFA19_transitionS = {
-            "\11\66\2\65\2\66\1\65\22\66\1\65\1\6\1\63\1\53\1\62\1\21\1"+
-            "\4\1\64\1\35\1\36\1\17\1\13\1\45\1\14\1\15\1\20\1\57\11\60\1"+
-            "\37\1\54\1\5\1\2\1\7\1\16\1\66\1\34\1\62\1\41\1\62\1\27\1\25"+
-            "\2\62\1\40\2\62\1\26\2\62\1\50\2\62\1\43\1\51\7\62\1\47\1\66"+
-            "\1\46\1\61\1\62\1\66\1\44\1\62\1\10\1\42\1\12\1\24\2\62\1\23"+
-            "\4\62\1\1\1\62\1\32\1\62\1\52\1\11\1\56\1\33\1\22\1\55\3\62"+
-            "\1\30\1\3\1\31\uff82\66",
-            "\1\70\11\uffff\1\67\5\uffff\1\71",
-            "\1\73\1\74\1\75",
-            "\1\77",
-            "\1\101",
-            "\1\103\1\104",
-            "\1\106",
-            "\1\110",
-            "\1\113\15\uffff\1\112",
-            "\1\116\4\uffff\1\114\1\115\1\uffff\1\117",
-            "\1\123\1\uffff\1\120\7\uffff\1\122\1\uffff\1\121",
-            "\1\124",
-            "\1\126\1\127\34\uffff\1\130",
-            "\1\132",
-            "\1\135\13\uffff\1\134",
-            "\1\137",
-            "\1\141\4\uffff\1\142",
+            "\11\65\2\64\2\65\1\64\22\65\1\64\1\6\1\62\1\52\1\61\1\21\1"+
+            "\4\1\63\1\32\1\33\1\17\1\13\1\44\1\14\1\15\1\20\1\56\11\57\1"+
+            "\36\1\53\1\5\1\2\1\7\1\16\1\65\1\31\1\61\1\40\1\61\1\26\3\61"+
+            "\1\37\4\61\1\25\1\47\2\61\1\42\1\50\7\61\1\45\1\65\1\46\1\60"+
+            "\1\61\1\65\1\43\1\61\1\10\1\41\1\12\1\24\2\61\1\23\4\61\1\1"+
+            "\1\61\1\27\1\61\1\51\1\11\1\55\1\30\1\22\1\54\3\61\1\34\1\3"+
+            "\1\35\uff82\65",
+            "\1\67\11\uffff\1\66\5\uffff\1\70",
+            "\1\72\1\73\1\74",
+            "\1\76",
+            "\1\100",
+            "\1\102\1\103",
+            "\1\105",
+            "\1\107",
+            "\1\112\15\uffff\1\111",
+            "\1\115\4\uffff\1\113\1\114\1\uffff\1\116",
+            "\1\122\1\uffff\1\117\7\uffff\1\121\1\uffff\1\120",
+            "\1\123",
+            "\1\125\1\126\34\uffff\1\127",
+            "\1\131",
+            "\1\134\13\uffff\1\133",
+            "\1\136",
+            "\1\140\4\uffff\1\141",
             "",
-            "\1\145",
-            "\1\151\6\uffff\1\146\1\150\2\uffff\1\147",
-            "\1\152\7\uffff\1\154\5\uffff\1\153",
+            "\1\144",
+            "\1\150\6\uffff\1\145\1\147\2\uffff\1\146",
+            "\1\151\7\uffff\1\153\5\uffff\1\152",
+            "\1\154",
             "\1\155",
-            "\1\156",
-            "\1\157",
+            "\1\156\20\uffff\1\157",
+            "\1\160",
+            "\1\161",
             "",
             "",
-            "\1\162\20\uffff\1\163",
-            "\1\164",
-            "\1\165",
             "",
             "",
+            "\1\166",
             "\1\170",
-            "\1\172",
-            "\1\173",
-            "\1\174\11\uffff\1\175",
-            "\1\176",
-            "\1\177\17\uffff\1\u0080",
-            "\1\u0081",
-            "\1\u0083",
+            "\1\171",
+            "\1\172\11\uffff\1\173",
+            "\1\174",
+            "\1\175\17\uffff\1\176",
+            "\1\177",
             "",
+            "\1\u0082",
+            "\1\u0084",
+            "\1\u0085",
             "\1\u0086",
-            "\1\u0087",
-            "\1\u0088",
             "",
             "",
-            "\1\u008b",
-            "\1\u008d\11\uffff\1\u008e\6\uffff\1\u008c",
-            "\12\u0090\10\uffff\1\u0092\1\uffff\3\u0092\5\uffff\1\u0092"+
-            "\13\uffff\1\u008f\6\uffff\1\u0090\2\uffff\1\u0092\1\uffff\3"+
-            "\u0092\5\uffff\1\u0092\13\uffff\1\u008f",
-            "\12\u0090\10\uffff\1\u0092\1\uffff\3\u0092\5\uffff\1\u0092"+
-            "\22\uffff\1\u0090\2\uffff\1\u0092\1\uffff\3\u0092\5\uffff\1"+
-            "\u0092",
-            "\1\72\34\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+            "\1\u0089",
+            "\1\u008b\11\uffff\1\u008c\6\uffff\1\u008a",
+            "\12\u008e\10\uffff\1\u0090\1\uffff\3\u0090\5\uffff\1\u0090"+
+            "\13\uffff\1\u008d\6\uffff\1\u008e\2\uffff\1\u0090\1\uffff\3"+
+            "\u0090\5\uffff\1\u0090\13\uffff\1\u008d",
+            "\12\u008e\10\uffff\1\u0090\1\uffff\3\u0090\5\uffff\1\u0090"+
+            "\22\uffff\1\u008e\2\uffff\1\u0090\1\uffff\3\u0090\5\uffff\1"+
+            "\u0090",
+            "\1\71\34\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
             "",
-            "\0\u0093",
-            "\0\u0093",
+            "\0\u0091",
+            "\0\u0091",
             "",
             "",
+            "\1\u0093",
+            "\1\u0094",
             "\1\u0095",
+            "",
+            "",
             "\1\u0096",
-            "\1\u0097",
+            "",
+            "",
+            "",
+            "",
             "",
             "",
             "\1\u0098",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
             "\1\u009a",
             "",
             "",
+            "",
             "\1\u009c",
-            "",
-            "",
-            "",
-            "\1\u009e",
-            "\1\u009f\1\u00a0",
+            "\1\u009d\1\u009e",
+            "\1\u009f",
+            "\1\u00a0",
             "\1\u00a1",
             "\1\u00a2",
             "\1\u00a3",
             "\1\u00a4",
             "\1\u00a5",
             "\1\u00a6",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u00a7",
-            "\1\u00a8",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u00a9",
             "",
             "",
             "",
@@ -4039,153 +4013,155 @@ public class InternalEventPatternLanguageLexer extends Lexer {
             "",
             "",
             "",
-            "\1\u00ab\5\uffff\1\u00ac",
-            "\1\u00ad",
-            "\1\u00af\14\uffff\1\u00ae",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\22"+
-            "\72\1\u00b0\7\72",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u00a9\5\uffff\1\u00aa",
+            "\1\u00ab",
+            "\1\u00ad\14\uffff\1\u00ac",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\22"+
+            "\71\1\u00ae\7\71",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\u00b1",
+            "\1\u00b2",
             "\1\u00b3",
             "\1\u00b4",
             "\1\u00b5",
             "\1\u00b6",
             "\1\u00b7",
             "\1\u00b8",
-            "",
-            "",
             "\1\u00b9",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u00ba",
             "\1\u00bb",
             "\1\u00bc",
-            "",
-            "",
-            "",
-            "",
-            "\1\u00bd",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u00be",
             "\1\u00bf",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\u00c1",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u00c2",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u00c3\14\uffff\1\u00c4",
             "",
             "",
-            "",
-            "",
-            "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
             "\1\u00c5",
-            "\1\u00c6\14\uffff\1\u00c7",
+            "\1\u00c6",
+            "\1\u00c7",
+            "\1\u00c9\3\uffff\1\u00c8",
             "",
-            "",
-            "\1\u00c8",
-            "\1\u00c9",
-            "\1\u00ca",
-            "\1\u00cc\3\uffff\1\u00cb",
-            "",
-            "\12\u0090\10\uffff\1\u0092\1\uffff\3\u0092\5\uffff\1\u0092"+
-            "\22\uffff\1\u0090\2\uffff\1\u0092\1\uffff\3\u0092\5\uffff\1"+
-            "\u0092",
+            "\12\u008e\10\uffff\1\u0090\1\uffff\3\u0090\5\uffff\1\u0090"+
+            "\22\uffff\1\u008e\2\uffff\1\u0090\1\uffff\3\u0090\5\uffff\1"+
+            "\u0090",
             "",
             "",
             "",
             "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\u00cc",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u00cd",
+            "\1\u00ce",
             "\1\u00cf",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u00d0",
-            "\1\u00d1",
+            "\1\u00d0\1\uffff\1\u00d1",
             "\1\u00d2",
-            "\1\u00d3\1\uffff\1\u00d4",
+            "\1\u00d3",
+            "\1\u00d4",
             "\1\u00d5",
             "\1\u00d6",
             "\1\u00d7",
             "\1\u00d8",
-            "\1\u00d9",
-            "\1\u00da",
+            "",
+            "",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u00db",
-            "",
-            "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u00dc",
+            "\1\u00dd",
             "\1\u00de",
+            "",
+            "",
             "\1\u00df",
-            "\1\u00e0",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u00e1",
-            "",
-            "",
             "\1\u00e2",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u00e3",
             "\1\u00e4",
             "\1\u00e5",
             "\1\u00e6",
             "\1\u00e7",
             "\1\u00e8",
             "\1\u00e9",
-            "\1\u00ea",
-            "\1\u00eb",
+            "\1\u00eb\7\uffff\1\u00ea",
+            "",
             "\1\u00ec",
             "\1\u00ed",
-            "\1\u00ef\7\uffff\1\u00ee",
             "",
+            "",
+            "\1\u00ee",
+            "\1\u00ef",
             "\1\u00f0",
             "\1\u00f1",
-            "",
-            "",
             "\1\u00f2",
             "\1\u00f3",
-            "\1\u00f4",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u00f5",
-            "\1\u00f6",
+            "",
+            "",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u00f7",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u00f9",
-            "",
-            "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u00fa",
             "\1\u00fb",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u00fc",
             "\1\u00fd",
             "\1\u00fe",
             "\1\u00ff",
             "\1\u0100",
             "\1\u0101",
-            "\1\u0102",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "",
+            "",
             "\1\u0103",
             "\1\u0104",
             "\1\u0105",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "",
-            "",
+            "\1\u0106",
             "\1\u0107",
+            "",
             "\1\u0108",
             "\1\u0109",
             "\1\u010a",
             "\1\u010b",
-            "",
             "\1\u010c",
-            "\1\u010d",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\u010e",
             "\1\u010f",
             "\1\u0110",
             "\1\u0111",
@@ -4195,145 +4171,139 @@ public class InternalEventPatternLanguageLexer extends Lexer {
             "\1\u0115",
             "\1\u0116",
             "\1\u0117",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u0118",
             "\1\u0119",
             "\1\u011a",
-            "\1\u011b",
+            "",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "",
             "\1\u011c",
-            "\1\u011d",
+            "",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u011e",
             "\1\u011f",
-            "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u0121",
-            "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u0122",
             "\1\u0123",
-            "\1\u0124",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u0124\16\uffff\1\u0125",
             "\1\u0126",
+            "",
             "\1\u0127",
             "\1\u0128",
-            "\1\u0129\16\uffff\1\u012a",
-            "\1\u012b",
-            "",
+            "\1\u0129",
+            "\1\u012a",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u012c",
             "\1\u012d",
             "\1\u012e",
             "\1\u012f",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\u0131",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u0130",
             "",
+            "\1\u0131",
+            "\1\u0132",
             "\1\u0133",
             "\1\u0134",
             "\1\u0135",
-            "\1\u0137\3\uffff\1\u0136",
+            "\1\u0136",
+            "\1\u0137",
             "\1\u0138",
             "\1\u0139",
             "\1\u013a",
-            "\1\u013b",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u013c",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "",
-            "\1\u013d",
             "\1\u013e",
+            "",
             "\1\u013f",
-            "\1\u0140",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\u0142",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\71\13\uffff\12\71\7\uffff\1\71\1\u0140\30\71\4\uffff\1"+
+            "\71\1\uffff\32\71",
             "",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u0144",
-            "",
             "\1\u0145",
-            "\1\72\13\uffff\12\72\7\uffff\1\72\1\u0146\30\72\4\uffff\1"+
-            "\72\1\uffff\32\72",
-            "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u0146",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\u0149",
             "\1\u014a",
             "\1\u014b",
+            "",
             "\1\u014c",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u014d",
+            "\1\u014e",
             "\1\u014f",
             "\1\u0150",
             "\1\u0151",
-            "",
             "\1\u0152",
-            "",
             "\1\u0153",
             "\1\u0154",
             "\1\u0155",
-            "",
-            "",
-            "\1\u0156",
-            "\1\u0157",
-            "\1\u0158",
-            "\1\u0159",
+            "\1\u0156\4\uffff\1\u0157",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u015a",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\u015d",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "",
+            "\1\u015d",
+            "\1\u015e",
+            "\1\u015f",
+            "",
+            "",
             "",
             "\1\u0160",
-            "\1\u0161",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u0162",
             "",
             "",
-            "",
             "\1\u0163",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u0164",
             "\1\u0165",
-            "",
-            "",
-            "\1\u0166",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u0167",
             "\1\u0168",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u016a",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u016b",
             "\1\u016c",
             "\1\u016d",
             "\1\u016e",
-            "\1\u016f",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u0170",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u0171",
             "",
             "",
             "\1\u0172",
             "",
             "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u0174",
             "\1\u0175",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "",
             "\1\u0177",
             "\1\u0178",
@@ -4341,76 +4311,107 @@ public class InternalEventPatternLanguageLexer extends Lexer {
             "\1\u017a",
             "",
             "\1\u017b",
+            "\1\u017c",
             "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\u017d",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u017e",
             "\1\u017f",
             "\1\u0180",
-            "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u0181",
             "",
             "\1\u0182",
             "\1\u0183",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
             "\1\u0185",
             "\1\u0186",
-            "\1\u0187",
-            "\1\u0188",
             "",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\u0188",
             "\1\u0189",
             "\1\u018a",
             "\1\u018b",
             "\1\u018c",
             "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u018d",
             "\1\u018e",
-            "",
             "\1\u018f",
             "\1\u0190",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\u0193",
-            "\1\u0194",
-            "\1\u0195",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u0191",
+            "\1\u0192",
             "",
-            "\1\u0197",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\u0194",
+            "",
+            "\1\u0195",
+            "\1\u0196",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "\1\u0198",
             "\1\u0199",
-            "",
-            "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u019a",
             "\1\u019b",
             "\1\u019c",
-            "",
-            "\1\u019d",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\u019e",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "",
             "\1\u01a0",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
-            "",
+            "\1\u01a1",
+            "\1\u01a2",
             "",
             "\1\u01a3",
+            "\1\u01a4",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\u01a6",
+            "\1\u01a7",
+            "",
+            "\1\u01a8",
+            "",
+            "\1\u01a9",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\u01ac",
+            "\1\u01ad",
+            "",
+            "\1\u01ae",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             "",
             "",
-            "\1\72\13\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
-            "\72",
+            "\1\u01b2",
+            "\1\u01b3",
+            "\1\u01b4",
+            "",
+            "",
+            "",
+            "\1\u01b5",
+            "\1\u01b6",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
+            "\1\u01b9",
+            "",
+            "",
+            "\1\u01ba",
+            "\1\u01bb",
+            "\1\u01bc",
+            "\1\71\13\uffff\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32"+
+            "\71",
             ""
     };
 
@@ -4444,7 +4445,7 @@ public class InternalEventPatternLanguageLexer extends Lexer {
             this.transition = DFA19_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -4494,73 +4495,71 @@ public class InternalEventPatternLanguageLexer extends Lexer {
 
                         else if ( (LA19_0=='f') ) {s = 20;}
 
-                        else if ( (LA19_0=='F') ) {s = 21;}
+                        else if ( (LA19_0=='N') ) {s = 21;}
 
-                        else if ( (LA19_0=='L') ) {s = 22;}
+                        else if ( (LA19_0=='E') ) {s = 22;}
 
-                        else if ( (LA19_0=='E') ) {s = 23;}
+                        else if ( (LA19_0=='p') ) {s = 23;}
 
-                        else if ( (LA19_0=='{') ) {s = 24;}
+                        else if ( (LA19_0=='u') ) {s = 24;}
 
-                        else if ( (LA19_0=='}') ) {s = 25;}
+                        else if ( (LA19_0=='A') ) {s = 25;}
 
-                        else if ( (LA19_0=='p') ) {s = 26;}
+                        else if ( (LA19_0=='(') ) {s = 26;}
 
-                        else if ( (LA19_0=='u') ) {s = 27;}
+                        else if ( (LA19_0==')') ) {s = 27;}
 
-                        else if ( (LA19_0=='A') ) {s = 28;}
+                        else if ( (LA19_0=='{') ) {s = 28;}
 
-                        else if ( (LA19_0=='(') ) {s = 29;}
+                        else if ( (LA19_0=='}') ) {s = 29;}
 
-                        else if ( (LA19_0==')') ) {s = 30;}
+                        else if ( (LA19_0==':') ) {s = 30;}
 
-                        else if ( (LA19_0==':') ) {s = 31;}
+                        else if ( (LA19_0=='I') ) {s = 31;}
 
-                        else if ( (LA19_0=='I') ) {s = 32;}
+                        else if ( (LA19_0=='C') ) {s = 32;}
 
-                        else if ( (LA19_0=='C') ) {s = 33;}
+                        else if ( (LA19_0=='d') ) {s = 33;}
 
-                        else if ( (LA19_0=='d') ) {s = 34;}
+                        else if ( (LA19_0=='R') ) {s = 34;}
 
-                        else if ( (LA19_0=='R') ) {s = 35;}
+                        else if ( (LA19_0=='a') ) {s = 35;}
 
-                        else if ( (LA19_0=='a') ) {s = 36;}
+                        else if ( (LA19_0==',') ) {s = 36;}
 
-                        else if ( (LA19_0==',') ) {s = 37;}
+                        else if ( (LA19_0=='[') ) {s = 37;}
 
                         else if ( (LA19_0==']') ) {s = 38;}
 
-                        else if ( (LA19_0=='[') ) {s = 39;}
+                        else if ( (LA19_0=='O') ) {s = 39;}
 
-                        else if ( (LA19_0=='O') ) {s = 40;}
+                        else if ( (LA19_0=='S') ) {s = 40;}
 
-                        else if ( (LA19_0=='S') ) {s = 41;}
+                        else if ( (LA19_0=='r') ) {s = 41;}
 
-                        else if ( (LA19_0=='r') ) {s = 42;}
+                        else if ( (LA19_0=='#') ) {s = 42;}
 
-                        else if ( (LA19_0=='#') ) {s = 43;}
+                        else if ( (LA19_0==';') ) {s = 43;}
 
-                        else if ( (LA19_0==';') ) {s = 44;}
+                        else if ( (LA19_0=='w') ) {s = 44;}
 
-                        else if ( (LA19_0=='w') ) {s = 45;}
+                        else if ( (LA19_0=='t') ) {s = 45;}
 
-                        else if ( (LA19_0=='t') ) {s = 46;}
+                        else if ( (LA19_0=='0') ) {s = 46;}
 
-                        else if ( (LA19_0=='0') ) {s = 47;}
+                        else if ( ((LA19_0>='1' && LA19_0<='9')) ) {s = 47;}
 
-                        else if ( ((LA19_0>='1' && LA19_0<='9')) ) {s = 48;}
+                        else if ( (LA19_0=='^') ) {s = 48;}
 
-                        else if ( (LA19_0=='^') ) {s = 49;}
+                        else if ( (LA19_0=='$'||LA19_0=='B'||LA19_0=='D'||(LA19_0>='F' && LA19_0<='H')||(LA19_0>='J' && LA19_0<='M')||(LA19_0>='P' && LA19_0<='Q')||(LA19_0>='T' && LA19_0<='Z')||LA19_0=='_'||LA19_0=='b'||(LA19_0>='g' && LA19_0<='h')||(LA19_0>='j' && LA19_0<='m')||LA19_0=='o'||LA19_0=='q'||(LA19_0>='x' && LA19_0<='z')) ) {s = 49;}
 
-                        else if ( (LA19_0=='$'||LA19_0=='B'||LA19_0=='D'||(LA19_0>='G' && LA19_0<='H')||(LA19_0>='J' && LA19_0<='K')||(LA19_0>='M' && LA19_0<='N')||(LA19_0>='P' && LA19_0<='Q')||(LA19_0>='T' && LA19_0<='Z')||LA19_0=='_'||LA19_0=='b'||(LA19_0>='g' && LA19_0<='h')||(LA19_0>='j' && LA19_0<='m')||LA19_0=='o'||LA19_0=='q'||(LA19_0>='x' && LA19_0<='z')) ) {s = 50;}
+                        else if ( (LA19_0=='\"') ) {s = 50;}
 
-                        else if ( (LA19_0=='\"') ) {s = 51;}
+                        else if ( (LA19_0=='\'') ) {s = 51;}
 
-                        else if ( (LA19_0=='\'') ) {s = 52;}
+                        else if ( ((LA19_0>='\t' && LA19_0<='\n')||LA19_0=='\r'||LA19_0==' ') ) {s = 52;}
 
-                        else if ( ((LA19_0>='\t' && LA19_0<='\n')||LA19_0=='\r'||LA19_0==' ') ) {s = 53;}
-
-                        else if ( ((LA19_0>='\u0000' && LA19_0<='\b')||(LA19_0>='\u000B' && LA19_0<='\f')||(LA19_0>='\u000E' && LA19_0<='\u001F')||LA19_0=='@'||LA19_0=='\\'||LA19_0=='`'||(LA19_0>='~' && LA19_0<='\uFFFF')) ) {s = 54;}
+                        else if ( ((LA19_0>='\u0000' && LA19_0<='\b')||(LA19_0>='\u000B' && LA19_0<='\f')||(LA19_0>='\u000E' && LA19_0<='\u001F')||LA19_0=='@'||LA19_0=='\\'||LA19_0=='`'||(LA19_0>='~' && LA19_0<='\uFFFF')) ) {s = 53;}
 
                         if ( s>=0 ) return s;
                         break;
@@ -4568,19 +4567,19 @@ public class InternalEventPatternLanguageLexer extends Lexer {
                         int LA19_51 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA19_51>='\u0000' && LA19_51<='\uFFFF')) ) {s = 147;}
+                        if ( ((LA19_51>='\u0000' && LA19_51<='\uFFFF')) ) {s = 145;}
 
-                        else s = 54;
+                        else s = 53;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA19_52 = input.LA(1);
+                        int LA19_50 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA19_52>='\u0000' && LA19_52<='\uFFFF')) ) {s = 147;}
+                        if ( ((LA19_50>='\u0000' && LA19_50<='\uFFFF')) ) {s = 145;}
 
-                        else s = 54;
+                        else s = 53;
 
                         if ( s>=0 ) return s;
                         break;

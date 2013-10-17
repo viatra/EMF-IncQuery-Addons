@@ -2,7 +2,7 @@
  */
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Event;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameter;
 
@@ -58,7 +58,7 @@ public class EventTypedParameterImpl extends MinimalEObjectImpl.Container implem
    * @generated
    * @ordered
    */
-  protected Event type;
+  protected EventPattern type;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,12 +109,12 @@ public class EventTypedParameterImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public Event getType()
+  public EventPattern getType()
   {
     if (type != null && type.eIsProxy())
     {
       InternalEObject oldType = (InternalEObject)type;
-      type = (Event)eResolveProxy(oldType);
+      type = (EventPattern)eResolveProxy(oldType);
       if (type != oldType)
       {
         if (eNotificationRequired())
@@ -129,7 +129,7 @@ public class EventTypedParameterImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public Event basicGetType()
+  public EventPattern basicGetType()
   {
     return type;
   }
@@ -139,9 +139,9 @@ public class EventTypedParameterImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(Event newType)
+  public void setType(EventPattern newType)
   {
-    Event oldType = type;
+    EventPattern oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__TYPE, oldType, type));
@@ -180,7 +180,7 @@ public class EventTypedParameterImpl extends MinimalEObjectImpl.Container implem
         setName((String)newValue);
         return;
       case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__TYPE:
-        setType((Event)newValue);
+        setType((EventPattern)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -200,7 +200,7 @@ public class EventTypedParameterImpl extends MinimalEObjectImpl.Container implem
         setName(NAME_EDEFAULT);
         return;
       case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER__TYPE:
-        setType((Event)null);
+        setType((EventPattern)null);
         return;
     }
     super.eUnset(featureID);

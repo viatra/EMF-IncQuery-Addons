@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated transaction -->
+      <package
+            uri="transaction.meta"
+            class="hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage"
+            genModel="model/transaction.genmodel"/>
+   </extension>
+
+</plugin>

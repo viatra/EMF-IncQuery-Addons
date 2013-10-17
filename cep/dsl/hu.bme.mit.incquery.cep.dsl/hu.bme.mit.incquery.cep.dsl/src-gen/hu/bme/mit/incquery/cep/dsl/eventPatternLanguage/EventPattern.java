@@ -1,0 +1,18 @@
+/**
+ */
+package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Event Pattern</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventPattern()
+ * @model
+ * @generated
+ */
+public interface EventPattern extends ModelElement
+{
+} // EventPattern

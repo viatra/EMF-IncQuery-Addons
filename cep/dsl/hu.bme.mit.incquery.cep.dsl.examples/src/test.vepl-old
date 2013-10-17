@@ -1,0 +1,50 @@
+package hu.bme.mit.testpackage
+
+import java.util.*
+
+uses-incquery-patterns hu.bme.mit.incquery.patterns.*
+
+
+EventModel testModel{
+	
+	AtomicEvent atomicEvent1(testAttribute : int, testAttribute2 : int, testAttribute3 : String){
+        source : exampleSource
+		staticBinding {
+			testAttribute not in [1, 22]
+			testAttribute2 != 2
+		}
+    }
+
+	IQPatternEvent myCustomPatternAppeared(){
+		iqPatternRef : "myCustomEiqPattern" /* not necessary to write fully qualified references */
+		iqChangeType : FOUND
+	}
+
+    ComplexEvent myComplexEvent1(e1 : myCustomPatternAppeared, a : atomicEvent1){
+    	priority: 10
+    	definition: e1{2}-[1200]->a{2}-[1000]->e1 //events following each other with time windows
+    }
+    
+    ComplexEvent myComplexEvent2(e1 : myCustomPatternAppeared, a : atomicEvent1){
+    	priority: 20
+    	definition: e1-[1200]->a
+    }
+    
+    ComplexEvent anotherComplexEvent(ce1 : myComplexEvent1, ce2 : myComplexEvent2, a : atomicEvent1){
+    	priority: 0
+    	definition: a{2}->(ce1{3} OR ce2{5})
+    }
+   
+    Rule {
+    	events: anotherComplexEvent, atomicEvent1
+    	action {
+    		 if(Strings.isNullOrEmpty(atomicEvent1.testAttribute3)){
+    		 	System.out.println("Param " + atomicEvent1.testAttribute3 + "is empty!");
+    		 }
+    	}
+    }
+
+	Source exampleSource{
+		register hu.bme.mit.incquery.cep.dsl.examples.sources.MyExampleAdapter
+	}
+}

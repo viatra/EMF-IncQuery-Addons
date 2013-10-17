@@ -14,7 +14,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule#getEvents <em>Events</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule#getEventPatterns <em>Event Patterns</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule#getAction <em>Action</em>}</li>
  * </ul>
  * </p>
@@ -23,23 +23,23 @@ import org.eclipse.xtext.xbase.XExpression;
  * @model
  * @generated
  */
-public interface Rule extends ModelElements
+public interface Rule extends ModelElement
 {
   /**
-   * Returns the value of the '<em><b>Events</b></em>' reference list.
-   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Event}.
+   * Returns the value of the '<em><b>Event Patterns</b></em>' reference list.
+   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Events</em>' reference list isn't clear,
+   * If the meaning of the '<em>Event Patterns</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Events</em>' reference list.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getRule_Events()
+   * @return the value of the '<em>Event Patterns</em>' reference list.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getRule_EventPatterns()
    * @model
    * @generated
    */
-  EList<Event> getEvents();
+  EList<EventPattern> getEventPatterns();
 
   /**
    * Returns the value of the '<em><b>Action</b></em>' containment reference.

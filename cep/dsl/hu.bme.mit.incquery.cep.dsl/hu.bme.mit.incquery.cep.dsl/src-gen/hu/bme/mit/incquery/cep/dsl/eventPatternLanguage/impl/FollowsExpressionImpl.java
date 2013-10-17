@@ -3,8 +3,7 @@
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithFollowsOperator;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression;
 
 import java.util.Collection;
@@ -26,34 +25,23 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.FollowsExpressionImpl#getFirstEvent <em>First Event</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.FollowsExpressionImpl#getEvents <em>Events</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.FollowsExpressionImpl#getFollowerExpressions <em>Follower Expressions</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FollowsExpressionImpl extends ComplexEventExpressionImpl implements FollowsExpression
+public class FollowsExpressionImpl extends ExpressionImpl implements FollowsExpression
 {
   /**
-   * The cached value of the '{@link #getFirstEvent() <em>First Event</em>}' containment reference list.
+   * The cached value of the '{@link #getFollowerExpressions() <em>Follower Expressions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFirstEvent()
+   * @see #getFollowerExpressions()
    * @generated
    * @ordered
    */
-  protected EList<EventTypedParameterWithMultiplicity> firstEvent;
-
-  /**
-   * The cached value of the '{@link #getEvents() <em>Events</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEvents()
-   * @generated
-   * @ordered
-   */
-  protected EList<EventWithFollowsOperator> events;
+  protected EList<FollowerExpression> followerExpressions;
 
   /**
    * <!-- begin-user-doc -->
@@ -81,27 +69,13 @@ public class FollowsExpressionImpl extends ComplexEventExpressionImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EventTypedParameterWithMultiplicity> getFirstEvent()
+  public EList<FollowerExpression> getFollowerExpressions()
   {
-    if (firstEvent == null)
+    if (followerExpressions == null)
     {
-      firstEvent = new EObjectContainmentEList<EventTypedParameterWithMultiplicity>(EventTypedParameterWithMultiplicity.class, this, EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FIRST_EVENT);
+      followerExpressions = new EObjectContainmentEList<FollowerExpression>(FollowerExpression.class, this, EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FOLLOWER_EXPRESSIONS);
     }
-    return firstEvent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<EventWithFollowsOperator> getEvents()
-  {
-    if (events == null)
-    {
-      events = new EObjectContainmentEList<EventWithFollowsOperator>(EventWithFollowsOperator.class, this, EventPatternLanguagePackage.FOLLOWS_EXPRESSION__EVENTS);
-    }
-    return events;
+    return followerExpressions;
   }
 
   /**
@@ -114,10 +88,8 @@ public class FollowsExpressionImpl extends ComplexEventExpressionImpl implements
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FIRST_EVENT:
-        return ((InternalEList<?>)getFirstEvent()).basicRemove(otherEnd, msgs);
-      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__EVENTS:
-        return ((InternalEList<?>)getEvents()).basicRemove(otherEnd, msgs);
+      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FOLLOWER_EXPRESSIONS:
+        return ((InternalEList<?>)getFollowerExpressions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -132,10 +104,8 @@ public class FollowsExpressionImpl extends ComplexEventExpressionImpl implements
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FIRST_EVENT:
-        return getFirstEvent();
-      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__EVENTS:
-        return getEvents();
+      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FOLLOWER_EXPRESSIONS:
+        return getFollowerExpressions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -151,13 +121,9 @@ public class FollowsExpressionImpl extends ComplexEventExpressionImpl implements
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FIRST_EVENT:
-        getFirstEvent().clear();
-        getFirstEvent().addAll((Collection<? extends EventTypedParameterWithMultiplicity>)newValue);
-        return;
-      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__EVENTS:
-        getEvents().clear();
-        getEvents().addAll((Collection<? extends EventWithFollowsOperator>)newValue);
+      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FOLLOWER_EXPRESSIONS:
+        getFollowerExpressions().clear();
+        getFollowerExpressions().addAll((Collection<? extends FollowerExpression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -173,11 +139,8 @@ public class FollowsExpressionImpl extends ComplexEventExpressionImpl implements
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FIRST_EVENT:
-        getFirstEvent().clear();
-        return;
-      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__EVENTS:
-        getEvents().clear();
+      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FOLLOWER_EXPRESSIONS:
+        getFollowerExpressions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -193,10 +156,8 @@ public class FollowsExpressionImpl extends ComplexEventExpressionImpl implements
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FIRST_EVENT:
-        return firstEvent != null && !firstEvent.isEmpty();
-      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__EVENTS:
-        return events != null && !events.isEmpty();
+      case EventPatternLanguagePackage.FOLLOWS_EXPRESSION__FOLLOWER_EXPRESSIONS:
+        return followerExpressions != null && !followerExpressions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

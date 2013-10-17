@@ -11,8 +11,8 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getEvent <em>Event</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getEventPattern <em>Event Pattern</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getParameterList <em>Parameter List</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getMultiplicity <em>Multiplicity</em>}</li>
  * </ul>
  * </p>
@@ -24,81 +24,81 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage;
 public interface EventTypedParameterWithMultiplicity extends FollowerEventStructure
 {
   /**
-   * Returns the value of the '<em><b>Event</b></em>' reference.
+   * Returns the value of the '<em><b>Event Pattern</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Event</em>' reference isn't clear,
+   * If the meaning of the '<em>Event Pattern</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Event</em>' reference.
-   * @see #setEvent(EventTypedParameter)
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventTypedParameterWithMultiplicity_Event()
+   * @return the value of the '<em>Event Pattern</em>' reference.
+   * @see #setEventPattern(EventTypedParameter)
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventTypedParameterWithMultiplicity_EventPattern()
    * @model
    * @generated
    */
-  EventTypedParameter getEvent();
+  EventTypedParameter getEventPattern();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getEvent <em>Event</em>}' reference.
+   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getEventPattern <em>Event Pattern</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Event</em>' reference.
-   * @see #getEvent()
+   * @param value the new value of the '<em>Event Pattern</em>' reference.
+   * @see #getEventPattern()
    * @generated
    */
-  void setEvent(EventTypedParameter value);
+  void setEventPattern(EventTypedParameter value);
 
   /**
-   * Returns the value of the '<em><b>Parameters</b></em>' containment reference.
+   * Returns the value of the '<em><b>Parameter List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Parameters</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Parameter List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Parameters</em>' containment reference.
-   * @see #setParameters(PatternCallParameterList)
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventTypedParameterWithMultiplicity_Parameters()
+   * @return the value of the '<em>Parameter List</em>' containment reference.
+   * @see #setParameterList(PatternCallParameterList)
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventTypedParameterWithMultiplicity_ParameterList()
    * @model containment="true"
    * @generated
    */
-  PatternCallParameterList getParameters();
+  PatternCallParameterList getParameterList();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getParameters <em>Parameters</em>}' containment reference.
+   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getParameterList <em>Parameter List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Parameters</em>' containment reference.
-   * @see #getParameters()
+   * @param value the new value of the '<em>Parameter List</em>' containment reference.
+   * @see #getParameterList()
    * @generated
    */
-  void setParameters(PatternCallParameterList value);
+  void setParameterList(PatternCallParameterList value);
 
   /**
-   * Returns the value of the '<em><b>Multiplicity</b></em>' attribute.
+   * Returns the value of the '<em><b>Multiplicity</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Multiplicity</em>' attribute isn't clear,
+   * If the meaning of the '<em>Multiplicity</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Multiplicity</em>' attribute.
-   * @see #setMultiplicity(int)
+   * @return the value of the '<em>Multiplicity</em>' containment reference.
+   * @see #setMultiplicity(Multiplicity)
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventTypedParameterWithMultiplicity_Multiplicity()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  int getMultiplicity();
+  Multiplicity getMultiplicity();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getMultiplicity <em>Multiplicity</em>}' attribute.
+   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getMultiplicity <em>Multiplicity</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Multiplicity</em>' attribute.
+   * @param value the new value of the '<em>Multiplicity</em>' containment reference.
    * @see #getMultiplicity()
    * @generated
    */
-  void setMultiplicity(int value);
+  void setMultiplicity(Multiplicity value);
 
 } // EventTypedParameterWithMultiplicity

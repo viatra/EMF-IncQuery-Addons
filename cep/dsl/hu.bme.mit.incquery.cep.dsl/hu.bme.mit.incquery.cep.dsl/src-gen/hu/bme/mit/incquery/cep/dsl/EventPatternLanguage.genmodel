@@ -5,48 +5,50 @@
     forceOverwrite="true" modelName="EventPatternLanguage" updateClasspath="false"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="5.0"
     copyrightFields="false" editPluginID="hu.bme.mit.incquery.cep.dsl.edit" editorPluginID="hu.bme.mit.incquery.cep.dsl.editor"
-    runtimeVersion="2.9" usedGenPackages="../../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+    runtimeVersion="2.9" usedGenPackages="../../../../../../../../org.eclipse.incquery.patternlanguage/src-gen/org/eclipse/incquery/patternlanguage/PatternLanguage.genmodel#//patternLanguage ../../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
   <genPackages prefix="EventPatternLanguage" basePackage="hu.bme.mit.incquery.cep.dsl"
       disposableProviderFactory="true" fileExtensions="vepl" ecorePackage="EventPatternLanguage.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="EventPatternLanguage.ecore#//IQPatternChangeType">
-      <genEnumLiterals ecoreEnumLiteral="EventPatternLanguage.ecore#//IQPatternChangeType/FOUND"/>
-      <genEnumLiterals ecoreEnumLiteral="EventPatternLanguage.ecore#//IQPatternChangeType/LOST"/>
+      <genEnumLiterals ecoreEnumLiteral="EventPatternLanguage.ecore#//IQPatternChangeType/NEW_MATCH_FOUND"/>
+      <genEnumLiterals ecoreEnumLiteral="EventPatternLanguage.ecore#//IQPatternChangeType/EXISTING_MATCH_LOST"/>
     </genEnums>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//EventModel">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//EventModel/packageName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventModel/usages"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//EventModel/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventModel/events"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventModel/packagedModel"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//PackagedModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//PackagedModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//PackagedModel/usages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//PackagedModel/modelElements"/>
     </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//Usage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//Usage/importedNamespace"/>
     </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//IQUsage"/>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//EventSourceUsage"/>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//ModelElements">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//ModelElements/name"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//ModelElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//ModelElement/name"/>
     </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//Event"/>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//AbstractAtomicEvent">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//AbstractAtomicEvent/parameters"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//EventPattern"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//AbstractAtomicEventPattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//AbstractAtomicEventPattern/parameters"/>
     </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//AtomicEvent">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//AtomicEvent/source"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//AtomicEvent/staticBindings"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//AtomicEventPattern">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//AtomicEventPattern/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//AtomicEventPattern/staticBindings"/>
     </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//IQPatternEvent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//IQPatternEvent/iqpattern"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//IQPatternEvent/changeType"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//IQPatternEventPattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//IQPatternEventPattern/iqPatternRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//IQPatternEventPattern/iqChangeType"/>
     </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//ComplexEvent">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//ComplexEvent/parameters"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//ComplexEvent/priority"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//ComplexEvent/complexEventExpressions"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//ComplexEventPattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//ComplexEventPattern/parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//ComplexEventPattern/priority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//ComplexEventPattern/complexEventExpressions"/>
     </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//Rule">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//Rule/events"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//Rule/eventPatterns"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//Rule/action"/>
     </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//OnAppearRule"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//FailDiagnosticRule"/>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//TypedParameterList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//TypedParameterList/parameters"/>
     </genClasses>
@@ -54,12 +56,67 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//TypedParameter/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//TypedParameter/type"/>
     </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//EventParameterList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventParameterList/parameters"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//EventPatternParameterList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventPatternParameterList/parameters"/>
     </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//EventTypedParameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//EventTypedParameter/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventTypedParameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//ParametrizedIncQueryPatternReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//ParametrizedIncQueryPatternReference/iqpattern"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//ParametrizedIncQueryPatternReference/parameterList"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//Multiplicity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//Multiplicity/multiplicity"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//Timewindow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//Timewindow/length"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//EventTypedParameterWithMultiplicity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventTypedParameterWithMultiplicity/eventPattern"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventTypedParameterWithMultiplicity/parameterList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventTypedParameterWithMultiplicity/multiplicity"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//PatternCallParameterList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//PatternCallParameterList/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//PatternCallParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//PatternCallParameter/name"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//ComplexEventExpression"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//AugmentedExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//AugmentedExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//TimedExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//TimedExpression/timewindow"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//MultiplicityExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//MultiplicityExpression/multiplicity"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//TimedMultiplicityExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//TimedMultiplicityExpression/multiplicity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//TimedMultiplicityExpression/timewindow"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//Expression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//Expression/eventPatterns"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowsExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//FollowsExpression/followerExpressions"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowerExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//FollowerExpression/followsOperator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//FollowerExpression/eventPattern"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowerEventStructure"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//InnerBranchExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//InnerBranchExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//BranchExpression"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowsOperator"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowsOperatorNoTW"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowsOperatorViaTW">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//FollowsOperatorViaTW/timewindow"/>
     </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//StaticBinding">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//StaticBinding/parameter"/>
@@ -86,35 +143,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//LiteralFilter/neg"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//LiteralFilter/operator"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//LiteralFilter/value"/>
-    </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//ComplexEventExpression"/>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowsExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//FollowsExpression/firstEvent"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//FollowsExpression/events"/>
-    </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//EventWithFollowsOperator">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventWithFollowsOperator/operator"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventWithFollowsOperator/event"/>
-    </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowsOperator"/>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowsOperatorNoTW"/>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowsOperatorViaTW">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//FollowsOperatorViaTW/timewindow"/>
-    </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowerEventStructure"/>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//BranchExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//BranchExpression/branches"/>
-    </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//EventTypedParameterWithMultiplicity">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventTypedParameterWithMultiplicity/event"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventTypedParameterWithMultiplicity/parameters"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//EventTypedParameterWithMultiplicity/multiplicity"/>
-    </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//PatternCallParameterList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//PatternCallParameterList/parameters"/>
-    </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//PatternCallParameter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//PatternCallParameter/name"/>
     </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//Source">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//Source/adapter"/>

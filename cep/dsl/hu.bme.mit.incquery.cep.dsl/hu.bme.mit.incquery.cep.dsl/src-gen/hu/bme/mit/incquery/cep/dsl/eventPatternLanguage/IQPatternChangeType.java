@@ -20,54 +20,54 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum IQPatternChangeType implements Enumerator
 {
   /**
-   * The '<em><b>FOUND</b></em>' literal object.
+   * The '<em><b>NEW MATCH FOUND</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #FOUND_VALUE
+   * @see #NEW_MATCH_FOUND_VALUE
    * @generated
    * @ordered
    */
-  FOUND(0, "FOUND", "FOUND"),
+  NEW_MATCH_FOUND(0, "NEW_MATCH_FOUND", "NEW_MATCH_FOUND"),
 
   /**
-   * The '<em><b>LOST</b></em>' literal object.
+   * The '<em><b>EXISTING MATCH LOST</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #LOST_VALUE
+   * @see #EXISTING_MATCH_LOST_VALUE
    * @generated
    * @ordered
    */
-  LOST(1, "LOST", "LOST");
+  EXISTING_MATCH_LOST(1, "EXISTING_MATCH_LOST", "EXISTING_MATCH_LOST");
 
   /**
-   * The '<em><b>FOUND</b></em>' literal value.
+   * The '<em><b>NEW MATCH FOUND</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>FOUND</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>NEW MATCH FOUND</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #FOUND
+   * @see #NEW_MATCH_FOUND
    * @model
    * @generated
    * @ordered
    */
-  public static final int FOUND_VALUE = 0;
+  public static final int NEW_MATCH_FOUND_VALUE = 0;
 
   /**
-   * The '<em><b>LOST</b></em>' literal value.
+   * The '<em><b>EXISTING MATCH LOST</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>LOST</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>EXISTING MATCH LOST</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #LOST
+   * @see #EXISTING_MATCH_LOST
    * @model
    * @generated
    * @ordered
    */
-  public static final int LOST_VALUE = 1;
+  public static final int EXISTING_MATCH_LOST_VALUE = 1;
 
   /**
    * An array of all the '<em><b>IQ Pattern Change Type</b></em>' enumerators.
@@ -78,8 +78,8 @@ public enum IQPatternChangeType implements Enumerator
   private static final IQPatternChangeType[] VALUES_ARRAY =
     new IQPatternChangeType[]
     {
-      FOUND,
-      LOST,
+      NEW_MATCH_FOUND,
+      EXISTING_MATCH_LOST,
     };
 
   /**
@@ -138,8 +138,8 @@ public enum IQPatternChangeType implements Enumerator
   {
     switch (value)
     {
-      case FOUND_VALUE: return FOUND;
-      case LOST_VALUE: return LOST;
+      case NEW_MATCH_FOUND_VALUE: return NEW_MATCH_FOUND;
+      case EXISTING_MATCH_LOST_VALUE: return EXISTING_MATCH_LOST;
     }
     return null;
   }

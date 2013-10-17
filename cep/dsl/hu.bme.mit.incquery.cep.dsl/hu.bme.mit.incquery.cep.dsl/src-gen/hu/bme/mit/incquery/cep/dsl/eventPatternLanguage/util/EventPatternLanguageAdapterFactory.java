@@ -80,54 +80,59 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
         return createEventModelAdapter();
       }
       @Override
+      public Adapter casePackagedModel(PackagedModel object)
+      {
+        return createPackagedModelAdapter();
+      }
+      @Override
       public Adapter caseUsage(Usage object)
       {
         return createUsageAdapter();
       }
       @Override
-      public Adapter caseIQUsage(IQUsage object)
+      public Adapter caseModelElement(ModelElement object)
       {
-        return createIQUsageAdapter();
+        return createModelElementAdapter();
       }
       @Override
-      public Adapter caseEventSourceUsage(EventSourceUsage object)
+      public Adapter caseEventPattern(EventPattern object)
       {
-        return createEventSourceUsageAdapter();
+        return createEventPatternAdapter();
       }
       @Override
-      public Adapter caseModelElements(ModelElements object)
+      public Adapter caseAbstractAtomicEventPattern(AbstractAtomicEventPattern object)
       {
-        return createModelElementsAdapter();
+        return createAbstractAtomicEventPatternAdapter();
       }
       @Override
-      public Adapter caseEvent(Event object)
+      public Adapter caseAtomicEventPattern(AtomicEventPattern object)
       {
-        return createEventAdapter();
+        return createAtomicEventPatternAdapter();
       }
       @Override
-      public Adapter caseAbstractAtomicEvent(AbstractAtomicEvent object)
+      public Adapter caseIQPatternEventPattern(IQPatternEventPattern object)
       {
-        return createAbstractAtomicEventAdapter();
+        return createIQPatternEventPatternAdapter();
       }
       @Override
-      public Adapter caseAtomicEvent(AtomicEvent object)
+      public Adapter caseComplexEventPattern(ComplexEventPattern object)
       {
-        return createAtomicEventAdapter();
-      }
-      @Override
-      public Adapter caseIQPatternEvent(IQPatternEvent object)
-      {
-        return createIQPatternEventAdapter();
-      }
-      @Override
-      public Adapter caseComplexEvent(ComplexEvent object)
-      {
-        return createComplexEventAdapter();
+        return createComplexEventPatternAdapter();
       }
       @Override
       public Adapter caseRule(Rule object)
       {
         return createRuleAdapter();
+      }
+      @Override
+      public Adapter caseOnAppearRule(OnAppearRule object)
+      {
+        return createOnAppearRuleAdapter();
+      }
+      @Override
+      public Adapter caseFailDiagnosticRule(FailDiagnosticRule object)
+      {
+        return createFailDiagnosticRuleAdapter();
       }
       @Override
       public Adapter caseTypedParameterList(TypedParameterList object)
@@ -140,14 +145,114 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
         return createTypedParameterAdapter();
       }
       @Override
-      public Adapter caseEventParameterList(EventParameterList object)
+      public Adapter caseEventPatternParameterList(EventPatternParameterList object)
       {
-        return createEventParameterListAdapter();
+        return createEventPatternParameterListAdapter();
       }
       @Override
       public Adapter caseEventTypedParameter(EventTypedParameter object)
       {
         return createEventTypedParameterAdapter();
+      }
+      @Override
+      public Adapter caseParametrizedIncQueryPatternReference(ParametrizedIncQueryPatternReference object)
+      {
+        return createParametrizedIncQueryPatternReferenceAdapter();
+      }
+      @Override
+      public Adapter caseMultiplicity(Multiplicity object)
+      {
+        return createMultiplicityAdapter();
+      }
+      @Override
+      public Adapter caseTimewindow(Timewindow object)
+      {
+        return createTimewindowAdapter();
+      }
+      @Override
+      public Adapter caseEventTypedParameterWithMultiplicity(EventTypedParameterWithMultiplicity object)
+      {
+        return createEventTypedParameterWithMultiplicityAdapter();
+      }
+      @Override
+      public Adapter casePatternCallParameterList(PatternCallParameterList object)
+      {
+        return createPatternCallParameterListAdapter();
+      }
+      @Override
+      public Adapter casePatternCallParameter(PatternCallParameter object)
+      {
+        return createPatternCallParameterAdapter();
+      }
+      @Override
+      public Adapter caseComplexEventExpression(ComplexEventExpression object)
+      {
+        return createComplexEventExpressionAdapter();
+      }
+      @Override
+      public Adapter caseAugmentedExpression(AugmentedExpression object)
+      {
+        return createAugmentedExpressionAdapter();
+      }
+      @Override
+      public Adapter caseTimedExpression(TimedExpression object)
+      {
+        return createTimedExpressionAdapter();
+      }
+      @Override
+      public Adapter caseMultiplicityExpression(MultiplicityExpression object)
+      {
+        return createMultiplicityExpressionAdapter();
+      }
+      @Override
+      public Adapter caseTimedMultiplicityExpression(TimedMultiplicityExpression object)
+      {
+        return createTimedMultiplicityExpressionAdapter();
+      }
+      @Override
+      public Adapter caseExpression(Expression object)
+      {
+        return createExpressionAdapter();
+      }
+      @Override
+      public Adapter caseFollowsExpression(FollowsExpression object)
+      {
+        return createFollowsExpressionAdapter();
+      }
+      @Override
+      public Adapter caseFollowerExpression(FollowerExpression object)
+      {
+        return createFollowerExpressionAdapter();
+      }
+      @Override
+      public Adapter caseFollowerEventStructure(FollowerEventStructure object)
+      {
+        return createFollowerEventStructureAdapter();
+      }
+      @Override
+      public Adapter caseInnerBranchExpression(InnerBranchExpression object)
+      {
+        return createInnerBranchExpressionAdapter();
+      }
+      @Override
+      public Adapter caseBranchExpression(BranchExpression object)
+      {
+        return createBranchExpressionAdapter();
+      }
+      @Override
+      public Adapter caseFollowsOperator(FollowsOperator object)
+      {
+        return createFollowsOperatorAdapter();
+      }
+      @Override
+      public Adapter caseFollowsOperatorNoTW(FollowsOperatorNoTW object)
+      {
+        return createFollowsOperatorNoTWAdapter();
+      }
+      @Override
+      public Adapter caseFollowsOperatorViaTW(FollowsOperatorViaTW object)
+      {
+        return createFollowsOperatorViaTWAdapter();
       }
       @Override
       public Adapter caseStaticBinding(StaticBinding object)
@@ -200,61 +305,6 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
         return createLiteralFilterAdapter();
       }
       @Override
-      public Adapter caseComplexEventExpression(ComplexEventExpression object)
-      {
-        return createComplexEventExpressionAdapter();
-      }
-      @Override
-      public Adapter caseFollowsExpression(FollowsExpression object)
-      {
-        return createFollowsExpressionAdapter();
-      }
-      @Override
-      public Adapter caseEventWithFollowsOperator(EventWithFollowsOperator object)
-      {
-        return createEventWithFollowsOperatorAdapter();
-      }
-      @Override
-      public Adapter caseFollowsOperator(FollowsOperator object)
-      {
-        return createFollowsOperatorAdapter();
-      }
-      @Override
-      public Adapter caseFollowsOperatorNoTW(FollowsOperatorNoTW object)
-      {
-        return createFollowsOperatorNoTWAdapter();
-      }
-      @Override
-      public Adapter caseFollowsOperatorViaTW(FollowsOperatorViaTW object)
-      {
-        return createFollowsOperatorViaTWAdapter();
-      }
-      @Override
-      public Adapter caseFollowerEventStructure(FollowerEventStructure object)
-      {
-        return createFollowerEventStructureAdapter();
-      }
-      @Override
-      public Adapter caseBranchExpression(BranchExpression object)
-      {
-        return createBranchExpressionAdapter();
-      }
-      @Override
-      public Adapter caseEventTypedParameterWithMultiplicity(EventTypedParameterWithMultiplicity object)
-      {
-        return createEventTypedParameterWithMultiplicityAdapter();
-      }
-      @Override
-      public Adapter casePatternCallParameterList(PatternCallParameterList object)
-      {
-        return createPatternCallParameterListAdapter();
-      }
-      @Override
-      public Adapter casePatternCallParameter(PatternCallParameter object)
-      {
-        return createPatternCallParameterAdapter();
-      }
-      @Override
       public Adapter caseSource(Source object)
       {
         return createSourceAdapter();
@@ -302,6 +352,21 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PackagedModel <em>Packaged Model</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PackagedModel
+   * @generated
+   */
+  public Adapter createPackagedModelAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Usage <em>Usage</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -317,121 +382,91 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQUsage <em>IQ Usage</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement <em>Model Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQUsage
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement
    * @generated
    */
-  public Adapter createIQUsageAdapter()
+  public Adapter createModelElementAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventSourceUsage <em>Event Source Usage</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern <em>Event Pattern</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventSourceUsage
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern
    * @generated
    */
-  public Adapter createEventSourceUsageAdapter()
+  public Adapter createEventPatternAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElements <em>Model Elements</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AbstractAtomicEventPattern <em>Abstract Atomic Event Pattern</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElements
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AbstractAtomicEventPattern
    * @generated
    */
-  public Adapter createModelElementsAdapter()
+  public Adapter createAbstractAtomicEventPatternAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Event <em>Event</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern <em>Atomic Event Pattern</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Event
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern
    * @generated
    */
-  public Adapter createEventAdapter()
+  public Adapter createAtomicEventPatternAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AbstractAtomicEvent <em>Abstract Atomic Event</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEventPattern <em>IQ Pattern Event Pattern</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AbstractAtomicEvent
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEventPattern
    * @generated
    */
-  public Adapter createAbstractAtomicEventAdapter()
+  public Adapter createIQPatternEventPatternAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEvent <em>Atomic Event</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern <em>Complex Event Pattern</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEvent
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern
    * @generated
    */
-  public Adapter createAtomicEventAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEvent <em>IQ Pattern Event</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEvent
-   * @generated
-   */
-  public Adapter createIQPatternEventAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEvent <em>Complex Event</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEvent
-   * @generated
-   */
-  public Adapter createComplexEventAdapter()
+  public Adapter createComplexEventPatternAdapter()
   {
     return null;
   }
@@ -447,6 +482,36 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OnAppearRule <em>On Appear Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OnAppearRule
+   * @generated
+   */
+  public Adapter createOnAppearRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule <em>Fail Diagnostic Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule
+   * @generated
+   */
+  public Adapter createFailDiagnosticRuleAdapter()
   {
     return null;
   }
@@ -482,16 +547,16 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventParameterList <em>Event Parameter List</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternParameterList <em>Event Pattern Parameter List</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventParameterList
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternParameterList
    * @generated
    */
-  public Adapter createEventParameterListAdapter()
+  public Adapter createEventPatternParameterListAdapter()
   {
     return null;
   }
@@ -507,6 +572,306 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEventTypedParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ParametrizedIncQueryPatternReference <em>Parametrized Inc Query Pattern Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ParametrizedIncQueryPatternReference
+   * @generated
+   */
+  public Adapter createParametrizedIncQueryPatternReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Multiplicity <em>Multiplicity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Multiplicity
+   * @generated
+   */
+  public Adapter createMultiplicityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Timewindow <em>Timewindow</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Timewindow
+   * @generated
+   */
+  public Adapter createTimewindowAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity <em>Event Typed Parameter With Multiplicity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity
+   * @generated
+   */
+  public Adapter createEventTypedParameterWithMultiplicityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameterList <em>Pattern Call Parameter List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameterList
+   * @generated
+   */
+  public Adapter createPatternCallParameterListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameter <em>Pattern Call Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameter
+   * @generated
+   */
+  public Adapter createPatternCallParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventExpression <em>Complex Event Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventExpression
+   * @generated
+   */
+  public Adapter createComplexEventExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AugmentedExpression <em>Augmented Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AugmentedExpression
+   * @generated
+   */
+  public Adapter createAugmentedExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedExpression <em>Timed Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedExpression
+   * @generated
+   */
+  public Adapter createTimedExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.MultiplicityExpression <em>Multiplicity Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.MultiplicityExpression
+   * @generated
+   */
+  public Adapter createMultiplicityExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedMultiplicityExpression <em>Timed Multiplicity Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedMultiplicityExpression
+   * @generated
+   */
+  public Adapter createTimedMultiplicityExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Expression
+   * @generated
+   */
+  public Adapter createExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression <em>Follows Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression
+   * @generated
+   */
+  public Adapter createFollowsExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerExpression <em>Follower Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerExpression
+   * @generated
+   */
+  public Adapter createFollowerExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerEventStructure <em>Follower Event Structure</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerEventStructure
+   * @generated
+   */
+  public Adapter createFollowerEventStructureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.InnerBranchExpression <em>Inner Branch Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.InnerBranchExpression
+   * @generated
+   */
+  public Adapter createInnerBranchExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression <em>Branch Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression
+   * @generated
+   */
+  public Adapter createBranchExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperator <em>Follows Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperator
+   * @generated
+   */
+  public Adapter createFollowsOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorNoTW <em>Follows Operator No TW</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorNoTW
+   * @generated
+   */
+  public Adapter createFollowsOperatorNoTWAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorViaTW <em>Follows Operator Via TW</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorViaTW
+   * @generated
+   */
+  public Adapter createFollowsOperatorViaTWAdapter()
   {
     return null;
   }
@@ -657,171 +1022,6 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLiteralFilterAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventExpression <em>Complex Event Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventExpression
-   * @generated
-   */
-  public Adapter createComplexEventExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression <em>Follows Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression
-   * @generated
-   */
-  public Adapter createFollowsExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithFollowsOperator <em>Event With Follows Operator</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventWithFollowsOperator
-   * @generated
-   */
-  public Adapter createEventWithFollowsOperatorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperator <em>Follows Operator</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperator
-   * @generated
-   */
-  public Adapter createFollowsOperatorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorNoTW <em>Follows Operator No TW</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorNoTW
-   * @generated
-   */
-  public Adapter createFollowsOperatorNoTWAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorViaTW <em>Follows Operator Via TW</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorViaTW
-   * @generated
-   */
-  public Adapter createFollowsOperatorViaTWAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerEventStructure <em>Follower Event Structure</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerEventStructure
-   * @generated
-   */
-  public Adapter createFollowerEventStructureAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression <em>Branch Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression
-   * @generated
-   */
-  public Adapter createBranchExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity <em>Event Typed Parameter With Multiplicity</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity
-   * @generated
-   */
-  public Adapter createEventTypedParameterWithMultiplicityAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameterList <em>Pattern Call Parameter List</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameterList
-   * @generated
-   */
-  public Adapter createPatternCallParameterListAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameter <em>Pattern Call Parameter</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameter
-   * @generated
-   */
-  public Adapter createPatternCallParameterAdapter()
   {
     return null;
   }

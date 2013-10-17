@@ -32,6 +32,15 @@ public interface EventPatternLanguageFactory extends EFactory
   EventModel createEventModel();
 
   /**
+   * Returns a new object of class '<em>Packaged Model</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Packaged Model</em>'.
+   * @generated
+   */
+  PackagedModel createPackagedModel();
+
+  /**
    * Returns a new object of class '<em>Usage</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -41,76 +50,58 @@ public interface EventPatternLanguageFactory extends EFactory
   Usage createUsage();
 
   /**
-   * Returns a new object of class '<em>IQ Usage</em>'.
+   * Returns a new object of class '<em>Model Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>IQ Usage</em>'.
+   * @return a new object of class '<em>Model Element</em>'.
    * @generated
    */
-  IQUsage createIQUsage();
+  ModelElement createModelElement();
 
   /**
-   * Returns a new object of class '<em>Event Source Usage</em>'.
+   * Returns a new object of class '<em>Event Pattern</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event Source Usage</em>'.
+   * @return a new object of class '<em>Event Pattern</em>'.
    * @generated
    */
-  EventSourceUsage createEventSourceUsage();
+  EventPattern createEventPattern();
 
   /**
-   * Returns a new object of class '<em>Model Elements</em>'.
+   * Returns a new object of class '<em>Abstract Atomic Event Pattern</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model Elements</em>'.
+   * @return a new object of class '<em>Abstract Atomic Event Pattern</em>'.
    * @generated
    */
-  ModelElements createModelElements();
+  AbstractAtomicEventPattern createAbstractAtomicEventPattern();
 
   /**
-   * Returns a new object of class '<em>Event</em>'.
+   * Returns a new object of class '<em>Atomic Event Pattern</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event</em>'.
+   * @return a new object of class '<em>Atomic Event Pattern</em>'.
    * @generated
    */
-  Event createEvent();
+  AtomicEventPattern createAtomicEventPattern();
 
   /**
-   * Returns a new object of class '<em>Abstract Atomic Event</em>'.
+   * Returns a new object of class '<em>IQ Pattern Event Pattern</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Abstract Atomic Event</em>'.
+   * @return a new object of class '<em>IQ Pattern Event Pattern</em>'.
    * @generated
    */
-  AbstractAtomicEvent createAbstractAtomicEvent();
+  IQPatternEventPattern createIQPatternEventPattern();
 
   /**
-   * Returns a new object of class '<em>Atomic Event</em>'.
+   * Returns a new object of class '<em>Complex Event Pattern</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Atomic Event</em>'.
+   * @return a new object of class '<em>Complex Event Pattern</em>'.
    * @generated
    */
-  AtomicEvent createAtomicEvent();
-
-  /**
-   * Returns a new object of class '<em>IQ Pattern Event</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>IQ Pattern Event</em>'.
-   * @generated
-   */
-  IQPatternEvent createIQPatternEvent();
-
-  /**
-   * Returns a new object of class '<em>Complex Event</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Complex Event</em>'.
-   * @generated
-   */
-  ComplexEvent createComplexEvent();
+  ComplexEventPattern createComplexEventPattern();
 
   /**
    * Returns a new object of class '<em>Rule</em>'.
@@ -120,6 +111,24 @@ public interface EventPatternLanguageFactory extends EFactory
    * @generated
    */
   Rule createRule();
+
+  /**
+   * Returns a new object of class '<em>On Appear Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>On Appear Rule</em>'.
+   * @generated
+   */
+  OnAppearRule createOnAppearRule();
+
+  /**
+   * Returns a new object of class '<em>Fail Diagnostic Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Fail Diagnostic Rule</em>'.
+   * @generated
+   */
+  FailDiagnosticRule createFailDiagnosticRule();
 
   /**
    * Returns a new object of class '<em>Typed Parameter List</em>'.
@@ -140,13 +149,13 @@ public interface EventPatternLanguageFactory extends EFactory
   TypedParameter createTypedParameter();
 
   /**
-   * Returns a new object of class '<em>Event Parameter List</em>'.
+   * Returns a new object of class '<em>Event Pattern Parameter List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event Parameter List</em>'.
+   * @return a new object of class '<em>Event Pattern Parameter List</em>'.
    * @generated
    */
-  EventParameterList createEventParameterList();
+  EventPatternParameterList createEventPatternParameterList();
 
   /**
    * Returns a new object of class '<em>Event Typed Parameter</em>'.
@@ -156,6 +165,186 @@ public interface EventPatternLanguageFactory extends EFactory
    * @generated
    */
   EventTypedParameter createEventTypedParameter();
+
+  /**
+   * Returns a new object of class '<em>Parametrized Inc Query Pattern Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parametrized Inc Query Pattern Reference</em>'.
+   * @generated
+   */
+  ParametrizedIncQueryPatternReference createParametrizedIncQueryPatternReference();
+
+  /**
+   * Returns a new object of class '<em>Multiplicity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiplicity</em>'.
+   * @generated
+   */
+  Multiplicity createMultiplicity();
+
+  /**
+   * Returns a new object of class '<em>Timewindow</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Timewindow</em>'.
+   * @generated
+   */
+  Timewindow createTimewindow();
+
+  /**
+   * Returns a new object of class '<em>Event Typed Parameter With Multiplicity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Event Typed Parameter With Multiplicity</em>'.
+   * @generated
+   */
+  EventTypedParameterWithMultiplicity createEventTypedParameterWithMultiplicity();
+
+  /**
+   * Returns a new object of class '<em>Pattern Call Parameter List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pattern Call Parameter List</em>'.
+   * @generated
+   */
+  PatternCallParameterList createPatternCallParameterList();
+
+  /**
+   * Returns a new object of class '<em>Pattern Call Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pattern Call Parameter</em>'.
+   * @generated
+   */
+  PatternCallParameter createPatternCallParameter();
+
+  /**
+   * Returns a new object of class '<em>Complex Event Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Complex Event Expression</em>'.
+   * @generated
+   */
+  ComplexEventExpression createComplexEventExpression();
+
+  /**
+   * Returns a new object of class '<em>Augmented Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Augmented Expression</em>'.
+   * @generated
+   */
+  AugmentedExpression createAugmentedExpression();
+
+  /**
+   * Returns a new object of class '<em>Timed Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Timed Expression</em>'.
+   * @generated
+   */
+  TimedExpression createTimedExpression();
+
+  /**
+   * Returns a new object of class '<em>Multiplicity Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiplicity Expression</em>'.
+   * @generated
+   */
+  MultiplicityExpression createMultiplicityExpression();
+
+  /**
+   * Returns a new object of class '<em>Timed Multiplicity Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Timed Multiplicity Expression</em>'.
+   * @generated
+   */
+  TimedMultiplicityExpression createTimedMultiplicityExpression();
+
+  /**
+   * Returns a new object of class '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression</em>'.
+   * @generated
+   */
+  Expression createExpression();
+
+  /**
+   * Returns a new object of class '<em>Follows Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Follows Expression</em>'.
+   * @generated
+   */
+  FollowsExpression createFollowsExpression();
+
+  /**
+   * Returns a new object of class '<em>Follower Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Follower Expression</em>'.
+   * @generated
+   */
+  FollowerExpression createFollowerExpression();
+
+  /**
+   * Returns a new object of class '<em>Follower Event Structure</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Follower Event Structure</em>'.
+   * @generated
+   */
+  FollowerEventStructure createFollowerEventStructure();
+
+  /**
+   * Returns a new object of class '<em>Inner Branch Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Inner Branch Expression</em>'.
+   * @generated
+   */
+  InnerBranchExpression createInnerBranchExpression();
+
+  /**
+   * Returns a new object of class '<em>Branch Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Branch Expression</em>'.
+   * @generated
+   */
+  BranchExpression createBranchExpression();
+
+  /**
+   * Returns a new object of class '<em>Follows Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Follows Operator</em>'.
+   * @generated
+   */
+  FollowsOperator createFollowsOperator();
+
+  /**
+   * Returns a new object of class '<em>Follows Operator No TW</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Follows Operator No TW</em>'.
+   * @generated
+   */
+  FollowsOperatorNoTW createFollowsOperatorNoTW();
+
+  /**
+   * Returns a new object of class '<em>Follows Operator Via TW</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Follows Operator Via TW</em>'.
+   * @generated
+   */
+  FollowsOperatorViaTW createFollowsOperatorViaTW();
 
   /**
    * Returns a new object of class '<em>Static Binding</em>'.
@@ -246,105 +435,6 @@ public interface EventPatternLanguageFactory extends EFactory
    * @generated
    */
   LiteralFilter createLiteralFilter();
-
-  /**
-   * Returns a new object of class '<em>Complex Event Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Complex Event Expression</em>'.
-   * @generated
-   */
-  ComplexEventExpression createComplexEventExpression();
-
-  /**
-   * Returns a new object of class '<em>Follows Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Follows Expression</em>'.
-   * @generated
-   */
-  FollowsExpression createFollowsExpression();
-
-  /**
-   * Returns a new object of class '<em>Event With Follows Operator</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event With Follows Operator</em>'.
-   * @generated
-   */
-  EventWithFollowsOperator createEventWithFollowsOperator();
-
-  /**
-   * Returns a new object of class '<em>Follows Operator</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Follows Operator</em>'.
-   * @generated
-   */
-  FollowsOperator createFollowsOperator();
-
-  /**
-   * Returns a new object of class '<em>Follows Operator No TW</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Follows Operator No TW</em>'.
-   * @generated
-   */
-  FollowsOperatorNoTW createFollowsOperatorNoTW();
-
-  /**
-   * Returns a new object of class '<em>Follows Operator Via TW</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Follows Operator Via TW</em>'.
-   * @generated
-   */
-  FollowsOperatorViaTW createFollowsOperatorViaTW();
-
-  /**
-   * Returns a new object of class '<em>Follower Event Structure</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Follower Event Structure</em>'.
-   * @generated
-   */
-  FollowerEventStructure createFollowerEventStructure();
-
-  /**
-   * Returns a new object of class '<em>Branch Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Branch Expression</em>'.
-   * @generated
-   */
-  BranchExpression createBranchExpression();
-
-  /**
-   * Returns a new object of class '<em>Event Typed Parameter With Multiplicity</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event Typed Parameter With Multiplicity</em>'.
-   * @generated
-   */
-  EventTypedParameterWithMultiplicity createEventTypedParameterWithMultiplicity();
-
-  /**
-   * Returns a new object of class '<em>Pattern Call Parameter List</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Pattern Call Parameter List</em>'.
-   * @generated
-   */
-  PatternCallParameterList createPatternCallParameterList();
-
-  /**
-   * Returns a new object of class '<em>Pattern Call Parameter</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Pattern Call Parameter</em>'.
-   * @generated
-   */
-  PatternCallParameter createPatternCallParameter();
 
   /**
    * Returns a new object of class '<em>Source</em>'.

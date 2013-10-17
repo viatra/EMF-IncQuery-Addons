@@ -4,24 +4,16 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElements;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Usage;
-
-import java.util.Collection;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PackagedModel;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,10 +22,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventModelImpl#getPackageName <em>Package Name</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventModelImpl#getUsages <em>Usages</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventModelImpl#getName <em>Name</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventModelImpl#getEvents <em>Events</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventModelImpl#getPackagedModel <em>Packaged Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,64 +31,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class EventModelImpl extends MinimalEObjectImpl.Container implements EventModel
 {
   /**
-   * The default value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
+   * The cached value of the '{@link #getPackagedModel() <em>Packaged Model</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPackageName()
+   * @see #getPackagedModel()
    * @generated
    * @ordered
    */
-  protected static final String PACKAGE_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPackageName()
-   * @generated
-   * @ordered
-   */
-  protected String packageName = PACKAGE_NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getUsages() <em>Usages</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUsages()
-   * @generated
-   * @ordered
-   */
-  protected EList<Usage> usages;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getEvents() <em>Events</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEvents()
-   * @generated
-   * @ordered
-   */
-  protected EList<ModelElements> events;
+  protected PackagedModel packagedModel;
 
   /**
    * <!-- begin-user-doc -->
@@ -127,9 +66,9 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPackageName()
+  public PackagedModel getPackagedModel()
   {
-    return packageName;
+    return packagedModel;
   }
 
   /**
@@ -137,26 +76,16 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPackageName(String newPackageName)
+  public NotificationChain basicSetPackagedModel(PackagedModel newPackagedModel, NotificationChain msgs)
   {
-    String oldPackageName = packageName;
-    packageName = newPackageName;
+    PackagedModel oldPackagedModel = packagedModel;
+    packagedModel = newPackagedModel;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_MODEL__PACKAGE_NAME, oldPackageName, packageName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Usage> getUsages()
-  {
-    if (usages == null)
     {
-      usages = new EObjectContainmentEList<Usage>(Usage.class, this, EventPatternLanguagePackage.EVENT_MODEL__USAGES);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_MODEL__PACKAGED_MODEL, oldPackagedModel, newPackagedModel);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return usages;
+    return msgs;
   }
 
   /**
@@ -164,36 +93,20 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public void setPackagedModel(PackagedModel newPackagedModel)
   {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_MODEL__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<ModelElements> getEvents()
-  {
-    if (events == null)
+    if (newPackagedModel != packagedModel)
     {
-      events = new EObjectContainmentEList<ModelElements>(ModelElements.class, this, EventPatternLanguagePackage.EVENT_MODEL__EVENTS);
+      NotificationChain msgs = null;
+      if (packagedModel != null)
+        msgs = ((InternalEObject)packagedModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT_MODEL__PACKAGED_MODEL, null, msgs);
+      if (newPackagedModel != null)
+        msgs = ((InternalEObject)newPackagedModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT_MODEL__PACKAGED_MODEL, null, msgs);
+      msgs = basicSetPackagedModel(newPackagedModel, msgs);
+      if (msgs != null) msgs.dispatch();
     }
-    return events;
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_MODEL__PACKAGED_MODEL, newPackagedModel, newPackagedModel));
   }
 
   /**
@@ -206,10 +119,8 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_MODEL__USAGES:
-        return ((InternalEList<?>)getUsages()).basicRemove(otherEnd, msgs);
-      case EventPatternLanguagePackage.EVENT_MODEL__EVENTS:
-        return ((InternalEList<?>)getEvents()).basicRemove(otherEnd, msgs);
+      case EventPatternLanguagePackage.EVENT_MODEL__PACKAGED_MODEL:
+        return basicSetPackagedModel(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -224,14 +135,8 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_MODEL__PACKAGE_NAME:
-        return getPackageName();
-      case EventPatternLanguagePackage.EVENT_MODEL__USAGES:
-        return getUsages();
-      case EventPatternLanguagePackage.EVENT_MODEL__NAME:
-        return getName();
-      case EventPatternLanguagePackage.EVENT_MODEL__EVENTS:
-        return getEvents();
+      case EventPatternLanguagePackage.EVENT_MODEL__PACKAGED_MODEL:
+        return getPackagedModel();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -241,25 +146,13 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_MODEL__PACKAGE_NAME:
-        setPackageName((String)newValue);
-        return;
-      case EventPatternLanguagePackage.EVENT_MODEL__USAGES:
-        getUsages().clear();
-        getUsages().addAll((Collection<? extends Usage>)newValue);
-        return;
-      case EventPatternLanguagePackage.EVENT_MODEL__NAME:
-        setName((String)newValue);
-        return;
-      case EventPatternLanguagePackage.EVENT_MODEL__EVENTS:
-        getEvents().clear();
-        getEvents().addAll((Collection<? extends ModelElements>)newValue);
+      case EventPatternLanguagePackage.EVENT_MODEL__PACKAGED_MODEL:
+        setPackagedModel((PackagedModel)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -275,17 +168,8 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_MODEL__PACKAGE_NAME:
-        setPackageName(PACKAGE_NAME_EDEFAULT);
-        return;
-      case EventPatternLanguagePackage.EVENT_MODEL__USAGES:
-        getUsages().clear();
-        return;
-      case EventPatternLanguagePackage.EVENT_MODEL__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case EventPatternLanguagePackage.EVENT_MODEL__EVENTS:
-        getEvents().clear();
+      case EventPatternLanguagePackage.EVENT_MODEL__PACKAGED_MODEL:
+        setPackagedModel((PackagedModel)null);
         return;
     }
     super.eUnset(featureID);
@@ -301,35 +185,10 @@ public class EventModelImpl extends MinimalEObjectImpl.Container implements Even
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_MODEL__PACKAGE_NAME:
-        return PACKAGE_NAME_EDEFAULT == null ? packageName != null : !PACKAGE_NAME_EDEFAULT.equals(packageName);
-      case EventPatternLanguagePackage.EVENT_MODEL__USAGES:
-        return usages != null && !usages.isEmpty();
-      case EventPatternLanguagePackage.EVENT_MODEL__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case EventPatternLanguagePackage.EVENT_MODEL__EVENTS:
-        return events != null && !events.isEmpty();
+      case EventPatternLanguagePackage.EVENT_MODEL__PACKAGED_MODEL:
+        return packagedModel != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (packageName: ");
-    result.append(packageName);
-    result.append(", name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //EventModelImpl

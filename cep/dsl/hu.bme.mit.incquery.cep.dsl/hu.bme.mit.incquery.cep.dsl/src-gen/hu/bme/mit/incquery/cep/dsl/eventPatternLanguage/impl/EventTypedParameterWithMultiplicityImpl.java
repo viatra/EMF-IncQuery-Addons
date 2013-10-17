@@ -5,6 +5,7 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameter;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Multiplicity;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameterList;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -22,8 +23,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterWithMultiplicityImpl#getEvent <em>Event</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterWithMultiplicityImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterWithMultiplicityImpl#getEventPattern <em>Event Pattern</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterWithMultiplicityImpl#getParameterList <em>Parameter List</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventTypedParameterWithMultiplicityImpl#getMultiplicity <em>Multiplicity</em>}</li>
  * </ul>
  * </p>
@@ -33,44 +34,34 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStructureImpl implements EventTypedParameterWithMultiplicity
 {
   /**
-   * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.
+   * The cached value of the '{@link #getEventPattern() <em>Event Pattern</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEvent()
+   * @see #getEventPattern()
    * @generated
    * @ordered
    */
-  protected EventTypedParameter event;
+  protected EventTypedParameter eventPattern;
 
   /**
-   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference.
+   * The cached value of the '{@link #getParameterList() <em>Parameter List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParameters()
+   * @see #getParameterList()
    * @generated
    * @ordered
    */
-  protected PatternCallParameterList parameters;
+  protected PatternCallParameterList parameterList;
 
   /**
-   * The default value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
+   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMultiplicity()
    * @generated
    * @ordered
    */
-  protected static final int MULTIPLICITY_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiplicity()
-   * @generated
-   * @ordered
-   */
-  protected int multiplicity = MULTIPLICITY_EDEFAULT;
+  protected Multiplicity multiplicity;
 
   /**
    * <!-- begin-user-doc -->
@@ -98,19 +89,19 @@ public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStruct
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventTypedParameter getEvent()
+  public EventTypedParameter getEventPattern()
   {
-    if (event != null && event.eIsProxy())
+    if (eventPattern != null && eventPattern.eIsProxy())
     {
-      InternalEObject oldEvent = (InternalEObject)event;
-      event = (EventTypedParameter)eResolveProxy(oldEvent);
-      if (event != oldEvent)
+      InternalEObject oldEventPattern = (InternalEObject)eventPattern;
+      eventPattern = (EventTypedParameter)eResolveProxy(oldEventPattern);
+      if (eventPattern != oldEventPattern)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT, oldEvent, event));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT_PATTERN, oldEventPattern, eventPattern));
       }
     }
-    return event;
+    return eventPattern;
   }
 
   /**
@@ -118,9 +109,9 @@ public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStruct
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventTypedParameter basicGetEvent()
+  public EventTypedParameter basicGetEventPattern()
   {
-    return event;
+    return eventPattern;
   }
 
   /**
@@ -128,12 +119,12 @@ public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStruct
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEvent(EventTypedParameter newEvent)
+  public void setEventPattern(EventTypedParameter newEventPattern)
   {
-    EventTypedParameter oldEvent = event;
-    event = newEvent;
+    EventTypedParameter oldEventPattern = eventPattern;
+    eventPattern = newEventPattern;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT, oldEvent, event));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT_PATTERN, oldEventPattern, eventPattern));
   }
 
   /**
@@ -141,9 +132,9 @@ public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStruct
    * <!-- end-user-doc -->
    * @generated
    */
-  public PatternCallParameterList getParameters()
+  public PatternCallParameterList getParameterList()
   {
-    return parameters;
+    return parameterList;
   }
 
   /**
@@ -151,13 +142,13 @@ public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStruct
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetParameters(PatternCallParameterList newParameters, NotificationChain msgs)
+  public NotificationChain basicSetParameterList(PatternCallParameterList newParameterList, NotificationChain msgs)
   {
-    PatternCallParameterList oldParameters = parameters;
-    parameters = newParameters;
+    PatternCallParameterList oldParameterList = parameterList;
+    parameterList = newParameterList;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS, oldParameters, newParameters);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST, oldParameterList, newParameterList);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -168,20 +159,20 @@ public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStruct
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setParameters(PatternCallParameterList newParameters)
+  public void setParameterList(PatternCallParameterList newParameterList)
   {
-    if (newParameters != parameters)
+    if (newParameterList != parameterList)
     {
       NotificationChain msgs = null;
-      if (parameters != null)
-        msgs = ((InternalEObject)parameters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS, null, msgs);
-      if (newParameters != null)
-        msgs = ((InternalEObject)newParameters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS, null, msgs);
-      msgs = basicSetParameters(newParameters, msgs);
+      if (parameterList != null)
+        msgs = ((InternalEObject)parameterList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST, null, msgs);
+      if (newParameterList != null)
+        msgs = ((InternalEObject)newParameterList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST, null, msgs);
+      msgs = basicSetParameterList(newParameterList, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS, newParameters, newParameters));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST, newParameterList, newParameterList));
   }
 
   /**
@@ -189,7 +180,7 @@ public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStruct
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getMultiplicity()
+  public Multiplicity getMultiplicity()
   {
     return multiplicity;
   }
@@ -199,12 +190,37 @@ public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStruct
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMultiplicity(int newMultiplicity)
+  public NotificationChain basicSetMultiplicity(Multiplicity newMultiplicity, NotificationChain msgs)
   {
-    int oldMultiplicity = multiplicity;
+    Multiplicity oldMultiplicity = multiplicity;
     multiplicity = newMultiplicity;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY, oldMultiplicity, multiplicity));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY, oldMultiplicity, newMultiplicity);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMultiplicity(Multiplicity newMultiplicity)
+  {
+    if (newMultiplicity != multiplicity)
+    {
+      NotificationChain msgs = null;
+      if (multiplicity != null)
+        msgs = ((InternalEObject)multiplicity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY, null, msgs);
+      if (newMultiplicity != null)
+        msgs = ((InternalEObject)newMultiplicity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY, null, msgs);
+      msgs = basicSetMultiplicity(newMultiplicity, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY, newMultiplicity, newMultiplicity));
   }
 
   /**
@@ -217,8 +233,10 @@ public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStruct
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS:
-        return basicSetParameters(null, msgs);
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST:
+        return basicSetParameterList(null, msgs);
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY:
+        return basicSetMultiplicity(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -233,11 +251,11 @@ public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStruct
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT:
-        if (resolve) return getEvent();
-        return basicGetEvent();
-      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS:
-        return getParameters();
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT_PATTERN:
+        if (resolve) return getEventPattern();
+        return basicGetEventPattern();
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST:
+        return getParameterList();
       case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY:
         return getMultiplicity();
     }
@@ -254,14 +272,14 @@ public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStruct
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT:
-        setEvent((EventTypedParameter)newValue);
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT_PATTERN:
+        setEventPattern((EventTypedParameter)newValue);
         return;
-      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS:
-        setParameters((PatternCallParameterList)newValue);
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST:
+        setParameterList((PatternCallParameterList)newValue);
         return;
       case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY:
-        setMultiplicity((Integer)newValue);
+        setMultiplicity((Multiplicity)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -277,14 +295,14 @@ public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStruct
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT:
-        setEvent((EventTypedParameter)null);
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT_PATTERN:
+        setEventPattern((EventTypedParameter)null);
         return;
-      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS:
-        setParameters((PatternCallParameterList)null);
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST:
+        setParameterList((PatternCallParameterList)null);
         return;
       case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY:
-        setMultiplicity(MULTIPLICITY_EDEFAULT);
+        setMultiplicity((Multiplicity)null);
         return;
     }
     super.eUnset(featureID);
@@ -300,31 +318,14 @@ public class EventTypedParameterWithMultiplicityImpl extends FollowerEventStruct
   {
     switch (featureID)
     {
-      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT:
-        return event != null;
-      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETERS:
-        return parameters != null;
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__EVENT_PATTERN:
+        return eventPattern != null;
+      case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST:
+        return parameterList != null;
       case EventPatternLanguagePackage.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__MULTIPLICITY:
-        return multiplicity != MULTIPLICITY_EDEFAULT;
+        return multiplicity != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (multiplicity: ");
-    result.append(multiplicity);
-    result.append(')');
-    return result.toString();
   }
 
 } //EventTypedParameterWithMultiplicityImpl
