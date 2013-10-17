@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.oldCompoundTransaction"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.OldCompoundTransactionQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.oldCompoundTransaction">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.oldCompoundTransaction"
+         point="org.eclipse.incquery.runtime.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.OldCompoundTransactionEvaluator1_1"
+            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.oldCompoundTransaction_1_1">
+      </evaluator>
+   </extension>
+
+</plugin>

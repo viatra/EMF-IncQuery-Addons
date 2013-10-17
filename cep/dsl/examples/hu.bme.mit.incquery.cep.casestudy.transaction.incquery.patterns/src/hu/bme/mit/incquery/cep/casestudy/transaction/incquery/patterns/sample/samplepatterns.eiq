@@ -1,0 +1,9 @@
+package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample
+
+import "transaction.meta"
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+pattern oldCompoundTransaction(cte : CompoundTransactionEvent, ts : ELong) {
+	CompoundTransactionEvent.timestamp(cte, ts);
+	check(ts > 1000);
+}
