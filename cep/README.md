@@ -6,8 +6,12 @@ This add-on aims at providing a CEP layer for the **[VIATRA-EVM](http://www.ecli
 Implementation
 --------------
 
-The main implementation is located in plugin **[hu.bme.mit.incquery.cep](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/plugins/hu.bme.mit.incquery.cep)** plugin. The appropriate unit tests are located in plugin **[hu.bme.mit.incquery.cep.tests](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/tests/hu.bme.mit.incquery.cep.tests)**.
-There is also a DSL for defining event patterns and event source types: **[hu.bme.mit.incquery.cep.dsl](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/plugins/hu.bme.mit.incquery.cep.dsl)**.
+The implementation consists of two main parts: the [core](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core) (inlcuding the engine and an API for it) and the [DSL](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl).
+
+![ScreenShot](https://dl.dropboxusercontent.com/u/44011277/cep/architecture2.jpg)
+
+The core plugin: **[hu.bme.mit.incquery.cep](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/plugins/hu.bme.mit.incquery.cep)**. The appropriate unit tests are located in plugin **[hu.bme.mit.incquery.cep.tests](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/tests/hu.bme.mit.incquery.cep.tests)**.
+The DSL plugin: **[hu.bme.mit.incquery.cep.dsl](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/plugins/hu.bme.mit.incquery.cep.dsl)**.
 
 For example codes see the **\*.examples.*** plugins:
 * **[hu.bme.mit.incquery.cep.examples.example1](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/examples/hu.bme.mit.incquery.cep.examples.example1)** shows a simple use-case where atomic and complex event patterns are defined and recognized on the event stream among other events.
@@ -30,9 +34,7 @@ Setting up the environment
  * Case study IncQuery project with queries [hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/examples/hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns)
  * Case study Ecore metamodell [hu.bme.mit.incquery.cep.casestudy.transaction.metamodel](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/examples/hu.bme.mit.incquery.cep.casestudy.transaction.metamodel)
 * **Runtime2** Eclipse:
- * Case study implementation (hu.bme.mit.incquery.cep.casestudy.transaction)
-
-![ScreenShot](https://dl.dropboxusercontent.com/u/44011277/cep/architecture.jpg)
+ * Case study implementation [hu.bme.mit.incquery.cep.casestudy.transaction](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/examples/hu.bme.mit.incquery.cep.casestudy.transaction)
 
 Roadmap/TODO
 ------------
