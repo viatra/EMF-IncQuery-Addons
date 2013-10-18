@@ -46,8 +46,6 @@ Roadmap/TODO
 **In progress:**
 * define the language for modeling event patterns over EMF models
  * reuse the concepts of event-driven model transformations and the pattern language of IncQuery
-* make noise filtering more efficient
-* complete the examples and unit tests
 
 **Future work:**
 * [d] replace the bare Java code in the process at the following points:
