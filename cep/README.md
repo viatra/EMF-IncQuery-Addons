@@ -33,6 +33,8 @@ Setting up the environment
 * **Runtime2** Eclipse:
  * Case study implementation (hu.bme.mit.incquery.cep.casestudy.transaction)
 
+![ScreenShot](https://dl.dropboxusercontent.com/u/44011277/cep/architecture.jpg)
+
 Roadmap/TODO
 ------------
 
