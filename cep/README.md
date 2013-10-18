@@ -14,14 +14,31 @@ For example codes see the **\*.examples.*** plugins:
 * **[hu.bme.mit.incquery.cep.examples.evm.integration](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/hu.bme.mit.incquery.cep.examples.evm.integration)** presents an example for integrating  VIATRA-CEP and VIATRA-EVM.
 * **[hu.bme.mit.incquery.cep.dls.examples](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/hu.bme.mit.incquery.cep.dsl.examples)** contains examples for event pattern description DSL.
 
-Demo
+Demos, examples
 --------------
 The plugin **[hu.bme.mit.incquery.cep.jnect](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/hu.bme.mit.incquery.cep.jnect)** contains a demo based on a previously elaborated one: http://incquery.net/incquery/demos/jnect. The difference is in the event processing layer: in this new demo, the VIATRA-CEP engine is employed instead of ESPER.
+Plugins in the \*examples\* folders provide a quick overview regarding the features and essential elements of the tools.
+
+Setting up the environment
+--------------
+* **Host** Eclipse - requires Xtext, EMF, etc
+ * EMF-IncQuery projects
+ * VIATRA2-EMF
+* **Runtime1** Eclipse:
+ * CEP-Core
+ * CEP-DSL
+ * CEP-DSL UI
+ * Case study IncQuery project with queries (hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns)
+ * Case study Ecore metamodell (hu.bme.mit.incquery.cep.casestudy.transaction.metamodel)
+* **Runtime2** Eclipse:
+ * Case study implementation (hu.bme.mit.incquery.cep.casestudy.transaction)
 
 Roadmap/TODO
 ------------
 
 **Latest enhancements:**
+* 10.18. DSL improvements: fixed package handling, referrable EMF-IncQuery patterns, minimal codegen
+* 10.17. Added case study projects
 * 10.12. DSL improvements: branched expressions, rules for associating patterns with actions, removed annotations
 * 09.06. Changes in the action descriptions of patterns
 * 08.12. Noise filtering is now implemented via the IMMEDIATE and STRICT_IMMEDIATE EventProcessingContexts
