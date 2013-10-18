@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.casestudy.transaction.complexevents
+package hu.bme.mit.incquery.cep.casestudy.transaction
 
 uses hu.bme.mit.incquery.cep.casestudy.transaction.sources.*
 uses hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.*
@@ -25,7 +25,7 @@ IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:in
 }
 
 ComplexEvent compoundTransactionEvent(a:componentA, b:componentB, c:componentC){
-	definition : (a(tId, _ts, cId) -[5000]-> b(tId, _ts) -[7500]-> c(tId, _ts, sId))[11000]
+	definition : (a(tId, _ts, cId) -[55020]-> b(tId, _ts) -[7500]-> c(tId, _ts, sId))[11000]
 }
 
 RuleOnAppear {

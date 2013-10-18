@@ -1,11 +1,11 @@
-package hu.bme.mit.incquery.cep.casestudy.transaction.complexevents;
+package hu.bme.mit.incquery.cep.casestudy.transaction.events;
 
 import hu.bme.mit.incquery.cep.api.AbstractEventInstance;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 
 @SuppressWarnings("all")
-public class componentB extends AbstractEventInstance {
-  public componentB(final IEventSource eventSource) {
+public class ComponentB extends AbstractEventInstance {
+  public ComponentB(final IEventSource eventSource) {
     super(eventSource);
   }
   

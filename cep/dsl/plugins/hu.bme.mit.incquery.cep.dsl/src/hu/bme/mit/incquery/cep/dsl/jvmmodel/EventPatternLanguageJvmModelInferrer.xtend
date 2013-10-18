@@ -12,6 +12,12 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import java.util.List
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.StaticBinding
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern
+import hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl
+import org.eclipse.emf.mwe2.language.scoping.QualifiedNameProvider
+import org.eclipse.xtext.naming.QualifiedName
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement
+import org.eclipse.xtext.xbase.XExpression
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -54,25 +60,42 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 	def dispatch void infer(EventModel element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 
 		// Here you explain how your model is mapped to Java elements, by writing the actual translation code.
-		var atomicPatterns = element.packagedModel.modelElements.filter[e|(e instanceof AtomicEventPattern)]
+		var patterns = element.packagedModel.modelElements.filter[e|(e instanceof AtomicEventPattern)]
 
-		for (atomicPattern : atomicPatterns) {
-			acceptor.accept(atomicPattern.toClass(atomicPattern.fullyQualifiedName)).initializeLater [
-				documentation = atomicPattern.documentation
-				superTypes += atomicPattern.newTypeRef(AbstractEventInstance)
-				members += atomicPattern.toConstructor [
-					parameters += toParameter("eventSource", atomicPattern.newTypeRef(IEventSource))
+		for (pattern : patterns) {
+			acceptor.accept(pattern.toClass(pattern.fqn)).initializeLater [
+				documentation = pattern.documentation
+				superTypes += pattern.newTypeRef(AbstractEventInstance)
+				members += pattern.toConstructor [
+					parameters += toParameter("eventSource", pattern.newTypeRef(IEventSource))
 					body = [append('''super(eventSource);''')]
 				]
-				var staticBindings = (atomicPattern as AtomicEventPattern).staticBindings
-				var paramList = (atomicPattern as AtomicEventPattern).parameters
+				var staticBindings = (pattern as AtomicEventPattern).staticBindings
+				var paramList = (pattern as AtomicEventPattern).parameters
 				for (dynamicParameter : paramList.parameters) {
-					members += atomicPattern.toField(dynamicParameter.name, dynamicParameter.type)
-					members += atomicPattern.toGetter(dynamicParameter.name, dynamicParameter.type)
-					if(!dynamicParameter.isStaticallyBound(staticBindings)){
-						members += atomicPattern.toSetter(dynamicParameter.name, dynamicParameter.type)	
+					members += pattern.toField(dynamicParameter.name, dynamicParameter.type)
+					members += pattern.toGetter(dynamicParameter.name, dynamicParameter.type)
+					if (!dynamicParameter.isStaticallyBound(staticBindings)) {
+						members += pattern.toSetter(dynamicParameter.name, dynamicParameter.type)
 					}
 				}
+			]
+		}
+
+		var complexPatterns = element.packagedModel.modelElements.filter[e|(e instanceof ComplexEventPattern)]
+
+		for (pattern : complexPatterns) {
+			acceptor.accept(pattern.toClass(pattern.fqn)).initializeLater [
+				documentation = pattern.documentation
+				superTypes += pattern.newTypeRef(ComplexEventPatternImpl)
+				members += pattern.toConstructor [
+					body = [append('''
+						super();
+						// TODO register ordering
+						// TODO register events
+						// TODO register timewindow
+						setId("«pattern.name+"Pattern"»");''')]
+				]
 			]
 		}
 	}
@@ -82,5 +105,15 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 			if(sb.parameter.equals(parameter)) return true
 		}
 		return false
+	}
+
+	def private getFqn(ModelElement element) {
+		var className = element.fullyQualifiedName.lastSegment
+		var packageName = element.fullyQualifiedName.skipLast(1)
+
+		switch element {
+			AtomicEventPattern: return packageName.append("events").append(className.toFirstUpper)
+			ComplexEventPattern: return packageName.append("patterns").append(className.toFirstUpper+"_Pattern")
+		}
 	}
 }
