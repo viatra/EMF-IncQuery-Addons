@@ -1,5 +1,7 @@
 package hu.bme.mit.incquery.cep.tests.testcaseSm.main;
 
+import hu.bme.mit.incquery.cep.api.CepJobs;
+import hu.bme.mit.incquery.cep.api.CepRule;
 import hu.bme.mit.incquery.cep.api.ViatraCepManager;
 import hu.bme.mit.incquery.cep.api.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
@@ -47,7 +49,9 @@ public class AtomicEventsWithCepApi {
 		List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
 		eventPatterns.add(aPattern);
 		
-		manager = ViatraCepManager.withContext(EventProcessingContext.CHRONICLE).addEventPatterns(eventPatterns);
+		CepRule rule = new CepRule(eventPatterns, CepJobs.getDefaultJob()); 
+		
+		manager = ViatraCepManager.withContext(EventProcessingContext.CHRONICLE).addRule(rule);
 		
 		System.err.println("DIAG: Test starting.\n");
 		

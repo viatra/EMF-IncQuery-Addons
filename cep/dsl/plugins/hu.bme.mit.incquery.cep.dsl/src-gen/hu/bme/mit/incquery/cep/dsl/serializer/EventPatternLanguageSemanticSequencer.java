@@ -1436,7 +1436,7 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? eventPatterns+=[EventPattern|ID] eventPatterns+=[EventPattern|ID]* action=XExpression)
+	 *     (name=ID eventPatterns+=[EventPattern|ID] eventPatterns+=[EventPattern|ID]* action=XBlockExpression)
 	 */
 	protected void sequence_FailDiagnosticRule(EObject context, FailDiagnosticRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1586,7 +1586,7 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? eventPatterns+=[EventPattern|ID] eventPatterns+=[EventPattern|ID]* action=XExpression)
+	 *     (name=ID eventPatterns+=[EventPattern|ID] eventPatterns+=[EventPattern|ID]* action=XBlockExpression)
 	 */
 	protected void sequence_OnAppearRule(EObject context, OnAppearRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

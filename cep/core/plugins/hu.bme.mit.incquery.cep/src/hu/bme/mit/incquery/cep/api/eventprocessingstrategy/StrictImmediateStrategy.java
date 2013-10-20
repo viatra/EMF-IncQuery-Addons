@@ -2,6 +2,7 @@ package hu.bme.mit.incquery.cep.api.eventprocessingstrategy;
 
 import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
+import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InitState;
@@ -13,6 +14,11 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 
 public class StrictImmediateStrategy extends AbstractImmediateStrategy {
 
+    @Override
+    public EventProcessingContext getContext() {
+        return EventProcessingContext.STRICT_IMMEDIATE;
+    }
+    
 	public StrictImmediateStrategy(EventModelManager eventModelManager) {
 		super(eventModelManager);
 	}

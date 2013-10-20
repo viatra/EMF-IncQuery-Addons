@@ -522,28 +522,26 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		private final CrossReference cEventPatternsEventPatternCrossReference_6_1_0 = (CrossReference)cEventPatternsAssignment_6_1.eContents().get(0);
 		private final RuleCall cEventPatternsEventPatternIDTerminalRuleCall_6_1_0_1 = (RuleCall)cEventPatternsEventPatternCrossReference_6_1_0.eContents().get(1);
 		private final Keyword cActionKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cActionAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cActionXExpressionParserRuleCall_9_0 = (RuleCall)cActionAssignment_9.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cActionAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cActionXBlockExpressionParserRuleCall_8_0 = (RuleCall)cActionAssignment_8.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//OnAppearRule:
 		//
-		//	"RuleOnAppear" name=ID? "{" "events" ":" eventPatterns+=[EventPattern] (", " eventPatterns+=[EventPattern])* "action"
+		//	"RuleOnAppear" name=ID "{" "events" ":" eventPatterns+=[EventPattern] (", " eventPatterns+=[EventPattern])* "action"
 		//
-		//	"{" action=XExpression "}" "}";
+		//	action=XBlockExpression "}";
 		public ParserRule getRule() { return rule; }
 
-		//"RuleOnAppear" name=ID? "{" "events" ":" eventPatterns+=[EventPattern] (", " eventPatterns+=[EventPattern])* "action"
+		//"RuleOnAppear" name=ID "{" "events" ":" eventPatterns+=[EventPattern] (", " eventPatterns+=[EventPattern])* "action"
 		//
-		//"{" action=XExpression "}" "}"
+		//action=XBlockExpression "}"
 		public Group getGroup() { return cGroup; }
 
 		//"RuleOnAppear"
 		public Keyword getRuleOnAppearKeyword_0() { return cRuleOnAppearKeyword_0; }
 
-		//name=ID?
+		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
@@ -585,20 +583,14 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		//"action"
 		public Keyword getActionKeyword_7() { return cActionKeyword_7; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
+		//action=XBlockExpression
+		public Assignment getActionAssignment_8() { return cActionAssignment_8; }
 
-		//action=XExpression
-		public Assignment getActionAssignment_9() { return cActionAssignment_9; }
-
-		//XExpression
-		public RuleCall getActionXExpressionParserRuleCall_9_0() { return cActionXExpressionParserRuleCall_9_0; }
+		//XBlockExpression
+		public RuleCall getActionXBlockExpressionParserRuleCall_8_0() { return cActionXBlockExpressionParserRuleCall_8_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 
 	public class FailDiagnosticRuleElements extends AbstractParserRuleElementFinder {
@@ -619,28 +611,26 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		private final CrossReference cEventPatternsEventPatternCrossReference_6_1_0 = (CrossReference)cEventPatternsAssignment_6_1.eContents().get(0);
 		private final RuleCall cEventPatternsEventPatternIDTerminalRuleCall_6_1_0_1 = (RuleCall)cEventPatternsEventPatternCrossReference_6_1_0.eContents().get(1);
 		private final Keyword cActionKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cActionAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cActionXExpressionParserRuleCall_9_0 = (RuleCall)cActionAssignment_9.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cActionAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cActionXBlockExpressionParserRuleCall_8_0 = (RuleCall)cActionAssignment_8.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//FailDiagnosticRule:
 		//
-		//	"RuleOnFail" name=ID? "{" "events" ":" eventPatterns+=[EventPattern] (", " eventPatterns+=[EventPattern])* "action"
+		//	"RuleOnFail" name=ID "{" "events" ":" eventPatterns+=[EventPattern] (", " eventPatterns+=[EventPattern])* "action"
 		//
-		//	"{" action=XExpression "}" "}";
+		//	action=XBlockExpression "}";
 		public ParserRule getRule() { return rule; }
 
-		//"RuleOnFail" name=ID? "{" "events" ":" eventPatterns+=[EventPattern] (", " eventPatterns+=[EventPattern])* "action" "{"
+		//"RuleOnFail" name=ID "{" "events" ":" eventPatterns+=[EventPattern] (", " eventPatterns+=[EventPattern])* "action"
 		//
-		//action=XExpression "}" "}"
+		//action=XBlockExpression "}"
 		public Group getGroup() { return cGroup; }
 
 		//"RuleOnFail"
 		public Keyword getRuleOnFailKeyword_0() { return cRuleOnFailKeyword_0; }
 
-		//name=ID?
+		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
@@ -682,20 +672,14 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		//"action"
 		public Keyword getActionKeyword_7() { return cActionKeyword_7; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
+		//action=XBlockExpression
+		public Assignment getActionAssignment_8() { return cActionAssignment_8; }
 
-		//action=XExpression
-		public Assignment getActionAssignment_9() { return cActionAssignment_9; }
-
-		//XExpression
-		public RuleCall getActionXExpressionParserRuleCall_9_0() { return cActionXExpressionParserRuleCall_9_0; }
+		//XBlockExpression
+		public RuleCall getActionXBlockExpressionParserRuleCall_8_0() { return cActionXBlockExpressionParserRuleCall_8_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 
 	public class TypedParameterListElements extends AbstractParserRuleElementFinder {
@@ -2264,9 +2248,9 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 	//OnAppearRule:
 	//
-	//	"RuleOnAppear" name=ID? "{" "events" ":" eventPatterns+=[EventPattern] (", " eventPatterns+=[EventPattern])* "action"
+	//	"RuleOnAppear" name=ID "{" "events" ":" eventPatterns+=[EventPattern] (", " eventPatterns+=[EventPattern])* "action"
 	//
-	//	"{" action=XExpression "}" "}";
+	//	action=XBlockExpression "}";
 	public OnAppearRuleElements getOnAppearRuleAccess() {
 		return (pOnAppearRule != null) ? pOnAppearRule : (pOnAppearRule = new OnAppearRuleElements());
 	}
@@ -2277,9 +2261,9 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 	//FailDiagnosticRule:
 	//
-	//	"RuleOnFail" name=ID? "{" "events" ":" eventPatterns+=[EventPattern] (", " eventPatterns+=[EventPattern])* "action"
+	//	"RuleOnFail" name=ID "{" "events" ":" eventPatterns+=[EventPattern] (", " eventPatterns+=[EventPattern])* "action"
 	//
-	//	"{" action=XExpression "}" "}";
+	//	action=XBlockExpression "}";
 	public FailDiagnosticRuleElements getFailDiagnosticRuleAccess() {
 		return (pFailDiagnosticRule != null) ? pFailDiagnosticRule : (pFailDiagnosticRule = new FailDiagnosticRuleElements());
 	}

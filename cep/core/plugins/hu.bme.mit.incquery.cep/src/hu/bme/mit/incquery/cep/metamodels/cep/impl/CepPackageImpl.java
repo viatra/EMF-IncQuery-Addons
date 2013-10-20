@@ -188,6 +188,15 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEventPattern_Priority() {
+		return (EAttribute)eventPatternEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAtomicEventPattern() {
 		return atomicEventPatternEClass;
 	}
@@ -341,6 +350,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		createEReference(eventPatternEClass, EVENT_PATTERN__STATE_MACHINE);
 		createEAttribute(eventPatternEClass, EVENT_PATTERN__ID);
 		createEAttribute(eventPatternEClass, EVENT_PATTERN__HOLDING_TIME);
+		createEAttribute(eventPatternEClass, EVENT_PATTERN__PRIORITY);
 
 		atomicEventPatternEClass = createEClass(ATOMIC_EVENT_PATTERN);
 		createEAttribute(atomicEventPatternEClass, ATOMIC_EVENT_PATTERN__TYPE);
@@ -403,6 +413,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		initEReference(getEventPattern_StateMachine(), theInternalsmPackage.getStateMachine(), theInternalsmPackage.getStateMachine_EventPattern(), "stateMachine", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEventPattern_Id(), ecorePackage.getEString(), "id", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEventPattern_HoldingTime(), ecorePackage.getELong(), "holdingTime", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEventPattern_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(atomicEventPatternEClass, AtomicEventPattern.class, "AtomicEventPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAtomicEventPattern_Type(), ecorePackage.getEString(), "type", null, 1, 1, AtomicEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

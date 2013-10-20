@@ -15,6 +15,8 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PackagedModel
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TypedParameterList
 import org.eclipse.xtext.validation.Check
 
+import static extension com.google.common.base.Strings.*
+
 //import org.eclipse.xtext.validation.Check
 /**
  * Custom validation rules. 
@@ -28,7 +30,8 @@ class EventPatternLanguageValidator extends AbstractEventPatternLanguageValidato
 
 	@Check
 	def uniqueName(ModelElement modelElement) {
-		if(!(modelElement.eContainer instanceof PackagedModel)) return
+		if(modelElement.name.nullOrEmpty) return;
+		if(!(modelElement.eContainer instanceof PackagedModel)) return;
 
 		var model = (modelElement.eContainer as PackagedModel)
 
@@ -56,11 +59,13 @@ class EventPatternLanguageValidator extends AbstractEventPatternLanguageValidato
 
 		if (parameterList.parameters.empty && patternParameterNumber != 0) {
 			error("Pattern call parameters must be specified!",
-				EventPatternLanguagePackage.Literals.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST, INVALID_ARGUMENTS)
+				EventPatternLanguagePackage.Literals.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST,
+				INVALID_ARGUMENTS)
 		}
 		if (parameterList.parameters.size != patternParameterNumber) {
 			error("The exact number of parameters in the referred pattern must be specified!",
-				EventPatternLanguagePackage.Literals.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST, INVALID_ARGUMENTS)
+				EventPatternLanguagePackage.Literals.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST,
+				INVALID_ARGUMENTS)
 		}
 	}
 

@@ -25,19 +25,14 @@ IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:in
 }
 
 ComplexEvent compoundTransactionEvent(a:componentA, b:componentB, c:componentC){
-	definition : (a(tId, _ts, cId) -[55020]-> b(tId, _ts) -[7500]-> c(tId, _ts, sId))[11000]
+	definition : (a(tId, _ts, cId) -[5200]-> b(tId, _ts) -[7500]-> c(tId, _ts, sId))[11000]
 }
 
-RuleOnAppear {
+RuleOnAppear r1 {
 	events: compoundTransactionEvent
 	action {
-		MyActionHandler::handleAction()
-	}
-}
-
-RuleOnFail {
-	events: compoundTransactionEvent
-	action {
-		new String("Failure... TODO")
+		val testMsg = "test"
+		new hu.bme.mit.incquery.cep.casestudy.transaction.MyActionHandler().handleAction(testMsg)
+		hu.bme.mit.incquery.cep.api.CepJobs.defaultJob;
 	}
 }

@@ -71,21 +71,21 @@ public final class EvaluationPatterns extends BaseGeneratedPatternGroup {
   
   private EvaluationPatterns() throws IncQueryException {
     querySpecifications.add(TokenInTrapStateMatcher.querySpecification());
-    querySpecifications.add(GuardAtomicPatternMatcher.querySpecification());
-    querySpecifications.add(EnabledTransitionMatcher.querySpecification());
-    querySpecifications.add(StateWithCHECKTimeconstraintMatcher.querySpecification());
-    querySpecifications.add(EventHandledByStateMatcher.querySpecification());
-    querySpecifications.add(FinalStateMatcher.querySpecification());
-    querySpecifications.add(StateWithSTARTTimeconstraintMatcher.querySpecification());
-    querySpecifications.add(TransitionMatcher.querySpecification());
     querySpecifications.add(InitStateMatcher.querySpecification());
-    querySpecifications.add(PartiallyMatchedEventPatternMatcher.querySpecification());
-    querySpecifications.add(StateWithSTOPTimeconstraintMatcher.querySpecification());
-    querySpecifications.add(StateWithTimeconstraintMatcher.querySpecification());
-    querySpecifications.add(AtomicPatternTypeMatcher.querySpecification());
-    querySpecifications.add(EventHandledByEventTokenMatcher.querySpecification());
+    querySpecifications.add(StateWithCHECKTimeconstraintMatcher.querySpecification());
     querySpecifications.add(PreStateMatcher.querySpecification());
+    querySpecifications.add(StateWithTimeconstraintMatcher.querySpecification());
+    querySpecifications.add(StateWithSTARTTimeconstraintMatcher.querySpecification());
+    querySpecifications.add(EnabledTransitionMatcher.querySpecification());
+    querySpecifications.add(GuardAtomicPatternMatcher.querySpecification());
+    querySpecifications.add(EventHandledByStateMatcher.querySpecification());
     querySpecifications.add(FinishedStateMachineMatcher.querySpecification());
+    querySpecifications.add(EventHandledByEventTokenMatcher.querySpecification());
+    querySpecifications.add(AtomicPatternTypeMatcher.querySpecification());
+    querySpecifications.add(TransitionMatcher.querySpecification());
+    querySpecifications.add(FinalStateMatcher.querySpecification());
+    querySpecifications.add(StateWithSTOPTimeconstraintMatcher.querySpecification());
+    querySpecifications.add(PartiallyMatchedEventPatternMatcher.querySpecification());
     querySpecifications.add(LatestEventMatcher.querySpecification());
     
   }

@@ -17,14 +17,9 @@ public class ViatraCepManager {
         this.eventModelManager = new EventModelManager();
         eventModelManager.setEventProcessingContext(context);
     }
-
-    public ViatraCepManager addEventPatterns(List<EventPattern> eventPatterns) {
-        eventModelManager.assignEventPatterns(eventPatterns);
-        return this;
-    }
-
-    public ViatraCepManager addEventPattern(EventPattern eventPattern) {
-        eventModelManager.assignEventPattern(eventPattern);
+    
+    public ViatraCepManager addRule(CepRule rule) {
+        eventModelManager.assignRule(rule);
         return this;
     }
 

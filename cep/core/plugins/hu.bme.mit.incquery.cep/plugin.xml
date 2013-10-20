@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.0"?>
 <plugin>
 
+   <extension
+         name=""
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            genModel="models/cepsm.genmodel"
+            uri="cep.meta"
+            class="hu.bme.mit.incquery.cep.metamodels.cep.CepPackage">
+      </package>
+   </extension>
+   <extension
+         name=""
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="cep"
+            class="hu.bme.mit.incquery.cep.metamodels.cep.util.CepResourceFactoryImpl">
+      </parser>
+   </extension>
+   <extension
+         name=""
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            genModel="models/cepsm.genmodel"
+            uri="sm.meta"
+            class="hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage">
+      </package>
+   </extension>
+   <extension
+         name=""
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="internalsm"
+            class="hu.bme.mit.incquery.cep.metamodels.internalsm.util.InternalsmResourceFactoryImpl">
+      </parser>
+   </extension>
    <extension
          id="hu.bme.mit.incquery.cep.runtime.evaluation.queries.finishedStateMachine"
          point="org.eclipse.incquery.runtime.queryspecification">

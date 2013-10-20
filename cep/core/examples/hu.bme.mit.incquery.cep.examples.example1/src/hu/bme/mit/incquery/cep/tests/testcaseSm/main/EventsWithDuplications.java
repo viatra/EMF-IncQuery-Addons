@@ -1,5 +1,7 @@
 package hu.bme.mit.incquery.cep.tests.testcaseSm.main;
 
+import hu.bme.mit.incquery.cep.api.CepJobs;
+import hu.bme.mit.incquery.cep.api.CepRule;
 import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
 import hu.bme.mit.incquery.cep.api.runtime.EventQueue;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
@@ -45,8 +47,10 @@ public class EventsWithDuplications {
 		eventPatterns.add(abbPattern);
 		
 		manager = new EventModelManager();
-		manager.assignEventPatterns(eventPatterns);
-		
+		//manager.assignEventPatterns(eventPatterns);
+		CepRule rule = new CepRule(eventPatterns, CepJobs.getDefaultJob()); 
+        manager.assignRule(rule);
+        
 		System.err.println("DIAG: Test starting.\n");
 		
 		eventQueue.push(new B(source));

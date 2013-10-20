@@ -1,5 +1,7 @@
 package hu.bme.mit.incquery.cep.api.runtime;
 
+import hu.bme.mit.incquery.cep.api.CepJobs;
+import hu.bme.mit.incquery.cep.api.CepRule;
 import hu.bme.mit.incquery.cep.api.EventPatternAutomatonOptions;
 import hu.bme.mit.incquery.cep.api.eventprocessingstrategy.EventProcessingStrategyFactory;
 import hu.bme.mit.incquery.cep.api.eventprocessingstrategy.IEventProcessingStrategy;
@@ -26,7 +28,6 @@ import hu.bme.mit.incquery.cep.utils.SMUtils;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -38,9 +39,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.incquery.runtime.evm.api.Activation;
 import org.eclipse.incquery.runtime.evm.api.ActivationLifeCycle;
-import org.eclipse.incquery.runtime.evm.api.Context;
 import org.eclipse.incquery.runtime.evm.api.EventDrivenVM;
 import org.eclipse.incquery.runtime.evm.api.ExecutionSchema;
 import org.eclipse.incquery.runtime.evm.api.Job;
@@ -50,6 +49,7 @@ import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedSc
 import org.eclipse.incquery.runtime.evm.specific.scheduler.UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory;
 import org.eclipse.incquery.runtime.evm.update.UpdateCompleteProvider;
 
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Sets;
 
 public class EventModelManager {
@@ -118,28 +118,17 @@ public class EventModelManager {
         this.strategy = EventProcessingStrategyFactory.getStrategy(context, this);
     }
 
-    public void assignEventPatterns(Map<EventPattern, EventPatternAutomatonOptions> eventPatternsWithOptions) {
-        for (EventPattern eventPattern : eventPatternsWithOptions.keySet()) {
-            EventPatternAutomatonOptions options = eventPatternsWithOptions.get(eventPattern);
+    public void assignRule(CepRule rule) {
+        Preconditions.checkArgument(!rule.getEventPatterns().isEmpty());
+        for (EventPattern eventPattern : rule.getEventPatterns()) {
+            EventPatternAutomatonOptions options = new EventPatternAutomatonOptions(this.strategy.getContext(),
+                    eventPattern.getPriority());
+
             StateMachine stateMachine = getStateMachine(eventPattern, options);
 
             wasEnabledForTheLatestEvent.put(stateMachine, true);
 
             CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(stateMachine);
-
-            Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(CepActivationStates.ACTIVE) {
-
-                protected void execute(Activation<? extends ObservedComplexEventPattern> activation, Context context) {
-                    Logger.log(">>>>>>>>>>>>>>>CEP: Complex event pattern appeared: "
-                            + activation.getAtom().getObservedEventPattern().getId());
-                }
-
-                @Override
-                protected void handleError(Activation<? extends ObservedComplexEventPattern> activation,
-                        Exception exception, Context context) {
-                    // not gonna happen
-                }
-            };
 
             ActivationLifeCycle lifeCycle = ActivationLifeCycle.create(CepActivationStates.INACTIVE);
             lifeCycle.addStateTransition(CepActivationStates.INACTIVE, CepEventType.APPEARED,
@@ -147,6 +136,10 @@ public class EventModelManager {
             lifeCycle.addStateTransition(CepActivationStates.ACTIVE, RuleEngineEventType.FIRE,
                     CepActivationStates.INACTIVE);
 
+            Job<ObservedComplexEventPattern> job = rule.getJob();
+            if (job == null) {
+                job = CepJobs.getDefaultJob();
+            }
             @SuppressWarnings("unchecked")
             RuleSpecification<ObservedComplexEventPattern> ruleSpec = new RuleSpecification<ObservedComplexEventPattern>(
                     sourceSpec, lifeCycle, Sets.newHashSet(job));
@@ -160,69 +153,6 @@ public class EventModelManager {
         }
 
         try {
-            /**
-             * v1: model handling by bare Java code
-             */
-            // engine = IncQueryEngineManager.getInstance().getIncQueryEngine(
-            // resourceSet);
-            // ISchedulerFactory schedulerFactory = Schedulers
-            // .getIQBaseSchedulerFactory(engine.getBaseIndex());
-            //
-            // ModelHandlerRules mhr = new ModelHandlerRules(this);
-            //
-            // FixedPriorityConflictResolver fixedPriorityResolver =
-            // ConflictResolvers
-            // .createFixedPriorityResolver();
-            //
-            // for (RuleSpecification<?> ruleSpec : mhr.getModelHandlers()
-            // .keySet()) {
-            // rules.add(ruleSpec);
-            // fixedPriorityResolver.setPriority(ruleSpec, mhr
-            // .getModelHandlers().get(ruleSpec));
-            // }
-            //
-            // lowLevelExecutionSchema = ExecutionSchemas
-            // .createIncQueryExecutionSchema(engine, schedulerFactory,
-            // rules);
-            // // lowLevelExecutionSchema.getLogger().setLevel(Level.DEBUG);
-            // lowLevelExecutionSchema.setConflictResolver(fixedPriorityResolver);
-            //
-            // engine.getLogger().setLevel(Level.OFF);
-
-            /**
-             * v2: model handling by Xtend code
-             */
-            // engine = IncQueryEngineManager.getInstance().getIncQueryEngine(
-            // resourceSet);
-            // ISchedulerFactory schedulerFactory = Schedulers
-            // .getIQBaseSchedulerFactory(engine.getBaseIndex());
-            // ModelHandlerRules2 mhr = new ModelHandlerRules2(this);
-            // FixedPriorityConflictResolver fixedPriorityResolver =
-            // ConflictResolvers
-            // .createFixedPriorityResolver();
-            //
-            // for (RuleSpecification<?> ruleSpec : mhr.getModelHandlers()
-            // .keySet()) {
-            // rules.add(ruleSpec);
-            // fixedPriorityResolver.setPriority(ruleSpec, mhr
-            // .getModelHandlers().get(ruleSpec));
-            // }
-            // lowLevelExecutionSchema = ExecutionSchemas
-            // .createIncQueryExecutionSchema(engine, schedulerFactory,
-            // rules);
-            // // lowLevelExecutionSchema.getLogger().setLevel(Level.DEBUG);
-            // lowLevelExecutionSchema.setConflictResolver(fixedPriorityResolver);
-            // engine.getLogger().setLevel(Level.OFF);
-
-            /**
-             * v3: model handling by the VIATRA-EMF API
-             */
-//            ModelHandlingWithViatra mhrViatra = new ModelHandlingWithViatra(this);
-//            mhrViatra.registerRules();
-            
-            /**
-             * v4: model handling by the VIATRA-EMF API
-             */
             ModelHandlingWithViatraApi2 mhrViatraApi2 = new ModelHandlingWithViatraApi2(this);
             mhrViatraApi2.registerRulesWithAutomatedPriorities();
 
@@ -238,26 +168,6 @@ public class EventModelManager {
                 model.getEventTokens().add(cv);
             }
         }
-    }
-
-    public void assignEventPatterns(List<EventPattern> eventPatterns) {
-        Map<EventPattern, EventPatternAutomatonOptions> eventsWithOptions = new LinkedHashMap<EventPattern, EventPatternAutomatonOptions>();
-
-        for (EventPattern ep : eventPatterns) {
-            eventsWithOptions.put(ep, EventPatternAutomatonOptions.getDefault());
-        }
-
-        assignEventPatterns(eventsWithOptions);
-    }
-
-    public void assignEventPattern(EventPattern eventPattern) {
-        Map<EventPattern, EventPatternAutomatonOptions> eventsWithOptions = new LinkedHashMap<EventPattern, EventPatternAutomatonOptions>();
-
-        EventPatternAutomatonOptions options = EventPatternAutomatonOptions.getDefault();
-
-        eventsWithOptions.put(eventPattern, options);
-
-        assignEventPatterns(eventsWithOptions);
     }
 
     public StateMachine getStateMachine(EventPattern eventPattern, EventPatternAutomatonOptions options) {

@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getStateMachine <em>State Machine</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getId <em>Id</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getHoldingTime <em>Holding Time</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventPatternImpl#getPriority <em>Priority</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,6 +83,26 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 	 * @ordered
 	 */
 	protected long holdingTime = HOLDING_TIME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPriority()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PRIORITY_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPriority()
+	 * @generated
+	 * @ordered
+	 */
+	protected int priority = PRIORITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,6 +230,27 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getPriority() {
+		return priority;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPriority(int newPriority) {
+		int oldPriority = priority;
+		priority = newPriority;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CepPackage.EVENT_PATTERN__PRIORITY, oldPriority, priority));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -249,6 +291,8 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 				return getId();
 			case CepPackage.EVENT_PATTERN__HOLDING_TIME:
 				return getHoldingTime();
+			case CepPackage.EVENT_PATTERN__PRIORITY:
+				return getPriority();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -269,6 +313,9 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 				return;
 			case CepPackage.EVENT_PATTERN__HOLDING_TIME:
 				setHoldingTime((Long)newValue);
+				return;
+			case CepPackage.EVENT_PATTERN__PRIORITY:
+				setPriority((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -291,6 +338,9 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 			case CepPackage.EVENT_PATTERN__HOLDING_TIME:
 				setHoldingTime(HOLDING_TIME_EDEFAULT);
 				return;
+			case CepPackage.EVENT_PATTERN__PRIORITY:
+				setPriority(PRIORITY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -309,6 +359,8 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case CepPackage.EVENT_PATTERN__HOLDING_TIME:
 				return holdingTime != HOLDING_TIME_EDEFAULT;
+			case CepPackage.EVENT_PATTERN__PRIORITY:
+				return priority != PRIORITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -327,6 +379,8 @@ public abstract class EventPatternImpl extends EObjectImpl implements EventPatte
 		result.append(id);
 		result.append(", holdingTime: ");
 		result.append(holdingTime);
+		result.append(", priority: ");
+		result.append(priority);
 		result.append(')');
 		return result.toString();
 	}
