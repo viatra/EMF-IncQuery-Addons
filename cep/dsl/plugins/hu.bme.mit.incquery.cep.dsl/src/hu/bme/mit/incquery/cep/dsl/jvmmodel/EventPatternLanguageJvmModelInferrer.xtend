@@ -39,6 +39,7 @@ import static extension org.eclipse.xtext.util.Strings.*
 import org.eclipse.emf.ecore.EClass
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguageFactory
 import org.eclipse.emf.ecore.EcoreFactory
+import hu.bme.mit.incquery.cep.metamodels.cep.impl.AtomicEventPatternImpl
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -86,6 +87,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 	def dispatch void infer(EventModel element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		var patterns = element.packagedModel.modelElements.filter[e|(e instanceof AtomicEventPattern)]
 		patterns.generateAtomicEventClasses(acceptor)
+		patterns.generateAtomicEventPatterns(acceptor)
 
 		var complexPatterns = element.packagedModel.modelElements.filter[e|(e instanceof ComplexEventPattern)]
 		complexPatterns.generateComplexEventPatterns(acceptor)
@@ -96,7 +98,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 
 	def private generateAtomicEventClasses(Iterable<ModelElement> patterns, IJvmDeclaredTypeAcceptor acceptor) {
 		for (pattern : patterns) {
-			acceptor.accept(pattern.toClass(pattern.fqn)).initializeLater [
+			acceptor.accept(pattern.toClass(pattern.getFqn(AtomicPatternFqnPurpose.EVENT))).initializeLater [
 				documentation = pattern.documentation
 				superTypes += pattern.newTypeRef(AbstractEventInstance)
 				members += pattern.toConstructor [
@@ -112,6 +114,23 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 						members += pattern.toSetter(dynamicParameter.name, dynamicParameter.type)
 					}
 				}
+			]
+		}
+	}
+
+	def void generateAtomicEventPatterns(Iterable<ModelElement> patterns, IJvmDeclaredTypeAcceptor acceptor) {
+		for (pattern : patterns) {
+			acceptor.accept(pattern.toClass(pattern.getFqn(AtomicPatternFqnPurpose.PATTERN))).initializeLater [
+				documentation = pattern.documentation
+				superTypes += pattern.newTypeRef(AtomicEventPatternImpl)
+				members += pattern.toConstructor [
+					body = [
+						append(
+							'''
+							super();
+							setType(«pattern.getFqn(AtomicPatternFqnPurpose.EVENT)».class.getCanonicalName());
+							setId("«pattern.getFqn(AtomicPatternFqnPurpose.PATTERN).lastSegment»");''')]
+				]
 			]
 		}
 	}
@@ -298,15 +317,24 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 			return packageName.append("jobs").append(className.toFirstUpper + "Job")
 		}
 
+		def private getFqn(ModelElement element, AtomicPatternFqnPurpose purpose) {
+			var className = element.fullyQualifiedName.lastSegment
+			var packageName = element.fullyQualifiedName.skipLast(1)
+			switch (purpose) {
+				case AtomicPatternFqnPurpose.EVENT:
+					return packageName.append("events").append(className.toFirstUpper)
+				case AtomicPatternFqnPurpose.PATTERN:
+					return packageName.append("patterns.atomic").append(className.toFirstUpper + "Pattern")
+			}
+		}
+
 		def private getFqn(ModelElement element) {
 			var className = element.fullyQualifiedName.lastSegment
 			var packageName = element.fullyQualifiedName.skipLast(1)
 
 			switch element {
-				AtomicEventPattern:
-					return packageName.append("events").append(className.toFirstUpper)
 				ComplexEventPattern:
-					return packageName.append("patterns").append(className.toFirstUpper + "Pattern")
+					return packageName.append("patterns.complex").append(className.toFirstUpper + "Pattern")
 				OnAppearRule:
 					if (!element.name.nullOrEmpty) {
 						return packageName.append("rules").append(className.toFirstUpper)

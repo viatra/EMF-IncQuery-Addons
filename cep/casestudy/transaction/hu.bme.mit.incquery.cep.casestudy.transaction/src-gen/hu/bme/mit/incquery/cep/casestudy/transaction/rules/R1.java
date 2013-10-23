@@ -15,7 +15,7 @@ public class R1 implements ICepRule {
   private Job<ObservedComplexEventPattern> job = new hu.bme.mit.incquery.cep.casestudy.transaction.jobs.R1Job(CepActivationStates.ACTIVE);
   
   public R1() {
-    eventPatterns.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.CompoundTransactionEventPattern());
+    eventPatterns.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.complex.CompoundTransactionEventPattern());
   }
   
   public List<EventPattern> getEventPatterns() {

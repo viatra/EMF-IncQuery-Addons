@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.casestudy.transaction.patterns;
+package hu.bme.mit.incquery.cep.casestudy.transaction.patterns.complex;
 
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl;
 

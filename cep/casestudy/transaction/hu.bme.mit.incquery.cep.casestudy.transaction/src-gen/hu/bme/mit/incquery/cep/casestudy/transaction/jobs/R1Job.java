@@ -1,6 +1,5 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.jobs;
 
-import hu.bme.mit.incquery.cep.api.CepJobs;
 import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.casestudy.transaction.MyActionHandler;
 import org.eclipse.incquery.runtime.evm.api.Activation;
@@ -19,7 +18,6 @@ public class R1Job extends Job<ObservedComplexEventPattern> {
     final String testMsg = "test";
     MyActionHandler _myActionHandler = new MyActionHandler();
     _myActionHandler.handleAction(testMsg);
-    CepJobs.getDefaultJob();
   }
   
   public void handleError(final Activation<? extends ObservedComplexEventPattern> activation, final Exception exception, final Context context) {

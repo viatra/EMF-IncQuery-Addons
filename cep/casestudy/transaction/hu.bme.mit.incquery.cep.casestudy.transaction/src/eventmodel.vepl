@@ -33,6 +33,5 @@ RuleOnAppear r1 {
 	action {
 		val testMsg = "test"
 		new hu.bme.mit.incquery.cep.casestudy.transaction.MyActionHandler().handleAction(testMsg)
-		hu.bme.mit.incquery.cep.api.CepJobs.defaultJob;
 	}
 }
