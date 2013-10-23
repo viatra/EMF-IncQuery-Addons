@@ -31,9 +31,9 @@ Setting up the environment
  * CEP-DSL
  * CEP-DSL UI
 * **Runtime2** Eclipse:
- * Case study IncQuery project with queries [hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/examples/hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns)
- * Case study Ecore metamodell [hu.bme.mit.incquery.cep.casestudy.transaction.metamodel](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/examples/hu.bme.mit.incquery.cep.casestudy.transaction.metamodel)
- * Case study implementation [hu.bme.mit.incquery.cep.casestudy.transaction](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/examples/hu.bme.mit.incquery.cep.casestudy.transaction)
+ * Case study IncQuery project with queries [hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/casestudy/transaction/hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns)
+ * Case study Ecore metamodell [hu.bme.mit.incquery.cep.casestudy.transaction.metamodel](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/casestudy/transaction/hu.bme.mit.incquery.cep.casestudy.transaction.metamodel)
+ * Case study implementation [hu.bme.mit.incquery.cep.casestudy.transaction](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/casestudy/transaction/hu.bme.mit.incquery.cep.casestudy.transaction)
 
 Roadmap/TODO
 ------------
