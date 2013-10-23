@@ -18,7 +18,7 @@ public class ViatraCepManager {
         eventModelManager.setEventProcessingContext(context);
     }
     
-    public ViatraCepManager addRule(CepRule rule) {
+    public ViatraCepManager addRule(ICepRule rule) {
         eventModelManager.assignRule(rule);
         return this;
     }

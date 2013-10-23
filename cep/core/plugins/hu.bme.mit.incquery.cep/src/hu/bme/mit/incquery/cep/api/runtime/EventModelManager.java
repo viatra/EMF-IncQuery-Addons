@@ -1,8 +1,8 @@
 package hu.bme.mit.incquery.cep.api.runtime;
 
 import hu.bme.mit.incquery.cep.api.CepJobs;
-import hu.bme.mit.incquery.cep.api.CepRule;
 import hu.bme.mit.incquery.cep.api.EventPatternAutomatonOptions;
+import hu.bme.mit.incquery.cep.api.ICepRule;
 import hu.bme.mit.incquery.cep.api.eventprocessingstrategy.EventProcessingStrategyFactory;
 import hu.bme.mit.incquery.cep.api.eventprocessingstrategy.IEventProcessingStrategy;
 import hu.bme.mit.incquery.cep.api.evm.CepActivationStates;
@@ -118,7 +118,7 @@ public class EventModelManager {
         this.strategy = EventProcessingStrategyFactory.getStrategy(context, this);
     }
 
-    public void assignRule(CepRule rule) {
+    public void assignRule(ICepRule rule) {
         Preconditions.checkArgument(!rule.getEventPatterns().isEmpty());
         for (EventPattern eventPattern : rule.getEventPatterns()) {
             EventPatternAutomatonOptions options = new EventPatternAutomatonOptions(this.strategy.getContext(),

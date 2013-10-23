@@ -36,6 +36,9 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 
 import static extension org.eclipse.xtext.util.Strings.*
+import org.eclipse.emf.ecore.EClass
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguageFactory
+import org.eclipse.emf.ecore.EcoreFactory
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -152,6 +155,11 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 						append('''new «appRule.jobClassName»(''').append(
 							'''«referClass(appRule, CepActivationStates)».ACTIVE)''')]
 				]
+				members += appRule.toConstructor [
+					body = [
+						append('''«enumerateAssignableEventPatterns(it, appRule)»''')
+					]
+				]
 				members += appRule.toGetter("eventPatterns", appRule.newTypeRef(List, it.newTypeRef(EventPattern)))
 				members += appRule.toGetter("job", appRule.newTypeRef(Job, it.newTypeRef(ObservedComplexEventPattern)))
 			]
@@ -195,8 +203,17 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 		//		fsa.generateFile(
 		//			"hu.bme.mit.incquery.cep.casestudy.transaction.rulepackage".replace(".", "/") +
 		//				"/TransactionRulePackage.java", rulePackageTemplate(generatedRuleClassNames))
-
 		//generateRulePackage(generatedRuleClassNames)
+		}
+
+		def enumerateAssignableEventPatterns(ITreeAppendable appendable, OnAppearRule rule) {
+			if (rule == null || rule.eventPatterns.empty) {
+				return ""
+			}
+
+			for (ep : rule.eventPatterns) {
+				appendable.append('''eventPatterns.add(new «getFqn(ep)»());''')
+			}
 		}
 
 		def wildCardExtends(JvmTypeReference clone) {
@@ -225,14 +242,14 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 
 		def generateRulePackage(List<QualifiedName> mappedRules) {
 			var fileWriter = new FileWriter(
-				"hu.bme.mit.incquery.cep.casestudy.transaction.rulepackage".replace(".", "/") +
-					"/TransactionRulePackage.java")
+				"hu.bme.mit.incquery.cep.casestudy.transaction.transactionpackage".replace(".", "/") +
+					"/TransactionCepPackage.java")
 			fileWriter.append(rulePackageTemplate(mappedRules))
 			fileWriter.close()
 		}
 
 		def rulePackageTemplate(List<QualifiedName> mappedRules) '''
-			package hu.bme.mit.incquery.cep.casestudy.transaction.rulepackage;
+			package hu.bme.mit.incquery.cep.casestudy.transaction.transactionpackage;
 			
 			import hu.bme.mit.incquery.cep.api.ICepRule;
 			import hu.bme.mit.incquery.cep.casestudy.transaction.rules.R1;
@@ -241,11 +258,11 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 			
 			import com.google.common.collect.Lists;
 			
-			public final class TransactionRulePackage {
-				private static TransactionRulePackage instance;
+			public final class TransactionCepPackage implements ICepDomainPackage {
+				private static TransactionCepPackage instance;
 				private List<ICepRule> rules = Lists.newArrayList();
 				
-				public static TransactionRulePackage getInstance() {
+				public static TransactionCepPackage getInstance() {
 					if (instance == null) {
 						instance = new TransactionRulePackage();
 					}

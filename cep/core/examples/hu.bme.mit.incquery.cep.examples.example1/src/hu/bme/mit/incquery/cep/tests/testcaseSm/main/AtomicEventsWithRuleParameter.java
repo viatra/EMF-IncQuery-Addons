@@ -45,7 +45,6 @@ public class AtomicEventsWithRuleParameter {
 
     @Test
     public void test() throws InterruptedException, IncQueryException {
-
         List<EventPattern> eventPatterns = new ArrayList<EventPattern>();
         eventPatterns.add(aPattern);
         

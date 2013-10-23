@@ -25,7 +25,7 @@ IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:in
 }
 
 ComplexEvent compoundTransactionEvent(a:componentA, b:componentB, c:componentC){
-	definition : (a(tId, _ts, cId) -[5200]-> b(tId, _ts) -[7500]-> c(tId, _ts, sId))[11000]
+	definition : (a(tId, _ts, cId) -[5000]-> b(tId, _ts) -[7500]-> c(tId, _ts, sId))[1100]
 }
 
 RuleOnAppear r1 {
