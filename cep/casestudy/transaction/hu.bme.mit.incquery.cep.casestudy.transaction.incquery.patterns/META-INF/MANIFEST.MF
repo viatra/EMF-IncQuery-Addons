@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns
+Bundle-SymbolicName: hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Export-Package: hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample,
+ hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.emf.transaction,
+ org.eclipse.incquery.runtime,
+ org.eclipse.xtext.xbase.lib,
+ hu.bme.mit.incquery.cep.casestudy.transaction.metamodel;bundle-version="0.1.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

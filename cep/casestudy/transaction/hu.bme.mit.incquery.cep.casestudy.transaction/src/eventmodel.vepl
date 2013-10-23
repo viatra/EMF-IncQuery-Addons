@@ -1,0 +1,38 @@
+package hu.bme.mit.incquery.cep.casestudy.transaction
+
+uses hu.bme.mit.incquery.cep.casestudy.transaction.sources.*
+uses hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.*
+uses hu.bme.mit.incquery.cep.dsl.examples.actionhandlers.*
+
+AtomicEvent componentA(transactionId : String, timestamp : long, customerId : String){
+	source : eventSource
+}
+
+AtomicEvent componentB(transactionId : String, timestamp : long){
+	source : eventSource
+	staticBinding{
+		transactionId in [10, 12]
+	}
+}
+
+AtomicEvent componentC(transactionId : String, timestamp : long, supplierId : String){
+	source : eventSource
+}
+
+IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:int){
+	iqPatternRef : oldCompoundTransaction(X, I)
+	iqChangeType : NEW_MATCH_FOUND
+}
+
+ComplexEvent compoundTransactionEvent(a:componentA, b:componentB, c:componentC){
+	definition : (a(tId, _ts, cId) -[5000]-> b(tId, _ts) -[7500]-> c(tId, _ts, sId))[1100]
+}
+
+RuleOnAppear r1 {
+	events: compoundTransactionEvent
+	action {
+		val testMsg = "test"
+		new hu.bme.mit.incquery.cep.casestudy.transaction.MyActionHandler().handleAction(testMsg)
+		hu.bme.mit.incquery.cep.api.CepJobs.defaultJob;
+	}
+}
