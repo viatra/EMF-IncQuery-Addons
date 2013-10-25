@@ -44,8 +44,6 @@ public class EventPatternLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getComplexEventExpressionAccess().getAlternatives(), "rule__ComplexEventExpression__Alternatives");
 					put(grammarAccess.getAugmentedExpressionAccess().getAlternatives(), "rule__AugmentedExpression__Alternatives");
 					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
-					put(grammarAccess.getFollowerEventStructureAccess().getAlternatives(), "rule__FollowerEventStructure__Alternatives");
-					put(grammarAccess.getFollowsOperatorAccess().getAlternatives(), "rule__FollowsOperator__Alternatives");
 					put(grammarAccess.getStaticBindingRuleAccess().getAlternatives(), "rule__StaticBindingRule__Alternatives");
 					put(grammarAccess.getRangeAccess().getAlternatives(), "rule__Range__Alternatives");
 					put(grammarAccess.getNumericOperatorAccess().getAlternatives(), "rule__NumericOperator__Alternatives");
@@ -127,7 +125,6 @@ public class EventPatternLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBranchExpressionAccess().getGroup(), "rule__BranchExpression__Group__0");
 					put(grammarAccess.getBranchExpressionAccess().getGroup_2(), "rule__BranchExpression__Group_2__0");
 					put(grammarAccess.getFollowsOperatorNoTWAccess().getGroup(), "rule__FollowsOperatorNoTW__Group__0");
-					put(grammarAccess.getFollowsOperatorViaTWAccess().getGroup(), "rule__FollowsOperatorViaTW__Group__0");
 					put(grammarAccess.getStaticBindingAccess().getGroup(), "rule__StaticBinding__Group__0");
 					put(grammarAccess.getRangeFilterAccess().getGroup(), "rule__RangeFilter__Group__0");
 					put(grammarAccess.getOpenOpenAccess().getGroup(), "rule__OpenOpen__Group__0");
@@ -307,7 +304,7 @@ public class EventPatternLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getComplexEventPatternAccess().getNameAssignment_1(), "rule__ComplexEventPattern__NameAssignment_1");
 					put(grammarAccess.getComplexEventPatternAccess().getParametersAssignment_3(), "rule__ComplexEventPattern__ParametersAssignment_3");
 					put(grammarAccess.getComplexEventPatternAccess().getPriorityAssignment_6_2(), "rule__ComplexEventPattern__PriorityAssignment_6_2");
-					put(grammarAccess.getComplexEventPatternAccess().getComplexEventExpressionsAssignment_7_2(), "rule__ComplexEventPattern__ComplexEventExpressionsAssignment_7_2");
+					put(grammarAccess.getComplexEventPatternAccess().getComplexEventExpressionAssignment_7_2(), "rule__ComplexEventPattern__ComplexEventExpressionAssignment_7_2");
 					put(grammarAccess.getOnAppearRuleAccess().getNameAssignment_1(), "rule__OnAppearRule__NameAssignment_1");
 					put(grammarAccess.getOnAppearRuleAccess().getEventPatternsAssignment_5(), "rule__OnAppearRule__EventPatternsAssignment_5");
 					put(grammarAccess.getOnAppearRuleAccess().getEventPatternsAssignment_6_1(), "rule__OnAppearRule__EventPatternsAssignment_6_1");
@@ -348,7 +345,6 @@ public class EventPatternLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInnerBranchExpressionAccess().getExpressionAssignment_1(), "rule__InnerBranchExpression__ExpressionAssignment_1");
 					put(grammarAccess.getBranchExpressionAccess().getEventPatternsAssignment_1(), "rule__BranchExpression__EventPatternsAssignment_1");
 					put(grammarAccess.getBranchExpressionAccess().getEventPatternsAssignment_2_1(), "rule__BranchExpression__EventPatternsAssignment_2_1");
-					put(grammarAccess.getFollowsOperatorViaTWAccess().getTimewindowAssignment_1(), "rule__FollowsOperatorViaTW__TimewindowAssignment_1");
 					put(grammarAccess.getStaticBindingAccess().getParameterAssignment_0(), "rule__StaticBinding__ParameterAssignment_0");
 					put(grammarAccess.getStaticBindingAccess().getBindingRuleAssignment_1(), "rule__StaticBinding__BindingRuleAssignment_1");
 					put(grammarAccess.getRangeFilterAccess().getNegAssignment_0(), "rule__RangeFilter__NegAssignment_0");

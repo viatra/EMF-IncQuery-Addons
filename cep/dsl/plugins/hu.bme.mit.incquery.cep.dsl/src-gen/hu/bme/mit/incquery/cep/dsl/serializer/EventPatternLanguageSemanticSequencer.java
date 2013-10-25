@@ -17,7 +17,6 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorNoTW;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorViaTW;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEventPattern;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.InnerBranchExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.LiteralFilter;
@@ -201,13 +200,6 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 					return; 
 				}
 				else break;
-			case EventPatternLanguagePackage.FOLLOWS_OPERATOR_VIA_TW:
-				if(context == grammarAccess.getFollowsOperatorRule() ||
-				   context == grammarAccess.getFollowsOperatorViaTWRule()) {
-					sequence_FollowsOperatorViaTW(context, (FollowsOperatorViaTW) semanticObject); 
-					return; 
-				}
-				else break;
 			case EventPatternLanguagePackage.IQ_PATTERN_EVENT_PATTERN:
 				if(context == grammarAccess.getAbstractAtomicEventPatternRule() ||
 				   context == grammarAccess.getEventPatternRule() ||
@@ -218,8 +210,7 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 				}
 				else break;
 			case EventPatternLanguagePackage.INNER_BRANCH_EXPRESSION:
-				if(context == grammarAccess.getFollowerEventStructureRule() ||
-				   context == grammarAccess.getInnerBranchExpressionRule()) {
+				if(context == grammarAccess.getInnerBranchExpressionRule()) {
 					sequence_InnerBranchExpression(context, (InnerBranchExpression) semanticObject); 
 					return; 
 				}
@@ -1374,7 +1365,7 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID parameters=EventPatternParameterList? priority=INT? complexEventExpressions=ComplexEventExpression?)
+	 *     (name=ID parameters=EventPatternParameterList? priority=INT? complexEventExpression=ComplexEventExpression?)
 	 */
 	protected void sequence_ComplexEventPattern(EObject context, ComplexEventPattern semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1477,22 +1468,6 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	 */
 	protected void sequence_FollowsOperatorNoTW(EObject context, FollowsOperatorNoTW semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     timewindow=INT
-	 */
-	protected void sequence_FollowsOperatorViaTW(EObject context, FollowsOperatorViaTW semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EventPatternLanguagePackage.Literals.FOLLOWS_OPERATOR_VIA_TW__TIMEWINDOW) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EventPatternLanguagePackage.Literals.FOLLOWS_OPERATOR_VIA_TW__TIMEWINDOW));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getFollowsOperatorViaTWAccess().getTimewindowINTTerminalRuleCall_1_0(), semanticObject.getTimewindow());
-		feeder.finish();
 	}
 	
 	

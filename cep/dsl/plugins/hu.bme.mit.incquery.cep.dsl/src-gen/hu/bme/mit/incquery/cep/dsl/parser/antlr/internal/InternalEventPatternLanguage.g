@@ -754,16 +754,16 @@ ruleComplexEventPattern returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getComplexEventPatternAccess().getComplexEventExpressionsComplexEventExpressionParserRuleCall_7_2_0()); 
+	        newCompositeNode(grammarAccess.getComplexEventPatternAccess().getComplexEventExpressionComplexEventExpressionParserRuleCall_7_2_0()); 
 	    }
-		lv_complexEventExpressions_11_0=ruleComplexEventExpression		{
+		lv_complexEventExpression_11_0=ruleComplexEventExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getComplexEventPatternRule());
 	        }
        		set(
        			$current, 
-       			"complexEventExpressions",
-        		lv_complexEventExpressions_11_0, 
+       			"complexEventExpression",
+        		lv_complexEventExpression_11_0, 
         		"ComplexEventExpression");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -2126,74 +2126,19 @@ ruleFollowerEventStructure returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
+
     { 
-        newCompositeNode(grammarAccess.getFollowerEventStructureAccess().getInnerBranchExpressionParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getFollowerEventStructureAccess().getEventTypedParameterWithMultiplicityParserRuleCall()); 
     }
-    this_InnerBranchExpression_0=ruleInnerBranchExpression
+    this_EventTypedParameterWithMultiplicity_0=ruleEventTypedParameterWithMultiplicity
     { 
-        $current = $this_InnerBranchExpression_0.current; 
+        $current = $this_EventTypedParameterWithMultiplicity_0.current; 
         afterParserOrEnumRuleCall();
     }
 
-    |
-    { 
-        newCompositeNode(grammarAccess.getFollowerEventStructureAccess().getEventTypedParameterWithMultiplicityParserRuleCall_1()); 
-    }
-    this_EventTypedParameterWithMultiplicity_1=ruleEventTypedParameterWithMultiplicity
-    { 
-        $current = $this_EventTypedParameterWithMultiplicity_1.current; 
-        afterParserOrEnumRuleCall();
-    }
-)
 ;
 
 
-
-
-
-// Entry rule entryRuleInnerBranchExpression
-entryRuleInnerBranchExpression returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getInnerBranchExpressionRule()); }
-	 iv_ruleInnerBranchExpression=ruleInnerBranchExpression 
-	 { $current=$iv_ruleInnerBranchExpression.current; } 
-	 EOF 
-;
-
-// Rule InnerBranchExpression
-ruleInnerBranchExpression returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='(' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getInnerBranchExpressionAccess().getLeftParenthesisKeyword_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getInnerBranchExpressionAccess().getExpressionBranchExpressionParserRuleCall_1_0()); 
-	    }
-		lv_expression_1_0=ruleBranchExpression		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getInnerBranchExpressionRule());
-	        }
-       		set(
-       			$current, 
-       			"expression",
-        		lv_expression_1_0, 
-        		"BranchExpression");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_2=')' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getInnerBranchExpressionAccess().getRightParenthesisKeyword_2());
-    }
-)
-;
 
 
 
@@ -2280,9 +2225,9 @@ ruleFollowsOperator returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
+
     { 
-        newCompositeNode(grammarAccess.getFollowsOperatorAccess().getFollowsOperatorNoTWParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getFollowsOperatorAccess().getFollowsOperatorNoTWParserRuleCall()); 
     }
     this_FollowsOperatorNoTW_0=ruleFollowsOperatorNoTW
     { 
@@ -2290,16 +2235,6 @@ ruleFollowsOperator returns [EObject current=null]
         afterParserOrEnumRuleCall();
     }
 
-    |
-    { 
-        newCompositeNode(grammarAccess.getFollowsOperatorAccess().getFollowsOperatorViaTWParserRuleCall_1()); 
-    }
-    this_FollowsOperatorViaTW_1=ruleFollowsOperatorViaTW
-    { 
-        $current = $this_FollowsOperatorViaTW_1.current; 
-        afterParserOrEnumRuleCall();
-    }
-)
 ;
 
 
@@ -2329,53 +2264,6 @@ ruleFollowsOperatorNoTW returns [EObject current=null]
 )	otherlv_1='->' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getFollowsOperatorNoTWAccess().getHyphenMinusGreaterThanSignKeyword_1());
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleFollowsOperatorViaTW
-entryRuleFollowsOperatorViaTW returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getFollowsOperatorViaTWRule()); }
-	 iv_ruleFollowsOperatorViaTW=ruleFollowsOperatorViaTW 
-	 { $current=$iv_ruleFollowsOperatorViaTW.current; } 
-	 EOF 
-;
-
-// Rule FollowsOperatorViaTW
-ruleFollowsOperatorViaTW returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='-[' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getFollowsOperatorViaTWAccess().getHyphenMinusLeftSquareBracketKeyword_0());
-    }
-(
-(
-		lv_timewindow_1_0=RULE_INT
-		{
-			newLeafNode(lv_timewindow_1_0, grammarAccess.getFollowsOperatorViaTWAccess().getTimewindowINTTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFollowsOperatorViaTWRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"timewindow",
-        		lv_timewindow_1_0, 
-        		"INT");
-	    }
-
-)
-)	otherlv_2=']->' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getFollowsOperatorViaTWAccess().getRightSquareBracketHyphenMinusGreaterThanSignKeyword_2());
     }
 )
 ;

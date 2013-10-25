@@ -400,13 +400,13 @@ public interface EventPatternLanguagePackage extends EPackage
   int COMPLEX_EVENT_PATTERN__PRIORITY = EVENT_PATTERN_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Complex Event Expressions</b></em>' containment reference.
+   * The feature id for the '<em><b>Complex Event Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSIONS = EVENT_PATTERN_FEATURE_COUNT + 2;
+  int COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION = EVENT_PATTERN_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Complex Event Pattern</em>' class.
@@ -1185,7 +1185,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int INNER_BRANCH_EXPRESSION__EXPRESSION = FOLLOWER_EVENT_STRUCTURE_FEATURE_COUNT + 0;
+  int INNER_BRANCH_EXPRESSION__EXPRESSION = 0;
 
   /**
    * The number of structural features of the '<em>Inner Branch Expression</em>' class.
@@ -1194,7 +1194,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int INNER_BRANCH_EXPRESSION_FEATURE_COUNT = FOLLOWER_EVENT_STRUCTURE_FEATURE_COUNT + 1;
+  int INNER_BRANCH_EXPRESSION_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.BranchExpressionImpl <em>Branch Expression</em>}' class.
@@ -1263,34 +1263,6 @@ public interface EventPatternLanguagePackage extends EPackage
   int FOLLOWS_OPERATOR_NO_TW_FEATURE_COUNT = FOLLOWS_OPERATOR_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.FollowsOperatorViaTWImpl <em>Follows Operator Via TW</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.FollowsOperatorViaTWImpl
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getFollowsOperatorViaTW()
-   * @generated
-   */
-  int FOLLOWS_OPERATOR_VIA_TW = 35;
-
-  /**
-   * The feature id for the '<em><b>Timewindow</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOLLOWS_OPERATOR_VIA_TW__TIMEWINDOW = FOLLOWS_OPERATOR_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Follows Operator Via TW</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOLLOWS_OPERATOR_VIA_TW_FEATURE_COUNT = FOLLOWS_OPERATOR_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.StaticBindingImpl <em>Static Binding</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1298,7 +1270,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getStaticBinding()
    * @generated
    */
-  int STATIC_BINDING = 36;
+  int STATIC_BINDING = 35;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -1335,7 +1307,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getStaticBindingRule()
    * @generated
    */
-  int STATIC_BINDING_RULE = 37;
+  int STATIC_BINDING_RULE = 36;
 
   /**
    * The number of structural features of the '<em>Static Binding Rule</em>' class.
@@ -1354,7 +1326,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getRangeFilter()
    * @generated
    */
-  int RANGE_FILTER = 38;
+  int RANGE_FILTER = 37;
 
   /**
    * The feature id for the '<em><b>Neg</b></em>' attribute.
@@ -1391,7 +1363,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getRange()
    * @generated
    */
-  int RANGE = 39;
+  int RANGE = 38;
 
   /**
    * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -1428,7 +1400,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getOpenOpen()
    * @generated
    */
-  int OPEN_OPEN = 40;
+  int OPEN_OPEN = 39;
 
   /**
    * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -1465,7 +1437,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getOpenClosed()
    * @generated
    */
-  int OPEN_CLOSED = 41;
+  int OPEN_CLOSED = 40;
 
   /**
    * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -1502,7 +1474,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getClosedClosed()
    * @generated
    */
-  int CLOSED_CLOSED = 42;
+  int CLOSED_CLOSED = 41;
 
   /**
    * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -1539,7 +1511,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getClosedOpen()
    * @generated
    */
-  int CLOSED_OPEN = 43;
+  int CLOSED_OPEN = 42;
 
   /**
    * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -1576,7 +1548,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getNumericFilter()
    * @generated
    */
-  int NUMERIC_FILTER = 44;
+  int NUMERIC_FILTER = 43;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -1613,7 +1585,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getLiteralFilter()
    * @generated
    */
-  int LITERAL_FILTER = 45;
+  int LITERAL_FILTER = 44;
 
   /**
    * The feature id for the '<em><b>Neg</b></em>' attribute.
@@ -1659,7 +1631,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getSource()
    * @generated
    */
-  int SOURCE = 46;
+  int SOURCE = 45;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1696,7 +1668,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getAdapter()
    * @generated
    */
-  int ADAPTER = 47;
+  int ADAPTER = 46;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1724,7 +1696,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getIQPatternChangeType()
    * @generated
    */
-  int IQ_PATTERN_CHANGE_TYPE = 48;
+  int IQ_PATTERN_CHANGE_TYPE = 47;
 
 
   /**
@@ -1961,15 +1933,15 @@ public interface EventPatternLanguagePackage extends EPackage
   EAttribute getComplexEventPattern_Priority();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern#getComplexEventExpressions <em>Complex Event Expressions</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern#getComplexEventExpression <em>Complex Event Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Complex Event Expressions</em>'.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern#getComplexEventExpressions()
+   * @return the meta object for the containment reference '<em>Complex Event Expression</em>'.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern#getComplexEventExpression()
    * @see #getComplexEventPattern()
    * @generated
    */
-  EReference getComplexEventPattern_ComplexEventExpressions();
+  EReference getComplexEventPattern_ComplexEventExpression();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule <em>Rule</em>}'.
@@ -2529,27 +2501,6 @@ public interface EventPatternLanguagePackage extends EPackage
   EClass getFollowsOperatorNoTW();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorViaTW <em>Follows Operator Via TW</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Follows Operator Via TW</em>'.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorViaTW
-   * @generated
-   */
-  EClass getFollowsOperatorViaTW();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorViaTW#getTimewindow <em>Timewindow</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Timewindow</em>'.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorViaTW#getTimewindow()
-   * @see #getFollowsOperatorViaTW()
-   * @generated
-   */
-  EAttribute getFollowsOperatorViaTW_Timewindow();
-
-  /**
    * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.StaticBinding <em>Static Binding</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3040,12 +2991,12 @@ public interface EventPatternLanguagePackage extends EPackage
     EAttribute COMPLEX_EVENT_PATTERN__PRIORITY = eINSTANCE.getComplexEventPattern_Priority();
 
     /**
-     * The meta object literal for the '<em><b>Complex Event Expressions</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Complex Event Expression</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSIONS = eINSTANCE.getComplexEventPattern_ComplexEventExpressions();
+    EReference COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION = eINSTANCE.getComplexEventPattern_ComplexEventExpression();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.RuleImpl <em>Rule</em>}' class.
@@ -3522,24 +3473,6 @@ public interface EventPatternLanguagePackage extends EPackage
      * @generated
      */
     EClass FOLLOWS_OPERATOR_NO_TW = eINSTANCE.getFollowsOperatorNoTW();
-
-    /**
-     * The meta object literal for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.FollowsOperatorViaTWImpl <em>Follows Operator Via TW</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.FollowsOperatorViaTWImpl
-     * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.EventPatternLanguagePackageImpl#getFollowsOperatorViaTW()
-     * @generated
-     */
-    EClass FOLLOWS_OPERATOR_VIA_TW = eINSTANCE.getFollowsOperatorViaTW();
-
-    /**
-     * The meta object literal for the '<em><b>Timewindow</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FOLLOWS_OPERATOR_VIA_TW__TIMEWINDOW = eINSTANCE.getFollowsOperatorViaTW_Timewindow();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.StaticBindingImpl <em>Static Binding</em>}' class.

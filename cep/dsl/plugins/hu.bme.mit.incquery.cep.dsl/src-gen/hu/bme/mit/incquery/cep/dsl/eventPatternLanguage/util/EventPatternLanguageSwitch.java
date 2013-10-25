@@ -320,7 +320,6 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
       {
         InnerBranchExpression innerBranchExpression = (InnerBranchExpression)theEObject;
         T result = caseInnerBranchExpression(innerBranchExpression);
-        if (result == null) result = caseFollowerEventStructure(innerBranchExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -345,14 +344,6 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
         FollowsOperatorNoTW followsOperatorNoTW = (FollowsOperatorNoTW)theEObject;
         T result = caseFollowsOperatorNoTW(followsOperatorNoTW);
         if (result == null) result = caseFollowsOperator(followsOperatorNoTW);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EventPatternLanguagePackage.FOLLOWS_OPERATOR_VIA_TW:
-      {
-        FollowsOperatorViaTW followsOperatorViaTW = (FollowsOperatorViaTW)theEObject;
-        T result = caseFollowsOperatorViaTW(followsOperatorViaTW);
-        if (result == null) result = caseFollowsOperator(followsOperatorViaTW);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1008,22 +999,6 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseFollowsOperatorNoTW(FollowsOperatorNoTW object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Follows Operator Via TW</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Follows Operator Via TW</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFollowsOperatorViaTW(FollowsOperatorViaTW object)
   {
     return null;
   }

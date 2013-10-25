@@ -13,7 +13,7 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern#getParameters <em>Parameters</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern#getPriority <em>Priority</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern#getComplexEventExpressions <em>Complex Event Expressions</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern#getComplexEventExpression <em>Complex Event Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,29 +76,29 @@ public interface ComplexEventPattern extends EventPattern
   void setPriority(int value);
 
   /**
-   * Returns the value of the '<em><b>Complex Event Expressions</b></em>' containment reference.
+   * Returns the value of the '<em><b>Complex Event Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Complex Event Expressions</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Complex Event Expression</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Complex Event Expressions</em>' containment reference.
-   * @see #setComplexEventExpressions(ComplexEventExpression)
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getComplexEventPattern_ComplexEventExpressions()
+   * @return the value of the '<em>Complex Event Expression</em>' containment reference.
+   * @see #setComplexEventExpression(ComplexEventExpression)
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getComplexEventPattern_ComplexEventExpression()
    * @model containment="true"
    * @generated
    */
-  ComplexEventExpression getComplexEventExpressions();
+  ComplexEventExpression getComplexEventExpression();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern#getComplexEventExpressions <em>Complex Event Expressions</em>}' containment reference.
+   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern#getComplexEventExpression <em>Complex Event Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Complex Event Expressions</em>' containment reference.
-   * @see #getComplexEventExpressions()
+   * @param value the new value of the '<em>Complex Event Expression</em>' containment reference.
+   * @see #getComplexEventExpression()
    * @generated
    */
-  void setComplexEventExpressions(ComplexEventExpression value);
+  void setComplexEventExpression(ComplexEventExpression value);
 
 } // ComplexEventPattern

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class InnerBranchExpressionImpl extends FollowerEventStructureImpl implements InnerBranchExpression
+public class InnerBranchExpressionImpl extends MinimalEObjectImpl.Container implements InnerBranchExpression
 {
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.

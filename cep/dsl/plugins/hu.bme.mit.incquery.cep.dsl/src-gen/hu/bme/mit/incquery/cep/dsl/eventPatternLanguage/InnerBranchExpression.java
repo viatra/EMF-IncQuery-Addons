@@ -2,6 +2,7 @@
  */
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +20,7 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage;
  * @model
  * @generated
  */
-public interface InnerBranchExpression extends FollowerEventStructure
+public interface InnerBranchExpression extends EObject
 {
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.

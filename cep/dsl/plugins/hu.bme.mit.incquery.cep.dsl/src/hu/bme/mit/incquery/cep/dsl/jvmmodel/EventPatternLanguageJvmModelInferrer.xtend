@@ -7,39 +7,34 @@ import hu.bme.mit.incquery.cep.api.ICepRule
 import hu.bme.mit.incquery.cep.api.evm.CepActivationStates
 import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OnAppearRule
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.StaticBinding
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TypedParameter
-import hu.bme.mit.incquery.cep.dsl.generator.EventPatternLanguageGenerator
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedExpression
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedMultiplicityExpression
+import hu.bme.mit.incquery.cep.metamodels.cep.CepFactory
+import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern
+import hu.bme.mit.incquery.cep.metamodels.cep.GlobalTimewindow
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource
+import hu.bme.mit.incquery.cep.metamodels.cep.impl.AtomicEventPatternImpl
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl
 import java.io.FileWriter
+import java.util.ArrayList
 import java.util.List
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.incquery.runtime.evm.api.Activation
 import org.eclipse.incquery.runtime.evm.api.Context
 import org.eclipse.incquery.runtime.evm.api.Job
 import org.eclipse.incquery.runtime.evm.api.event.ActivationState
-import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.common.types.TypesFactory
-import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.naming.QualifiedName
-import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-
-import static extension org.eclipse.xtext.util.Strings.*
-import org.eclipse.emf.ecore.EClass
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguageFactory
-import org.eclipse.emf.ecore.EcoreFactory
-import hu.bme.mit.incquery.cep.metamodels.cep.impl.AtomicEventPatternImpl
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -51,13 +46,8 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 	/**
      * convenience API to build and initialize JVM types and their members.
      */
-	@Inject extension JvmTypesBuilder
-	@Inject extension IQualifiedNameProvider
-	@Inject extension TypeReferenceSerializer typeReferenceSerializer
-	@Inject private TypesFactory factory = TypesFactory.eINSTANCE;
-	@Inject extension EventPatternLanguageGenerator generator
-
-	private static int lastRule = 0;
+	@Inject extension JvmTypesBuilder jvmTypesBuilder
+	@Inject extension Utils
 
 	/**
 	 * The dispatch method {@code infer} is called for each instance of the
@@ -105,269 +95,286 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 					parameters += toParameter("eventSource", pattern.newTypeRef(IEventSource))
 					body = [append('''super(eventSource);''')]
 				]
-				//				var staticBindings = (pattern as AtomicEventPattern).staticBindings
 				var paramList = (pattern as AtomicEventPattern).parameters
 				for (dynamicParameter : paramList.parameters) {
 					members += pattern.toField(dynamicParameter.name, dynamicParameter.type)
 					members += pattern.toGetter(dynamicParameter.name, dynamicParameter.type)
-
-					//					if (!dynamicParameter.isStaticallyBound(staticBindings)) {
 					members += pattern.toSetter(dynamicParameter.name, dynamicParameter.type)
-
-					//					}
-					}
-				]
-			}
+				}
+			]
 		}
+	}
 
-		def void generateAtomicEventPatterns(Iterable<ModelElement> patterns, IJvmDeclaredTypeAcceptor acceptor) {
-			for (pattern : patterns) {
-				acceptor.accept(pattern.toClass(pattern.getFqn(AtomicPatternFqnPurpose.PATTERN))).initializeLater [
-					documentation = pattern.documentation
-					superTypes += pattern.newTypeRef(AtomicEventPatternImpl)
-					members += pattern.toConstructor [
-						body = [
-							append(
-								'''
+	def void generateAtomicEventPatterns(Iterable<ModelElement> patterns, IJvmDeclaredTypeAcceptor acceptor) {
+		for (pattern : patterns) {
+			acceptor.accept(pattern.toClass(pattern.getFqn(AtomicPatternFqnPurpose.PATTERN))).initializeLater [
+				documentation = pattern.documentation
+				superTypes += pattern.newTypeRef(AtomicEventPatternImpl)
+				members += pattern.toConstructor [
+					body = [
+						append(
+							'''
 								super();
 								setType(«pattern.getFqn(AtomicPatternFqnPurpose.EVENT)».class.getCanonicalName());
-								setId("«pattern.getFqn(AtomicPatternFqnPurpose.PATTERN).lastSegment»");''')]
-					]
-					members += pattern.toMethod("checkStaticBindings", pattern.newTypeRef("boolean")) [
-						if ((pattern as AtomicEventPattern).staticBindings == null) {
-							body = [
-								append('''return true;''')
-							]
-						} else {
-							body = (pattern as AtomicEventPattern).staticBindings
-						}
+								setId("«pattern.getFqn(AtomicPatternFqnPurpose.PATTERN).lastSegment»");
+							'''
+						)]
+				]
+				members += pattern.toMethod("checkStaticBindings", pattern.newTypeRef("boolean")) [
+					if ((pattern as AtomicEventPattern).staticBindings == null) {
+						body = [
+							append('''return true;''')
+						]
+					} else {
+						body = (pattern as AtomicEventPattern).staticBindings
+					}
+				]
+			]
+		}
+	}
+
+	def private generateComplexEventPatterns(Iterable<ModelElement> patterns, IJvmDeclaredTypeAcceptor acceptor) {
+		for (pattern : patterns) {
+			acceptor.accept(pattern.toClass(pattern.fqn)).initializeLater [
+				documentation = pattern.documentation
+				superTypes += pattern.newTypeRef(ComplexEventPatternImpl)
+				members += pattern.toConstructor [
+					body = [
+						append(
+							'''
+								super();
+							'''
+						)
+						createOrdering(
+							it,
+							pattern,
+							(pattern as ComplexEventPattern).complexEventExpression
+						)
+						defineCompositionEvents(
+							it,
+							pattern,
+							(pattern as ComplexEventPattern).complexEventExpression
+						)
+						createGlobalTimewindow(
+							it,
+							pattern,
+							(pattern as ComplexEventPattern).complexEventExpression
+						)
+						setId(it, pattern, pattern.name)
 					]
 				]
+			]
+		}
+	}
+
+	def private createOrdering(ITreeAppendable appendable, EObject ctx, ComplexEventExpression expression) {
+		appendable.append('''setOperator(''').append('''«referClass(appendable, ctx, ComplexOperator)».''').append(
+			'''«getOperator(expression)»''').append(''');
+			''')
+	}
+
+	def private getOperator(ComplexEventExpression expression) {
+		var ex = expression.unwrapExpression
+		return ex.getComplexOperator
+	}
+
+	def private defineCompositionEvents(ITreeAppendable appendable, EObject ctx, ComplexEventExpression expression) {
+		appendable.append(
+			'''
+				
+				// composition events
+			''').append(
+			'''
+			«referClass(appendable, ctx, List, jvmTypesBuilder.newTypeRef(ctx, EventPattern))» ''').append(
+			'''
+			atomicEventPatternsForCP = ''').append(
+			'''
+				«referClass(appendable, ctx, Lists)».newArrayList();
+			''')
+
+		var ex = expression.unwrapExpression
+
+		for (ep : ex.assignedEventPatterns) {
+			appendable.append(
+				'''
+				atomicEventPatternsForCP.add(new '''
+			).append(
+				'''«ep.getFqn(AtomicPatternFqnPurpose.PATTERN)»());
+					'''
+			)
+		}
+		appendable.append(
+			'''
+				getCompositionEvents().addAll(atomicEventPatternsForCP);
+			'''
+		)
+
+	}
+
+	def private createGlobalTimewindow(ITreeAppendable appendable, EObject ctx, ComplexEventExpression expression) {
+		if (!((expression instanceof TimedExpression) || (expression instanceof TimedMultiplicityExpression))) {
+			return ""
+		}
+
+		appendable.append(
+			'''
+				
+				// timewindows
+			''').append(
+			'''
+			«referClass(appendable, ctx, GlobalTimewindow)» timewindow = ''').append(
+			'''
+				«referClass(appendable, ctx, CepFactory)».eINSTANCE.createGlobalTimewindow();
+			''')
+
+		if (expression instanceof TimedExpression) {
+			var tw = (expression as TimedExpression).timewindow
+			appendable.append(
+				'''
+					timewindow.setLength(«tw.length»l);
+					setGlobalTimewindow(timewindow);
+					
+				''');
+		}
+
+		if (expression instanceof TimedMultiplicityExpression) {
+			var tw = (expression as TimedMultiplicityExpression).timewindow
+			appendable.append(
+				'''
+					timewindow.setLength(«tw.length»l);
+					setGlobalTimewindow(timewindow);
+				''');
+		}
+	}
+
+	def private setId(ITreeAppendable appendable, EObject ctx, String patternName) {
+		appendable.append('''setId("«patternName.toFirstUpper»Pattern");''')
+	}
+
+	def private generateRulesAndJobs(Iterable<ModelElement> rules, IJvmDeclaredTypeAcceptor acceptor) {
+		var generatedRuleClassNames = Lists.newArrayList
+
+		for (rule : rules) {
+			val appRule = rule as OnAppearRule
+
+			//generate RULE class
+			acceptor.accept(appRule.toClass(appRule.fqn)).initializeLater [
+				documentation = appRule.documentation
+				superTypes += appRule.newTypeRef(ICepRule)
+				val eventPatterns = appRule.eventPatterns
+				//TODO add the related eventPatterns
+				members += appRule.toField("eventPatterns", appRule.newTypeRef(List, it.newTypeRef(EventPattern))) [
+					initializer = [append('''«referClass(appRule, Lists)».newArrayList()''')]
+				]
+				members += appRule.toField("job",
+					appRule.newTypeRef(Job, it.newTypeRef(ObservedComplexEventPattern))) [
+					initializer = [
+						append('''new «appRule.jobClassName»(''').append(
+							'''«referClass(appRule, CepActivationStates)».ACTIVE)''')]
+				]
+				members += appRule.toConstructor [
+					body = [
+						append('''«enumerateAssignableEventPatterns(it, appRule)»''')
+					]
+				]
+				members +=
+					appRule.toGetter("eventPatterns", appRule.newTypeRef(List, it.newTypeRef(EventPattern)))
+				members += appRule.toGetter("job",
+					appRule.newTypeRef(Job, it.newTypeRef(ObservedComplexEventPattern)))
+			]
+
+			//generate JOB class
+			acceptor.accept(appRule.action.toClass(appRule.jobClassName)).initializeLater [
+				documentation = appRule.documentation
+				superTypes += appRule.newTypeRef(Job, it.newTypeRef(ObservedComplexEventPattern))
+				members += appRule.toConstructor [
+					parameters += appRule.toParameter("activationState", appRule.newTypeRef(ActivationState))
+					body = [
+						append(
+							'''
+								super(activationState);
+							''')]
+				]
+				members += appRule.toMethod("execute", appRule.newTypeRef("void")) [
+					parameters += appRule.toParameter("activation",
+						appRule.newTypeRef(typeof(Activation),
+							cloneWithProxies(appRule.newTypeRef(ObservedComplexEventPattern)).wildCardExtends))
+					parameters += appRule.toParameter("context", appRule.newTypeRef(Context))
+					body = appRule.action
+				]
+				members += appRule.toMethod("handleError", appRule.newTypeRef("void")) [
+					parameters += appRule.toParameter("activation",
+						appRule.newTypeRef(typeof(Activation),
+							cloneWithProxies(appRule.newTypeRef(ObservedComplexEventPattern)).wildCardExtends))
+					parameters += appRule.toParameter("exception", appRule.newTypeRef(Exception))
+					parameters += appRule.toParameter("context", appRule.newTypeRef(Context))
+					body = [
+						append(
+							'''
+								//not gonna happen
+							''')]
+				]
+			]
+
+			generatedRuleClassNames.add(appRule.fqn)
+		}
+
+		//		fsa.generateFile(
+		//			"hu.bme.mit.incquery.cep.casestudy.transaction.rulepackage".replace(".", "/") +
+		//				"/TransactionRulePackage.java", rulePackageTemplate(generatedRuleClassNames))
+		//generateRulePackage(generatedRuleClassNames)
+		}
+
+		def enumerateAssignableEventPatterns(ITreeAppendable appendable, OnAppearRule rule) {
+			if (rule == null || rule.eventPatterns.empty) {
+				return ""
+			}
+
+			for (ep : rule.eventPatterns) {
+				appendable.append('''eventPatterns.add(new «getFqn(ep)»());''')
 			}
 		}
 
-		def private checkBindingBody(ITreeAppendable appendable, AtomicEventPattern pattern) {
-			if (pattern.staticBindings == null) {
-				appendable.append('''return true;''')
-			} else {
-				return pattern.staticBindings
+		def generateRulePackage(List<QualifiedName> mappedRules) {
+			var fileWriter = new FileWriter(
+				"hu.bme.mit.incquery.cep.casestudy.transaction.transactionpackage".replace(".", "/") +
+					"/TransactionCepPackage.java")
+			fileWriter.append(rulePackageTemplate(mappedRules))
+			fileWriter.close()
+		}
 
-				//appendable.append(('''«pattern.staticBindings»'''))
-				}
-			}
-
-			def private generateComplexEventPatterns(Iterable<ModelElement> patterns, IJvmDeclaredTypeAcceptor acceptor) {
-				for (pattern : patterns) {
-					acceptor.accept(pattern.toClass(pattern.fqn)).initializeLater [
-						documentation = pattern.documentation
-						superTypes += pattern.newTypeRef(ComplexEventPatternImpl)
-						members += pattern.toConstructor [
-							body = [
-								append(
-									'''
-									super();
-									// TODO register ordering
-									// TODO register events
-									// TODO register timewindow
-									setId("«pattern.name + "Pattern"»");''')]
-						]
-					]
-				}
-			}
-
-			def private generateRulesAndJobs(Iterable<ModelElement> rules, IJvmDeclaredTypeAcceptor acceptor) {
-				var generatedRuleClassNames = Lists.newArrayList
-
-				for (rule : rules) {
-					val appRule = rule as OnAppearRule
-
-					//generate RULE class
-					acceptor.accept(appRule.toClass(appRule.fqn)).initializeLater [
-						documentation = appRule.documentation
-						superTypes += appRule.newTypeRef(ICepRule)
-						val eventPatterns = appRule.eventPatterns
-						//TODO add the related eventPatterns
-						members += appRule.toField("eventPatterns",
-							appRule.newTypeRef(List, it.newTypeRef(EventPattern))) [
-							initializer = [append('''«referClass(appRule, Lists)».newArrayList()''')]
-						]
-						members += appRule.toField("job",
-							appRule.newTypeRef(Job, it.newTypeRef(ObservedComplexEventPattern))) [
-							initializer = [
-								append('''new «appRule.jobClassName»(''').append(
-									'''«referClass(appRule, CepActivationStates)».ACTIVE)''')]
-						]
-						members += appRule.toConstructor [
-							body = [
-								append('''«enumerateAssignableEventPatterns(it, appRule)»''')
-							]
-						]
-						members +=
-							appRule.toGetter("eventPatterns", appRule.newTypeRef(List, it.newTypeRef(EventPattern)))
-						members +=
-							appRule.toGetter("job", appRule.newTypeRef(Job, it.newTypeRef(ObservedComplexEventPattern)))
-					]
-
-					//generate JOB class
-					acceptor.accept(appRule.action.toClass(appRule.jobClassName)).initializeLater [
-						documentation = appRule.documentation
-						superTypes += appRule.newTypeRef(Job, it.newTypeRef(ObservedComplexEventPattern))
-						members += appRule.toConstructor [
-							parameters += appRule.toParameter("activationState", appRule.newTypeRef(ActivationState))
-							body = [
-								append(
-									'''
-										super(activationState);
-									''')]
-						]
-						members += appRule.toMethod("execute", appRule.newTypeRef("void")) [
-							parameters += appRule.toParameter("activation",
-								appRule.newTypeRef(typeof(Activation),
-									cloneWithProxies(appRule.newTypeRef(ObservedComplexEventPattern)).wildCardExtends))
-							parameters += appRule.toParameter("context", appRule.newTypeRef(Context))
-							body = appRule.action
-						]
-						members += appRule.toMethod("handleError", appRule.newTypeRef("void")) [
-							parameters += appRule.toParameter("activation",
-								appRule.newTypeRef(typeof(Activation),
-									cloneWithProxies(appRule.newTypeRef(ObservedComplexEventPattern)).wildCardExtends))
-							parameters += appRule.toParameter("exception", appRule.newTypeRef(Exception))
-							parameters += appRule.toParameter("context", appRule.newTypeRef(Context))
-							body = [
-								append(
-									'''
-										//not gonna happen
-									''')]
-						]
-					]
-
-					generatedRuleClassNames.add(appRule.fqn)
-				}
-
-				//		fsa.generateFile(
-				//			"hu.bme.mit.incquery.cep.casestudy.transaction.rulepackage".replace(".", "/") +
-				//				"/TransactionRulePackage.java", rulePackageTemplate(generatedRuleClassNames))
-				//generateRulePackage(generatedRuleClassNames)
-				}
-
-				def enumerateAssignableEventPatterns(ITreeAppendable appendable, OnAppearRule rule) {
-					if (rule == null || rule.eventPatterns.empty) {
-						return ""
-					}
-
-					for (ep : rule.eventPatterns) {
-						appendable.append('''eventPatterns.add(new «getFqn(ep)»());''')
-					}
-				}
-
-				def wildCardExtends(JvmTypeReference clone) {
-					var result = factory.createJvmWildcardTypeReference();
-					var upperBound = factory.createJvmUpperBound();
-					upperBound.setTypeReference(clone);
-					result.getConstraints().add(upperBound);
-					return result;
-				}
-
-				def referClass(ITreeAppendable appendable, EObject ctx, Class<?> clazz, JvmTypeReference... typeArgs) {
-					val ref = ctx.newTypeRef(clazz, typeArgs)
-					if (ref != null) {
-						appendable.serialize(ref, ctx)
-					} else {
-
-						//Class resolution error - error handling required here
-						//A fallback to writing out the fqn of the class
-						appendable.append(clazz.canonicalName)
-					}
-				}
-
-				def serialize(ITreeAppendable appendable, JvmTypeReference ref, EObject ctx) {
-					typeReferenceSerializer.serialize(ref, ctx, appendable)
-				}
-
-				def generateRulePackage(List<QualifiedName> mappedRules) {
-					var fileWriter = new FileWriter(
-						"hu.bme.mit.incquery.cep.casestudy.transaction.transactionpackage".replace(".", "/") +
-							"/TransactionCepPackage.java")
-					fileWriter.append(rulePackageTemplate(mappedRules))
-					fileWriter.close()
-				}
-
-				def rulePackageTemplate(List<QualifiedName> mappedRules) '''
-					package hu.bme.mit.incquery.cep.casestudy.transaction.transactionpackage;
-					
-					import hu.bme.mit.incquery.cep.api.ICepRule;
-					import hu.bme.mit.incquery.cep.casestudy.transaction.rules.R1;
-					
-					import java.util.List;
-					
-					import com.google.common.collect.Lists;
-					
-					public final class TransactionCepPackage implements ICepDomainPackage {
-						private static TransactionCepPackage instance;
-						private List<ICepRule> rules = Lists.newArrayList();
-						
-						public static TransactionCepPackage getInstance() {
-							if (instance == null) {
-								instance = new TransactionRulePackage();
-							}
-							return instance;
-						}
-					
-						private TransactionRulePackage() {
-							rules.add(new R1());
-							«FOR r : mappedRules»
-								rules.add(new «r.lastSegment»());
-							«ENDFOR»
-						}
-						
-						public List<ICepRule> getRules() {
-							return rules;
-						}
-					}
-				'''
-
-				def private isStaticallyBound(
-					TypedParameter parameter,
-					List<StaticBinding> staticBindings
-				) {
-					for (sb : staticBindings) {
-						if(sb.parameter.equals(parameter)) return true
-					}
-					return false
-				}
-
-				def private getJobClassName(Rule rule) {
-					var className = rule.fullyQualifiedName.lastSegment
-					var packageName = rule.fullyQualifiedName.skipLast(1)
-					return packageName.append("jobs").append(className.toFirstUpper + "Job")
-				}
-
-				def private getFqn(ModelElement element, AtomicPatternFqnPurpose purpose) {
-					var className = element.fullyQualifiedName.lastSegment
-					var packageName = element.fullyQualifiedName.skipLast(1)
-					switch (purpose) {
-						case AtomicPatternFqnPurpose.EVENT:
-							return packageName.append("events").append(className.toFirstUpper)
-						case AtomicPatternFqnPurpose.PATTERN:
-							return packageName.append("patterns.atomic").append(className.toFirstUpper + "Pattern")
-					}
-				}
-
-				def private getFqn(ModelElement element) {
-					var className = element.fullyQualifiedName.lastSegment
-					var packageName = element.fullyQualifiedName.skipLast(1)
-
-					switch element {
-						ComplexEventPattern:
-							return packageName.append("patterns.complex").append(className.toFirstUpper + "Pattern")
-						OnAppearRule:
-							if (!element.name.nullOrEmpty) {
-								return packageName.append("rules").append(className.toFirstUpper)
-							} else {
-								lastRule = lastRule + 1
-								return packageName.append("rules").append("Rule" + lastRule)
-							}
-					}
-				}
-			}
+		def rulePackageTemplate(List<QualifiedName> mappedRules) '''
+			package hu.bme.mit.incquery.cep.casestudy.transaction.transactionpackage;
 			
+			import hu.bme.mit.incquery.cep.api.ICepRule;
+			import hu.bme.mit.incquery.cep.casestudy.transaction.rules.R1;
+			
+			import java.util.List;
+			
+			import com.google.common.collect.Lists;
+			
+			public final class TransactionCepPackage implements ICepDomainPackage {
+				private static TransactionCepPackage instance;
+				private List<ICepRule> rules = Lists.newArrayList();
+				
+				public static TransactionCepPackage getInstance() {
+					if (instance == null) {
+						instance = new TransactionRulePackage();
+					}
+					return instance;
+				}
+			
+				private TransactionRulePackage() {
+					rules.add(new R1());
+					«FOR r : mappedRules»
+						rules.add(new «r.lastSegment»());
+					«ENDFOR»
+				}
+				
+				public List<ICepRule> getRules() {
+					return rules;
+				}
+			}
+		'''
+	}
+	

@@ -100,7 +100,6 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
       case EventPatternLanguagePackage.BRANCH_EXPRESSION: return createBranchExpression();
       case EventPatternLanguagePackage.FOLLOWS_OPERATOR: return createFollowsOperator();
       case EventPatternLanguagePackage.FOLLOWS_OPERATOR_NO_TW: return createFollowsOperatorNoTW();
-      case EventPatternLanguagePackage.FOLLOWS_OPERATOR_VIA_TW: return createFollowsOperatorViaTW();
       case EventPatternLanguagePackage.STATIC_BINDING: return createStaticBinding();
       case EventPatternLanguagePackage.STATIC_BINDING_RULE: return createStaticBindingRule();
       case EventPatternLanguagePackage.RANGE_FILTER: return createRangeFilter();
@@ -535,17 +534,6 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
   {
     FollowsOperatorNoTWImpl followsOperatorNoTW = new FollowsOperatorNoTWImpl();
     return followsOperatorNoTW;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FollowsOperatorViaTW createFollowsOperatorViaTW()
-  {
-    FollowsOperatorViaTWImpl followsOperatorViaTW = new FollowsOperatorViaTWImpl();
-    return followsOperatorViaTW;
   }
 
   /**

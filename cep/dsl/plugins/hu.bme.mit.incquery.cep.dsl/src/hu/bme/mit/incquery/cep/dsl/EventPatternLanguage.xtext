@@ -58,7 +58,7 @@ IQPatternEventPattern:
 ComplexEventPattern:
 	'ComplexEvent' name=ID '('parameters=EventPatternParameterList?')' '{'
 		('priority'':' priority=INT)?
-		('definition'':'complexEventExpressions=ComplexEventExpression)?
+		('definition'':'complexEventExpression=ComplexEventExpression)?
 	'}'
 ;
 
@@ -176,7 +176,7 @@ FollowerExpression:
 ;
 
 FollowerEventStructure:
-        InnerBranchExpression | EventTypedParameterWithMultiplicity
+        EventTypedParameterWithMultiplicity //| InnerBranchExpression
 ;
 
 InnerBranchExpression:
@@ -189,7 +189,7 @@ BranchExpression:
 ;
 
 FollowsOperator:
-        FollowsOperatorNoTW | FollowsOperatorViaTW
+        FollowsOperatorNoTW //| FollowsOperatorViaTW
 ;
 
 FollowsOperatorNoTW:
@@ -197,9 +197,11 @@ FollowsOperatorNoTW:
         '->'
 ;
 
-FollowsOperatorViaTW:
-        '-[' timewindow=INT ']->'
-;
+
+
+//FollowsOperatorViaTW:
+//        '-[' timewindow=INT ']->'
+//;
 
 
 

@@ -41,7 +41,7 @@
     <genClasses ecoreClass="EventPatternLanguage.ecore#//ComplexEventPattern">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//ComplexEventPattern/parameters"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//ComplexEventPattern/priority"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//ComplexEventPattern/complexEventExpressions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//ComplexEventPattern/complexEventExpression"/>
     </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//Rule">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//Rule/eventPatterns"/>
@@ -115,9 +115,6 @@
     <genClasses ecoreClass="EventPatternLanguage.ecore#//BranchExpression"/>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowsOperator"/>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowsOperatorNoTW"/>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//FollowsOperatorViaTW">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//FollowsOperatorViaTW/timewindow"/>
-    </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//StaticBinding">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//StaticBinding/parameter"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//StaticBinding/bindingRule"/>

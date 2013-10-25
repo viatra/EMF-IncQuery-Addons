@@ -338,15 +338,6 @@ public interface EventPatternLanguageFactory extends EFactory
   FollowsOperatorNoTW createFollowsOperatorNoTW();
 
   /**
-   * Returns a new object of class '<em>Follows Operator Via TW</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Follows Operator Via TW</em>'.
-   * @generated
-   */
-  FollowsOperatorViaTW createFollowsOperatorViaTW();
-
-  /**
    * Returns a new object of class '<em>Static Binding</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -250,11 +250,6 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
         return createFollowsOperatorNoTWAdapter();
       }
       @Override
-      public Adapter caseFollowsOperatorViaTW(FollowsOperatorViaTW object)
-      {
-        return createFollowsOperatorViaTWAdapter();
-      }
-      @Override
       public Adapter caseStaticBinding(StaticBinding object)
       {
         return createStaticBindingAdapter();
@@ -857,21 +852,6 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFollowsOperatorNoTWAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorViaTW <em>Follows Operator Via TW</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorViaTW
-   * @generated
-   */
-  public Adapter createFollowsOperatorViaTWAdapter()
   {
     return null;
   }

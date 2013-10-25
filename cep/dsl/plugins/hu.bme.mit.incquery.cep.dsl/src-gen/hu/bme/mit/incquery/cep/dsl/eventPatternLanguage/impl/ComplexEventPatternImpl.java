@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ComplexEventPatternImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ComplexEventPatternImpl#getPriority <em>Priority</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ComplexEventPatternImpl#getComplexEventExpressions <em>Complex Event Expressions</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.ComplexEventPatternImpl#getComplexEventExpression <em>Complex Event Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,14 +63,14 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
   protected int priority = PRIORITY_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getComplexEventExpressions() <em>Complex Event Expressions</em>}' containment reference.
+   * The cached value of the '{@link #getComplexEventExpression() <em>Complex Event Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComplexEventExpressions()
+   * @see #getComplexEventExpression()
    * @generated
    * @ordered
    */
-  protected ComplexEventExpression complexEventExpressions;
+  protected ComplexEventExpression complexEventExpression;
 
   /**
    * <!-- begin-user-doc -->
@@ -169,9 +169,9 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
    * <!-- end-user-doc -->
    * @generated
    */
-  public ComplexEventExpression getComplexEventExpressions()
+  public ComplexEventExpression getComplexEventExpression()
   {
-    return complexEventExpressions;
+    return complexEventExpression;
   }
 
   /**
@@ -179,13 +179,13 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetComplexEventExpressions(ComplexEventExpression newComplexEventExpressions, NotificationChain msgs)
+  public NotificationChain basicSetComplexEventExpression(ComplexEventExpression newComplexEventExpression, NotificationChain msgs)
   {
-    ComplexEventExpression oldComplexEventExpressions = complexEventExpressions;
-    complexEventExpressions = newComplexEventExpressions;
+    ComplexEventExpression oldComplexEventExpression = complexEventExpression;
+    complexEventExpression = newComplexEventExpression;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSIONS, oldComplexEventExpressions, newComplexEventExpressions);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION, oldComplexEventExpression, newComplexEventExpression);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -196,20 +196,20 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setComplexEventExpressions(ComplexEventExpression newComplexEventExpressions)
+  public void setComplexEventExpression(ComplexEventExpression newComplexEventExpression)
   {
-    if (newComplexEventExpressions != complexEventExpressions)
+    if (newComplexEventExpression != complexEventExpression)
     {
       NotificationChain msgs = null;
-      if (complexEventExpressions != null)
-        msgs = ((InternalEObject)complexEventExpressions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSIONS, null, msgs);
-      if (newComplexEventExpressions != null)
-        msgs = ((InternalEObject)newComplexEventExpressions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSIONS, null, msgs);
-      msgs = basicSetComplexEventExpressions(newComplexEventExpressions, msgs);
+      if (complexEventExpression != null)
+        msgs = ((InternalEObject)complexEventExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION, null, msgs);
+      if (newComplexEventExpression != null)
+        msgs = ((InternalEObject)newComplexEventExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION, null, msgs);
+      msgs = basicSetComplexEventExpression(newComplexEventExpression, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSIONS, newComplexEventExpressions, newComplexEventExpressions));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION, newComplexEventExpression, newComplexEventExpression));
   }
 
   /**
@@ -224,8 +224,8 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
     {
       case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__PARAMETERS:
         return basicSetParameters(null, msgs);
-      case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSIONS:
-        return basicSetComplexEventExpressions(null, msgs);
+      case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION:
+        return basicSetComplexEventExpression(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -244,8 +244,8 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
         return getParameters();
       case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__PRIORITY:
         return getPriority();
-      case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSIONS:
-        return getComplexEventExpressions();
+      case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION:
+        return getComplexEventExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -266,8 +266,8 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
       case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__PRIORITY:
         setPriority((Integer)newValue);
         return;
-      case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSIONS:
-        setComplexEventExpressions((ComplexEventExpression)newValue);
+      case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION:
+        setComplexEventExpression((ComplexEventExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -289,8 +289,8 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
       case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__PRIORITY:
         setPriority(PRIORITY_EDEFAULT);
         return;
-      case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSIONS:
-        setComplexEventExpressions((ComplexEventExpression)null);
+      case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION:
+        setComplexEventExpression((ComplexEventExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -310,8 +310,8 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
         return parameters != null;
       case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__PRIORITY:
         return priority != PRIORITY_EDEFAULT;
-      case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSIONS:
-        return complexEventExpressions != null;
+      case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION:
+        return complexEventExpression != null;
     }
     return super.eIsSet(featureID);
   }

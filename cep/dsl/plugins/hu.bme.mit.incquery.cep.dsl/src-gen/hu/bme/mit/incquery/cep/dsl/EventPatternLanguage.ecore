@@ -38,7 +38,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" eType="#//EventPatternParameterList"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="complexEventExpressions"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="complexEventExpression"
         eType="#//ComplexEventExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rule" eSuperTypes="#//ModelElement">
@@ -130,16 +130,13 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FollowerEventStructure"/>
-  <eClassifiers xsi:type="ecore:EClass" name="InnerBranchExpression" eSuperTypes="#//FollowerEventStructure">
+  <eClassifiers xsi:type="ecore:EClass" name="InnerBranchExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//BranchExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BranchExpression" eSuperTypes="#//Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="FollowsOperator"/>
   <eClassifiers xsi:type="ecore:EClass" name="FollowsOperatorNoTW" eSuperTypes="#//FollowsOperator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="FollowsOperatorViaTW" eSuperTypes="#//FollowsOperator">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timewindow" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StaticBinding">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="#//TypedParameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bindingRule" eType="#//StaticBindingRule"

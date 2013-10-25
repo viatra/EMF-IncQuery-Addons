@@ -409,20 +409,20 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Keyword cDefinitionKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cComplexEventExpressionsAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cComplexEventExpressionsComplexEventExpressionParserRuleCall_7_2_0 = (RuleCall)cComplexEventExpressionsAssignment_7_2.eContents().get(0);
+		private final Assignment cComplexEventExpressionAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cComplexEventExpressionComplexEventExpressionParserRuleCall_7_2_0 = (RuleCall)cComplexEventExpressionAssignment_7_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//ComplexEventPattern:
 		//
 		//	"ComplexEvent" name=ID "(" parameters=EventPatternParameterList? ")" "{" ("priority" ":" priority=INT)? ("definition"
 		//
-		//	":" complexEventExpressions=ComplexEventExpression)? "}";
+		//	":" complexEventExpression=ComplexEventExpression)? "}";
 		public ParserRule getRule() { return rule; }
 
 		//"ComplexEvent" name=ID "(" parameters=EventPatternParameterList? ")" "{" ("priority" ":" priority=INT)? ("definition"
 		//
-		//":" complexEventExpressions=ComplexEventExpression)? "}"
+		//":" complexEventExpression=ComplexEventExpression)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//"ComplexEvent"
@@ -464,7 +464,7 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		//INT
 		public RuleCall getPriorityINTTerminalRuleCall_6_2_0() { return cPriorityINTTerminalRuleCall_6_2_0; }
 
-		//("definition" ":" complexEventExpressions=ComplexEventExpression)?
+		//("definition" ":" complexEventExpression=ComplexEventExpression)?
 		public Group getGroup_7() { return cGroup_7; }
 
 		//"definition"
@@ -473,11 +473,11 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		//":"
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 
-		//complexEventExpressions=ComplexEventExpression
-		public Assignment getComplexEventExpressionsAssignment_7_2() { return cComplexEventExpressionsAssignment_7_2; }
+		//complexEventExpression=ComplexEventExpression
+		public Assignment getComplexEventExpressionAssignment_7_2() { return cComplexEventExpressionAssignment_7_2; }
 
 		//ComplexEventExpression
-		public RuleCall getComplexEventExpressionsComplexEventExpressionParserRuleCall_7_2_0() { return cComplexEventExpressionsComplexEventExpressionParserRuleCall_7_2_0; }
+		public RuleCall getComplexEventExpressionComplexEventExpressionParserRuleCall_7_2_0() { return cComplexEventExpressionComplexEventExpressionParserRuleCall_7_2_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
@@ -1326,23 +1326,17 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 	public class FollowerEventStructureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FollowerEventStructure");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cInnerBranchExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cEventTypedParameterWithMultiplicityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cEventTypedParameterWithMultiplicityParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//FollowerEventStructure:
+		//FollowerEventStructure: //| InnerBranchExpression
 		//
-		//	InnerBranchExpression | EventTypedParameterWithMultiplicity;
+		//	EventTypedParameterWithMultiplicity;
 		public ParserRule getRule() { return rule; }
 
-		//InnerBranchExpression | EventTypedParameterWithMultiplicity
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//InnerBranchExpression
-		public RuleCall getInnerBranchExpressionParserRuleCall_0() { return cInnerBranchExpressionParserRuleCall_0; }
-
+		////| InnerBranchExpression
+		//
 		//EventTypedParameterWithMultiplicity
-		public RuleCall getEventTypedParameterWithMultiplicityParserRuleCall_1() { return cEventTypedParameterWithMultiplicityParserRuleCall_1; }
+		public RuleCall getEventTypedParameterWithMultiplicityParserRuleCall() { return cEventTypedParameterWithMultiplicityParserRuleCall; }
 	}
 
 	public class InnerBranchExpressionElements extends AbstractParserRuleElementFinder {
@@ -1421,23 +1415,17 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 	public class FollowsOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FollowsOperator");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cFollowsOperatorNoTWParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cFollowsOperatorViaTWParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cFollowsOperatorNoTWParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//FollowsOperator:
+		//FollowsOperator: //| FollowsOperatorViaTW
 		//
-		//	FollowsOperatorNoTW | FollowsOperatorViaTW;
+		//	FollowsOperatorNoTW;
 		public ParserRule getRule() { return rule; }
 
-		//FollowsOperatorNoTW | FollowsOperatorViaTW
-		public Alternatives getAlternatives() { return cAlternatives; }
-
+		////| FollowsOperatorViaTW
+		//
 		//FollowsOperatorNoTW
-		public RuleCall getFollowsOperatorNoTWParserRuleCall_0() { return cFollowsOperatorNoTWParserRuleCall_0; }
-
-		//FollowsOperatorViaTW
-		public RuleCall getFollowsOperatorViaTWParserRuleCall_1() { return cFollowsOperatorViaTWParserRuleCall_1; }
+		public RuleCall getFollowsOperatorNoTWParserRuleCall() { return cFollowsOperatorNoTWParserRuleCall; }
 	}
 
 	public class FollowsOperatorNoTWElements extends AbstractParserRuleElementFinder {
@@ -1461,35 +1449,6 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		public Keyword getHyphenMinusGreaterThanSignKeyword_1() { return cHyphenMinusGreaterThanSignKeyword_1; }
 	}
 
-	public class FollowsOperatorViaTWElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FollowsOperatorViaTW");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHyphenMinusLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cTimewindowAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTimewindowINTTerminalRuleCall_1_0 = (RuleCall)cTimewindowAssignment_1.eContents().get(0);
-		private final Keyword cRightSquareBracketHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		
-		//FollowsOperatorViaTW:
-		//
-		//	"-[" timewindow=INT "]->";
-		public ParserRule getRule() { return rule; }
-
-		//"-[" timewindow=INT "]->"
-		public Group getGroup() { return cGroup; }
-
-		//"-["
-		public Keyword getHyphenMinusLeftSquareBracketKeyword_0() { return cHyphenMinusLeftSquareBracketKeyword_0; }
-
-		//timewindow=INT
-		public Assignment getTimewindowAssignment_1() { return cTimewindowAssignment_1; }
-
-		//INT
-		public RuleCall getTimewindowINTTerminalRuleCall_1_0() { return cTimewindowINTTerminalRuleCall_1_0; }
-
-		//"]->"
-		public Keyword getRightSquareBracketHyphenMinusGreaterThanSignKeyword_2() { return cRightSquareBracketHyphenMinusGreaterThanSignKeyword_2; }
-	}
-
 	public class StaticBindingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StaticBinding");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1499,6 +1458,12 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		private final Assignment cBindingRuleAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cBindingRuleStaticBindingRuleParserRuleCall_1_0 = (RuleCall)cBindingRuleAssignment_1.eContents().get(0);
 		
+		////FollowsOperatorViaTW:
+		//
+		////        '-[' timewindow=INT ']->'
+		//
+		////;
+		//
 		/// *******************************************COMPLEX EVENT EXPRESSIONS******************************************* /
 		//
 		/// *******************************************STATIC BINDING ELEMENTS******************************************* /
@@ -2062,7 +2027,6 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 	private BranchExpressionElements pBranchExpression;
 	private FollowsOperatorElements pFollowsOperator;
 	private FollowsOperatorNoTWElements pFollowsOperatorNoTW;
-	private FollowsOperatorViaTWElements pFollowsOperatorViaTW;
 	private StaticBindingElements pStaticBinding;
 	private StaticBindingRuleElements pStaticBindingRule;
 	private RangeFilterElements pRangeFilter;
@@ -2230,7 +2194,7 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 	//
 	//	"ComplexEvent" name=ID "(" parameters=EventPatternParameterList? ")" "{" ("priority" ":" priority=INT)? ("definition"
 	//
-	//	":" complexEventExpressions=ComplexEventExpression)? "}";
+	//	":" complexEventExpression=ComplexEventExpression)? "}";
 	public ComplexEventPatternElements getComplexEventPatternAccess() {
 		return (pComplexEventPattern != null) ? pComplexEventPattern : (pComplexEventPattern = new ComplexEventPatternElements());
 	}
@@ -2501,9 +2465,9 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		return getFollowerExpressionAccess().getRule();
 	}
 
-	//FollowerEventStructure:
+	//FollowerEventStructure: //| InnerBranchExpression
 	//
-	//	InnerBranchExpression | EventTypedParameterWithMultiplicity;
+	//	EventTypedParameterWithMultiplicity;
 	public FollowerEventStructureElements getFollowerEventStructureAccess() {
 		return (pFollowerEventStructure != null) ? pFollowerEventStructure : (pFollowerEventStructure = new FollowerEventStructureElements());
 	}
@@ -2536,9 +2500,9 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		return getBranchExpressionAccess().getRule();
 	}
 
-	//FollowsOperator:
+	//FollowsOperator: //| FollowsOperatorViaTW
 	//
-	//	FollowsOperatorNoTW | FollowsOperatorViaTW;
+	//	FollowsOperatorNoTW;
 	public FollowsOperatorElements getFollowsOperatorAccess() {
 		return (pFollowsOperator != null) ? pFollowsOperator : (pFollowsOperator = new FollowsOperatorElements());
 	}
@@ -2558,17 +2522,12 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		return getFollowsOperatorNoTWAccess().getRule();
 	}
 
-	//FollowsOperatorViaTW:
+	////FollowsOperatorViaTW:
 	//
-	//	"-[" timewindow=INT "]->";
-	public FollowsOperatorViaTWElements getFollowsOperatorViaTWAccess() {
-		return (pFollowsOperatorViaTW != null) ? pFollowsOperatorViaTW : (pFollowsOperatorViaTW = new FollowsOperatorViaTWElements());
-	}
-	
-	public ParserRule getFollowsOperatorViaTWRule() {
-		return getFollowsOperatorViaTWAccess().getRule();
-	}
-
+	////        '-[' timewindow=INT ']->'
+	//
+	////;
+	//
 	/// *******************************************COMPLEX EVENT EXPRESSIONS******************************************* /
 	//
 	/// *******************************************STATIC BINDING ELEMENTS******************************************* /

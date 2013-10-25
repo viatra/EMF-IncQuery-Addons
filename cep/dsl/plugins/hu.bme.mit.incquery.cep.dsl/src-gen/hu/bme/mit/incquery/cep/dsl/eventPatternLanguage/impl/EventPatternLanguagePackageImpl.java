@@ -25,7 +25,6 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperator;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorNoTW;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorViaTW;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternChangeType;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEventPattern;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.InnerBranchExpression;
@@ -320,13 +319,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * @generated
    */
   private EClass followsOperatorNoTWEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass followsOperatorViaTWEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -710,7 +702,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComplexEventPattern_ComplexEventExpressions()
+  public EReference getComplexEventPattern_ComplexEventExpression()
   {
     return (EReference)complexEventPatternEClass.getEStructuralFeatures().get(2);
   }
@@ -1250,26 +1242,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFollowsOperatorViaTW()
-  {
-    return followsOperatorViaTWEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFollowsOperatorViaTW_Timewindow()
-  {
-    return (EAttribute)followsOperatorViaTWEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getStaticBinding()
   {
     return staticBindingEClass;
@@ -1585,7 +1557,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     complexEventPatternEClass = createEClass(COMPLEX_EVENT_PATTERN);
     createEReference(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__PARAMETERS);
     createEAttribute(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__PRIORITY);
-    createEReference(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSIONS);
+    createEReference(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION);
 
     ruleEClass = createEClass(RULE);
     createEReference(ruleEClass, RULE__EVENT_PATTERNS);
@@ -1665,9 +1637,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     followsOperatorEClass = createEClass(FOLLOWS_OPERATOR);
 
     followsOperatorNoTWEClass = createEClass(FOLLOWS_OPERATOR_NO_TW);
-
-    followsOperatorViaTWEClass = createEClass(FOLLOWS_OPERATOR_VIA_TW);
-    createEAttribute(followsOperatorViaTWEClass, FOLLOWS_OPERATOR_VIA_TW__TIMEWINDOW);
 
     staticBindingEClass = createEClass(STATIC_BINDING);
     createEReference(staticBindingEClass, STATIC_BINDING__PARAMETER);
@@ -1759,10 +1728,8 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     timedMultiplicityExpressionEClass.getESuperTypes().add(this.getAugmentedExpression());
     expressionEClass.getESuperTypes().add(this.getComplexEventExpression());
     followsExpressionEClass.getESuperTypes().add(this.getExpression());
-    innerBranchExpressionEClass.getESuperTypes().add(this.getFollowerEventStructure());
     branchExpressionEClass.getESuperTypes().add(this.getExpression());
     followsOperatorNoTWEClass.getESuperTypes().add(this.getFollowsOperator());
-    followsOperatorViaTWEClass.getESuperTypes().add(this.getFollowsOperator());
     rangeFilterEClass.getESuperTypes().add(this.getStaticBindingRule());
     openOpenEClass.getESuperTypes().add(this.getRange());
     openClosedEClass.getESuperTypes().add(this.getRange());
@@ -1803,7 +1770,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     initEClass(complexEventPatternEClass, ComplexEventPattern.class, "ComplexEventPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComplexEventPattern_Parameters(), this.getEventPatternParameterList(), null, "parameters", null, 0, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getComplexEventPattern_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComplexEventPattern_ComplexEventExpressions(), this.getComplexEventExpression(), null, "complexEventExpressions", null, 0, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComplexEventPattern_ComplexEventExpression(), this.getComplexEventExpression(), null, "complexEventExpression", null, 0, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRule_EventPatterns(), this.getEventPattern(), null, "eventPatterns", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1883,9 +1850,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     initEClass(followsOperatorEClass, FollowsOperator.class, "FollowsOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(followsOperatorNoTWEClass, FollowsOperatorNoTW.class, "FollowsOperatorNoTW", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(followsOperatorViaTWEClass, FollowsOperatorViaTW.class, "FollowsOperatorViaTW", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFollowsOperatorViaTW_Timewindow(), ecorePackage.getEInt(), "timewindow", null, 0, 1, FollowsOperatorViaTW.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(staticBindingEClass, StaticBinding.class, "StaticBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStaticBinding_Parameter(), this.getTypedParameter(), null, "parameter", null, 0, 1, StaticBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

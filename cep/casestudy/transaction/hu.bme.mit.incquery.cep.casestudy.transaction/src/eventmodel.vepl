@@ -11,9 +11,9 @@ AtomicEvent componentA(transactionId : String, timestamp : long, customerId : St
 AtomicEvent componentB(transactionId : String, timestamp : long){
 	source : eventSource
 	staticBindings {
-		if(!(transactionId.equalsIgnoreCase("transaction"))){
-			return false;
-		}
+//		if(!(transactionId.equalsIgnoreCase("transaction"))){
+//			return false;
+//		}
 		return true;
 	}
 }
@@ -27,9 +27,15 @@ IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:in
 	iqChangeType : NEW_MATCH_FOUND
 }
 
+
 ComplexEvent compoundTransactionEvent(a:componentA, b:componentB, c:componentC){
-	definition : (a(tId, _ts, cId) -[5000]-> b(tId, _ts) -[7500]-> c(tId, _ts, sId))[1100]
+	definition : (a(tId, _ts, cId) -> b(tId, _ts) -> c(tId, _ts, sId))[1100]
 }
+
+ComplexEvent compoundTransactionEvent2(a:componentA, b:componentB, c:componentC){
+	definition : (a -> b -> c)[1200]
+}
+
 
 RuleOnAppear r1 {
 	events: compoundTransactionEvent
