@@ -39,11 +39,10 @@ Roadmap/TODO
 ------------
 
 **Latest enhancements:**
+* 10.23. Generation of patterns, event types, rules, jobs from the DSL
 * 10.18. DSL improvements: fixed package handling, referrable EMF-IncQuery patterns, minimal codegen
 * 10.17. Added case study projects
 * 10.12. DSL improvements: branched expressions, rules for associating patterns with actions, removed annotations
-* 09.06. Changes in the action descriptions of patterns
-* 08.12. Noise filtering is now implemented via the IMMEDIATE and STRICT_IMMEDIATE EventProcessingContexts
 
 **In progress:**
 * define the language for modeling event patterns over EMF models
