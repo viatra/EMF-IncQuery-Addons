@@ -17,10 +17,12 @@
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
         eType="#//ComplexOperator"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="timewindow" eType="#//Timewindow"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globalTimewindow" eType="#//GlobalTimewindow"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compositionEvents" upperBound="-1"
         eType="#//EventPattern" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partialTimeWindows" upperBound="-1"
+        eType="#//PartialTimewindow" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ComplexOperator">
     <eLiterals name="ORDERED"/>
@@ -39,4 +41,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PartialTimewindow" eSuperTypes="#//Timewindow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stopEvent" lowerBound="1"
+        eType="#//EventPattern"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="checkEvents" upperBound="-1"
+        eType="#//EventPattern"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startEvent" lowerBound="1"
+        eType="#//EventPattern"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalTimewindow" eSuperTypes="#//Timewindow"/>
 </ecore:EPackage>

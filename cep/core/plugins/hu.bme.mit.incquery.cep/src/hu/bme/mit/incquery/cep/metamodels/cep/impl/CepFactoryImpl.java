@@ -61,6 +61,8 @@ public class CepFactoryImpl extends EFactoryImpl implements CepFactory {
 			case CepPackage.COMPLEX_EVENT_PATTERN: return createComplexEventPattern();
 			case CepPackage.EVENT: return createEvent();
 			case CepPackage.TIMEWINDOW: return createTimewindow();
+			case CepPackage.PARTIAL_TIMEWINDOW: return createPartialTimewindow();
+			case CepPackage.GLOBAL_TIMEWINDOW: return createGlobalTimewindow();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -134,6 +136,26 @@ public class CepFactoryImpl extends EFactoryImpl implements CepFactory {
 	public Timewindow createTimewindow() {
 		TimewindowImpl timewindow = new TimewindowImpl();
 		return timewindow;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartialTimewindow createPartialTimewindow() {
+		PartialTimewindowImpl partialTimewindow = new PartialTimewindowImpl();
+		return partialTimewindow;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlobalTimewindow createGlobalTimewindow() {
+		GlobalTimewindowImpl globalTimewindow = new GlobalTimewindowImpl();
+		return globalTimewindow;
 	}
 
 	/**

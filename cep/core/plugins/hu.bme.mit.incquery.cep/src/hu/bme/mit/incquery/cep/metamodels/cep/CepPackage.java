@@ -231,13 +231,13 @@ public interface CepPackage extends EPackage {
 	int COMPLEX_EVENT_PATTERN__OPERATOR = EVENT_PATTERN_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Timewindow</b></em>' containment reference.
+	 * The feature id for the '<em><b>Global Timewindow</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_EVENT_PATTERN__TIMEWINDOW = EVENT_PATTERN_FEATURE_COUNT + 1;
+	int COMPLEX_EVENT_PATTERN__GLOBAL_TIMEWINDOW = EVENT_PATTERN_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Composition Events</b></em>' containment reference list.
@@ -249,13 +249,22 @@ public interface CepPackage extends EPackage {
 	int COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS = EVENT_PATTERN_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Partial Time Windows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_EVENT_PATTERN__PARTIAL_TIME_WINDOWS = EVENT_PATTERN_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Complex Event Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_EVENT_PATTERN_FEATURE_COUNT = EVENT_PATTERN_FEATURE_COUNT + 3;
+	int COMPLEX_EVENT_PATTERN_FEATURE_COUNT = EVENT_PATTERN_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventImpl <em>Event</em>}' class.
@@ -351,6 +360,89 @@ public interface CepPackage extends EPackage {
 	int TIMEWINDOW_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.PartialTimewindowImpl <em>Partial Timewindow</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.impl.PartialTimewindowImpl
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.impl.CepPackageImpl#getPartialTimewindow()
+	 * @generated
+	 */
+	int PARTIAL_TIMEWINDOW = 6;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTIAL_TIMEWINDOW__LENGTH = TIMEWINDOW__LENGTH;
+
+	/**
+	 * The feature id for the '<em><b>Stop Event</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTIAL_TIMEWINDOW__STOP_EVENT = TIMEWINDOW_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Check Events</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTIAL_TIMEWINDOW__CHECK_EVENTS = TIMEWINDOW_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Start Event</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTIAL_TIMEWINDOW__START_EVENT = TIMEWINDOW_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Partial Timewindow</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTIAL_TIMEWINDOW_FEATURE_COUNT = TIMEWINDOW_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.GlobalTimewindowImpl <em>Global Timewindow</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.impl.GlobalTimewindowImpl
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.impl.CepPackageImpl#getGlobalTimewindow()
+	 * @generated
+	 */
+	int GLOBAL_TIMEWINDOW = 7;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GLOBAL_TIMEWINDOW__LENGTH = TIMEWINDOW__LENGTH;
+
+	/**
+	 * The number of structural features of the '<em>Global Timewindow</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GLOBAL_TIMEWINDOW_FEATURE_COUNT = TIMEWINDOW_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator <em>Complex Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -358,7 +450,7 @@ public interface CepPackage extends EPackage {
 	 * @see hu.bme.mit.incquery.cep.metamodels.cep.impl.CepPackageImpl#getComplexOperator()
 	 * @generated
 	 */
-	int COMPLEX_OPERATOR = 6;
+	int COMPLEX_OPERATOR = 8;
 
 
 	/**
@@ -458,15 +550,15 @@ public interface CepPackage extends EPackage {
 	EAttribute getComplexEventPattern_Operator();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern#getTimewindow <em>Timewindow</em>}'.
+	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern#getGlobalTimewindow <em>Global Timewindow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Timewindow</em>'.
-	 * @see hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern#getTimewindow()
+	 * @return the meta object for the containment reference '<em>Global Timewindow</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern#getGlobalTimewindow()
 	 * @see #getComplexEventPattern()
 	 * @generated
 	 */
-	EReference getComplexEventPattern_Timewindow();
+	EReference getComplexEventPattern_GlobalTimewindow();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern#getCompositionEvents <em>Composition Events</em>}'.
@@ -478,6 +570,17 @@ public interface CepPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComplexEventPattern_CompositionEvents();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern#getPartialTimeWindows <em>Partial Time Windows</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Partial Time Windows</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern#getPartialTimeWindows()
+	 * @see #getComplexEventPattern()
+	 * @generated
+	 */
+	EReference getComplexEventPattern_PartialTimeWindows();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.cep.Event <em>Event</em>}'.
@@ -552,6 +655,59 @@ public interface CepPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTimewindow_Length();
+
+	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.cep.PartialTimewindow <em>Partial Timewindow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Partial Timewindow</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.PartialTimewindow
+	 * @generated
+	 */
+	EClass getPartialTimewindow();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.cep.PartialTimewindow#getStopEvent <em>Stop Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Stop Event</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.PartialTimewindow#getStopEvent()
+	 * @see #getPartialTimewindow()
+	 * @generated
+	 */
+	EReference getPartialTimewindow_StopEvent();
+
+	/**
+	 * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.cep.metamodels.cep.PartialTimewindow#getCheckEvents <em>Check Events</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Check Events</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.PartialTimewindow#getCheckEvents()
+	 * @see #getPartialTimewindow()
+	 * @generated
+	 */
+	EReference getPartialTimewindow_CheckEvents();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.metamodels.cep.PartialTimewindow#getStartEvent <em>Start Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Start Event</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.PartialTimewindow#getStartEvent()
+	 * @see #getPartialTimewindow()
+	 * @generated
+	 */
+	EReference getPartialTimewindow_StartEvent();
+
+	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.metamodels.cep.GlobalTimewindow <em>Global Timewindow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Global Timewindow</em>'.
+	 * @see hu.bme.mit.incquery.cep.metamodels.cep.GlobalTimewindow
+	 * @generated
+	 */
+	EClass getGlobalTimewindow();
 
 	/**
 	 * Returns the meta object for enum '{@link hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator <em>Complex Operator</em>}'.
@@ -664,12 +820,12 @@ public interface CepPackage extends EPackage {
 		EAttribute COMPLEX_EVENT_PATTERN__OPERATOR = eINSTANCE.getComplexEventPattern_Operator();
 
 		/**
-		 * The meta object literal for the '<em><b>Timewindow</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Global Timewindow</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPLEX_EVENT_PATTERN__TIMEWINDOW = eINSTANCE.getComplexEventPattern_Timewindow();
+		EReference COMPLEX_EVENT_PATTERN__GLOBAL_TIMEWINDOW = eINSTANCE.getComplexEventPattern_GlobalTimewindow();
 
 		/**
 		 * The meta object literal for the '<em><b>Composition Events</b></em>' containment reference list feature.
@@ -678,6 +834,14 @@ public interface CepPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS = eINSTANCE.getComplexEventPattern_CompositionEvents();
+
+		/**
+		 * The meta object literal for the '<em><b>Partial Time Windows</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPLEX_EVENT_PATTERN__PARTIAL_TIME_WINDOWS = eINSTANCE.getComplexEventPattern_PartialTimeWindows();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.EventImpl <em>Event</em>}' class.
@@ -740,6 +904,50 @@ public interface CepPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TIMEWINDOW__LENGTH = eINSTANCE.getTimewindow_Length();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.PartialTimewindowImpl <em>Partial Timewindow</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.incquery.cep.metamodels.cep.impl.PartialTimewindowImpl
+		 * @see hu.bme.mit.incquery.cep.metamodels.cep.impl.CepPackageImpl#getPartialTimewindow()
+		 * @generated
+		 */
+		EClass PARTIAL_TIMEWINDOW = eINSTANCE.getPartialTimewindow();
+
+		/**
+		 * The meta object literal for the '<em><b>Stop Event</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTIAL_TIMEWINDOW__STOP_EVENT = eINSTANCE.getPartialTimewindow_StopEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Check Events</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTIAL_TIMEWINDOW__CHECK_EVENTS = eINSTANCE.getPartialTimewindow_CheckEvents();
+
+		/**
+		 * The meta object literal for the '<em><b>Start Event</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTIAL_TIMEWINDOW__START_EVENT = eINSTANCE.getPartialTimewindow_StartEvent();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.GlobalTimewindowImpl <em>Global Timewindow</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.incquery.cep.metamodels.cep.impl.GlobalTimewindowImpl
+		 * @see hu.bme.mit.incquery.cep.metamodels.cep.impl.CepPackageImpl#getGlobalTimewindow()
+		 * @generated
+		 */
+		EClass GLOBAL_TIMEWINDOW = eINSTANCE.getGlobalTimewindow();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator <em>Complex Operator</em>}' enum.

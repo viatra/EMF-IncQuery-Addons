@@ -489,39 +489,31 @@ ruleAtomicEventPattern returns [EObject current=null]
 	}
 
 )
-))?(	otherlv_9='staticBinding' 
+))?(	otherlv_9='staticBindings' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getAtomicEventPatternAccess().getStaticBindingKeyword_7_0());
-    }
-	otherlv_10='{' 
-    {
-    	newLeafNode(otherlv_10, grammarAccess.getAtomicEventPatternAccess().getLeftCurlyBracketKeyword_7_1());
+    	newLeafNode(otherlv_9, grammarAccess.getAtomicEventPatternAccess().getStaticBindingsKeyword_7_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAtomicEventPatternAccess().getStaticBindingsStaticBindingParserRuleCall_7_2_0()); 
+	        newCompositeNode(grammarAccess.getAtomicEventPatternAccess().getStaticBindingsXBlockExpressionParserRuleCall_7_1_0()); 
 	    }
-		lv_staticBindings_11_0=ruleStaticBinding		{
+		lv_staticBindings_10_0=ruleXBlockExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAtomicEventPatternRule());
 	        }
-       		add(
+       		set(
        			$current, 
        			"staticBindings",
-        		lv_staticBindings_11_0, 
-        		"StaticBinding");
+        		lv_staticBindings_10_0, 
+        		"XBlockExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_12='}' 
+))?	otherlv_11='}' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getAtomicEventPatternAccess().getRightCurlyBracketKeyword_7_3());
-    }
-)?	otherlv_13='}' 
-    {
-    	newLeafNode(otherlv_13, grammarAccess.getAtomicEventPatternAccess().getRightCurlyBracketKeyword_8());
+    	newLeafNode(otherlv_11, grammarAccess.getAtomicEventPatternAccess().getRightCurlyBracketKeyword_8());
     }
 )
 ;
@@ -2389,56 +2381,6 @@ ruleFollowsOperatorViaTW returns [EObject current=null]
 ;
 
 
-
-
-
-// Entry rule entryRuleStaticBinding
-entryRuleStaticBinding returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getStaticBindingRule()); }
-	 iv_ruleStaticBinding=ruleStaticBinding 
-	 { $current=$iv_ruleStaticBinding.current; } 
-	 EOF 
-;
-
-// Rule StaticBinding
-ruleStaticBinding returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getStaticBindingRule());
-	        }
-        }
-	otherlv_0=RULE_ID
-	{
-		newLeafNode(otherlv_0, grammarAccess.getStaticBindingAccess().getParameterTypedParameterCrossReference_0_0()); 
-	}
-
-)
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getStaticBindingAccess().getBindingRuleStaticBindingRuleParserRuleCall_1_0()); 
-	    }
-		lv_bindingRule_1_0=ruleStaticBindingRule		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getStaticBindingRule());
-	        }
-       		set(
-       			$current, 
-       			"bindingRule",
-        		lv_bindingRule_1_0, 
-        		"StaticBindingRule");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-;
 
 
 

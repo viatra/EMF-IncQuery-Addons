@@ -9,7 +9,9 @@ import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
+import hu.bme.mit.incquery.cep.metamodels.cep.GlobalTimewindow;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
+import hu.bme.mit.incquery.cep.metamodels.cep.PartialTimewindow;
 import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
 
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmPackage;
@@ -73,6 +75,20 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * @generated
 	 */
 	private EClass timewindowEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass partialTimewindowEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass globalTimewindowEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,7 +249,7 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComplexEventPattern_Timewindow() {
+	public EReference getComplexEventPattern_GlobalTimewindow() {
 		return (EReference)complexEventPatternEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -244,6 +260,15 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 */
 	public EReference getComplexEventPattern_CompositionEvents() {
 		return (EReference)complexEventPatternEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComplexEventPattern_PartialTimeWindows() {
+		return (EReference)complexEventPatternEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -314,6 +339,51 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPartialTimewindow() {
+		return partialTimewindowEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPartialTimewindow_StopEvent() {
+		return (EReference)partialTimewindowEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPartialTimewindow_CheckEvents() {
+		return (EReference)partialTimewindowEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPartialTimewindow_StartEvent() {
+		return (EReference)partialTimewindowEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGlobalTimewindow() {
+		return globalTimewindowEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getComplexOperator() {
 		return complexOperatorEEnum;
 	}
@@ -357,8 +427,9 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 
 		complexEventPatternEClass = createEClass(COMPLEX_EVENT_PATTERN);
 		createEAttribute(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__OPERATOR);
-		createEReference(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__TIMEWINDOW);
+		createEReference(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__GLOBAL_TIMEWINDOW);
 		createEReference(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS);
+		createEReference(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__PARTIAL_TIME_WINDOWS);
 
 		eventEClass = createEClass(EVENT);
 		createEAttribute(eventEClass, EVENT__TYPE);
@@ -369,6 +440,13 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 
 		timewindowEClass = createEClass(TIMEWINDOW);
 		createEAttribute(timewindowEClass, TIMEWINDOW__LENGTH);
+
+		partialTimewindowEClass = createEClass(PARTIAL_TIMEWINDOW);
+		createEReference(partialTimewindowEClass, PARTIAL_TIMEWINDOW__STOP_EVENT);
+		createEReference(partialTimewindowEClass, PARTIAL_TIMEWINDOW__CHECK_EVENTS);
+		createEReference(partialTimewindowEClass, PARTIAL_TIMEWINDOW__START_EVENT);
+
+		globalTimewindowEClass = createEClass(GLOBAL_TIMEWINDOW);
 
 		// Create enums
 		complexOperatorEEnum = createEEnum(COMPLEX_OPERATOR);
@@ -407,6 +485,8 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		// Add supertypes to classes
 		atomicEventPatternEClass.getESuperTypes().add(this.getEventPattern());
 		complexEventPatternEClass.getESuperTypes().add(this.getEventPattern());
+		partialTimewindowEClass.getESuperTypes().add(this.getTimewindow());
+		globalTimewindowEClass.getESuperTypes().add(this.getTimewindow());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(eventPatternEClass, EventPattern.class, "EventPattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -420,8 +500,9 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 
 		initEClass(complexEventPatternEClass, ComplexEventPattern.class, "ComplexEventPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComplexEventPattern_Operator(), this.getComplexOperator(), "operator", null, 1, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComplexEventPattern_Timewindow(), this.getTimewindow(), null, "timewindow", null, 0, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComplexEventPattern_GlobalTimewindow(), this.getGlobalTimewindow(), null, "globalTimewindow", null, 0, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComplexEventPattern_CompositionEvents(), this.getEventPattern(), null, "compositionEvents", null, 0, -1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComplexEventPattern_PartialTimeWindows(), this.getPartialTimewindow(), null, "partialTimeWindows", null, 0, -1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(complexEventPatternEClass, null, "addCompositionEventPattern", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEventPattern(), "compositionEventPattern", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -435,6 +516,13 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 
 		initEClass(timewindowEClass, Timewindow.class, "Timewindow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimewindow_Length(), ecorePackage.getELong(), "length", null, 1, 1, Timewindow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(partialTimewindowEClass, PartialTimewindow.class, "PartialTimewindow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPartialTimewindow_StopEvent(), this.getEventPattern(), null, "stopEvent", null, 1, 1, PartialTimewindow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPartialTimewindow_CheckEvents(), this.getEventPattern(), null, "checkEvents", null, 0, -1, PartialTimewindow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPartialTimewindow_StartEvent(), this.getEventPattern(), null, "startEvent", null, 1, 1, PartialTimewindow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(globalTimewindowEClass, GlobalTimewindow.class, "GlobalTimewindow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(complexOperatorEEnum, ComplexOperator.class, "ComplexOperator");

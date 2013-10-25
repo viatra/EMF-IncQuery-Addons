@@ -24,8 +24,9 @@
     </genClasses>
     <genClasses ecoreClass="CEPMeta.ecore#//ComplexEventPattern">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CEPMeta.ecore#//ComplexEventPattern/operator"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//ComplexEventPattern/timewindow"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//ComplexEventPattern/globalTimewindow"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//ComplexEventPattern/compositionEvents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//ComplexEventPattern/partialTimeWindows"/>
       <genOperations ecoreOperation="CEPMeta.ecore#//ComplexEventPattern/addCompositionEventPattern">
         <genParameters ecoreParameter="CEPMeta.ecore#//ComplexEventPattern/addCompositionEventPattern/compositionEventPattern"/>
       </genOperations>
@@ -39,6 +40,12 @@
     <genClasses ecoreClass="CEPMeta.ecore#//Timewindow">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CEPMeta.ecore#//Timewindow/length"/>
     </genClasses>
+    <genClasses ecoreClass="CEPMeta.ecore#//PartialTimewindow">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//PartialTimewindow/stopEvent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//PartialTimewindow/checkEvents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CEPMeta.ecore#//PartialTimewindow/startEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="CEPMeta.ecore#//GlobalTimewindow"/>
   </genPackages>
   <genPackages prefix="Internalsm" basePackage="hu.bme.mit.incquery.cep.metamodels"
       resource="XML" disposableProviderFactory="true" ecorePackage="InternalSM.ecore#/">

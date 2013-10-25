@@ -222,23 +222,29 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		private final CrossReference cSourceSourceCrossReference_6_2_0 = (CrossReference)cSourceAssignment_6_2.eContents().get(0);
 		private final RuleCall cSourceSourceIDTerminalRuleCall_6_2_0_1 = (RuleCall)cSourceSourceCrossReference_6_2_0.eContents().get(1);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cStaticBindingKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cStaticBindingsAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cStaticBindingsStaticBindingParserRuleCall_7_2_0 = (RuleCall)cStaticBindingsAssignment_7_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7_3 = (Keyword)cGroup_7.eContents().get(3);
+		private final Keyword cStaticBindingsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cStaticBindingsAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cStaticBindingsXBlockExpressionParserRuleCall_7_1_0 = (RuleCall)cStaticBindingsAssignment_7_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//AtomicEventPattern:
 		//
-		//	"AtomicEvent" name=ID "(" parameters=TypedParameterList? ")" "{" ("source" ":" source=[Source])? ("staticBinding" "{"
+		//	"AtomicEvent" name=ID "(" parameters=TypedParameterList? ")" "{" ("source" ":" source=[Source])? //		('staticBinding' '{'
 		//
-		//	staticBindings+=StaticBinding* "}")? "}";
+		//	//			staticBindings += StaticBinding*
+		//
+		//	//		'}')?
+		//
+		//	("staticBindings" staticBindings=XBlockExpression)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//"AtomicEvent" name=ID "(" parameters=TypedParameterList? ")" "{" ("source" ":" source=[Source])? ("staticBinding" "{"
+		//"AtomicEvent" name=ID "(" parameters=TypedParameterList? ")" "{" ("source" ":" source=[Source])? //		('staticBinding' '{'
 		//
-		//staticBindings+=StaticBinding* "}")? "}"
+		////			staticBindings += StaticBinding*
+		//
+		////		'}')?
+		//
+		//("staticBindings" staticBindings=XBlockExpression)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//"AtomicEvent"
@@ -283,23 +289,17 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		//ID
 		public RuleCall getSourceSourceIDTerminalRuleCall_6_2_0_1() { return cSourceSourceIDTerminalRuleCall_6_2_0_1; }
 
-		//("staticBinding" "{" staticBindings+=StaticBinding* "}")?
+		//("staticBindings" staticBindings=XBlockExpression)?
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"staticBinding"
-		public Keyword getStaticBindingKeyword_7_0() { return cStaticBindingKeyword_7_0; }
+		//"staticBindings"
+		public Keyword getStaticBindingsKeyword_7_0() { return cStaticBindingsKeyword_7_0; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
+		//staticBindings=XBlockExpression
+		public Assignment getStaticBindingsAssignment_7_1() { return cStaticBindingsAssignment_7_1; }
 
-		//staticBindings+=StaticBinding*
-		public Assignment getStaticBindingsAssignment_7_2() { return cStaticBindingsAssignment_7_2; }
-
-		//StaticBinding
-		public RuleCall getStaticBindingsStaticBindingParserRuleCall_7_2_0() { return cStaticBindingsStaticBindingParserRuleCall_7_2_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_7_3() { return cRightCurlyBracketKeyword_7_3; }
+		//XBlockExpression
+		public RuleCall getStaticBindingsXBlockExpressionParserRuleCall_7_1_0() { return cStaticBindingsXBlockExpressionParserRuleCall_7_1_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
@@ -2198,9 +2198,13 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 	//AtomicEventPattern:
 	//
-	//	"AtomicEvent" name=ID "(" parameters=TypedParameterList? ")" "{" ("source" ":" source=[Source])? ("staticBinding" "{"
+	//	"AtomicEvent" name=ID "(" parameters=TypedParameterList? ")" "{" ("source" ":" source=[Source])? //		('staticBinding' '{'
 	//
-	//	staticBindings+=StaticBinding* "}")? "}";
+	//	//			staticBindings += StaticBinding*
+	//
+	//	//		'}')?
+	//
+	//	("staticBindings" staticBindings=XBlockExpression)? "}";
 	public AtomicEventPatternElements getAtomicEventPatternAccess() {
 		return (pAtomicEventPattern != null) ? pAtomicEventPattern : (pAtomicEventPattern = new AtomicEventPatternElements());
 	}

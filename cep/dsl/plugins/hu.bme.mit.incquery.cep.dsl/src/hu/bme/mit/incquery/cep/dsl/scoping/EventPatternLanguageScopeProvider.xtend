@@ -3,6 +3,13 @@
  */
 package hu.bme.mit.incquery.cep.dsl.scoping
 
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtext.scoping.IScope
+import org.eclipse.xtext.scoping.Scopes
+import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
+import org.eclipse.xtext.xbase.XExpression
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern
+
 /**
  * This class contains custom scoping description.
  * 
@@ -10,6 +17,9 @@ package hu.bme.mit.incquery.cep.dsl.scoping
  * on how and when to use it 
  *
  */
-class EventPatternLanguageScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
+class EventPatternLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
 
+	def IScope scope_LocalVariable(XExpression staticBinding, EReference eReference) {
+		Scopes::scopeFor((staticBinding.eContainer as AtomicEventPattern).parameters.parameters)
+	}
 }

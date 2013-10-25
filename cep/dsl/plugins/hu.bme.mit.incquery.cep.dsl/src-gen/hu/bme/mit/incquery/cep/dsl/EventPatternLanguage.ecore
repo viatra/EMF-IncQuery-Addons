@@ -26,8 +26,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicEventPattern" eSuperTypes="#//AbstractAtomicEventPattern">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Source"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="staticBindings" upperBound="-1"
-        eType="#//StaticBinding" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="staticBindings" eType="ecore:EClass ../../../../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IQPatternEventPattern" eSuperTypes="#//AbstractAtomicEventPattern">
     <eStructuralFeatures xsi:type="ecore:EReference" name="iqPatternRef" eType="#//ParametrizedIncQueryPatternReference"

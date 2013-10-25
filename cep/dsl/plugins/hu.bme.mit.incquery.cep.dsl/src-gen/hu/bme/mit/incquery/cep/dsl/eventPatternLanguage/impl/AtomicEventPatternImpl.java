@@ -5,22 +5,16 @@ package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Source;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.StaticBinding;
-
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,14 +43,14 @@ public class AtomicEventPatternImpl extends AbstractAtomicEventPatternImpl imple
   protected Source source;
 
   /**
-   * The cached value of the '{@link #getStaticBindings() <em>Static Bindings</em>}' containment reference list.
+   * The cached value of the '{@link #getStaticBindings() <em>Static Bindings</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getStaticBindings()
    * @generated
    * @ordered
    */
-  protected EList<StaticBinding> staticBindings;
+  protected XExpression staticBindings;
 
   /**
    * <!-- begin-user-doc -->
@@ -127,13 +121,47 @@ public class AtomicEventPatternImpl extends AbstractAtomicEventPatternImpl imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StaticBinding> getStaticBindings()
+  public XExpression getStaticBindings()
   {
-    if (staticBindings == null)
-    {
-      staticBindings = new EObjectContainmentEList<StaticBinding>(StaticBinding.class, this, EventPatternLanguagePackage.ATOMIC_EVENT_PATTERN__STATIC_BINDINGS);
-    }
     return staticBindings;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStaticBindings(XExpression newStaticBindings, NotificationChain msgs)
+  {
+    XExpression oldStaticBindings = staticBindings;
+    staticBindings = newStaticBindings;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.ATOMIC_EVENT_PATTERN__STATIC_BINDINGS, oldStaticBindings, newStaticBindings);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStaticBindings(XExpression newStaticBindings)
+  {
+    if (newStaticBindings != staticBindings)
+    {
+      NotificationChain msgs = null;
+      if (staticBindings != null)
+        msgs = ((InternalEObject)staticBindings).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.ATOMIC_EVENT_PATTERN__STATIC_BINDINGS, null, msgs);
+      if (newStaticBindings != null)
+        msgs = ((InternalEObject)newStaticBindings).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventPatternLanguagePackage.ATOMIC_EVENT_PATTERN__STATIC_BINDINGS, null, msgs);
+      msgs = basicSetStaticBindings(newStaticBindings, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.ATOMIC_EVENT_PATTERN__STATIC_BINDINGS, newStaticBindings, newStaticBindings));
   }
 
   /**
@@ -147,7 +175,7 @@ public class AtomicEventPatternImpl extends AbstractAtomicEventPatternImpl imple
     switch (featureID)
     {
       case EventPatternLanguagePackage.ATOMIC_EVENT_PATTERN__STATIC_BINDINGS:
-        return ((InternalEList<?>)getStaticBindings()).basicRemove(otherEnd, msgs);
+        return basicSetStaticBindings(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -176,7 +204,6 @@ public class AtomicEventPatternImpl extends AbstractAtomicEventPatternImpl imple
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -186,8 +213,7 @@ public class AtomicEventPatternImpl extends AbstractAtomicEventPatternImpl imple
         setSource((Source)newValue);
         return;
       case EventPatternLanguagePackage.ATOMIC_EVENT_PATTERN__STATIC_BINDINGS:
-        getStaticBindings().clear();
-        getStaticBindings().addAll((Collection<? extends StaticBinding>)newValue);
+        setStaticBindings((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -207,7 +233,7 @@ public class AtomicEventPatternImpl extends AbstractAtomicEventPatternImpl imple
         setSource((Source)null);
         return;
       case EventPatternLanguagePackage.ATOMIC_EVENT_PATTERN__STATIC_BINDINGS:
-        getStaticBindings().clear();
+        setStaticBindings((XExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -226,7 +252,7 @@ public class AtomicEventPatternImpl extends AbstractAtomicEventPatternImpl imple
       case EventPatternLanguagePackage.ATOMIC_EVENT_PATTERN__SOURCE:
         return source != null;
       case EventPatternLanguagePackage.ATOMIC_EVENT_PATTERN__STATIC_BINDINGS:
-        return staticBindings != null && !staticBindings.isEmpty();
+        return staticBindings != null;
     }
     return super.eIsSet(featureID);
   }

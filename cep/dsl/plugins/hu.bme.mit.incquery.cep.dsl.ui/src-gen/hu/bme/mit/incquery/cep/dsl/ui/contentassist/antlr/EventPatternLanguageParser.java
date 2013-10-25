@@ -299,7 +299,7 @@ public class EventPatternLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicEventPatternAccess().getNameAssignment_1(), "rule__AtomicEventPattern__NameAssignment_1");
 					put(grammarAccess.getAtomicEventPatternAccess().getParametersAssignment_3(), "rule__AtomicEventPattern__ParametersAssignment_3");
 					put(grammarAccess.getAtomicEventPatternAccess().getSourceAssignment_6_2(), "rule__AtomicEventPattern__SourceAssignment_6_2");
-					put(grammarAccess.getAtomicEventPatternAccess().getStaticBindingsAssignment_7_2(), "rule__AtomicEventPattern__StaticBindingsAssignment_7_2");
+					put(grammarAccess.getAtomicEventPatternAccess().getStaticBindingsAssignment_7_1(), "rule__AtomicEventPattern__StaticBindingsAssignment_7_1");
 					put(grammarAccess.getIQPatternEventPatternAccess().getNameAssignment_1(), "rule__IQPatternEventPattern__NameAssignment_1");
 					put(grammarAccess.getIQPatternEventPatternAccess().getParametersAssignment_3(), "rule__IQPatternEventPattern__ParametersAssignment_3");
 					put(grammarAccess.getIQPatternEventPatternAccess().getIqPatternRefAssignment_8(), "rule__IQPatternEventPattern__IqPatternRefAssignment_8");

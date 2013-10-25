@@ -6,7 +6,8 @@ import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
-import hu.bme.mit.incquery.cep.metamodels.cep.Timewindow;
+import hu.bme.mit.incquery.cep.metamodels.cep.GlobalTimewindow;
+import hu.bme.mit.incquery.cep.metamodels.cep.PartialTimewindow;
 
 import java.util.Collection;
 
@@ -31,8 +32,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl#getOperator <em>Operator</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl#getTimewindow <em>Timewindow</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl#getGlobalTimewindow <em>Global Timewindow</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl#getCompositionEvents <em>Composition Events</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl#getPartialTimeWindows <em>Partial Time Windows</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,14 +62,14 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 	protected ComplexOperator operator = OPERATOR_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTimewindow() <em>Timewindow</em>}' containment reference.
+	 * The cached value of the '{@link #getGlobalTimewindow() <em>Global Timewindow</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTimewindow()
+	 * @see #getGlobalTimewindow()
 	 * @generated
 	 * @ordered
 	 */
-	protected Timewindow timewindow;
+	protected GlobalTimewindow globalTimewindow;
 
 	/**
 	 * The cached value of the '{@link #getCompositionEvents() <em>Composition Events</em>}' containment reference list.
@@ -78,6 +80,16 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 	 * @ordered
 	 */
 	protected EList<EventPattern> compositionEvents;
+
+	/**
+	 * The cached value of the '{@link #getPartialTimeWindows() <em>Partial Time Windows</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartialTimeWindows()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PartialTimewindow> partialTimeWindows;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,8 +136,8 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Timewindow getTimewindow() {
-		return timewindow;
+	public GlobalTimewindow getGlobalTimewindow() {
+		return globalTimewindow;
 	}
 
 	/**
@@ -133,11 +145,11 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTimewindow(Timewindow newTimewindow, NotificationChain msgs) {
-		Timewindow oldTimewindow = timewindow;
-		timewindow = newTimewindow;
+	public NotificationChain basicSetGlobalTimewindow(GlobalTimewindow newGlobalTimewindow, NotificationChain msgs) {
+		GlobalTimewindow oldGlobalTimewindow = globalTimewindow;
+		globalTimewindow = newGlobalTimewindow;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW, oldTimewindow, newTimewindow);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CepPackage.COMPLEX_EVENT_PATTERN__GLOBAL_TIMEWINDOW, oldGlobalTimewindow, newGlobalTimewindow);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -148,18 +160,18 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTimewindow(Timewindow newTimewindow) {
-		if (newTimewindow != timewindow) {
+	public void setGlobalTimewindow(GlobalTimewindow newGlobalTimewindow) {
+		if (newGlobalTimewindow != globalTimewindow) {
 			NotificationChain msgs = null;
-			if (timewindow != null)
-				msgs = ((InternalEObject)timewindow).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW, null, msgs);
-			if (newTimewindow != null)
-				msgs = ((InternalEObject)newTimewindow).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW, null, msgs);
-			msgs = basicSetTimewindow(newTimewindow, msgs);
+			if (globalTimewindow != null)
+				msgs = ((InternalEObject)globalTimewindow).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CepPackage.COMPLEX_EVENT_PATTERN__GLOBAL_TIMEWINDOW, null, msgs);
+			if (newGlobalTimewindow != null)
+				msgs = ((InternalEObject)newGlobalTimewindow).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CepPackage.COMPLEX_EVENT_PATTERN__GLOBAL_TIMEWINDOW, null, msgs);
+			msgs = basicSetGlobalTimewindow(newGlobalTimewindow, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW, newTimewindow, newTimewindow));
+			eNotify(new ENotificationImpl(this, Notification.SET, CepPackage.COMPLEX_EVENT_PATTERN__GLOBAL_TIMEWINDOW, newGlobalTimewindow, newGlobalTimewindow));
 	}
 
 	/**
@@ -172,6 +184,18 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 			compositionEvents = new EObjectContainmentEList<EventPattern>(EventPattern.class, this, CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS);
 		}
 		return compositionEvents;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<PartialTimewindow> getPartialTimeWindows() {
+		if (partialTimeWindows == null) {
+			partialTimeWindows = new EObjectContainmentEList<PartialTimewindow>(PartialTimewindow.class, this, CepPackage.COMPLEX_EVENT_PATTERN__PARTIAL_TIME_WINDOWS);
+		}
+		return partialTimeWindows;
 	}
 
 	/**
@@ -193,10 +217,12 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW:
-				return basicSetTimewindow(null, msgs);
+			case CepPackage.COMPLEX_EVENT_PATTERN__GLOBAL_TIMEWINDOW:
+				return basicSetGlobalTimewindow(null, msgs);
 			case CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS:
 				return ((InternalEList<?>)getCompositionEvents()).basicRemove(otherEnd, msgs);
+			case CepPackage.COMPLEX_EVENT_PATTERN__PARTIAL_TIME_WINDOWS:
+				return ((InternalEList<?>)getPartialTimeWindows()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -211,10 +237,12 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 		switch (featureID) {
 			case CepPackage.COMPLEX_EVENT_PATTERN__OPERATOR:
 				return getOperator();
-			case CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW:
-				return getTimewindow();
+			case CepPackage.COMPLEX_EVENT_PATTERN__GLOBAL_TIMEWINDOW:
+				return getGlobalTimewindow();
 			case CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS:
 				return getCompositionEvents();
+			case CepPackage.COMPLEX_EVENT_PATTERN__PARTIAL_TIME_WINDOWS:
+				return getPartialTimeWindows();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -231,12 +259,16 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 			case CepPackage.COMPLEX_EVENT_PATTERN__OPERATOR:
 				setOperator((ComplexOperator)newValue);
 				return;
-			case CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW:
-				setTimewindow((Timewindow)newValue);
+			case CepPackage.COMPLEX_EVENT_PATTERN__GLOBAL_TIMEWINDOW:
+				setGlobalTimewindow((GlobalTimewindow)newValue);
 				return;
 			case CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS:
 				getCompositionEvents().clear();
 				getCompositionEvents().addAll((Collection<? extends EventPattern>)newValue);
+				return;
+			case CepPackage.COMPLEX_EVENT_PATTERN__PARTIAL_TIME_WINDOWS:
+				getPartialTimeWindows().clear();
+				getPartialTimeWindows().addAll((Collection<? extends PartialTimewindow>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -253,11 +285,14 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 			case CepPackage.COMPLEX_EVENT_PATTERN__OPERATOR:
 				setOperator(OPERATOR_EDEFAULT);
 				return;
-			case CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW:
-				setTimewindow((Timewindow)null);
+			case CepPackage.COMPLEX_EVENT_PATTERN__GLOBAL_TIMEWINDOW:
+				setGlobalTimewindow((GlobalTimewindow)null);
 				return;
 			case CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS:
 				getCompositionEvents().clear();
+				return;
+			case CepPackage.COMPLEX_EVENT_PATTERN__PARTIAL_TIME_WINDOWS:
+				getPartialTimeWindows().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -273,10 +308,12 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 		switch (featureID) {
 			case CepPackage.COMPLEX_EVENT_PATTERN__OPERATOR:
 				return operator != OPERATOR_EDEFAULT;
-			case CepPackage.COMPLEX_EVENT_PATTERN__TIMEWINDOW:
-				return timewindow != null;
+			case CepPackage.COMPLEX_EVENT_PATTERN__GLOBAL_TIMEWINDOW:
+				return globalTimewindow != null;
 			case CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS:
 				return compositionEvents != null && !compositionEvents.isEmpty();
+			case CepPackage.COMPLEX_EVENT_PATTERN__PARTIAL_TIME_WINDOWS:
+				return partialTimeWindows != null && !partialTimeWindows.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

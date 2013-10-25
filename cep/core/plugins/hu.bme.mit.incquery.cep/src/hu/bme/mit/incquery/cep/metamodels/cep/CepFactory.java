@@ -58,6 +58,24 @@ public interface CepFactory extends EFactory {
 	Timewindow createTimewindow();
 
 	/**
+	 * Returns a new object of class '<em>Partial Timewindow</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Partial Timewindow</em>'.
+	 * @generated
+	 */
+	PartialTimewindow createPartialTimewindow();
+
+	/**
+	 * Returns a new object of class '<em>Global Timewindow</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Global Timewindow</em>'.
+	 * @generated
+	 */
+	GlobalTimewindow createGlobalTimewindow();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

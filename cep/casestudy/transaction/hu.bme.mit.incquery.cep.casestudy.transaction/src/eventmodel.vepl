@@ -10,8 +10,11 @@ AtomicEvent componentA(transactionId : String, timestamp : long, customerId : St
 
 AtomicEvent componentB(transactionId : String, timestamp : long){
 	source : eventSource
-	staticBinding{
-		transactionId in [10, 12]
+	staticBindings {
+		if(!(transactionId.equalsIgnoreCase("transaction"))){
+			return false;
+		}
+		return true;
 	}
 }
 

@@ -1,6 +1,5 @@
 package hu.bme.mit.incquery.cep.tests.testcaseSm.patterns;
 
-import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl;
@@ -16,7 +15,7 @@ public class ABC_Pattern_UNORDERED extends ComplexEventPatternImpl {
 		atomicEventPatternsForCP.add(new APattern());
 		atomicEventPatternsForCP.add(new BPattern());
 		atomicEventPatternsForCP.add(new CPattern());
-		eSet(CepPackage.COMPLEX_EVENT_PATTERN__COMPOSITION_EVENTS, atomicEventPatternsForCP);
+		getCompositionEvents().addAll(atomicEventPatternsForCP);
 		setId("ABCPattern");
 	}
 }

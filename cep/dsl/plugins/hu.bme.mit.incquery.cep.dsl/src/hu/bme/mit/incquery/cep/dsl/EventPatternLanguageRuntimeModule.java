@@ -3,9 +3,17 @@
  */
 package hu.bme.mit.incquery.cep.dsl;
 
+import hu.bme.mit.incquery.cep.dsl.scoping.EventPatternLanguageScopeProvider2;
+
+import org.eclipse.xtext.scoping.IScopeProvider;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
-public class EventPatternLanguageRuntimeModule extends hu.bme.mit.incquery.cep.dsl.AbstractEventPatternLanguageRuntimeModule {
-
+public class EventPatternLanguageRuntimeModule extends
+        hu.bme.mit.incquery.cep.dsl.AbstractEventPatternLanguageRuntimeModule {
+    @Override
+    public Class<? extends IScopeProvider> bindIScopeProvider() {
+        return EventPatternLanguageScopeProvider2.class;
+    }
 }

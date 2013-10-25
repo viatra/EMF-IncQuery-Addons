@@ -1318,7 +1318,7 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID parameters=TypedParameterList? source=[Source|ID]? staticBindings+=StaticBinding*)
+	 *     (name=ID parameters=TypedParameterList? source=[Source|ID]? staticBindings=XBlockExpression?)
 	 */
 	protected void sequence_AtomicEventPattern(EObject context, AtomicEventPattern semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -170,7 +170,6 @@ RULE_WS=11
 '||'=58
 'startsWith'=50
 '&&'=59
-'staticBinding'=23
 'definition'=30
 '-['=40
 '+'=70
@@ -191,6 +190,7 @@ RULE_WS=11
 'in'=42
 '-='=57
 '..'=65
+'staticBindings'=23
 '!'=75
 '|'=81
 'null'=101

@@ -2,7 +2,7 @@
  */
 package hu.bme.mit.incquery.cep.dsl.eventPatternLanguage;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,19 +50,29 @@ public interface AtomicEventPattern extends AbstractAtomicEventPattern
   void setSource(Source value);
 
   /**
-   * Returns the value of the '<em><b>Static Bindings</b></em>' containment reference list.
-   * The list contents are of type {@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.StaticBinding}.
+   * Returns the value of the '<em><b>Static Bindings</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Static Bindings</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Static Bindings</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Static Bindings</em>' containment reference list.
+   * @return the value of the '<em>Static Bindings</em>' containment reference.
+   * @see #setStaticBindings(XExpression)
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getAtomicEventPattern_StaticBindings()
    * @model containment="true"
    * @generated
    */
-  EList<StaticBinding> getStaticBindings();
+  XExpression getStaticBindings();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern#getStaticBindings <em>Static Bindings</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Static Bindings</em>' containment reference.
+   * @see #getStaticBindings()
+   * @generated
+   */
+  void setStaticBindings(XExpression value);
 
 } // AtomicEventPattern

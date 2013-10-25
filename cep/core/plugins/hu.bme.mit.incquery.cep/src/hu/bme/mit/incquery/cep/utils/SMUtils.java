@@ -142,10 +142,10 @@ public final class SMUtils {
 			}
 		}
 
-		map.put((AtomicEventPattern) patternToAdd, collectTimewindows(patternToAdd));
+		map.put((AtomicEventPattern) patternToAdd, collectGlobalTimewindows(patternToAdd));
 	}
 
-	private static List<Timewindow> collectTimewindows(EventPattern eventPattern) {
+	private static List<Timewindow> collectGlobalTimewindows(EventPattern eventPattern) {
 		List<Timewindow> timewindows = new ArrayList<Timewindow>();
 
 		while (eventPattern.eContainer() instanceof EventPattern) {
@@ -155,7 +155,7 @@ public final class SMUtils {
 				continue;
 			} else if (parent instanceof ComplexEventPattern) {
 				ComplexEventPattern ep = (ComplexEventPattern) eventPattern.eContainer();
-				Timewindow timewindow = ep.getTimewindow();
+				Timewindow timewindow = ep.getGlobalTimewindow();
 				if (timewindow != null) {
 					timewindows.add(timewindow);
 				}

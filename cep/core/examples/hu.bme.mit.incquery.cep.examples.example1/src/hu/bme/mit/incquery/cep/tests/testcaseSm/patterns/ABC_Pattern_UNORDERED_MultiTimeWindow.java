@@ -9,17 +9,21 @@ import hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DABC_Pattern_MIXED_Timed extends ComplexEventPatternImpl {
-	public DABC_Pattern_MIXED_Timed() {
+public class ABC_Pattern_UNORDERED_MultiTimeWindow extends ComplexEventPatternImpl {
+	public ABC_Pattern_UNORDERED_MultiTimeWindow() {
 		super();
-		setOperator(ComplexOperator.ORDERED);
+		setOperator(ComplexOperator.UNORDERED);
 		List<EventPattern> atomicEventPatternsForCP = new ArrayList<EventPattern>();
-		atomicEventPatternsForCP.add(new DPattern());
-		atomicEventPatternsForCP.add(new ABC_Pattern_UNORDERED_Timed());
+		atomicEventPatternsForCP.add(new APattern());
+		atomicEventPatternsForCP.add(new BPattern());
+		atomicEventPatternsForCP.add(new CPattern());
 		getCompositionEvents().addAll(atomicEventPatternsForCP);
+		
+		
 		GlobalTimewindow timewindow = CepFactory.eINSTANCE.createGlobalTimewindow();
 		timewindow.setLength(1500l);
+		
 		setGlobalTimewindow(timewindow);
-		setId("DABCPattern");
+		setId("ABCPattern");
 	}
 }
