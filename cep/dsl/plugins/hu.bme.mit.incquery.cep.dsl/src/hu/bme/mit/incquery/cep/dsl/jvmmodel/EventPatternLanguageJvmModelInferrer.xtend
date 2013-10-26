@@ -41,6 +41,8 @@ import org.eclipse.xtext.xbase.XExpression
 import hu.bme.mit.incquery.cep.api.IActionHandler
 import org.eclipse.xtext.xbase.compiler.XbaseCompiler
 import org.eclipse.xtext.xbase.compiler.StringBuilderBasedAppendable
+import java.util.Map
+import com.google.common.collect.Maps
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -98,15 +100,42 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 			acceptor.accept(pattern.toClass(pattern.getFqn(AtomicPatternFqnPurpose.EVENT))).initializeLater [
 				documentation = pattern.documentation
 				superTypes += pattern.newTypeRef(AbstractEventInstance)
+				members += pattern.toField("parameters",
+					pattern.newTypeRef(List, jvmTypesBuilder.newTypeRef(pattern, Object))) [
+					initializer = [
+						append('''«referClass(pattern, Lists)»''').append('''.newArrayList()''')
+					]
+				]
+				val paramList = (pattern as AtomicEventPattern).parameters
+				for (parameter : paramList.parameters) {
+					members += pattern.toField(parameter.name, parameter.type)
+				}
 				members += pattern.toConstructor [
 					parameters += toParameter("eventSource", pattern.newTypeRef(IEventSource))
-					body = [append('''super(eventSource);''')]
+					body = [
+						append(
+							'''
+								super(eventSource);
+							''').append(
+							'''
+								«FOR parameter : paramList.parameters»
+									parameters.add(«parameter.name»);
+								«ENDFOR»
+							''')
+					]
 				]
-				var paramList = (pattern as AtomicEventPattern).parameters
-				for (dynamicParameter : paramList.parameters) {
-					members += pattern.toField(dynamicParameter.name, dynamicParameter.type)
-					members += pattern.toGetter(dynamicParameter.name, dynamicParameter.type)
-					members += pattern.toSetter(dynamicParameter.name, dynamicParameter.type)
+				members +=
+					pattern.toGetter("parameters", pattern.newTypeRef(List, jvmTypesBuilder.newTypeRef(pattern, Object)))
+				members +=
+					pattern.toMethod("getParameter", pattern.newTypeRef(Object))[
+						parameters += pattern.toParameter("i", pattern.newTypeRef(int))
+						body=[
+							append('''return parameters.get(i);''')
+						]
+					]
+				for (parameter : paramList.parameters) {
+					members += pattern.toGetter(parameter.name, parameter.type)
+					members += pattern.toSetter(parameter.name, parameter.type)
 				}
 			]
 		}
@@ -145,6 +174,13 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 			acceptor.accept(pattern.toClass(pattern.fqn)).initializeLater [
 				documentation = pattern.documentation
 				superTypes += pattern.newTypeRef(ComplexEventPatternImpl)
+				members += pattern.toField("paramValues",
+					pattern.newTypeRef(Map, jvmTypesBuilder.newTypeRef(pattern, String),
+						jvmTypesBuilder.newTypeRef(pattern, Object))) [
+					initializer = [
+						append('''«referClass(pattern, Maps)»''').append('''.newHashMap()''')
+					]
+				]
 				members += pattern.toConstructor [
 					body = [
 						append(

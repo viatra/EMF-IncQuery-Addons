@@ -1,5 +1,6 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.queries;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import java.util.Arrays;
@@ -28,11 +29,14 @@ public abstract class EnabledTransitionMatch extends BasePatternMatch {
   
   private EventToken fEt;
   
-  private static List<String> parameterNames = makeImmutableList("t", "et");
+  private Event fE;
   
-  private EnabledTransitionMatch(final Transition pT, final EventToken pEt) {
+  private static List<String> parameterNames = makeImmutableList("t", "et", "e");
+  
+  private EnabledTransitionMatch(final Transition pT, final EventToken pEt, final Event pE) {
     this.fT = pT;
     this.fEt = pEt;
+    this.fE = pE;
     
   }
   
@@ -40,6 +44,7 @@ public abstract class EnabledTransitionMatch extends BasePatternMatch {
   public Object get(final String parameterName) {
     if ("t".equals(parameterName)) return this.fT;
     if ("et".equals(parameterName)) return this.fEt;
+    if ("e".equals(parameterName)) return this.fE;
     return null;
     
   }
@@ -54,6 +59,11 @@ public abstract class EnabledTransitionMatch extends BasePatternMatch {
     
   }
   
+  public Event getE() {
+    return this.fE;
+    
+  }
+  
   @Override
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
@@ -63,6 +73,10 @@ public abstract class EnabledTransitionMatch extends BasePatternMatch {
     }
     if ("et".equals(parameterName) ) {
     	this.fEt = (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) newValue;
+    	return true;
+    }
+    if ("e".equals(parameterName) ) {
+    	this.fE = (hu.bme.mit.incquery.cep.metamodels.cep.Event) newValue;
     	return true;
     }
     return false;
@@ -81,6 +95,12 @@ public abstract class EnabledTransitionMatch extends BasePatternMatch {
     
   }
   
+  public void setE(final Event pE) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    this.fE = pE;
+    
+  }
+  
   @Override
   public String patternName() {
     return "hu.bme.mit.incquery.cep.runtime.evaluation.queries.enabledTransition";
@@ -95,7 +115,7 @@ public abstract class EnabledTransitionMatch extends BasePatternMatch {
   
   @Override
   public Object[] toArray() {
-    return new Object[]{fT, fEt};
+    return new Object[]{fT, fEt, fE};
     
   }
   
@@ -103,7 +123,8 @@ public abstract class EnabledTransitionMatch extends BasePatternMatch {
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
     result.append("\"t\"=" + prettyPrintValue(fT) + ", ");
-    result.append("\"et\"=" + prettyPrintValue(fEt));
+    result.append("\"et\"=" + prettyPrintValue(fEt) + ", ");
+    result.append("\"e\"=" + prettyPrintValue(fE));
     return result.toString();
     
   }
@@ -114,6 +135,7 @@ public abstract class EnabledTransitionMatch extends BasePatternMatch {
     int result = 1;
     result = prime * result + ((fT == null) ? 0 : fT.hashCode()); 
     result = prime * result + ((fEt == null) ? 0 : fEt.hashCode()); 
+    result = prime * result + ((fE == null) ? 0 : fE.hashCode()); 
     return result; 
     
   }
@@ -137,6 +159,8 @@ public abstract class EnabledTransitionMatch extends BasePatternMatch {
     else if (!fT.equals(other.fT)) return false;
     if (fEt == null) {if (other.fEt != null) return false;}
     else if (!fEt.equals(other.fEt)) return false;
+    if (fE == null) {if (other.fE != null) return false;}
+    else if (!fE.equals(other.fE)) return false;
     return true;
   }
   
@@ -153,8 +177,8 @@ public abstract class EnabledTransitionMatch extends BasePatternMatch {
   
   @SuppressWarnings("all")
   static final class Mutable extends EnabledTransitionMatch {
-    Mutable(final Transition pT, final EventToken pEt) {
-      super(pT, pEt);
+    Mutable(final Transition pT, final EventToken pEt, final Event pE) {
+      super(pT, pEt, pE);
       
     }
     
@@ -167,8 +191,8 @@ public abstract class EnabledTransitionMatch extends BasePatternMatch {
   
   @SuppressWarnings("all")
   static final class Immutable extends EnabledTransitionMatch {
-    Immutable(final Transition pT, final EventToken pEt) {
-      super(pT, pEt);
+    Immutable(final Transition pT, final EventToken pEt, final Event pE) {
+      super(pT, pEt, pE);
       
     }
     

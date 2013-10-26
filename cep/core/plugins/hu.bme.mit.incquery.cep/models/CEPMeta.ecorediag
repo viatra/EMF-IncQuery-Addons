@@ -60,6 +60,10 @@
         <element xmi:type="ecore:EOperation" href="CEPMeta.ecore#//ComplexEventPattern/addCompositionEventPattern"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Y4FNwzlnEeOM2ek0ojdulQ"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_y4qTkD5xEeOhC7AfiGI8AA" type="2002">
+        <element xmi:type="ecore:EOperation" href="CEPMeta.ecore#//ComplexEventPattern/evaluateParameterBindigs"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_y4qTkT5xEeOhC7AfiGI8AA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_Y4EmsTlnEeOM2ek0ojdulQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Y4EmsjlnEeOM2ek0ojdulQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Y4EmszlnEeOM2ek0ojdulQ"/>

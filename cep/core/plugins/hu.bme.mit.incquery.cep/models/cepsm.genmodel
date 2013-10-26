@@ -30,6 +30,9 @@
       <genOperations ecoreOperation="CEPMeta.ecore#//ComplexEventPattern/addCompositionEventPattern">
         <genParameters ecoreParameter="CEPMeta.ecore#//ComplexEventPattern/addCompositionEventPattern/compositionEventPattern"/>
       </genOperations>
+      <genOperations ecoreOperation="CEPMeta.ecore#//ComplexEventPattern/evaluateParameterBindigs">
+        <genParameters ecoreParameter="CEPMeta.ecore#//ComplexEventPattern/evaluateParameterBindigs/event"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="CEPMeta.ecore#//Event">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CEPMeta.ecore#//Event/type"/>

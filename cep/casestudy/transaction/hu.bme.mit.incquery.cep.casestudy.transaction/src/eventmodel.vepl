@@ -33,11 +33,11 @@ ComplexEvent compoundTransactionEvent(a:componentA, b:componentB, c:componentC){
 }
 
 ComplexEvent compoundTransactionEvent1(a:componentA, b:componentB, c:componentC){
-	definition : (a -> b)[1200]
+	definition : (a -> b)[1500]
 }
 
 ComplexEvent compoundTransactionEvent2(a:componentA, b:componentB, c:componentC){
-	definition : (a -> b ->c)[1200]
+	definition : (a -> b ->c)[1300]
 }
 
 

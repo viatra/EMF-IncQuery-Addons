@@ -5,6 +5,7 @@ package hu.bme.mit.incquery.cep.metamodels.cep.impl;
 import hu.bme.mit.incquery.cep.metamodels.cep.CepPackage;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.GlobalTimewindow;
 import hu.bme.mit.incquery.cep.metamodels.cep.PartialTimewindow;
@@ -204,6 +205,17 @@ public class ComplexEventPatternImpl extends EventPatternImpl implements Complex
 	 * @generated
 	 */
 	public void addCompositionEventPattern(EventPattern compositionEventPattern) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean evaluateParameterBindigs(Event event) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

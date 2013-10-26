@@ -1,5 +1,6 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.queries;
 
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatch;
@@ -27,7 +28,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern enabledTransition(t : Transition, et : EventToken) {
+ * pattern enabledTransition(t : Transition, et : EventToken, e : Event) {
  * 	find latestEvent(e);
  * 	Event.type(e, eventType);
  * 	Transition.guard.eventType.type(t, eventType);
@@ -75,6 +76,8 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
   
   private final static int POSITION_ET = 1;
   
+  private final static int POSITION_E = 2;
+  
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet). 
    * If a pattern matcher is already constructed with the same root, only a light-weight reference is returned.
@@ -110,11 +113,12 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
    * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pE the fixed value of pattern parameter e, or null if not bound.
    * @return matches represented as a EnabledTransitionMatch object.
    * 
    */
-  public Collection<EnabledTransitionMatch> getAllMatches(final Transition pT, final EventToken pEt) {
-    return rawGetAllMatches(new Object[]{pT, pEt});
+  public Collection<EnabledTransitionMatch> getAllMatches(final Transition pT, final EventToken pEt, final Event pE) {
+    return rawGetAllMatches(new Object[]{pT, pEt, pE});
   }
   
   /**
@@ -122,11 +126,12 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
    * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pE the fixed value of pattern parameter e, or null if not bound.
    * @return a match represented as a EnabledTransitionMatch object, or null if no match is found.
    * 
    */
-  public EnabledTransitionMatch getOneArbitraryMatch(final Transition pT, final EventToken pEt) {
-    return rawGetOneArbitraryMatch(new Object[]{pT, pEt});
+  public EnabledTransitionMatch getOneArbitraryMatch(final Transition pT, final EventToken pEt, final Event pE) {
+    return rawGetOneArbitraryMatch(new Object[]{pT, pEt, pE});
   }
   
   /**
@@ -134,33 +139,36 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * under any possible substitution of the unspecified parameters (if any).
    * @param pT the fixed value of pattern parameter t, or null if not bound.
    * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pE the fixed value of pattern parameter e, or null if not bound.
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Transition pT, final EventToken pEt) {
-    return rawHasMatch(new Object[]{pT, pEt});
+  public boolean hasMatch(final Transition pT, final EventToken pEt, final Event pE) {
+    return rawHasMatch(new Object[]{pT, pEt, pE});
   }
   
   /**
    * Returns the number of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
    * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pE the fixed value of pattern parameter e, or null if not bound.
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Transition pT, final EventToken pEt) {
-    return rawCountMatches(new Object[]{pT, pEt});
+  public int countMatches(final Transition pT, final EventToken pEt, final Event pE) {
+    return rawCountMatches(new Object[]{pT, pEt, pE});
   }
   
   /**
    * Executes the given processor on each match of the pattern that conforms to the given fixed values of some parameters.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
    * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pE the fixed value of pattern parameter e, or null if not bound.
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Transition pT, final EventToken pEt, final IMatchProcessor<? super EnabledTransitionMatch> processor) {
-    rawForEachMatch(new Object[]{pT, pEt}, processor);
+  public void forEachMatch(final Transition pT, final EventToken pEt, final Event pE, final IMatchProcessor<? super EnabledTransitionMatch> processor) {
+    rawForEachMatch(new Object[]{pT, pEt, pE}, processor);
   }
   
   /**
@@ -168,12 +176,13 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
    * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pE the fixed value of pattern parameter e, or null if not bound.
    * @param processor the action that will process the selected match. 
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Transition pT, final EventToken pEt, final IMatchProcessor<? super EnabledTransitionMatch> processor) {
-    return rawForOneArbitraryMatch(new Object[]{pT, pEt}, processor);
+  public boolean forOneArbitraryMatch(final Transition pT, final EventToken pEt, final Event pE, final IMatchProcessor<? super EnabledTransitionMatch> processor) {
+    return rawForOneArbitraryMatch(new Object[]{pT, pEt, pE}, processor);
   }
   
   /**
@@ -185,13 +194,14 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
    * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pE the fixed value of pattern parameter e, or null if not bound.
    * @return the delta monitor.
    * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
   @Deprecated
-  public DeltaMonitor<EnabledTransitionMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Transition pT, final EventToken pEt) {
-    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pT, pEt});
+  public DeltaMonitor<EnabledTransitionMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Transition pT, final EventToken pEt, final Event pE) {
+    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pT, pEt, pE});
   }
   
   /**
@@ -200,11 +210,12 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pT the fixed value of pattern parameter t, or null if not bound.
    * @param pEt the fixed value of pattern parameter et, or null if not bound.
+   * @param pE the fixed value of pattern parameter e, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public EnabledTransitionMatch newMatch(final Transition pT, final EventToken pEt) {
-    return new EnabledTransitionMatch.Immutable(pT, pEt);
+  public EnabledTransitionMatch newMatch(final Transition pT, final EventToken pEt, final Event pE) {
+    return new EnabledTransitionMatch.Immutable(pT, pEt, pE);
     
   }
   
@@ -242,8 +253,8 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Transition> getAllValuesOft(final EventToken pEt) {
-    return rawAccumulateAllValuesOft(new Object[]{null, pEt});
+  public Set<Transition> getAllValuesOft(final EventToken pEt, final Event pE) {
+    return rawAccumulateAllValuesOft(new Object[]{null, pEt, pE});
   }
   
   /**
@@ -280,14 +291,52 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EventToken> getAllValuesOfet(final Transition pT) {
-    return rawAccumulateAllValuesOfet(new Object[]{pT, null});
+  public Set<EventToken> getAllValuesOfet(final Transition pT, final Event pE) {
+    return rawAccumulateAllValuesOfet(new Object[]{pT, null, pE});
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for e.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  protected Set<Event> rawAccumulateAllValuesOfe(final Object[] parameters) {
+    Set<Event> results = new HashSet<Event>();
+    rawAccumulateAllValues(POSITION_E, parameters, results);
+    return results;
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for e.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<Event> getAllValuesOfe() {
+    return rawAccumulateAllValuesOfe(emptyArray());
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for e.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<Event> getAllValuesOfe(final EnabledTransitionMatch partialMatch) {
+    return rawAccumulateAllValuesOfe(partialMatch.toArray());
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for e.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<Event> getAllValuesOfe(final Transition pT, final EventToken pEt) {
+    return rawAccumulateAllValuesOfe(new Object[]{pT, pEt, null});
   }
   
   @Override
   protected EnabledTransitionMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EnabledTransitionMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) t.get(POSITION_T), (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) t.get(POSITION_ET));	
+    	return new EnabledTransitionMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) t.get(POSITION_T), (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) t.get(POSITION_ET), (hu.bme.mit.incquery.cep.metamodels.cep.Event) t.get(POSITION_E));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -297,7 +346,7 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
   @Override
   protected EnabledTransitionMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EnabledTransitionMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) match[POSITION_T], (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET]);
+    	return new EnabledTransitionMatch.Immutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) match[POSITION_T], (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET], (hu.bme.mit.incquery.cep.metamodels.cep.Event) match[POSITION_E]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -307,7 +356,7 @@ public class EnabledTransitionMatcher extends BaseMatcher<EnabledTransitionMatch
   @Override
   protected EnabledTransitionMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new EnabledTransitionMatch.Mutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) match[POSITION_T], (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET]);
+    	return new EnabledTransitionMatch.Mutable((hu.bme.mit.incquery.cep.metamodels.internalsm.Transition) match[POSITION_T], (hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken) match[POSITION_ET], (hu.bme.mit.incquery.cep.metamodels.cep.Event) match[POSITION_E]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

@@ -2,7 +2,6 @@
 <plugin>
 
    <extension
-         name=""
          point="org.eclipse.emf.ecore.generated_package">
       <package
             genModel="models/cepsm.genmodel"
@@ -11,7 +10,6 @@
       </package>
    </extension>
    <extension
-         name=""
          point="org.eclipse.emf.ecore.extension_parser">
       <parser
             type="cep"
@@ -19,7 +17,6 @@
       </parser>
    </extension>
    <extension
-         name=""
          point="org.eclipse.emf.ecore.generated_package">
       <package
             genModel="models/cepsm.genmodel"
@@ -28,7 +25,6 @@
       </package>
    </extension>
    <extension
-         name=""
          point="org.eclipse.emf.ecore.extension_parser">
       <parser
             type="internalsm"

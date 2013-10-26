@@ -27,7 +27,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern partiallyMatchedEventPattern(et : EventToken, s : State){
+ * pattern partiallyMatchedEventPattern(et : EventToken, s : State) {
  * 	State.eventTokens(s, et);
  * 	neg find initState(s);
  * }

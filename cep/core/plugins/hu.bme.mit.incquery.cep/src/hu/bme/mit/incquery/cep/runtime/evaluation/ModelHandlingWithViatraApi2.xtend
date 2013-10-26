@@ -58,7 +58,7 @@ class ModelHandlingWithViatraApi2 {
 
 	val createEnabledTransitionRule = ruleFactory.createRule( //"enabled transition rule",
 		EnabledTransitionMatcher::querySpecification) [
-		eventModelManager.strategy.fireTransition(t, et)
+		eventModelManager.strategy.fireTransition(t, et, e)
 	]
 
 	val createFinishedStateMachineRule = ruleFactory.createRule( //"finished statemachine rule",

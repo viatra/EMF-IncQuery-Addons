@@ -26,7 +26,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern initState(s){
+ * pattern initState(s) {
  * 	InitState(s);
  * }
  * </pre></code>

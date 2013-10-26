@@ -15,6 +15,9 @@
     <eOperations name="addCompositionEventPattern" lowerBound="1">
       <eParameters name="compositionEventPattern" lowerBound="1" eType="#//EventPattern"/>
     </eOperations>
+    <eOperations name="evaluateParameterBindigs" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="event" lowerBound="1" eType="#//Event"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
         eType="#//ComplexOperator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="globalTimewindow" eType="#//GlobalTimewindow"

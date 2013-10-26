@@ -1,8 +1,7 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.queries
 
-import "cep.meta"
-import "sm.meta"
-import "http://www.eclipse.org/emf/2002/Ecore"
+import "cep.meta" import "sm.meta" import
+"http://www.eclipse.org/emf/2002/Ecore"
 
 pattern finishedStateMachine(sm : StateMachine, et : EventToken) {
 	StateMachine.states(sm, state);
@@ -47,7 +46,8 @@ pattern preState(t, s) {
 	Transition.preState(t, s);
 }
 
-pattern guardAtomicPattern(guard : Guard, atomicPattern : AtomicEventPattern) {
+pattern
+guardAtomicPattern(guard : Guard, atomicPattern : AtomicEventPattern) {
 	Guard.eventType(guard, atomicPattern);
 }
 
@@ -63,7 +63,7 @@ pattern atomicPatternType(a : AtomicEventPattern, t : EString) {
 	AtomicEventPattern.type(a, t);
 }
 
-pattern enabledTransition(t : Transition, et : EventToken) {
+pattern enabledTransition(t : Transition, et : EventToken, e : Event) {
 	find latestEvent(e);
 	Event.type(e, eventType);
 	Transition.guard.eventType.type(t, eventType);
@@ -76,11 +76,11 @@ pattern tokenInTrapState(et : EventToken) {
 	TrapState.eventTokens(_, et);
 }
 
-pattern initState(s){
+pattern initState(s) {
 	InitState(s);
 }
 
-pattern partiallyMatchedEventPattern(et : EventToken, s : State){
+pattern partiallyMatchedEventPattern(et : EventToken, s : State) {
 	State.eventTokens(s, et);
 	neg find initState(s);
 }

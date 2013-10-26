@@ -119,4 +119,12 @@ public interface ComplexEventPattern extends EventPattern {
 	 */
 	void addCompositionEventPattern(EventPattern compositionEventPattern);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" eventRequired="true"
+	 * @generated
+	 */
+	boolean evaluateParameterBindigs(Event event);
+
 } // ComplexEventPattern

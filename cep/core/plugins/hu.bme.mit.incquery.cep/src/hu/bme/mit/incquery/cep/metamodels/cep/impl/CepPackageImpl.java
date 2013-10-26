@@ -507,6 +507,9 @@ public class CepPackageImpl extends EPackageImpl implements CepPackage {
 		EOperation op = addEOperation(complexEventPatternEClass, null, "addCompositionEventPattern", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEventPattern(), "compositionEventPattern", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(complexEventPatternEClass, ecorePackage.getEBoolean(), "evaluateParameterBindigs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEvent(), "event", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEvent_Type(), ecorePackage.getEString(), "type", null, 1, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEvent_Timestamp(), ecorePackage.getELong(), "timestamp", null, 1, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
