@@ -19,12 +19,12 @@ public class ViatraCepManager {
     }
     
     public ViatraCepManager addRule(ICepRule rule) {
-        eventModelManager.assignRule(rule);
+        eventModelManager.addRule(rule);
         return this;
     }
     
     public ViatraCepManager addRules(List<ICepRule> rules) {
-        eventModelManager.assignRules(rules);
+        eventModelManager.addRules(rules);
         return this;
     }
 

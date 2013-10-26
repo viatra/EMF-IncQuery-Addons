@@ -14,7 +14,7 @@ import hu.bme.mit.incquery.cep.tests.testcaseSm.events.C;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.events.D;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.ABC_Pattern;
 import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.BCD_Pattern;
-import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.BC_Pattern;
+import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.BC_Unordered_Pattern;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class MultipleComplexEventsInRules3 {
     IEventSource source;
     ABC_Pattern pattern1;
     BCD_Pattern pattern2;
-    BC_Pattern pattern3;
+    BC_Unordered_Pattern pattern3;
     ViatraCepManager manager;
 
     @Before
@@ -41,7 +41,7 @@ public class MultipleComplexEventsInRules3 {
         eventQueue = EventQueue.getInstance();
         pattern1 = new ABC_Pattern();
         pattern2 = new BCD_Pattern();
-        pattern3 = new BC_Pattern();
+        pattern3 = new BC_Unordered_Pattern();
     }
 
     @After
@@ -74,13 +74,14 @@ public class MultipleComplexEventsInRules3 {
         System.err.println("DIAG: Test starting.\n");
 
         eventQueue.push(new A(source));
-        Thread.sleep(1500l);
+        Thread.sleep(1000l);
         eventQueue.push(new B(source));
-        Thread.sleep(1500l);
+        Thread.sleep(1000l);
         eventQueue.push(new C(source));
-        Thread.sleep(1500l);
+        Thread.sleep(1000l);
         eventQueue.push(new D(source));
-        Thread.sleep(1500l);
+        Thread.sleep(1000l);
+        eventQueue.push(new B(source));
 
         System.err.println("\nDIAG: Test finished.");
     }

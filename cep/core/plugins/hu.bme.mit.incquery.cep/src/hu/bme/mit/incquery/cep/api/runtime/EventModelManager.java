@@ -31,6 +31,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Level;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
@@ -59,17 +60,13 @@ public class EventModelManager {
     private InternalExecutionModel model;
     private Resource smModelResource;
     private ResourceSet resourceSet;
-
     private IEventProcessingStrategy strategy;
     private ExecutionSchema topLevelExecutionSchema;
     private UpdateCompleteProviderExtension updateCompleteProvider;
-
     private Map<StateMachine, Boolean> wasEnabledForTheLatestEvent = new LinkedHashMap<StateMachine, Boolean>();
-
     private CepRealm realm;
 
-    // TODO cache objects - they are required to move in a separate class with
-    // the ability to modify them for a given SM
+    // cache
     private Map<StateMachine, FinalState> finalStatesForStatemachines = new LinkedHashMap<StateMachine, FinalState>();
     private Map<StateMachine, InitState> initStatesForStatemachines = new LinkedHashMap<StateMachine, InitState>();
 
@@ -98,10 +95,12 @@ public class EventModelManager {
         };
         EventQueue.getInstance().eAdapters().add(adapter);
 
-        // default Context and Strategy - can be overridden via
-        // setEventProcessingContext()
         this.strategy = EventProcessingStrategyFactory.getStrategy(EventProcessingContext.CHRONICLE, this);
         this.realm = new CepRealm();
+        initializeSchema();
+        initializeLowLevelModelHandling();
+
+        // topLevelExecutionSchema.getLogger().setLevel(Level.DEBUG);
     }
 
     private void prepareModel() {
@@ -114,18 +113,33 @@ public class EventModelManager {
         smModelResource.getContents().add(model);
     }
 
-    public void assignRules(List<ICepRule> rules) {
+    private void initializeSchema() {
         updateCompleteProvider = new UpdateCompleteProviderExtension();
         UpdateCompleteBasedSchedulerFactory schedulerFactory = new UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory(
                 updateCompleteProvider);
         topLevelExecutionSchema = EventDrivenVM.createExecutionSchema(realm, schedulerFactory,
                 Collections.<RuleSpecification<?>> emptySet());
+    }
+
+    private void initializeLowLevelModelHandling() {
+        ModelHandlingWithViatraApi2 mhrViatraApi2 = new ModelHandlingWithViatraApi2(this);
+        mhrViatraApi2.registerRulesWithCustomPriorities();
+    }
+
+    public void addRules(List<ICepRule> rules) {
+        Preconditions.checkArgument(!rules.isEmpty());
         for (ICepRule rule : rules) {
-            assignRule2(rule);
+            addSingleRule(rule);
         }
+        initializeStateMachines();
     }
 
-    public void assignRule2(ICepRule rule) {
+    public void addRule(ICepRule rule) {
+        addSingleRule(rule);
+        initializeStateMachines();
+    }
+
+    public void addSingleRule(ICepRule rule) {
         Preconditions.checkArgument(!rule.getEventPatterns().isEmpty());
         for (EventPattern eventPattern : rule.getEventPatterns()) {
             EventPatternAutomatonOptions options = new EventPatternAutomatonOptions(this.strategy.getContext(),
@@ -137,83 +151,26 @@ public class EventModelManager {
 
             CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(stateMachine);
 
-            ActivationLifeCycle lifeCycle = ActivationLifeCycle.create(CepActivationStates.INACTIVE);
-            lifeCycle.addStateTransition(CepActivationStates.INACTIVE, CepEventType.APPEARED,
-                    CepActivationStates.ACTIVE);
-            lifeCycle.addStateTransition(CepActivationStates.ACTIVE, RuleEngineEventType.FIRE,
-                    CepActivationStates.INACTIVE);
-
             Job<ObservedComplexEventPattern> job = rule.getJob();
             if (job == null) {
                 job = CepJobs.getDefaultJob();
             }
             @SuppressWarnings("unchecked")
             RuleSpecification<ObservedComplexEventPattern> ruleSpec = new RuleSpecification<ObservedComplexEventPattern>(
-                    sourceSpec, lifeCycle, Sets.newHashSet(job));
-
+                    sourceSpec, getDefaultLifeCycle(), Sets.newHashSet(job));
             topLevelExecutionSchema.addRule(ruleSpec);
-        }
-
-        try {
-            ModelHandlingWithViatraApi2 mhrViatraApi2 = new ModelHandlingWithViatraApi2(this);
-            mhrViatraApi2.registerRulesWithAutomatedPriorities();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // initialize init state cache
-        for (InitState is : initStatesForStatemachines.values()) {
-            if (is.getEventTokens().isEmpty()) {
-                EventToken cv = SM_FACTORY.createEventToken();
-                cv.setCurrentState(is);
-                model.getEventTokens().add(cv);
-            }
         }
     }
 
-    public void assignRule(ICepRule rule) {
-        Preconditions.checkArgument(!rule.getEventPatterns().isEmpty());
-        updateCompleteProvider = new UpdateCompleteProviderExtension();
-        UpdateCompleteBasedSchedulerFactory schedulerFactory = new UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory(
-                updateCompleteProvider);
-        topLevelExecutionSchema = EventDrivenVM.createExecutionSchema(realm, schedulerFactory,
-                Collections.<RuleSpecification<?>> emptySet());
-        for (EventPattern eventPattern : rule.getEventPatterns()) {
-            EventPatternAutomatonOptions options = new EventPatternAutomatonOptions(this.strategy.getContext(),
-                    eventPattern.getPriority());
+    private ActivationLifeCycle getDefaultLifeCycle() {
+        ActivationLifeCycle lifeCycle = ActivationLifeCycle.create(CepActivationStates.INACTIVE);
+        lifeCycle.addStateTransition(CepActivationStates.INACTIVE, CepEventType.APPEARED, CepActivationStates.ACTIVE);
+        lifeCycle
+                .addStateTransition(CepActivationStates.ACTIVE, RuleEngineEventType.FIRE, CepActivationStates.INACTIVE);
+        return lifeCycle;
+    }
 
-            StateMachine stateMachine = getStateMachine(eventPattern, options);
-
-            wasEnabledForTheLatestEvent.put(stateMachine, true);
-
-            CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(stateMachine);
-
-            ActivationLifeCycle lifeCycle = ActivationLifeCycle.create(CepActivationStates.INACTIVE);
-            lifeCycle.addStateTransition(CepActivationStates.INACTIVE, CepEventType.APPEARED,
-                    CepActivationStates.ACTIVE);
-            lifeCycle.addStateTransition(CepActivationStates.ACTIVE, RuleEngineEventType.FIRE,
-                    CepActivationStates.INACTIVE);
-
-            Job<ObservedComplexEventPattern> job = rule.getJob();
-            if (job == null) {
-                job = CepJobs.getDefaultJob();
-            }
-            @SuppressWarnings("unchecked")
-            RuleSpecification<ObservedComplexEventPattern> ruleSpec = new RuleSpecification<ObservedComplexEventPattern>(
-                    sourceSpec, lifeCycle, Sets.newHashSet(job));
-            topLevelExecutionSchema.addRule(ruleSpec);
-        }
-
-        try {
-            ModelHandlingWithViatraApi2 mhrViatraApi2 = new ModelHandlingWithViatraApi2(this);
-            mhrViatraApi2.registerRulesWithAutomatedPriorities();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // initialize init state cache
+    private void initializeStateMachines() {
         for (InitState is : initStatesForStatemachines.values()) {
             if (is.getEventTokens().isEmpty()) {
                 EventToken cv = SM_FACTORY.createEventToken();
