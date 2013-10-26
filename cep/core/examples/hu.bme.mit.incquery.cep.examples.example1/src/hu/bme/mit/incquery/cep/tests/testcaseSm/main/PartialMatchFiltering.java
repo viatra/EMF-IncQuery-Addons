@@ -48,7 +48,7 @@ public class PartialMatchFiltering {
         manager.setEventProcessingContext(EventProcessingContext.IMMEDIATE);
         // manager.assignEventPattern(abcPattern);
         CepRule rule = new CepRule(Lists.newArrayList((EventPattern) abcPattern), CepJobs.getDefaultJob());
-        manager.assignRule(rule);
+        manager.addRule(rule);
 
         System.err.println("DIAG: Test starting.\n");
 

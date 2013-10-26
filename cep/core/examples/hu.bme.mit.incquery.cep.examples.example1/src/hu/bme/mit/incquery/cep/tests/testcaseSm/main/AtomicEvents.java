@@ -53,7 +53,7 @@ public class AtomicEvents {
 		manager.setEventProcessingContext(EventProcessingContext.CHRONICLE);
 		//manager.assignEventPatterns(eventPatterns);
 		CepRule rule = new CepRule(eventPatterns, CepJobs.getDefaultJob()); 
-		manager.assignRule(rule);
+		manager.addRule(rule);
 		
 		System.err.println("DIAG: Test starting.\n");
 		

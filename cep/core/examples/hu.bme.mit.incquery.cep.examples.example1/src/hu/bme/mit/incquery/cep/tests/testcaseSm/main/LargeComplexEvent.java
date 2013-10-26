@@ -57,7 +57,7 @@ public class LargeComplexEvent {
 		manager = new EventModelManager();
 		//manager.assignEventPatterns(eventPatterns);
         CepRule rule = new CepRule(eventPatterns, CepJobs.getDefaultJob()); 
-        manager.assignRule(rule);
+        manager.addRule(rule);
 
 		System.err.println("DIAG: Test starting.\n");
 		
