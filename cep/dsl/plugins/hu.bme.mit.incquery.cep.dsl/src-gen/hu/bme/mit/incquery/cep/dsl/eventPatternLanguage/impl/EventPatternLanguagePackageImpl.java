@@ -732,9 +732,19 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getRule_ActionHandler()
+  {
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getRule_Action()
   {
-    return (EReference)ruleEClass.getEStructuralFeatures().get(1);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1561,6 +1571,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
 
     ruleEClass = createEClass(RULE);
     createEReference(ruleEClass, RULE__EVENT_PATTERNS);
+    createEAttribute(ruleEClass, RULE__ACTION_HANDLER);
     createEReference(ruleEClass, RULE__ACTION);
 
     onAppearRuleEClass = createEClass(ON_APPEAR_RULE);
@@ -1774,6 +1785,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
 
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRule_EventPatterns(), this.getEventPattern(), null, "eventPatterns", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRule_ActionHandler(), ecorePackage.getEString(), "actionHandler", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_Action(), theXbasePackage.getXExpression(), null, "action", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(onAppearRuleEClass, OnAppearRule.class, "OnAppearRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -99,8 +99,12 @@ public class EventPatternLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getComplexEventPatternAccess().getGroup_7(), "rule__ComplexEventPattern__Group_7__0");
 					put(grammarAccess.getOnAppearRuleAccess().getGroup(), "rule__OnAppearRule__Group__0");
 					put(grammarAccess.getOnAppearRuleAccess().getGroup_6(), "rule__OnAppearRule__Group_6__0");
+					put(grammarAccess.getOnAppearRuleAccess().getGroup_7(), "rule__OnAppearRule__Group_7__0");
+					put(grammarAccess.getOnAppearRuleAccess().getGroup_8(), "rule__OnAppearRule__Group_8__0");
 					put(grammarAccess.getFailDiagnosticRuleAccess().getGroup(), "rule__FailDiagnosticRule__Group__0");
 					put(grammarAccess.getFailDiagnosticRuleAccess().getGroup_6(), "rule__FailDiagnosticRule__Group_6__0");
+					put(grammarAccess.getFailDiagnosticRuleAccess().getGroup_7(), "rule__FailDiagnosticRule__Group_7__0");
+					put(grammarAccess.getFailDiagnosticRuleAccess().getGroup_8(), "rule__FailDiagnosticRule__Group_8__0");
 					put(grammarAccess.getTypedParameterListAccess().getGroup(), "rule__TypedParameterList__Group__0");
 					put(grammarAccess.getTypedParameterListAccess().getGroup_2(), "rule__TypedParameterList__Group_2__0");
 					put(grammarAccess.getTypedParameterAccess().getGroup(), "rule__TypedParameter__Group__0");
@@ -308,11 +312,13 @@ public class EventPatternLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOnAppearRuleAccess().getNameAssignment_1(), "rule__OnAppearRule__NameAssignment_1");
 					put(grammarAccess.getOnAppearRuleAccess().getEventPatternsAssignment_5(), "rule__OnAppearRule__EventPatternsAssignment_5");
 					put(grammarAccess.getOnAppearRuleAccess().getEventPatternsAssignment_6_1(), "rule__OnAppearRule__EventPatternsAssignment_6_1");
-					put(grammarAccess.getOnAppearRuleAccess().getActionAssignment_8(), "rule__OnAppearRule__ActionAssignment_8");
+					put(grammarAccess.getOnAppearRuleAccess().getActionHandlerAssignment_7_2(), "rule__OnAppearRule__ActionHandlerAssignment_7_2");
+					put(grammarAccess.getOnAppearRuleAccess().getActionAssignment_8_1(), "rule__OnAppearRule__ActionAssignment_8_1");
 					put(grammarAccess.getFailDiagnosticRuleAccess().getNameAssignment_1(), "rule__FailDiagnosticRule__NameAssignment_1");
 					put(grammarAccess.getFailDiagnosticRuleAccess().getEventPatternsAssignment_5(), "rule__FailDiagnosticRule__EventPatternsAssignment_5");
 					put(grammarAccess.getFailDiagnosticRuleAccess().getEventPatternsAssignment_6_1(), "rule__FailDiagnosticRule__EventPatternsAssignment_6_1");
-					put(grammarAccess.getFailDiagnosticRuleAccess().getActionAssignment_8(), "rule__FailDiagnosticRule__ActionAssignment_8");
+					put(grammarAccess.getFailDiagnosticRuleAccess().getActionHandlerAssignment_7_2(), "rule__FailDiagnosticRule__ActionHandlerAssignment_7_2");
+					put(grammarAccess.getFailDiagnosticRuleAccess().getActionAssignment_8_1(), "rule__FailDiagnosticRule__ActionAssignment_8_1");
 					put(grammarAccess.getTypedParameterListAccess().getParametersAssignment_1(), "rule__TypedParameterList__ParametersAssignment_1");
 					put(grammarAccess.getTypedParameterListAccess().getParametersAssignment_2_1(), "rule__TypedParameterList__ParametersAssignment_2_1");
 					put(grammarAccess.getTypedParameterAccess().getNameAssignment_1(), "rule__TypedParameter__NameAssignment_1");

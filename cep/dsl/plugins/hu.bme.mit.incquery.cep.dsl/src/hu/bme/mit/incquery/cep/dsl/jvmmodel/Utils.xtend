@@ -25,6 +25,7 @@ import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule
 
 class Utils {
 	@Inject extension IQualifiedNameProvider
@@ -147,5 +148,21 @@ class Utils {
 
 	def serialize(ITreeAppendable appendable, JvmTypeReference ref, EObject ctx) {
 		typeReferenceSerializer.serialize(ref, ctx, appendable)
+	}
+	
+	def dispatch unwrapAction(OnAppearRule rule) {
+		rule.action
+	}
+
+	def dispatch unwrapAction(FailDiagnosticRule rule) {
+		rule.action
+	}
+
+	def dispatch unwrapActionHandler(OnAppearRule rule) {
+		rule.actionHandler
+	}
+
+	def dispatch unwrapActionHandler(FailDiagnosticRule rule) {
+		rule.actionHandler
 	}
 }

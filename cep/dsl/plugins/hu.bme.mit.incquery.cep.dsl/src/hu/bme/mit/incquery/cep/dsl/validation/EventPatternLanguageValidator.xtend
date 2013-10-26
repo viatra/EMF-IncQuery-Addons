@@ -16,6 +16,13 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TypedParameterList
 import org.eclipse.xtext.validation.Check
 
 import static extension com.google.common.base.Strings.*
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OnAppearRule
+import org.eclipse.emf.codegen.ecore.genmodel.impl.Literals
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule
+import org.eclipse.xtext.xbase.XExpression
+import com.google.inject.Inject
+import hu.bme.mit.incquery.cep.dsl.jvmmodel.Utils
 
 //import org.eclipse.xtext.validation.Check
 /**
@@ -27,6 +34,9 @@ class EventPatternLanguageValidator extends AbstractEventPatternLanguageValidato
 
 	private static val INVALID_NAME = 'invalidName'
 	private static val INVALID_ARGUMENTS = 'invalidArguments'
+	private static val INVALID_ACTION_IN_RULE = "invalidRuleActions"
+
+	@Inject extension Utils
 
 	@Check
 	def uniqueName(ModelElement modelElement) {
@@ -66,6 +76,23 @@ class EventPatternLanguageValidator extends AbstractEventPatternLanguageValidato
 			error("The exact number of parameters in the referred pattern must be specified!",
 				EventPatternLanguagePackage.Literals.EVENT_TYPED_PARAMETER_WITH_MULTIPLICITY__PARAMETER_LIST,
 				INVALID_ARGUMENTS)
+		}
+	}
+
+	//TODO make the second constraint only a warning
+	@Check
+	def checkRuleActions(Rule rule) {
+		var actionHandler = rule.unwrapActionHandler
+		var action = rule.unwrapAction
+
+		if (actionHandler == null && action == null) {
+			error("There must be either an action handler or an action registered for this rule.",
+				EventPatternLanguagePackage.Literals.MODEL_ELEMENT__NAME, INVALID_ACTION_IN_RULE)
+		}
+
+		if (actionHandler != null && action != null) {
+			error("The rule has both an action handler and additional actions defined.",
+				EventPatternLanguagePackage.Literals.MODEL_ELEMENT__NAME, INVALID_ACTION_IN_RULE)
 		}
 	}
 

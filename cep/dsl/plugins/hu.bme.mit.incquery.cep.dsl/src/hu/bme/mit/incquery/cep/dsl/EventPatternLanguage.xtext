@@ -69,14 +69,16 @@ Rule:
 OnAppearRule:
 	'RuleOnAppear' name=ID '{'
 		'events' ':' eventPatterns+=[EventPattern] (', 'eventPatterns+=[EventPattern])*
-		'action' action = XBlockExpression
+		('actionHandler' ':' actionHandler=QualifiedName)?
+		('action' action = XBlockExpression)?
 	'}'
 ;
 
 FailDiagnosticRule:
 	'RuleOnFail' name=ID '{'
 		'events' ':' eventPatterns+=[EventPattern] (', 'eventPatterns+=[EventPattern])*
-		'action' action = XBlockExpression
+		('actionHandler' ':' actionHandler=QualifiedName)?
+		('action' action = XBlockExpression)?
 	'}'
 ;
 /*******************************************BASIC EVENT TYPE ELEMENTS*******************************************/

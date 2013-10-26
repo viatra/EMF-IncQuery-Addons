@@ -30,6 +30,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.RuleImpl#getEventPatterns <em>Event Patterns</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.RuleImpl#getActionHandler <em>Action Handler</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.RuleImpl#getAction <em>Action</em>}</li>
  * </ul>
  * </p>
@@ -47,6 +48,26 @@ public class RuleImpl extends ModelElementImpl implements Rule
    * @ordered
    */
   protected EList<EventPattern> eventPatterns;
+
+  /**
+   * The default value of the '{@link #getActionHandler() <em>Action Handler</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getActionHandler()
+   * @generated
+   * @ordered
+   */
+  protected static final String ACTION_HANDLER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getActionHandler() <em>Action Handler</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getActionHandler()
+   * @generated
+   * @ordered
+   */
+  protected String actionHandler = ACTION_HANDLER_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
@@ -91,6 +112,29 @@ public class RuleImpl extends ModelElementImpl implements Rule
       eventPatterns = new EObjectResolvingEList<EventPattern>(EventPattern.class, this, EventPatternLanguagePackage.RULE__EVENT_PATTERNS);
     }
     return eventPatterns;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getActionHandler()
+  {
+    return actionHandler;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setActionHandler(String newActionHandler)
+  {
+    String oldActionHandler = actionHandler;
+    actionHandler = newActionHandler;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EventPatternLanguagePackage.RULE__ACTION_HANDLER, oldActionHandler, actionHandler));
   }
 
   /**
@@ -169,6 +213,8 @@ public class RuleImpl extends ModelElementImpl implements Rule
     {
       case EventPatternLanguagePackage.RULE__EVENT_PATTERNS:
         return getEventPatterns();
+      case EventPatternLanguagePackage.RULE__ACTION_HANDLER:
+        return getActionHandler();
       case EventPatternLanguagePackage.RULE__ACTION:
         return getAction();
     }
@@ -190,6 +236,9 @@ public class RuleImpl extends ModelElementImpl implements Rule
         getEventPatterns().clear();
         getEventPatterns().addAll((Collection<? extends EventPattern>)newValue);
         return;
+      case EventPatternLanguagePackage.RULE__ACTION_HANDLER:
+        setActionHandler((String)newValue);
+        return;
       case EventPatternLanguagePackage.RULE__ACTION:
         setAction((XExpression)newValue);
         return;
@@ -210,6 +259,9 @@ public class RuleImpl extends ModelElementImpl implements Rule
       case EventPatternLanguagePackage.RULE__EVENT_PATTERNS:
         getEventPatterns().clear();
         return;
+      case EventPatternLanguagePackage.RULE__ACTION_HANDLER:
+        setActionHandler(ACTION_HANDLER_EDEFAULT);
+        return;
       case EventPatternLanguagePackage.RULE__ACTION:
         setAction((XExpression)null);
         return;
@@ -229,10 +281,29 @@ public class RuleImpl extends ModelElementImpl implements Rule
     {
       case EventPatternLanguagePackage.RULE__EVENT_PATTERNS:
         return eventPatterns != null && !eventPatterns.isEmpty();
+      case EventPatternLanguagePackage.RULE__ACTION_HANDLER:
+        return ACTION_HANDLER_EDEFAULT == null ? actionHandler != null : !ACTION_HANDLER_EDEFAULT.equals(actionHandler);
       case EventPatternLanguagePackage.RULE__ACTION:
         return action != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (actionHandler: ");
+    result.append(actionHandler);
+    result.append(')');
+    return result.toString();
   }
 
 } //RuleImpl

@@ -7,8 +7,27 @@
   <foreignModel>Transaction.ecore</foreignModel>
   <genPackages prefix="Transaction" basePackage="hu.bme.mit.incquery.cep.casestudy"
       disposableProviderFactory="true" ecorePackage="Transaction.ecore#/">
-    <genClasses ecoreClass="Transaction.ecore#//CompoundTransactionEvent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//CompoundTransactionEvent/timestamp"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionModel">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Transaction.ecore#//TransactionModel/elements"/>
     </genClasses>
+    <genClasses ecoreClass="Transaction.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//Component/transactionId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//Component/timestamp"/>
+    </genClasses>
+    <genClasses ecoreClass="Transaction.ecore#//ComponentA">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//ComponentA/customerId"/>
+    </genClasses>
+    <genClasses ecoreClass="Transaction.ecore#//ComponentB"/>
+    <genClasses ecoreClass="Transaction.ecore#//ComponentC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//ComponentC/supplierId"/>
+    </genClasses>
+    <genClasses ecoreClass="Transaction.ecore#//CompoundTransactionEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//CompoundTransactionEvent/transactionId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//CompoundTransactionEvent/customerId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//CompoundTransactionEvent/timestampA"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//CompoundTransactionEvent/timestampB"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//CompoundTransactionEvent/timestampC"/>
+    </genClasses>
+    <genClasses ecoreClass="Transaction.ecore#//ModelElement"/>
   </genPackages>
 </genmodel:GenModel>

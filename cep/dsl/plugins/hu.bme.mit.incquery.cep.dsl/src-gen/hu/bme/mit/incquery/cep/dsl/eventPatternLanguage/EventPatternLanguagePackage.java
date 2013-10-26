@@ -446,13 +446,22 @@ public interface EventPatternLanguagePackage extends EPackage
   int RULE__EVENT_PATTERNS = MODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Action Handler</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE__ACTION_HANDLER = MODEL_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Action</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RULE__ACTION = MODEL_ELEMENT_FEATURE_COUNT + 1;
+  int RULE__ACTION = MODEL_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Rule</em>' class.
@@ -461,7 +470,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int RULE_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 2;
+  int RULE_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.OnAppearRuleImpl <em>On Appear Rule</em>}' class.
@@ -490,6 +499,15 @@ public interface EventPatternLanguagePackage extends EPackage
    * @ordered
    */
   int ON_APPEAR_RULE__EVENT_PATTERNS = RULE__EVENT_PATTERNS;
+
+  /**
+   * The feature id for the '<em><b>Action Handler</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ON_APPEAR_RULE__ACTION_HANDLER = RULE__ACTION_HANDLER;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -536,6 +554,15 @@ public interface EventPatternLanguagePackage extends EPackage
    * @ordered
    */
   int FAIL_DIAGNOSTIC_RULE__EVENT_PATTERNS = RULE__EVENT_PATTERNS;
+
+  /**
+   * The feature id for the '<em><b>Action Handler</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FAIL_DIAGNOSTIC_RULE__ACTION_HANDLER = RULE__ACTION_HANDLER;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -1965,6 +1992,17 @@ public interface EventPatternLanguagePackage extends EPackage
   EReference getRule_EventPatterns();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule#getActionHandler <em>Action Handler</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Action Handler</em>'.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule#getActionHandler()
+   * @see #getRule()
+   * @generated
+   */
+  EAttribute getRule_ActionHandler();
+
+  /**
    * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule#getAction <em>Action</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3015,6 +3053,14 @@ public interface EventPatternLanguagePackage extends EPackage
      * @generated
      */
     EReference RULE__EVENT_PATTERNS = eINSTANCE.getRule_EventPatterns();
+
+    /**
+     * The meta object literal for the '<em><b>Action Handler</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE__ACTION_HANDLER = eINSTANCE.getRule_ActionHandler();
 
     /**
      * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.

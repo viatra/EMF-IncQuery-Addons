@@ -45,6 +45,7 @@
     </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//Rule">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//Rule/eventPatterns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//Rule/actionHandler"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//Rule/action"/>
     </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//OnAppearRule"/>

@@ -4,6 +4,12 @@ import "transaction.meta"
 import "http://www.eclipse.org/emf/2002/Ecore"
 
 pattern oldCompoundTransaction(cte : CompoundTransactionEvent, ts : ELong) {
-	CompoundTransactionEvent.timestamp(cte, ts);
-	check(ts > 1000);
+	CompoundTransactionEvent.timestampA(cte, ts);
+	check(ts > 1000l);
+}
+
+pattern newTransactionEvent(te : ComponentA){
+	ComponentA(te);
+	Component.timestamp(te, ts);
+	check(ts>0l);
 }

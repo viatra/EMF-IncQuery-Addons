@@ -14,5 +14,15 @@ package hu.bme.mit.incquery.cep.casestudy.transaction.validation;
 public interface CompoundTransactionEventValidator {
     boolean validate();
 
-    boolean validateTimestamp(long value);
+    boolean validateTransactionId(String value);
+
+				boolean validateCustomerId(String value);
+
+				boolean validateTimestampA(long value);
+
+				boolean validateTimestampB(long value);
+
+				boolean validateTimestampC(long value);
+
+				boolean validateTimestamp(long value);
 }

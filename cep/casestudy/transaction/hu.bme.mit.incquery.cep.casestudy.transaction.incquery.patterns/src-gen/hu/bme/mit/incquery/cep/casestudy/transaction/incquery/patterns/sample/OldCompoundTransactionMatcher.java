@@ -27,8 +27,8 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * <p>Original source:
  * <code><pre>
  * pattern oldCompoundTransaction(cte : CompoundTransactionEvent, ts : ELong) {
- * 	CompoundTransactionEvent.timestamp(cte, ts);
- * 	check(ts {@literal >} 1000);
+ * 	CompoundTransactionEvent.timestampA(cte, ts);
+ * 	check(ts {@literal >} 1000l);
  * }
  * </pre></code>
  * 

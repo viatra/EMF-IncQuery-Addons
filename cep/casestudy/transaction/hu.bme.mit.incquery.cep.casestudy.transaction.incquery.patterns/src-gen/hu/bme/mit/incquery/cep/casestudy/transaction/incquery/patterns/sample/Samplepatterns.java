@@ -1,5 +1,6 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.NewTransactionEventMatcher;
 import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.OldCompoundTransactionMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedPatternGroup;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
@@ -13,6 +14,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * 
  * <p> From package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample, the group contains the definition of the following patterns: <ul>
  * <li>oldCompoundTransaction</li>
+ * <li>newTransactionEvent</li>
  * </ul>
  * 
  * @see IPatternGroup
@@ -38,6 +40,7 @@ public final class Samplepatterns extends BaseGeneratedPatternGroup {
   private static Samplepatterns INSTANCE;
   
   private Samplepatterns() throws IncQueryException {
+    querySpecifications.add(NewTransactionEventMatcher.querySpecification());
     querySpecifications.add(OldCompoundTransactionMatcher.querySpecification());
     
   }

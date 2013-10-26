@@ -22,6 +22,11 @@ public class ViatraCepManager {
         eventModelManager.assignRule(rule);
         return this;
     }
+    
+    public ViatraCepManager addRules(List<ICepRule> rules) {
+        eventModelManager.assignRules(rules);
+        return this;
+    }
 
     public void removeEventPattern(EventPattern eventPattern) {
         // TODO

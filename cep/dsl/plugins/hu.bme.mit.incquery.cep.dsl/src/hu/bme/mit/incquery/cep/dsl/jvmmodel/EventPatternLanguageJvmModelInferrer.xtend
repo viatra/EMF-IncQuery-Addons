@@ -35,6 +35,12 @@ import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule
+import com.google.common.base.Preconditions
+import org.eclipse.xtext.xbase.XExpression
+import hu.bme.mit.incquery.cep.api.IActionHandler
+import org.eclipse.xtext.xbase.compiler.XbaseCompiler
+import org.eclipse.xtext.xbase.compiler.StringBuilderBasedAppendable
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -48,6 +54,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
      */
 	@Inject extension JvmTypesBuilder jvmTypesBuilder
 	@Inject extension Utils
+	@Inject extension XbaseCompiler xbaseCompiler
 
 	/**
 	 * The dispatch method {@code infer} is called for each instance of the
@@ -169,8 +176,9 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 
 	def private createOrdering(ITreeAppendable appendable, EObject ctx, ComplexEventExpression expression) {
 		appendable.append('''setOperator(''').append('''«referClass(appendable, ctx, ComplexOperator)».''').append(
-			'''«getOperator(expression)»''').append(''');
-			''')
+			'''«getOperator(expression)»''').append(
+			''');
+				''')
 	}
 
 	def private getOperator(ComplexEventExpression expression) {
@@ -284,7 +292,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 			]
 
 			//generate JOB class
-			acceptor.accept(appRule.action.toClass(appRule.jobClassName)).initializeLater [
+			acceptor.accept(appRule.toClass(appRule.jobClassName)).initializeLater [
 				documentation = appRule.documentation
 				superTypes += appRule.newTypeRef(Job, it.newTypeRef(ObservedComplexEventPattern))
 				members += appRule.toConstructor [
@@ -300,7 +308,14 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 						appRule.newTypeRef(typeof(Activation),
 							cloneWithProxies(appRule.newTypeRef(ObservedComplexEventPattern)).wildCardExtends))
 					parameters += appRule.toParameter("context", appRule.newTypeRef(Context))
-					body = appRule.action
+					if (appRule.action != null) {
+						body = appRule.action
+					}
+					if (appRule.actionHandler != null) {
+						body = [
+							generateActionHandlerBody(appRule)
+						]
+					}
 				]
 				members += appRule.toMethod("handleError", appRule.newTypeRef("void")) [
 					parameters += appRule.toParameter("activation",
@@ -325,13 +340,25 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 		//generateRulePackage(generatedRuleClassNames)
 		}
 
+		def private generateActionHandlerBody(ITreeAppendable appendable, EObject ctx) {
+			var actionHandler = (ctx as OnAppearRule).actionHandler
+			appendable.append(
+				'''
+					«referClass(appendable, ctx, IActionHandler)» actionHandler = new «actionHandler»();
+					actionHandler.handle(activation);
+				'''
+			)
+		}
+
 		def enumerateAssignableEventPatterns(ITreeAppendable appendable, OnAppearRule rule) {
 			if (rule == null || rule.eventPatterns.empty) {
 				return ""
 			}
 
 			for (ep : rule.eventPatterns) {
-				appendable.append('''eventPatterns.add(new «getFqn(ep)»());''')
+				appendable.append(
+					'''eventPatterns.add(new «getFqn(ep)»());
+						''')
 			}
 		}
 

@@ -20,76 +20,142 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  */
 public class TransactionFactoryImpl extends EFactoryImpl implements TransactionFactory {
     /**
-     * Creates the default factory implementation.
-     * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public static TransactionFactory init() {
-        try {
-            TransactionFactory theTransactionFactory = (TransactionFactory)EPackage.Registry.INSTANCE.getEFactory(TransactionPackage.eNS_URI);
-            if (theTransactionFactory != null) {
-                return theTransactionFactory;
-            }
-        }
-        catch (Exception exception) {
-            EcorePlugin.INSTANCE.log(exception);
-        }
-        return new TransactionFactoryImpl();
-    }
+		try {
+			TransactionFactory theTransactionFactory = (TransactionFactory)EPackage.Registry.INSTANCE.getEFactory(TransactionPackage.eNS_URI);
+			if (theTransactionFactory != null) {
+				return theTransactionFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new TransactionFactoryImpl();
+	}
 
     /**
-     * Creates an instance of the factory.
-     * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public TransactionFactoryImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public EObject create(EClass eClass) {
-        switch (eClass.getClassifierID()) {
-            case TransactionPackage.COMPOUND_TRANSACTION_EVENT: return createCompoundTransactionEvent();
-            default:
-                throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-        }
-    }
+		switch (eClass.getClassifierID()) {
+			case TransactionPackage.TRANSACTION_MODEL: return createTransactionModel();
+			case TransactionPackage.COMPONENT: return createComponent();
+			case TransactionPackage.COMPONENT_A: return createComponentA();
+			case TransactionPackage.COMPONENT_B: return createComponentB();
+			case TransactionPackage.COMPONENT_C: return createComponentC();
+			case TransactionPackage.COMPOUND_TRANSACTION_EVENT: return createCompoundTransactionEvent();
+			case TransactionPackage.MODEL_ELEMENT: return createModelElement();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TransactionModel createTransactionModel() {
+		TransactionModelImpl transactionModel = new TransactionModelImpl();
+		return transactionModel;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component createComponent() {
+		ComponentImpl component = new ComponentImpl();
+		return component;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentA createComponentA() {
+		ComponentAImpl componentA = new ComponentAImpl();
+		return componentA;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentB createComponentB() {
+		ComponentBImpl componentB = new ComponentBImpl();
+		return componentB;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentC createComponentC() {
+		ComponentCImpl componentC = new ComponentCImpl();
+		return componentC;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public CompoundTransactionEvent createCompoundTransactionEvent() {
-        CompoundTransactionEventImpl compoundTransactionEvent = new CompoundTransactionEventImpl();
-        return compoundTransactionEvent;
-    }
+		CompoundTransactionEventImpl compoundTransactionEvent = new CompoundTransactionEventImpl();
+		return compoundTransactionEvent;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModelElement createModelElement() {
+		ModelElementImpl modelElement = new ModelElementImpl();
+		return modelElement;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public TransactionPackage getTransactionPackage() {
-        return (TransactionPackage)getEPackage();
-    }
+		return (TransactionPackage)getEPackage();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @deprecated
-     * @generated
-     */
+	 * @deprecated
+	 * @generated
+	 */
     @Deprecated
     public static TransactionPackage getPackage() {
-        return TransactionPackage.eINSTANCE;
-    }
+		return TransactionPackage.eINSTANCE;
+	}
 
 } //TransactionFactoryImpl

@@ -32,15 +32,19 @@ ComplexEvent compoundTransactionEvent(a:componentA, b:componentB, c:componentC){
 	definition : (a(tId, _ts, cId) -> b(tId, _ts) -> c(tId, _ts, sId))[1100]
 }
 
+ComplexEvent compoundTransactionEvent1(a:componentA, b:componentB, c:componentC){
+	definition : (a -> b)[1200]
+}
+
 ComplexEvent compoundTransactionEvent2(a:componentA, b:componentB, c:componentC){
-	definition : (a -> b -> c)[1200]
+	definition : (a -> b ->c)[1200]
 }
 
 
 RuleOnAppear r1 {
-	events: compoundTransactionEvent
-	action {
-		val testMsg = "test"
-		new hu.bme.mit.incquery.cep.casestudy.transaction.MyActionHandler().handleAction(testMsg)
-	}
+	events: compoundTransactionEvent1, compoundTransactionEvent2
+	actionHandler: hu.bme.mit.incquery.cep.casestudy.transaction.handlers.MySimpleActionHandler
+//	action {
+//		new hu.bme.mit.incquery.cep.casestudy.transaction.handlers.MyActionHandler().handleAction("observed event")
+//	}
 }

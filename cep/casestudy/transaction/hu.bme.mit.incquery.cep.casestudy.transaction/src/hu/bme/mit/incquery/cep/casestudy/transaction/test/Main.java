@@ -37,7 +37,7 @@ public class Main {
 		manager = ViatraCepManager.withContext(EventProcessingContext.CHRONICLE).addRule(new R1());
 
         System.err.println("DIAG: Test starting.\n");
-
+        
         eventQueue.push(new ComponentA(source));
         eventQueue.push(new ComponentB(source));
         eventQueue.push(new ComponentA(source));

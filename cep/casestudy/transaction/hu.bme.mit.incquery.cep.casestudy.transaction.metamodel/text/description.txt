@@ -7,5 +7,26 @@ This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator
 
 Package transaction <transaction.meta>
 
-  Class CompoundTransactionEvent
+  Class TransactionModel
+    Reference elements : ModelElement<<0..*>>
+
+  Class Component -> ModelElement
+    Attribute transactionId : EString<<1..1>>
     Attribute timestamp : ELong
+
+  Class ComponentA -> Component
+    Attribute customerId : EString<<1..1>>
+
+  Class ComponentB -> Component
+
+  Class ComponentC -> Component
+    Attribute supplierId : EString<<1..1>>
+
+  Class CompoundTransactionEvent -> ModelElement
+    Attribute transactionId : EString
+    Attribute customerId : EString<<1..1>>
+    Attribute timestampA : ELong<<1..1>>
+    Attribute timestampB : ELong<<1..1>>
+    Attribute timestampC : ELong<<1..1>>
+
+  Class ModelElement

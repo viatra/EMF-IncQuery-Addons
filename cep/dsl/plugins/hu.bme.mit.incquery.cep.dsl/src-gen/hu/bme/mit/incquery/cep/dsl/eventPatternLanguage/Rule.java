@@ -15,6 +15,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule#getEventPatterns <em>Event Patterns</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule#getActionHandler <em>Action Handler</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule#getAction <em>Action</em>}</li>
  * </ul>
  * </p>
@@ -40,6 +41,32 @@ public interface Rule extends ModelElement
    * @generated
    */
   EList<EventPattern> getEventPatterns();
+
+  /**
+   * Returns the value of the '<em><b>Action Handler</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Action Handler</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Action Handler</em>' attribute.
+   * @see #setActionHandler(String)
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getRule_ActionHandler()
+   * @model
+   * @generated
+   */
+  String getActionHandler();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule#getActionHandler <em>Action Handler</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Action Handler</em>' attribute.
+   * @see #getActionHandler()
+   * @generated
+   */
+  void setActionHandler(String value);
 
   /**
    * Returns the value of the '<em><b>Action</b></em>' containment reference.

@@ -898,31 +898,57 @@ ruleOnAppearRule returns [EObject current=null]
 	}
 
 )
-))*	otherlv_8='action' 
+))*(	otherlv_8='actionHandler' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getOnAppearRuleAccess().getActionKeyword_7());
+    	newLeafNode(otherlv_8, grammarAccess.getOnAppearRuleAccess().getActionHandlerKeyword_7_0());
+    }
+	otherlv_9=':' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getOnAppearRuleAccess().getColonKeyword_7_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getOnAppearRuleAccess().getActionXBlockExpressionParserRuleCall_8_0()); 
+	        newCompositeNode(grammarAccess.getOnAppearRuleAccess().getActionHandlerQualifiedNameParserRuleCall_7_2_0()); 
 	    }
-		lv_action_9_0=ruleXBlockExpression		{
+		lv_actionHandler_10_0=ruleQualifiedName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getOnAppearRuleRule());
+	        }
+       		set(
+       			$current, 
+       			"actionHandler",
+        		lv_actionHandler_10_0, 
+        		"QualifiedName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_11='action' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getOnAppearRuleAccess().getActionKeyword_8_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getOnAppearRuleAccess().getActionXBlockExpressionParserRuleCall_8_1_0()); 
+	    }
+		lv_action_12_0=ruleXBlockExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getOnAppearRuleRule());
 	        }
        		set(
        			$current, 
        			"action",
-        		lv_action_9_0, 
+        		lv_action_12_0, 
         		"XBlockExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_10='}' 
+))?	otherlv_13='}' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getOnAppearRuleAccess().getRightCurlyBracketKeyword_9());
+    	newLeafNode(otherlv_13, grammarAccess.getOnAppearRuleAccess().getRightCurlyBracketKeyword_9());
     }
 )
 ;
@@ -1009,31 +1035,57 @@ ruleFailDiagnosticRule returns [EObject current=null]
 	}
 
 )
-))*	otherlv_8='action' 
+))*(	otherlv_8='actionHandler' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getFailDiagnosticRuleAccess().getActionKeyword_7());
+    	newLeafNode(otherlv_8, grammarAccess.getFailDiagnosticRuleAccess().getActionHandlerKeyword_7_0());
+    }
+	otherlv_9=':' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getFailDiagnosticRuleAccess().getColonKeyword_7_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFailDiagnosticRuleAccess().getActionXBlockExpressionParserRuleCall_8_0()); 
+	        newCompositeNode(grammarAccess.getFailDiagnosticRuleAccess().getActionHandlerQualifiedNameParserRuleCall_7_2_0()); 
 	    }
-		lv_action_9_0=ruleXBlockExpression		{
+		lv_actionHandler_10_0=ruleQualifiedName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getFailDiagnosticRuleRule());
+	        }
+       		set(
+       			$current, 
+       			"actionHandler",
+        		lv_actionHandler_10_0, 
+        		"QualifiedName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_11='action' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getFailDiagnosticRuleAccess().getActionKeyword_8_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFailDiagnosticRuleAccess().getActionXBlockExpressionParserRuleCall_8_1_0()); 
+	    }
+		lv_action_12_0=ruleXBlockExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFailDiagnosticRuleRule());
 	        }
        		set(
        			$current, 
        			"action",
-        		lv_action_9_0, 
+        		lv_action_12_0, 
         		"XBlockExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_10='}' 
+))?	otherlv_13='}' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getFailDiagnosticRuleAccess().getRightCurlyBracketKeyword_9());
+    	newLeafNode(otherlv_13, grammarAccess.getFailDiagnosticRuleAccess().getRightCurlyBracketKeyword_9());
     }
 )
 ;

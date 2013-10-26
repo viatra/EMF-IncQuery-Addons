@@ -17,5 +17,21 @@
             id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.oldCompoundTransaction_1_1">
       </evaluator>
    </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.newTransactionEvent"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.NewTransactionEventQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.newTransactionEvent">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.newTransactionEvent"
+         point="org.eclipse.incquery.runtime.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.NewTransactionEventEvaluator1_1"
+            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.newTransactionEvent_1_1">
+      </evaluator>
+   </extension>
 
 </plugin>
