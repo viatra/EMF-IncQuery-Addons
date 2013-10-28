@@ -300,10 +300,15 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 						append('''«enumerateAssignableEventPatterns(it, appRule)»''')
 					]
 				]
-				members +=
-					appRule.toGetter("eventPatterns", appRule.newTypeRef(List, it.newTypeRef(EventPattern)))
-				members += appRule.toGetter("job",
+				var patternsGetter = appRule.toGetter("eventPatterns", appRule.newTypeRef(List, it.newTypeRef(EventPattern)))
+				var jobGetter = appRule.toGetter("job",
 					appRule.newTypeRef(Job, it.newTypeRef(ObservedComplexEventPattern)))
+				
+				patternsGetter.addOverrideAnnotation(appRule)
+				jobGetter.addOverrideAnnotation(appRule)
+				members += patternsGetter
+				members += jobGetter
+					
 			]
 
 			//generate JOB class
@@ -315,10 +320,9 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 					body = [
 						append(
 							'''
-								super(activationState);
-							''')]
+								super(activationState);''')]
 				]
-				members += appRule.toMethod("execute", appRule.newTypeRef("void")) [
+				var executeMethod = appRule.toMethod("execute", appRule.newTypeRef("void")) [
 					parameters += appRule.toParameter("activation",
 						appRule.newTypeRef(typeof(Activation),
 							cloneWithProxies(appRule.newTypeRef(ObservedComplexEventPattern)).wildCardExtends))
@@ -332,7 +336,8 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 						]
 					}
 				]
-				members += appRule.toMethod("handleError", appRule.newTypeRef("void")) [
+				executeMethod.addOverrideAnnotation(appRule)
+				var errorMethod = appRule.toMethod("handleError", appRule.newTypeRef("void")) [
 					parameters += appRule.toParameter("activation",
 						appRule.newTypeRef(typeof(Activation),
 							cloneWithProxies(appRule.newTypeRef(ObservedComplexEventPattern)).wildCardExtends))
@@ -341,9 +346,13 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 					body = [
 						append(
 							'''
-								//not gonna happen
-							''')]
+								//not gonna happen''')]
 				]
+				errorMethod.addOverrideAnnotation(appRule)
+				
+				members += executeMethod
+				members += errorMethod
+				
 			]
 
 			generatedRuleClassNames.add(appRule.fqn)
@@ -360,8 +369,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 			appendable.append(
 				'''
 					«referClass(appendable, ctx, IActionHandler)» actionHandler = new «actionHandler»();
-					actionHandler.handle(activation);
-				'''
+					actionHandler.handle(activation);'''
 			)
 		}
 

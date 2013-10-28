@@ -11,17 +11,16 @@ import org.eclipse.incquery.runtime.evm.api.event.ActivationState;
 public class R1Job extends Job<ObservedComplexEventPattern> {
   public R1Job(final ActivationState activationState) {
     super(activationState);
-    
   }
   
+  @Override
   public void execute(final Activation<? extends ObservedComplexEventPattern> activation, final Context context) {
     IActionHandler actionHandler = new hu.bme.mit.incquery.cep.casestudy.transaction.handlers.MySimpleActionHandler();
     actionHandler.handle(activation);
-    
   }
   
+  @Override
   public void handleError(final Activation<? extends ObservedComplexEventPattern> activation, final Exception exception, final Context context) {
     //not gonna happen
-    
   }
 }

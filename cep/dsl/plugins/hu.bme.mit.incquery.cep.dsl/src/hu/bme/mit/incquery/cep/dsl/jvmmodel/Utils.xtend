@@ -32,12 +32,17 @@ import com.google.common.collect.Lists
 import java.util.Map
 import java.util.Map.Entry
 import hu.bme.mit.incquery.cep.metamodels.cep.Event
+import org.eclipse.xtend.lib.macro.declaration.TypeReference
+import org.eclipse.xtext.common.types.JvmAnnotationType
+import org.eclipse.xtext.common.types.util.TypeReferences
+import org.eclipse.xtext.common.types.JvmOperation
 
 class Utils {
 	@Inject extension IQualifiedNameProvider
 	@Inject extension TypeReferenceSerializer typeReferenceSerializer
 	@Inject private TypesFactory factory = TypesFactory.eINSTANCE;
 	@Inject extension JvmTypesBuilder jvmTypesBuilder
+	@Inject extension TypeReferences references
 
 	def dispatch getComplexOperator(FollowsExpression expression) {
 		return "ORDERED"
@@ -121,7 +126,15 @@ class Utils {
 				// TODO generate stuff here
 				return true;''')
 		]
+		method.addOverrideAnnotation(element)
+		
 		return Lists.newArrayList(method)
+	}
+	
+	def addOverrideAnnotation(JvmOperation method, EObject context){
+		method.annotations += factory.createJvmAnnotationReference => [
+			it.annotation = references.findDeclaredType(typeof(Override), context) as JvmAnnotationType
+		]
 	}
 
 	def Iterable<? extends JvmMember> toBindingMethod1(ModelElement element) {

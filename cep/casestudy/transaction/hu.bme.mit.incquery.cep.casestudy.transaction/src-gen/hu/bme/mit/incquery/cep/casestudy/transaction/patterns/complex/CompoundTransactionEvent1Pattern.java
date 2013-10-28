@@ -29,7 +29,9 @@ public class CompoundTransactionEvent1Pattern extends ParameterizableComplexEven
     setId("CompoundTransactionEvent1Pattern");
   }
   
+  @Override
   public boolean evaluateParameterBindigs(final Event event) {
+    // TODO generate stuff here
     return true;
   }
 }

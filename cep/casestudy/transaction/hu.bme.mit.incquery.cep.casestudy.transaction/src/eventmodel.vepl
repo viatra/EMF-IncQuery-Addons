@@ -22,7 +22,7 @@ AtomicEvent componentC(transactionId : String, timestamp : long, supplierId : St
 	source : eventSource
 }
 
-AtomicEvent dummyEvent2(){
+AtomicEvent dummyEvent22(){
 	source : eventSource
 }
 

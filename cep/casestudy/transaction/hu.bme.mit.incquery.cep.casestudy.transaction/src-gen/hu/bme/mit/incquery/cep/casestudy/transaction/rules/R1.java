@@ -20,10 +20,12 @@ public class R1 implements ICepRule {
     
   }
   
+  @Override
   public List<EventPattern> getEventPatterns() {
     return this.eventPatterns;
   }
   
+  @Override
   public Job<ObservedComplexEventPattern> getJob() {
     return this.job;
   }

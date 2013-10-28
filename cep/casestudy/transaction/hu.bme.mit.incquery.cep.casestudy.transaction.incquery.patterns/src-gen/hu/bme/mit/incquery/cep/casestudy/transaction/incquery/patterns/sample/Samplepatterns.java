@@ -40,8 +40,8 @@ public final class Samplepatterns extends BaseGeneratedPatternGroup {
   private static Samplepatterns INSTANCE;
   
   private Samplepatterns() throws IncQueryException {
-    querySpecifications.add(OldCompoundTransactionMatcher.querySpecification());
     querySpecifications.add(NewTransactionEventMatcher.querySpecification());
+    querySpecifications.add(OldCompoundTransactionMatcher.querySpecification());
     
   }
 }
