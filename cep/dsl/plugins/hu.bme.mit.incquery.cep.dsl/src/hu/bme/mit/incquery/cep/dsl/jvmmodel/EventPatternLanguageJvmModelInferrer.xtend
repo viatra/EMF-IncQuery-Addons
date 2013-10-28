@@ -2,8 +2,10 @@ package hu.bme.mit.incquery.cep.dsl.jvmmodel
 
 import com.google.common.collect.Lists
 import com.google.inject.Inject
-import hu.bme.mit.incquery.cep.api.AbstractEventInstance
+import hu.bme.mit.incquery.cep.api.IActionHandler
 import hu.bme.mit.incquery.cep.api.ICepRule
+import hu.bme.mit.incquery.cep.api.ParameterizableComplexEventPattern
+import hu.bme.mit.incquery.cep.api.ParameterizableEventInstance
 import hu.bme.mit.incquery.cep.api.evm.CepActivationStates
 import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern
@@ -20,29 +22,19 @@ import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern
 import hu.bme.mit.incquery.cep.metamodels.cep.GlobalTimewindow
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.AtomicEventPatternImpl
-import hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl
 import java.io.FileWriter
-import java.util.ArrayList
 import java.util.List
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.incquery.runtime.evm.api.Activation
 import org.eclipse.incquery.runtime.evm.api.Context
 import org.eclipse.incquery.runtime.evm.api.Job
 import org.eclipse.incquery.runtime.evm.api.event.ActivationState
-import org.eclipse.xtext.common.types.TypesFactory
 import org.eclipse.xtext.naming.QualifiedName
+import org.eclipse.xtext.xbase.compiler.XbaseCompiler
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule
-import com.google.common.base.Preconditions
-import org.eclipse.xtext.xbase.XExpression
-import hu.bme.mit.incquery.cep.api.IActionHandler
-import org.eclipse.xtext.xbase.compiler.XbaseCompiler
-import org.eclipse.xtext.xbase.compiler.StringBuilderBasedAppendable
-import java.util.Map
-import com.google.common.collect.Maps
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -99,16 +91,12 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 		for (pattern : patterns) {
 			acceptor.accept(pattern.toClass(pattern.getFqn(AtomicPatternFqnPurpose.EVENT))).initializeLater [
 				documentation = pattern.documentation
-				superTypes += pattern.newTypeRef(AbstractEventInstance)
-				members += pattern.toField("parameters",
-					pattern.newTypeRef(List, jvmTypesBuilder.newTypeRef(pattern, Object))) [
-					initializer = [
-						append('''«referClass(pattern, Lists)»''').append('''.newArrayList()''')
-					]
-				]
+				superTypes += pattern.newTypeRef(ParameterizableEventInstance)
 				val paramList = (pattern as AtomicEventPattern).parameters
-				for (parameter : paramList.parameters) {
-					members += pattern.toField(parameter.name, parameter.type)
+				if (paramList != null) {
+					for (parameter : paramList.parameters) {
+						members += pattern.toField(parameter.name, parameter.type)
+					}
 				}
 				members += pattern.toConstructor [
 					parameters += toParameter("eventSource", pattern.newTypeRef(IEventSource))
@@ -118,24 +106,21 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 								super(eventSource);
 							''').append(
 							'''
-								«FOR parameter : paramList.parameters»
-									parameters.add(«parameter.name»);
-								«ENDFOR»
+								«IF paramList != null»
+									«FOR parameter : paramList.parameters»
+										getParameters().add(«parameter.name»);
+									«ENDFOR»
+								«ENDIF»
 							''')
 					]
 				]
-				members +=
-					pattern.toGetter("parameters", pattern.newTypeRef(List, jvmTypesBuilder.newTypeRef(pattern, Object)))
-				members +=
-					pattern.toMethod("getParameter", pattern.newTypeRef(Object))[
-						parameters += pattern.toParameter("i", pattern.newTypeRef(int))
-						body=[
-							append('''return parameters.get(i);''')
-						]
-					]
-				for (parameter : paramList.parameters) {
-					members += pattern.toGetter(parameter.name, parameter.type)
-					members += pattern.toSetter(parameter.name, parameter.type)
+				if (paramList != null) {
+					var i = 0
+					for (parameter : paramList.parameters) {
+						members += pattern.toGetter(parameter.name, parameter.type)
+						members += pattern.toAdvancedSetter(parameter.name, parameter.type, i)
+						i = i + 1
+					}
 				}
 			]
 		}
@@ -173,14 +158,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 		for (pattern : patterns) {
 			acceptor.accept(pattern.toClass(pattern.fqn)).initializeLater [
 				documentation = pattern.documentation
-				superTypes += pattern.newTypeRef(ComplexEventPatternImpl)
-				members += pattern.toField("paramValues",
-					pattern.newTypeRef(Map, jvmTypesBuilder.newTypeRef(pattern, String),
-						jvmTypesBuilder.newTypeRef(pattern, Object))) [
-					initializer = [
-						append('''«referClass(pattern, Maps)»''').append('''.newHashMap()''')
-					]
-				]
+				superTypes += pattern.newTypeRef(ParameterizableComplexEventPattern)
 				members += pattern.toConstructor [
 					body = [
 						append(
@@ -206,6 +184,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 						setId(it, pattern, pattern.name)
 					]
 				]
+				members += pattern.toImplementingBindingMethod()
 			]
 		}
 	}

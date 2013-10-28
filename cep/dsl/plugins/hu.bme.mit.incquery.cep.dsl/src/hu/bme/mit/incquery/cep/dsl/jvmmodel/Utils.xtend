@@ -5,8 +5,10 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AugmentedExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Expression
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.MultiplicityExpression
@@ -18,20 +20,24 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedMultiplicityExpress
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TypedParameter
 import java.util.List
 import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.common.types.JvmMember
 import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.common.types.TypesFactory
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule
+import org.eclipse.xtext.common.types.JvmVisibility
+import com.google.common.collect.Lists
+import java.util.Map
+import java.util.Map.Entry
+import hu.bme.mit.incquery.cep.metamodels.cep.Event
 
 class Utils {
 	@Inject extension IQualifiedNameProvider
 	@Inject extension TypeReferenceSerializer typeReferenceSerializer
 	@Inject private TypesFactory factory = TypesFactory.eINSTANCE;
-	@Inject extension JvmTypesBuilder
+	@Inject extension JvmTypesBuilder jvmTypesBuilder
 
 	def dispatch getComplexOperator(FollowsExpression expression) {
 		return "ORDERED"
@@ -85,6 +91,86 @@ class Utils {
 		}
 
 		eventPatterns
+	}
+
+	def Iterable<? extends JvmMember> toAdvancedSetter(ModelElement element, String name, JvmTypeReference type,
+		int index) {
+		val advancedSetter = factory.createJvmOperation
+		advancedSetter.simpleName = "set" + name.toFirstUpper
+		advancedSetter.returnType = element.newTypeRef("void")
+		advancedSetter.parameters.add(advancedSetter.toParameter(name, type))
+		advancedSetter.setVisibility(JvmVisibility.PUBLIC)
+		advancedSetter.setBody [
+			append(
+				'''
+				this.«name» = «name»;
+				getParameters().set(«index», «name»);''')
+		]
+		return Lists.newArrayList(advancedSetter)
+	}
+
+	def Iterable<? extends JvmMember> toImplementingBindingMethod(ModelElement element) {
+		val method = factory.createJvmOperation
+		method.simpleName = "evaluateParameterBindigs"
+		method.setVisibility(JvmVisibility.PUBLIC)
+		method.returnType = element.newTypeRef("boolean")
+		method.parameters.add(method.toParameter("event", element.newTypeRef(Event)))
+		method.setBody [
+			append(
+				'''
+				// TODO generate stuff here
+				return true;''')
+		]
+		return Lists.newArrayList(method)
+	}
+
+	def Iterable<? extends JvmMember> toBindingMethod1(ModelElement element) {
+		val method = factory.createJvmOperation
+		method.simpleName = "evaluateParamBinding"
+		method.returnType = element.newTypeRef("boolean")
+		method.parameters.add(
+			method.toParameter("params",
+				element.newTypeRef(Map, cloneWithProxies(element.newTypeRef(String)),
+					cloneWithProxies(element.newTypeRef(Object)))))
+
+		//referClass(null, method, Entry, method.newTypeRef(String), method.newTypeRef(Object))))
+		method.setVisibility(JvmVisibility.PRIVATE)
+		method.setBody [
+			append(
+				'''
+				for (''').append(
+				'''«referClass(element, Entry, element.newTypeRef("String"), element.newTypeRef("Object"))» ''').
+				append(
+					'''
+					param : params.entrySet()) {
+						if (!(evaluateParamBinding(param.getKey(), param.getValue()))) {
+							return false;
+						}
+					}
+					return true;''')
+		]
+		return Lists.newArrayList(method)
+	}
+
+	def Iterable<? extends JvmMember> toBindingMethod2(ModelElement element) {
+		val method = factory.createJvmOperation
+		method.simpleName = "evaluateParamBinding"
+		method.returnType = element.newTypeRef("boolean")
+		method.parameters.add(method.toParameter("paramName", element.newTypeRef("String")))
+		method.parameters.add(method.toParameter("paramValue", element.newTypeRef("Object")))
+		method.setVisibility(JvmVisibility.PRIVATE)
+		method.setBody [
+			append(
+				'''
+					Object value = paramValues.get(paramName);
+					if (value == null) {
+						paramValues.put(paramName, paramValue);
+						return true;
+					}
+					return value.equals(paramValue);
+				''')
+		]
+		return Lists.newArrayList(method)
 	}
 
 	def static isStaticallyBound(
@@ -149,7 +235,7 @@ class Utils {
 	def serialize(ITreeAppendable appendable, JvmTypeReference ref, EObject ctx) {
 		typeReferenceSerializer.serialize(ref, ctx, appendable)
 	}
-	
+
 	def dispatch unwrapAction(OnAppearRule rule) {
 		rule.action
 	}

@@ -22,6 +22,11 @@ AtomicEvent componentC(transactionId : String, timestamp : long, supplierId : St
 	source : eventSource
 }
 
+AtomicEvent dummyEvent2(){
+	source : eventSource
+}
+
+
 IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:int){
 	iqPatternRef : oldCompoundTransaction(X, I)
 	iqChangeType : NEW_MATCH_FOUND
@@ -37,7 +42,7 @@ ComplexEvent compoundTransactionEvent1(a:componentA, b:componentB, c:componentC)
 }
 
 ComplexEvent compoundTransactionEvent2(a:componentA, b:componentB, c:componentC){
-	definition : (a -> b ->c)[1300]
+	definition : (a -> b ->c)[1500]
 }
 
 

@@ -1,19 +1,16 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.patterns.complex;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
+import hu.bme.mit.incquery.cep.api.ParameterizableComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.CepFactory;
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator;
+import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.GlobalTimewindow;
-import hu.bme.mit.incquery.cep.metamodels.cep.impl.ComplexEventPatternImpl;
 import java.util.List;
-import java.util.Map;
 
 @SuppressWarnings("all")
-public class CompoundTransactionEventPattern extends ComplexEventPatternImpl {
-  private Map<String,Object> paramValues = Maps.newHashMap();
-  
+public class CompoundTransactionEventPattern extends ParameterizableComplexEventPattern {
   public CompoundTransactionEventPattern() {
     super();
     setOperator(ComplexOperator.ORDERED);
@@ -31,5 +28,9 @@ public class CompoundTransactionEventPattern extends ComplexEventPatternImpl {
     setGlobalTimewindow(timewindow);
     
     setId("CompoundTransactionEventPattern");
+  }
+  
+  public boolean evaluateParameterBindigs(final Event event) {
+    return true;
   }
 }
