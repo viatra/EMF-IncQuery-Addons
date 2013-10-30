@@ -179,7 +179,7 @@ class Utils {
 					if(event instanceof «comEvent.eventPattern.type.getFqn(AtomicPatternFqnPurpose.EVENT)»){
 				''').append(
 				'''
-				«referClass(appendable, ctx, Map, ctx.newTypeRef("String"), ctx.newTypeRef("Object"))»''').append(
+					«referClass(appendable, ctx, Map, ctx.newTypeRef("String"), ctx.newTypeRef("Object"))»''').append(
 				''' params = ''').append(
 				'''«referClass(appendable, ctx, Maps)».newHashMap();
 					''').append(

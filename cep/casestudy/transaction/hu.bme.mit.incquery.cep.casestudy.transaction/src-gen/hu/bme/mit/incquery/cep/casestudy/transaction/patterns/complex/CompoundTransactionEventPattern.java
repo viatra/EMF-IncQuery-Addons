@@ -26,7 +26,7 @@ public class CompoundTransactionEventPattern extends ParameterizableComplexEvent
     
     // timewindows
     GlobalTimewindow timewindow = CepFactory.eINSTANCE.createGlobalTimewindow();
-    timewindow.setLength(1300l);
+    timewindow.setLength(130000l);
     setGlobalTimewindow(timewindow);
     
     setId("CompoundTransactionEventPattern");

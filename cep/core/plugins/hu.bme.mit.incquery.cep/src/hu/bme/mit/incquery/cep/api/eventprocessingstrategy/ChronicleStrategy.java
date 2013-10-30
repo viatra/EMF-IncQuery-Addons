@@ -2,7 +2,9 @@ package hu.bme.mit.incquery.cep.api.eventprocessingstrategy;
 
 import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
+import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
+import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
@@ -19,50 +21,58 @@ public class ChronicleStrategy extends AbstractEventProcessingStrategy {
     public EventProcessingContext getContext() {
         return EventProcessingContext.CHRONICLE;
     }
-    
-	public ChronicleStrategy(EventModelManager eventModelManager) {
-		super(eventModelManager);
-	}
 
-	@Override
-	public void fireTransition(Transition t, EventToken eventTokenToMove, Event e) {
-		State preState = t.getPreState();
-		if (preState instanceof FinalState) {
-			return;
-		}
+    public ChronicleStrategy(EventModelManager eventModelManager) {
+        super(eventModelManager);
+    }
 
-		InternalExecutionModel model = getEventModelManager().getModel();
-		State nextState = t.getPostState();
+    @Override
+    public void fireTransition(Transition t, EventToken eventTokenToMove, Event e) {
+        // FIXME this should be checked prior to enabling the transition
+        EventPattern eventPattern = ((StateMachine) ((State) t.eContainer()).eContainer()).getEventPattern();
+        if (eventPattern instanceof ComplexEventPattern) {
+            if (!((ComplexEventPattern) eventPattern).evaluateParameterBindigs(e)) {
+                return;
+            }
+        }
 
-		if (!handleTimeConstraints(eventTokenToMove, nextState)) {
-			return;
-		}
-		eventTokenToMove.getRecordedEvents().add(model.getLatestEvent());
-		preState.setLastProcessedEvent(model.getLatestEvent());
-		eventTokenToMove.setCurrentState(nextState);
-		getEventModelManager().callbackOnFiredToken(t, eventTokenToMove);
-	}
+        State preState = t.getPreState();
+        if (preState instanceof FinalState) {
+            return;
+        }
 
-	@Override
-	public void handleInitTokenCreation(InternalExecutionModel model, InternalsmFactory SM_FACTORY,
-			ObservedComplexEventPattern observedComplexEventPattern) {
-		for (StateMachine sm : model.getStateMachines()) {
-			for (State s : sm.getStates()) {
-				if (s instanceof InitState) {
-					if (s.getEventTokens().isEmpty()) {
-						EventToken cv = SM_FACTORY.createEventToken();
-						cv.setCurrentState(s);
-						model.getEventTokens().add(cv);
-					}
-					break;
-				}
-			}
-		}
-	}
+        InternalExecutionModel model = getEventModelManager().getModel();
+        State nextState = t.getPostState();
 
-	@Override
-	public void handleSmResets(InternalExecutionModel model, InternalsmFactory SM_FACTORY) {
-		return;
-	}
+        if (!handleTimeConstraints(eventTokenToMove, nextState)) {
+            return;
+        }
+        eventTokenToMove.getRecordedEvents().add(model.getLatestEvent());
+        preState.setLastProcessedEvent(model.getLatestEvent());
+        eventTokenToMove.setCurrentState(nextState);
+        getEventModelManager().callbackOnFiredToken(t, eventTokenToMove);
+    }
+
+    @Override
+    public void handleInitTokenCreation(InternalExecutionModel model, InternalsmFactory SM_FACTORY,
+            ObservedComplexEventPattern observedComplexEventPattern) {
+        for (StateMachine sm : model.getStateMachines()) {
+            for (State s : sm.getStates()) {
+                if (s instanceof InitState) {
+                    if (s.getEventTokens().isEmpty()) {
+                        EventToken cv = SM_FACTORY.createEventToken();
+                        cv.setCurrentState(s);
+                        model.getEventTokens().add(cv);
+                    }
+                    break;
+                }
+            }
+        }
+    }
+
+    @Override
+    public void handleSmResets(InternalExecutionModel model, InternalsmFactory SM_FACTORY) {
+        return;
+    }
 
 }

@@ -34,6 +34,9 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 	Transition.guard.eventType.type(t, eventType);
  * 	Transition.preState.eventTokens(t, et);
  * 	Transition.preState(t, ps);
+ * //	StateMachine.states(sm, ps);
+ * //	StateMachine.eventPattern(sm, ep);
+ * //	check(((hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern)ep).evaluateParameterBindigs(e));
  * 	neg find eventHandledByState(ps, e);
  * }
  * </pre></code>

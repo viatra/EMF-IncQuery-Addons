@@ -34,7 +34,7 @@ IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:in
 
 
 ComplexEvent compoundTransactionEvent(a:componentA, b:componentB, c:componentC){
-	definition : (a(tId, _, cId) -> b(tId, _) -> c(tId, _, sId))[1300]
+	definition : (a(tId, _, cId) -> b(tId, _) -> c(tId, _, sId))[130000]
 }
 
 ComplexEvent compoundTransactionEvent1(a:componentA, b:componentB, c:componentC){
@@ -47,7 +47,7 @@ ComplexEvent compoundTransactionEvent2(a:componentA, b:componentB, c:componentC)
 
 
 RuleOnAppear r1 {
-	events: compoundTransactionEvent1, compoundTransactionEvent2
+	events: compoundTransactionEvent
 	actionHandler: hu.bme.mit.incquery.cep.casestudy.transaction.handlers.MySimpleActionHandler
 //	action {
 //		new hu.bme.mit.incquery.cep.casestudy.transaction.handlers.MyActionHandler().handleAction("observed event")

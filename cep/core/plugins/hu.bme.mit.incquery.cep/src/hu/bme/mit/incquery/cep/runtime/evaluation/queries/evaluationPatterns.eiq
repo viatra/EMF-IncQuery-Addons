@@ -1,7 +1,8 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation.queries
 
-import "cep.meta" import "sm.meta" import
-"http://www.eclipse.org/emf/2002/Ecore"
+import "cep.meta"
+import "sm.meta"
+import "http://www.eclipse.org/emf/2002/Ecore"
 
 pattern finishedStateMachine(sm : StateMachine, et : EventToken) {
 	StateMachine.states(sm, state);
@@ -46,8 +47,7 @@ pattern preState(t, s) {
 	Transition.preState(t, s);
 }
 
-pattern
-guardAtomicPattern(guard : Guard, atomicPattern : AtomicEventPattern) {
+pattern guardAtomicPattern(guard : Guard, atomicPattern : AtomicEventPattern) {
 	Guard.eventType(guard, atomicPattern);
 }
 
@@ -69,6 +69,9 @@ pattern enabledTransition(t : Transition, et : EventToken, e : Event) {
 	Transition.guard.eventType.type(t, eventType);
 	Transition.preState.eventTokens(t, et);
 	Transition.preState(t, ps);
+//	StateMachine.states(sm, ps);
+//	StateMachine.eventPattern(sm, ep);
+//	check(((hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern)ep).evaluateParameterBindigs(e));
 	neg find eventHandledByState(ps, e);
 }
 
