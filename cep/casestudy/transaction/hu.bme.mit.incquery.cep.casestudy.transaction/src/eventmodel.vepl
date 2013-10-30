@@ -34,7 +34,7 @@ IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:in
 
 
 ComplexEvent compoundTransactionEvent(a:componentA, b:componentB, c:componentC){
-	definition : (a(tId, _ts, cId) -> b(tId, _ts) -> c(tId, _ts, sId))[1100]
+	definition : (a(tId, _, cId) -> b(tId, _) -> c(tId, _, sId))[1300]
 }
 
 ComplexEvent compoundTransactionEvent1(a:componentA, b:componentB, c:componentC){
@@ -42,7 +42,7 @@ ComplexEvent compoundTransactionEvent1(a:componentA, b:componentB, c:componentC)
 }
 
 ComplexEvent compoundTransactionEvent2(a:componentA, b:componentB, c:componentC){
-	definition : (a -> b ->c)[1500]
+	definition : (a -> b ->c)[15000]
 }
 
 

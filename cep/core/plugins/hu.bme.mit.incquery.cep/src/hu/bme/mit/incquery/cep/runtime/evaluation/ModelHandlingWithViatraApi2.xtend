@@ -15,6 +15,7 @@ import org.eclipse.viatra2.emf.runtime.rules.EventDrivenTransformationRuleGroup
 import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory
 import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformation
 import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.RuleOrderBasedFixedPriorityResolver
+import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum
 
 class ModelHandlingWithViatraApi2 {
 	extension EventDrivenTransformationRuleFactory ruleFactory = new EventDrivenTransformationRuleFactory
@@ -56,12 +57,12 @@ class ModelHandlingWithViatraApi2 {
 			setConflictResolver(resolver).create()
 	}
 
-	val createEnabledTransitionRule = ruleFactory.createRule( //"enabled transition rule",
+	val createEnabledTransitionRule = ruleFactory.createRule("enabled transition rule",
 		EnabledTransitionMatcher::querySpecification) [
 		eventModelManager.strategy.fireTransition(t, et, e)
 	]
 
-	val createFinishedStateMachineRule = ruleFactory.createRule( //"finished statemachine rule",
+	val createFinishedStateMachineRule = ruleFactory.createRule("finished statemachine rule",
 		FinishedStateMachineMatcher::querySpecification) [
 		eventModelManager.finalStatesForStatemachines.get(sm).eventTokens.remove(0)
 		var observedPattern = new SimpleObservedComplexEventPattern(sm.eventPattern)
@@ -69,7 +70,7 @@ class ModelHandlingWithViatraApi2 {
 		eventModelManager.realm.forwardObservedEventPattern(observedPattern)
 	]
 
-	val createTokenInTrapStateRule = ruleFactory.createRule( //"trap state rule",
+	val createTokenInTrapStateRule = ruleFactory.createRule("trap state rule",
 		TokenInTrapStateMatcher::querySpecification) [
 		var currentState = et.currentState
 		if (!(currentState instanceof TrapState)) {

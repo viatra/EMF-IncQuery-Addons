@@ -24,7 +24,7 @@ public class CompoundTransactionEvent2Pattern extends ParameterizableComplexEven
     
     // timewindows
     GlobalTimewindow timewindow = CepFactory.eINSTANCE.createGlobalTimewindow();
-    timewindow.setLength(1500l);
+    timewindow.setLength(15000l);
     setGlobalTimewindow(timewindow);
     
     setId("CompoundTransactionEvent2Pattern");
@@ -32,7 +32,7 @@ public class CompoundTransactionEvent2Pattern extends ParameterizableComplexEven
   
   @Override
   public boolean evaluateParameterBindigs(final Event event) {
-    // TODO generate stuff here
     return true;
+    
   }
 }

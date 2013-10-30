@@ -184,7 +184,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 						setId(it, pattern, pattern.name)
 					]
 				]
-				members += pattern.toImplementingBindingMethod()
+				members += (pattern as ComplexEventPattern).toImplementingBindingMethod()
 			]
 		}
 	}

@@ -1,5 +1,6 @@
 package hu.bme.mit.incquery.cep.dsl.jvmmodel
 
+import com.google.common.collect.Lists
 import com.google.inject.Inject
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AugmentedExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression
@@ -18,24 +19,25 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.StaticBinding
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedMultiplicityExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TypedParameter
+import hu.bme.mit.incquery.cep.metamodels.cep.Event
 import java.util.List
+import java.util.Map
+import java.util.Map.Entry
 import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.common.types.JvmAnnotationType
 import org.eclipse.xtext.common.types.JvmMember
+import org.eclipse.xtext.common.types.JvmOperation
 import org.eclipse.xtext.common.types.JvmTypeReference
+import org.eclipse.xtext.common.types.JvmVisibility
 import org.eclipse.xtext.common.types.TypesFactory
+import org.eclipse.xtext.common.types.util.TypeReferences
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import org.eclipse.xtext.common.types.JvmVisibility
-import com.google.common.collect.Lists
-import java.util.Map
-import java.util.Map.Entry
-import hu.bme.mit.incquery.cep.metamodels.cep.Event
-import org.eclipse.xtend.lib.macro.declaration.TypeReference
-import org.eclipse.xtext.common.types.JvmAnnotationType
-import org.eclipse.xtext.common.types.util.TypeReferences
-import org.eclipse.xtext.common.types.JvmOperation
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameter
+import org.eclipse.xtend2.lib.StringConcatenation
+import com.google.common.collect.Maps
 
 class Utils {
 	@Inject extension IQualifiedNameProvider
@@ -66,6 +68,44 @@ class Utils {
 				switch (expression) {
 					TimedMultiplicityExpression: return (expression as TimedMultiplicityExpression).expression
 				}
+			}
+		}
+	}
+
+	def unwrapCompositionEventsWithParameterList(Expression expression) {
+		switch (expression) {
+			FollowsExpression: {
+				var eventPatterns = Lists.newArrayList()
+
+				var rootEps = expression.eventPatterns
+				if (rootEps == null) {
+					return eventPatterns
+				}
+				var rootEp = rootEps.get(0)
+				if (rootEp == null) {
+					return eventPatterns
+				}
+				if (rootEp.parameterList == null) {
+					return eventPatterns
+				}
+				eventPatterns.add(rootEp)
+
+				for (fe : expression.followerExpressions) {
+					var typedEp = fe.eventPattern as EventTypedParameterWithMultiplicity
+					if (typedEp.parameterList != null) {
+						eventPatterns.add(typedEp)
+					}
+				}
+				return eventPatterns
+			}
+			BranchExpression: {
+				var eventPatterns = Lists.newArrayList()
+				for (ep : expression.eventPatterns) {
+					if (ep.parameterList != null) {
+						eventPatterns.add(ep)
+					}
+				}
+				return eventPatterns
 			}
 		}
 	}
@@ -114,24 +154,81 @@ class Utils {
 		return Lists.newArrayList(advancedSetter)
 	}
 
-	def Iterable<? extends JvmMember> toImplementingBindingMethod(ModelElement element) {
+	def Iterable<? extends JvmMember> toImplementingBindingMethod(ComplexEventPattern pattern) {
 		val method = factory.createJvmOperation
 		method.simpleName = "evaluateParameterBindigs"
 		method.setVisibility(JvmVisibility.PUBLIC)
-		method.returnType = element.newTypeRef("boolean")
-		method.parameters.add(method.toParameter("event", element.newTypeRef(Event)))
+		method.returnType = pattern.newTypeRef("boolean")
+		method.parameters.add(method.toParameter("event", pattern.newTypeRef(Event)))
+		val expression = pattern.complexEventExpression.unwrapExpression
 		method.setBody [
-			append(
+			getParameterMapping(expression.unwrapCompositionEventsWithParameterList, method).append(
 				'''
-				// TODO generate stuff here
-				return true;''')
+					return true;
+				''')
 		]
-		method.addOverrideAnnotation(element)
-		
+
+		method.addOverrideAnnotation(pattern)
 		return Lists.newArrayList(method)
 	}
-	
-	def addOverrideAnnotation(JvmOperation method, EObject context){
+
+	def getParameterMapping(ITreeAppendable appendable, List<EventTypedParameterWithMultiplicity> params, EObject ctx) {
+		for (comEvent : params) {
+			appendable.append(
+				'''
+					if(event instanceof «comEvent.eventPattern.type.getFqn(AtomicPatternFqnPurpose.EVENT)»){
+				''').append(
+				'''
+				«referClass(appendable, ctx, Map, ctx.newTypeRef("String"), ctx.newTypeRef("Object"))»''').append(
+				''' params = ''').append(
+				'''«referClass(appendable, ctx, Maps)».newHashMap();
+					''').append(
+				'''
+						«comEvent.evaluationBody»
+						return evaluateParamBinding(params);
+					}
+				''')
+		}
+		appendable
+	}
+
+	def getEvaluationBody(EventTypedParameterWithMultiplicity parameter) {
+		var paramCalls = parameter.parameterList
+		if (paramCalls == null) {
+			return ''''''
+		}
+		var paramList = paramCalls.parameters
+		if (paramList.empty) {
+			return ''''''
+		}
+
+		var StringConcatenation retVal = ''''''
+
+		var i = 0
+		var max = paramList.size
+		while (i < max) {
+			var currentParam = paramList.get(i)
+			if (!currentParam.ignorable) {
+				retVal.append(
+					'''Object value«i» = ((«parameter.eventPattern.type.getFqn(AtomicPatternFqnPurpose.EVENT)») event).getParameter(«i»);
+						''')
+				retVal.append(
+					'''params.put("«currentParam.name»", value«i»);
+						''')
+			}
+			i = i + 1
+		}
+		retVal
+	}
+
+	def isIgnorable(PatternCallParameter parameter) {
+		if (parameter.name.equalsIgnoreCase("_")) {
+			return true
+		}
+		return false
+	}
+
+	def addOverrideAnnotation(JvmOperation method, EObject context) {
 		method.annotations += factory.createJvmAnnotationReference => [
 			it.annotation = references.findDeclaredType(typeof(Override), context) as JvmAnnotationType
 		]
