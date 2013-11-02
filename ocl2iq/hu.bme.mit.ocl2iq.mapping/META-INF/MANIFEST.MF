@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Mapping
+Bundle-SymbolicName: hu.bme.mit.ocl2iq.mapping
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: hu.bme.mit.ocl2iq.mapping.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ocl.ecore;bundle-version="3.3.0";visibility:=reexport,
+ org.eclipse.xtend.lib;visibility:=reexport,
+ com.google.guava;visibility:=reexport,
+ org.eclipse.xtext.xbase.lib;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: hu.bme.mit.ocl2iq.mapping.api
+
