@@ -9,7 +9,7 @@ import hu.bme.mit.incquery.cep.api.evm.CepActivationStates;
 import hu.bme.mit.incquery.cep.api.evm.CepEventSourceSpecification;
 import hu.bme.mit.incquery.cep.api.evm.CepEventType;
 import hu.bme.mit.incquery.cep.api.evm.CepRealm;
-import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.evm.IObservableComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
@@ -150,12 +150,12 @@ public class EventModelManager {
 
             CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(stateMachine);
 
-            Job<ObservedComplexEventPattern> job = rule.getJob();
+            Job<IObservableComplexEventPattern> job = rule.getJob();
             if (job == null) {
                 job = CepJobs.getDefaultJob();
             }
             @SuppressWarnings("unchecked")
-            RuleSpecification<ObservedComplexEventPattern> ruleSpec = new RuleSpecification<ObservedComplexEventPattern>(
+            RuleSpecification<IObservableComplexEventPattern> ruleSpec = new RuleSpecification<IObservableComplexEventPattern>(
                     sourceSpec, getDefaultLifeCycle(), Sets.newHashSet(job));
             topLevelExecutionSchema.addRule(ruleSpec);
         }
@@ -251,7 +251,7 @@ public class EventModelManager {
         wasEnabledForTheLatestEvent.put(((StateMachine) sm), true);
     }
 
-    public void callbackOnPatternRecognition(ObservedComplexEventPattern observedPattern) {
+    public void callbackOnPatternRecognition(IObservableComplexEventPattern observedPattern) {
         strategy.handleInitTokenCreation(model, SM_FACTORY, observedPattern);
     }
 

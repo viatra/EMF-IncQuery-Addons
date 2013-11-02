@@ -14,11 +14,11 @@ public final class SamplepatternsMatchers {
     
   }
   
-  public OldCompoundTransactionMatcher getOldCompoundTransactionMatcher() throws IncQueryException {
-    return OldCompoundTransactionMatcher.on(engine);
-  }
-  
   public NewTransactionEventMatcher getNewTransactionEventMatcher() throws IncQueryException {
     return NewTransactionEventMatcher.on(engine);
+  }
+  
+  public OldCompoundTransactionMatcher getOldCompoundTransactionMatcher() throws IncQueryException {
+    return OldCompoundTransactionMatcher.on(engine);
   }
 }

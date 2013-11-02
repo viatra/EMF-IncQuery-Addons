@@ -1,11 +1,11 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.test;
 
-import org.junit.Test;
-
 import hu.bme.mit.incquery.cep.casestudy.transaction.rules.R1;
 
+import org.junit.Test;
+
 public class TestRunner {
-	
+
 	@Test
 	public void main() {
 		BareJavaTester tester = new BareJavaTester();

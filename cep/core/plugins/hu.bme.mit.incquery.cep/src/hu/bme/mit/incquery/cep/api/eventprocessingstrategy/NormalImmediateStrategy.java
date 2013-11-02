@@ -1,6 +1,6 @@
 package hu.bme.mit.incquery.cep.api.eventprocessingstrategy;
 
-import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.evm.IObservableComplexEventPattern;
 import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
@@ -45,7 +45,7 @@ public class NormalImmediateStrategy extends AbstractImmediateStrategy {
 
     @Override
     public void handleInitTokenCreation(InternalExecutionModel model, InternalsmFactory SM_FACTORY,
-            ObservedComplexEventPattern observedComplexEventPattern) {
+            IObservableComplexEventPattern observedComplexEventPattern) {
         for (StateMachine sm : model.getStateMachines()) {
             for (State s : sm.getStates()) {
                 if (s instanceof InitState) {

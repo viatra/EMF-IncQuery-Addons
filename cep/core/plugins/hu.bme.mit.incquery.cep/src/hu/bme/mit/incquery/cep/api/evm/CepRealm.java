@@ -16,14 +16,24 @@ public class CepRealm implements EventRealm {
 	}
 	
 	public void forwardObservedEventPattern(ObservedComplexEventPattern op) {
-		for (CepEventSource source : sources) {
-			if (source.getStateMachine().getEventPattern().getId()
-					.equalsIgnoreCase(op.getObservedEventPattern().getId())) {
-				source.pushEvent(CepEventType.APPEARED, op);
-				break;
-			}
-		}
-	}
+        for (CepEventSource source : sources) {
+            if (source.getStateMachine().getEventPattern().getId()
+                    .equalsIgnoreCase(op.getObservableEventPattern().getId())) {
+                source.pushEvent(CepEventType.APPEARED, op);
+                break;
+            }
+        }
+    }
+	
+	public void forwardFailedEventPattern(InTrapComplexEventPattern op) {
+        for (CepEventSource source : sources) {
+            if (source.getStateMachine().getEventPattern().getId()
+                    .equalsIgnoreCase(op.getObservableEventPattern().getId())) {
+                source.pushEvent(CepEventType.APPEARED, op);
+                break;
+            }
+        }
+    }
 
 	public Set<CepEventSource> getSources() {
 		return sources;

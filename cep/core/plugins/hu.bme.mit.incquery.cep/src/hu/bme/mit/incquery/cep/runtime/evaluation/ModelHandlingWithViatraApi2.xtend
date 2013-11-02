@@ -1,6 +1,5 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation
 
-import hu.bme.mit.incquery.cep.api.evm.SimpleObservedComplexEventPattern
 import hu.bme.mit.incquery.cep.api.runtime.EventModelManager
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState
@@ -17,6 +16,8 @@ import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTra
 import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.RuleOrderBasedFixedPriorityResolver
 import hu.bme.mit.incquery.cep.metamodels.internalsm.State
 import hu.bme.mit.incquery.cep.api.ParameterizableComplexEventPattern
+import hu.bme.mit.incquery.cep.api.evm.InTrapComplexEventPattern
+import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern
 
 class ModelHandlingWithViatraApi2 {
 	extension EventDrivenTransformationRuleFactory ruleFactory = new EventDrivenTransformationRuleFactory
@@ -72,7 +73,7 @@ class ModelHandlingWithViatraApi2 {
 	val createFinishedStateMachineRule = ruleFactory.createRule().name("finished statemachine rule").
 		precondition(FinishedStateMachineMatcher::querySpecification).action [
 			eventModelManager.finalStatesForStatemachines.get(sm).eventTokens.remove(0)
-			var observedPattern = new SimpleObservedComplexEventPattern(sm.eventPattern)
+			var observedPattern = new ObservedComplexEventPattern(sm.eventPattern)
 			eventModelManager.callbackOnPatternRecognition(observedPattern)
 			eventModelManager.realm.forwardObservedEventPattern(observedPattern)
 		].build
@@ -83,9 +84,14 @@ class ModelHandlingWithViatraApi2 {
 		if (!(currentState instanceof TrapState)) {
 			return
 		}
+		
 		System.out.println(
 			"\t\t\t>>>>>>>>>Event token found in the trap state for pattern " +
 				(et.currentState.eContainer as StateMachine).eventPattern.id)
+				
+		var eventPattern = (currentState.eContainer() as StateMachine).getEventPattern();
+		var failedPattern = new InTrapComplexEventPattern(eventPattern)
+		eventModelManager.realm.forwardFailedEventPattern(failedPattern)		
 		currentState.eventTokens.clear
 	].build
 }

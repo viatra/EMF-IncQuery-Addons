@@ -10,31 +10,14 @@ AtomicEvent componentA(transactionId : String, timestamp : long, customerId : St
 
 AtomicEvent componentB(transactionId : String, timestamp : long){
 	source : eventSource
-	staticBindings {
-//		if(!(transactionId.equalsIgnoreCase("transaction"))){
-//			return false;
-//		}
-		return true;
-	}
 }
 
 AtomicEvent componentC(transactionId : String, timestamp : long, supplierId : String){
 	source : eventSource
 }
 
-AtomicEvent dummyEvent22(){
-	source : eventSource
-}
-
-
-IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:int){
-	iqPatternRef : oldCompoundTransaction(X, I)
-	iqChangeType : NEW_MATCH_FOUND
-}
-
-
 ComplexEvent compoundTransactionEvent(a:componentA, b:componentB, c:componentC){
-	definition : (a(tId, _, cId) -> b(tId, _) -> c(tId, _, sId))[130000]
+	definition : (a(tId, _, cId) -> b(tId, _) -> c(tId, _, sId))[5000]
 }
 
 ComplexEvent compoundTransactionEvent1(a:componentA, b:componentB, c:componentC){
@@ -45,11 +28,12 @@ ComplexEvent compoundTransactionEvent2(a:componentA, b:componentB, c:componentC)
 	definition : (a -> b ->c)[15000]
 }
 
-
 RuleOnAppear r1 {
 	events: compoundTransactionEvent
-	actionHandler: hu.bme.mit.incquery.cep.casestudy.transaction.handlers.MySimpleActionHandler
-//	action {
-//		new hu.bme.mit.incquery.cep.casestudy.transaction.handlers.MyActionHandler().handleAction("observed event")
-//	}
+	actionHandler: hu.bme.mit.incquery.cep.casestudy.transaction.handlers.SimpleActionHandler
 }
+
+//IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:int){
+//	iqPatternRef : oldCompoundTransaction(X, I)
+//	iqChangeType : NEW_MATCH_FOUND
+//}

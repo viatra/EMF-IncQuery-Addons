@@ -1,6 +1,6 @@
 package hu.bme.mit.incquery.cep.api;
 
-import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
+import hu.bme.mit.incquery.cep.api.evm.IObservableComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 
 import java.util.List;
@@ -11,9 +11,9 @@ import com.google.common.collect.Lists;
 
 public class CepRule implements ICepRule {
     private List<EventPattern> eventPatterns = Lists.newArrayList();
-    private Job<ObservedComplexEventPattern> job;
+    private Job<IObservableComplexEventPattern> job;
 
-    public CepRule(List<EventPattern> eventPatterns, Job<ObservedComplexEventPattern> job) {
+    public CepRule(List<EventPattern> eventPatterns, Job<IObservableComplexEventPattern> job) {
         this.eventPatterns = eventPatterns;
         this.job = job;
     }
@@ -32,7 +32,7 @@ public class CepRule implements ICepRule {
     }
 
     @Override
-    public Job<ObservedComplexEventPattern> getJob() {
+    public Job<IObservableComplexEventPattern> getJob() {
         return job;
     }
 }

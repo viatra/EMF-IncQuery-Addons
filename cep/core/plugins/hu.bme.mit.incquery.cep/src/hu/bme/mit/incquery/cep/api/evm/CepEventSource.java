@@ -10,7 +10,7 @@ import org.eclipse.incquery.runtime.evm.api.event.EventSourceSpecification;
 
 import com.google.common.collect.Sets;
 
-public class CepEventSource implements EventSource<ObservedComplexEventPattern> {
+public class CepEventSource implements EventSource<IObservableComplexEventPattern> {
 	
 	private CepRealm realm;
 	private CepEventSourceSpecification specification;
@@ -24,7 +24,7 @@ public class CepEventSource implements EventSource<ObservedComplexEventPattern> 
 	}
 	
 	@Override
-	public EventSourceSpecification<ObservedComplexEventPattern> getSourceSpecification() {
+	public EventSourceSpecification<IObservableComplexEventPattern> getSourceSpecification() {
 		return specification;
 	}
 	
@@ -48,7 +48,7 @@ public class CepEventSource implements EventSource<ObservedComplexEventPattern> 
 		handlers.add(handler);
 	}
 	
-	public void pushEvent(CepEventType type, ObservedComplexEventPattern op) {
+	public void pushEvent(CepEventType type, IObservableComplexEventPattern op) {
 		CepEvent event = new CepEvent(type, op);
 		for (CepEventHandler handler : handlers) {
 			handler.handleEvent(event);
