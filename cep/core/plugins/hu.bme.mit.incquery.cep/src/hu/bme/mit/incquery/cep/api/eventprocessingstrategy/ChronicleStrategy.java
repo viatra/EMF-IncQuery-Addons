@@ -2,9 +2,7 @@ package hu.bme.mit.incquery.cep.api.eventprocessingstrategy;
 
 import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
-import hu.bme.mit.incquery.cep.metamodels.cep.ComplexEventPattern;
 import hu.bme.mit.incquery.cep.metamodels.cep.Event;
-import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventToken;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.FinalState;
@@ -28,14 +26,6 @@ public class ChronicleStrategy extends AbstractEventProcessingStrategy {
 
     @Override
     public void fireTransition(Transition t, EventToken eventTokenToMove, Event e) {
-        // FIXME this should be checked prior to enabling the transition
-        EventPattern eventPattern = ((StateMachine) ((State) t.eContainer()).eContainer()).getEventPattern();
-        if (eventPattern instanceof ComplexEventPattern) {
-            if (!((ComplexEventPattern) eventPattern).evaluateParameterBindigs(e)) {
-                return;
-            }
-        }
-
         State preState = t.getPreState();
         if (preState instanceof FinalState) {
             return;
