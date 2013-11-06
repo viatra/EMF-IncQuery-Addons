@@ -32,10 +32,15 @@ class MergedQuery extends BaseRelationQuery {
 			),
 			mainParent.results,
 			'''
-				«secondaryParent.gen»
-				«mainParent.gen»
+				«secondaryParent.code»
+				«mainParent.code»
 			'''
 		)
+		this.codeNegated = 
+			if (mainParent.codeNegated == null) null else '''
+					«secondaryParent.code»
+					«mainParent.codeNegated»
+				'''
 		this.mainParent = mainParent
 		this.secondaryParent = secondaryParent
 	}	

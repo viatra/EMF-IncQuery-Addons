@@ -25,6 +25,7 @@ public class BaseRelationQuery implements IRelationQuery {
 	protected final Set<String> inputs;
 	protected final Set<String> results;
 	protected final String code;
+	protected String codeNegated = null; // optional
 	@Extension protected final GenManager genManager;
 	
 	public BaseRelationQuery(GenManager genManager, Set<String> inputs, Set<String> results, CharSequence code) {
@@ -46,8 +47,18 @@ public class BaseRelationQuery implements IRelationQuery {
 	}
 	
 	@Override
-	public String gen() {
+	public String getCode() {
 		return code;
 	}
+	
+	@Override
+	public String getCodeNegated() {
+		return codeNegated;
+	}
+	
+	public void setCodeNegated(String negatedCode) {
+		codeNegated = negatedCode;
+	}
+	
 
 }

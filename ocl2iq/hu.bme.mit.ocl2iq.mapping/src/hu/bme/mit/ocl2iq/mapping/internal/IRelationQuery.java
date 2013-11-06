@@ -20,5 +20,8 @@ import java.util.Set;
 public interface IRelationQuery {
 	Set<String> getInputs();
 	Set<String> getResults(); 
-	String gen();	
+	String getCode();	
+	
+	/** optional */
+	String getCodeNegated();
 }

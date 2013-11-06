@@ -84,7 +84,7 @@ class GenManager {
 		pattern «query.genPatternName»(
 			«query.allParameters.genParamsDeclared»
 		) {
-			«query.gen»
+			«query.code»
 		}
 	'''
 	def genPatternInvocation(IRelationQuery query) 

@@ -26,11 +26,22 @@ class AppendedQuery extends BaseRelationQuery {
 		(String) => CharSequence addendum
 	) {
 		super(genManager, parent.inputs, results, '''
-			«parent.gen»
+			«parent.code»
 			«addendum.apply(parent.results.head)»
 		''')
 		this.parent = parent
 		Preconditions::checkArgument(parent.results.size == 1, 
 			'''Can only append to single-result queries; multiple results «parent.results.join(",")» at «parent»''')
 	}
+
+	new(GenManager genManager, IRelationQuery parent, Set<String> results, 
+		(String) => CharSequence addendum, (String) => CharSequence negatedAddendum
+	) {
+		this(genManager, parent, results, addendum)
+		this.codeNegated = '''
+			«parent.code»
+			«negatedAddendum.apply(parent.results.head)»
+		'''
+	}
+
 }
