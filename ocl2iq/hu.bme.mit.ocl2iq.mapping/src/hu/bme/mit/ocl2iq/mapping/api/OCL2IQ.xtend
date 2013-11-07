@@ -20,35 +20,38 @@ import hu.bme.mit.ocl2iq.mapping.internal.GenManager
 import hu.bme.mit.ocl2iq.mapping.internal.IRelationQuery
 import hu.bme.mit.ocl2iq.mapping.internal.MergedQuery
 import hu.bme.mit.ocl2iq.mapping.internal.VariableQuery
-import java.util.ArrayList
 import java.util.Collections
 import java.util.HashMap
 import java.util.List
-import java.util.Map
 import java.util.Set
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EClassifier
 import org.eclipse.emf.ecore.EDataType
 import org.eclipse.emf.ecore.EParameter
 import org.eclipse.emf.ecore.EcorePackage
-import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.ocl.ecore.IfExp
 import org.eclipse.ocl.ecore.IteratorExp
 import org.eclipse.ocl.ecore.LetExp
-import org.eclipse.ocl.ecore.LiteralExp
 import org.eclipse.ocl.ecore.OCLExpression
 import org.eclipse.ocl.ecore.OperationCallExp
 import org.eclipse.ocl.ecore.PrimitiveLiteralExp
 import org.eclipse.ocl.ecore.PropertyCallExp
 import org.eclipse.ocl.ecore.StringLiteralExp
 import org.eclipse.ocl.ecore.TupleLiteralExp
+import org.eclipse.ocl.ecore.TypeExp
 import org.eclipse.ocl.ecore.VariableExp
 import org.eclipse.ocl.expressions.Variable
+import org.eclipse.ocl.ecore.EnumLiteralExp
+import org.eclipse.ocl.ecore.CollectionLiteralExp
+import org.eclipse.ocl.expressions.CollectionKind
+import org.eclipse.ocl.ecore.CollectionItem
 
 /**
  * @author Bergmann Gabor
  *
  */
+// TODO null/collection literal, further operations??
+// TODO lazy eval OR traceability to avoid orphan queries
 class OCL2IQ {
 	val EClass context
 	val OCLExpression oclRoot
@@ -67,7 +70,7 @@ class OCL2IQ {
 		translate(oclRoot).registerQuery(rootPatternName)
 		registeredPatternNames.map[value.genPatternDeclaration].join("\n")
 	}
-	// TODO type, enum/null/collection literal, operacio??
+	// call .eager if used in lazy collection
 	private def dispatch IRelationQuery translate(IteratorExp expression) {
 		Preconditions::checkArgument(expression.iterator.size == 1, '''Only single-iterator expressions supported; could not translate «expression»''') 
 		val iteratorVariable = expression.iterator.head
@@ -86,18 +89,21 @@ class OCL2IQ {
 				iteratorVariable.translateAssignment(sourceQuery),
 				bodyQuery.negatePredicate 
 			)
+			case "exists" : mergeQuery( 
+				bodyQuery.ponatePredicate, 
+				iteratorVariable.translateAssignment(sourceQuery)
+			) => [
+				codeNegated = null
+			]
+			case "forAll" : (mergeQuery( 
+				bodyQuery.negatePredicate, 
+				iteratorVariable.translateAssignment(sourceQuery)
+			) => [
+				codeNegated = null
+			]).negatePredicate
 			default :
 				throw new IllegalArgumentException('''Iterator expression kind must be collect, select or reject instead of «expression.name» in «expression»''')
 		}		
-	}
-	private def dispatch IRelationQuery translate(IfExp expression) {
-		val thenQuery = expression.thenExpression.translateAfterCast
-		val elseQuery = expression.elseExpression.translateAfterCast
-		val condition = expression.condition.translateAfterCast
-		disjunctionPredicate(
-			mergeQuery(thenQuery, condition.ponatePredicate),
-			mergeQuery(elseQuery, condition.negatePredicate)
-		)
 	}
 	private def dispatch IRelationQuery translate(OperationCallExp expression) {
 		val opName = expression.referredOperation.name
@@ -105,22 +111,58 @@ class OCL2IQ {
 		val argumentQueries = expression.argument.map[translateAfterCast].eager
 		val allArgumentQueries = (newHashSet(sourceQuery) + argumentQueries)
 		val allInputs = argumentQueries.map[inputs].fold(sourceQuery.inputs)[a,b|Sets::union(a,b)]
-		
+				
 		// for simple logical operations on predicates
 		if (allArgumentQueries.exists[results.empty]) { // only use this form if any parameters are boolean predicates
 			switch(opName) {
 				case "and" : return allArgumentQueries.map[negatePredicate].reduce[a,b|disjunctionPredicate(a,b)].negatePredicate
 				case "or" : return allArgumentQueries.map[ponatePredicate].reduce[a,b|disjunctionPredicate(a,b)]
+				case "not" : return allArgumentQueries.head.negatePredicate
 			}
 		}
-		switch(opName) { // this one should be used always ?
+		switch(opName) { // this one should be used always... TODO?
 			case "implies" : return disjunctionPredicate(allArgumentQueries.head.negatePredicate, allArgumentQueries.last.ponatePredicate)
 		}
 				
 		// otherwise, operate on result values (reified in case of booleans)		
 		val allArgumentQueriesReified = allArgumentQueries.map[reifyPredicate].eager
+		val allArgumentsCode = allArgumentQueriesReified.map[code].join
 		val allResults = allArgumentQueriesReified.map[results].flatten.eager
 		val allResultsCasted = allResults.map['''(«it» as «toType.instanceClass.canonicalName»)''']
+		
+		// set and type operations
+		switch(opName) {
+			case "allInstances" : return sourceQuery
+			case "oclAsType" : return allArgumentQueriesReified.head
+			case "oclIsKindOf" : return makeQuery(allInputs, Collections::emptySet, '''
+					«allArgumentsCode»
+					«allResults.join(" == ")»;
+				''')
+			case "includes" : return makeQuery(allInputs, Collections::emptySet, '''
+					«allArgumentsCode»
+					«allResults.join(" == ")»;
+				''')
+			case "excludes" : return makeQuery(allInputs, Collections::emptySet, '''
+					«allArgumentsCode»
+					«allResults.join(" == ")»;
+				''').negatePredicate
+			case "isEmpty" : return makeQuery(allInputs, Collections::emptySet, '''
+					neg find «allArgumentQueriesReified.head.genPatternInvocation(allResults)»;
+				''') => [
+					codeNegated = '''
+						find «allArgumentQueriesReified.head.genPatternInvocation(allResults)»;
+					'''
+				]
+			case "notEmpty" : return makeQuery(allInputs, Collections::emptySet, '''
+					find «allArgumentQueriesReified.head.genPatternInvocation(allResults)»;
+				''') => [
+					codeNegated = '''
+						neg find «allArgumentQueriesReified.head.genPatternInvocation(allResults)»;
+					'''
+				]
+		}
+		
+
 		
 		// for simple comparisons, ponate the result as a predicate
 		val opGen = switch(opName) {
@@ -133,22 +175,22 @@ class OCL2IQ {
 				allInputs, 
 				Collections::emptySet, 
 				'''
-					«allArgumentQueriesReified.map[code].join»
+					«allArgumentsCode»
 					«opGen.key.genOpInfix(allResults)»;
 				''') => [
 					codeNegated = '''
-						«allArgumentQueriesReified.map[code].join»
+						«allArgumentsCode»
 						«opGen.value.genOpInfix(allResults)»;
 					'''.toString
 				]
 				
-		// otherwise, put the result into a boolean
+		// otherwise, put the result into an eval'd value
 		val resultVar = expression.type.newVarName
 		makeQuery( 
 			allInputs, 
 			Collections::singleton(resultVar), 
 			'''
-				«allArgumentQueriesReified.map[code].join»
+				«allArgumentsCode»
 				«resultVar» == eval(«opName.genOp(allResultsCasted)»);
 			''')
 	}
@@ -167,6 +209,10 @@ class OCL2IQ {
 				case "-" : opName
 				case "*" : opName
 				case "/" : opName
+				case "<" : opName
+				case "<=" : opName
+				case ">" : opName
+				case ">=" : opName
 				default : null
 			}
 			if (opGen != null) return opGen.genOpInfix(arguments);
@@ -174,17 +220,34 @@ class OCL2IQ {
 		// prefix ops - TODO postfix
 		val opGen = switch(opName) {
 			case "not" : "!"
-			default : opName
+			case "-" : "-"
+			default : null
 		}
-		opGen.genOpPrefix(arguments);
+		if (opGen != null) return opGen.genOpPrefix(arguments);
+		throw new UnsupportedOperationException(opName);
 	}
 	private def genOpPrefix(String opGen, List<String> arguments) '''«opGen»(«arguments.join(", ")»)'''
 	private def genOpInfix(String opGen, List<String> arguments) {
 		arguments.join(''' «opGen» ''')	
 	}
-
 	
-	
+	private def dispatch IRelationQuery translate(TypeExp expression) {
+		val type = expression.referredType
+		Preconditions::checkArgument(type instanceof EClass, '''Only EClass type expressions supported; could not translate «expression»''') 
+		val elemVar = expression.referredType.newVarName
+		makeQuery(Collections::emptySet, Collections::singleton(elemVar), '''
+			«type.gen»(«elemVar»);
+		''')
+	}
+	private def dispatch IRelationQuery translate(IfExp expression) {
+		val thenQuery = expression.thenExpression.translateAfterCast
+		val elseQuery = expression.elseExpression.translateAfterCast
+		val condition = expression.condition.translateAfterCast
+		disjunctionPredicate(
+			mergeQuery(thenQuery, condition.ponatePredicate),
+			mergeQuery(elseQuery, condition.negatePredicate)
+		)
+	}
 	private def dispatch IRelationQuery translate(PrimitiveLiteralExp expression) {
 		val resultVar = expression.type.newVarName
 		val literalGen = if (expression instanceof StringLiteralExp) 
@@ -192,6 +255,15 @@ class OCL2IQ {
 						else expression.toString
 		makeQuery( Collections::emptySet, Collections::singleton(resultVar), '''
 			«resultVar» == «literalGen»;
+		''')
+	}
+	private def dispatch IRelationQuery translate(EnumLiteralExp expression) {
+		val resultVar = expression.type.newVarName
+		val literalGen = if (expression instanceof StringLiteralExp) 
+							'''"«(expression as StringLiteralExp).stringSymbol»"''' 
+						else expression.toString
+		makeQuery( Collections::emptySet, Collections::singleton(resultVar), '''
+			«resultVar» == «expression.type.gen»::«expression.referredEnumLiteral.gen»;
 		''')
 	}
 	private def dispatch IRelationQuery translate(TupleLiteralExp expression) {
@@ -203,6 +275,29 @@ class OCL2IQ {
 			«partsToTranslatedExps.map[value.code].join»
 			«partsToTranslatedExps.map['''«key» == «value.results.head»;'''].join("\n")»
 		''')
+	}
+	private def dispatch IRelationQuery translate(CollectionLiteralExp expression) {
+		Preconditions::checkArgument(expression.kind == CollectionKind::SET_LITERAL, "Only set literals supported")
+		Preconditions::checkArgument(expression.part.forall[it instanceof CollectionItem], "Ranges in set literals not supported")
+		val elementQueries = expression.part.filter(typeof(CollectionItem)).map[item.translateAfterCast].eager
+		if (elementQueries.size == 1) return elementQueries.head
+		val elementQueriesReified = elementQueries.map[reifyPredicate].eager
+		Preconditions::checkArgument(elementQueriesReified.forall[results.size == 1], "Tuples in set literals not supported")
+		val resultVar = elementQueriesReified.map[results].flatten.map[toType].reduce[a,b|lowestCommonSupertype(a,b)].newVarName		
+		val auxDisjunction = makeQuery( 
+			elementQueriesReified.map[inputs].flatten.toSet, Collections::singleton(resultVar), 
+			elementQueriesReified.map['''
+				«code»
+				«results.head» == «resultVar»;
+			'''].join('''
+				} or {
+			''')
+		)
+		makeQuery( 
+			auxDisjunction.inputs, auxDisjunction.results, 
+			'''find «auxDisjunction.genPatternInvocation»;'''
+		)
+		
 	}
 	private def dispatch IRelationQuery translate(PropertyCallExp expression) {
 		val sourceQuery = expression.source.translateAfterCast // make sure to translate tupe parts before property access 
@@ -233,12 +328,15 @@ class OCL2IQ {
 	}
 	
 	
+	// call .eager if used in lazy collection
 	private def IRelationQuery translateAfterCast(org.eclipse.ocl.expressions.OCLExpression<EClassifier> expression) {
 		translate(expression as OCLExpression)
 	}
+	// call .eager if used in lazy collection
 	private def IRelationQuery translateInitializer(Variable<EClassifier, EParameter> variable) {
 		variable.translateAssignment(variable.initExpression.translateAfterCast)
 	}
+	// call .eager if used in lazy collection
 	private def IRelationQuery translateAssignment(Variable<EClassifier, EParameter> variable, IRelationQuery query) {
 		appendQuery(query, variable.gen) ['''
 			«variable.gen» == «it»;
@@ -246,6 +344,7 @@ class OCL2IQ {
 	}
 	
 	// TODO order of multiple results?
+	// call .eager if used in lazy collection
 	private def IRelationQuery disjunctionPredicate(IRelationQuery original1, IRelationQuery original2) {
 		Preconditions::checkArgument(original1.results.size == original2.results.size, 
 			'''disjuction branches must have the same number of results''')
@@ -309,6 +408,7 @@ class OCL2IQ {
 	) {
 		new BaseRelationQuery(genManager, inputs, results, code)
 	}
+	// call .eager if used in lazy collection
 	private def AppendedQuery appendQuery(IRelationQuery sourceQuery, 
 		CharSequence resultVarName,
 		(String) => CharSequence addendum
@@ -352,6 +452,7 @@ class OCL2IQ {
 				true == «it»;
 			'''])		
 	}
+	// call .eager if used in lazy collection
 	private def IRelationQuery reifyPredicate(IRelationQuery originalQuery) {
 		if (originalQuery.results.empty) { // simple predicate query, needs to be reified
 			val countVariable = EcorePackage::eINSTANCE.EInt.newVarName

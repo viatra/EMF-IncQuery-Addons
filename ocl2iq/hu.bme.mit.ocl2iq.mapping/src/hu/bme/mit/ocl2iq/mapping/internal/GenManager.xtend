@@ -24,6 +24,9 @@ import java.util.TreeMap
 import org.eclipse.emf.ecore.EDataType
 import org.eclipse.emf.ecore.EcorePackage
 import com.google.common.collect.Maps
+import java.util.Collection
+import java.util.Collections
+import org.eclipse.emf.ecore.EEnumLiteral
 
 /**
  * @author Bergmann Gabor
@@ -55,14 +58,18 @@ class GenManager {
 			ecoreTypeName.name
 	}
 	def gen(EStructuralFeature feature) '''«feature.EContainingClass.gen».«feature.name»'''
+	def gen(EEnumLiteral enumliteral) '''«enumliteral.literal»'''
 	static val ecoreDatatypes = 
 		EcorePackage::eINSTANCE.getEClassifiers().filter(typeof(EDataType)).toMap[instanceClass]
 	
 	def genParamsDeclared(Set<String> paramNames) {
-		paramNames.map['''«it» : «toType.gen»'''].join(",\n")
+		paramNames.map['''«it» ''' + ''': «toType.gen»'''.commentedIf(toType instanceof EDataType)].join(",\n")
 	}
-	def genParamsInvoked(Set<String> paramNames) {
-		paramNames.join(",")
+	def genParamsInvoked(Set<String> paramNames, Collection<String> singleUseParams) {
+		paramNames.map[if (singleUseParams.contains(it)) '_'+it else it].join(", ")
+	}
+	def private commentedIf(CharSequence cs, boolean condition) {
+		if (condition) '''/* «cs» */''' else '''«cs»'''
 	}
 	
 	def registeredPatternNames() {
@@ -87,8 +94,9 @@ class GenManager {
 			«query.code»
 		}
 	'''
-	def genPatternInvocation(IRelationQuery query) 
-	'''«query.genPatternName»(«query.allParameters.genParamsInvoked»)'''
+	def genPatternInvocation(IRelationQuery query, Collection<String> singleUseParams) 
+	'''«query.genPatternName»(«query.allParameters.genParamsInvoked(singleUseParams)»)'''
+	def genPatternInvocation(IRelationQuery query)  {query.genPatternInvocation(Collections::emptySet)}
 
 	def allParameters(IRelationQuery query) {
 		Sets::union(query.inputs, query.results)
