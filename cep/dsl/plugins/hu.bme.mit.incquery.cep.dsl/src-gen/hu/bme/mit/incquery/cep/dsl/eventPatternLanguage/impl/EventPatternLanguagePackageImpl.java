@@ -19,7 +19,6 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternParameterLis
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameter;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Expression;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerEventStructure;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression;
@@ -33,7 +32,6 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Multiplicity;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.MultiplicityExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.NumericFilter;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OnAppearRule;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OpenClosed;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OpenOpen;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PackagedModel;
@@ -144,20 +142,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * @generated
    */
   private EClass ruleEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass onAppearRuleEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass failDiagnosticRuleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -745,26 +729,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
   public EReference getRule_Action()
   {
     return (EReference)ruleEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getOnAppearRule()
-  {
-    return onAppearRuleEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFailDiagnosticRule()
-  {
-    return failDiagnosticRuleEClass;
   }
 
   /**
@@ -1574,10 +1538,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     createEAttribute(ruleEClass, RULE__ACTION_HANDLER);
     createEReference(ruleEClass, RULE__ACTION);
 
-    onAppearRuleEClass = createEClass(ON_APPEAR_RULE);
-
-    failDiagnosticRuleEClass = createEClass(FAIL_DIAGNOSTIC_RULE);
-
     typedParameterListEClass = createEClass(TYPED_PARAMETER_LIST);
     createEReference(typedParameterListEClass, TYPED_PARAMETER_LIST__PARAMETERS);
 
@@ -1730,8 +1690,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     iqPatternEventPatternEClass.getESuperTypes().add(this.getAbstractAtomicEventPattern());
     complexEventPatternEClass.getESuperTypes().add(this.getEventPattern());
     ruleEClass.getESuperTypes().add(this.getModelElement());
-    onAppearRuleEClass.getESuperTypes().add(this.getRule());
-    failDiagnosticRuleEClass.getESuperTypes().add(this.getRule());
     eventTypedParameterWithMultiplicityEClass.getESuperTypes().add(this.getFollowerEventStructure());
     augmentedExpressionEClass.getESuperTypes().add(this.getComplexEventExpression());
     timedExpressionEClass.getESuperTypes().add(this.getAugmentedExpression());
@@ -1787,10 +1745,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     initEReference(getRule_EventPatterns(), this.getEventPattern(), null, "eventPatterns", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRule_ActionHandler(), ecorePackage.getEString(), "actionHandler", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_Action(), theXbasePackage.getXExpression(), null, "action", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(onAppearRuleEClass, OnAppearRule.class, "OnAppearRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(failDiagnosticRuleEClass, FailDiagnosticRule.class, "FailDiagnosticRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(typedParameterListEClass, TypedParameterList.class, "TypedParameterList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTypedParameterList_Parameters(), this.getTypedParameter(), null, "parameters", null, 0, -1, TypedParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

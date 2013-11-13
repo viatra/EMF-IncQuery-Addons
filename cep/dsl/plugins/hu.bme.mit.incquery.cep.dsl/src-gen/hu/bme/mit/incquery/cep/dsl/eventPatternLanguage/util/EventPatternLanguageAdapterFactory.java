@@ -125,16 +125,6 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
         return createRuleAdapter();
       }
       @Override
-      public Adapter caseOnAppearRule(OnAppearRule object)
-      {
-        return createOnAppearRuleAdapter();
-      }
-      @Override
-      public Adapter caseFailDiagnosticRule(FailDiagnosticRule object)
-      {
-        return createFailDiagnosticRuleAdapter();
-      }
-      @Override
       public Adapter caseTypedParameterList(TypedParameterList object)
       {
         return createTypedParameterListAdapter();
@@ -477,36 +467,6 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OnAppearRule <em>On Appear Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OnAppearRule
-   * @generated
-   */
-  public Adapter createOnAppearRuleAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule <em>Fail Diagnostic Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule
-   * @generated
-   */
-  public Adapter createFailDiagnosticRuleAdapter()
   {
     return null;
   }

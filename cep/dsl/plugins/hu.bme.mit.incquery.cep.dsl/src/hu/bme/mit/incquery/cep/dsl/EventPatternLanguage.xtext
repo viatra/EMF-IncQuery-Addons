@@ -63,24 +63,13 @@ ComplexEventPattern:
 ;
 
 Rule:
-	OnAppearRule | FailDiagnosticRule
-;
-
-OnAppearRule:
-	'RuleOnAppear' name=ID '{'
+	'Rule' name=ID '{'
 		'events' ':' eventPatterns+=[EventPattern] (', 'eventPatterns+=[EventPattern])*
 		('actionHandler' ':' actionHandler=QualifiedName)?
 		('action' action = XBlockExpression)?
 	'}'
 ;
 
-FailDiagnosticRule:
-	'RuleOnFail' name=ID '{'
-		'events' ':' eventPatterns+=[EventPattern] (', 'eventPatterns+=[EventPattern])*
-		('actionHandler' ':' actionHandler=QualifiedName)?
-		('action' action = XBlockExpression)?
-	'}'
-;
 /*******************************************BASIC EVENT TYPE ELEMENTS*******************************************/
 	
 	

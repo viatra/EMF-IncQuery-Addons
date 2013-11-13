@@ -11,6 +11,9 @@ public class TestRunner {
 		BareJavaTester tester = new BareJavaTester();
 
 		tester.initializeEngine(new R1());
+		
+		tester.initializeEngine(new R1(engine));
+		
 		tester.acquireAdapter();
 		tester.simulate();
 	}

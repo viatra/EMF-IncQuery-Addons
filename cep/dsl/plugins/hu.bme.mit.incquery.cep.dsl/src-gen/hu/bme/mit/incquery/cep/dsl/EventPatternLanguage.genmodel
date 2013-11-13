@@ -48,8 +48,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//Rule/actionHandler"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//Rule/action"/>
     </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//OnAppearRule"/>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//FailDiagnosticRule"/>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//TypedParameterList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//TypedParameterList/parameters"/>
     </genClasses>

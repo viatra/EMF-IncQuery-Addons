@@ -12,9 +12,8 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OnAppearRule
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedMultiplicityExpression
 import hu.bme.mit.incquery.cep.metamodels.cep.CepFactory
@@ -36,7 +35,6 @@ import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -85,7 +83,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 		var complexPatterns = element.packagedModel.modelElements.filter[e|(e instanceof ComplexEventPattern)]
 		complexPatterns.generateComplexEventPatterns(acceptor)
 
-		var rules = element.packagedModel.modelElements.filter[e|(e instanceof OnAppearRule)]
+		var rules = element.packagedModel.modelElements.filter[e|(e instanceof Rule)]
 		rules.generateRulesAndJobs(acceptor)
 	}
 

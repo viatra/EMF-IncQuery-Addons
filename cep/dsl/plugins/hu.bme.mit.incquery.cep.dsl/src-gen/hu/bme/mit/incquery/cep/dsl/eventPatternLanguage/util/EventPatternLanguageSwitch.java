@@ -154,24 +154,6 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventPatternLanguagePackage.ON_APPEAR_RULE:
-      {
-        OnAppearRule onAppearRule = (OnAppearRule)theEObject;
-        T result = caseOnAppearRule(onAppearRule);
-        if (result == null) result = caseRule(onAppearRule);
-        if (result == null) result = caseModelElement(onAppearRule);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EventPatternLanguagePackage.FAIL_DIAGNOSTIC_RULE:
-      {
-        FailDiagnosticRule failDiagnosticRule = (FailDiagnosticRule)theEObject;
-        T result = caseFailDiagnosticRule(failDiagnosticRule);
-        if (result == null) result = caseRule(failDiagnosticRule);
-        if (result == null) result = caseModelElement(failDiagnosticRule);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case EventPatternLanguagePackage.TYPED_PARAMETER_LIST:
       {
         TypedParameterList typedParameterList = (TypedParameterList)theEObject;
@@ -599,38 +581,6 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRule(Rule object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>On Appear Rule</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>On Appear Rule</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOnAppearRule(OnAppearRule object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Fail Diagnostic Rule</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Fail Diagnostic Rule</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFailDiagnosticRule(FailDiagnosticRule object)
   {
     return null;
   }

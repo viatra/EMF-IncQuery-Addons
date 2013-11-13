@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.cep.dsl.jvmmodel
 
 import com.google.common.collect.Lists
+import com.google.common.collect.Maps
 import com.google.inject.Inject
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AugmentedExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression
@@ -9,11 +10,10 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Expression
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.MultiplicityExpression
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OnAppearRule
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameter
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.StaticBinding
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedExpression
@@ -24,6 +24,7 @@ import java.util.List
 import java.util.Map
 import java.util.Map.Entry
 import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtend2.lib.StringConcatenation
 import org.eclipse.xtext.common.types.JvmAnnotationType
 import org.eclipse.xtext.common.types.JvmMember
 import org.eclipse.xtext.common.types.JvmOperation
@@ -35,9 +36,6 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameter
-import org.eclipse.xtend2.lib.StringConcatenation
-import com.google.common.collect.Maps
 
 class Utils {
 	@Inject extension IQualifiedNameProvider
@@ -317,7 +315,7 @@ class Utils {
 		switch element {
 			ComplexEventPattern:
 				return packageName.append("patterns.complex").append(className.toFirstUpper + "Pattern")
-			OnAppearRule:
+			Rule:
 				return packageName.append("rules").append(className.toFirstUpper)
 		}
 	}
@@ -346,19 +344,11 @@ class Utils {
 		typeReferenceSerializer.serialize(ref, ctx, appendable)
 	}
 
-	def dispatch unwrapAction(OnAppearRule rule) {
+	def dispatch unwrapAction(Rule rule) {
 		rule.action
 	}
 
-	def dispatch unwrapAction(FailDiagnosticRule rule) {
-		rule.action
-	}
-
-	def dispatch unwrapActionHandler(OnAppearRule rule) {
-		rule.actionHandler
-	}
-
-	def dispatch unwrapActionHandler(FailDiagnosticRule rule) {
+	def dispatch unwrapActionHandler(Rule rule) {
 		rule.actionHandler
 	}
 }

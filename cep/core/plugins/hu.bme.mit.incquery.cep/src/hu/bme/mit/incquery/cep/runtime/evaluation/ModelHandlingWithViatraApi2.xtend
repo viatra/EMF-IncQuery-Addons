@@ -53,7 +53,7 @@ class ModelHandlingWithViatraApi2 {
 
 	def registerRulesWithAutomatedPriorities() {
 		val resolver = new RuleOrderBasedFixedPriorityResolver()
-		resolver.setPriorities(new ArrayList(rules.ruleSpecifications), true)
+		resolver.setPrioritiesFromScratch(new ArrayList(rules.ruleSpecifications))
 
 		EventDrivenTransformation.forResource(eventModelManager.resourceSet).addRules(rules).
 			setConflictResolver(resolver).create()

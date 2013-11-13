@@ -113,24 +113,6 @@ public interface EventPatternLanguageFactory extends EFactory
   Rule createRule();
 
   /**
-   * Returns a new object of class '<em>On Appear Rule</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>On Appear Rule</em>'.
-   * @generated
-   */
-  OnAppearRule createOnAppearRule();
-
-  /**
-   * Returns a new object of class '<em>Fail Diagnostic Rule</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Fail Diagnostic Rule</em>'.
-   * @generated
-   */
-  FailDiagnosticRule createFailDiagnosticRule();
-
-  /**
    * Returns a new object of class '<em>Typed Parameter List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

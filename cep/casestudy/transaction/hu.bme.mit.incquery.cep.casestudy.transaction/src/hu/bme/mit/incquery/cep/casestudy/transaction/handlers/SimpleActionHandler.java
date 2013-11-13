@@ -8,7 +8,7 @@ import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import org.eclipse.incquery.runtime.evm.api.Activation;
 
 public class SimpleActionHandler implements IActionHandler {
-
+	
 	@Override
 	public void handle(
 			Activation<? extends IObservableComplexEventPattern> activation) {
@@ -19,7 +19,5 @@ public class SimpleActionHandler implements IActionHandler {
 		EventPattern observedEventPattern = atom.getObservableEventPattern();
 		System.out.println("Event pattern appeared: "
 				+ observedEventPattern.getId());
-
 	}
-
 }

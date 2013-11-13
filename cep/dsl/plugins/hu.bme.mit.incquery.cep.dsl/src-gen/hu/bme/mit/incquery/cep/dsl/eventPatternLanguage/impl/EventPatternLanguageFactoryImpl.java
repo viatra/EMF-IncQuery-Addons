@@ -75,8 +75,6 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
       case EventPatternLanguagePackage.IQ_PATTERN_EVENT_PATTERN: return createIQPatternEventPattern();
       case EventPatternLanguagePackage.COMPLEX_EVENT_PATTERN: return createComplexEventPattern();
       case EventPatternLanguagePackage.RULE: return createRule();
-      case EventPatternLanguagePackage.ON_APPEAR_RULE: return createOnAppearRule();
-      case EventPatternLanguagePackage.FAIL_DIAGNOSTIC_RULE: return createFailDiagnosticRule();
       case EventPatternLanguagePackage.TYPED_PARAMETER_LIST: return createTypedParameterList();
       case EventPatternLanguagePackage.TYPED_PARAMETER: return createTypedParameter();
       case EventPatternLanguagePackage.EVENT_PATTERN_PARAMETER_LIST: return createEventPatternParameterList();
@@ -259,28 +257,6 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
   {
     RuleImpl rule = new RuleImpl();
     return rule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public OnAppearRule createOnAppearRule()
-  {
-    OnAppearRuleImpl onAppearRule = new OnAppearRuleImpl();
-    return onAppearRule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FailDiagnosticRule createFailDiagnosticRule()
-  {
-    FailDiagnosticRuleImpl failDiagnosticRule = new FailDiagnosticRuleImpl();
-    return failDiagnosticRule;
   }
 
   /**

@@ -3,6 +3,7 @@ package hu.bme.mit.incquery.cep.casestudy.transaction
 uses hu.bme.mit.incquery.cep.casestudy.transaction.sources.*
 uses hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.*
 uses hu.bme.mit.incquery.cep.dsl.examples.actionhandlers.*
+uses hu.bme.mit.incquery.cep.api.evm.*
 
 AtomicEvent componentA(transactionId : String, timestamp : long, customerId : String){
 	source : eventSource
@@ -20,20 +21,29 @@ ComplexEvent compoundTransactionEvent(a:componentA, b:componentB, c:componentC){
 	definition : (a(tId, _, cId) -> b(tId, _) -> c(tId, _, sId))[5000]
 }
 
-ComplexEvent compoundTransactionEvent1(a:componentA, b:componentB, c:componentC){
+ComplexEvent compoundTransactionTestEvent1(a:componentA, b:componentB, c:componentC){ 
 	definition : (a -> b)[1500]
 }
 
-ComplexEvent compoundTransactionEvent2(a:componentA, b:componentB, c:componentC){
+ComplexEvent compoundTransactionTestEvent2(a:componentA, b:componentB, c:componentC){
 	definition : (a -> b ->c)[15000]
 }
 
-RuleOnAppear r1 {
+Rule r1 {
 	events: compoundTransactionEvent
 	actionHandler: hu.bme.mit.incquery.cep.casestudy.transaction.handlers.SimpleActionHandler
+//	action {
+//		val atom = activation.getAtom()
+//		if(!(atom instanceof ObservedComplexEventPattern)){
+//			return
+//		}
+//		val observedEventPattern = atom.getObservableEventPattern()
+//		System.out.println("Event pattern appeared: " + observedEventPattern.getId())
+//	}
 }
 
-//IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:int){
-//	iqPatternRef : oldCompoundTransaction(X, I)
-//	iqChangeType : NEW_MATCH_FOUND
-//}
+
+IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:int){
+	iqPatternRef : oldCompoundTransaction(X, I)
+	iqChangeType : NEW_MATCH_FOUND
+}

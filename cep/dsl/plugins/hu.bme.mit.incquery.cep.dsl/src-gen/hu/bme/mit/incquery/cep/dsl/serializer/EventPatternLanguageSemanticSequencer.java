@@ -13,7 +13,6 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePack
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternParameterList;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameter;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorNoTW;
@@ -23,7 +22,6 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.LiteralFilter;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Multiplicity;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.MultiplicityExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.NumericFilter;
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OnAppearRule;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OpenClosed;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OpenOpen;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PackagedModel;
@@ -31,6 +29,7 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ParametrizedIncQueryPatt
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameter;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameterList;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.RangeFilter;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Source;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.StaticBinding;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedExpression;
@@ -171,14 +170,6 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 					return; 
 				}
 				else break;
-			case EventPatternLanguagePackage.FAIL_DIAGNOSTIC_RULE:
-				if(context == grammarAccess.getFailDiagnosticRuleRule() ||
-				   context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getRuleRule()) {
-					sequence_FailDiagnosticRule(context, (FailDiagnosticRule) semanticObject); 
-					return; 
-				}
-				else break;
 			case EventPatternLanguagePackage.FOLLOWER_EXPRESSION:
 				if(context == grammarAccess.getFollowerExpressionRule()) {
 					sequence_FollowerExpression(context, (FollowerExpression) semanticObject); 
@@ -243,14 +234,6 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 					return; 
 				}
 				else break;
-			case EventPatternLanguagePackage.ON_APPEAR_RULE:
-				if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getOnAppearRuleRule() ||
-				   context == grammarAccess.getRuleRule()) {
-					sequence_OnAppearRule(context, (OnAppearRule) semanticObject); 
-					return; 
-				}
-				else break;
 			case EventPatternLanguagePackage.OPEN_CLOSED:
 				if(context == grammarAccess.getOpenClosedRule() ||
 				   context == grammarAccess.getRangeRule()) {
@@ -293,6 +276,13 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 				if(context == grammarAccess.getRangeFilterRule() ||
 				   context == grammarAccess.getStaticBindingRuleRule()) {
 					sequence_RangeFilter(context, (RangeFilter) semanticObject); 
+					return; 
+				}
+				else break;
+			case EventPatternLanguagePackage.RULE:
+				if(context == grammarAccess.getModelElementRule() ||
+				   context == grammarAccess.getRuleRule()) {
+					sequence_Rule(context, (Rule) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1427,15 +1417,6 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID eventPatterns+=[EventPattern|ID] eventPatterns+=[EventPattern|ID]* actionHandler=QualifiedName? action=XBlockExpression?)
-	 */
-	protected void sequence_FailDiagnosticRule(EObject context, FailDiagnosticRule semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (followsOperator=FollowsOperator eventPattern=FollowerEventStructure)
 	 */
 	protected void sequence_FollowerExpression(EObject context, FollowerExpression semanticObject) {
@@ -1561,15 +1542,6 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID eventPatterns+=[EventPattern|ID] eventPatterns+=[EventPattern|ID]* actionHandler=QualifiedName? action=XBlockExpression?)
-	 */
-	protected void sequence_OnAppearRule(EObject context, OnAppearRule semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (lowerBound=DOUBLE upperBound=DOUBLE)
 	 */
 	protected void sequence_OpenClosed(EObject context, OpenClosed semanticObject) {
@@ -1654,6 +1626,15 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	 *     (neg=NegationOpartor? range=Range)
 	 */
 	protected void sequence_RangeFilter(EObject context, RangeFilter semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID eventPatterns+=[EventPattern|ID] eventPatterns+=[EventPattern|ID]* actionHandler=QualifiedName? action=XBlockExpression?)
+	 */
+	protected void sequence_Rule(EObject context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

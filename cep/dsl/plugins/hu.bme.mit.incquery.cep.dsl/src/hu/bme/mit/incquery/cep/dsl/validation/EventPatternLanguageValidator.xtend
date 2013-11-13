@@ -3,6 +3,7 @@
  */
 package hu.bme.mit.incquery.cep.dsl.validation
 
+import com.google.inject.Inject
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern
@@ -12,17 +13,12 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithM
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PackagedModel
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TypedParameterList
+import hu.bme.mit.incquery.cep.dsl.jvmmodel.Utils
 import org.eclipse.xtext.validation.Check
 
 import static extension com.google.common.base.Strings.*
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.OnAppearRule
-import org.eclipse.emf.codegen.ecore.genmodel.impl.Literals
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FailDiagnosticRule
-import org.eclipse.xtext.xbase.XExpression
-import com.google.inject.Inject
-import hu.bme.mit.incquery.cep.dsl.jvmmodel.Utils
 
 //import org.eclipse.xtext.validation.Check
 /**
