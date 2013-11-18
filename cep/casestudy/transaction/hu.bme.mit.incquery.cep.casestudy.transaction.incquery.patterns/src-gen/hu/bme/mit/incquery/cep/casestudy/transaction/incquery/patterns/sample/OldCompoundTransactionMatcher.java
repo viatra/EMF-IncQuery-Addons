@@ -1,6 +1,5 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
-import hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent;
 import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.OldCompoundTransactionMatch;
 import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.OldCompoundTransactionQuerySpecification;
 import java.util.Collection;
@@ -108,7 +107,7 @@ public class OldCompoundTransactionMatcher extends BaseMatcher<OldCompoundTransa
    * @return matches represented as a OldCompoundTransactionMatch object.
    * 
    */
-  public Collection<OldCompoundTransactionMatch> getAllMatches(final CompoundTransactionEvent pCte, final Long pTs) {
+  public Collection<OldCompoundTransactionMatch> getAllMatches(final hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent pCte, final Long pTs) {
     return rawGetAllMatches(new Object[]{pCte, pTs});
   }
   
@@ -120,7 +119,7 @@ public class OldCompoundTransactionMatcher extends BaseMatcher<OldCompoundTransa
    * @return a match represented as a OldCompoundTransactionMatch object, or null if no match is found.
    * 
    */
-  public OldCompoundTransactionMatch getOneArbitraryMatch(final CompoundTransactionEvent pCte, final Long pTs) {
+  public OldCompoundTransactionMatch getOneArbitraryMatch(final hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent pCte, final Long pTs) {
     return rawGetOneArbitraryMatch(new Object[]{pCte, pTs});
   }
   
@@ -132,7 +131,7 @@ public class OldCompoundTransactionMatcher extends BaseMatcher<OldCompoundTransa
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final CompoundTransactionEvent pCte, final Long pTs) {
+  public boolean hasMatch(final hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent pCte, final Long pTs) {
     return rawHasMatch(new Object[]{pCte, pTs});
   }
   
@@ -143,7 +142,7 @@ public class OldCompoundTransactionMatcher extends BaseMatcher<OldCompoundTransa
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final CompoundTransactionEvent pCte, final Long pTs) {
+  public int countMatches(final hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent pCte, final Long pTs) {
     return rawCountMatches(new Object[]{pCte, pTs});
   }
   
@@ -154,7 +153,7 @@ public class OldCompoundTransactionMatcher extends BaseMatcher<OldCompoundTransa
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final CompoundTransactionEvent pCte, final Long pTs, final IMatchProcessor<? super OldCompoundTransactionMatch> processor) {
+  public void forEachMatch(final hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent pCte, final Long pTs, final IMatchProcessor<? super OldCompoundTransactionMatch> processor) {
     rawForEachMatch(new Object[]{pCte, pTs}, processor);
   }
   
@@ -167,7 +166,7 @@ public class OldCompoundTransactionMatcher extends BaseMatcher<OldCompoundTransa
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final CompoundTransactionEvent pCte, final Long pTs, final IMatchProcessor<? super OldCompoundTransactionMatch> processor) {
+  public boolean forOneArbitraryMatch(final hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent pCte, final Long pTs, final IMatchProcessor<? super OldCompoundTransactionMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pCte, pTs}, processor);
   }
   
@@ -185,7 +184,7 @@ public class OldCompoundTransactionMatcher extends BaseMatcher<OldCompoundTransa
    * 
    */
   @Deprecated
-  public DeltaMonitor<OldCompoundTransactionMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final CompoundTransactionEvent pCte, final Long pTs) {
+  public DeltaMonitor<OldCompoundTransactionMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent pCte, final Long pTs) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pCte, pTs});
   }
   
@@ -198,7 +197,7 @@ public class OldCompoundTransactionMatcher extends BaseMatcher<OldCompoundTransa
    * @return the (partial) match object.
    * 
    */
-  public OldCompoundTransactionMatch newMatch(final CompoundTransactionEvent pCte, final Long pTs) {
+  public OldCompoundTransactionMatch newMatch(final hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent pCte, final Long pTs) {
     return new OldCompoundTransactionMatch.Immutable(pCte, pTs);
     
   }
@@ -208,8 +207,8 @@ public class OldCompoundTransactionMatcher extends BaseMatcher<OldCompoundTransa
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected Set<CompoundTransactionEvent> rawAccumulateAllValuesOfcte(final Object[] parameters) {
-    Set<CompoundTransactionEvent> results = new HashSet<CompoundTransactionEvent>();
+  protected /* Set<hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent> */Object rawAccumulateAllValuesOfcte(final Object[] parameters) {
+    Set<hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent> results = new HashSet<hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent>();
     rawAccumulateAllValues(POSITION_CTE, parameters, results);
     return results;
   }
@@ -219,7 +218,7 @@ public class OldCompoundTransactionMatcher extends BaseMatcher<OldCompoundTransa
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<CompoundTransactionEvent> getAllValuesOfcte() {
+  public /* Set<hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent> */Object getAllValuesOfcte() {
     return rawAccumulateAllValuesOfcte(emptyArray());
   }
   
@@ -228,7 +227,7 @@ public class OldCompoundTransactionMatcher extends BaseMatcher<OldCompoundTransa
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<CompoundTransactionEvent> getAllValuesOfcte(final OldCompoundTransactionMatch partialMatch) {
+  public /* Set<hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent> */Object getAllValuesOfcte(final OldCompoundTransactionMatch partialMatch) {
     return rawAccumulateAllValuesOfcte(partialMatch.toArray());
   }
   
@@ -237,7 +236,7 @@ public class OldCompoundTransactionMatcher extends BaseMatcher<OldCompoundTransa
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<CompoundTransactionEvent> getAllValuesOfcte(final Long pTs) {
+  public /* Set<hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent> */Object getAllValuesOfcte(final Long pTs) {
     return rawAccumulateAllValuesOfcte(new Object[]{null, pTs});
   }
   
@@ -275,7 +274,7 @@ public class OldCompoundTransactionMatcher extends BaseMatcher<OldCompoundTransa
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Long> getAllValuesOfts(final CompoundTransactionEvent pCte) {
+  public Set<Long> getAllValuesOfts(final hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent pCte) {
     return rawAccumulateAllValuesOfts(new Object[]{pCte, null});
   }
   

@@ -4,8 +4,11 @@ package hu.bme.mit.incquery.cep.casestudy.transaction.impl;
 
 import hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class CompoundTransactionEventImpl extends ModelElementImpl implements CompoundTransactionEvent {
-    /**
+	/**
 	 * The default value of the '{@link #getTransactionId() <em>Transaction Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -126,26 +129,26 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 	 */
 	protected long timestampC = TIMESTAMP_C_EDEFAULT;
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    protected CompoundTransactionEventImpl() {
+	protected CompoundTransactionEventImpl() {
 		super();
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    protected EClass eStaticClass() {
+	@Override
+	protected EClass eStaticClass() {
 		return TransactionPackage.Literals.COMPOUND_TRANSACTION_EVENT;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -154,7 +157,7 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 		return transactionId;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -166,7 +169,7 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 			eNotify(new ENotificationImpl(this, Notification.SET, TransactionPackage.COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID, oldTransactionId, transactionId));
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -175,7 +178,7 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 		return customerId;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -187,7 +190,7 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 			eNotify(new ENotificationImpl(this, Notification.SET, TransactionPackage.COMPOUND_TRANSACTION_EVENT__CUSTOMER_ID, oldCustomerId, customerId));
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -196,7 +199,7 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 		return timestampA;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -208,7 +211,7 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 			eNotify(new ENotificationImpl(this, Notification.SET, TransactionPackage.COMPOUND_TRANSACTION_EVENT__TIMESTAMP_A, oldTimestampA, timestampA));
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -217,7 +220,7 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 		return timestampB;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -229,7 +232,7 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 			eNotify(new ENotificationImpl(this, Notification.SET, TransactionPackage.COMPOUND_TRANSACTION_EVENT__TIMESTAMP_B, oldTimestampB, timestampB));
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -238,7 +241,7 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 		return timestampC;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -250,13 +253,13 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 			eNotify(new ENotificationImpl(this, Notification.SET, TransactionPackage.COMPOUND_TRANSACTION_EVENT__TIMESTAMP_C, oldTimestampC, timestampC));
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID:
 				return getTransactionId();
@@ -272,13 +275,13 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public void eSet(int featureID, Object newValue) {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID:
 				setTransactionId((String)newValue);
@@ -299,13 +302,13 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 		super.eSet(featureID, newValue);
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public void eUnset(int featureID) {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID:
 				setTransactionId(TRANSACTION_ID_EDEFAULT);
@@ -326,13 +329,13 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 		super.eUnset(featureID);
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public boolean eIsSet(int featureID) {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID:
 				return TRANSACTION_ID_EDEFAULT == null ? transactionId != null : !TRANSACTION_ID_EDEFAULT.equals(transactionId);
@@ -348,13 +351,13 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 		return super.eIsSet(featureID);
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public String toString() {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

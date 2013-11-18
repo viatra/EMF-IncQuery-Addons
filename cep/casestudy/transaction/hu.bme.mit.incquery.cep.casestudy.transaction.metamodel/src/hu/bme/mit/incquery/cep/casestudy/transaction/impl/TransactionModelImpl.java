@@ -2,17 +2,24 @@
  */
 package hu.bme.mit.incquery.cep.casestudy.transaction.impl;
 
-import hu.bme.mit.incquery.cep.casestudy.transaction.ModelElement;
+import hu.bme.mit.incquery.cep.casestudy.transaction.Component;
+import hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage;
+
 import java.util.Collection;
-import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +28,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionModelImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionModelImpl#getLatestComponentEvent <em>Latest Component Event</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionModelImpl#getCompoundTransactionEvents <em>Compound Transaction Events</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,14 +37,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class TransactionModelImpl extends MinimalEObjectImpl.Container implements TransactionModel {
 	/**
-	 * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+	 * The cached value of the '{@link #getLatestComponentEvent() <em>Latest Component Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getElements()
+	 * @see #getLatestComponentEvent()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ModelElement> elements;
+	protected Component latestComponentEvent;
+
+	/**
+	 * The cached value of the '{@link #getCompoundTransactionEvents() <em>Compound Transaction Events</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCompoundTransactionEvents()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CompoundTransactionEvent> compoundTransactionEvents;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,11 +80,16 @@ public class TransactionModelImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ModelElement> getElements() {
-		if (elements == null) {
-			elements = new EObjectContainmentEList<ModelElement>(ModelElement.class, this, TransactionPackage.TRANSACTION_MODEL__ELEMENTS);
+	public Component getLatestComponentEvent() {
+		if (latestComponentEvent != null && latestComponentEvent.eIsProxy()) {
+			InternalEObject oldLatestComponentEvent = (InternalEObject)latestComponentEvent;
+			latestComponentEvent = (Component)eResolveProxy(oldLatestComponentEvent);
+			if (latestComponentEvent != oldLatestComponentEvent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TransactionPackage.TRANSACTION_MODEL__LATEST_COMPONENT_EVENT, oldLatestComponentEvent, latestComponentEvent));
+			}
 		}
-		return elements;
+		return latestComponentEvent;
 	}
 
 	/**
@@ -74,13 +97,32 @@ public class TransactionModelImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case TransactionPackage.TRANSACTION_MODEL__ELEMENTS:
-				return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+	public Component basicGetLatestComponentEvent() {
+		return latestComponentEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLatestComponentEvent(Component newLatestComponentEvent) {
+		Component oldLatestComponentEvent = latestComponentEvent;
+		latestComponentEvent = newLatestComponentEvent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TransactionPackage.TRANSACTION_MODEL__LATEST_COMPONENT_EVENT, oldLatestComponentEvent, latestComponentEvent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<CompoundTransactionEvent> getCompoundTransactionEvents() {
+		if (compoundTransactionEvents == null) {
+			compoundTransactionEvents = new EObjectResolvingEList<CompoundTransactionEvent>(CompoundTransactionEvent.class, this, TransactionPackage.TRANSACTION_MODEL__COMPOUND_TRANSACTION_EVENTS);
 		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		return compoundTransactionEvents;
 	}
 
 	/**
@@ -91,8 +133,11 @@ public class TransactionModelImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TransactionPackage.TRANSACTION_MODEL__ELEMENTS:
-				return getElements();
+			case TransactionPackage.TRANSACTION_MODEL__LATEST_COMPONENT_EVENT:
+				if (resolve) return getLatestComponentEvent();
+				return basicGetLatestComponentEvent();
+			case TransactionPackage.TRANSACTION_MODEL__COMPOUND_TRANSACTION_EVENTS:
+				return getCompoundTransactionEvents();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,9 +151,12 @@ public class TransactionModelImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TransactionPackage.TRANSACTION_MODEL__ELEMENTS:
-				getElements().clear();
-				getElements().addAll((Collection<? extends ModelElement>)newValue);
+			case TransactionPackage.TRANSACTION_MODEL__LATEST_COMPONENT_EVENT:
+				setLatestComponentEvent((Component)newValue);
+				return;
+			case TransactionPackage.TRANSACTION_MODEL__COMPOUND_TRANSACTION_EVENTS:
+				getCompoundTransactionEvents().clear();
+				getCompoundTransactionEvents().addAll((Collection<? extends CompoundTransactionEvent>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,8 +170,11 @@ public class TransactionModelImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TransactionPackage.TRANSACTION_MODEL__ELEMENTS:
-				getElements().clear();
+			case TransactionPackage.TRANSACTION_MODEL__LATEST_COMPONENT_EVENT:
+				setLatestComponentEvent((Component)null);
+				return;
+			case TransactionPackage.TRANSACTION_MODEL__COMPOUND_TRANSACTION_EVENTS:
+				getCompoundTransactionEvents().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -137,8 +188,10 @@ public class TransactionModelImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TransactionPackage.TRANSACTION_MODEL__ELEMENTS:
-				return elements != null && !elements.isEmpty();
+			case TransactionPackage.TRANSACTION_MODEL__LATEST_COMPONENT_EVENT:
+				return latestComponentEvent != null;
+			case TransactionPackage.TRANSACTION_MODEL__COMPOUND_TRANSACTION_EVENTS:
+				return compoundTransactionEvents != null && !compoundTransactionEvents.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,6 +1,5 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
-import hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
@@ -23,11 +22,11 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class NewTransactionEventMatch extends BasePatternMatch {
-  private ComponentA fTe;
+  private hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA fTe;
   
   private static List<String> parameterNames = makeImmutableList("te");
   
-  private NewTransactionEventMatch(final ComponentA pTe) {
+  private NewTransactionEventMatch(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
     this.fTe = pTe;
     
   }
@@ -39,7 +38,7 @@ public abstract class NewTransactionEventMatch extends BasePatternMatch {
     
   }
   
-  public ComponentA getTe() {
+  public hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA getTe() {
     return this.fTe;
     
   }
@@ -55,7 +54,7 @@ public abstract class NewTransactionEventMatch extends BasePatternMatch {
     
   }
   
-  public void setTe(final ComponentA pTe) {
+  public void setTe(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTe = pTe;
     
@@ -129,7 +128,7 @@ public abstract class NewTransactionEventMatch extends BasePatternMatch {
   
   @SuppressWarnings("all")
   static final class Mutable extends NewTransactionEventMatch {
-    Mutable(final ComponentA pTe) {
+    Mutable(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
       super(pTe);
       
     }
@@ -143,7 +142,7 @@ public abstract class NewTransactionEventMatch extends BasePatternMatch {
   
   @SuppressWarnings("all")
   static final class Immutable extends NewTransactionEventMatch {
-    Immutable(final ComponentA pTe) {
+    Immutable(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
       super(pTe);
       
     }

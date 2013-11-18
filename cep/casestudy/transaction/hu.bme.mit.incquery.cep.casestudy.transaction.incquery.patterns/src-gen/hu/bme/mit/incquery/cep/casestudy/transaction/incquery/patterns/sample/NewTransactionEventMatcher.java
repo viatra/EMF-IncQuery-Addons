@@ -1,6 +1,5 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
-import hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA;
 import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.NewTransactionEventMatch;
 import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.NewTransactionEventQuerySpecification;
 import java.util.Collection;
@@ -106,7 +105,7 @@ public class NewTransactionEventMatcher extends BaseMatcher<NewTransactionEventM
    * @return matches represented as a NewTransactionEventMatch object.
    * 
    */
-  public Collection<NewTransactionEventMatch> getAllMatches(final ComponentA pTe) {
+  public Collection<NewTransactionEventMatch> getAllMatches(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
     return rawGetAllMatches(new Object[]{pTe});
   }
   
@@ -117,7 +116,7 @@ public class NewTransactionEventMatcher extends BaseMatcher<NewTransactionEventM
    * @return a match represented as a NewTransactionEventMatch object, or null if no match is found.
    * 
    */
-  public NewTransactionEventMatch getOneArbitraryMatch(final ComponentA pTe) {
+  public NewTransactionEventMatch getOneArbitraryMatch(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
     return rawGetOneArbitraryMatch(new Object[]{pTe});
   }
   
@@ -128,7 +127,7 @@ public class NewTransactionEventMatcher extends BaseMatcher<NewTransactionEventM
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final ComponentA pTe) {
+  public boolean hasMatch(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
     return rawHasMatch(new Object[]{pTe});
   }
   
@@ -138,7 +137,7 @@ public class NewTransactionEventMatcher extends BaseMatcher<NewTransactionEventM
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final ComponentA pTe) {
+  public int countMatches(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
     return rawCountMatches(new Object[]{pTe});
   }
   
@@ -148,7 +147,7 @@ public class NewTransactionEventMatcher extends BaseMatcher<NewTransactionEventM
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final ComponentA pTe, final IMatchProcessor<? super NewTransactionEventMatch> processor) {
+  public void forEachMatch(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe, final IMatchProcessor<? super NewTransactionEventMatch> processor) {
     rawForEachMatch(new Object[]{pTe}, processor);
   }
   
@@ -160,7 +159,7 @@ public class NewTransactionEventMatcher extends BaseMatcher<NewTransactionEventM
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final ComponentA pTe, final IMatchProcessor<? super NewTransactionEventMatch> processor) {
+  public boolean forOneArbitraryMatch(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe, final IMatchProcessor<? super NewTransactionEventMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pTe}, processor);
   }
   
@@ -177,7 +176,7 @@ public class NewTransactionEventMatcher extends BaseMatcher<NewTransactionEventM
    * 
    */
   @Deprecated
-  public DeltaMonitor<NewTransactionEventMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final ComponentA pTe) {
+  public DeltaMonitor<NewTransactionEventMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pTe});
   }
   
@@ -189,7 +188,7 @@ public class NewTransactionEventMatcher extends BaseMatcher<NewTransactionEventM
    * @return the (partial) match object.
    * 
    */
-  public NewTransactionEventMatch newMatch(final ComponentA pTe) {
+  public NewTransactionEventMatch newMatch(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
     return new NewTransactionEventMatch.Immutable(pTe);
     
   }
@@ -199,8 +198,8 @@ public class NewTransactionEventMatcher extends BaseMatcher<NewTransactionEventM
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected Set<ComponentA> rawAccumulateAllValuesOfte(final Object[] parameters) {
-    Set<ComponentA> results = new HashSet<ComponentA>();
+  protected /* Set<hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA> */Object rawAccumulateAllValuesOfte(final Object[] parameters) {
+    Set<hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA> results = new HashSet<hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA>();
     rawAccumulateAllValues(POSITION_TE, parameters, results);
     return results;
   }
@@ -210,7 +209,7 @@ public class NewTransactionEventMatcher extends BaseMatcher<NewTransactionEventM
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<ComponentA> getAllValuesOfte() {
+  public /* Set<hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA> */Object getAllValuesOfte() {
     return rawAccumulateAllValuesOfte(emptyArray());
   }
   

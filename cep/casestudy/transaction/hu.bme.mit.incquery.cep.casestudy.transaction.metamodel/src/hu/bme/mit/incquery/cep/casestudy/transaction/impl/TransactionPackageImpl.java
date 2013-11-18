@@ -15,8 +15,8 @@ import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -26,51 +26,56 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class TransactionPackageImpl extends EPackageImpl implements TransactionPackage {
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass transactionModelEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass componentEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass componentAEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass componentBEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass componentCEClass = null;
-				/**
+
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private EClass compoundTransactionEventEClass = null;
+	private EClass compoundTransactionEventEClass = null;
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass modelElementEClass = null;
 
-				/**
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -79,36 +84,36 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 * initialization of the package, or returns the registered package,
 	 * if one already exists.
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-    private TransactionPackageImpl() {
+	private TransactionPackageImpl() {
 		super(eNS_URI, TransactionFactory.eINSTANCE);
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private static boolean isInited = false;
+	private static boolean isInited = false;
 
-    /**
+	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
 	 * <p>This method is used to initialize {@link TransactionPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-    public static TransactionPackage init() {
+	public static TransactionPackage init() {
 		if (isInited) return (TransactionPackage)EPackage.Registry.INSTANCE.getEPackage(TransactionPackage.eNS_URI);
 
 		// Obtain or create and register package
@@ -131,7 +136,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return theTransactionPackage;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -140,16 +145,25 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return transactionModelEClass;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransactionModel_Elements() {
+	public EReference getTransactionModel_LatestComponentEvent() {
 		return (EReference)transactionModelEClass.getEStructuralFeatures().get(0);
 	}
 
-				/**
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTransactionModel_CompoundTransactionEvents() {
+		return (EReference)transactionModelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -158,7 +172,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return componentEClass;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -167,7 +181,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return (EAttribute)componentEClass.getEStructuralFeatures().get(0);
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -176,7 +190,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return (EAttribute)componentEClass.getEStructuralFeatures().get(1);
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -185,7 +199,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return componentAEClass;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -194,7 +208,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return (EAttribute)componentAEClass.getEStructuralFeatures().get(0);
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -203,7 +217,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return componentBEClass;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -212,7 +226,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return componentCEClass;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -221,16 +235,16 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return (EAttribute)componentCEClass.getEStructuralFeatures().get(0);
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public EClass getCompoundTransactionEvent() {
+	public EClass getCompoundTransactionEvent() {
 		return compoundTransactionEventEClass;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -239,7 +253,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return (EAttribute)compoundTransactionEventEClass.getEStructuralFeatures().get(0);
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -248,7 +262,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return (EAttribute)compoundTransactionEventEClass.getEStructuralFeatures().get(1);
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -257,7 +271,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return (EAttribute)compoundTransactionEventEClass.getEStructuralFeatures().get(2);
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -266,7 +280,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return (EAttribute)compoundTransactionEventEClass.getEStructuralFeatures().get(3);
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -275,7 +289,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return (EAttribute)compoundTransactionEventEClass.getEStructuralFeatures().get(4);
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -284,36 +298,37 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		return modelElementEClass;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public TransactionFactory getTransactionFactory() {
+	public TransactionFactory getTransactionFactory() {
 		return (TransactionFactory)getEFactoryInstance();
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private boolean isCreated = false;
+	private boolean isCreated = false;
 
-    /**
+	/**
 	 * Creates the meta-model objects for the package.  This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public void createPackageContents() {
+	public void createPackageContents() {
 		if (isCreated) return;
 		isCreated = true;
 
 		// Create classes and their features
 		transactionModelEClass = createEClass(TRANSACTION_MODEL);
-		createEReference(transactionModelEClass, TRANSACTION_MODEL__ELEMENTS);
+		createEReference(transactionModelEClass, TRANSACTION_MODEL__LATEST_COMPONENT_EVENT);
+		createEReference(transactionModelEClass, TRANSACTION_MODEL__COMPOUND_TRANSACTION_EVENTS);
 
 		componentEClass = createEClass(COMPONENT);
 		createEAttribute(componentEClass, COMPONENT__TRANSACTION_ID);
@@ -337,21 +352,21 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		modelElementEClass = createEClass(MODEL_ELEMENT);
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private boolean isInitialized = false;
+	private boolean isInitialized = false;
 
-    /**
+	/**
 	 * Complete the initialization of the package and its meta-model.  This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public void initializePackageContents() {
+	public void initializePackageContents() {
 		if (isInitialized) return;
 		isInitialized = true;
 
@@ -373,7 +388,8 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(transactionModelEClass, TransactionModel.class, "TransactionModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTransactionModel_Elements(), this.getModelElement(), null, "elements", null, 0, -1, TransactionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransactionModel_LatestComponentEvent(), this.getComponent(), null, "latestComponentEvent", null, 0, 1, TransactionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransactionModel_CompoundTransactionEvents(), this.getCompoundTransactionEvent(), null, "compoundTransactionEvents", null, 0, -1, TransactionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponent_TransactionId(), ecorePackage.getEString(), "transactionId", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -4,7 +4,9 @@
  */
 package hu.bme.mit.incquery.cep.casestudy.transaction.validation;
 
-import hu.bme.mit.incquery.cep.casestudy.transaction.ModelElement;
+import hu.bme.mit.incquery.cep.casestudy.transaction.Component;
+import hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent;
+
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -16,7 +18,6 @@ import org.eclipse.emf.common.util.EList;
 public interface TransactionModelValidator {
 	boolean validate();
 
-	boolean validateElements(EList<ModelElement> value);
-
-	boolean validateElements(ModelElement value);
+	boolean validateLatestComponentEvent(Component value);
+	boolean validateCompoundTransactionEvents(EList<CompoundTransactionEvent> value);
 }

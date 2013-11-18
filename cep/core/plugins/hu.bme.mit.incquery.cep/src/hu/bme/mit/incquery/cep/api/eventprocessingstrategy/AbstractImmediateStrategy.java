@@ -16,8 +16,6 @@ public abstract class AbstractImmediateStrategy extends AbstractEventProcessingS
 		super(eventModelManager);
 	}
 
-	// FIXME if an event resets the SM but it makes the first transition enabled, do it!
-	//e.g. in PartialMatchFiltering testcase after the A, B, C, A, B, _A_ sequence
 	@Override
 	public void handleSmResets(InternalExecutionModel model, InternalsmFactory SM_FACTORY) {
 		for (StateMachine stateMachine : model.getStateMachines()) {

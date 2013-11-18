@@ -24,7 +24,7 @@ package hu.bme.mit.incquery.cep.casestudy.transaction;
  * @generated
  */
 public interface CompoundTransactionEvent extends ModelElement {
-    /**
+	/**
 	 * Returns the value of the '<em><b>Transaction Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>

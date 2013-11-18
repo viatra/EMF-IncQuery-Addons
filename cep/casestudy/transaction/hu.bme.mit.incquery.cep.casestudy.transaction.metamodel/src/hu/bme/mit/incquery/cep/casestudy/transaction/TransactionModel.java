@@ -3,6 +3,7 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,7 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getElements <em>Elements</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getLatestComponentEvent <em>Latest Component Event</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getCompoundTransactionEvents <em>Compound Transaction Events</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,19 +25,45 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface TransactionModel extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.bme.mit.incquery.cep.casestudy.transaction.ModelElement}.
+	 * Returns the value of the '<em><b>Latest Component Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Elements</em>' reference isn't clear,
+	 * If the meaning of the '<em>Latest Component Event</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Elements</em>' containment reference list.
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage#getTransactionModel_Elements()
-	 * @model containment="true"
+	 * @return the value of the '<em>Latest Component Event</em>' reference.
+	 * @see #setLatestComponentEvent(Component)
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage#getTransactionModel_LatestComponentEvent()
+	 * @model
 	 * @generated
 	 */
-	EList<ModelElement> getElements();
+	Component getLatestComponentEvent();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getLatestComponentEvent <em>Latest Component Event</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Latest Component Event</em>' reference.
+	 * @see #getLatestComponentEvent()
+	 * @generated
+	 */
+	void setLatestComponentEvent(Component value);
+
+	/**
+	 * Returns the value of the '<em><b>Compound Transaction Events</b></em>' reference list.
+	 * The list contents are of type {@link hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Compound Transaction Events</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Compound Transaction Events</em>' reference list.
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage#getTransactionModel_CompoundTransactionEvents()
+	 * @model
+	 * @generated
+	 */
+	EList<CompoundTransactionEvent> getCompoundTransactionEvents();
 
 } // TransactionModel

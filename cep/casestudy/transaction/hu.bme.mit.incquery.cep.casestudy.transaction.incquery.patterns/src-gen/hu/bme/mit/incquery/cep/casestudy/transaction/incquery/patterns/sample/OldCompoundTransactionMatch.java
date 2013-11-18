@@ -1,6 +1,5 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
-import hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
@@ -23,13 +22,13 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class OldCompoundTransactionMatch extends BasePatternMatch {
-  private CompoundTransactionEvent fCte;
+  private hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent fCte;
   
   private Long fTs;
   
   private static List<String> parameterNames = makeImmutableList("cte", "ts");
   
-  private OldCompoundTransactionMatch(final CompoundTransactionEvent pCte, final Long pTs) {
+  private OldCompoundTransactionMatch(final hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent pCte, final Long pTs) {
     this.fCte = pCte;
     this.fTs = pTs;
     
@@ -43,7 +42,7 @@ public abstract class OldCompoundTransactionMatch extends BasePatternMatch {
     
   }
   
-  public CompoundTransactionEvent getCte() {
+  public hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent getCte() {
     return this.fCte;
     
   }
@@ -68,7 +67,7 @@ public abstract class OldCompoundTransactionMatch extends BasePatternMatch {
     
   }
   
-  public void setCte(final CompoundTransactionEvent pCte) {
+  public void setCte(final hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent pCte) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fCte = pCte;
     
@@ -152,7 +151,7 @@ public abstract class OldCompoundTransactionMatch extends BasePatternMatch {
   
   @SuppressWarnings("all")
   static final class Mutable extends OldCompoundTransactionMatch {
-    Mutable(final CompoundTransactionEvent pCte, final Long pTs) {
+    Mutable(final hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent pCte, final Long pTs) {
       super(pCte, pTs);
       
     }
@@ -166,7 +165,7 @@ public abstract class OldCompoundTransactionMatch extends BasePatternMatch {
   
   @SuppressWarnings("all")
   static final class Immutable extends OldCompoundTransactionMatch {
-    Immutable(final CompoundTransactionEvent pCte, final Long pTs) {
+    Immutable(final hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent pCte, final Long pTs) {
       super(pCte, pTs);
       
     }

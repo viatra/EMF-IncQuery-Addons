@@ -19,13 +19,13 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * @generated
  */
 public class TransactionFactoryImpl extends EFactoryImpl implements TransactionFactory {
-    /**
+	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public static TransactionFactory init() {
+	public static TransactionFactory init() {
 		try {
 			TransactionFactory theTransactionFactory = (TransactionFactory)EPackage.Registry.INSTANCE.getEFactory(TransactionPackage.eNS_URI);
 			if (theTransactionFactory != null) {
@@ -38,23 +38,23 @@ public class TransactionFactoryImpl extends EFactoryImpl implements TransactionF
 		return new TransactionFactoryImpl();
 	}
 
-    /**
+	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public TransactionFactoryImpl() {
+	public TransactionFactoryImpl() {
 		super();
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public EObject create(EClass eClass) {
+	@Override
+	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case TransactionPackage.TRANSACTION_MODEL: return createTransactionModel();
 			case TransactionPackage.COMPONENT: return createComponent();
@@ -68,7 +68,7 @@ public class TransactionFactoryImpl extends EFactoryImpl implements TransactionF
 		}
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -78,7 +78,7 @@ public class TransactionFactoryImpl extends EFactoryImpl implements TransactionF
 		return transactionModel;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -88,7 +88,7 @@ public class TransactionFactoryImpl extends EFactoryImpl implements TransactionF
 		return component;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -98,7 +98,7 @@ public class TransactionFactoryImpl extends EFactoryImpl implements TransactionF
 		return componentA;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -108,7 +108,7 @@ public class TransactionFactoryImpl extends EFactoryImpl implements TransactionF
 		return componentB;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -118,17 +118,17 @@ public class TransactionFactoryImpl extends EFactoryImpl implements TransactionF
 		return componentC;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public CompoundTransactionEvent createCompoundTransactionEvent() {
+	public CompoundTransactionEvent createCompoundTransactionEvent() {
 		CompoundTransactionEventImpl compoundTransactionEvent = new CompoundTransactionEventImpl();
 		return compoundTransactionEvent;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -138,23 +138,23 @@ public class TransactionFactoryImpl extends EFactoryImpl implements TransactionF
 		return modelElement;
 	}
 
-				/**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public TransactionPackage getTransactionPackage() {
+	public TransactionPackage getTransactionPackage() {
 		return (TransactionPackage)getEPackage();
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
-    @Deprecated
-    public static TransactionPackage getPackage() {
+	@Deprecated
+	public static TransactionPackage getPackage() {
 		return TransactionPackage.eINSTANCE;
 	}
 

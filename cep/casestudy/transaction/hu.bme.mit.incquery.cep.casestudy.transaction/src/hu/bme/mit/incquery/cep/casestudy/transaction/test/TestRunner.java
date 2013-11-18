@@ -12,7 +12,7 @@ public class TestRunner {
 
 		tester.initializeEngine(new R1());
 		
-		tester.initializeEngine(new R1(engine));
+		//tester.initializeEngine(new R1(engine)); - IncQuery integration desired form
 		
 		tester.acquireAdapter();
 		tester.simulate();
