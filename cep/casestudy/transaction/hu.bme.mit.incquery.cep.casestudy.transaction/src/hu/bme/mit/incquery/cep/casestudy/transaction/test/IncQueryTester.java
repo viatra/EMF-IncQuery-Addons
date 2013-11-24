@@ -10,7 +10,7 @@ import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionFactory;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel;
 import hu.bme.mit.incquery.cep.casestudy.transaction.adapters.TransactionEventAdapter;
-import hu.bme.mit.incquery.cep.casestudy.transaction.test.mhr.ModelHandlingRules;
+import hu.bme.mit.incquery.cep.casestudy.transaction.test.mhr.Patterns2Events;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 
 import java.util.Map;
@@ -45,7 +45,7 @@ public class IncQueryTester {
 	}
 
 	private void initializeModelHandling() {
-		ModelHandlingRules mhr = new ModelHandlingRules(this);
+		Patterns2Events mhr = new Patterns2Events(this);
 		mhr.registerRules();
 	}
 

@@ -15,7 +15,7 @@ import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformati
 import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformation
 import hu.bme.mit.incquery.cep.casestudy.transaction.test.IncQueryTester
 
-class ModelHandlingRules {
+class Patterns2Events {
 	extension EventDrivenTransformationRuleFactory ruleFactory = new EventDrivenTransformationRuleFactory
 
 	@Property Map<RuleSpecification<?>, Integer> modelHandlers;
