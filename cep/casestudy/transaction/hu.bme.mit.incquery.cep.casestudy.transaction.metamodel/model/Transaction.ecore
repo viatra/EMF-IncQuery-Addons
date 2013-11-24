@@ -2,13 +2,12 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="transaction" nsURI="transaction.meta" nsPrefix="hu.bme.mit.incquery.cep.casestudy.transaction">
   <eClassifiers xsi:type="ecore:EClass" name="TransactionModel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="latestComponentEvent" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="latestComponentEvent" eType="#//Component"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compoundTransactionEvents"
-        upperBound="-1" eType="#//CompoundTransactionEvent"/>
+        upperBound="-1" eType="#//CompoundTransactionEvent" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ModelElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transactionId" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentA" eSuperTypes="#//Component">
@@ -21,7 +20,6 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompoundTransactionEvent" eSuperTypes="#//ModelElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transactionId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="customerId" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestampA" lowerBound="1"
@@ -31,5 +29,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestampC" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transactionId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

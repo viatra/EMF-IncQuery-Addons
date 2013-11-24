@@ -11,7 +11,6 @@ package hu.bme.mit.incquery.cep.casestudy.transaction;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.Component#getTransactionId <em>Transaction Id</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.Component#getTimestamp <em>Timestamp</em>}</li>
  * </ul>
  * </p>
@@ -21,32 +20,6 @@ package hu.bme.mit.incquery.cep.casestudy.transaction;
  * @generated
  */
 public interface Component extends ModelElement {
-	/**
-	 * Returns the value of the '<em><b>Transaction Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Transaction Id</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Transaction Id</em>' attribute.
-	 * @see #setTransactionId(String)
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage#getComponent_TransactionId()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getTransactionId();
-
-	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.Component#getTransactionId <em>Transaction Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Transaction Id</em>' attribute.
-	 * @see #getTransactionId()
-	 * @generated
-	 */
-	void setTransactionId(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Timestamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->

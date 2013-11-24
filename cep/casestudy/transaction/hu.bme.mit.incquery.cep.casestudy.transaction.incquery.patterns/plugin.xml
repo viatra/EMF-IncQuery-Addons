@@ -2,36 +2,28 @@
 <plugin>
 
    <extension
-         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.oldCompoundTransaction"
+         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentA"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.OldCompoundTransactionQuerySpecification$Provider"
-            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.oldCompoundTransaction">
+            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.LatestEventComponentAQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentA">
       </matcher>
    </extension>
    <extension
-         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.oldCompoundTransaction"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.OldCompoundTransactionEvaluator1_1"
-            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.oldCompoundTransaction_1_1">
-      </evaluator>
-   </extension>
-   <extension
-         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.newTransactionEvent"
+         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentB"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.NewTransactionEventQuerySpecification$Provider"
-            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.newTransactionEvent">
+            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.LatestEventComponentBQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentB">
       </matcher>
    </extension>
    <extension
-         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.newTransactionEvent"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.NewTransactionEventEvaluator1_1"
-            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.newTransactionEvent_1_1">
-      </evaluator>
+         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentC"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.LatestEventComponentCQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentC">
+      </matcher>
    </extension>
 
 </plugin>

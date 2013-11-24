@@ -11,7 +11,6 @@ package hu.bme.mit.incquery.cep.casestudy.transaction;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent#getTransactionId <em>Transaction Id</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent#getCustomerId <em>Customer Id</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent#getTimestampA <em>Timestamp A</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent#getTimestampB <em>Timestamp B</em>}</li>
@@ -24,32 +23,6 @@ package hu.bme.mit.incquery.cep.casestudy.transaction;
  * @generated
  */
 public interface CompoundTransactionEvent extends ModelElement {
-	/**
-	 * Returns the value of the '<em><b>Transaction Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Transaction Id</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Transaction Id</em>' attribute.
-	 * @see #setTransactionId(String)
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage#getCompoundTransactionEvent_TransactionId()
-	 * @model
-	 * @generated
-	 */
-	String getTransactionId();
-
-	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent#getTransactionId <em>Transaction Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Transaction Id</em>' attribute.
-	 * @see #getTransactionId()
-	 * @generated
-	 */
-	void setTransactionId(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Customer Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -1,5 +1,6 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
+import hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
@@ -8,25 +9,25 @@ import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.newTransactionEvent pattern, 
- * to be used in conjunction with {@link NewTransactionEventMatcher}.
+ * Pattern-specific match representation of the hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentA pattern, 
+ * to be used in conjunction with {@link LatestEventComponentAMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
  * usable to represent a match of the pattern in the result of a query, 
  * or to specify the bound (fixed) input parameters when issuing a query.
  * 
- * @see NewTransactionEventMatcher
- * @see NewTransactionEventProcessor
+ * @see LatestEventComponentAMatcher
+ * @see LatestEventComponentAProcessor
  * 
  */
 @SuppressWarnings("all")
-public abstract class NewTransactionEventMatch extends BasePatternMatch {
-  private hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA fTe;
+public abstract class LatestEventComponentAMatch extends BasePatternMatch {
+  private ComponentA fTe;
   
   private static List<String> parameterNames = makeImmutableList("te");
   
-  private NewTransactionEventMatch(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
+  private LatestEventComponentAMatch(final ComponentA pTe) {
     this.fTe = pTe;
     
   }
@@ -38,7 +39,7 @@ public abstract class NewTransactionEventMatch extends BasePatternMatch {
     
   }
   
-  public hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA getTe() {
+  public ComponentA getTe() {
     return this.fTe;
     
   }
@@ -54,7 +55,7 @@ public abstract class NewTransactionEventMatch extends BasePatternMatch {
     
   }
   
-  public void setTe(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
+  public void setTe(final ComponentA pTe) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTe = pTe;
     
@@ -62,13 +63,13 @@ public abstract class NewTransactionEventMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.newTransactionEvent";
+    return "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentA";
     
   }
   
   @Override
   public List<String> parameterNames() {
-    return NewTransactionEventMatch.parameterNames;
+    return LatestEventComponentAMatch.parameterNames;
     
   }
   
@@ -99,7 +100,7 @@ public abstract class NewTransactionEventMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (!(obj instanceof NewTransactionEventMatch)) { // this should be infrequent				
+    if (!(obj instanceof LatestEventComponentAMatch)) { // this should be infrequent				
     	if (obj == null)
     		return false;
     	if (!(obj instanceof IPatternMatch))
@@ -109,7 +110,7 @@ public abstract class NewTransactionEventMatch extends BasePatternMatch {
     		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
     }
-    NewTransactionEventMatch other = (NewTransactionEventMatch) obj;
+    LatestEventComponentAMatch other = (LatestEventComponentAMatch) obj;
     if (fTe == null) {if (other.fTe != null) return false;}
     else if (!fTe.equals(other.fTe)) return false;
     return true;
@@ -118,7 +119,7 @@ public abstract class NewTransactionEventMatch extends BasePatternMatch {
   @Override
   public Pattern pattern() {
     try {
-    	return NewTransactionEventMatcher.querySpecification().getPattern();
+    	return LatestEventComponentAMatcher.querySpecification().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);
@@ -127,8 +128,8 @@ public abstract class NewTransactionEventMatch extends BasePatternMatch {
   }
   
   @SuppressWarnings("all")
-  static final class Mutable extends NewTransactionEventMatch {
-    Mutable(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
+  static final class Mutable extends LatestEventComponentAMatch {
+    Mutable(final ComponentA pTe) {
       super(pTe);
       
     }
@@ -141,8 +142,8 @@ public abstract class NewTransactionEventMatch extends BasePatternMatch {
   
   
   @SuppressWarnings("all")
-  static final class Immutable extends NewTransactionEventMatch {
-    Immutable(final hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA pTe) {
+  static final class Immutable extends LatestEventComponentAMatch {
+    Immutable(final ComponentA pTe) {
       super(pTe);
       
     }

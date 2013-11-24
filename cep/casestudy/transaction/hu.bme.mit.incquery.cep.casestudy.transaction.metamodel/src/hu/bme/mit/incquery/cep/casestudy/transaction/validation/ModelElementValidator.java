@@ -14,4 +14,5 @@ package hu.bme.mit.incquery.cep.casestudy.transaction.validation;
 public interface ModelElementValidator {
 	boolean validate();
 
+	boolean validateTransactionId(String value);
 }

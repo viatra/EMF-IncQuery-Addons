@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.CompoundTransactionEventImpl#getTransactionId <em>Transaction Id</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.CompoundTransactionEventImpl#getCustomerId <em>Customer Id</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.CompoundTransactionEventImpl#getTimestampA <em>Timestamp A</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.CompoundTransactionEventImpl#getTimestampB <em>Timestamp B</em>}</li>
@@ -29,26 +28,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class CompoundTransactionEventImpl extends ModelElementImpl implements CompoundTransactionEvent {
-	/**
-	 * The default value of the '{@link #getTransactionId() <em>Transaction Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransactionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TRANSACTION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTransactionId() <em>Transaction Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransactionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String transactionId = TRANSACTION_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getCustomerId() <em>Customer Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -153,27 +132,6 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTransactionId() {
-		return transactionId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTransactionId(String newTransactionId) {
-		String oldTransactionId = transactionId;
-		transactionId = newTransactionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TransactionPackage.COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID, oldTransactionId, transactionId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getCustomerId() {
 		return customerId;
 	}
@@ -261,8 +219,6 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID:
-				return getTransactionId();
 			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__CUSTOMER_ID:
 				return getCustomerId();
 			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__TIMESTAMP_A:
@@ -283,9 +239,6 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID:
-				setTransactionId((String)newValue);
-				return;
 			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__CUSTOMER_ID:
 				setCustomerId((String)newValue);
 				return;
@@ -310,9 +263,6 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID:
-				setTransactionId(TRANSACTION_ID_EDEFAULT);
-				return;
 			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__CUSTOMER_ID:
 				setCustomerId(CUSTOMER_ID_EDEFAULT);
 				return;
@@ -337,8 +287,6 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID:
-				return TRANSACTION_ID_EDEFAULT == null ? transactionId != null : !TRANSACTION_ID_EDEFAULT.equals(transactionId);
 			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__CUSTOMER_ID:
 				return CUSTOMER_ID_EDEFAULT == null ? customerId != null : !CUSTOMER_ID_EDEFAULT.equals(customerId);
 			case TransactionPackage.COMPOUND_TRANSACTION_EVENT__TIMESTAMP_A:
@@ -361,9 +309,7 @@ public class CompoundTransactionEventImpl extends ModelElementImpl implements Co
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (transactionId: ");
-		result.append(transactionId);
-		result.append(", customerId: ");
+		result.append(" (customerId: ");
 		result.append(customerId);
 		result.append(", timestampA: ");
 		result.append(timestampA);

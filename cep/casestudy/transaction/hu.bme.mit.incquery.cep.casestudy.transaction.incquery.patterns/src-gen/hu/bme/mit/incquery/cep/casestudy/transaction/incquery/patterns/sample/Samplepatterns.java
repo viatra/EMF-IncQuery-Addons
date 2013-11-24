@@ -1,7 +1,8 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.NewTransactionEventMatcher;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.OldCompoundTransactionMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentAMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentBMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentCMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedPatternGroup;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
@@ -13,8 +14,9 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * in order to achieve better performance than one-by-one on-demand matcher initialization.
  * 
  * <p> From package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample, the group contains the definition of the following patterns: <ul>
- * <li>oldCompoundTransaction</li>
- * <li>newTransactionEvent</li>
+ * <li>latestEventComponentA</li>
+ * <li>latestEventComponentB</li>
+ * <li>latestEventComponentC</li>
  * </ul>
  * 
  * @see IPatternGroup
@@ -40,8 +42,9 @@ public final class Samplepatterns extends BaseGeneratedPatternGroup {
   private static Samplepatterns INSTANCE;
   
   private Samplepatterns() throws IncQueryException {
-    querySpecifications.add(NewTransactionEventMatcher.querySpecification());
-    querySpecifications.add(OldCompoundTransactionMatcher.querySpecification());
+    querySpecifications.add(LatestEventComponentCMatcher.querySpecification());
+    querySpecifications.add(LatestEventComponentAMatcher.querySpecification());
+    querySpecifications.add(LatestEventComponentBMatcher.querySpecification());
     
   }
 }

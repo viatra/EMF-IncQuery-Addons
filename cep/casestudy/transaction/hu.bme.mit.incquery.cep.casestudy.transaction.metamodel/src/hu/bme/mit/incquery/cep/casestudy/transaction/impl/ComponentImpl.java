@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentImpl#getTransactionId <em>Transaction Id</em>}</li>
  *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentImpl#getTimestamp <em>Timestamp</em>}</li>
  * </ul>
  * </p>
@@ -26,26 +25,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ComponentImpl extends ModelElementImpl implements Component {
-	/**
-	 * The default value of the '{@link #getTransactionId() <em>Transaction Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransactionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TRANSACTION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTransactionId() <em>Transaction Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransactionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String transactionId = TRANSACTION_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getTimestamp() <em>Timestamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,27 +69,6 @@ public class ComponentImpl extends ModelElementImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTransactionId() {
-		return transactionId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTransactionId(String newTransactionId) {
-		String oldTransactionId = transactionId;
-		transactionId = newTransactionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TransactionPackage.COMPONENT__TRANSACTION_ID, oldTransactionId, transactionId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public long getTimestamp() {
 		return timestamp;
 	}
@@ -135,8 +93,6 @@ public class ComponentImpl extends ModelElementImpl implements Component {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TransactionPackage.COMPONENT__TRANSACTION_ID:
-				return getTransactionId();
 			case TransactionPackage.COMPONENT__TIMESTAMP:
 				return getTimestamp();
 		}
@@ -151,9 +107,6 @@ public class ComponentImpl extends ModelElementImpl implements Component {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TransactionPackage.COMPONENT__TRANSACTION_ID:
-				setTransactionId((String)newValue);
-				return;
 			case TransactionPackage.COMPONENT__TIMESTAMP:
 				setTimestamp((Long)newValue);
 				return;
@@ -169,9 +122,6 @@ public class ComponentImpl extends ModelElementImpl implements Component {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TransactionPackage.COMPONENT__TRANSACTION_ID:
-				setTransactionId(TRANSACTION_ID_EDEFAULT);
-				return;
 			case TransactionPackage.COMPONENT__TIMESTAMP:
 				setTimestamp(TIMESTAMP_EDEFAULT);
 				return;
@@ -187,8 +137,6 @@ public class ComponentImpl extends ModelElementImpl implements Component {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TransactionPackage.COMPONENT__TRANSACTION_ID:
-				return TRANSACTION_ID_EDEFAULT == null ? transactionId != null : !TRANSACTION_ID_EDEFAULT.equals(transactionId);
 			case TransactionPackage.COMPONENT__TIMESTAMP:
 				return timestamp != TIMESTAMP_EDEFAULT;
 		}
@@ -205,9 +153,7 @@ public class ComponentImpl extends ModelElementImpl implements Component {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (transactionId: ");
-		result.append(transactionId);
-		result.append(", timestamp: ");
+		result.append(" (timestamp: ");
 		result.append(timestamp);
 		result.append(')');
 		return result.toString();

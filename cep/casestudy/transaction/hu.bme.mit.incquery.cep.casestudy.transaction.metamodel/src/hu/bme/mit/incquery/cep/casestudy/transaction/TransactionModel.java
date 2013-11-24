@@ -25,43 +25,43 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface TransactionModel extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Latest Component Event</b></em>' reference.
+	 * Returns the value of the '<em><b>Latest Component Event</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Latest Component Event</em>' reference isn't clear,
+	 * If the meaning of the '<em>Latest Component Event</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Latest Component Event</em>' reference.
+	 * @return the value of the '<em>Latest Component Event</em>' containment reference.
 	 * @see #setLatestComponentEvent(Component)
 	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage#getTransactionModel_LatestComponentEvent()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Component getLatestComponentEvent();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getLatestComponentEvent <em>Latest Component Event</em>}' reference.
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getLatestComponentEvent <em>Latest Component Event</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Latest Component Event</em>' reference.
+	 * @param value the new value of the '<em>Latest Component Event</em>' containment reference.
 	 * @see #getLatestComponentEvent()
 	 * @generated
 	 */
 	void setLatestComponentEvent(Component value);
 
 	/**
-	 * Returns the value of the '<em><b>Compound Transaction Events</b></em>' reference list.
+	 * Returns the value of the '<em><b>Compound Transaction Events</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Compound Transaction Events</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Compound Transaction Events</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Compound Transaction Events</em>' reference list.
+	 * @return the value of the '<em>Compound Transaction Events</em>' containment reference list.
 	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage#getTransactionModel_CompoundTransactionEvents()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<CompoundTransactionEvent> getCompoundTransactionEvents();

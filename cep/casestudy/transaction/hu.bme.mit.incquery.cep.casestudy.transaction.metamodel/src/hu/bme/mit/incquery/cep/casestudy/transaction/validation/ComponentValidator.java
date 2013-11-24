@@ -14,6 +14,5 @@ package hu.bme.mit.incquery.cep.casestudy.transaction.validation;
 public interface ComponentValidator {
 	boolean validate();
 
-	boolean validateTransactionId(String value);
 	boolean validateTimestamp(long value);
 }

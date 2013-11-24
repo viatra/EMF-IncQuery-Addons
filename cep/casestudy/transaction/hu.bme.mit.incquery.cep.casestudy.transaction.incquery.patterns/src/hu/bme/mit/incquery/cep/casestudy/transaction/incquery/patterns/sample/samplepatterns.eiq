@@ -3,13 +3,17 @@ package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample
 import "transaction.meta"
 import "http://www.eclipse.org/emf/2002/Ecore"
 
-pattern oldCompoundTransaction(cte : CompoundTransactionEvent, ts : ELong) {
-	CompoundTransactionEvent.timestampA(cte, ts);
-	check(ts > 1000l);
+pattern latestEventComponentA(te : ComponentA){
+	TransactionModel.latestComponentEvent(_, te);
+	ComponentA(te);
 }
 
-pattern newTransactionEvent(te : ComponentA){
-	ComponentA(te);
-	Component.timestamp(te, ts);
-	check(ts>0l);
+pattern latestEventComponentB(te : ComponentB){
+	TransactionModel.latestComponentEvent(_, te);
+	ComponentB(te);
+}
+
+pattern latestEventComponentC(te : ComponentC){
+	TransactionModel.latestComponentEvent(_, te);
+	ComponentC(te);
 }

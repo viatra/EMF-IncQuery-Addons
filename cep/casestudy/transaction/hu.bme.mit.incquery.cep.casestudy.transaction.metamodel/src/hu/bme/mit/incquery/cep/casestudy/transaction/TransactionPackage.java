@@ -67,7 +67,7 @@ public interface TransactionPackage extends EPackage {
 	int TRANSACTION_MODEL = 0;
 
 	/**
-	 * The feature id for the '<em><b>Latest Component Event</b></em>' reference.
+	 * The feature id for the '<em><b>Latest Component Event</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -76,7 +76,7 @@ public interface TransactionPackage extends EPackage {
 	int TRANSACTION_MODEL__LATEST_COMPONENT_EVENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Compound Transaction Events</b></em>' reference list.
+	 * The feature id for the '<em><b>Compound Transaction Events</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -113,13 +113,22 @@ public interface TransactionPackage extends EPackage {
 	int MODEL_ELEMENT = 6;
 
 	/**
+	 * The feature id for the '<em><b>Transaction Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_ELEMENT__TRANSACTION_ID = 0;
+
+	/**
 	 * The number of structural features of the '<em>Model Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT_FEATURE_COUNT = 0;
+	int MODEL_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Model Element</em>' class.
@@ -147,7 +156,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__TRANSACTION_ID = MODEL_ELEMENT_FEATURE_COUNT + 0;
+	int COMPONENT__TRANSACTION_ID = MODEL_ELEMENT__TRANSACTION_ID;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -156,7 +165,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__TIMESTAMP = MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT__TIMESTAMP = MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -165,7 +174,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 2;
+	int COMPONENT_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -349,7 +358,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID = MODEL_ELEMENT_FEATURE_COUNT + 0;
+	int COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID = MODEL_ELEMENT__TRANSACTION_ID;
 
 	/**
 	 * The feature id for the '<em><b>Customer Id</b></em>' attribute.
@@ -358,7 +367,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOUND_TRANSACTION_EVENT__CUSTOMER_ID = MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int COMPOUND_TRANSACTION_EVENT__CUSTOMER_ID = MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp A</b></em>' attribute.
@@ -367,7 +376,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOUND_TRANSACTION_EVENT__TIMESTAMP_A = MODEL_ELEMENT_FEATURE_COUNT + 2;
+	int COMPOUND_TRANSACTION_EVENT__TIMESTAMP_A = MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp B</b></em>' attribute.
@@ -376,7 +385,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOUND_TRANSACTION_EVENT__TIMESTAMP_B = MODEL_ELEMENT_FEATURE_COUNT + 3;
+	int COMPOUND_TRANSACTION_EVENT__TIMESTAMP_B = MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp C</b></em>' attribute.
@@ -385,7 +394,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOUND_TRANSACTION_EVENT__TIMESTAMP_C = MODEL_ELEMENT_FEATURE_COUNT + 4;
+	int COMPOUND_TRANSACTION_EVENT__TIMESTAMP_C = MODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Compound Transaction Event</em>' class.
@@ -394,7 +403,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOUND_TRANSACTION_EVENT_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 5;
+	int COMPOUND_TRANSACTION_EVENT_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Compound Transaction Event</em>' class.
@@ -417,10 +426,10 @@ public interface TransactionPackage extends EPackage {
 	EClass getTransactionModel();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getLatestComponentEvent <em>Latest Component Event</em>}'.
+	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getLatestComponentEvent <em>Latest Component Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Latest Component Event</em>'.
+	 * @return the meta object for the containment reference '<em>Latest Component Event</em>'.
 	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getLatestComponentEvent()
 	 * @see #getTransactionModel()
 	 * @generated
@@ -428,10 +437,10 @@ public interface TransactionPackage extends EPackage {
 	EReference getTransactionModel_LatestComponentEvent();
 
 	/**
-	 * Returns the meta object for the reference list '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getCompoundTransactionEvents <em>Compound Transaction Events</em>}'.
+	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getCompoundTransactionEvents <em>Compound Transaction Events</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Compound Transaction Events</em>'.
+	 * @return the meta object for the containment reference list '<em>Compound Transaction Events</em>'.
 	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getCompoundTransactionEvents()
 	 * @see #getTransactionModel()
 	 * @generated
@@ -447,17 +456,6 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComponent();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.casestudy.transaction.Component#getTransactionId <em>Transaction Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Transaction Id</em>'.
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.Component#getTransactionId()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EAttribute getComponent_TransactionId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.casestudy.transaction.Component#getTimestamp <em>Timestamp</em>}'.
@@ -533,17 +531,6 @@ public interface TransactionPackage extends EPackage {
 	EClass getCompoundTransactionEvent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent#getTransactionId <em>Transaction Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Transaction Id</em>'.
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent#getTransactionId()
-	 * @see #getCompoundTransactionEvent()
-	 * @generated
-	 */
-	EAttribute getCompoundTransactionEvent_TransactionId();
-
-	/**
 	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent#getCustomerId <em>Customer Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -598,6 +585,17 @@ public interface TransactionPackage extends EPackage {
 	EClass getModelElement();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.casestudy.transaction.ModelElement#getTransactionId <em>Transaction Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Transaction Id</em>'.
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.ModelElement#getTransactionId()
+	 * @see #getModelElement()
+	 * @generated
+	 */
+	EAttribute getModelElement_TransactionId();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -631,7 +629,7 @@ public interface TransactionPackage extends EPackage {
 		EClass TRANSACTION_MODEL = eINSTANCE.getTransactionModel();
 
 		/**
-		 * The meta object literal for the '<em><b>Latest Component Event</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Latest Component Event</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -639,7 +637,7 @@ public interface TransactionPackage extends EPackage {
 		EReference TRANSACTION_MODEL__LATEST_COMPONENT_EVENT = eINSTANCE.getTransactionModel_LatestComponentEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Compound Transaction Events</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Compound Transaction Events</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -655,14 +653,6 @@ public interface TransactionPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMPONENT = eINSTANCE.getComponent();
-
-		/**
-		 * The meta object literal for the '<em><b>Transaction Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT__TRANSACTION_ID = eINSTANCE.getComponent_TransactionId();
 
 		/**
 		 * The meta object literal for the '<em><b>Timestamp</b></em>' attribute feature.
@@ -729,14 +719,6 @@ public interface TransactionPackage extends EPackage {
 		EClass COMPOUND_TRANSACTION_EVENT = eINSTANCE.getCompoundTransactionEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Transaction Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID = eINSTANCE.getCompoundTransactionEvent_TransactionId();
-
-		/**
 		 * The meta object literal for the '<em><b>Customer Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -777,6 +759,14 @@ public interface TransactionPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MODEL_ELEMENT = eINSTANCE.getModelElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Transaction Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL_ELEMENT__TRANSACTION_ID = eINSTANCE.getModelElement_TransactionId();
 
 	}
 

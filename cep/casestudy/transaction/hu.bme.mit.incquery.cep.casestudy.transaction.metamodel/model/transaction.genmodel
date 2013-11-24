@@ -12,7 +12,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Transaction.ecore#//TransactionModel/compoundTransactionEvents"/>
     </genClasses>
     <genClasses ecoreClass="Transaction.ecore#//Component">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//Component/transactionId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//Component/timestamp"/>
     </genClasses>
     <genClasses ecoreClass="Transaction.ecore#//ComponentA">
@@ -23,12 +22,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//ComponentC/supplierId"/>
     </genClasses>
     <genClasses ecoreClass="Transaction.ecore#//CompoundTransactionEvent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//CompoundTransactionEvent/transactionId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//CompoundTransactionEvent/customerId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//CompoundTransactionEvent/timestampA"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//CompoundTransactionEvent/timestampB"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//CompoundTransactionEvent/timestampC"/>
     </genClasses>
-    <genClasses ecoreClass="Transaction.ecore#//ModelElement"/>
+    <genClasses ecoreClass="Transaction.ecore#//ModelElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//ModelElement/transactionId"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -6,32 +6,32 @@ import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionFactory;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel;
 
 public class TransactionManager {
-	private static TransactionManager instance;
+        private static TransactionManager instance;
 
-	private TransactionModel model;
+        private TransactionModel model;
 
-	public static TransactionManager getInstance() {
-		if (instance == null) {
-			instance = new TransactionManager();
-		}
+        public static TransactionManager getInstance() {
+                if (instance == null) {
+                        instance = new TransactionManager();
+                }
 
-		return instance;
-	}
+                return instance;
+        }
 
-	private TransactionManager() {
-		this.model = TransactionFactory.eINSTANCE.createTransactionModel();
-	}
+        private TransactionManager() {
+                this.model = TransactionFactory.eINSTANCE.createTransactionModel();
+        }
 
-	public void setLatestComponentEvent(Component component) {
-		model.setLatestComponentEvent(component);
-	}
+        public void setLatestComponentEvent(Component component) {
+                model.setLatestComponentEvent(component);
+        }
 
-	public void addCompoundTransactionEvent(
-			CompoundTransactionEvent compoundTransactionEvent) {
-		model.getCompoundTransactionEvents().add(compoundTransactionEvent);
-	}
-	
-	public void deleteCompoundTransactionEvents(){
-		model.getCompoundTransactionEvents().clear();
-	}
+        public void addCompoundTransactionEvent(
+                        CompoundTransactionEvent compoundTransactionEvent) {
+                model.getCompoundTransactionEvents().add(compoundTransactionEvent);
+        }
+        
+        public void deleteCompoundTransactionEvents(){
+                model.getCompoundTransactionEvents().clear();
+        }
 }

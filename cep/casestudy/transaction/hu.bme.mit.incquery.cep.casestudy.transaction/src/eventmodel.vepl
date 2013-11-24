@@ -43,7 +43,7 @@ Rule r1 {
 }
 
 
-IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:int){
-	iqPatternRef : oldCompoundTransaction(X, I)
-	iqChangeType : NEW_MATCH_FOUND
-}
+//IQPatternEvent oldCompoundTransactionEvent(X:org.eclipse.emf.ecore.EObject, I:int){
+//	iqPatternRef : oldCompoundTransaction(X, I)
+//	iqChangeType : NEW_MATCH_FOUND
+//}

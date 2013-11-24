@@ -1,7 +1,8 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.NewTransactionEventMatcher;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.OldCompoundTransactionMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentAMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentBMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentCMatcher;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
@@ -14,11 +15,15 @@ public final class SamplepatternsMatchers {
     
   }
   
-  public OldCompoundTransactionMatcher getOldCompoundTransactionMatcher() throws IncQueryException {
-    return OldCompoundTransactionMatcher.on(engine);
+  public LatestEventComponentCMatcher getLatestEventComponentCMatcher() throws IncQueryException {
+    return LatestEventComponentCMatcher.on(engine);
   }
   
-  public NewTransactionEventMatcher getNewTransactionEventMatcher() throws IncQueryException {
-    return NewTransactionEventMatcher.on(engine);
+  public LatestEventComponentAMatcher getLatestEventComponentAMatcher() throws IncQueryException {
+    return LatestEventComponentAMatcher.on(engine);
+  }
+  
+  public LatestEventComponentBMatcher getLatestEventComponentBMatcher() throws IncQueryException {
+    return LatestEventComponentBMatcher.on(engine);
   }
 }

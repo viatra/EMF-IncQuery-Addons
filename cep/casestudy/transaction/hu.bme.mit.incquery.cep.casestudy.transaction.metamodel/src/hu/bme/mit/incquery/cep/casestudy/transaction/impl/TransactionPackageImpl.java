@@ -177,17 +177,8 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponent_TransactionId() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getComponent_Timestamp() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -249,7 +240,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCompoundTransactionEvent_TransactionId() {
+	public EAttribute getCompoundTransactionEvent_CustomerId() {
 		return (EAttribute)compoundTransactionEventEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -258,7 +249,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCompoundTransactionEvent_CustomerId() {
+	public EAttribute getCompoundTransactionEvent_TimestampA() {
 		return (EAttribute)compoundTransactionEventEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -267,7 +258,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCompoundTransactionEvent_TimestampA() {
+	public EAttribute getCompoundTransactionEvent_TimestampB() {
 		return (EAttribute)compoundTransactionEventEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -276,17 +267,8 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCompoundTransactionEvent_TimestampB() {
-		return (EAttribute)compoundTransactionEventEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getCompoundTransactionEvent_TimestampC() {
-		return (EAttribute)compoundTransactionEventEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)compoundTransactionEventEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -296,6 +278,15 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 */
 	public EClass getModelElement() {
 		return modelElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getModelElement_TransactionId() {
+		return (EAttribute)modelElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -331,7 +322,6 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		createEReference(transactionModelEClass, TRANSACTION_MODEL__COMPOUND_TRANSACTION_EVENTS);
 
 		componentEClass = createEClass(COMPONENT);
-		createEAttribute(componentEClass, COMPONENT__TRANSACTION_ID);
 		createEAttribute(componentEClass, COMPONENT__TIMESTAMP);
 
 		componentAEClass = createEClass(COMPONENT_A);
@@ -343,13 +333,13 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		createEAttribute(componentCEClass, COMPONENT_C__SUPPLIER_ID);
 
 		compoundTransactionEventEClass = createEClass(COMPOUND_TRANSACTION_EVENT);
-		createEAttribute(compoundTransactionEventEClass, COMPOUND_TRANSACTION_EVENT__TRANSACTION_ID);
 		createEAttribute(compoundTransactionEventEClass, COMPOUND_TRANSACTION_EVENT__CUSTOMER_ID);
 		createEAttribute(compoundTransactionEventEClass, COMPOUND_TRANSACTION_EVENT__TIMESTAMP_A);
 		createEAttribute(compoundTransactionEventEClass, COMPOUND_TRANSACTION_EVENT__TIMESTAMP_B);
 		createEAttribute(compoundTransactionEventEClass, COMPOUND_TRANSACTION_EVENT__TIMESTAMP_C);
 
 		modelElementEClass = createEClass(MODEL_ELEMENT);
+		createEAttribute(modelElementEClass, MODEL_ELEMENT__TRANSACTION_ID);
 	}
 
 	/**
@@ -388,11 +378,10 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(transactionModelEClass, TransactionModel.class, "TransactionModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTransactionModel_LatestComponentEvent(), this.getComponent(), null, "latestComponentEvent", null, 0, 1, TransactionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTransactionModel_CompoundTransactionEvents(), this.getCompoundTransactionEvent(), null, "compoundTransactionEvents", null, 0, -1, TransactionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransactionModel_LatestComponentEvent(), this.getComponent(), null, "latestComponentEvent", null, 0, 1, TransactionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransactionModel_CompoundTransactionEvents(), this.getCompoundTransactionEvent(), null, "compoundTransactionEvents", null, 0, -1, TransactionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponent_TransactionId(), ecorePackage.getEString(), "transactionId", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_Timestamp(), ecorePackage.getELong(), "timestamp", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentAEClass, ComponentA.class, "ComponentA", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -404,13 +393,13 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		initEAttribute(getComponentC_SupplierId(), ecorePackage.getEString(), "supplierId", null, 1, 1, ComponentC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(compoundTransactionEventEClass, CompoundTransactionEvent.class, "CompoundTransactionEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCompoundTransactionEvent_TransactionId(), ecorePackage.getEString(), "transactionId", null, 0, 1, CompoundTransactionEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCompoundTransactionEvent_CustomerId(), ecorePackage.getEString(), "customerId", null, 1, 1, CompoundTransactionEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCompoundTransactionEvent_TimestampA(), ecorePackage.getELong(), "timestampA", null, 1, 1, CompoundTransactionEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCompoundTransactionEvent_TimestampB(), ecorePackage.getELong(), "timestampB", null, 1, 1, CompoundTransactionEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCompoundTransactionEvent_TimestampC(), ecorePackage.getELong(), "timestampC", null, 1, 1, CompoundTransactionEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelElementEClass, ModelElement.class, "ModelElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getModelElement_TransactionId(), ecorePackage.getEString(), "transactionId", null, 0, 1, ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
