@@ -4,6 +4,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import hu.bme.mit.incquery.cep.api.ICepAdapter;
 import hu.bme.mit.incquery.cep.api.ICepRule;
 import hu.bme.mit.incquery.cep.api.ViatraCepManager;
+import hu.bme.mit.incquery.cep.casestudy.transaction.Component;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentA;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC;
@@ -13,6 +14,7 @@ import hu.bme.mit.incquery.cep.casestudy.transaction.adapters.TransactionEventAd
 import hu.bme.mit.incquery.cep.casestudy.transaction.test.mhr.Patterns2Events;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -20,6 +22,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+
+import com.google.common.collect.Lists;
 
 public class IncQueryTester {
 	private ICepAdapter adapter = new TransactionEventAdapter();
@@ -31,7 +35,7 @@ public class IncQueryTester {
 		checkArgument(rule != null);
 		ViatraCepManager.withContext(EventProcessingContext.CHRONICLE).addRule(rule);
 		prepareModel();
-		initializeModelHandling();
+		new Patterns2Events(this).registerRules();
 	}
 
 	private void prepareModel() {
@@ -44,33 +48,49 @@ public class IncQueryTester {
 		resource.getContents().add(model);
 	}
 
-	private void initializeModelHandling() {
-		Patterns2Events mhr = new Patterns2Events(this);
-		mhr.registerRules();
-	}
-
 	public void simulate() {
 		System.out.println("Compound events in model: " + model.getLatestCompoundEvent());
 
-		TransactionComponentA componentA = TransactionFactory.eINSTANCE.createTransactionComponentA();
-		componentA.setCustomerId("c123");
-		componentA.setTimestamp(0001l);
-		componentA.setTransactionId("tr10");
-		System.out.println("Refreshing model with " + componentA);
-		model.setLatestComponentEvent(componentA);
-		
-		TransactionComponentB componentB = TransactionFactory.eINSTANCE.createTransactionComponentB();
-		componentB.setTimestamp(0002l);
-		componentB.setTransactionId("tr10");
-		System.out.println("Refreshing model with " + componentB);
-		model.setLatestComponentEvent(componentB);
-		
-		TransactionComponentC componentC = TransactionFactory.eINSTANCE.createTransactionComponentC();
-		componentC.setSupplierId("s123");
-		componentC.setTimestamp(5002l);
-		componentC.setTransactionId("tr10");
-		System.out.println("Refreshing model with " + componentC);
-		model.setLatestComponentEvent(componentC);
+		List<EventType> testSeries = Lists.newArrayList(EventType.A, EventType.B, EventType.C);
+
+		for (EventType eventType : testSeries) {
+			Component event = generateEvent(eventType);
+
+			System.out.println("Refreshing model with " + event);
+			model.setLatestComponentEvent(event);
+		}
+	}
+
+	private enum EventType {
+		A, B, C
+	}
+
+	private Component generateEvent(EventType type) {
+		String tId = "tr10";
+		String cId = "c123";
+		String sId = "s123";
+
+		switch (type) {
+		case A:
+			TransactionComponentA componentA = TransactionFactory.eINSTANCE.createTransactionComponentA();
+			componentA.setCustomerId(cId);
+			componentA.setTimestamp(0001l);
+			componentA.setTransactionId(tId);
+			return componentA;
+		case B:
+			TransactionComponentB componentB = TransactionFactory.eINSTANCE.createTransactionComponentB();
+			componentB.setTimestamp(0002l);
+			componentB.setTransactionId(tId);
+			return componentB;
+		case C:
+			TransactionComponentC componentC = TransactionFactory.eINSTANCE.createTransactionComponentC();
+			componentC.setSupplierId(sId);
+			componentC.setTimestamp(5002l);
+			componentC.setTransactionId(tId);
+			return componentC;
+		default:
+			return null;
+		}
 	}
 
 	public ICepAdapter getAdapter() {
