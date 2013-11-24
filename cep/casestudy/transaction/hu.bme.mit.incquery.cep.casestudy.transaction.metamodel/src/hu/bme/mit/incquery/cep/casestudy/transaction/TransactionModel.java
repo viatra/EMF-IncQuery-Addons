@@ -2,8 +2,6 @@
  */
 package hu.bme.mit.incquery.cep.casestudy.transaction;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getLatestComponentEvent <em>Latest Component Event</em>}</li>
- *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getCompoundTransactionEvents <em>Compound Transaction Events</em>}</li>
+ *   <li>{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getLatestCompoundEvent <em>Latest Compound Event</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,19 +49,29 @@ public interface TransactionModel extends EObject {
 	void setLatestComponentEvent(Component value);
 
 	/**
-	 * Returns the value of the '<em><b>Compound Transaction Events</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent}.
+	 * Returns the value of the '<em><b>Latest Compound Event</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Compound Transaction Events</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Latest Compound Event</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Compound Transaction Events</em>' containment reference list.
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage#getTransactionModel_CompoundTransactionEvents()
+	 * @return the value of the '<em>Latest Compound Event</em>' containment reference.
+	 * @see #setLatestCompoundEvent(CompoundTransactionEvent)
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage#getTransactionModel_LatestCompoundEvent()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<CompoundTransactionEvent> getCompoundTransactionEvents();
+	CompoundTransactionEvent getLatestCompoundEvent();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getLatestCompoundEvent <em>Latest Compound Event</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Latest Compound Event</em>' containment reference.
+	 * @see #getLatestCompoundEvent()
+	 * @generated
+	 */
+	void setLatestCompoundEvent(CompoundTransactionEvent value);
 
 } // TransactionModel

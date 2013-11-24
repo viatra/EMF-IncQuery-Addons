@@ -1,0 +1,30 @@
+package hu.bme.mit.incquery.cep.casestudy.transaction
+
+uses hu.bme.mit.incquery.cep.casestudy.transaction.sources.*
+uses hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.*
+uses hu.bme.mit.incquery.cep.dsl.examples.actionhandlers.*
+uses hu.bme.mit.incquery.cep.api.evm.*
+
+IQPatternEvent componentA(transactionId : String, timestamp : long, customerId : String){
+	iqPatternRef : latestEventComponentA()
+	iqChangeType : NEW_MATCH_FOUND
+}
+
+IQPatternEvent componentB(transactionId : String, timestamp : long){
+	iqPatternRef : latestEventComponentB()
+	iqChangeType : NEW_MATCH_FOUND
+}
+
+IQPatternEvent componentC(transactionId : String, timestamp : long, supplierId : String){
+	iqPatternRef : latestEventComponentC()
+	iqChangeType : NEW_MATCH_FOUND
+}
+
+ComplexEvent compoundTransactionEvent(a:componentA, b:componentB, c:componentC){
+	definition : (a(tId, _, cId) -> b(tId, _) -> c(tId, _, sId))[5000]
+}
+
+Rule r1 {
+	events: compoundTransactionEvent
+	actionHandler: hu.bme.mit.incquery.cep.casestudy.transaction.handlers.SimpleActionHandler
+}

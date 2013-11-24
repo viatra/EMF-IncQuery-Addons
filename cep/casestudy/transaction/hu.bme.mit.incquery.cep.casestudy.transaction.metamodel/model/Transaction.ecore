@@ -4,18 +4,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="TransactionModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="latestComponentEvent" eType="#//Component"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="compoundTransactionEvents"
-        upperBound="-1" eType="#//CompoundTransactionEvent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="latestCompoundEvent" eType="#//CompoundTransactionEvent"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ModelElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentA" eSuperTypes="#//Component">
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionComponentA" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="customerId" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentB" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentC" eSuperTypes="#//Component">
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionComponentB" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionComponentC" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="supplierId" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

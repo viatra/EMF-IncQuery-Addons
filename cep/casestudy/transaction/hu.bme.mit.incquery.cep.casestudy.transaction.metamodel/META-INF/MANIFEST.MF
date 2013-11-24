@@ -9,7 +9,6 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.bme.mit.incquery.cep.casestudy.transaction,
  hu.bme.mit.incquery.cep.casestudy.transaction.impl,
- hu.bme.mit.incquery.cep.casestudy.transaction.manager,
  hu.bme.mit.incquery.cep.casestudy.transaction.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore

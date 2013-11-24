@@ -9,17 +9,17 @@ Package transaction <transaction.meta>
 
   Class TransactionModel
     Reference latestComponentEvent : Component
-    Reference compoundTransactionEvents : CompoundTransactionEvent<<0..*>>
+    Reference latestCompoundEvent : CompoundTransactionEvent
 
   Class Component -> ModelElement
     Attribute timestamp : ELong
 
-  Class ComponentA -> Component
+  Class TransactionComponentA -> Component
     Attribute customerId : EString<<1..1>>
 
-  Class ComponentB -> Component
+  Class TransactionComponentB -> Component
 
-  Class ComponentC -> Component
+  Class TransactionComponentC -> Component
     Attribute supplierId : EString<<1..1>>
 
   Class CompoundTransactionEvent -> ModelElement

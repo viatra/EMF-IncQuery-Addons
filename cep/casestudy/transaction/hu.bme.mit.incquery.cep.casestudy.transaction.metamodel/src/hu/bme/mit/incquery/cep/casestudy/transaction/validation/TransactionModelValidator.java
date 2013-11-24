@@ -19,5 +19,9 @@ public interface TransactionModelValidator {
 	boolean validate();
 
 	boolean validateLatestComponentEvent(Component value);
+	boolean validateLatestCompoundEvent(CompoundTransactionEvent value);
+
+	boolean validateCompoundTransactionEvents(CompoundTransactionEvent value);
+
 	boolean validateCompoundTransactionEvents(EList<CompoundTransactionEvent> value);
 }

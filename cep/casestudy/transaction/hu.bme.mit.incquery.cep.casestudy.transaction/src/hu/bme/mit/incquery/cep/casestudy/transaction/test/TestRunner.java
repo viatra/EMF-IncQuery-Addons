@@ -8,13 +8,13 @@ public class TestRunner {
 
 	@Test
 	public void main() {
-		BareJavaTester tester = new BareJavaTester();
+		//BareJavaTester tester = new BareJavaTester();
+		IncQueryTester tester = new IncQueryTester();
 
 		tester.initializeEngine(new R1());
 		
 		//tester.initializeEngine(new R1(engine)); - IncQuery integration desired form
 		
-		tester.acquireAdapter();
 		tester.simulate();
 	}
 }

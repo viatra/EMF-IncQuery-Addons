@@ -3,11 +3,11 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.impl;
 
 import hu.bme.mit.incquery.cep.casestudy.transaction.Component;
-import hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA;
-import hu.bme.mit.incquery.cep.casestudy.transaction.ComponentB;
-import hu.bme.mit.incquery.cep.casestudy.transaction.ComponentC;
 import hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent;
 import hu.bme.mit.incquery.cep.casestudy.transaction.ModelElement;
+import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentA;
+import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB;
+import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionFactory;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionPackage;
@@ -45,21 +45,21 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass componentAEClass = null;
+	private EClass transactionComponentAEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass componentBEClass = null;
+	private EClass transactionComponentBEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass componentCEClass = null;
+	private EClass transactionComponentCEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,7 +159,7 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransactionModel_CompoundTransactionEvents() {
+	public EReference getTransactionModel_LatestCompoundEvent() {
 		return (EReference)transactionModelEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -186,8 +186,8 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getComponentA() {
-		return componentAEClass;
+	public EClass getTransactionComponentA() {
+		return transactionComponentAEClass;
 	}
 
 	/**
@@ -195,8 +195,8 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponentA_CustomerId() {
-		return (EAttribute)componentAEClass.getEStructuralFeatures().get(0);
+	public EAttribute getTransactionComponentA_CustomerId() {
+		return (EAttribute)transactionComponentAEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -204,8 +204,8 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getComponentB() {
-		return componentBEClass;
+	public EClass getTransactionComponentB() {
+		return transactionComponentBEClass;
 	}
 
 	/**
@@ -213,8 +213,8 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getComponentC() {
-		return componentCEClass;
+	public EClass getTransactionComponentC() {
+		return transactionComponentCEClass;
 	}
 
 	/**
@@ -222,8 +222,8 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponentC_SupplierId() {
-		return (EAttribute)componentCEClass.getEStructuralFeatures().get(0);
+	public EAttribute getTransactionComponentC_SupplierId() {
+		return (EAttribute)transactionComponentCEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -319,18 +319,18 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 		// Create classes and their features
 		transactionModelEClass = createEClass(TRANSACTION_MODEL);
 		createEReference(transactionModelEClass, TRANSACTION_MODEL__LATEST_COMPONENT_EVENT);
-		createEReference(transactionModelEClass, TRANSACTION_MODEL__COMPOUND_TRANSACTION_EVENTS);
+		createEReference(transactionModelEClass, TRANSACTION_MODEL__LATEST_COMPOUND_EVENT);
 
 		componentEClass = createEClass(COMPONENT);
 		createEAttribute(componentEClass, COMPONENT__TIMESTAMP);
 
-		componentAEClass = createEClass(COMPONENT_A);
-		createEAttribute(componentAEClass, COMPONENT_A__CUSTOMER_ID);
+		transactionComponentAEClass = createEClass(TRANSACTION_COMPONENT_A);
+		createEAttribute(transactionComponentAEClass, TRANSACTION_COMPONENT_A__CUSTOMER_ID);
 
-		componentBEClass = createEClass(COMPONENT_B);
+		transactionComponentBEClass = createEClass(TRANSACTION_COMPONENT_B);
 
-		componentCEClass = createEClass(COMPONENT_C);
-		createEAttribute(componentCEClass, COMPONENT_C__SUPPLIER_ID);
+		transactionComponentCEClass = createEClass(TRANSACTION_COMPONENT_C);
+		createEAttribute(transactionComponentCEClass, TRANSACTION_COMPONENT_C__SUPPLIER_ID);
 
 		compoundTransactionEventEClass = createEClass(COMPOUND_TRANSACTION_EVENT);
 		createEAttribute(compoundTransactionEventEClass, COMPOUND_TRANSACTION_EVENT__CUSTOMER_ID);
@@ -371,26 +371,26 @@ public class TransactionPackageImpl extends EPackageImpl implements TransactionP
 
 		// Add supertypes to classes
 		componentEClass.getESuperTypes().add(this.getModelElement());
-		componentAEClass.getESuperTypes().add(this.getComponent());
-		componentBEClass.getESuperTypes().add(this.getComponent());
-		componentCEClass.getESuperTypes().add(this.getComponent());
+		transactionComponentAEClass.getESuperTypes().add(this.getComponent());
+		transactionComponentBEClass.getESuperTypes().add(this.getComponent());
+		transactionComponentCEClass.getESuperTypes().add(this.getComponent());
 		compoundTransactionEventEClass.getESuperTypes().add(this.getModelElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(transactionModelEClass, TransactionModel.class, "TransactionModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransactionModel_LatestComponentEvent(), this.getComponent(), null, "latestComponentEvent", null, 0, 1, TransactionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTransactionModel_CompoundTransactionEvents(), this.getCompoundTransactionEvent(), null, "compoundTransactionEvents", null, 0, -1, TransactionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransactionModel_LatestCompoundEvent(), this.getCompoundTransactionEvent(), null, "latestCompoundEvent", null, 0, 1, TransactionModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponent_Timestamp(), ecorePackage.getELong(), "timestamp", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(componentAEClass, ComponentA.class, "ComponentA", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentA_CustomerId(), ecorePackage.getEString(), "customerId", null, 1, 1, ComponentA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(transactionComponentAEClass, TransactionComponentA.class, "TransactionComponentA", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTransactionComponentA_CustomerId(), ecorePackage.getEString(), "customerId", null, 1, 1, TransactionComponentA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(componentBEClass, ComponentB.class, "ComponentB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(transactionComponentBEClass, TransactionComponentB.class, "TransactionComponentB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(componentCEClass, ComponentC.class, "ComponentC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentC_SupplierId(), ecorePackage.getEString(), "supplierId", null, 1, 1, ComponentC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(transactionComponentCEClass, TransactionComponentC.class, "TransactionComponentC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTransactionComponentC_SupplierId(), ecorePackage.getEString(), "supplierId", null, 1, 1, TransactionComponentC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(compoundTransactionEventEClass, CompoundTransactionEvent.class, "CompoundTransactionEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCompoundTransactionEvent_CustomerId(), ecorePackage.getEString(), "customerId", null, 1, 1, CompoundTransactionEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

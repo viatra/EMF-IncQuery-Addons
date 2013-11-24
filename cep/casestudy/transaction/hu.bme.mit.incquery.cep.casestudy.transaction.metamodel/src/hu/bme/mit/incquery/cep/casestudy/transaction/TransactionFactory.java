@@ -46,7 +46,7 @@ public interface TransactionFactory extends EFactory {
 	 * @return a new object of class '<em>Component A</em>'.
 	 * @generated
 	 */
-	ComponentA createComponentA();
+	TransactionComponentA createTransactionComponentA();
 
 	/**
 	 * Returns a new object of class '<em>Component B</em>'.
@@ -55,7 +55,7 @@ public interface TransactionFactory extends EFactory {
 	 * @return a new object of class '<em>Component B</em>'.
 	 * @generated
 	 */
-	ComponentB createComponentB();
+	TransactionComponentB createTransactionComponentB();
 
 	/**
 	 * Returns a new object of class '<em>Component C</em>'.
@@ -64,7 +64,7 @@ public interface TransactionFactory extends EFactory {
 	 * @return a new object of class '<em>Component C</em>'.
 	 * @generated
 	 */
-	ComponentC createComponentC();
+	TransactionComponentC createTransactionComponentC();
 
 	/**
 	 * Returns a new object of class '<em>Compound Transaction Event</em>'.

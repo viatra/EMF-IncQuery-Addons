@@ -79,27 +79,27 @@ public class TransactionSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TransactionPackage.COMPONENT_A: {
-				ComponentA componentA = (ComponentA)theEObject;
-				T result = caseComponentA(componentA);
-				if (result == null) result = caseComponent(componentA);
-				if (result == null) result = caseModelElement(componentA);
+			case TransactionPackage.TRANSACTION_COMPONENT_A: {
+				TransactionComponentA transactionComponentA = (TransactionComponentA)theEObject;
+				T result = caseTransactionComponentA(transactionComponentA);
+				if (result == null) result = caseComponent(transactionComponentA);
+				if (result == null) result = caseModelElement(transactionComponentA);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TransactionPackage.COMPONENT_B: {
-				ComponentB componentB = (ComponentB)theEObject;
-				T result = caseComponentB(componentB);
-				if (result == null) result = caseComponent(componentB);
-				if (result == null) result = caseModelElement(componentB);
+			case TransactionPackage.TRANSACTION_COMPONENT_B: {
+				TransactionComponentB transactionComponentB = (TransactionComponentB)theEObject;
+				T result = caseTransactionComponentB(transactionComponentB);
+				if (result == null) result = caseComponent(transactionComponentB);
+				if (result == null) result = caseModelElement(transactionComponentB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TransactionPackage.COMPONENT_C: {
-				ComponentC componentC = (ComponentC)theEObject;
-				T result = caseComponentC(componentC);
-				if (result == null) result = caseComponent(componentC);
-				if (result == null) result = caseModelElement(componentC);
+			case TransactionPackage.TRANSACTION_COMPONENT_C: {
+				TransactionComponentC transactionComponentC = (TransactionComponentC)theEObject;
+				T result = caseTransactionComponentC(transactionComponentC);
+				if (result == null) result = caseComponent(transactionComponentC);
+				if (result == null) result = caseModelElement(transactionComponentC);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -161,7 +161,7 @@ public class TransactionSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseComponentA(ComponentA object) {
+	public T caseTransactionComponentA(TransactionComponentA object) {
 		return null;
 	}
 
@@ -176,7 +176,7 @@ public class TransactionSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseComponentB(ComponentB object) {
+	public T caseTransactionComponentB(TransactionComponentB object) {
 		return null;
 	}
 
@@ -191,7 +191,7 @@ public class TransactionSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseComponentC(ComponentC object) {
+	public T caseTransactionComponentC(TransactionComponentC object) {
 		return null;
 	}
 

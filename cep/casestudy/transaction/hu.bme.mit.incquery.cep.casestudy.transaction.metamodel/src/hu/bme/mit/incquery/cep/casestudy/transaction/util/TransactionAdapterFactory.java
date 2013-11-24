@@ -76,16 +76,16 @@ public class TransactionAdapterFactory extends AdapterFactoryImpl {
 				return createComponentAdapter();
 			}
 			@Override
-			public Adapter caseComponentA(ComponentA object) {
-				return createComponentAAdapter();
+			public Adapter caseTransactionComponentA(TransactionComponentA object) {
+				return createTransactionComponentAAdapter();
 			}
 			@Override
-			public Adapter caseComponentB(ComponentB object) {
-				return createComponentBAdapter();
+			public Adapter caseTransactionComponentB(TransactionComponentB object) {
+				return createTransactionComponentBAdapter();
 			}
 			@Override
-			public Adapter caseComponentC(ComponentC object) {
-				return createComponentCAdapter();
+			public Adapter caseTransactionComponentC(TransactionComponentC object) {
+				return createTransactionComponentCAdapter();
 			}
 			@Override
 			public Adapter caseCompoundTransactionEvent(CompoundTransactionEvent object) {
@@ -144,44 +144,44 @@ public class TransactionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA <em>Component A</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentA <em>Component A</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentA
 	 * @generated
 	 */
-	public Adapter createComponentAAdapter() {
+	public Adapter createTransactionComponentAAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.ComponentB <em>Component B</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB <em>Component B</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.ComponentB
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB
 	 * @generated
 	 */
-	public Adapter createComponentBAdapter() {
+	public Adapter createTransactionComponentBAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.ComponentC <em>Component C</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC <em>Component C</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.ComponentC
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC
 	 * @generated
 	 */
-	public Adapter createComponentCAdapter() {
+	public Adapter createTransactionComponentCAdapter() {
 		return null;
 	}
 

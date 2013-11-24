@@ -1,6 +1,6 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util;
 
-import hu.bme.mit.incquery.cep.casestudy.transaction.ComponentC;
+import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC;
 import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentCMatch;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
@@ -17,7 +17,7 @@ public abstract class LatestEventComponentCProcessor implements IMatchProcessor<
    * @param pTe the value of pattern parameter te in the currently processed match 
    * 
    */
-  public abstract void process(final ComponentC pTe);
+  public abstract void process(final TransactionComponentC pTe);
   
   @Override
   public void process(final LatestEventComponentCMatch match) {

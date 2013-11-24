@@ -1,6 +1,6 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
-import hu.bme.mit.incquery.cep.casestudy.transaction.ComponentB;
+import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
@@ -23,11 +23,11 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class LatestEventComponentBMatch extends BasePatternMatch {
-  private ComponentB fTe;
+  private TransactionComponentB fTe;
   
   private static List<String> parameterNames = makeImmutableList("te");
   
-  private LatestEventComponentBMatch(final ComponentB pTe) {
+  private LatestEventComponentBMatch(final TransactionComponentB pTe) {
     this.fTe = pTe;
     
   }
@@ -39,7 +39,7 @@ public abstract class LatestEventComponentBMatch extends BasePatternMatch {
     
   }
   
-  public ComponentB getTe() {
+  public TransactionComponentB getTe() {
     return this.fTe;
     
   }
@@ -48,14 +48,14 @@ public abstract class LatestEventComponentBMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("te".equals(parameterName) ) {
-    	this.fTe = (hu.bme.mit.incquery.cep.casestudy.transaction.ComponentB) newValue;
+    	this.fTe = (hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setTe(final ComponentB pTe) {
+  public void setTe(final TransactionComponentB pTe) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTe = pTe;
     
@@ -129,7 +129,7 @@ public abstract class LatestEventComponentBMatch extends BasePatternMatch {
   
   @SuppressWarnings("all")
   static final class Mutable extends LatestEventComponentBMatch {
-    Mutable(final ComponentB pTe) {
+    Mutable(final TransactionComponentB pTe) {
       super(pTe);
       
     }
@@ -143,7 +143,7 @@ public abstract class LatestEventComponentBMatch extends BasePatternMatch {
   
   @SuppressWarnings("all")
   static final class Immutable extends LatestEventComponentBMatch {
-    Immutable(final ComponentB pTe) {
+    Immutable(final TransactionComponentB pTe) {
       super(pTe);
       
     }

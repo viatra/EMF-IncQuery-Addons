@@ -58,9 +58,9 @@ public class TransactionFactoryImpl extends EFactoryImpl implements TransactionF
 		switch (eClass.getClassifierID()) {
 			case TransactionPackage.TRANSACTION_MODEL: return createTransactionModel();
 			case TransactionPackage.COMPONENT: return createComponent();
-			case TransactionPackage.COMPONENT_A: return createComponentA();
-			case TransactionPackage.COMPONENT_B: return createComponentB();
-			case TransactionPackage.COMPONENT_C: return createComponentC();
+			case TransactionPackage.TRANSACTION_COMPONENT_A: return createTransactionComponentA();
+			case TransactionPackage.TRANSACTION_COMPONENT_B: return createTransactionComponentB();
+			case TransactionPackage.TRANSACTION_COMPONENT_C: return createTransactionComponentC();
 			case TransactionPackage.COMPOUND_TRANSACTION_EVENT: return createCompoundTransactionEvent();
 			case TransactionPackage.MODEL_ELEMENT: return createModelElement();
 			default:
@@ -93,9 +93,9 @@ public class TransactionFactoryImpl extends EFactoryImpl implements TransactionF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentA createComponentA() {
-		ComponentAImpl componentA = new ComponentAImpl();
-		return componentA;
+	public TransactionComponentA createTransactionComponentA() {
+		TransactionComponentAImpl transactionComponentA = new TransactionComponentAImpl();
+		return transactionComponentA;
 	}
 
 	/**
@@ -103,9 +103,9 @@ public class TransactionFactoryImpl extends EFactoryImpl implements TransactionF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentB createComponentB() {
-		ComponentBImpl componentB = new ComponentBImpl();
-		return componentB;
+	public TransactionComponentB createTransactionComponentB() {
+		TransactionComponentBImpl transactionComponentB = new TransactionComponentBImpl();
+		return transactionComponentB;
 	}
 
 	/**
@@ -113,9 +113,9 @@ public class TransactionFactoryImpl extends EFactoryImpl implements TransactionF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentC createComponentC() {
-		ComponentCImpl componentC = new ComponentCImpl();
-		return componentC;
+	public TransactionComponentC createTransactionComponentC() {
+		TransactionComponentCImpl transactionComponentC = new TransactionComponentCImpl();
+		return transactionComponentC;
 	}
 
 	/**

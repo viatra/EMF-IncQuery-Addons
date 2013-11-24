@@ -1,5 +1,6 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestCompoundEventMatcher;
 import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentAMatcher;
 import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentBMatcher;
 import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentCMatcher;
@@ -19,11 +20,15 @@ public final class SamplepatternsMatchers {
     return LatestEventComponentCMatcher.on(engine);
   }
   
-  public LatestEventComponentAMatcher getLatestEventComponentAMatcher() throws IncQueryException {
-    return LatestEventComponentAMatcher.on(engine);
+  public LatestCompoundEventMatcher getLatestCompoundEventMatcher() throws IncQueryException {
+    return LatestCompoundEventMatcher.on(engine);
   }
   
   public LatestEventComponentBMatcher getLatestEventComponentBMatcher() throws IncQueryException {
     return LatestEventComponentBMatcher.on(engine);
+  }
+  
+  public LatestEventComponentAMatcher getLatestEventComponentAMatcher() throws IncQueryException {
+    return LatestEventComponentAMatcher.on(engine);
   }
 }

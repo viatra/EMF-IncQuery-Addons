@@ -12,10 +12,10 @@ import org.eclipse.incquery.runtime.evm.api.Job;
 public class R1 implements ICepRule {
   private List<EventPattern> eventPatterns = Lists.newArrayList();
   
-  private Job<IObservableComplexEventPattern> job = new hu.bme.mit.incquery.cep.casestudy.transaction.jobs.R1Job(CepActivationStates.ACTIVE);
+  private Job<IObservableComplexEventPattern> job = new hu.bme.mit.incquery.cep.casestudy.transaction.jobs.R1_Job(CepActivationStates.ACTIVE);
   
   public R1() {
-    eventPatterns.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.complex.CompoundTransactionEventPattern());
+    eventPatterns.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.complex.CompoundTransactionEvent_Pattern());
     
   }
   

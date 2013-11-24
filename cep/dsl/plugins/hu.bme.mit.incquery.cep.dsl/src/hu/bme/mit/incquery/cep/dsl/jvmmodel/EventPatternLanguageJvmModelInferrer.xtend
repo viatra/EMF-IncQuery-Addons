@@ -12,10 +12,12 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedMultiplicityExpression
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.IQPatternEventPatternImpl
 import hu.bme.mit.incquery.cep.metamodels.cep.CepFactory
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern
@@ -80,6 +82,10 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 		patterns.generateAtomicEventClasses(acceptor)
 		patterns.generateAtomicEventPatterns(acceptor)
 
+		var iqPatterns = element.packagedModel.modelElements.filter[e|(e instanceof IQPatternEventPattern)]
+		iqPatterns.generateAtomicEventClasses(acceptor)
+		iqPatterns.generateAtomicEventPatterns(acceptor)
+
 		var complexPatterns = element.packagedModel.modelElements.filter[e|(e instanceof ComplexEventPattern)]
 		complexPatterns.generateComplexEventPatterns(acceptor)
 
@@ -87,12 +93,29 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 		rules.generateRulesAndJobs(acceptor)
 	}
 
+	def private getParamList(ModelElement modelElement) {
+		switch (modelElement) {
+			AtomicEventPattern:
+				return getParamList(modelElement)
+			IQPatternEventPattern:
+				return getParamList(modelElement)
+		}
+	}
+
+	def private dispatch getParamList(AtomicEventPattern pattern) {
+		return (pattern as AtomicEventPattern).parameters
+	}
+
+	def private dispatch getParamList(IQPatternEventPattern pattern) {
+		return (pattern as IQPatternEventPattern).parameters
+	}
+
 	def private generateAtomicEventClasses(Iterable<ModelElement> patterns, IJvmDeclaredTypeAcceptor acceptor) {
 		for (pattern : patterns) {
 			acceptor.accept(pattern.toClass(pattern.getFqn(AtomicPatternFqnPurpose.EVENT))).initializeLater [
 				documentation = pattern.documentation
 				superTypes += pattern.newTypeRef(ParameterizableEventInstance)
-				val paramList = (pattern as AtomicEventPattern).parameters
+				val paramList = getParamList(pattern)
 				if (paramList != null) {
 					for (parameter : paramList.parameters) {
 						members += pattern.toField(parameter.name, parameter.type)
@@ -142,15 +165,24 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 						)]
 				]
 				members += pattern.toMethod("checkStaticBindings", pattern.newTypeRef("boolean")) [
-					if ((pattern as AtomicEventPattern).staticBindings == null) {
+					if (pattern.staticBindings == null) {
 						body = [
 							append('''return true;''')
 						]
 					} else {
-						body = (pattern as AtomicEventPattern).staticBindings
+						body = pattern.staticBindings
 					}
 				]
 			]
+		}
+	}
+
+	def private getStaticBindings(ModelElement element) {
+		switch (element) {
+			AtomicEventPattern:
+				return (element as AtomicEventPattern).staticBindings
+			default:
+				return null
 		}
 	}
 
@@ -271,7 +303,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 	}
 
 	def private setId(ITreeAppendable appendable, EObject ctx, String patternName) {
-		appendable.append('''setId("«patternName.toFirstUpper»Pattern");''')
+		appendable.append('''setId("«patternName.toFirstUpper»_Pattern");''')
 	}
 
 	def private generateRulesAndJobs(Iterable<ModelElement> rules, IJvmDeclaredTypeAcceptor acceptor) {
@@ -298,8 +330,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 			members += rule.toField("eventPatterns", rule.newTypeRef(List, it.newTypeRef(EventPattern))) [
 				initializer = [append('''«referClass(rule, Lists)».newArrayList()''')]
 			]
-			members += rule.toField("job",
-				rule.newTypeRef(Job, it.newTypeRef(IObservableComplexEventPattern))) [
+			members += rule.toField("job", rule.newTypeRef(Job, it.newTypeRef(IObservableComplexEventPattern))) [
 				initializer = [
 					append('''new «rule.jobClassName»(''').append(
 						'''«referClass(rule, CepActivationStates)».ACTIVE)''')]
@@ -309,8 +340,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 					append('''«enumerateAssignableEventPatterns(it, rule)»''')
 				]
 			]
-			var patternsGetter = rule.toGetter("eventPatterns",
-				rule.newTypeRef(List, it.newTypeRef(EventPattern)))
+			var patternsGetter = rule.toGetter("eventPatterns", rule.newTypeRef(List, it.newTypeRef(EventPattern)))
 			var jobGetter = rule.toGetter("job",
 				rule.newTypeRef(Job, it.newTypeRef(IObservableComplexEventPattern)))
 			patternsGetter.addOverrideAnnotation(rule)

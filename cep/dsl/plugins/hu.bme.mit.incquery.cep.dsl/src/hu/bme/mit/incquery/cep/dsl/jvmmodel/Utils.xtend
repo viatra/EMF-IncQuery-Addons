@@ -3,6 +3,7 @@ package hu.bme.mit.incquery.cep.dsl.jvmmodel
 import com.google.common.collect.Lists
 import com.google.common.collect.Maps
 import com.google.inject.Inject
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AugmentedExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventExpression
@@ -11,6 +12,7 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Expression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.MultiplicityExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameter
@@ -177,7 +179,7 @@ class Utils {
 					if(event instanceof «comEvent.eventPattern.type.getFqn(AtomicPatternFqnPurpose.EVENT)»){
 				''').append(
 				'''
-					«referClass(appendable, ctx, Map, ctx.newTypeRef("String"), ctx.newTypeRef("Object"))»''').append(
+				«referClass(appendable, ctx, Map, ctx.newTypeRef("String"), ctx.newTypeRef("Object"))»''').append(
 				''' params = ''').append(
 				'''«referClass(appendable, ctx, Maps)».newHashMap();
 					''').append(
@@ -294,17 +296,28 @@ class Utils {
 	def getJobClassName(Rule rule) {
 		var className = rule.fullyQualifiedName.lastSegment
 		var packageName = rule.fullyQualifiedName.skipLast(1)
-		return packageName.append("jobs").append(className.toFirstUpper + "Job")
+		return packageName.append("jobs").append(className.toFirstUpper + "_Job")
 	}
 
 	def getFqn(ModelElement element, AtomicPatternFqnPurpose purpose) {
 		var className = element.fullyQualifiedName.lastSegment
 		var packageName = element.fullyQualifiedName.skipLast(1)
 		switch (purpose) {
-			case AtomicPatternFqnPurpose.EVENT:
-				return packageName.append("events").append(className.toFirstUpper)
-			case AtomicPatternFqnPurpose.PATTERN:
-				return packageName.append("patterns.atomic").append(className.toFirstUpper + "Pattern")
+			case AtomicPatternFqnPurpose.EVENT: {
+				if (element instanceof AtomicEventPattern) {
+					return packageName.append("events").append(className.toFirstUpper + "_Event")
+				} else if (element instanceof IQPatternEventPattern) {
+					return packageName.append("events.incquery").append(className.toFirstUpper + "_IQEvent")
+				}
+			}
+			case AtomicPatternFqnPurpose.PATTERN: {
+				if (element instanceof AtomicEventPattern) {
+					return packageName.append("patterns.atomic").append(className.toFirstUpper + "_Pattern")
+				} else if (element instanceof IQPatternEventPattern) {
+					return packageName.append("patterns.atomic.incquery").append(
+						className.toFirstUpper + "_IQPattern")
+				}
+			}
 		}
 	}
 
@@ -314,7 +327,7 @@ class Utils {
 
 		switch element {
 			ComplexEventPattern:
-				return packageName.append("patterns.complex").append(className.toFirstUpper + "Pattern")
+				return packageName.append("patterns.complex").append(className.toFirstUpper + "_Pattern")
 			Rule:
 				return packageName.append("rules").append(className.toFirstUpper)
 		}

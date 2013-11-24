@@ -76,13 +76,13 @@ public interface TransactionPackage extends EPackage {
 	int TRANSACTION_MODEL__LATEST_COMPONENT_EVENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Compound Transaction Events</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Latest Compound Event</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSACTION_MODEL__COMPOUND_TRANSACTION_EVENTS = 1;
+	int TRANSACTION_MODEL__LATEST_COMPOUND_EVENT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -186,14 +186,14 @@ public interface TransactionPackage extends EPackage {
 	int COMPONENT_OPERATION_COUNT = MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentAImpl <em>Component A</em>}' class.
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionComponentAImpl <em>Component A</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentAImpl
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionPackageImpl#getComponentA()
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionComponentAImpl
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionPackageImpl#getTransactionComponentA()
 	 * @generated
 	 */
-	int COMPONENT_A = 2;
+	int TRANSACTION_COMPONENT_A = 2;
 
 	/**
 	 * The feature id for the '<em><b>Transaction Id</b></em>' attribute.
@@ -202,7 +202,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_A__TRANSACTION_ID = COMPONENT__TRANSACTION_ID;
+	int TRANSACTION_COMPONENT_A__TRANSACTION_ID = COMPONENT__TRANSACTION_ID;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -211,7 +211,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_A__TIMESTAMP = COMPONENT__TIMESTAMP;
+	int TRANSACTION_COMPONENT_A__TIMESTAMP = COMPONENT__TIMESTAMP;
 
 	/**
 	 * The feature id for the '<em><b>Customer Id</b></em>' attribute.
@@ -220,7 +220,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_A__CUSTOMER_ID = COMPONENT_FEATURE_COUNT + 0;
+	int TRANSACTION_COMPONENT_A__CUSTOMER_ID = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Component A</em>' class.
@@ -229,7 +229,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_A_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
+	int TRANSACTION_COMPONENT_A_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Component A</em>' class.
@@ -238,17 +238,17 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_A_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
+	int TRANSACTION_COMPONENT_A_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentBImpl <em>Component B</em>}' class.
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionComponentBImpl <em>Component B</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentBImpl
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionPackageImpl#getComponentB()
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionComponentBImpl
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionPackageImpl#getTransactionComponentB()
 	 * @generated
 	 */
-	int COMPONENT_B = 3;
+	int TRANSACTION_COMPONENT_B = 3;
 
 	/**
 	 * The feature id for the '<em><b>Transaction Id</b></em>' attribute.
@@ -257,7 +257,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_B__TRANSACTION_ID = COMPONENT__TRANSACTION_ID;
+	int TRANSACTION_COMPONENT_B__TRANSACTION_ID = COMPONENT__TRANSACTION_ID;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -266,7 +266,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_B__TIMESTAMP = COMPONENT__TIMESTAMP;
+	int TRANSACTION_COMPONENT_B__TIMESTAMP = COMPONENT__TIMESTAMP;
 
 	/**
 	 * The number of structural features of the '<em>Component B</em>' class.
@@ -275,7 +275,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_B_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
+	int TRANSACTION_COMPONENT_B_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Component B</em>' class.
@@ -284,17 +284,17 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_B_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
+	int TRANSACTION_COMPONENT_B_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentCImpl <em>Component C</em>}' class.
+	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionComponentCImpl <em>Component C</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentCImpl
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionPackageImpl#getComponentC()
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionComponentCImpl
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionPackageImpl#getTransactionComponentC()
 	 * @generated
 	 */
-	int COMPONENT_C = 4;
+	int TRANSACTION_COMPONENT_C = 4;
 
 	/**
 	 * The feature id for the '<em><b>Transaction Id</b></em>' attribute.
@@ -303,7 +303,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_C__TRANSACTION_ID = COMPONENT__TRANSACTION_ID;
+	int TRANSACTION_COMPONENT_C__TRANSACTION_ID = COMPONENT__TRANSACTION_ID;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -312,7 +312,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_C__TIMESTAMP = COMPONENT__TIMESTAMP;
+	int TRANSACTION_COMPONENT_C__TIMESTAMP = COMPONENT__TIMESTAMP;
 
 	/**
 	 * The feature id for the '<em><b>Supplier Id</b></em>' attribute.
@@ -321,7 +321,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_C__SUPPLIER_ID = COMPONENT_FEATURE_COUNT + 0;
+	int TRANSACTION_COMPONENT_C__SUPPLIER_ID = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Component C</em>' class.
@@ -330,7 +330,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_C_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
+	int TRANSACTION_COMPONENT_C_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Component C</em>' class.
@@ -339,7 +339,7 @@ public interface TransactionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_C_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
+	int TRANSACTION_COMPONENT_C_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.CompoundTransactionEventImpl <em>Compound Transaction Event</em>}' class.
@@ -437,15 +437,15 @@ public interface TransactionPackage extends EPackage {
 	EReference getTransactionModel_LatestComponentEvent();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getCompoundTransactionEvents <em>Compound Transaction Events</em>}'.
+	 * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getLatestCompoundEvent <em>Latest Compound Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Compound Transaction Events</em>'.
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getCompoundTransactionEvents()
+	 * @return the meta object for the containment reference '<em>Latest Compound Event</em>'.
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel#getLatestCompoundEvent()
 	 * @see #getTransactionModel()
 	 * @generated
 	 */
-	EReference getTransactionModel_CompoundTransactionEvents();
+	EReference getTransactionModel_LatestCompoundEvent();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.Component <em>Component</em>}'.
@@ -469,56 +469,56 @@ public interface TransactionPackage extends EPackage {
 	EAttribute getComponent_Timestamp();
 
 	/**
-	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA <em>Component A</em>}'.
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentA <em>Component A</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Component A</em>'.
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentA
 	 * @generated
 	 */
-	EClass getComponentA();
+	EClass getTransactionComponentA();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA#getCustomerId <em>Customer Id</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentA#getCustomerId <em>Customer Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Customer Id</em>'.
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.ComponentA#getCustomerId()
-	 * @see #getComponentA()
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentA#getCustomerId()
+	 * @see #getTransactionComponentA()
 	 * @generated
 	 */
-	EAttribute getComponentA_CustomerId();
+	EAttribute getTransactionComponentA_CustomerId();
 
 	/**
-	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.ComponentB <em>Component B</em>}'.
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB <em>Component B</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Component B</em>'.
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.ComponentB
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB
 	 * @generated
 	 */
-	EClass getComponentB();
+	EClass getTransactionComponentB();
 
 	/**
-	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.ComponentC <em>Component C</em>}'.
+	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC <em>Component C</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Component C</em>'.
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.ComponentC
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC
 	 * @generated
 	 */
-	EClass getComponentC();
+	EClass getTransactionComponentC();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.casestudy.transaction.ComponentC#getSupplierId <em>Supplier Id</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC#getSupplierId <em>Supplier Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Supplier Id</em>'.
-	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.ComponentC#getSupplierId()
-	 * @see #getComponentC()
+	 * @see hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC#getSupplierId()
+	 * @see #getTransactionComponentC()
 	 * @generated
 	 */
-	EAttribute getComponentC_SupplierId();
+	EAttribute getTransactionComponentC_SupplierId();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent <em>Compound Transaction Event</em>}'.
@@ -637,12 +637,12 @@ public interface TransactionPackage extends EPackage {
 		EReference TRANSACTION_MODEL__LATEST_COMPONENT_EVENT = eINSTANCE.getTransactionModel_LatestComponentEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Compound Transaction Events</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Latest Compound Event</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSACTION_MODEL__COMPOUND_TRANSACTION_EVENTS = eINSTANCE.getTransactionModel_CompoundTransactionEvents();
+		EReference TRANSACTION_MODEL__LATEST_COMPOUND_EVENT = eINSTANCE.getTransactionModel_LatestCompoundEvent();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentImpl <em>Component</em>}' class.
@@ -663,14 +663,14 @@ public interface TransactionPackage extends EPackage {
 		EAttribute COMPONENT__TIMESTAMP = eINSTANCE.getComponent_Timestamp();
 
 		/**
-		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentAImpl <em>Component A</em>}' class.
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionComponentAImpl <em>Component A</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentAImpl
-		 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionPackageImpl#getComponentA()
+		 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionComponentAImpl
+		 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionPackageImpl#getTransactionComponentA()
 		 * @generated
 		 */
-		EClass COMPONENT_A = eINSTANCE.getComponentA();
+		EClass TRANSACTION_COMPONENT_A = eINSTANCE.getTransactionComponentA();
 
 		/**
 		 * The meta object literal for the '<em><b>Customer Id</b></em>' attribute feature.
@@ -678,27 +678,27 @@ public interface TransactionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPONENT_A__CUSTOMER_ID = eINSTANCE.getComponentA_CustomerId();
+		EAttribute TRANSACTION_COMPONENT_A__CUSTOMER_ID = eINSTANCE.getTransactionComponentA_CustomerId();
 
 		/**
-		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentBImpl <em>Component B</em>}' class.
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionComponentBImpl <em>Component B</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentBImpl
-		 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionPackageImpl#getComponentB()
+		 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionComponentBImpl
+		 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionPackageImpl#getTransactionComponentB()
 		 * @generated
 		 */
-		EClass COMPONENT_B = eINSTANCE.getComponentB();
+		EClass TRANSACTION_COMPONENT_B = eINSTANCE.getTransactionComponentB();
 
 		/**
-		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentCImpl <em>Component C</em>}' class.
+		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionComponentCImpl <em>Component C</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.ComponentCImpl
-		 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionPackageImpl#getComponentC()
+		 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionComponentCImpl
+		 * @see hu.bme.mit.incquery.cep.casestudy.transaction.impl.TransactionPackageImpl#getTransactionComponentC()
 		 * @generated
 		 */
-		EClass COMPONENT_C = eINSTANCE.getComponentC();
+		EClass TRANSACTION_COMPONENT_C = eINSTANCE.getTransactionComponentC();
 
 		/**
 		 * The meta object literal for the '<em><b>Supplier Id</b></em>' attribute feature.
@@ -706,7 +706,7 @@ public interface TransactionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPONENT_C__SUPPLIER_ID = eINSTANCE.getComponentC_SupplierId();
+		EAttribute TRANSACTION_COMPONENT_C__SUPPLIER_ID = eINSTANCE.getTransactionComponentC_SupplierId();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.incquery.cep.casestudy.transaction.impl.CompoundTransactionEventImpl <em>Compound Transaction Event</em>}' class.

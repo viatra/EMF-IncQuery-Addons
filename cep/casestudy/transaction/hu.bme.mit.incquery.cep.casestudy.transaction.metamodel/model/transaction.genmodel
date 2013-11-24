@@ -9,17 +9,17 @@
       disposableProviderFactory="true" ecorePackage="Transaction.ecore#/">
     <genClasses ecoreClass="Transaction.ecore#//TransactionModel">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Transaction.ecore#//TransactionModel/latestComponentEvent"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Transaction.ecore#//TransactionModel/compoundTransactionEvents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Transaction.ecore#//TransactionModel/latestCompoundEvent"/>
     </genClasses>
     <genClasses ecoreClass="Transaction.ecore#//Component">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//Component/timestamp"/>
     </genClasses>
-    <genClasses ecoreClass="Transaction.ecore#//ComponentA">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//ComponentA/customerId"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionComponentA">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//TransactionComponentA/customerId"/>
     </genClasses>
-    <genClasses ecoreClass="Transaction.ecore#//ComponentB"/>
-    <genClasses ecoreClass="Transaction.ecore#//ComponentC">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//ComponentC/supplierId"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionComponentB"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionComponentC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//TransactionComponentC/supplierId"/>
     </genClasses>
     <genClasses ecoreClass="Transaction.ecore#//CompoundTransactionEvent">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//CompoundTransactionEvent/customerId"/>

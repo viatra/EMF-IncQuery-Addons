@@ -5,9 +5,6 @@ import hu.bme.mit.incquery.cep.api.ICepAdapter;
 import hu.bme.mit.incquery.cep.api.ICepRule;
 import hu.bme.mit.incquery.cep.api.ViatraCepManager;
 import hu.bme.mit.incquery.cep.casestudy.transaction.adapters.TransactionEventAdapter;
-import hu.bme.mit.incquery.cep.casestudy.transaction.events.ComponentA;
-import hu.bme.mit.incquery.cep.casestudy.transaction.events.ComponentB;
-import hu.bme.mit.incquery.cep.casestudy.transaction.events.ComponentC;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 
@@ -35,28 +32,28 @@ public class BareJavaTester {
 	}
 
 	public void simulate() {
-		// pushing events into the adapter
-
-		String transactionId = "t-10";
-		String customerId = "c-200";
-		String supplierId = "s-300";
-
-		ComponentA componentA = new hu.bme.mit.incquery.cep.casestudy.transaction.events.ComponentA(
-				source);
-		componentA.setTransactionId(transactionId);
-		componentA.setCustomerId(customerId);
-
-		ComponentB componentB = new hu.bme.mit.incquery.cep.casestudy.transaction.events.ComponentB(
-				source);
-		componentB.setTransactionId(transactionId);
-
-		ComponentC componentC = new hu.bme.mit.incquery.cep.casestudy.transaction.events.ComponentC(
-				source);
-		componentC.setTransactionId(transactionId);
-		componentC.setSupplierId(supplierId);
-		
-		adapter.push(componentA);
-		adapter.push(componentB);
-		adapter.push(componentC);
+//		// pushing events into the adapter
+//
+//		String transactionId = "t-10";
+//		String customerId = "c-200";
+//		String supplierId = "s-300";
+//
+//		ComponentA componentA = new hu.bme.mit.incquery.cep.casestudy.transaction.events.ComponentA(
+//				source);
+//		componentA.setTransactionId(transactionId);
+//		componentA.setCustomerId(customerId);
+//
+//		ComponentB componentB = new hu.bme.mit.incquery.cep.casestudy.transaction.events.ComponentB(
+//				source);
+//		componentB.setTransactionId(transactionId);
+//
+//		ComponentC componentC = new hu.bme.mit.incquery.cep.casestudy.transaction.events.ComponentC(
+//				source);
+//		componentC.setTransactionId(transactionId);
+//		componentC.setSupplierId(supplierId);
+//		
+//		adapter.push(componentA);
+//		adapter.push(componentB);
+//		adapter.push(componentC);
 	}
 }
