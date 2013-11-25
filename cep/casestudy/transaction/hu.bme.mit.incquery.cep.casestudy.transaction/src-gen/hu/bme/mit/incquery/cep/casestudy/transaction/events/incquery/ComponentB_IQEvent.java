@@ -7,12 +7,9 @@ import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 public class ComponentB_IQEvent extends ParameterizableEventInstance {
   private String transactionId;
   
-  private long timestamp;
-  
   public ComponentB_IQEvent(final IEventSource eventSource) {
     super(eventSource);
     getParameters().add(transactionId);
-    getParameters().add(timestamp);
     
   }
   
@@ -23,14 +20,5 @@ public class ComponentB_IQEvent extends ParameterizableEventInstance {
   public void setTransactionId(final String transactionId) {
     this.transactionId = transactionId;
     getParameters().set(0, transactionId);
-  }
-  
-  public long getTimestamp() {
-    return this.timestamp;
-  }
-  
-  public void setTimestamp(final long timestamp) {
-    this.timestamp = timestamp;
-    getParameters().set(1, timestamp);
   }
 }

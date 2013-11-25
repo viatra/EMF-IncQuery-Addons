@@ -25,22 +25,31 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 public abstract class LatestEventComponentCMatch extends BasePatternMatch {
   private TransactionComponentC fTe;
   
-  private static List<String> parameterNames = makeImmutableList("te");
+  private String fTId;
   
-  private LatestEventComponentCMatch(final TransactionComponentC pTe) {
+  private static List<String> parameterNames = makeImmutableList("te", "tId");
+  
+  private LatestEventComponentCMatch(final TransactionComponentC pTe, final String pTId) {
     this.fTe = pTe;
+    this.fTId = pTId;
     
   }
   
   @Override
   public Object get(final String parameterName) {
     if ("te".equals(parameterName)) return this.fTe;
+    if ("tId".equals(parameterName)) return this.fTId;
     return null;
     
   }
   
   public TransactionComponentC getTe() {
     return this.fTe;
+    
+  }
+  
+  public String getTId() {
+    return this.fTId;
     
   }
   
@@ -51,6 +60,10 @@ public abstract class LatestEventComponentCMatch extends BasePatternMatch {
     	this.fTe = (hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC) newValue;
     	return true;
     }
+    if ("tId".equals(parameterName) ) {
+    	this.fTId = (java.lang.String) newValue;
+    	return true;
+    }
     return false;
     
   }
@@ -58,6 +71,12 @@ public abstract class LatestEventComponentCMatch extends BasePatternMatch {
   public void setTe(final TransactionComponentC pTe) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTe = pTe;
+    
+  }
+  
+  public void setTId(final String pTId) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    this.fTId = pTId;
     
   }
   
@@ -75,14 +94,15 @@ public abstract class LatestEventComponentCMatch extends BasePatternMatch {
   
   @Override
   public Object[] toArray() {
-    return new Object[]{fTe};
+    return new Object[]{fTe, fTId};
     
   }
   
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"te\"=" + prettyPrintValue(fTe));
+    result.append("\"te\"=" + prettyPrintValue(fTe) + ", ");
+    result.append("\"tId\"=" + prettyPrintValue(fTId));
     return result.toString();
     
   }
@@ -92,6 +112,7 @@ public abstract class LatestEventComponentCMatch extends BasePatternMatch {
     final int prime = 31;
     int result = 1;
     result = prime * result + ((fTe == null) ? 0 : fTe.hashCode()); 
+    result = prime * result + ((fTId == null) ? 0 : fTId.hashCode()); 
     return result; 
     
   }
@@ -113,6 +134,8 @@ public abstract class LatestEventComponentCMatch extends BasePatternMatch {
     LatestEventComponentCMatch other = (LatestEventComponentCMatch) obj;
     if (fTe == null) {if (other.fTe != null) return false;}
     else if (!fTe.equals(other.fTe)) return false;
+    if (fTId == null) {if (other.fTId != null) return false;}
+    else if (!fTId.equals(other.fTId)) return false;
     return true;
   }
   
@@ -129,8 +152,8 @@ public abstract class LatestEventComponentCMatch extends BasePatternMatch {
   
   @SuppressWarnings("all")
   static final class Mutable extends LatestEventComponentCMatch {
-    Mutable(final TransactionComponentC pTe) {
-      super(pTe);
+    Mutable(final TransactionComponentC pTe, final String pTId) {
+      super(pTe, pTId);
       
     }
     
@@ -143,8 +166,8 @@ public abstract class LatestEventComponentCMatch extends BasePatternMatch {
   
   @SuppressWarnings("all")
   static final class Immutable extends LatestEventComponentCMatch {
-    Immutable(final TransactionComponentC pTe) {
-      super(pTe);
+    Immutable(final TransactionComponentC pTe, final String pTId) {
+      super(pTe, pTId);
       
     }
     

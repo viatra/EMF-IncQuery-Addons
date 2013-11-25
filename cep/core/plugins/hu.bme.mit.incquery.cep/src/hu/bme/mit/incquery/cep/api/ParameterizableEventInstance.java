@@ -7,7 +7,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 public abstract class ParameterizableEventInstance extends AbstractEventInstance {
-    private List<Object> parameters = Lists.newArrayList();
+    protected List<Object> parameters = Lists.newArrayList();
 
     public ParameterizableEventInstance(IEventSource eventSource) {
         super(eventSource);

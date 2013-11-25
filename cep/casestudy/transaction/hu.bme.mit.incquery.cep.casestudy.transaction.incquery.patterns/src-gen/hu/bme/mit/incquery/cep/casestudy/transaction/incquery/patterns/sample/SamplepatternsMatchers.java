@@ -16,19 +16,19 @@ public final class SamplepatternsMatchers {
     
   }
   
-  public LatestEventComponentCMatcher getLatestEventComponentCMatcher() throws IncQueryException {
-    return LatestEventComponentCMatcher.on(engine);
-  }
-  
-  public LatestCompoundEventMatcher getLatestCompoundEventMatcher() throws IncQueryException {
-    return LatestCompoundEventMatcher.on(engine);
-  }
-  
   public LatestEventComponentBMatcher getLatestEventComponentBMatcher() throws IncQueryException {
     return LatestEventComponentBMatcher.on(engine);
   }
   
   public LatestEventComponentAMatcher getLatestEventComponentAMatcher() throws IncQueryException {
     return LatestEventComponentAMatcher.on(engine);
+  }
+  
+  public LatestCompoundEventMatcher getLatestCompoundEventMatcher() throws IncQueryException {
+    return LatestCompoundEventMatcher.on(engine);
+  }
+  
+  public LatestEventComponentCMatcher getLatestEventComponentCMatcher() throws IncQueryException {
+    return LatestEventComponentCMatcher.on(engine);
   }
 }

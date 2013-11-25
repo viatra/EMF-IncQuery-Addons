@@ -3,22 +3,22 @@ package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample
 import "transaction.meta"
 import "http://www.eclipse.org/emf/2002/Ecore"
 
-pattern latestEventComponentA(te : TransactionComponentA){
+pattern latestEventComponentA(te, tId){
 	TransactionModel.latestComponentEvent(_, te);
-	TransactionComponentA(te);
+	TransactionComponentA.transactionId(te, tId);
 }
 
-pattern latestEventComponentB(te : TransactionComponentB){
+pattern latestEventComponentB(te, tId){
 	TransactionModel.latestComponentEvent(_, te);
-	TransactionComponentB(te);
+	TransactionComponentB.transactionId(te, tId);
 }
 
-pattern latestEventComponentC(te : TransactionComponentC){
+pattern latestEventComponentC(te, tId){
 	TransactionModel.latestComponentEvent(_, te);
-	TransactionComponentC(te);
+	TransactionComponentC.transactionId(te, tId);
 }
 
-pattern latestCompoundEvent(e : CompoundTransactionEvent) {
+pattern latestCompoundEvent(e) {
 	TransactionModel.latestCompoundEvent(_, e);
 	CompoundTransactionEvent(e);
 }

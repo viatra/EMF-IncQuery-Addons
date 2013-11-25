@@ -14,6 +14,8 @@ import org.eclipse.viatra2.emf.runtime.rules.EventDrivenTransformationRuleGroup
 import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory
 import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformation
 import hu.bme.mit.incquery.cep.casestudy.transaction.test.IncQueryTester
+import hu.bme.mit.incquery.cep.api.ParameterizableIncQueryPatternEventInstance
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentAMatch
 
 class Patterns2Events {
 	extension EventDrivenTransformationRuleFactory ruleFactory = new EventDrivenTransformationRuleFactory
@@ -21,6 +23,7 @@ class Patterns2Events {
 	@Property Map<RuleSpecification<?>, Integer> modelHandlers;
 	@Property ICepAdapter adapter;
 	@Property ResourceSet resourceSet;
+	@Property EventDrivenTransformation transformation;
 
 	new(IncQueryTester incQueryTest) {
 		this.adapter = incQueryTest.getAdapter
@@ -29,36 +32,64 @@ class Patterns2Events {
 
 	def getRules() {
 		new EventDrivenTransformationRuleGroup(
-			createLatestComponentARule,
-			createLatestComponentBRule,
-			createLatestComponentCRule
+//			createLatestComponentARule,
+			createLatestComponentARuleMapping,
+			createLatestComponentBRuleMapping,
+			createLatestComponentCRuleMapping
 		)
 	}
 
 	def registerRules() {
-		EventDrivenTransformation.forResource(resourceSet).addRules(rules).create()
+		transformation = EventDrivenTransformation.forResource(resourceSet).addRules(rules).create()
 	}
 
-	val createLatestComponentARule = ruleFactory.createRule().name("latest component A").precondition(
+//	val createLatestComponentARule = ruleFactory.createRule().name("latest component A").precondition(
+//		LatestEventComponentAMatcher::querySpecification).action [
+//		var event = new ComponentA_IQEvent(null)
+//		event.setCustomerId(te.customerId)
+//		event.setTransactionId(te.transactionId)
+//		adapter.push(event)
+//	].build
+
+	val createLatestComponentARuleMapping = ruleFactory.createRule().precondition(
 		LatestEventComponentAMatcher::querySpecification).action [
-		var event = new ComponentA_IQEvent(null)
-		event.setCustomerId(te.customerId)
-		event.setTransactionId(te.transactionId)
-		adapter.push(event)
+			for(match : LatestEventComponentAMatcher::on(transformation.iqEngine).allMatches){	
+				var event = new ParameterizableIncQueryPatternEventInstance(null)
+				event.setIncQueryPattern(match)
+				adapter.push(event)
+			}	
 	].build
-
-	val createLatestComponentBRule = ruleFactory.createRule().name("latest component B").precondition(
+	
+	val createLatestComponentBRuleMapping = ruleFactory.createRule().precondition(
 		LatestEventComponentBMatcher::querySpecification).action [
-		var event = new ComponentB_IQEvent(null)
-		event.setTransactionId(te.transactionId)
-		adapter.push(event)
+			for(match : LatestEventComponentBMatcher::on(transformation.iqEngine).allMatches){	
+				var event = new ParameterizableIncQueryPatternEventInstance(null)
+				event.setIncQueryPattern(match)
+				adapter.push(event)
+			}	
+	].build
+	
+	val createLatestComponentCRuleMapping = ruleFactory.createRule().precondition(
+		LatestEventComponentCMatcher::querySpecification).action [
+			for(match : LatestEventComponentCMatcher::on(transformation.iqEngine).allMatches){	
+				var event = new ParameterizableIncQueryPatternEventInstance(null)
+				event.setIncQueryPattern(match)
+				adapter.push(event)
+			}	
 	].build
 
-	val createLatestComponentCRule = ruleFactory.createRule().name("latest component C").precondition(
-		LatestEventComponentCMatcher::querySpecification).action [
-		var event = new ComponentC_IQEvent(null)
-		event.setSupplierId(te.supplierId)
-		event.setTransactionId(te.transactionId)
-		adapter.push(event)
-	].build
+//	val createLatestComponentBRule = ruleFactory.createRule().name("latest component B").precondition(
+//		LatestEventComponentBMatcher::querySpecification).action [
+//		var event = new ComponentB_IQEvent(null)
+//		event.setTransactionId(te.transactionId)
+//		adapter.push(event)
+//	].build
+//
+//	val createLatestComponentCRule = ruleFactory.createRule().name("latest component C").precondition(
+//		LatestEventComponentCMatcher::querySpecification).action [
+//		var event = new ComponentC_IQEvent(null)
+//		event.setSupplierId(te.supplierId)
+//		event.setTransactionId(te.transactionId)
+//		adapter.push(event)
+//	].build
 }

@@ -26,7 +26,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern latestCompoundEvent(e : CompoundTransactionEvent) {
+ * pattern latestCompoundEvent(e) {
  * 	TransactionModel.latestCompoundEvent(_, e);
  * 	CompoundTransactionEvent(e);
  * }

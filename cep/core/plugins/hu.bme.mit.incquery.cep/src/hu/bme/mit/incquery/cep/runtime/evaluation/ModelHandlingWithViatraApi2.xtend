@@ -18,6 +18,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.State
 import hu.bme.mit.incquery.cep.api.ParameterizableComplexEventPattern
 import hu.bme.mit.incquery.cep.api.evm.InTrapComplexEventPattern
 import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern
+import hu.bme.mit.incquery.cep.api.ParameterizableIncQueryPatternEventInstance
 
 class ModelHandlingWithViatraApi2 {
 	extension EventDrivenTransformationRuleFactory ruleFactory = new EventDrivenTransformationRuleFactory
@@ -62,6 +63,10 @@ class ModelHandlingWithViatraApi2 {
 	val createEnabledTransitionRule = ruleFactory.createRule().name("enabled transition rule").precondition(
 		EnabledTransitionMatcher::querySpecification).action [
 		var eventPattern = ((t.eContainer() as State).eContainer() as StateMachine).getEventPattern();
+		if (eventPattern instanceof ParameterizableIncQueryPatternEventInstance) {
+			var patternMatch = (eventPattern as ParameterizableIncQueryPatternEventInstance).incQueryPattern
+			//TODO implement IQ pattern parameter checking here
+		}
 		if (eventPattern instanceof ParameterizableComplexEventPattern) {
 			if (!((eventPattern as ParameterizableComplexEventPattern).evaluateParameterBindigs(e))) {
 				return;

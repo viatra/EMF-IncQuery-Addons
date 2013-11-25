@@ -33,37 +33,5 @@
             id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestCompoundEvent">
       </matcher>
    </extension>
-   <extension
-         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentA"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.LatestEventComponentAQuerySpecification$Provider"
-            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentA">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentB"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.LatestEventComponentBQuerySpecification$Provider"
-            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentB">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentC"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.LatestEventComponentCQuerySpecification$Provider"
-            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentC">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestCompoundEvent"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.LatestCompoundEventQuerySpecification$Provider"
-            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestCompoundEvent">
-      </matcher>
-   </extension>
 
 </plugin>

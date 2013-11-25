@@ -26,9 +26,9 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern latestEventComponentB(te : TransactionComponentB){
+ * pattern latestEventComponentB(te, tId){
  * 	TransactionModel.latestComponentEvent(_, te);
- * 	TransactionComponentB(te);
+ * 	TransactionComponentB.transactionId(te, tId);
  * }
  * </pre></code>
  * 
@@ -68,6 +68,8 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
   
   private final static int POSITION_TE = 0;
   
+  private final static int POSITION_TID = 1;
+  
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet). 
    * If a pattern matcher is already constructed with the same root, only a light-weight reference is returned.
@@ -102,65 +104,71 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
   /**
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
+   * @param pTId the fixed value of pattern parameter tId, or null if not bound.
    * @return matches represented as a LatestEventComponentBMatch object.
    * 
    */
-  public Collection<LatestEventComponentBMatch> getAllMatches(final TransactionComponentB pTe) {
-    return rawGetAllMatches(new Object[]{pTe});
+  public Collection<LatestEventComponentBMatch> getAllMatches(final TransactionComponentB pTe, final String pTId) {
+    return rawGetAllMatches(new Object[]{pTe, pTId});
   }
   
   /**
    * Returns an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
+   * @param pTId the fixed value of pattern parameter tId, or null if not bound.
    * @return a match represented as a LatestEventComponentBMatch object, or null if no match is found.
    * 
    */
-  public LatestEventComponentBMatch getOneArbitraryMatch(final TransactionComponentB pTe) {
-    return rawGetOneArbitraryMatch(new Object[]{pTe});
+  public LatestEventComponentBMatch getOneArbitraryMatch(final TransactionComponentB pTe, final String pTId) {
+    return rawGetOneArbitraryMatch(new Object[]{pTe, pTId});
   }
   
   /**
    * Indicates whether the given combination of specified pattern parameters constitute a valid pattern match,
    * under any possible substitution of the unspecified parameters (if any).
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
+   * @param pTId the fixed value of pattern parameter tId, or null if not bound.
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final TransactionComponentB pTe) {
-    return rawHasMatch(new Object[]{pTe});
+  public boolean hasMatch(final TransactionComponentB pTe, final String pTId) {
+    return rawHasMatch(new Object[]{pTe, pTId});
   }
   
   /**
    * Returns the number of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
+   * @param pTId the fixed value of pattern parameter tId, or null if not bound.
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final TransactionComponentB pTe) {
-    return rawCountMatches(new Object[]{pTe});
+  public int countMatches(final TransactionComponentB pTe, final String pTId) {
+    return rawCountMatches(new Object[]{pTe, pTId});
   }
   
   /**
    * Executes the given processor on each match of the pattern that conforms to the given fixed values of some parameters.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
+   * @param pTId the fixed value of pattern parameter tId, or null if not bound.
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final TransactionComponentB pTe, final IMatchProcessor<? super LatestEventComponentBMatch> processor) {
-    rawForEachMatch(new Object[]{pTe}, processor);
+  public void forEachMatch(final TransactionComponentB pTe, final String pTId, final IMatchProcessor<? super LatestEventComponentBMatch> processor) {
+    rawForEachMatch(new Object[]{pTe, pTId}, processor);
   }
   
   /**
    * Executes the given processor on an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.  
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
+   * @param pTId the fixed value of pattern parameter tId, or null if not bound.
    * @param processor the action that will process the selected match. 
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final TransactionComponentB pTe, final IMatchProcessor<? super LatestEventComponentBMatch> processor) {
-    return rawForOneArbitraryMatch(new Object[]{pTe}, processor);
+  public boolean forOneArbitraryMatch(final TransactionComponentB pTe, final String pTId, final IMatchProcessor<? super LatestEventComponentBMatch> processor) {
+    return rawForOneArbitraryMatch(new Object[]{pTe, pTId}, processor);
   }
   
   /**
@@ -171,13 +179,14 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
    * See {@link DeltaMonitor} for details.
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
+   * @param pTId the fixed value of pattern parameter tId, or null if not bound.
    * @return the delta monitor.
    * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
   @Deprecated
-  public DeltaMonitor<LatestEventComponentBMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final TransactionComponentB pTe) {
-    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pTe});
+  public DeltaMonitor<LatestEventComponentBMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final TransactionComponentB pTe, final String pTId) {
+    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pTe, pTId});
   }
   
   /**
@@ -185,11 +194,12 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
    * This can be used e.g. to call the matcher with a partial match. 
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
+   * @param pTId the fixed value of pattern parameter tId, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public LatestEventComponentBMatch newMatch(final TransactionComponentB pTe) {
-    return new LatestEventComponentBMatch.Immutable(pTe);
+  public LatestEventComponentBMatch newMatch(final TransactionComponentB pTe, final String pTId) {
+    return new LatestEventComponentBMatch.Immutable(pTe, pTId);
     
   }
   
@@ -213,10 +223,66 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
     return rawAccumulateAllValuesOfte(emptyArray());
   }
   
+  /**
+   * Retrieve the set of values that occur in matches for te.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<TransactionComponentB> getAllValuesOfte(final LatestEventComponentBMatch partialMatch) {
+    return rawAccumulateAllValuesOfte(partialMatch.toArray());
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for te.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<TransactionComponentB> getAllValuesOfte(final String pTId) {
+    return rawAccumulateAllValuesOfte(new Object[]{null, pTId});
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for tId.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  protected Set<String> rawAccumulateAllValuesOftId(final Object[] parameters) {
+    Set<String> results = new HashSet<String>();
+    rawAccumulateAllValues(POSITION_TID, parameters, results);
+    return results;
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for tId.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<String> getAllValuesOftId() {
+    return rawAccumulateAllValuesOftId(emptyArray());
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for tId.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<String> getAllValuesOftId(final LatestEventComponentBMatch partialMatch) {
+    return rawAccumulateAllValuesOftId(partialMatch.toArray());
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for tId.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<String> getAllValuesOftId(final TransactionComponentB pTe) {
+    return rawAccumulateAllValuesOftId(new Object[]{pTe, null});
+  }
+  
   @Override
   protected LatestEventComponentBMatch tupleToMatch(final Tuple t) {
     try {
-    	return new LatestEventComponentBMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB) t.get(POSITION_TE));	
+    	return new LatestEventComponentBMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB) t.get(POSITION_TE), (java.lang.String) t.get(POSITION_TID));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -226,7 +292,7 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
   @Override
   protected LatestEventComponentBMatch arrayToMatch(final Object[] match) {
     try {
-    	return new LatestEventComponentBMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB) match[POSITION_TE]);
+    	return new LatestEventComponentBMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB) match[POSITION_TE], (java.lang.String) match[POSITION_TID]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -236,7 +302,7 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
   @Override
   protected LatestEventComponentBMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new LatestEventComponentBMatch.Mutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB) match[POSITION_TE]);
+    	return new LatestEventComponentBMatch.Mutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB) match[POSITION_TE], (java.lang.String) match[POSITION_TID]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

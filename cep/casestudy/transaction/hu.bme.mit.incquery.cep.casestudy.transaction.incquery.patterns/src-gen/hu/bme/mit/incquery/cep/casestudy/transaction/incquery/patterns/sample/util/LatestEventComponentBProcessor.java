@@ -15,13 +15,14 @@ public abstract class LatestEventComponentBProcessor implements IMatchProcessor<
   /**
    * Defines the action that is to be executed on each match.
    * @param pTe the value of pattern parameter te in the currently processed match 
+   * @param pTId the value of pattern parameter tId in the currently processed match 
    * 
    */
-  public abstract void process(final TransactionComponentB pTe);
+  public abstract void process(final TransactionComponentB pTe, final String pTId);
   
   @Override
   public void process(final LatestEventComponentBMatch match) {
-    process(match.getTe());
+    process(match.getTe(), match.getTId());
     
   }
 }
