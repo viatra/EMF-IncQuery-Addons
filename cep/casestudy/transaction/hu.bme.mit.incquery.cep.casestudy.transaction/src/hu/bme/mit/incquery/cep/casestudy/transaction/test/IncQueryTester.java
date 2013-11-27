@@ -11,6 +11,7 @@ import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionFactory;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel;
 import hu.bme.mit.incquery.cep.casestudy.transaction.adapters.TransactionEventAdapter;
+import hu.bme.mit.incquery.cep.casestudy.transaction.test.mhr.IncQuery2ViatraCep;
 import hu.bme.mit.incquery.cep.casestudy.transaction.test.mhr.Patterns2Events;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 
@@ -35,7 +36,8 @@ public class IncQueryTester {
 		checkArgument(rule != null);
 		ViatraCepManager.withContext(EventProcessingContext.CHRONICLE).addRule(rule);
 		prepareModel();
-		new Patterns2Events(this).registerRules();
+		//new Patterns2Events(this).registerRules();
+		new IncQuery2ViatraCep(this).registerRules();
 	}
 
 	private void prepareModel() {

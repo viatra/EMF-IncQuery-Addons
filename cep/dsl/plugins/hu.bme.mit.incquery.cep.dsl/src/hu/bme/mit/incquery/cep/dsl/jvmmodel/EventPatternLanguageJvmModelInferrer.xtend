@@ -36,6 +36,17 @@ import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
+import hu.bme.mit.incquery.cep.api.ParameterizableIncQueryPatternEventInstance
+import hu.bme.mit.incquery.cep.api.ICepAdapter
+import org.eclipse.emf.ecore.resource.ResourceSet
+import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformation
+import org.eclipse.viatra2.emf.runtime.modelmanipulation.ModelManipulationException
+import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.InconsistentEventSemanticsException
+import java.util.Collection
+import org.eclipse.incquery.runtime.evm.api.ActivationLifeCycle
+import org.eclipse.incquery.runtime.api.IPatternMatch
+import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory.EventDrivenTransformationBuilder
+import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformationRule
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -77,7 +88,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 	 *            <code>true</code>.
 	 */
 	def dispatch void infer(EventModel element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-		if(element==null || element.packagedModel==null || element.packagedModel.modelElements.empty){
+		if (element == null || element.packagedModel == null || element.packagedModel.modelElements.empty) {
 			return
 		}
 		var patterns = element.packagedModel.modelElements.filter[e|(e instanceof AtomicEventPattern)]
@@ -87,6 +98,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 		var iqPatterns = element.packagedModel.modelElements.filter[e|(e instanceof IQPatternEventPattern)]
 		iqPatterns.generateAtomicEventClasses(acceptor)
 		iqPatterns.generateAtomicEventPatterns(acceptor)
+		iqPatterns.generateIncQuery2ViatraCep(element, acceptor)
 
 		var complexPatterns = element.packagedModel.modelElements.filter[e|(e instanceof ComplexEventPattern)]
 		complexPatterns.generateComplexEventPatterns(acceptor)
@@ -110,6 +122,105 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 
 	def private dispatch getParamList(IQPatternEventPattern pattern) {
 		return (pattern as IQPatternEventPattern).parameters
+	}
+
+	def void generateIncQuery2ViatraCep(Iterable<ModelElement> patterns, EventModel model,
+		IJvmDeclaredTypeAcceptor acceptor) {
+		val fqn = patterns.head.IQ2VCClassFqn
+		acceptor.accept(model.toClass(fqn)).initializeLater [
+			documentation = model.documentation
+			members += model.toField("adapter", model.newTypeRef(ICepAdapter))
+			members += model.toField("resourceSet", model.newTypeRef(ResourceSet))
+			members += model.toField("transformation", model.newTypeRef(EventDrivenTransformation))
+			
+			members += model.toConstructor [
+				parameters += toParameter("resourceSet", model.newTypeRef(ResourceSet))
+				parameters += toParameter("adapter", model.newTypeRef(ICepAdapter))
+				body=[
+					append(
+					'''
+						this.resourceSet = resourceSet;
+						this.adapter = adapter;
+					'''
+					)
+				]
+			]
+			
+			members += model.toMethod("getRules", model.newTypeRef("org.eclipse.viatra2.emf.runtime.rules.EventDrivenTransformationRuleGroup")) [
+				body=[
+					append(
+					'''
+						EventDrivenTransformationRuleGroup ruleGroup = new EventDrivenTransformationRuleGroup(
+							«FOR p : patterns SEPARATOR ", " AFTER ");"»
+								«p.mappingMethodName»()
+							«ENDFOR»
+						
+						return ruleGroup;
+					'''
+					)
+				]
+			]
+		
+			
+			members += model.toMethod("registerRules", model.newTypeRef(void)) [
+				body=[
+					append(
+					'''
+						transformation = EventDrivenTransformation.forResource(resourceSet).addRules(getRules()).create();'''
+					)
+				]
+			]
+			
+			for(p:patterns){
+				val matcher = "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatcher"
+				val match = "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatch"
+				val eventClass = p.getFqn(AtomicPatternFqnPurpose.EVENT)
+				
+				
+				members += model.toMethod(p.mappingMethodName, model.newTypeRef(EventDrivenTransformationRule)) [
+				body=[
+					append(
+					'''
+«««						try{
+«««							«jvmTypesBuilder.newTypeRef(p,EventDrivenTrans)» builder =
+«««								new org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory().createRule();
+«««							builder.precondition(«p.newTypeRef(matcher)».querySpecification());
+«««							
+«««							org.eclipse.incquery.runtime.api.IMatchProcessor<«match»> action = new org.eclipse.incquery.runtime.api.IMatchProcessor<«match»>() {
+«««								public void process(final «match» it) {
+«««									«p.newTypeRef(Collection)»<«match»> allMatches;
+«««									try {
+«««										allMatches = «matcher».on(transformation.getIqEngine()).getAllMatches();
+«««										for («match» match : allMatches) {
+«««											
+«««											«p.newTypeRef(ParameterizableIncQueryPatternEventInstance)» event = new «p.newTypeRef(ParameterizableIncQueryPatternEventInstance)»(null);
+«««											event.setIncQueryPattern(match);
+«««											event.setType(«eventClass».class.getCanonicalName());
+«««											adapter.push(event);
+«««										}
+«««									} catch (IncQueryException e) {
+«««										e.printStackTrace();
+«««									}
+«««								}
+«««							};							
+«««							builder.action(action);
+«««							return builder.build();
+«««						} catch («p.newTypeRef("org.eclipse.incquery.runtime.exception.IncQueryException")» e) {
+«««							e.printStackTrace();
+«««						} catch («p.newTypeRef(InconsistentEventSemanticsException)» e) {
+«««							e.printStackTrace();
+«««						}
+						return null;
+					'''
+					)
+				]
+			]
+			}
+		]
+	}
+	
+	def private getMappingMethodName(ModelElement pattern){
+		return "create"+pattern.name+"_MappingRule"
 	}
 
 	def private generateAtomicEventClasses(Iterable<ModelElement> patterns, IJvmDeclaredTypeAcceptor acceptor) {

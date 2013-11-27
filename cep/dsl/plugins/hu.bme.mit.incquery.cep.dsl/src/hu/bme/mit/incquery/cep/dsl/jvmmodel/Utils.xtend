@@ -333,6 +333,11 @@ class Utils {
 		}
 	}
 
+	def getIQ2VCClassFqn(ModelElement element) {
+		var packageName = element.fullyQualifiedName.skipLast(1)
+		return packageName.append("mapping.IncQuery2ViatraCep")
+	}
+
 	def wildCardExtends(JvmTypeReference clone) {
 		var result = factory.createJvmWildcardTypeReference();
 		var upperBound = factory.createJvmUpperBound();
