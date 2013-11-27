@@ -17,7 +17,6 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedMultiplicityExpression
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.IQPatternEventPatternImpl
 import hu.bme.mit.incquery.cep.metamodels.cep.CepFactory
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern
@@ -78,6 +77,9 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 	 *            <code>true</code>.
 	 */
 	def dispatch void infer(EventModel element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+		if(element==null || element.packagedModel==null || element.packagedModel.modelElements.empty){
+			return
+		}
 		var patterns = element.packagedModel.modelElements.filter[e|(e instanceof AtomicEventPattern)]
 		patterns.generateAtomicEventClasses(acceptor)
 		patterns.generateAtomicEventPatterns(acceptor)

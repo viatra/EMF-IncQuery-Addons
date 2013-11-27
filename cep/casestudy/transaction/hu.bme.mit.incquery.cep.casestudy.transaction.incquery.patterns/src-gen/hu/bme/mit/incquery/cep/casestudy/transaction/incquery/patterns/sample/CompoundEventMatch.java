@@ -9,25 +9,25 @@ import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestCompoundEvent pattern, 
- * to be used in conjunction with {@link LatestCompoundEventMatcher}.
+ * Pattern-specific match representation of the hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.compoundEvent pattern, 
+ * to be used in conjunction with {@link CompoundEventMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
  * usable to represent a match of the pattern in the result of a query, 
  * or to specify the bound (fixed) input parameters when issuing a query.
  * 
- * @see LatestCompoundEventMatcher
- * @see LatestCompoundEventProcessor
+ * @see CompoundEventMatcher
+ * @see CompoundEventProcessor
  * 
  */
 @SuppressWarnings("all")
-public abstract class LatestCompoundEventMatch extends BasePatternMatch {
+public abstract class CompoundEventMatch extends BasePatternMatch {
   private CompoundTransactionEvent fE;
   
   private static List<String> parameterNames = makeImmutableList("e");
   
-  private LatestCompoundEventMatch(final CompoundTransactionEvent pE) {
+  private CompoundEventMatch(final CompoundTransactionEvent pE) {
     this.fE = pE;
     
   }
@@ -63,13 +63,13 @@ public abstract class LatestCompoundEventMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestCompoundEvent";
+    return "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.compoundEvent";
     
   }
   
   @Override
   public List<String> parameterNames() {
-    return LatestCompoundEventMatch.parameterNames;
+    return CompoundEventMatch.parameterNames;
     
   }
   
@@ -100,7 +100,7 @@ public abstract class LatestCompoundEventMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (!(obj instanceof LatestCompoundEventMatch)) { // this should be infrequent				
+    if (!(obj instanceof CompoundEventMatch)) { // this should be infrequent				
     	if (obj == null)
     		return false;
     	if (!(obj instanceof IPatternMatch))
@@ -110,7 +110,7 @@ public abstract class LatestCompoundEventMatch extends BasePatternMatch {
     		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
     }
-    LatestCompoundEventMatch other = (LatestCompoundEventMatch) obj;
+    CompoundEventMatch other = (CompoundEventMatch) obj;
     if (fE == null) {if (other.fE != null) return false;}
     else if (!fE.equals(other.fE)) return false;
     return true;
@@ -119,7 +119,7 @@ public abstract class LatestCompoundEventMatch extends BasePatternMatch {
   @Override
   public Pattern pattern() {
     try {
-    	return LatestCompoundEventMatcher.querySpecification().getPattern();
+    	return CompoundEventMatcher.querySpecification().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);
@@ -128,7 +128,7 @@ public abstract class LatestCompoundEventMatch extends BasePatternMatch {
   }
   
   @SuppressWarnings("all")
-  static final class Mutable extends LatestCompoundEventMatch {
+  static final class Mutable extends CompoundEventMatch {
     Mutable(final CompoundTransactionEvent pE) {
       super(pE);
       
@@ -142,7 +142,7 @@ public abstract class LatestCompoundEventMatch extends BasePatternMatch {
   
   
   @SuppressWarnings("all")
-  static final class Immutable extends LatestCompoundEventMatch {
+  static final class Immutable extends CompoundEventMatch {
     Immutable(final CompoundTransactionEvent pE) {
       super(pE);
       

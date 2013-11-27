@@ -19,11 +19,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="ModelElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EventPattern" eSuperTypes="#//ModelElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractAtomicEventPattern" eSuperTypes="#//EventPattern">
+  <eClassifiers xsi:type="ecore:EClass" name="EventPattern" eSuperTypes="#//ModelElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" eType="#//TypedParameterList"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractAtomicEventPattern" eSuperTypes="#//EventPattern"/>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicEventPattern" eSuperTypes="#//AbstractAtomicEventPattern">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Source"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="staticBindings" eType="ecore:EClass ../../../../../../../../org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
@@ -35,8 +35,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iqChangeType" eType="#//IQPatternChangeType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComplexEventPattern" eSuperTypes="#//EventPattern">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" eType="#//EventPatternParameterList"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="complexEventExpression"
         eType="#//ComplexEventExpression" containment="true"/>
@@ -82,7 +80,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventTypedParameterWithMultiplicity"
       eSuperTypes="#//FollowerEventStructure">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eventPattern" eType="#//EventTypedParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventPattern" eType="#//EventPattern"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameterList" eType="#//PatternCallParameterList"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="multiplicity" eType="#//Multiplicity"

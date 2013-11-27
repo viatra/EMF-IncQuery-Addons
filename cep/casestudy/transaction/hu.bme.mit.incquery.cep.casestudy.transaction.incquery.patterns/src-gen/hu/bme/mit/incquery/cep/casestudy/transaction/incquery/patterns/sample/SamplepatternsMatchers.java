@@ -1,9 +1,9 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestCompoundEventMatcher;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentAMatcher;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentBMatcher;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentCMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentB_AppearedMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentC_AppearedMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.CompoundEventMatcher;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
@@ -16,19 +16,19 @@ public final class SamplepatternsMatchers {
     
   }
   
-  public LatestEventComponentBMatcher getLatestEventComponentBMatcher() throws IncQueryException {
-    return LatestEventComponentBMatcher.on(engine);
+  public CompoundEventMatcher getCompoundEventMatcher() throws IncQueryException {
+    return CompoundEventMatcher.on(engine);
   }
   
-  public LatestEventComponentAMatcher getLatestEventComponentAMatcher() throws IncQueryException {
-    return LatestEventComponentAMatcher.on(engine);
+  public ComponentC_AppearedMatcher getComponentC_AppearedMatcher() throws IncQueryException {
+    return ComponentC_AppearedMatcher.on(engine);
   }
   
-  public LatestCompoundEventMatcher getLatestCompoundEventMatcher() throws IncQueryException {
-    return LatestCompoundEventMatcher.on(engine);
+  public ComponentB_AppearedMatcher getComponentB_AppearedMatcher() throws IncQueryException {
+    return ComponentB_AppearedMatcher.on(engine);
   }
   
-  public LatestEventComponentCMatcher getLatestEventComponentCMatcher() throws IncQueryException {
-    return LatestEventComponentCMatcher.on(engine);
+  public ComponentA_AppearedMatcher getComponentA_AppearedMatcher() throws IncQueryException {
+    return ComponentA_AppearedMatcher.on(engine);
   }
 }

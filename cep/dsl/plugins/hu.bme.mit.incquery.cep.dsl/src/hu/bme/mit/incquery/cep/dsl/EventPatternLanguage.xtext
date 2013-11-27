@@ -56,7 +56,7 @@ IQPatternEventPattern:
 ;
 
 ComplexEventPattern:
-	'ComplexEvent' name=ID '('parameters=EventPatternParameterList?')' '{'
+	'ComplexEvent' name=ID '('parameters=TypedParameterList?')' '{'
 		('priority'':' priority=INT)?
 		('definition'':'complexEventExpression=ComplexEventExpression)?
 	'}'
@@ -120,7 +120,7 @@ Timewindow:
 ;
 
 EventTypedParameterWithMultiplicity:
-	eventPattern=[EventTypedParameter]('('parameterList=PatternCallParameterList?')')? (multiplicity=Multiplicity)?
+	eventPattern=[EventPattern]('('parameterList=PatternCallParameterList?')')? (multiplicity=Multiplicity)?
 ;
 
 PatternCallParameterList:

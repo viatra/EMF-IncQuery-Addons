@@ -1355,7 +1355,7 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID parameters=EventPatternParameterList? priority=INT? complexEventExpression=ComplexEventExpression?)
+	 *     (name=ID parameters=TypedParameterList? priority=INT? complexEventExpression=ComplexEventExpression?)
 	 */
 	protected void sequence_ComplexEventPattern(EObject context, ComplexEventPattern semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1389,7 +1389,7 @@ public class EventPatternLanguageSemanticSequencer extends XbaseSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (eventPattern=[EventTypedParameter|ID] parameterList=PatternCallParameterList? multiplicity=Multiplicity?)
+	 *     (eventPattern=[EventPattern|ID] parameterList=PatternCallParameterList? multiplicity=Multiplicity?)
 	 */
 	protected void sequence_EventTypedParameterWithMultiplicity(EObject context, EventTypedParameterWithMultiplicity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

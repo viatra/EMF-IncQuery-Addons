@@ -26,10 +26,10 @@
     <genClasses ecoreClass="EventPatternLanguage.ecore#//ModelElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//ModelElement/name"/>
     </genClasses>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//EventPattern"/>
-    <genClasses ecoreClass="EventPatternLanguage.ecore#//AbstractAtomicEventPattern">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//AbstractAtomicEventPattern/parameters"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//EventPattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//EventPattern/parameters"/>
     </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//AbstractAtomicEventPattern"/>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//AtomicEventPattern">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//AtomicEventPattern/source"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//AtomicEventPattern/staticBindings"/>
@@ -39,7 +39,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//IQPatternEventPattern/iqChangeType"/>
     </genClasses>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//ComplexEventPattern">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//ComplexEventPattern/parameters"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//ComplexEventPattern/priority"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventPatternLanguage.ecore#//ComplexEventPattern/complexEventExpression"/>
     </genClasses>

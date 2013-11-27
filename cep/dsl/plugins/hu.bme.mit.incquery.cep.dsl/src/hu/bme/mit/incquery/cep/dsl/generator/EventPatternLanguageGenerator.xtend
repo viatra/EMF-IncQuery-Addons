@@ -6,6 +6,7 @@ package hu.bme.mit.incquery.cep.dsl.generator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEventPattern
 
 /**
  * Generates code from your model files on save.
@@ -15,10 +16,10 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 class EventPatternLanguageGenerator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
+		fsa.generateFile('greetings.txt', 'People to greet: ' + 
+			resource.allContents
+				.filter(typeof(IQPatternEventPattern))
+				.map[name]
+				.join(', '))
 	}
 }

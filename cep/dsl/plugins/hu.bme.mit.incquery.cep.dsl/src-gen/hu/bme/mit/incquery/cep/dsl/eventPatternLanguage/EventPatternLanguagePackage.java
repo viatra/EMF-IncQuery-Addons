@@ -207,13 +207,22 @@ public interface EventPatternLanguagePackage extends EPackage
   int EVENT_PATTERN__NAME = MODEL_ELEMENT__NAME;
 
   /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT_PATTERN__PARAMETERS = MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Event Pattern</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_PATTERN_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 0;
+  int EVENT_PATTERN_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.AbstractAtomicEventPatternImpl <em>Abstract Atomic Event Pattern</em>}' class.
@@ -241,7 +250,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSTRACT_ATOMIC_EVENT_PATTERN__PARAMETERS = EVENT_PATTERN_FEATURE_COUNT + 0;
+  int ABSTRACT_ATOMIC_EVENT_PATTERN__PARAMETERS = EVENT_PATTERN__PARAMETERS;
 
   /**
    * The number of structural features of the '<em>Abstract Atomic Event Pattern</em>' class.
@@ -250,7 +259,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSTRACT_ATOMIC_EVENT_PATTERN_FEATURE_COUNT = EVENT_PATTERN_FEATURE_COUNT + 1;
+  int ABSTRACT_ATOMIC_EVENT_PATTERN_FEATURE_COUNT = EVENT_PATTERN_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.AtomicEventPatternImpl <em>Atomic Event Pattern</em>}' class.
@@ -388,7 +397,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPLEX_EVENT_PATTERN__PARAMETERS = EVENT_PATTERN_FEATURE_COUNT + 0;
+  int COMPLEX_EVENT_PATTERN__PARAMETERS = EVENT_PATTERN__PARAMETERS;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -397,7 +406,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPLEX_EVENT_PATTERN__PRIORITY = EVENT_PATTERN_FEATURE_COUNT + 1;
+  int COMPLEX_EVENT_PATTERN__PRIORITY = EVENT_PATTERN_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Complex Event Expression</b></em>' containment reference.
@@ -406,7 +415,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION = EVENT_PATTERN_FEATURE_COUNT + 2;
+  int COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION = EVENT_PATTERN_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Complex Event Pattern</em>' class.
@@ -415,7 +424,7 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPLEX_EVENT_PATTERN_FEATURE_COUNT = EVENT_PATTERN_FEATURE_COUNT + 3;
+  int COMPLEX_EVENT_PATTERN_FEATURE_COUNT = EVENT_PATTERN_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.RuleImpl <em>Rule</em>}' class.
@@ -1733,6 +1742,17 @@ public interface EventPatternLanguagePackage extends EPackage
   EClass getEventPattern();
 
   /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameters</em>'.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern#getParameters()
+   * @see #getEventPattern()
+   * @generated
+   */
+  EReference getEventPattern_Parameters();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AbstractAtomicEventPattern <em>Abstract Atomic Event Pattern</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1741,17 +1761,6 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    */
   EClass getAbstractAtomicEventPattern();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AbstractAtomicEventPattern#getParameters <em>Parameters</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Parameters</em>'.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AbstractAtomicEventPattern#getParameters()
-   * @see #getAbstractAtomicEventPattern()
-   * @generated
-   */
-  EReference getAbstractAtomicEventPattern_Parameters();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern <em>Atomic Event Pattern</em>}'.
@@ -1826,17 +1835,6 @@ public interface EventPatternLanguagePackage extends EPackage
    * @generated
    */
   EClass getComplexEventPattern();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern#getParameters <em>Parameters</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Parameters</em>'.
-   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern#getParameters()
-   * @see #getComplexEventPattern()
-   * @generated
-   */
-  EReference getComplexEventPattern_Parameters();
 
   /**
    * Returns the meta object for the attribute '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern#getPriority <em>Priority</em>}'.
@@ -2803,6 +2801,14 @@ public interface EventPatternLanguagePackage extends EPackage
     EClass EVENT_PATTERN = eINSTANCE.getEventPattern();
 
     /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EVENT_PATTERN__PARAMETERS = eINSTANCE.getEventPattern_Parameters();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.AbstractAtomicEventPatternImpl <em>Abstract Atomic Event Pattern</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2811,14 +2817,6 @@ public interface EventPatternLanguagePackage extends EPackage
      * @generated
      */
     EClass ABSTRACT_ATOMIC_EVENT_PATTERN = eINSTANCE.getAbstractAtomicEventPattern();
-
-    /**
-     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ABSTRACT_ATOMIC_EVENT_PATTERN__PARAMETERS = eINSTANCE.getAbstractAtomicEventPattern_Parameters();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.impl.AtomicEventPatternImpl <em>Atomic Event Pattern</em>}' class.
@@ -2881,14 +2879,6 @@ public interface EventPatternLanguagePackage extends EPackage
      * @generated
      */
     EClass COMPLEX_EVENT_PATTERN = eINSTANCE.getComplexEventPattern();
-
-    /**
-     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPLEX_EVENT_PATTERN__PARAMETERS = eINSTANCE.getComplexEventPattern_Parameters();
 
     /**
      * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.

@@ -421,32 +421,6 @@ finally {
 
 
 
-// Entry rule entryRuleEventPatternParameterList
-entryRuleEventPatternParameterList 
-:
-{ before(grammarAccess.getEventPatternParameterListRule()); }
-	 ruleEventPatternParameterList
-{ after(grammarAccess.getEventPatternParameterListRule()); } 
-	 EOF 
-;
-
-// Rule EventPatternParameterList
-ruleEventPatternParameterList
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getEventPatternParameterListAccess().getGroup()); }
-(rule__EventPatternParameterList__Group__0)
-{ after(grammarAccess.getEventPatternParameterListAccess().getGroup()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 
 
 // Entry rule entryRuleEventTypedParameter
@@ -7271,161 +7245,6 @@ finally {
 
 
 
-
-
-
-
-rule__EventPatternParameterList__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__EventPatternParameterList__Group__0__Impl
-	rule__EventPatternParameterList__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__EventPatternParameterList__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getEventPatternParameterListAccess().getEventPatternParameterListAction_0()); }
-(
-
-)
-{ after(grammarAccess.getEventPatternParameterListAccess().getEventPatternParameterListAction_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__EventPatternParameterList__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__EventPatternParameterList__Group__1__Impl
-	rule__EventPatternParameterList__Group__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__EventPatternParameterList__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getEventPatternParameterListAccess().getParametersAssignment_1()); }
-(rule__EventPatternParameterList__ParametersAssignment_1)
-{ after(grammarAccess.getEventPatternParameterListAccess().getParametersAssignment_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__EventPatternParameterList__Group__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__EventPatternParameterList__Group__2__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__EventPatternParameterList__Group__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getEventPatternParameterListAccess().getGroup_2()); }
-(rule__EventPatternParameterList__Group_2__0)*
-{ after(grammarAccess.getEventPatternParameterListAccess().getGroup_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-
-
-rule__EventPatternParameterList__Group_2__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__EventPatternParameterList__Group_2__0__Impl
-	rule__EventPatternParameterList__Group_2__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__EventPatternParameterList__Group_2__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getEventPatternParameterListAccess().getCommaSpaceKeyword_2_0()); }
-
-	', ' 
-
-{ after(grammarAccess.getEventPatternParameterListAccess().getCommaSpaceKeyword_2_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__EventPatternParameterList__Group_2__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__EventPatternParameterList__Group_2__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__EventPatternParameterList__Group_2__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getEventPatternParameterListAccess().getParametersAssignment_2_1()); }
-(rule__EventPatternParameterList__ParametersAssignment_2_1)
-{ after(grammarAccess.getEventPatternParameterListAccess().getParametersAssignment_2_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
 
 
 
@@ -22020,8 +21839,8 @@ rule__ComplexEventPattern__ParametersAssignment_3
     }
 :
 (
-{ before(grammarAccess.getComplexEventPatternAccess().getParametersEventPatternParameterListParserRuleCall_3_0()); }
-	ruleEventPatternParameterList{ after(grammarAccess.getComplexEventPatternAccess().getParametersEventPatternParameterListParserRuleCall_3_0()); }
+{ before(grammarAccess.getComplexEventPatternAccess().getParametersTypedParameterListParserRuleCall_3_0()); }
+	ruleTypedParameterList{ after(grammarAccess.getComplexEventPatternAccess().getParametersTypedParameterListParserRuleCall_3_0()); }
 )
 
 ;
@@ -22202,35 +22021,7 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__EventPatternParameterList__ParametersAssignment_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getEventPatternParameterListAccess().getParametersEventTypedParameterParserRuleCall_1_0()); }
-	ruleEventTypedParameter{ after(grammarAccess.getEventPatternParameterListAccess().getParametersEventTypedParameterParserRuleCall_1_0()); }
-)
 
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__EventPatternParameterList__ParametersAssignment_2_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getEventPatternParameterListAccess().getParametersEventTypedParameterParserRuleCall_2_1_0()); }
-	ruleEventTypedParameter{ after(grammarAccess.getEventPatternParameterListAccess().getParametersEventTypedParameterParserRuleCall_2_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
 
 rule__EventTypedParameter__NameAssignment_1
     @init {
@@ -22336,12 +22127,12 @@ rule__EventTypedParameterWithMultiplicity__EventPatternAssignment_0
     }
 :
 (
-{ before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventPatternEventTypedParameterCrossReference_0_0()); }
+{ before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventPatternEventPatternCrossReference_0_0()); }
 (
-{ before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventPatternEventTypedParameterIDTerminalRuleCall_0_0_1()); }
-	RULE_ID{ after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventPatternEventTypedParameterIDTerminalRuleCall_0_0_1()); }
+{ before(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventPatternEventPatternIDTerminalRuleCall_0_0_1()); }
+	RULE_ID{ after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventPatternEventPatternIDTerminalRuleCall_0_0_1()); }
 )
-{ after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventPatternEventTypedParameterCrossReference_0_0()); }
+{ after(grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventPatternEventPatternCrossReference_0_0()); }
 )
 
 ;

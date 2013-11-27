@@ -694,9 +694,9 @@ ruleComplexEventPattern returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getComplexEventPatternAccess().getParametersEventPatternParameterListParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getComplexEventPatternAccess().getParametersTypedParameterListParserRuleCall_3_0()); 
 	    }
-		lv_parameters_3_0=ruleEventPatternParameterList		{
+		lv_parameters_3_0=ruleTypedParameterList		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getComplexEventPatternRule());
 	        }
@@ -704,7 +704,7 @@ ruleComplexEventPattern returns [EObject current=null]
        			$current, 
        			"parameters",
         		lv_parameters_3_0, 
-        		"EventPatternParameterList");
+        		"TypedParameterList");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1051,71 +1051,6 @@ ruleTypedParameter returns [EObject current=null]
 
 
 
-// Entry rule entryRuleEventPatternParameterList
-entryRuleEventPatternParameterList returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getEventPatternParameterListRule()); }
-	 iv_ruleEventPatternParameterList=ruleEventPatternParameterList 
-	 { $current=$iv_ruleEventPatternParameterList.current; } 
-	 EOF 
-;
-
-// Rule EventPatternParameterList
-ruleEventPatternParameterList returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getEventPatternParameterListAccess().getEventPatternParameterListAction_0(),
-            $current);
-    }
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getEventPatternParameterListAccess().getParametersEventTypedParameterParserRuleCall_1_0()); 
-	    }
-		lv_parameters_1_0=ruleEventTypedParameter		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getEventPatternParameterListRule());
-	        }
-       		add(
-       			$current, 
-       			"parameters",
-        		lv_parameters_1_0, 
-        		"EventTypedParameter");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(	otherlv_2=', ' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getEventPatternParameterListAccess().getCommaSpaceKeyword_2_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getEventPatternParameterListAccess().getParametersEventTypedParameterParserRuleCall_2_1_0()); 
-	    }
-		lv_parameters_3_0=ruleEventTypedParameter		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getEventPatternParameterListRule());
-	        }
-       		add(
-       			$current, 
-       			"parameters",
-        		lv_parameters_3_0, 
-        		"EventTypedParameter");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))*)
-;
-
-
-
 
 
 // Entry rule entryRuleEventTypedParameter
@@ -1357,7 +1292,7 @@ ruleEventTypedParameterWithMultiplicity returns [EObject current=null]
         }
 	otherlv_0=RULE_ID
 	{
-		newLeafNode(otherlv_0, grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventPatternEventTypedParameterCrossReference_0_0()); 
+		newLeafNode(otherlv_0, grammarAccess.getEventTypedParameterWithMultiplicityAccess().getEventPatternEventPatternCrossReference_0_0()); 
 	}
 
 )

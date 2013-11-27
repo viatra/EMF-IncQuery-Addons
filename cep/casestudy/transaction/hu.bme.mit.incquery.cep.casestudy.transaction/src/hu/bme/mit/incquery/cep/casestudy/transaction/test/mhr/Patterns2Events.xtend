@@ -1,21 +1,17 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.test.mhr
 
 import hu.bme.mit.incquery.cep.api.ICepAdapter
-import hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_IQEvent
-import hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentB_IQEvent
-import hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_IQEvent
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentAMatcher
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentBMatcher
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentCMatcher
+import hu.bme.mit.incquery.cep.api.ParameterizableIncQueryPatternEventInstance
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatcher
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentB_AppearedMatcher
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentC_AppearedMatcher
+import hu.bme.mit.incquery.cep.casestudy.transaction.test.IncQueryTester
 import java.util.Map
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification
 import org.eclipse.viatra2.emf.runtime.rules.EventDrivenTransformationRuleGroup
 import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory
 import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformation
-import hu.bme.mit.incquery.cep.casestudy.transaction.test.IncQueryTester
-import hu.bme.mit.incquery.cep.api.ParameterizableIncQueryPatternEventInstance
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentAMatch
 
 class Patterns2Events {
 	extension EventDrivenTransformationRuleFactory ruleFactory = new EventDrivenTransformationRuleFactory
@@ -32,7 +28,6 @@ class Patterns2Events {
 
 	def getRules() {
 		new EventDrivenTransformationRuleGroup(
-//			createLatestComponentARule,
 			createLatestComponentARuleMapping,
 			createLatestComponentBRuleMapping,
 			createLatestComponentCRuleMapping
@@ -43,17 +38,9 @@ class Patterns2Events {
 		transformation = EventDrivenTransformation.forResource(resourceSet).addRules(rules).create()
 	}
 
-//	val createLatestComponentARule = ruleFactory.createRule().name("latest component A").precondition(
-//		LatestEventComponentAMatcher::querySpecification).action [
-//		var event = new ComponentA_IQEvent(null)
-//		event.setCustomerId(te.customerId)
-//		event.setTransactionId(te.transactionId)
-//		adapter.push(event)
-//	].build
-
 	val createLatestComponentARuleMapping = ruleFactory.createRule().precondition(
-		LatestEventComponentAMatcher::querySpecification).action [
-			for(match : LatestEventComponentAMatcher::on(transformation.iqEngine).allMatches){	
+		ComponentA_AppearedMatcher::querySpecification).action [
+			for(match : ComponentA_AppearedMatcher::on(transformation.iqEngine).allMatches){	
 				var event = new ParameterizableIncQueryPatternEventInstance(null)
 				event.setIncQueryPattern(match)
 				adapter.push(event)
@@ -61,8 +48,8 @@ class Patterns2Events {
 	].build
 	
 	val createLatestComponentBRuleMapping = ruleFactory.createRule().precondition(
-		LatestEventComponentBMatcher::querySpecification).action [
-			for(match : LatestEventComponentBMatcher::on(transformation.iqEngine).allMatches){	
+		ComponentB_AppearedMatcher::querySpecification).action [
+			for(match : ComponentB_AppearedMatcher::on(transformation.iqEngine).allMatches){	
 				var event = new ParameterizableIncQueryPatternEventInstance(null)
 				event.setIncQueryPattern(match)
 				adapter.push(event)
@@ -70,26 +57,11 @@ class Patterns2Events {
 	].build
 	
 	val createLatestComponentCRuleMapping = ruleFactory.createRule().precondition(
-		LatestEventComponentCMatcher::querySpecification).action [
-			for(match : LatestEventComponentCMatcher::on(transformation.iqEngine).allMatches){	
+		ComponentC_AppearedMatcher::querySpecification).action [
+			for(match : ComponentC_AppearedMatcher::on(transformation.iqEngine).allMatches){	
 				var event = new ParameterizableIncQueryPatternEventInstance(null)
 				event.setIncQueryPattern(match)
 				adapter.push(event)
 			}	
 	].build
-
-//	val createLatestComponentBRule = ruleFactory.createRule().name("latest component B").precondition(
-//		LatestEventComponentBMatcher::querySpecification).action [
-//		var event = new ComponentB_IQEvent(null)
-//		event.setTransactionId(te.transactionId)
-//		adapter.push(event)
-//	].build
-//
-//	val createLatestComponentCRule = ruleFactory.createRule().name("latest component C").precondition(
-//		LatestEventComponentCMatcher::querySpecification).action [
-//		var event = new ComponentC_IQEvent(null)
-//		event.setSupplierId(te.supplierId)
-//		event.setTransactionId(te.transactionId)
-//		adapter.push(event)
-//	].build
 }

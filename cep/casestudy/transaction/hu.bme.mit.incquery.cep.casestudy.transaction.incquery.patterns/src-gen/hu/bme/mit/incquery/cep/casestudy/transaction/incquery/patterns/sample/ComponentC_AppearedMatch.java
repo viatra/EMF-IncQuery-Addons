@@ -9,27 +9,27 @@ import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentC pattern, 
- * to be used in conjunction with {@link LatestEventComponentCMatcher}.
+ * Pattern-specific match representation of the hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentC_Appeared pattern, 
+ * to be used in conjunction with {@link ComponentC_AppearedMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
  * usable to represent a match of the pattern in the result of a query, 
  * or to specify the bound (fixed) input parameters when issuing a query.
  * 
- * @see LatestEventComponentCMatcher
- * @see LatestEventComponentCProcessor
+ * @see ComponentC_AppearedMatcher
+ * @see ComponentC_AppearedProcessor
  * 
  */
 @SuppressWarnings("all")
-public abstract class LatestEventComponentCMatch extends BasePatternMatch {
+public abstract class ComponentC_AppearedMatch extends BasePatternMatch {
   private TransactionComponentC fTe;
   
   private String fTId;
   
   private static List<String> parameterNames = makeImmutableList("te", "tId");
   
-  private LatestEventComponentCMatch(final TransactionComponentC pTe, final String pTId) {
+  private ComponentC_AppearedMatch(final TransactionComponentC pTe, final String pTId) {
     this.fTe = pTe;
     this.fTId = pTId;
     
@@ -82,13 +82,13 @@ public abstract class LatestEventComponentCMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentC";
+    return "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentC_Appeared";
     
   }
   
   @Override
   public List<String> parameterNames() {
-    return LatestEventComponentCMatch.parameterNames;
+    return ComponentC_AppearedMatch.parameterNames;
     
   }
   
@@ -121,7 +121,7 @@ public abstract class LatestEventComponentCMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (!(obj instanceof LatestEventComponentCMatch)) { // this should be infrequent				
+    if (!(obj instanceof ComponentC_AppearedMatch)) { // this should be infrequent				
     	if (obj == null)
     		return false;
     	if (!(obj instanceof IPatternMatch))
@@ -131,7 +131,7 @@ public abstract class LatestEventComponentCMatch extends BasePatternMatch {
     		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
     }
-    LatestEventComponentCMatch other = (LatestEventComponentCMatch) obj;
+    ComponentC_AppearedMatch other = (ComponentC_AppearedMatch) obj;
     if (fTe == null) {if (other.fTe != null) return false;}
     else if (!fTe.equals(other.fTe)) return false;
     if (fTId == null) {if (other.fTId != null) return false;}
@@ -142,7 +142,7 @@ public abstract class LatestEventComponentCMatch extends BasePatternMatch {
   @Override
   public Pattern pattern() {
     try {
-    	return LatestEventComponentCMatcher.querySpecification().getPattern();
+    	return ComponentC_AppearedMatcher.querySpecification().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);
@@ -151,7 +151,7 @@ public abstract class LatestEventComponentCMatch extends BasePatternMatch {
   }
   
   @SuppressWarnings("all")
-  static final class Mutable extends LatestEventComponentCMatch {
+  static final class Mutable extends ComponentC_AppearedMatch {
     Mutable(final TransactionComponentC pTe, final String pTId) {
       super(pTe, pTId);
       
@@ -165,7 +165,7 @@ public abstract class LatestEventComponentCMatch extends BasePatternMatch {
   
   
   @SuppressWarnings("all")
-  static final class Immutable extends LatestEventComponentCMatch {
+  static final class Immutable extends ComponentC_AppearedMatch {
     Immutable(final TransactionComponentC pTe, final String pTId) {
       super(pTe, pTId);
       

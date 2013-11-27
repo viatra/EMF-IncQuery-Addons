@@ -398,7 +398,7 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cParametersAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cParametersEventPatternParameterListParserRuleCall_3_0 = (RuleCall)cParametersAssignment_3.eContents().get(0);
+		private final RuleCall cParametersTypedParameterListParserRuleCall_3_0 = (RuleCall)cParametersAssignment_3.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
@@ -415,14 +415,14 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		
 		//ComplexEventPattern:
 		//
-		//	"ComplexEvent" name=ID "(" parameters=EventPatternParameterList? ")" "{" ("priority" ":" priority=INT)? ("definition"
+		//	"ComplexEvent" name=ID "(" parameters=TypedParameterList? ")" "{" ("priority" ":" priority=INT)? ("definition" ":"
 		//
-		//	":" complexEventExpression=ComplexEventExpression)? "}";
+		//	complexEventExpression=ComplexEventExpression)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//"ComplexEvent" name=ID "(" parameters=EventPatternParameterList? ")" "{" ("priority" ":" priority=INT)? ("definition"
+		//"ComplexEvent" name=ID "(" parameters=TypedParameterList? ")" "{" ("priority" ":" priority=INT)? ("definition" ":"
 		//
-		//":" complexEventExpression=ComplexEventExpression)? "}"
+		//complexEventExpression=ComplexEventExpression)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//"ComplexEvent"
@@ -437,11 +437,11 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		//"("
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 
-		//parameters=EventPatternParameterList?
+		//parameters=TypedParameterList?
 		public Assignment getParametersAssignment_3() { return cParametersAssignment_3; }
 
-		//EventPatternParameterList
-		public RuleCall getParametersEventPatternParameterListParserRuleCall_3_0() { return cParametersEventPatternParameterListParserRuleCall_3_0; }
+		//TypedParameterList
+		public RuleCall getParametersTypedParameterListParserRuleCall_3_0() { return cParametersTypedParameterListParserRuleCall_3_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
@@ -875,8 +875,8 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EventTypedParameterWithMultiplicity");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cEventPatternAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cEventPatternEventTypedParameterCrossReference_0_0 = (CrossReference)cEventPatternAssignment_0.eContents().get(0);
-		private final RuleCall cEventPatternEventTypedParameterIDTerminalRuleCall_0_0_1 = (RuleCall)cEventPatternEventTypedParameterCrossReference_0_0.eContents().get(1);
+		private final CrossReference cEventPatternEventPatternCrossReference_0_0 = (CrossReference)cEventPatternAssignment_0.eContents().get(0);
+		private final RuleCall cEventPatternEventPatternIDTerminalRuleCall_0_0_1 = (RuleCall)cEventPatternEventPatternCrossReference_0_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cParameterListAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
@@ -887,20 +887,20 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		
 		//EventTypedParameterWithMultiplicity:
 		//
-		//	eventPattern=[EventTypedParameter] ("(" parameterList=PatternCallParameterList? ")")? multiplicity=Multiplicity?;
+		//	eventPattern=[EventPattern] ("(" parameterList=PatternCallParameterList? ")")? multiplicity=Multiplicity?;
 		public ParserRule getRule() { return rule; }
 
-		//eventPattern=[EventTypedParameter] ("(" parameterList=PatternCallParameterList? ")")? multiplicity=Multiplicity?
+		//eventPattern=[EventPattern] ("(" parameterList=PatternCallParameterList? ")")? multiplicity=Multiplicity?
 		public Group getGroup() { return cGroup; }
 
-		//eventPattern=[EventTypedParameter]
+		//eventPattern=[EventPattern]
 		public Assignment getEventPatternAssignment_0() { return cEventPatternAssignment_0; }
 
-		//[EventTypedParameter]
-		public CrossReference getEventPatternEventTypedParameterCrossReference_0_0() { return cEventPatternEventTypedParameterCrossReference_0_0; }
+		//[EventPattern]
+		public CrossReference getEventPatternEventPatternCrossReference_0_0() { return cEventPatternEventPatternCrossReference_0_0; }
 
 		//ID
-		public RuleCall getEventPatternEventTypedParameterIDTerminalRuleCall_0_0_1() { return cEventPatternEventTypedParameterIDTerminalRuleCall_0_0_1; }
+		public RuleCall getEventPatternEventPatternIDTerminalRuleCall_0_0_1() { return cEventPatternEventPatternIDTerminalRuleCall_0_0_1; }
 
 		//("(" parameterList=PatternCallParameterList? ")")?
 		public Group getGroup_1() { return cGroup_1; }
@@ -2104,9 +2104,9 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 	//ComplexEventPattern:
 	//
-	//	"ComplexEvent" name=ID "(" parameters=EventPatternParameterList? ")" "{" ("priority" ":" priority=INT)? ("definition"
+	//	"ComplexEvent" name=ID "(" parameters=TypedParameterList? ")" "{" ("priority" ":" priority=INT)? ("definition" ":"
 	//
-	//	":" complexEventExpression=ComplexEventExpression)? "}";
+	//	complexEventExpression=ComplexEventExpression)? "}";
 	public ComplexEventPatternElements getComplexEventPatternAccess() {
 		return (pComplexEventPattern != null) ? pComplexEventPattern : (pComplexEventPattern = new ComplexEventPatternElements());
 	}
@@ -2234,7 +2234,7 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 	//EventTypedParameterWithMultiplicity:
 	//
-	//	eventPattern=[EventTypedParameter] ("(" parameterList=PatternCallParameterList? ")")? multiplicity=Multiplicity?;
+	//	eventPattern=[EventPattern] ("(" parameterList=PatternCallParameterList? ")")? multiplicity=Multiplicity?;
 	public EventTypedParameterWithMultiplicityElements getEventTypedParameterWithMultiplicityAccess() {
 		return (pEventTypedParameterWithMultiplicity != null) ? pEventTypedParameterWithMultiplicity : (pEventTypedParameterWithMultiplicity = new EventTypedParameterWithMultiplicityElements());
 	}

@@ -32,12 +32,12 @@ public interface EventTypedParameterWithMultiplicity extends FollowerEventStruct
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Event Pattern</em>' reference.
-   * @see #setEventPattern(EventTypedParameter)
+   * @see #setEventPattern(EventPattern)
    * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage#getEventTypedParameterWithMultiplicity_EventPattern()
    * @model
    * @generated
    */
-  EventTypedParameter getEventPattern();
+  EventPattern getEventPattern();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity#getEventPattern <em>Event Pattern</em>}' reference.
@@ -47,7 +47,7 @@ public interface EventTypedParameterWithMultiplicity extends FollowerEventStruct
    * @see #getEventPattern()
    * @generated
    */
-  void setEventPattern(EventTypedParameter value);
+  void setEventPattern(EventPattern value);
 
   /**
    * Returns the value of the '<em><b>Parameter List</b></em>' containment reference.

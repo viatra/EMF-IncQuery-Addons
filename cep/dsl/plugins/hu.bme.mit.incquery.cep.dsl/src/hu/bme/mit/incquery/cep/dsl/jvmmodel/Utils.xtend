@@ -115,13 +115,13 @@ class Utils {
 
 		var eps = expression.eventPatterns
 		for (ep : eps) {
-			eventPatterns.add(ep.eventPattern.type)
+			eventPatterns.add(ep.eventPattern)
 		}
 
 		var fexpressions = expression.followerExpressions
 		for (fe : fexpressions) {
 			eventPatterns.add(
-				((fe.eventPattern as EventTypedParameterWithMultiplicity).eventPattern.type as EventPattern))
+				((fe.eventPattern as EventTypedParameterWithMultiplicity).eventPattern as EventPattern))
 		}
 
 		eventPatterns
@@ -132,7 +132,7 @@ class Utils {
 
 		var eps = expression.eventPatterns
 		for (ep : eps) {
-			eventPatterns.add((ep.eventPattern.type as EventPattern))
+			eventPatterns.add((ep.eventPattern as EventPattern))
 		}
 
 		eventPatterns
@@ -176,7 +176,7 @@ class Utils {
 		for (comEvent : params) {
 			appendable.append(
 				'''
-					if(event instanceof «comEvent.eventPattern.type.getFqn(AtomicPatternFqnPurpose.EVENT)»){
+					if(event instanceof «comEvent.eventPattern.getFqn(AtomicPatternFqnPurpose.EVENT)»){
 				''').append(
 				'''
 				«referClass(appendable, ctx, Map, ctx.newTypeRef("String"), ctx.newTypeRef("Object"))»''').append(
@@ -210,7 +210,7 @@ class Utils {
 			var currentParam = paramList.get(i)
 			if (!currentParam.ignorable) {
 				retVal.append(
-					'''Object value«i» = ((«parameter.eventPattern.type.getFqn(AtomicPatternFqnPurpose.EVENT)») event).getParameter(«i»);
+					'''Object value«i» = ((«parameter.eventPattern.getFqn(AtomicPatternFqnPurpose.EVENT)») event).getParameter(«i»);
 						''')
 				retVal.append(
 					'''params.put("«currentParam.name»", value«i»);

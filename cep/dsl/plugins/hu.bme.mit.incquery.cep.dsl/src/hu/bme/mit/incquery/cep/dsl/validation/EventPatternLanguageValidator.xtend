@@ -61,7 +61,7 @@ class EventPatternLanguageValidator extends AbstractEventPatternLanguageValidato
 
 		var parameterList = eventTypedParameterWithMultiplicity.parameterList
 		var eventPatternParameter = eventTypedParameterWithMultiplicity.eventPattern
-		var patternParameterNumber = getParameterNumber(eventPatternParameter.type)
+		var patternParameterNumber = getParameterNumber(eventPatternParameter)
 
 		if (parameterList.parameters.empty && patternParameterNumber != 0) {
 			error("Pattern call parameters must be specified!",

@@ -1,8 +1,8 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.LatestEventComponentBMatch;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.LatestEventComponentBQuerySpecification;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentB_AppearedMatch;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.ComponentB_AppearedQuerySpecification;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,36 +16,36 @@ import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
- * Generated pattern matcher API of the hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.latestEventComponentB pattern, 
+ * Generated pattern matcher API of the hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentB_Appeared pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)}, 
  * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
  * 
- * <p>Matches of the pattern will be represented as {@link LatestEventComponentBMatch}.
+ * <p>Matches of the pattern will be represented as {@link ComponentB_AppearedMatch}.
  * 
  * <p>Original source:
  * <code><pre>
- * pattern latestEventComponentB(te, tId){
+ * pattern componentB_Appeared(te, tId){
  * 	TransactionModel.latestComponentEvent(_, te);
  * 	TransactionComponentB.transactionId(te, tId);
  * }
  * </pre></code>
  * 
- * @see LatestEventComponentBMatch
- * @see LatestEventComponentBProcessor
- * @see LatestEventComponentBQuerySpecification
+ * @see ComponentB_AppearedMatch
+ * @see ComponentB_AppearedProcessor
+ * @see ComponentB_AppearedQuerySpecification
  * 
  */
 @SuppressWarnings("all")
-public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventComponentBMatch> {
+public class ComponentB_AppearedMatcher extends BaseMatcher<ComponentB_AppearedMatch> {
   /**
    * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IQuerySpecification<LatestEventComponentBMatcher> querySpecification() throws IncQueryException {
-    return LatestEventComponentBQuerySpecification.instance();
+  public static IQuerySpecification<ComponentB_AppearedMatcher> querySpecification() throws IncQueryException {
+    return ComponentB_AppearedQuerySpecification.instance();
   }
   
   /**
@@ -56,11 +56,11 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
    * @throws IncQueryException if an error occurs during pattern matcher creation
    * 
    */
-  public static LatestEventComponentBMatcher on(final IncQueryEngine engine) throws IncQueryException {
+  public static ComponentB_AppearedMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    LatestEventComponentBMatcher matcher = engine.getExistingMatcher(querySpecification());
+    ComponentB_AppearedMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
-    	matcher = new LatestEventComponentBMatcher(engine);
+    	matcher = new ComponentB_AppearedMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it
     } 	
     return matcher;
@@ -83,7 +83,7 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
    * 
    */
   @Deprecated
-  public LatestEventComponentBMatcher(final Notifier emfRoot) throws IncQueryException {
+  public ComponentB_AppearedMatcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngine.on(emfRoot));
   }
   
@@ -97,7 +97,7 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
    * 
    */
   @Deprecated
-  public LatestEventComponentBMatcher(final IncQueryEngine engine) throws IncQueryException {
+  public ComponentB_AppearedMatcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }
   
@@ -105,10 +105,10 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
    * @param pTId the fixed value of pattern parameter tId, or null if not bound.
-   * @return matches represented as a LatestEventComponentBMatch object.
+   * @return matches represented as a ComponentB_AppearedMatch object.
    * 
    */
-  public Collection<LatestEventComponentBMatch> getAllMatches(final TransactionComponentB pTe, final String pTId) {
+  public Collection<ComponentB_AppearedMatch> getAllMatches(final TransactionComponentB pTe, final String pTId) {
     return rawGetAllMatches(new Object[]{pTe, pTId});
   }
   
@@ -117,10 +117,10 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
    * @param pTId the fixed value of pattern parameter tId, or null if not bound.
-   * @return a match represented as a LatestEventComponentBMatch object, or null if no match is found.
+   * @return a match represented as a ComponentB_AppearedMatch object, or null if no match is found.
    * 
    */
-  public LatestEventComponentBMatch getOneArbitraryMatch(final TransactionComponentB pTe, final String pTId) {
+  public ComponentB_AppearedMatch getOneArbitraryMatch(final TransactionComponentB pTe, final String pTId) {
     return rawGetOneArbitraryMatch(new Object[]{pTe, pTId});
   }
   
@@ -154,7 +154,7 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final TransactionComponentB pTe, final String pTId, final IMatchProcessor<? super LatestEventComponentBMatch> processor) {
+  public void forEachMatch(final TransactionComponentB pTe, final String pTId, final IMatchProcessor<? super ComponentB_AppearedMatch> processor) {
     rawForEachMatch(new Object[]{pTe, pTId}, processor);
   }
   
@@ -167,7 +167,7 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final TransactionComponentB pTe, final String pTId, final IMatchProcessor<? super LatestEventComponentBMatch> processor) {
+  public boolean forOneArbitraryMatch(final TransactionComponentB pTe, final String pTId, final IMatchProcessor<? super ComponentB_AppearedMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pTe, pTId}, processor);
   }
   
@@ -185,7 +185,7 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
    * 
    */
   @Deprecated
-  public DeltaMonitor<LatestEventComponentBMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final TransactionComponentB pTe, final String pTId) {
+  public DeltaMonitor<ComponentB_AppearedMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final TransactionComponentB pTe, final String pTId) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pTe, pTId});
   }
   
@@ -198,8 +198,8 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
    * @return the (partial) match object.
    * 
    */
-  public LatestEventComponentBMatch newMatch(final TransactionComponentB pTe, final String pTId) {
-    return new LatestEventComponentBMatch.Immutable(pTe, pTId);
+  public ComponentB_AppearedMatch newMatch(final TransactionComponentB pTe, final String pTId) {
+    return new ComponentB_AppearedMatch.Immutable(pTe, pTId);
     
   }
   
@@ -228,7 +228,7 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<TransactionComponentB> getAllValuesOfte(final LatestEventComponentBMatch partialMatch) {
+  public Set<TransactionComponentB> getAllValuesOfte(final ComponentB_AppearedMatch partialMatch) {
     return rawAccumulateAllValuesOfte(partialMatch.toArray());
   }
   
@@ -266,7 +266,7 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOftId(final LatestEventComponentBMatch partialMatch) {
+  public Set<String> getAllValuesOftId(final ComponentB_AppearedMatch partialMatch) {
     return rawAccumulateAllValuesOftId(partialMatch.toArray());
   }
   
@@ -280,9 +280,9 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
   }
   
   @Override
-  protected LatestEventComponentBMatch tupleToMatch(final Tuple t) {
+  protected ComponentB_AppearedMatch tupleToMatch(final Tuple t) {
     try {
-    	return new LatestEventComponentBMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB) t.get(POSITION_TE), (java.lang.String) t.get(POSITION_TID));	
+    	return new ComponentB_AppearedMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB) t.get(POSITION_TE), (java.lang.String) t.get(POSITION_TID));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -290,9 +290,9 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
   }
   
   @Override
-  protected LatestEventComponentBMatch arrayToMatch(final Object[] match) {
+  protected ComponentB_AppearedMatch arrayToMatch(final Object[] match) {
     try {
-    	return new LatestEventComponentBMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB) match[POSITION_TE], (java.lang.String) match[POSITION_TID]);
+    	return new ComponentB_AppearedMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB) match[POSITION_TE], (java.lang.String) match[POSITION_TID]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -300,9 +300,9 @@ public class LatestEventComponentBMatcher extends BaseMatcher<LatestEventCompone
   }
   
   @Override
-  protected LatestEventComponentBMatch arrayToMatchMutable(final Object[] match) {
+  protected ComponentB_AppearedMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new LatestEventComponentBMatch.Mutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB) match[POSITION_TE], (java.lang.String) match[POSITION_TID]);
+    	return new ComponentB_AppearedMatch.Mutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB) match[POSITION_TE], (java.lang.String) match[POSITION_TID]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

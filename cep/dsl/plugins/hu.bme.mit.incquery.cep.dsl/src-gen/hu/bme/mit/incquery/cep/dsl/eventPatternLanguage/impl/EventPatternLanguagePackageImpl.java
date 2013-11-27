@@ -576,9 +576,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAbstractAtomicEventPattern()
+  public EReference getEventPattern_Parameters()
   {
-    return abstractAtomicEventPatternEClass;
+    return (EReference)eventPatternEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -586,9 +586,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAbstractAtomicEventPattern_Parameters()
+  public EClass getAbstractAtomicEventPattern()
   {
-    return (EReference)abstractAtomicEventPatternEClass.getEStructuralFeatures().get(0);
+    return abstractAtomicEventPatternEClass;
   }
 
   /**
@@ -666,19 +666,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComplexEventPattern_Parameters()
-  {
-    return (EReference)complexEventPatternEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getComplexEventPattern_Priority()
   {
-    return (EAttribute)complexEventPatternEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)complexEventPatternEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -688,7 +678,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    */
   public EReference getComplexEventPattern_ComplexEventExpression()
   {
-    return (EReference)complexEventPatternEClass.getEStructuralFeatures().get(2);
+    return (EReference)complexEventPatternEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1516,9 +1506,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     createEAttribute(modelElementEClass, MODEL_ELEMENT__NAME);
 
     eventPatternEClass = createEClass(EVENT_PATTERN);
+    createEReference(eventPatternEClass, EVENT_PATTERN__PARAMETERS);
 
     abstractAtomicEventPatternEClass = createEClass(ABSTRACT_ATOMIC_EVENT_PATTERN);
-    createEReference(abstractAtomicEventPatternEClass, ABSTRACT_ATOMIC_EVENT_PATTERN__PARAMETERS);
 
     atomicEventPatternEClass = createEClass(ATOMIC_EVENT_PATTERN);
     createEReference(atomicEventPatternEClass, ATOMIC_EVENT_PATTERN__SOURCE);
@@ -1529,7 +1519,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     createEAttribute(iqPatternEventPatternEClass, IQ_PATTERN_EVENT_PATTERN__IQ_CHANGE_TYPE);
 
     complexEventPatternEClass = createEClass(COMPLEX_EVENT_PATTERN);
-    createEReference(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__PARAMETERS);
     createEAttribute(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__PRIORITY);
     createEReference(complexEventPatternEClass, COMPLEX_EVENT_PATTERN__COMPLEX_EVENT_EXPRESSION);
 
@@ -1724,9 +1713,9 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     initEAttribute(getModelElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventPatternEClass, EventPattern.class, "EventPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEventPattern_Parameters(), this.getTypedParameterList(), null, "parameters", null, 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractAtomicEventPatternEClass, AbstractAtomicEventPattern.class, "AbstractAtomicEventPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAbstractAtomicEventPattern_Parameters(), this.getTypedParameterList(), null, "parameters", null, 0, 1, AbstractAtomicEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atomicEventPatternEClass, AtomicEventPattern.class, "AtomicEventPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAtomicEventPattern_Source(), this.getSource(), null, "source", null, 0, 1, AtomicEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1737,7 +1726,6 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     initEAttribute(getIQPatternEventPattern_IqChangeType(), this.getIQPatternChangeType(), "iqChangeType", null, 0, 1, IQPatternEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(complexEventPatternEClass, ComplexEventPattern.class, "ComplexEventPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComplexEventPattern_Parameters(), this.getEventPatternParameterList(), null, "parameters", null, 0, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getComplexEventPattern_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComplexEventPattern_ComplexEventExpression(), this.getComplexEventExpression(), null, "complexEventExpression", null, 0, 1, ComplexEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1771,7 +1759,7 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     initEAttribute(getTimewindow_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Timewindow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventTypedParameterWithMultiplicityEClass, EventTypedParameterWithMultiplicity.class, "EventTypedParameterWithMultiplicity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEventTypedParameterWithMultiplicity_EventPattern(), this.getEventTypedParameter(), null, "eventPattern", null, 0, 1, EventTypedParameterWithMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEventTypedParameterWithMultiplicity_EventPattern(), this.getEventPattern(), null, "eventPattern", null, 0, 1, EventTypedParameterWithMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEventTypedParameterWithMultiplicity_ParameterList(), this.getPatternCallParameterList(), null, "parameterList", null, 0, 1, EventTypedParameterWithMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEventTypedParameterWithMultiplicity_Multiplicity(), this.getMultiplicity(), null, "multiplicity", null, 0, 1, EventTypedParameterWithMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

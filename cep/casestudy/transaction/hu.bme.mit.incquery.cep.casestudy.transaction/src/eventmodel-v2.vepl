@@ -6,22 +6,22 @@ uses hu.bme.mit.incquery.cep.dsl.examples.actionhandlers.*
 uses hu.bme.mit.incquery.cep.api.evm.*
 
 IQPatternEvent componentA(transactionId : String, customerId : String){
-	iqPatternRef : latestEventComponentA(transactionId)
+	iqPatternRef : componentA_Appeared(transactionId)
 	iqChangeType : NEW_MATCH_FOUND
 }
 
 IQPatternEvent componentB(transactionId : String){
-	iqPatternRef : latestEventComponentB(transactionId)
+	iqPatternRef : componentB_Appeared(transactionId)
 	iqChangeType : NEW_MATCH_FOUND
 }
 
 IQPatternEvent componentC(transactionId : String, supplierId : String){
-	iqPatternRef : latestEventComponentC(transactionId)
+	iqPatternRef : componentC_Appeared(transactionId)
 	iqChangeType : NEW_MATCH_FOUND
 }
 
-ComplexEvent compoundTransactionEvent(a:componentA, b:componentB, c:componentC){
-	definition : (a(tId, cId) -> b(tId) -> c(tId, sId))[5000]
+ComplexEvent compoundTransactionEvent(tId:String, cId:String, sId:String){
+	definition : (componentA(tId, cId) -> componentB(tId) -> componentC(tId, sId))[5000]
 }
 
 Rule r1 {
