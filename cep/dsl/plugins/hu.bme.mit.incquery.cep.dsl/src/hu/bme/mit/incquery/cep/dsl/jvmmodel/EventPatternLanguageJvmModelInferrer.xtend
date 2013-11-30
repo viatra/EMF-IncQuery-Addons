@@ -47,6 +47,10 @@ import org.eclipse.incquery.runtime.evm.api.ActivationLifeCycle
 import org.eclipse.incquery.runtime.api.IPatternMatch
 import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory.EventDrivenTransformationBuilder
 import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformationRule
+import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory
+import org.eclipse.incquery.runtime.api.IMatchProcessor
+import org.eclipse.incquery.runtime.exception.IncQueryException
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternUsage
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -171,46 +175,57 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 				]
 			]
 			
+			val patternsNamespace = model.packagedModel.usages.filter[e|(e instanceof PatternUsage)].head.importedNamespace.replace('*', '')
+		
 			for(p:patterns){
-				val matcher = "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatcher"
-				val match = "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatch"
+				val matcher = patternsNamespace+(p as IQPatternEventPattern).iqPatternRef.iqpattern.name.toFirstUpper+"Matcher" //"hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatcher"
+				val match = patternsNamespace+(p as IQPatternEventPattern).iqPatternRef.iqpattern.name.toFirstUpper+"Match" //"hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatch"
 				val eventClass = p.getFqn(AtomicPatternFqnPurpose.EVENT)
 				
 				
-				members += model.toMethod(p.mappingMethodName, model.newTypeRef(EventDrivenTransformationRule)) [
+				members += model.toMethod(p.mappingMethodName, model.newTypeRef(EventDrivenTransformationRule, model.newTypeRef(match), model.newTypeRef(matcher))) [
 				body=[
-					append(
-					'''
-«««						try{
-«««							«jvmTypesBuilder.newTypeRef(p,EventDrivenTrans)» builder =
-«««								new org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory().createRule();
-«««							builder.precondition(«p.newTypeRef(matcher)».querySpecification());
-«««							
-«««							org.eclipse.incquery.runtime.api.IMatchProcessor<«match»> action = new org.eclipse.incquery.runtime.api.IMatchProcessor<«match»>() {
-«««								public void process(final «match» it) {
-«««									«p.newTypeRef(Collection)»<«match»> allMatches;
-«««									try {
-«««										allMatches = «matcher».on(transformation.getIqEngine()).getAllMatches();
-«««										for («match» match : allMatches) {
-«««											
-«««											«p.newTypeRef(ParameterizableIncQueryPatternEventInstance)» event = new «p.newTypeRef(ParameterizableIncQueryPatternEventInstance)»(null);
-«««											event.setIncQueryPattern(match);
-«««											event.setType(«eventClass».class.getCanonicalName());
-«««											adapter.push(event);
-«««										}
-«««									} catch (IncQueryException e) {
-«««										e.printStackTrace();
-«««									}
-«««								}
-«««							};							
-«««							builder.action(action);
-«««							return builder.build();
-«««						} catch («p.newTypeRef("org.eclipse.incquery.runtime.exception.IncQueryException")» e) {
-«««							e.printStackTrace();
-«««						} catch («p.newTypeRef(InconsistentEventSemanticsException)» e) {
-«««							e.printStackTrace();
-«««						}
-						return null;
+					append('''try{
+					''')
+					.append('''«referClass(it, p, EventDrivenTransformationBuilder, model.newTypeRef(match), model.newTypeRef(matcher))»''').append('''builder = new ''').append('''«referClass(it, p, EventDrivenTransformationRuleFactory)»''').append('''().createRule();
+					''')
+					.append('''		builder.precondition(«matcher».querySpecification());
+					''')
+					.append('''		«referClass(it, p, IMatchProcessor, model.newTypeRef(match))» action = new ''').append('''«referClass(it, p, IMatchProcessor, model.newTypeRef(match))»() {
+						''')
+					.append('''		public void process(final «match» it) {
+						''')
+					.append('''			try {
+						''')
+					.append('''				«referClass(it, p, Collection, model.newTypeRef(match))»''').append('''allMatches = «matcher».on(transformation.getIqEngine()).getAllMatches();
+					''')
+					.append('''				for («match» match : allMatches) {
+					''')
+					.append('''					«referClass(it, p, ParameterizableIncQueryPatternEventInstance)»''').append(''' event = new ParameterizableIncQueryPatternEventInstance(null);
+					''')
+					.append('''					event.setIncQueryPattern(match);
+					''')
+					.append('''					event.setType(«eventClass».class.getCanonicalName());
+					''')
+					.append('''					adapter.push(event);
+					''')
+					.append('''				}
+					''')
+					.append('''		} catch (''').append('''«referClass(it, p, IncQueryException)»''').append(''' e) {
+					''')
+					.append('''			e.printStackTrace();
+					''')
+					.append('''		}
+								}
+							};							
+								builder.action(action);
+								return builder.build();
+							} catch (''').append('''«referClass(it, p, IncQueryException)» e) {
+								e.printStackTrace();
+							} catch (''').append('''«referClass(it, p, InconsistentEventSemanticsException)»''').append(''' e) {
+								e.printStackTrace();
+							}
+							return null;
 					'''
 					)
 				]

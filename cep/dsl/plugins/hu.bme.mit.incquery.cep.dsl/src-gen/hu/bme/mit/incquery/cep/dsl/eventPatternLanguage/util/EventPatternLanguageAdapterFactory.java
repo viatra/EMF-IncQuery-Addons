@@ -90,6 +90,16 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
         return createUsageAdapter();
       }
       @Override
+      public Adapter caseGenericUsage(GenericUsage object)
+      {
+        return createGenericUsageAdapter();
+      }
+      @Override
+      public Adapter casePatternUsage(PatternUsage object)
+      {
+        return createPatternUsageAdapter();
+      }
+      @Override
       public Adapter caseModelElement(ModelElement object)
       {
         return createModelElementAdapter();
@@ -362,6 +372,36 @@ public class EventPatternLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUsageAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.GenericUsage <em>Generic Usage</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.GenericUsage
+   * @generated
+   */
+  public Adapter createGenericUsageAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternUsage <em>Pattern Usage</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternUsage
+   * @generated
+   */
+  public Adapter createPatternUsageAdapter()
   {
     return null;
   }

@@ -50,6 +50,24 @@ public interface EventPatternLanguageFactory extends EFactory
   Usage createUsage();
 
   /**
+   * Returns a new object of class '<em>Generic Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Generic Usage</em>'.
+   * @generated
+   */
+  GenericUsage createGenericUsage();
+
+  /**
+   * Returns a new object of class '<em>Pattern Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pattern Usage</em>'.
+   * @generated
+   */
+  PatternUsage createPatternUsage();
+
+  /**
    * Returns a new object of class '<em>Model Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

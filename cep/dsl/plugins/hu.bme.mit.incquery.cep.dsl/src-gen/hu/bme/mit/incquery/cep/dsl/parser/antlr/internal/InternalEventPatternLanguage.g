@@ -243,18 +243,101 @@ ruleUsage returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getUsageAccess().getGenericUsageParserRuleCall_0()); 
+    }
+    this_GenericUsage_0=ruleGenericUsage
+    { 
+        $current = $this_GenericUsage_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getUsageAccess().getPatternUsageParserRuleCall_1()); 
+    }
+    this_PatternUsage_1=rulePatternUsage
+    { 
+        $current = $this_PatternUsage_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleGenericUsage
+entryRuleGenericUsage returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getGenericUsageRule()); }
+	 iv_ruleGenericUsage=ruleGenericUsage 
+	 { $current=$iv_ruleGenericUsage.current; } 
+	 EOF 
+;
+
+// Rule GenericUsage
+ruleGenericUsage returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
 (	otherlv_0='uses' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getUsageAccess().getUsesKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getGenericUsageAccess().getUsesKeyword_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getUsageAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getGenericUsageAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
 	    }
 		lv_importedNamespace_1_0=ruleQualifiedNameWithWildcard		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getUsageRule());
+	            $current = createModelElementForParent(grammarAccess.getGenericUsageRule());
+	        }
+       		set(
+       			$current, 
+       			"importedNamespace",
+        		lv_importedNamespace_1_0, 
+        		"QualifiedNameWithWildcard");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRulePatternUsage
+entryRulePatternUsage returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPatternUsageRule()); }
+	 iv_rulePatternUsage=rulePatternUsage 
+	 { $current=$iv_rulePatternUsage.current; } 
+	 EOF 
+;
+
+// Rule PatternUsage
+rulePatternUsage returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='uses-patterns' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getPatternUsageAccess().getUsesPatternsKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPatternUsageAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
+	    }
+		lv_importedNamespace_1_0=ruleQualifiedNameWithWildcard		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPatternUsageRule());
 	        }
        		set(
        			$current, 

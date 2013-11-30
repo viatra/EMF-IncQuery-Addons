@@ -93,6 +93,22 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EventPatternLanguagePackage.GENERIC_USAGE:
+      {
+        GenericUsage genericUsage = (GenericUsage)theEObject;
+        T result = caseGenericUsage(genericUsage);
+        if (result == null) result = caseUsage(genericUsage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventPatternLanguagePackage.PATTERN_USAGE:
+      {
+        PatternUsage patternUsage = (PatternUsage)theEObject;
+        T result = casePatternUsage(patternUsage);
+        if (result == null) result = caseUsage(patternUsage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EventPatternLanguagePackage.MODEL_ELEMENT:
       {
         ModelElement modelElement = (ModelElement)theEObject;
@@ -469,6 +485,38 @@ public class EventPatternLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUsage(Usage object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Generic Usage</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Generic Usage</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGenericUsage(GenericUsage object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pattern Usage</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pattern Usage</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePatternUsage(PatternUsage object)
   {
     return null;
   }

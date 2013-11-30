@@ -68,6 +68,8 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
       case EventPatternLanguagePackage.EVENT_MODEL: return createEventModel();
       case EventPatternLanguagePackage.PACKAGED_MODEL: return createPackagedModel();
       case EventPatternLanguagePackage.USAGE: return createUsage();
+      case EventPatternLanguagePackage.GENERIC_USAGE: return createGenericUsage();
+      case EventPatternLanguagePackage.PATTERN_USAGE: return createPatternUsage();
       case EventPatternLanguagePackage.MODEL_ELEMENT: return createModelElement();
       case EventPatternLanguagePackage.EVENT_PATTERN: return createEventPattern();
       case EventPatternLanguagePackage.ABSTRACT_ATOMIC_EVENT_PATTERN: return createAbstractAtomicEventPattern();
@@ -180,6 +182,28 @@ public class EventPatternLanguageFactoryImpl extends EFactoryImpl implements Eve
   {
     UsageImpl usage = new UsageImpl();
     return usage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GenericUsage createGenericUsage()
+  {
+    GenericUsageImpl genericUsage = new GenericUsageImpl();
+    return genericUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PatternUsage createPatternUsage()
+  {
+    PatternUsageImpl patternUsage = new PatternUsageImpl();
+    return patternUsage;
   }
 
   /**

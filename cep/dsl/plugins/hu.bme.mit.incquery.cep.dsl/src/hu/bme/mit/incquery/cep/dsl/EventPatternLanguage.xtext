@@ -20,7 +20,14 @@ DOUBLE returns ecore::EDouble:
 	('-')? INT('.' INT)?;
 
 Usage:
+	GenericUsage | PatternUsage
+;
+
+GenericUsage:
 	'uses' importedNamespace=QualifiedNameWithWildcard;
+	
+PatternUsage:
+	'uses-patterns' importedNamespace=QualifiedNameWithWildcard;
 
 ModelElement:
 	EventPattern | Rule | Source

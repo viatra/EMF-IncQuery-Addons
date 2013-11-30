@@ -23,6 +23,8 @@
     <genClasses ecoreClass="EventPatternLanguage.ecore#//Usage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//Usage/importedNamespace"/>
     </genClasses>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//GenericUsage"/>
+    <genClasses ecoreClass="EventPatternLanguage.ecore#//PatternUsage"/>
     <genClasses ecoreClass="EventPatternLanguage.ecore#//ModelElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventPatternLanguage.ecore#//ModelElement/name"/>
     </genClasses>

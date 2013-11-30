@@ -37,6 +37,7 @@ public class EventPatternLanguageParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getUsageAccess().getAlternatives(), "rule__Usage__Alternatives");
 					put(grammarAccess.getModelElementAccess().getAlternatives(), "rule__ModelElement__Alternatives");
 					put(grammarAccess.getEventPatternAccess().getAlternatives(), "rule__EventPattern__Alternatives");
 					put(grammarAccess.getAbstractAtomicEventPatternAccess().getAlternatives(), "rule__AbstractAtomicEventPattern__Alternatives");
@@ -88,7 +89,8 @@ public class EventPatternLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPackagedModelAccess().getGroup(), "rule__PackagedModel__Group__0");
 					put(grammarAccess.getDOUBLEAccess().getGroup(), "rule__DOUBLE__Group__0");
 					put(grammarAccess.getDOUBLEAccess().getGroup_2(), "rule__DOUBLE__Group_2__0");
-					put(grammarAccess.getUsageAccess().getGroup(), "rule__Usage__Group__0");
+					put(grammarAccess.getGenericUsageAccess().getGroup(), "rule__GenericUsage__Group__0");
+					put(grammarAccess.getPatternUsageAccess().getGroup(), "rule__PatternUsage__Group__0");
 					put(grammarAccess.getAtomicEventPatternAccess().getGroup(), "rule__AtomicEventPattern__Group__0");
 					put(grammarAccess.getAtomicEventPatternAccess().getGroup_6(), "rule__AtomicEventPattern__Group_6__0");
 					put(grammarAccess.getAtomicEventPatternAccess().getGroup_7(), "rule__AtomicEventPattern__Group_7__0");
@@ -291,7 +293,8 @@ public class EventPatternLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPackagedModelAccess().getNameAssignment_1(), "rule__PackagedModel__NameAssignment_1");
 					put(grammarAccess.getPackagedModelAccess().getUsagesAssignment_2(), "rule__PackagedModel__UsagesAssignment_2");
 					put(grammarAccess.getPackagedModelAccess().getModelElementsAssignment_3(), "rule__PackagedModel__ModelElementsAssignment_3");
-					put(grammarAccess.getUsageAccess().getImportedNamespaceAssignment_1(), "rule__Usage__ImportedNamespaceAssignment_1");
+					put(grammarAccess.getGenericUsageAccess().getImportedNamespaceAssignment_1(), "rule__GenericUsage__ImportedNamespaceAssignment_1");
+					put(grammarAccess.getPatternUsageAccess().getImportedNamespaceAssignment_1(), "rule__PatternUsage__ImportedNamespaceAssignment_1");
 					put(grammarAccess.getAtomicEventPatternAccess().getNameAssignment_1(), "rule__AtomicEventPattern__NameAssignment_1");
 					put(grammarAccess.getAtomicEventPatternAccess().getParametersAssignment_3(), "rule__AtomicEventPattern__ParametersAssignment_3");
 					put(grammarAccess.getAtomicEventPatternAccess().getSourceAssignment_6_2(), "rule__AtomicEventPattern__SourceAssignment_6_2");

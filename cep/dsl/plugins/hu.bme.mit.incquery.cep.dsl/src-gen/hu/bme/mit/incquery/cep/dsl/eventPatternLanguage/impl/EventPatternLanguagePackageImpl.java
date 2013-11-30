@@ -24,6 +24,7 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowerExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsExpression;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperator;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.FollowsOperatorNoTW;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.GenericUsage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternChangeType;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEventPattern;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.InnerBranchExpression;
@@ -38,6 +39,7 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PackagedModel;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ParametrizedIncQueryPatternReference;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameter;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternCallParameterList;
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternUsage;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Range;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.RangeFilter;
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule;
@@ -93,6 +95,20 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
    * @generated
    */
   private EClass usageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass genericUsageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass patternUsageEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -539,6 +555,26 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
   public EAttribute getUsage_ImportedNamespace()
   {
     return (EAttribute)usageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGenericUsage()
+  {
+    return genericUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPatternUsage()
+  {
+    return patternUsageEClass;
   }
 
   /**
@@ -1502,6 +1538,10 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     usageEClass = createEClass(USAGE);
     createEAttribute(usageEClass, USAGE__IMPORTED_NAMESPACE);
 
+    genericUsageEClass = createEClass(GENERIC_USAGE);
+
+    patternUsageEClass = createEClass(PATTERN_USAGE);
+
     modelElementEClass = createEClass(MODEL_ELEMENT);
     createEAttribute(modelElementEClass, MODEL_ELEMENT__NAME);
 
@@ -1673,6 +1713,8 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    genericUsageEClass.getESuperTypes().add(this.getUsage());
+    patternUsageEClass.getESuperTypes().add(this.getUsage());
     eventPatternEClass.getESuperTypes().add(this.getModelElement());
     abstractAtomicEventPatternEClass.getESuperTypes().add(this.getEventPattern());
     atomicEventPatternEClass.getESuperTypes().add(this.getAbstractAtomicEventPattern());
@@ -1708,6 +1750,10 @@ public class EventPatternLanguagePackageImpl extends EPackageImpl implements Eve
 
     initEClass(usageEClass, Usage.class, "Usage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getUsage_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Usage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(genericUsageEClass, GenericUsage.class, "GenericUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(patternUsageEClass, PatternUsage.class, "PatternUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(modelElementEClass, ModelElement.class, "ModelElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getModelElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

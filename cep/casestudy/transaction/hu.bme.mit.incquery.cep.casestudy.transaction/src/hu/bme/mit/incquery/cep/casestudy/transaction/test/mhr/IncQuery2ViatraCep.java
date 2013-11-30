@@ -27,6 +27,11 @@ import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTra
 import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformationRule;
 import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.InconsistentEventSemanticsException;
 
+/**
+ * {@link Deprecated} use the generated mapper instead {@link hu.bme.mit.incquery.cep.casestudy.transaction.mapping.IncQuery2ViatraCep}
+ *
+ */
+@Deprecated
 public class IncQuery2ViatraCep {
 
 	private Map<RuleSpecification<?>, Integer> modelHandlers;

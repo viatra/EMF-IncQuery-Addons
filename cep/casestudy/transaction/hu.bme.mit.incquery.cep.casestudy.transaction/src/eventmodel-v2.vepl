@@ -1,7 +1,7 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction
 
 uses hu.bme.mit.incquery.cep.casestudy.transaction.sources.*
-uses hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.*
+uses-patterns hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.*
 uses hu.bme.mit.incquery.cep.dsl.examples.actionhandlers.*
 uses hu.bme.mit.incquery.cep.api.evm.*
 

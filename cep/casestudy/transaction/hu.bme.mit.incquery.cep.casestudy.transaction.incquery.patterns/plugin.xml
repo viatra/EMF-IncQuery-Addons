@@ -33,5 +33,37 @@
             id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.compoundEvent">
       </matcher>
    </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentA_Appeared"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.ComponentA_AppearedQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentA_Appeared">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentB_Appeared"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.ComponentB_AppearedQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentB_Appeared">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentC_Appeared"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.ComponentC_AppearedQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentC_Appeared">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.compoundEvent"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.CompoundEventQuerySpecification$Provider"
+            id="hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.compoundEvent">
+      </matcher>
+   </extension>
 
 </plugin>

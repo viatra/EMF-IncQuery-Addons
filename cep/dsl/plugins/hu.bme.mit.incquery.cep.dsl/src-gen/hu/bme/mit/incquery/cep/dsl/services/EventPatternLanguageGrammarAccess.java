@@ -112,12 +112,33 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 	public class UsageElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Usage");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cGenericUsageParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cPatternUsageParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Usage:
+		//
+		//	GenericUsage | PatternUsage;
+		public ParserRule getRule() { return rule; }
+
+		//GenericUsage | PatternUsage
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//GenericUsage
+		public RuleCall getGenericUsageParserRuleCall_0() { return cGenericUsageParserRuleCall_0; }
+
+		//PatternUsage
+		public RuleCall getPatternUsageParserRuleCall_1() { return cPatternUsageParserRuleCall_1; }
+	}
+
+	public class GenericUsageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GenericUsage");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cUsesKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
 		
-		//Usage:
+		//GenericUsage:
 		//
 		//	"uses" importedNamespace=QualifiedNameWithWildcard;
 		public ParserRule getRule() { return rule; }
@@ -127,6 +148,31 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 		//"uses"
 		public Keyword getUsesKeyword_0() { return cUsesKeyword_0; }
+
+		//importedNamespace=QualifiedNameWithWildcard
+		public Assignment getImportedNamespaceAssignment_1() { return cImportedNamespaceAssignment_1; }
+
+		//QualifiedNameWithWildcard
+		public RuleCall getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0() { return cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0; }
+	}
+
+	public class PatternUsageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PatternUsage");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cUsesPatternsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
+		
+		//PatternUsage:
+		//
+		//	"uses-patterns" importedNamespace=QualifiedNameWithWildcard;
+		public ParserRule getRule() { return rule; }
+
+		//"uses-patterns" importedNamespace=QualifiedNameWithWildcard
+		public Group getGroup() { return cGroup; }
+
+		//"uses-patterns"
+		public Keyword getUsesPatternsKeyword_0() { return cUsesPatternsKeyword_0; }
 
 		//importedNamespace=QualifiedNameWithWildcard
 		public Assignment getImportedNamespaceAssignment_1() { return cImportedNamespaceAssignment_1; }
@@ -1908,6 +1954,8 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 	private PackagedModelElements pPackagedModel;
 	private DOUBLEElements pDOUBLE;
 	private UsageElements pUsage;
+	private GenericUsageElements pGenericUsage;
+	private PatternUsageElements pPatternUsage;
 	private ModelElementElements pModelElement;
 	private EventPatternElements pEventPattern;
 	private AbstractAtomicEventPatternElements pAbstractAtomicEventPattern;
@@ -2028,13 +2076,35 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 	//Usage:
 	//
-	//	"uses" importedNamespace=QualifiedNameWithWildcard;
+	//	GenericUsage | PatternUsage;
 	public UsageElements getUsageAccess() {
 		return (pUsage != null) ? pUsage : (pUsage = new UsageElements());
 	}
 	
 	public ParserRule getUsageRule() {
 		return getUsageAccess().getRule();
+	}
+
+	//GenericUsage:
+	//
+	//	"uses" importedNamespace=QualifiedNameWithWildcard;
+	public GenericUsageElements getGenericUsageAccess() {
+		return (pGenericUsage != null) ? pGenericUsage : (pGenericUsage = new GenericUsageElements());
+	}
+	
+	public ParserRule getGenericUsageRule() {
+		return getGenericUsageAccess().getRule();
+	}
+
+	//PatternUsage:
+	//
+	//	"uses-patterns" importedNamespace=QualifiedNameWithWildcard;
+	public PatternUsageElements getPatternUsageAccess() {
+		return (pPatternUsage != null) ? pPatternUsage : (pPatternUsage = new PatternUsageElements());
+	}
+	
+	public ParserRule getPatternUsageRule() {
+		return getPatternUsageAccess().getRule();
 	}
 
 	//ModelElement:
