@@ -16,6 +16,10 @@ public final class SamplepatternsMatchers {
     
   }
   
+  public ComponentC_AppearedMatcher getComponentC_AppearedMatcher() throws IncQueryException {
+    return ComponentC_AppearedMatcher.on(engine);
+  }
+  
   public ComponentB_AppearedMatcher getComponentB_AppearedMatcher() throws IncQueryException {
     return ComponentB_AppearedMatcher.on(engine);
   }
@@ -26,9 +30,5 @@ public final class SamplepatternsMatchers {
   
   public ComponentA_AppearedMatcher getComponentA_AppearedMatcher() throws IncQueryException {
     return ComponentA_AppearedMatcher.on(engine);
-  }
-  
-  public ComponentC_AppearedMatcher getComponentC_AppearedMatcher() throws IncQueryException {
-    return ComponentC_AppearedMatcher.on(engine);
   }
 }

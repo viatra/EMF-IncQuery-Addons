@@ -48,13 +48,13 @@ public class CompoundTransactionEvent_Pattern extends ParameterizableComplexEven
     	params.put("tId", value0);
     	Object value1 = ((hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_IQEvent) event).getParameter(1);
     	params.put("cId", value1);
-    	return evaluateParamBinding(params);
+    	return evaluateParamBinding(params, event);
     }
     if(event instanceof hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentB_IQEvent){
     Map<String,Object> params = Maps.newHashMap();
     	Object value0 = ((hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentB_IQEvent) event).getParameter(0);
     	params.put("tId", value0);
-    	return evaluateParamBinding(params);
+    	return evaluateParamBinding(params, event);
     }
     if(event instanceof hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_IQEvent){
     Map<String,Object> params = Maps.newHashMap();
@@ -62,7 +62,7 @@ public class CompoundTransactionEvent_Pattern extends ParameterizableComplexEven
     	params.put("tId", value0);
     	Object value1 = ((hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_IQEvent) event).getParameter(1);
     	params.put("sId", value1);
-    	return evaluateParamBinding(params);
+    	return evaluateParamBinding(params, event);
     }
     return true;
   }

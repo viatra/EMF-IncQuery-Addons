@@ -208,7 +208,7 @@ class Utils {
 					''').append(
 				'''
 						«comEvent.evaluationBody»
-						return evaluateParamBinding(params);
+						return evaluateParamBinding(params, event);
 					}
 				''')
 		}
