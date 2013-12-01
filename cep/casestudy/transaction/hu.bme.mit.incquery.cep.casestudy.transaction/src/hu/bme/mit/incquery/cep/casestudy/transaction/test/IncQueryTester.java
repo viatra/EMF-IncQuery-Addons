@@ -52,7 +52,7 @@ public class IncQueryTester {
 		System.out.println("Compound events in model: " + model.getLatestCompoundEvent());
 
 		List<EventType> testSeries = Lists.newArrayList(EventType.A, EventType.B, EventType.C);
-		//List<EventType> testSeries = Lists.newArrayList(EventType.A);
+		// List<EventType> testSeries = Lists.newArrayList(EventType.A);
 
 		for (EventType eventType : testSeries) {
 			Component event = generateEvent(eventType);

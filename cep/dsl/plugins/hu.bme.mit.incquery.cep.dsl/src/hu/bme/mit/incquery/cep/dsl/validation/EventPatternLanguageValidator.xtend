@@ -8,7 +8,6 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternLanguagePackage
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventPatternParameterList
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventTypedParameterWithMultiplicity
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement
@@ -19,6 +18,7 @@ import hu.bme.mit.incquery.cep.dsl.jvmmodel.Utils
 import org.eclipse.xtext.validation.Check
 
 import static extension com.google.common.base.Strings.*
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternUsage
 
 //import org.eclipse.xtext.validation.Check
 /**
@@ -31,6 +31,7 @@ class EventPatternLanguageValidator extends AbstractEventPatternLanguageValidato
 	private static val INVALID_NAME = 'invalidName'
 	private static val INVALID_ARGUMENTS = 'invalidArguments'
 	private static val INVALID_ACTION_IN_RULE = "invalidRuleActions"
+	private static val MISSING_IQPATTERN_USAGE = "missingIqPatternUsage"
 
 	@Inject extension Utils
 
@@ -75,7 +76,6 @@ class EventPatternLanguageValidator extends AbstractEventPatternLanguageValidato
 		}
 	}
 
-	//TODO make the second constraint only a warning
 	@Check
 	def checkRuleActions(Rule rule) {
 		var actionHandler = rule.unwrapActionHandler
@@ -87,7 +87,7 @@ class EventPatternLanguageValidator extends AbstractEventPatternLanguageValidato
 		}
 
 		if (actionHandler != null && action != null) {
-			error("The rule has both an action handler and additional actions defined.",
+			warning("The rule has both an action handler and additional actions defined.",
 				EventPatternLanguagePackage.Literals.MODEL_ELEMENT__NAME, INVALID_ACTION_IN_RULE)
 		}
 	}
@@ -107,9 +107,13 @@ class EventPatternLanguageValidator extends AbstractEventPatternLanguageValidato
 		return parameterList.parameters.size
 	}
 
-	def private int getTypedParamterListSize(EventPatternParameterList parameterList) {
-		if(parameterList == null) return 0
-		if(parameterList.parameters.empty) return 0
-		return parameterList.parameters.size
+	@Check
+	def explicitlyImportedIQPatternPackage(IQPatternEventPattern iqPatternEventPattern) {
+		var packagedModel = (iqPatternEventPattern.eContainer as PackagedModel)
+		if(!(packagedModel.usages.filter[u | u instanceof PatternUsage].size==1)){
+			error("Missing 'uses-patterns' statement for IncQuery patterns.",
+				EventPatternLanguagePackage.Literals.IQ_PATTERN_EVENT_PATTERN__IQ_PATTERN_REF, MISSING_IQPATTERN_USAGE
+			)
+		}
 	}
 }

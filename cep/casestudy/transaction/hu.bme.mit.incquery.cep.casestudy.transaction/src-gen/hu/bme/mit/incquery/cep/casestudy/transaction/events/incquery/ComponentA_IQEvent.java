@@ -9,13 +9,10 @@ public class ComponentA_IQEvent extends ParameterizableIncQueryPatternEventInsta
   
   private String customerId;
   
-  private long timestamp;
-  
   public ComponentA_IQEvent(final IEventSource eventSource) {
     super(eventSource);
     getParameters().add(transactionId);
     getParameters().add(customerId);
-    getParameters().add(timestamp);
     
   }
   
@@ -35,14 +32,5 @@ public class ComponentA_IQEvent extends ParameterizableIncQueryPatternEventInsta
   public void setCustomerId(final String customerId) {
     this.customerId = customerId;
     getParameters().set(1, customerId);
-  }
-  
-  public long getTimestamp() {
-    return this.timestamp;
-  }
-  
-  public void setTimestamp(final long timestamp) {
-    this.timestamp = timestamp;
-    getParameters().set(2, timestamp);
   }
 }

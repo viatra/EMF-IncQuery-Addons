@@ -128,6 +128,10 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 
 	def void generateIncQuery2ViatraCep(Iterable<ModelElement> patterns, EventModel model,
 		IJvmDeclaredTypeAcceptor acceptor) {
+		if(model.packagedModel.usages.filter[e|(e instanceof PatternUsage)].size==0){
+			return
+		}
+			
 		val fqn = patterns.head.IQ2VCClassFqn
 		acceptor.accept(model.toClass(fqn)).initializeLater [
 			documentation = model.documentation
