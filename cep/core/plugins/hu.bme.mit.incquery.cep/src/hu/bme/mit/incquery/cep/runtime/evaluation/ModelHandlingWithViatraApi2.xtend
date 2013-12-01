@@ -63,10 +63,6 @@ class ModelHandlingWithViatraApi2 {
 	val createEnabledTransitionRule = ruleFactory.createRule().name("enabled transition rule").precondition(
 		EnabledTransitionMatcher::querySpecification).action [
 		var eventPattern = ((t.eContainer() as State).eContainer() as StateMachine).getEventPattern();
-		if (eventPattern instanceof ParameterizableIncQueryPatternEventInstance) {
-			var patternMatch = (eventPattern as ParameterizableIncQueryPatternEventInstance).incQueryPattern
-			//TODO implement IQ pattern parameter checking here
-		}
 		if (eventPattern instanceof ParameterizableComplexEventPattern) {
 			if (!((eventPattern as ParameterizableComplexEventPattern).evaluateParameterBindigs(e))) {
 				return;

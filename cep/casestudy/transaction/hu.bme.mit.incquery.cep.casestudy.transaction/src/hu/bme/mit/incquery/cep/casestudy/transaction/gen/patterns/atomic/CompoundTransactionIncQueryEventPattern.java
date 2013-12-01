@@ -13,4 +13,6 @@ public class CompoundTransactionIncQueryEventPattern extends AtomicEventPatternI
 	public boolean checkStaticBindings() {
 		return true;
 	}
+	
+	
 }

@@ -16,13 +16,14 @@ public abstract class ComponentC_AppearedProcessor implements IMatchProcessor<Co
    * Defines the action that is to be executed on each match.
    * @param pTe the value of pattern parameter te in the currently processed match 
    * @param pTId the value of pattern parameter tId in the currently processed match 
+   * @param pSId the value of pattern parameter sId in the currently processed match 
    * 
    */
-  public abstract void process(final TransactionComponentC pTe, final String pTId);
+  public abstract void process(final TransactionComponentC pTe, final String pTId, final String pSId);
   
   @Override
   public void process(final ComponentC_AppearedMatch match) {
-    process(match.getTe(), match.getTId());
+    process(match.getTe(), match.getTId(), match.getSId());
     
   }
 }

@@ -3,9 +3,10 @@ package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample
 import "transaction.meta"
 import "http://www.eclipse.org/emf/2002/Ecore"
 
-pattern componentA_Appeared(te, tId){
+pattern componentA_Appeared(te, tId, cId){
 	TransactionModel.latestComponentEvent(_, te);
 	TransactionComponentA.transactionId(te, tId);
+	TransactionComponentA.customerId(te, cId);
 }
 
 pattern componentB_Appeared(te, tId){
@@ -13,9 +14,10 @@ pattern componentB_Appeared(te, tId){
 	TransactionComponentB.transactionId(te, tId);
 }
 
-pattern componentC_Appeared(te, tId){
+pattern componentC_Appeared(te, tId, sId){
 	TransactionModel.latestComponentEvent(_, te);
 	TransactionComponentC.transactionId(te, tId);
+	TransactionComponentC.supplierId(te, sId);
 }
 
 pattern compoundEvent(e) {

@@ -26,9 +26,10 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern componentC_Appeared(te, tId){
+ * pattern componentC_Appeared(te, tId, sId){
  * 	TransactionModel.latestComponentEvent(_, te);
  * 	TransactionComponentC.transactionId(te, tId);
+ * 	TransactionComponentC.supplierId(te, sId);
  * }
  * </pre></code>
  * 
@@ -70,6 +71,8 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
   
   private final static int POSITION_TID = 1;
   
+  private final static int POSITION_SID = 2;
+  
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet). 
    * If a pattern matcher is already constructed with the same root, only a light-weight reference is returned.
@@ -105,11 +108,12 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
    * @param pTId the fixed value of pattern parameter tId, or null if not bound.
+   * @param pSId the fixed value of pattern parameter sId, or null if not bound.
    * @return matches represented as a ComponentC_AppearedMatch object.
    * 
    */
-  public Collection<ComponentC_AppearedMatch> getAllMatches(final TransactionComponentC pTe, final String pTId) {
-    return rawGetAllMatches(new Object[]{pTe, pTId});
+  public Collection<ComponentC_AppearedMatch> getAllMatches(final TransactionComponentC pTe, final String pTId, final String pSId) {
+    return rawGetAllMatches(new Object[]{pTe, pTId, pSId});
   }
   
   /**
@@ -117,11 +121,12 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
    * @param pTId the fixed value of pattern parameter tId, or null if not bound.
+   * @param pSId the fixed value of pattern parameter sId, or null if not bound.
    * @return a match represented as a ComponentC_AppearedMatch object, or null if no match is found.
    * 
    */
-  public ComponentC_AppearedMatch getOneArbitraryMatch(final TransactionComponentC pTe, final String pTId) {
-    return rawGetOneArbitraryMatch(new Object[]{pTe, pTId});
+  public ComponentC_AppearedMatch getOneArbitraryMatch(final TransactionComponentC pTe, final String pTId, final String pSId) {
+    return rawGetOneArbitraryMatch(new Object[]{pTe, pTId, pSId});
   }
   
   /**
@@ -129,33 +134,36 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * under any possible substitution of the unspecified parameters (if any).
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
    * @param pTId the fixed value of pattern parameter tId, or null if not bound.
+   * @param pSId the fixed value of pattern parameter sId, or null if not bound.
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final TransactionComponentC pTe, final String pTId) {
-    return rawHasMatch(new Object[]{pTe, pTId});
+  public boolean hasMatch(final TransactionComponentC pTe, final String pTId, final String pSId) {
+    return rawHasMatch(new Object[]{pTe, pTId, pSId});
   }
   
   /**
    * Returns the number of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
    * @param pTId the fixed value of pattern parameter tId, or null if not bound.
+   * @param pSId the fixed value of pattern parameter sId, or null if not bound.
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final TransactionComponentC pTe, final String pTId) {
-    return rawCountMatches(new Object[]{pTe, pTId});
+  public int countMatches(final TransactionComponentC pTe, final String pTId, final String pSId) {
+    return rawCountMatches(new Object[]{pTe, pTId, pSId});
   }
   
   /**
    * Executes the given processor on each match of the pattern that conforms to the given fixed values of some parameters.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
    * @param pTId the fixed value of pattern parameter tId, or null if not bound.
+   * @param pSId the fixed value of pattern parameter sId, or null if not bound.
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final TransactionComponentC pTe, final String pTId, final IMatchProcessor<? super ComponentC_AppearedMatch> processor) {
-    rawForEachMatch(new Object[]{pTe, pTId}, processor);
+  public void forEachMatch(final TransactionComponentC pTe, final String pTId, final String pSId, final IMatchProcessor<? super ComponentC_AppearedMatch> processor) {
+    rawForEachMatch(new Object[]{pTe, pTId, pSId}, processor);
   }
   
   /**
@@ -163,12 +171,13 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
    * @param pTId the fixed value of pattern parameter tId, or null if not bound.
+   * @param pSId the fixed value of pattern parameter sId, or null if not bound.
    * @param processor the action that will process the selected match. 
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final TransactionComponentC pTe, final String pTId, final IMatchProcessor<? super ComponentC_AppearedMatch> processor) {
-    return rawForOneArbitraryMatch(new Object[]{pTe, pTId}, processor);
+  public boolean forOneArbitraryMatch(final TransactionComponentC pTe, final String pTId, final String pSId, final IMatchProcessor<? super ComponentC_AppearedMatch> processor) {
+    return rawForOneArbitraryMatch(new Object[]{pTe, pTId, pSId}, processor);
   }
   
   /**
@@ -180,13 +189,14 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
    * @param pTId the fixed value of pattern parameter tId, or null if not bound.
+   * @param pSId the fixed value of pattern parameter sId, or null if not bound.
    * @return the delta monitor.
    * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
   @Deprecated
-  public DeltaMonitor<ComponentC_AppearedMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final TransactionComponentC pTe, final String pTId) {
-    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pTe, pTId});
+  public DeltaMonitor<ComponentC_AppearedMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final TransactionComponentC pTe, final String pTId, final String pSId) {
+    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pTe, pTId, pSId});
   }
   
   /**
@@ -195,11 +205,12 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
    * @param pTId the fixed value of pattern parameter tId, or null if not bound.
+   * @param pSId the fixed value of pattern parameter sId, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public ComponentC_AppearedMatch newMatch(final TransactionComponentC pTe, final String pTId) {
-    return new ComponentC_AppearedMatch.Immutable(pTe, pTId);
+  public ComponentC_AppearedMatch newMatch(final TransactionComponentC pTe, final String pTId, final String pSId) {
+    return new ComponentC_AppearedMatch.Immutable(pTe, pTId, pSId);
     
   }
   
@@ -237,8 +248,8 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<TransactionComponentC> getAllValuesOfte(final String pTId) {
-    return rawAccumulateAllValuesOfte(new Object[]{null, pTId});
+  public Set<TransactionComponentC> getAllValuesOfte(final String pTId, final String pSId) {
+    return rawAccumulateAllValuesOfte(new Object[]{null, pTId, pSId});
   }
   
   /**
@@ -275,14 +286,52 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOftId(final TransactionComponentC pTe) {
-    return rawAccumulateAllValuesOftId(new Object[]{pTe, null});
+  public Set<String> getAllValuesOftId(final TransactionComponentC pTe, final String pSId) {
+    return rawAccumulateAllValuesOftId(new Object[]{pTe, null, pSId});
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for sId.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  protected Set<String> rawAccumulateAllValuesOfsId(final Object[] parameters) {
+    Set<String> results = new HashSet<String>();
+    rawAccumulateAllValues(POSITION_SID, parameters, results);
+    return results;
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for sId.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<String> getAllValuesOfsId() {
+    return rawAccumulateAllValuesOfsId(emptyArray());
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for sId.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<String> getAllValuesOfsId(final ComponentC_AppearedMatch partialMatch) {
+    return rawAccumulateAllValuesOfsId(partialMatch.toArray());
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for sId.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<String> getAllValuesOfsId(final TransactionComponentC pTe, final String pTId) {
+    return rawAccumulateAllValuesOfsId(new Object[]{pTe, pTId, null});
   }
   
   @Override
   protected ComponentC_AppearedMatch tupleToMatch(final Tuple t) {
     try {
-    	return new ComponentC_AppearedMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC) t.get(POSITION_TE), (java.lang.String) t.get(POSITION_TID));	
+    	return new ComponentC_AppearedMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC) t.get(POSITION_TE), (java.lang.String) t.get(POSITION_TID), (java.lang.String) t.get(POSITION_SID));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -292,7 +341,7 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
   @Override
   protected ComponentC_AppearedMatch arrayToMatch(final Object[] match) {
     try {
-    	return new ComponentC_AppearedMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC) match[POSITION_TE], (java.lang.String) match[POSITION_TID]);
+    	return new ComponentC_AppearedMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC) match[POSITION_TE], (java.lang.String) match[POSITION_TID], (java.lang.String) match[POSITION_SID]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -302,7 +351,7 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
   @Override
   protected ComponentC_AppearedMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new ComponentC_AppearedMatch.Mutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC) match[POSITION_TE], (java.lang.String) match[POSITION_TID]);
+    	return new ComponentC_AppearedMatch.Mutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC) match[POSITION_TE], (java.lang.String) match[POSITION_TID], (java.lang.String) match[POSITION_SID]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

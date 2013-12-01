@@ -3,6 +3,7 @@ package hu.bme.mit.incquery.cep.dsl.jvmmodel
 import com.google.common.collect.Lists
 import com.google.common.collect.Maps
 import com.google.inject.Inject
+import hu.bme.mit.incquery.cep.api.ParameterizableEventInstance
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AugmentedExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.BranchExpression
@@ -153,22 +154,44 @@ class Utils {
 		]
 		return Lists.newArrayList(advancedSetter)
 	}
-
-	def Iterable<? extends JvmMember> toImplementingBindingMethod(ComplexEventPattern pattern) {
+	
+	def Iterable<? extends JvmMember> toImplementingBindingDispatcher(ComplexEventPattern pattern) {
 		val method = factory.createJvmOperation
 		method.simpleName = "evaluateParameterBindigs"
 		method.setVisibility(JvmVisibility.PUBLIC)
 		method.returnType = pattern.newTypeRef("boolean")
 		method.parameters.add(method.toParameter("event", pattern.newTypeRef(Event)))
+		method.setBody [
+			append(
+				'''
+					if(event instanceof ''').append('''«referClass(it, method, ParameterizableEventInstance)»){
+				''').append(
+				'''
+						return evaluateParameterBindigs((ParameterizableEventInstance) event);
+					}
+				''')
+				.append(
+				'''
+					return true;''')
+		]
+
+		method.addOverrideAnnotation(pattern)
+		return Lists.newArrayList(method)
+	}
+
+	def Iterable<? extends JvmMember> toImplementingSimpleBindingMethod(ComplexEventPattern pattern) {
+		val method = factory.createJvmOperation
+		method.simpleName = "evaluateParameterBindigs"
+		method.setVisibility(JvmVisibility.PUBLIC)
+		method.returnType = pattern.newTypeRef("boolean")
+		method.parameters.add(method.toParameter("event", pattern.newTypeRef(ParameterizableEventInstance)))
 		val expression = pattern.complexEventExpression.unwrapExpression
 		method.setBody [
 			getParameterMapping(expression.unwrapCompositionEventsWithParameterList, method).append(
 				'''
-					return true;
-				''')
+					return true;''')
 		]
 
-		method.addOverrideAnnotation(pattern)
 		return Lists.newArrayList(method)
 	}
 

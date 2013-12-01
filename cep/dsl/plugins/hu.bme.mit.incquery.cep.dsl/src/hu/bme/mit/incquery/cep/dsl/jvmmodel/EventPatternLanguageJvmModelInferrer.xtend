@@ -3,9 +3,11 @@ package hu.bme.mit.incquery.cep.dsl.jvmmodel
 import com.google.common.collect.Lists
 import com.google.inject.Inject
 import hu.bme.mit.incquery.cep.api.IActionHandler
+import hu.bme.mit.incquery.cep.api.ICepAdapter
 import hu.bme.mit.incquery.cep.api.ICepRule
 import hu.bme.mit.incquery.cep.api.ParameterizableComplexEventPattern
 import hu.bme.mit.incquery.cep.api.ParameterizableEventInstance
+import hu.bme.mit.incquery.cep.api.ParameterizableIncQueryPatternEventInstance
 import hu.bme.mit.incquery.cep.api.evm.CepActivationStates
 import hu.bme.mit.incquery.cep.api.evm.IObservableComplexEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern
@@ -14,9 +16,11 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternUsage
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.Rule
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TimedMultiplicityExpression
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.TypedParameter
 import hu.bme.mit.incquery.cep.metamodels.cep.CepFactory
 import hu.bme.mit.incquery.cep.metamodels.cep.ComplexOperator
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern
@@ -24,33 +28,27 @@ import hu.bme.mit.incquery.cep.metamodels.cep.GlobalTimewindow
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.AtomicEventPatternImpl
 import java.io.FileWriter
+import java.util.Collection
 import java.util.List
 import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.resource.ResourceSet
+import org.eclipse.incquery.runtime.api.IMatchProcessor
 import org.eclipse.incquery.runtime.evm.api.Activation
 import org.eclipse.incquery.runtime.evm.api.Context
 import org.eclipse.incquery.runtime.evm.api.Job
 import org.eclipse.incquery.runtime.evm.api.event.ActivationState
+import org.eclipse.incquery.runtime.exception.IncQueryException
+import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory
+import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory.EventDrivenTransformationBuilder
+import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformation
+import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformationRule
+import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.InconsistentEventSemanticsException
 import org.eclipse.xtext.naming.QualifiedName
 import org.eclipse.xtext.xbase.compiler.XbaseCompiler
 import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import hu.bme.mit.incquery.cep.api.ParameterizableIncQueryPatternEventInstance
-import hu.bme.mit.incquery.cep.api.ICepAdapter
-import org.eclipse.emf.ecore.resource.ResourceSet
-import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformation
-import org.eclipse.viatra2.emf.runtime.modelmanipulation.ModelManipulationException
-import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.InconsistentEventSemanticsException
-import java.util.Collection
-import org.eclipse.incquery.runtime.evm.api.ActivationLifeCycle
-import org.eclipse.incquery.runtime.api.IPatternMatch
-import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory.EventDrivenTransformationBuilder
-import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformationRule
-import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory
-import org.eclipse.incquery.runtime.api.IMatchProcessor
-import org.eclipse.incquery.runtime.exception.IncQueryException
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternUsage
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -193,7 +191,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 					''')
 					.append('''		«referClass(it, p, IMatchProcessor, model.newTypeRef(match))» action = new ''').append('''«referClass(it, p, IMatchProcessor, model.newTypeRef(match))»() {
 						''')
-					.append('''		public void process(final «match» it) {
+					.append('''		public void process(final «match» matchedPattern) {
 						''')
 					.append('''			try {
 						''')
@@ -201,11 +199,12 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 					''')
 					.append('''				for («match» match : allMatches) {
 					''')
-					.append('''					«referClass(it, p, ParameterizableIncQueryPatternEventInstance)»''').append(''' event = new ParameterizableIncQueryPatternEventInstance(null);
+					.append('''					«p.getFqn(AtomicPatternFqnPurpose.EVENT)»''').append(''' event = new «p.getFqn(AtomicPatternFqnPurpose.EVENT)»(null);
+					''')
+					.append('''
+												«getParameterMapping(it, p)»
 					''')
 					.append('''					event.setIncQueryPattern(match);
-					''')
-					.append('''					event.setType(«eventClass».class.getCanonicalName());
 					''')
 					.append('''					adapter.push(event);
 					''')
@@ -234,6 +233,33 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 		]
 	}
 	
+	def private getParameterMapping(ITreeAppendable appendable, EObject ctx){
+		var eventPatternParams = (ctx as IQPatternEventPattern).parameters.parameters
+		var iqPatternParams = (ctx as IQPatternEventPattern).iqPatternRef.parameterList.parameters
+		
+		var i = -1;
+		while((i=i+1)<iqPatternParams.size){
+			var iqParamName = iqPatternParams.get(i).name
+			var eventParamPosition = getEventParamPosition(iqParamName, eventPatternParams)
+			if(!(iqParamName.startsWith("_"))){
+				var eventParamType = eventPatternParams.get(eventParamPosition).type
+				appendable.append('''
+					event.set«iqParamName.toFirstUpper»((''').append('''«eventParamType.qualifiedName»''').append(''')matchedPattern.get(«i»));
+				''')	
+			}
+		}
+	}
+	
+	def private getEventParamPosition(String iqParamName, List<TypedParameter> eventPatternParams) {
+		var i = 0
+		for(ep : eventPatternParams){
+			if(ep.name.equals(iqParamName)){
+				return i
+			}
+			i = i+1
+		}
+	}
+	
 	def private getMappingMethodName(ModelElement pattern){
 		return "create"+pattern.name+"_MappingRule"
 	}
@@ -242,7 +268,11 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 		for (pattern : patterns) {
 			acceptor.accept(pattern.toClass(pattern.getFqn(AtomicPatternFqnPurpose.EVENT))).initializeLater [
 				documentation = pattern.documentation
-				superTypes += pattern.newTypeRef(ParameterizableEventInstance)
+				if(pattern instanceof IQPatternEventPattern){
+					superTypes += pattern.newTypeRef(ParameterizableIncQueryPatternEventInstance)	
+				}else if(pattern instanceof AtomicEventPattern){
+					superTypes += pattern.newTypeRef(ParameterizableEventInstance)
+				}
 				val paramList = getParamList(pattern)
 				if (paramList != null) {
 					for (parameter : paramList.parameters) {
@@ -344,7 +374,8 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 						setId(it, pattern, pattern.name)
 					]
 				]
-				members += (pattern as ComplexEventPattern).toImplementingBindingMethod()
+				members += (pattern as ComplexEventPattern).toImplementingBindingDispatcher()
+				members += (pattern as ComplexEventPattern).toImplementingSimpleBindingMethod()
 			]
 		}
 	}

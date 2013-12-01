@@ -27,11 +27,14 @@ public abstract class ComponentA_AppearedMatch extends BasePatternMatch {
   
   private String fTId;
   
-  private static List<String> parameterNames = makeImmutableList("te", "tId");
+  private String fCId;
   
-  private ComponentA_AppearedMatch(final TransactionComponentA pTe, final String pTId) {
+  private static List<String> parameterNames = makeImmutableList("te", "tId", "cId");
+  
+  private ComponentA_AppearedMatch(final TransactionComponentA pTe, final String pTId, final String pCId) {
     this.fTe = pTe;
     this.fTId = pTId;
+    this.fCId = pCId;
     
   }
   
@@ -39,6 +42,7 @@ public abstract class ComponentA_AppearedMatch extends BasePatternMatch {
   public Object get(final String parameterName) {
     if ("te".equals(parameterName)) return this.fTe;
     if ("tId".equals(parameterName)) return this.fTId;
+    if ("cId".equals(parameterName)) return this.fCId;
     return null;
     
   }
@@ -53,6 +57,11 @@ public abstract class ComponentA_AppearedMatch extends BasePatternMatch {
     
   }
   
+  public String getCId() {
+    return this.fCId;
+    
+  }
+  
   @Override
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
@@ -62,6 +71,10 @@ public abstract class ComponentA_AppearedMatch extends BasePatternMatch {
     }
     if ("tId".equals(parameterName) ) {
     	this.fTId = (java.lang.String) newValue;
+    	return true;
+    }
+    if ("cId".equals(parameterName) ) {
+    	this.fCId = (java.lang.String) newValue;
     	return true;
     }
     return false;
@@ -80,6 +93,12 @@ public abstract class ComponentA_AppearedMatch extends BasePatternMatch {
     
   }
   
+  public void setCId(final String pCId) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    this.fCId = pCId;
+    
+  }
+  
   @Override
   public String patternName() {
     return "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentA_Appeared";
@@ -94,7 +113,7 @@ public abstract class ComponentA_AppearedMatch extends BasePatternMatch {
   
   @Override
   public Object[] toArray() {
-    return new Object[]{fTe, fTId};
+    return new Object[]{fTe, fTId, fCId};
     
   }
   
@@ -102,7 +121,8 @@ public abstract class ComponentA_AppearedMatch extends BasePatternMatch {
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
     result.append("\"te\"=" + prettyPrintValue(fTe) + ", ");
-    result.append("\"tId\"=" + prettyPrintValue(fTId));
+    result.append("\"tId\"=" + prettyPrintValue(fTId) + ", ");
+    result.append("\"cId\"=" + prettyPrintValue(fCId));
     return result.toString();
     
   }
@@ -113,6 +133,7 @@ public abstract class ComponentA_AppearedMatch extends BasePatternMatch {
     int result = 1;
     result = prime * result + ((fTe == null) ? 0 : fTe.hashCode()); 
     result = prime * result + ((fTId == null) ? 0 : fTId.hashCode()); 
+    result = prime * result + ((fCId == null) ? 0 : fCId.hashCode()); 
     return result; 
     
   }
@@ -136,6 +157,8 @@ public abstract class ComponentA_AppearedMatch extends BasePatternMatch {
     else if (!fTe.equals(other.fTe)) return false;
     if (fTId == null) {if (other.fTId != null) return false;}
     else if (!fTId.equals(other.fTId)) return false;
+    if (fCId == null) {if (other.fCId != null) return false;}
+    else if (!fCId.equals(other.fCId)) return false;
     return true;
   }
   
@@ -152,8 +175,8 @@ public abstract class ComponentA_AppearedMatch extends BasePatternMatch {
   
   @SuppressWarnings("all")
   static final class Mutable extends ComponentA_AppearedMatch {
-    Mutable(final TransactionComponentA pTe, final String pTId) {
-      super(pTe, pTId);
+    Mutable(final TransactionComponentA pTe, final String pTId, final String pCId) {
+      super(pTe, pTId, pCId);
       
     }
     
@@ -166,8 +189,8 @@ public abstract class ComponentA_AppearedMatch extends BasePatternMatch {
   
   @SuppressWarnings("all")
   static final class Immutable extends ComponentA_AppearedMatch {
-    Immutable(final TransactionComponentA pTe, final String pTId) {
-      super(pTe, pTId);
+    Immutable(final TransactionComponentA pTe, final String pTId, final String pCId) {
+      super(pTe, pTId, pCId);
       
     }
     

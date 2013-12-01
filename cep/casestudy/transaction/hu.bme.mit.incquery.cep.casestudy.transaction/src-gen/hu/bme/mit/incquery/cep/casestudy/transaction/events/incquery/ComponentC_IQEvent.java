@@ -1,10 +1,10 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery;
 
-import hu.bme.mit.incquery.cep.api.ParameterizableEventInstance;
+import hu.bme.mit.incquery.cep.api.ParameterizableIncQueryPatternEventInstance;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 
 @SuppressWarnings("all")
-public class ComponentC_IQEvent extends ParameterizableEventInstance {
+public class ComponentC_IQEvent extends ParameterizableIncQueryPatternEventInstance {
   private String transactionId;
   
   private String supplierId;
