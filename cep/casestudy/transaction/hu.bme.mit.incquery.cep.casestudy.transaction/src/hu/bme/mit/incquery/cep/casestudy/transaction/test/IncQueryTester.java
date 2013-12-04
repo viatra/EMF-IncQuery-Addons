@@ -26,6 +26,17 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import com.google.common.collect.Lists;
 
 public class IncQueryTester {
+	
+	private static IncQueryTester instance;
+	private IncQueryTester(){}
+	
+	public static IncQueryTester getInstance() {
+		if(instance == null){
+			instance = new IncQueryTester();
+		}
+		return instance;
+	}
+	
 	private ICepAdapter adapter = new TransactionEventAdapter();
 	private TransactionModel model;
 	private Resource resource;
@@ -100,5 +111,13 @@ public class IncQueryTester {
 
 	public ResourceSet getResourceSet() {
 		return resourceSet;
+	}
+	
+	public TransactionModel getModel() {
+		return model;
+	}
+
+	public void dispose() {
+		instance = null;
 	}
 }
