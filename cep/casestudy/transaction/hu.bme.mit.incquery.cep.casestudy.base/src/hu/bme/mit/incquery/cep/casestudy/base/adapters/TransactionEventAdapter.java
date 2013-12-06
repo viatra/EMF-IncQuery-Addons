@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.casestudy.transaction.adapters;
+package hu.bme.mit.incquery.cep.casestudy.base.adapters;
 
 import hu.bme.mit.incquery.cep.api.ICepAdapter;
 import hu.bme.mit.incquery.cep.api.runtime.EventQueue;

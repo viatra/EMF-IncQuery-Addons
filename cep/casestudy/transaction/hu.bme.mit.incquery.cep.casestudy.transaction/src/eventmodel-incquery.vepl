@@ -26,5 +26,5 @@ ComplexEvent compoundTransactionEvent(tId:String, cId:String, sId:String){
 
 Rule r1 {
 	events: compoundTransactionEvent
-	actionHandler: hu.bme.mit.incquery.cep.casestudy.transaction.handlers.SimpleActionHandler
+	actionHandler: hu.bme.mit.incquery.cep.casestudy.transaction.actionhandlers.SimpleActionHandler
 }

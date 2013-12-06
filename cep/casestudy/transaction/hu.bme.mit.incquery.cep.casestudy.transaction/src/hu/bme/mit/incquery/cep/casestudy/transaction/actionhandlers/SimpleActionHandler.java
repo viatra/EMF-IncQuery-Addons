@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.casestudy.transaction.handlers;
+package hu.bme.mit.incquery.cep.casestudy.transaction.actionhandlers;
 
 import hu.bme.mit.incquery.cep.api.IActionHandler;
 import hu.bme.mit.incquery.cep.api.ParameterizableComplexEventPattern;
@@ -43,7 +43,7 @@ public class SimpleActionHandler implements IActionHandler {
 			System.out.println("---Timestamp B: " + componentB.getTimestamp());
 			System.out.println("---Timestamp C: " + componentC.getTimestamp());
 
-			createCompoundTransactionEvent(componentA, componentB, componentC);
+			//createCompoundTransactionEvent(componentA, componentB, componentC);
 		}
 	}
 

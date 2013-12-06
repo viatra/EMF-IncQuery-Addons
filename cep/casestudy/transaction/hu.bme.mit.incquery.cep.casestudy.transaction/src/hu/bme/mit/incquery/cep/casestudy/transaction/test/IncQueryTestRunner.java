@@ -4,17 +4,13 @@ import hu.bme.mit.incquery.cep.casestudy.transaction.rules.R1;
 
 import org.junit.Test;
 
-public class TestRunner {
+public class IncQueryTestRunner {
 
 	@Test
 	public void main() {
-		//BareJavaTester tester = new BareJavaTester();
 		IncQueryTester tester = IncQueryTester.getInstance();
 
-		tester.initializeEngine(new R1());
-		
-		//tester.initializeEngine(new R1(engine)); - IncQuery integration desired form
-		
+		tester.setup(new R1());
 		tester.simulate();
 		tester.dispose();
 	}

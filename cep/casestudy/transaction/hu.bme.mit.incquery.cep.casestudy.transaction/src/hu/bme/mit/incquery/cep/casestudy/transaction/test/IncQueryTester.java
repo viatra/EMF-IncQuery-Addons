@@ -4,13 +4,13 @@ import static com.google.common.base.Preconditions.checkArgument;
 import hu.bme.mit.incquery.cep.api.ICepAdapter;
 import hu.bme.mit.incquery.cep.api.ICepRule;
 import hu.bme.mit.incquery.cep.api.ViatraCepManager;
+import hu.bme.mit.incquery.cep.casestudy.base.adapters.TransactionEventAdapter;
 import hu.bme.mit.incquery.cep.casestudy.transaction.Component;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentA;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentB;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionFactory;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel;
-import hu.bme.mit.incquery.cep.casestudy.transaction.adapters.TransactionEventAdapter;
 import hu.bme.mit.incquery.cep.casestudy.transaction.mapping.IncQuery2ViatraCep;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 
@@ -26,27 +26,34 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import com.google.common.collect.Lists;
 
 public class IncQueryTester {
-	
+	private ICepAdapter adapter = new TransactionEventAdapter();
+
 	private static IncQueryTester instance;
-	private IncQueryTester(){}
-	
+
+	private IncQueryTester() {
+	}
+
 	public static IncQueryTester getInstance() {
-		if(instance == null){
+		if (instance == null) {
 			instance = new IncQueryTester();
 		}
 		return instance;
 	}
-	
-	private ICepAdapter adapter = new TransactionEventAdapter();
+
 	private TransactionModel model;
 	private Resource resource;
 	private ResourceSet resourceSet;
 
-	public void initializeEngine(ICepRule rule) {
+	public void setup(ICepRule rule) {
+		initializeEngine(rule);
+		prepareModel();
+		new IncQuery2ViatraCep(resourceSet, adapter).registerRules();
+	}
+
+	private void initializeEngine(ICepRule rule) {
 		checkArgument(rule != null);
 		ViatraCepManager.withContext(EventProcessingContext.CHRONICLE).addRule(rule);
 		prepareModel();
-		new IncQuery2ViatraCep(resourceSet, adapter).registerRules();
 	}
 
 	private void prepareModel() {
@@ -63,13 +70,14 @@ public class IncQueryTester {
 		System.out.println("Compound events in model: " + model.getLatestCompoundEvent());
 
 		List<EventType> testSeries = Lists.newArrayList(EventType.A, EventType.B, EventType.C);
-		// List<EventType> testSeries = Lists.newArrayList(EventType.A);
 
-		for (EventType eventType : testSeries) {
-			Component event = generateEvent(eventType);
+		for (int i = 0; i < 100000; i++) {
+			for (EventType eventType : testSeries) {
+				Component event = generateEvent(eventType);
 
-			System.out.println("Refreshing model with " + event);
-			model.setLatestComponentEvent(event);
+				System.out.println("Refreshing model with " + event);
+				model.setLatestComponentEvent(event);
+			}
 		}
 	}
 
@@ -86,18 +94,15 @@ public class IncQueryTester {
 		case A:
 			TransactionComponentA componentA = TransactionFactory.eINSTANCE.createTransactionComponentA();
 			componentA.setCustomerId(cId);
-			componentA.setTimestamp(0001l);
 			componentA.setTransactionId(tId);
 			return componentA;
 		case B:
 			TransactionComponentB componentB = TransactionFactory.eINSTANCE.createTransactionComponentB();
-			componentB.setTimestamp(0002l);
 			componentB.setTransactionId(tId);
 			return componentB;
 		case C:
 			TransactionComponentC componentC = TransactionFactory.eINSTANCE.createTransactionComponentC();
 			componentC.setSupplierId(sId);
-			componentC.setTimestamp(5002l);
 			componentC.setTransactionId(tId);
 			return componentC;
 		default:
@@ -105,14 +110,10 @@ public class IncQueryTester {
 		}
 	}
 
-	public ICepAdapter getAdapter() {
-		return adapter;
-	}
-
 	public ResourceSet getResourceSet() {
 		return resourceSet;
 	}
-	
+
 	public TransactionModel getModel() {
 		return model;
 	}

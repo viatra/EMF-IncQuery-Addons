@@ -1,4 +1,4 @@
-package hu.bme.mit.incquery.cep.casestudy.transaction.test;
+package hu.bme.mit.incquery.cep.casestudy.java.test;
 
 import org.eclipse.core.databinding.observable.Realm;
 
