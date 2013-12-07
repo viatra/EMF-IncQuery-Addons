@@ -14,6 +14,5 @@ Require-Bundle: org.eclipse.core.runtime,
  hu.bme.mit.incquery.cep.casestudy.base;bundle-version="1.0.0",
  hu.bme.mit.incquery.cep;bundle-version="1.0.0",
  org.junit
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -12,13 +12,31 @@ import hu.bme.mit.incquery.cep.performance.events.ComponentB_Event;
 import hu.bme.mit.incquery.cep.performance.events.ComponentC_Event;
 import hu.bme.mit.incquery.cep.performance.events.ComponentD_Event;
 import hu.bme.mit.incquery.cep.performance.events.ComponentE_Event;
+import hu.bme.mit.incquery.cep.performance.events.ComponentF_Event;
+import hu.bme.mit.incquery.cep.performance.events.ComponentG_Event;
+import hu.bme.mit.incquery.cep.performance.events.ComponentH_Event;
+import hu.bme.mit.incquery.cep.performance.events.ComponentI_Event;
+import hu.bme.mit.incquery.cep.performance.events.ComponentJ_Event;
+import hu.bme.mit.incquery.cep.performance.events.ComponentK_Event;
+import hu.bme.mit.incquery.cep.performance.events.ComponentL_Event;
+import hu.bme.mit.incquery.cep.performance.events.ComponentM_Event;
+import hu.bme.mit.incquery.cep.performance.events.ComponentN_Event;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import com.google.common.collect.Lists;
 
 public class PerformanceTester {
 	private ICepAdapter adapter = new TransactionEventAdapter();
+	private File log;
+	private int observedComplexPatterns = 0;
+	private int inputEvents = 0;
+	private BufferedWriter bw;
 
 	private static PerformanceTester instance;
 
@@ -32,27 +50,43 @@ public class PerformanceTester {
 		return instance;
 	}
 
-	public void setup(ICepRule rule) {
+	public void setup(ICepRule rule) throws IOException {
 		checkArgument(rule != null);
+
+		log = new File("log.txt");
+		log.createNewFile();
+		FileWriter fw = new FileWriter(log.getAbsoluteFile());
+		bw = new BufferedWriter(fw);
+		bw.write("Compilation started: " + new Date().getTime() + "\n");
 		ViatraCepManager.withContext(EventProcessingContext.CHRONICLE).addRule(rule);
+		bw.write("Compilation ended: " + new Date().getTime() + "\n\n");
 	}
 
-	public void simulate() {
-		List<EventType> testSeries = Lists
-				.newArrayList(EventType.A, EventType.B, EventType.C, EventType.D, EventType.E);
+	public void simulate() throws IOException {
 
-		for (int i = 0; i < 100000; i++) {
+		bw.write("Simulation started: " + new Date().getTime() + "\n");
+
+		List<EventType> testSeries = Lists.newArrayList(EventType.A, EventType.B, EventType.C, EventType.D,
+				EventType.E, EventType.F);
+
+		for (int i = 0; i < 100; i++) {
+			System.out.println("+++Turnaround: " + i);
 			for (EventType eventType : testSeries) {
 				ParameterizableEventInstance event = generateEvent(eventType);
 
 				System.out.println("Refreshing model with " + event);
+				inputEvents++;
 				adapter.push(event);
 			}
 		}
+		bw.write("Simulation ended: " + new Date().getTime() + "\n\n");
+		bw.write("Input events: " + inputEvents + "\n");
+		bw.write("Observed complex patterns: " + observedComplexPatterns + "\n");
+		bw.close();
 	}
 
 	private enum EventType {
-		A, B, C, D, E
+		A, B, C, D, E, F, G, H, I, J, K, L, M, N
 	}
 
 	private ParameterizableEventInstance generateEvent(EventType type) {
@@ -72,6 +106,33 @@ public class PerformanceTester {
 		case E:
 			ComponentE_Event componentE = new ComponentE_Event(null);
 			return componentE;
+		case F:
+			ComponentF_Event componentF = new ComponentF_Event(null);
+			return componentF;
+		case G:
+			ComponentG_Event componentG = new ComponentG_Event(null);
+			return componentG;
+		case H:
+			ComponentH_Event componentH = new ComponentH_Event(null);
+			return componentH;
+		case I:
+			ComponentI_Event componentI = new ComponentI_Event(null);
+			return componentI;
+		case J:
+			ComponentJ_Event componentJ = new ComponentJ_Event(null);
+			return componentJ;
+		case K:
+			ComponentK_Event componentK = new ComponentK_Event(null);
+			return componentK;
+		case L:
+			ComponentL_Event componentL = new ComponentL_Event(null);
+			return componentL;
+		case M:
+			ComponentM_Event componentM = new ComponentM_Event(null);
+			return componentM;
+		case N:
+			ComponentN_Event componentN = new ComponentN_Event(null);
+			return componentN;
 		default:
 			return null;
 		}
@@ -81,4 +142,19 @@ public class PerformanceTester {
 		instance = null;
 	}
 
+	public File getLog() {
+		return log;
+	}
+
+	public int getObservedComplexPatterns() {
+		return observedComplexPatterns;
+	}
+
+	public int getInputEvents() {
+		return inputEvents;
+	}
+
+	public void increaseObservedPatternCount() {
+		observedComplexPatterns++;
+	}
 }

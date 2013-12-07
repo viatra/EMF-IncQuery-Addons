@@ -3,11 +3,11 @@ package hu.bme.mit.incquery.cep.performance.patterns.atomic;
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.AtomicEventPatternImpl;
 
 @SuppressWarnings("all")
-public class ComponentE_Pattern extends AtomicEventPatternImpl {
-  public ComponentE_Pattern() {
+public class ComponentM_Pattern extends AtomicEventPatternImpl {
+  public ComponentM_Pattern() {
     super();
-    setType(hu.bme.mit.incquery.cep.performance.events.ComponentE_Event.class.getCanonicalName());
-    setId("ComponentE_Pattern");
+    setType(hu.bme.mit.incquery.cep.performance.events.ComponentM_Event.class.getCanonicalName());
+    setId("ComponentM_Pattern");
     
   }
   

@@ -21,6 +21,7 @@ public class CompoundTransactionEvent1_Pattern extends ParameterizableComplexEve
     compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.performance.patterns.atomic.ComponentC_Pattern());
     compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.performance.patterns.atomic.ComponentD_Pattern());
     compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.performance.patterns.atomic.ComponentE_Pattern());
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.performance.patterns.atomic.ComponentF_Pattern());
     getCompositionEvents().addAll(compositionEventPatternsForCP);
     setId("CompoundTransactionEvent1_Pattern");
   }
