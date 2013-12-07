@@ -154,7 +154,7 @@ class Utils {
 		]
 		return Lists.newArrayList(advancedSetter)
 	}
-	
+
 	def Iterable<? extends JvmMember> toImplementingBindingDispatcher(ComplexEventPattern pattern) {
 		val method = factory.createJvmOperation
 		method.simpleName = "evaluateParameterBindigs"
@@ -164,15 +164,15 @@ class Utils {
 		method.setBody [
 			append(
 				'''
-					if(event instanceof ''').append('''«referClass(it, method, ParameterizableEventInstance)»){
-				''').append(
+				if(event instanceof ''').append(
+				'''«referClass(it, method, ParameterizableEventInstance)»){
+					''').append(
 				'''
 						return evaluateParameterBindigs((ParameterizableEventInstance) event);
 					}
-				''')
-				.append(
+				''').append(
 				'''
-					return true;''')
+				return true;''')
 		]
 
 		method.addOverrideAnnotation(pattern)
@@ -189,7 +189,7 @@ class Utils {
 		method.setBody [
 			getParameterMapping(expression.unwrapCompositionEventsWithParameterList, method).append(
 				'''
-					return true;''')
+				return true;''')
 		]
 
 		return Lists.newArrayList(method)
@@ -336,6 +336,8 @@ class Utils {
 			case AtomicPatternFqnPurpose.PATTERN: {
 				if (element instanceof AtomicEventPattern) {
 					return packageName.append("patterns.atomic").append(className.toFirstUpper + "_Pattern")
+				} else if (element instanceof ComplexEventPattern) {
+					return packageName.append("patterns.complex").append(className.toFirstUpper + "_Pattern")
 				} else if (element instanceof IQPatternEventPattern) {
 					return packageName.append("patterns.atomic.incquery").append(
 						className.toFirstUpper + "_IQPattern")

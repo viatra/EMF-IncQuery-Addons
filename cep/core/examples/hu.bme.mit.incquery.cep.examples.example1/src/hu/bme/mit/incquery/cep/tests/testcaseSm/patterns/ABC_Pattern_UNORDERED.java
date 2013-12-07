@@ -10,7 +10,7 @@ import java.util.List;
 public class ABC_Pattern_UNORDERED extends ComplexEventPatternImpl {
 	public ABC_Pattern_UNORDERED() {
 		super();
-		setOperator(ComplexOperator.UNORDERED);
+		setOperator(ComplexOperator.ORDERED);
 		List<EventPattern> atomicEventPatternsForCP = new ArrayList<EventPattern>();
 		atomicEventPatternsForCP.add(new APattern());
 		atomicEventPatternsForCP.add(new BPattern());

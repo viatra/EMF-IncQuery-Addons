@@ -4,21 +4,19 @@ uses hu.bme.mit.incquery.cep.casestudy.transaction.sources.*
 uses hu.bme.mit.incquery.cep.dsl.examples.actionhandlers.*
 uses hu.bme.mit.incquery.cep.api.evm.*
 
-
-AtomicEvent componentA(transactionId : String, customerId : String){
-}
-
-AtomicEvent componentB(transactionId : String){
-}
-
-AtomicEvent componentC(transactionId : String, supplierId : String){
-}
+AtomicEvent componentA(transactionId : String, customerId : String){}
+AtomicEvent componentB(transactionId : String){}
+AtomicEvent componentC(transactionId : String, supplierId : String){}
 
 ComplexEvent compoundTransactionEvent(tId:String, cId:String, sId:String){
-	definition : (componentA(tId, cId) -> componentB(tId) -> componentC(tId, sId))[5000]
+	definition : componentA -> componentB -> componentC
+}
+
+ComplexEvent compoundTransactionEvent2(tId:String, cId:String, sId:String){
+	definition : componentB -> componentC -> componentA
 }
 
 Rule r1 {
-	events: compoundTransactionEvent
+	events: compoundTransactionEvent, compoundTransactionEvent2
 	actionHandler: hu.bme.mit.incquery.cep.casestudy.java.actionhandlers.SimpleActionHandler2
 }

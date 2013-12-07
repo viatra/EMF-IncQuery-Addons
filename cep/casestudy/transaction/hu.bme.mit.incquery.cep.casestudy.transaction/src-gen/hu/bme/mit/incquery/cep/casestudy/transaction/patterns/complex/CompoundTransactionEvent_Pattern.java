@@ -19,11 +19,11 @@ public class CompoundTransactionEvent_Pattern extends ParameterizableComplexEven
     setOperator(ComplexOperator.ORDERED);
     
     // composition events
-    List<EventPattern> atomicEventPatternsForCP = Lists.newArrayList();
-    atomicEventPatternsForCP.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.atomic.incquery.ComponentA_IQPattern());
-    atomicEventPatternsForCP.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.atomic.incquery.ComponentB_IQPattern());
-    atomicEventPatternsForCP.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.atomic.incquery.ComponentC_IQPattern());
-    getCompositionEvents().addAll(atomicEventPatternsForCP);
+    List<EventPattern> compositionEventPatternsForCP = Lists.newArrayList();
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.atomic.incquery.ComponentA_IQPattern());
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.atomic.incquery.ComponentB_IQPattern());
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.atomic.incquery.ComponentC_IQPattern());
+    getCompositionEvents().addAll(compositionEventPatternsForCP);
     
     // timewindows
     GlobalTimewindow timewindow = CepFactory.eINSTANCE.createGlobalTimewindow();

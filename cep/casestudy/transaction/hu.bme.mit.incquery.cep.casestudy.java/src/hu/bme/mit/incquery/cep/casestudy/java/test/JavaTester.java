@@ -36,16 +36,16 @@ public class JavaTester {
 	}
 
 	public void simulate() {
-		List<EventType> testSeries = Lists.newArrayList(EventType.A, EventType.B, EventType.C);
+		List<EventType> testSeries = Lists.newArrayList(EventType.A, EventType.B, EventType.C, EventType.A);
 
-		for (int i = 0; i < 100000; i++) {
+		//for (int i = 0; i < 100000; i++) {
 			for (EventType eventType : testSeries) {
 				ParameterizableEventInstance event = generateEvent(eventType);
 
 				System.out.println("Refreshing model with " + event);
 				adapter.push(event);
 			}
-		}
+		//}
 	}
 
 	private enum EventType {

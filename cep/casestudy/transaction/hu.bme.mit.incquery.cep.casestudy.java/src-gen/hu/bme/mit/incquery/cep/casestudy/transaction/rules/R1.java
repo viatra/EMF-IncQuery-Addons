@@ -16,6 +16,7 @@ public class R1 implements ICepRule {
   
   public R1() {
     eventPatterns.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.complex.CompoundTransactionEvent_Pattern());
+    eventPatterns.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.complex.CompoundTransactionEvent2_Pattern());
     
   }
   

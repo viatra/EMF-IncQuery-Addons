@@ -405,7 +405,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 			'''
 			«referClass(appendable, ctx, List, jvmTypesBuilder.newTypeRef(ctx, EventPattern))» ''').append(
 			'''
-			atomicEventPatternsForCP = ''').append(
+			compositionEventPatternsForCP = ''').append(
 			'''
 				«referClass(appendable, ctx, Lists)».newArrayList();
 			''')
@@ -415,7 +415,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 		for (ep : ex.assignedEventPatterns) {
 			appendable.append(
 				'''
-				atomicEventPatternsForCP.add(new '''
+				compositionEventPatternsForCP.add(new '''
 			).append(
 				'''«ep.getFqn(AtomicPatternFqnPurpose.PATTERN)»());
 					'''
@@ -423,7 +423,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 		}
 		appendable.append(
 			'''
-				getCompositionEvents().addAll(atomicEventPatternsForCP);
+				getCompositionEvents().addAll(compositionEventPatternsForCP);
 			'''
 		)
 

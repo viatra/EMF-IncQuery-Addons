@@ -12,8 +12,8 @@ public class DABC_Pattern_MIXED extends ComplexEventPatternImpl {
 		super();
 		setOperator(ComplexOperator.ORDERED);
 		List<EventPattern> atomicEventPatternsForCP = new ArrayList<EventPattern>();
+		atomicEventPatternsForCP.add(new ABC_Pattern_ORDERED());
 		atomicEventPatternsForCP.add(new DPattern());
-		atomicEventPatternsForCP.add(new ABC_Pattern_UNORDERED());
 		getCompositionEvents().addAll(atomicEventPatternsForCP);
 		setId("DABCPattern");
 	}
