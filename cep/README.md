@@ -10,7 +10,7 @@ The implementation consists of two main parts: the [core](https://github.com/ist
 The core plugin: **[hu.bme.mit.incquery.cep](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/plugins/hu.bme.mit.incquery.cep)**. The appropriate unit tests are located in plugin **[hu.bme.mit.incquery.cep.tests](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/tests/hu.bme.mit.incquery.cep.tests)**.
 The DSL plugin: **[hu.bme.mit.incquery.cep.dsl](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/dsl/plugins/hu.bme.mit.incquery.cep.dsl)**.
 
-![ScreenShot](https://dl.dropboxusercontent.com/u/44011277/cep/architecture2.jpg)
+![ScreenShot](https://dl.dropboxusercontent.com/u/44011277/cep/stack.png)
 
 For example codes see the **\*.examples.*** plugins:
 * **[hu.bme.mit.incquery.cep.examples.example1](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/core/examples/hu.bme.mit.incquery.cep.examples.example1)** shows a simple use-case where atomic and complex event patterns are defined and recognized on the event stream among other events.
