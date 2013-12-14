@@ -8,9 +8,9 @@ import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.casestudy.transaction.CompoundTransactionEvent;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionFactory;
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionModel;
-import hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_IQEvent;
-import hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentB_IQEvent;
-import hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_IQEvent;
+import hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_Appeared_IQEvent;
+import hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentB_Appeared_IQEvent;
+import hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_Appeared_IQEvent;
 import hu.bme.mit.incquery.cep.casestudy.transaction.test.IncQueryTester;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 
@@ -32,9 +32,9 @@ public class SimpleActionHandler implements IActionHandler {
 		if (observedEventPattern instanceof ParameterizableComplexEventPattern) {
 			List<ParameterizableEventInstance> observedEvents = ((ParameterizableComplexEventPattern) observedEventPattern)
 					.getObservedEvents();
-			ComponentA_IQEvent componentA = (ComponentA_IQEvent) observedEvents.get(0);
-			ComponentB_IQEvent componentB = (ComponentB_IQEvent) observedEvents.get(1);
-			ComponentC_IQEvent componentC = (ComponentC_IQEvent) observedEvents.get(2);
+			ComponentA_Appeared_IQEvent componentA = (ComponentA_Appeared_IQEvent) observedEvents.get(0);
+			ComponentB_Appeared_IQEvent componentB = (ComponentB_Appeared_IQEvent) observedEvents.get(1);
+			ComponentC_Appeared_IQEvent componentC = (ComponentC_Appeared_IQEvent) observedEvents.get(2);
 
 			System.out.println("New compound event with params:");
 			System.out.println("---TransactionId: " + componentA.getTransactionId());
@@ -47,8 +47,8 @@ public class SimpleActionHandler implements IActionHandler {
 		}
 	}
 
-	private void createCompoundTransactionEvent(ComponentA_IQEvent componentA, ComponentB_IQEvent componentB,
-			ComponentC_IQEvent componentC) {
+	private void createCompoundTransactionEvent(ComponentA_Appeared_IQEvent componentA, ComponentB_Appeared_IQEvent componentB,
+			ComponentC_Appeared_IQEvent componentC) {
 		CompoundTransactionEvent compoundTransactionEvent = TransactionFactory.eINSTANCE
 				.createCompoundTransactionEvent();
 		compoundTransactionEvent.setTransactionId(componentA.getTransactionId());

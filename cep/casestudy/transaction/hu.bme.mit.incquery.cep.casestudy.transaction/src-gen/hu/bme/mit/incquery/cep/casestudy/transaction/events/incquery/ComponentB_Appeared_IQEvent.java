@@ -4,10 +4,10 @@ import hu.bme.mit.incquery.cep.api.ParameterizableIncQueryPatternEventInstance;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 
 @SuppressWarnings("all")
-public class ComponentB_IQEvent extends ParameterizableIncQueryPatternEventInstance {
+public class ComponentB_Appeared_IQEvent extends ParameterizableIncQueryPatternEventInstance {
   private String transactionId;
   
-  public ComponentB_IQEvent(final IEventSource eventSource) {
+  public ComponentB_Appeared_IQEvent(final IEventSource eventSource) {
     super(eventSource);
     getParameters().add(transactionId);
     

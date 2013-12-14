@@ -9,8 +9,7 @@ import com.google.common.collect.Lists;
 public class MainGenerator {
 
 	public static void main(String[] args) {
-		List<String> atomicEvents = Lists.newArrayList("componentA", "componentB", "componentC", "componentD",
-				"componentE", "componentF");
+		List<String> atomicEvents = Lists.newArrayList("componentA", "componentB");
 		PermutationHelper<String> permutation = new PermutationHelper<String>();
 		List<List<String>> perm = permutation.generatePerm2(atomicEvents, 1);
 

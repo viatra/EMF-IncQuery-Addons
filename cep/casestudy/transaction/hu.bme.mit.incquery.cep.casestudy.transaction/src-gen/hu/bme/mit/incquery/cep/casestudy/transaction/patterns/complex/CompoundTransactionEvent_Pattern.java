@@ -20,9 +20,9 @@ public class CompoundTransactionEvent_Pattern extends ParameterizableComplexEven
     
     // composition events
     List<EventPattern> compositionEventPatternsForCP = Lists.newArrayList();
-    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.atomic.incquery.ComponentA_IQPattern());
-    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.atomic.incquery.ComponentB_IQPattern());
-    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.atomic.incquery.ComponentC_IQPattern());
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.atomic.incquery.ComponentA_Appeared_IQPattern());
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.atomic.incquery.ComponentB_Appeared_IQPattern());
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.casestudy.transaction.patterns.atomic.incquery.ComponentC_Appeared_IQPattern());
     getCompositionEvents().addAll(compositionEventPatternsForCP);
     
     // timewindows
@@ -42,25 +42,25 @@ public class CompoundTransactionEvent_Pattern extends ParameterizableComplexEven
   }
   
   public boolean evaluateParameterBindigs(final ParameterizableEventInstance event) {
-    if(event instanceof hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_IQEvent){
+    if(event instanceof hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_Appeared_IQEvent){
     Map<String,Object> params = Maps.newHashMap();
-    	Object value0 = ((hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_IQEvent) event).getParameter(0);
+    	Object value0 = ((hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_Appeared_IQEvent) event).getParameter(0);
     	params.put("tId", value0);
-    	Object value1 = ((hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_IQEvent) event).getParameter(1);
+    	Object value1 = ((hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_Appeared_IQEvent) event).getParameter(1);
     	params.put("cId", value1);
     	return evaluateParamBinding(params, event);
     }
-    if(event instanceof hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentB_IQEvent){
+    if(event instanceof hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentB_Appeared_IQEvent){
     Map<String,Object> params = Maps.newHashMap();
-    	Object value0 = ((hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentB_IQEvent) event).getParameter(0);
+    	Object value0 = ((hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentB_Appeared_IQEvent) event).getParameter(0);
     	params.put("tId", value0);
     	return evaluateParamBinding(params, event);
     }
-    if(event instanceof hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_IQEvent){
+    if(event instanceof hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_Appeared_IQEvent){
     Map<String,Object> params = Maps.newHashMap();
-    	Object value0 = ((hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_IQEvent) event).getParameter(0);
+    	Object value0 = ((hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_Appeared_IQEvent) event).getParameter(0);
     	params.put("tId", value0);
-    	Object value1 = ((hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_IQEvent) event).getParameter(1);
+    	Object value1 = ((hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_Appeared_IQEvent) event).getParameter(1);
     	params.put("sId", value1);
     	return evaluateParamBinding(params, event);
     }

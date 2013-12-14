@@ -1,8 +1,8 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
 import hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentC_AppearedMatch;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.ComponentC_AppearedQuerySpecification;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentCMatch;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util.ComponentCQuerySpecification;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,37 +16,37 @@ import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
- * Generated pattern matcher API of the hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentC_Appeared pattern, 
+ * Generated pattern matcher API of the hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentC pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)}, 
  * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
  * 
- * <p>Matches of the pattern will be represented as {@link ComponentC_AppearedMatch}.
+ * <p>Matches of the pattern will be represented as {@link ComponentCMatch}.
  * 
  * <p>Original source:
  * <code><pre>
- * pattern componentC_Appeared(te, tId, sId){
+ * pattern componentC(te, tId, sId){
  * 	TransactionModel.latestComponentEvent(_, te);
  * 	TransactionComponentC.transactionId(te, tId);
  * 	TransactionComponentC.supplierId(te, sId);
  * }
  * </pre></code>
  * 
- * @see ComponentC_AppearedMatch
- * @see ComponentC_AppearedProcessor
- * @see ComponentC_AppearedQuerySpecification
+ * @see ComponentCMatch
+ * @see ComponentCProcessor
+ * @see ComponentCQuerySpecification
  * 
  */
 @SuppressWarnings("all")
-public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedMatch> {
+public class ComponentCMatcher extends BaseMatcher<ComponentCMatch> {
   /**
    * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IQuerySpecification<ComponentC_AppearedMatcher> querySpecification() throws IncQueryException {
-    return ComponentC_AppearedQuerySpecification.instance();
+  public static IQuerySpecification<ComponentCMatcher> querySpecification() throws IncQueryException {
+    return ComponentCQuerySpecification.instance();
   }
   
   /**
@@ -57,11 +57,11 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * @throws IncQueryException if an error occurs during pattern matcher creation
    * 
    */
-  public static ComponentC_AppearedMatcher on(final IncQueryEngine engine) throws IncQueryException {
+  public static ComponentCMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    ComponentC_AppearedMatcher matcher = engine.getExistingMatcher(querySpecification());
+    ComponentCMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
-    	matcher = new ComponentC_AppearedMatcher(engine);
+    	matcher = new ComponentCMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it
     } 	
     return matcher;
@@ -86,7 +86,7 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * 
    */
   @Deprecated
-  public ComponentC_AppearedMatcher(final Notifier emfRoot) throws IncQueryException {
+  public ComponentCMatcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngine.on(emfRoot));
   }
   
@@ -100,7 +100,7 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * 
    */
   @Deprecated
-  public ComponentC_AppearedMatcher(final IncQueryEngine engine) throws IncQueryException {
+  public ComponentCMatcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }
   
@@ -109,10 +109,10 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
    * @param pTId the fixed value of pattern parameter tId, or null if not bound.
    * @param pSId the fixed value of pattern parameter sId, or null if not bound.
-   * @return matches represented as a ComponentC_AppearedMatch object.
+   * @return matches represented as a ComponentCMatch object.
    * 
    */
-  public Collection<ComponentC_AppearedMatch> getAllMatches(final TransactionComponentC pTe, final String pTId, final String pSId) {
+  public Collection<ComponentCMatch> getAllMatches(final TransactionComponentC pTe, final String pTId, final String pSId) {
     return rawGetAllMatches(new Object[]{pTe, pTId, pSId});
   }
   
@@ -122,10 +122,10 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * @param pTe the fixed value of pattern parameter te, or null if not bound.
    * @param pTId the fixed value of pattern parameter tId, or null if not bound.
    * @param pSId the fixed value of pattern parameter sId, or null if not bound.
-   * @return a match represented as a ComponentC_AppearedMatch object, or null if no match is found.
+   * @return a match represented as a ComponentCMatch object, or null if no match is found.
    * 
    */
-  public ComponentC_AppearedMatch getOneArbitraryMatch(final TransactionComponentC pTe, final String pTId, final String pSId) {
+  public ComponentCMatch getOneArbitraryMatch(final TransactionComponentC pTe, final String pTId, final String pSId) {
     return rawGetOneArbitraryMatch(new Object[]{pTe, pTId, pSId});
   }
   
@@ -162,7 +162,7 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final TransactionComponentC pTe, final String pTId, final String pSId, final IMatchProcessor<? super ComponentC_AppearedMatch> processor) {
+  public void forEachMatch(final TransactionComponentC pTe, final String pTId, final String pSId, final IMatchProcessor<? super ComponentCMatch> processor) {
     rawForEachMatch(new Object[]{pTe, pTId, pSId}, processor);
   }
   
@@ -176,7 +176,7 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final TransactionComponentC pTe, final String pTId, final String pSId, final IMatchProcessor<? super ComponentC_AppearedMatch> processor) {
+  public boolean forOneArbitraryMatch(final TransactionComponentC pTe, final String pTId, final String pSId, final IMatchProcessor<? super ComponentCMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pTe, pTId, pSId}, processor);
   }
   
@@ -195,7 +195,7 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * 
    */
   @Deprecated
-  public DeltaMonitor<ComponentC_AppearedMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final TransactionComponentC pTe, final String pTId, final String pSId) {
+  public DeltaMonitor<ComponentCMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final TransactionComponentC pTe, final String pTId, final String pSId) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pTe, pTId, pSId});
   }
   
@@ -209,8 +209,8 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * @return the (partial) match object.
    * 
    */
-  public ComponentC_AppearedMatch newMatch(final TransactionComponentC pTe, final String pTId, final String pSId) {
-    return new ComponentC_AppearedMatch.Immutable(pTe, pTId, pSId);
+  public ComponentCMatch newMatch(final TransactionComponentC pTe, final String pTId, final String pSId) {
+    return new ComponentCMatch.Immutable(pTe, pTId, pSId);
     
   }
   
@@ -239,7 +239,7 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<TransactionComponentC> getAllValuesOfte(final ComponentC_AppearedMatch partialMatch) {
+  public Set<TransactionComponentC> getAllValuesOfte(final ComponentCMatch partialMatch) {
     return rawAccumulateAllValuesOfte(partialMatch.toArray());
   }
   
@@ -277,7 +277,7 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOftId(final ComponentC_AppearedMatch partialMatch) {
+  public Set<String> getAllValuesOftId(final ComponentCMatch partialMatch) {
     return rawAccumulateAllValuesOftId(partialMatch.toArray());
   }
   
@@ -315,7 +315,7 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfsId(final ComponentC_AppearedMatch partialMatch) {
+  public Set<String> getAllValuesOfsId(final ComponentCMatch partialMatch) {
     return rawAccumulateAllValuesOfsId(partialMatch.toArray());
   }
   
@@ -329,9 +329,9 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
   }
   
   @Override
-  protected ComponentC_AppearedMatch tupleToMatch(final Tuple t) {
+  protected ComponentCMatch tupleToMatch(final Tuple t) {
     try {
-    	return new ComponentC_AppearedMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC) t.get(POSITION_TE), (java.lang.String) t.get(POSITION_TID), (java.lang.String) t.get(POSITION_SID));	
+    	return new ComponentCMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC) t.get(POSITION_TE), (java.lang.String) t.get(POSITION_TID), (java.lang.String) t.get(POSITION_SID));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -339,9 +339,9 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
   }
   
   @Override
-  protected ComponentC_AppearedMatch arrayToMatch(final Object[] match) {
+  protected ComponentCMatch arrayToMatch(final Object[] match) {
     try {
-    	return new ComponentC_AppearedMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC) match[POSITION_TE], (java.lang.String) match[POSITION_TID], (java.lang.String) match[POSITION_SID]);
+    	return new ComponentCMatch.Immutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC) match[POSITION_TE], (java.lang.String) match[POSITION_TID], (java.lang.String) match[POSITION_SID]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -349,9 +349,9 @@ public class ComponentC_AppearedMatcher extends BaseMatcher<ComponentC_AppearedM
   }
   
   @Override
-  protected ComponentC_AppearedMatch arrayToMatchMutable(final Object[] match) {
+  protected ComponentCMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new ComponentC_AppearedMatch.Mutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC) match[POSITION_TE], (java.lang.String) match[POSITION_TID], (java.lang.String) match[POSITION_SID]);
+    	return new ComponentCMatch.Mutable((hu.bme.mit.incquery.cep.casestudy.transaction.TransactionComponentC) match[POSITION_TE], (java.lang.String) match[POSITION_TID], (java.lang.String) match[POSITION_SID]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

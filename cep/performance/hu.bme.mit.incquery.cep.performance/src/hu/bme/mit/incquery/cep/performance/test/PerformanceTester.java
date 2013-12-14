@@ -35,7 +35,6 @@ public class PerformanceTester {
 	private ICepAdapter adapter = new TransactionEventAdapter();
 	private File log;
 	private int observedComplexPatterns = 0;
-	private int inputEvents = 0;
 	private BufferedWriter bw;
 
 	private static PerformanceTester instance;
@@ -63,13 +62,12 @@ public class PerformanceTester {
 	}
 
 	public void simulate() throws IOException {
-
+		int inputEvents = 0;
 		bw.write("Simulation started: " + new Date().getTime() + "\n");
 
-		List<EventType> testSeries = Lists.newArrayList(EventType.A, EventType.B, EventType.C, EventType.D,
-				EventType.E, EventType.F);
-
-		for (int i = 0; i < 100; i++) {
+		List<EventType> testSeries = Lists.newArrayList(EventType.C);
+		
+		for (int i = 0; i < 100000; i++) {
 			System.out.println("+++Turnaround: " + i);
 			for (EventType eventType : testSeries) {
 				ParameterizableEventInstance event = generateEvent(eventType);
@@ -150,9 +148,6 @@ public class PerformanceTester {
 		return observedComplexPatterns;
 	}
 
-	public int getInputEvents() {
-		return inputEvents;
-	}
 
 	public void increaseObservedPatternCount() {
 		observedComplexPatterns++;

@@ -14,6 +14,7 @@ public class PerformanceTestRunner {
 
 		tester.setup(new R1());
 		tester.simulate();
+
 		tester.dispose();
 	}
 }

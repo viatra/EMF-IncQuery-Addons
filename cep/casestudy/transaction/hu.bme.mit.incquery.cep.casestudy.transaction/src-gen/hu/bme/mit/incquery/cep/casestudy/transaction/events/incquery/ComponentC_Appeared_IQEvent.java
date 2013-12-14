@@ -4,15 +4,15 @@ import hu.bme.mit.incquery.cep.api.ParameterizableIncQueryPatternEventInstance;
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource;
 
 @SuppressWarnings("all")
-public class ComponentA_IQEvent extends ParameterizableIncQueryPatternEventInstance {
+public class ComponentC_Appeared_IQEvent extends ParameterizableIncQueryPatternEventInstance {
   private String transactionId;
   
-  private String customerId;
+  private String supplierId;
   
-  public ComponentA_IQEvent(final IEventSource eventSource) {
+  public ComponentC_Appeared_IQEvent(final IEventSource eventSource) {
     super(eventSource);
     getParameters().add(transactionId);
-    getParameters().add(customerId);
+    getParameters().add(supplierId);
     
   }
   
@@ -25,12 +25,12 @@ public class ComponentA_IQEvent extends ParameterizableIncQueryPatternEventInsta
     getParameters().set(0, transactionId);
   }
   
-  public String getCustomerId() {
-    return this.customerId;
+  public String getSupplierId() {
+    return this.supplierId;
   }
   
-  public void setCustomerId(final String customerId) {
-    this.customerId = customerId;
-    getParameters().set(1, customerId);
+  public void setSupplierId(final String supplierId) {
+    this.supplierId = supplierId;
+    getParameters().set(1, supplierId);
   }
 }

@@ -1,8 +1,8 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample;
 
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatcher;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentB_AppearedMatcher;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentC_AppearedMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentAMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentBMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentCMatcher;
 import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.CompoundEventMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedPatternGroup;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
@@ -15,9 +15,9 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * in order to achieve better performance than one-by-one on-demand matcher initialization.
  * 
  * <p> From package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample, the group contains the definition of the following patterns: <ul>
- * <li>componentA_Appeared</li>
- * <li>componentB_Appeared</li>
- * <li>componentC_Appeared</li>
+ * <li>componentA</li>
+ * <li>componentB</li>
+ * <li>componentC</li>
  * <li>compoundEvent</li>
  * </ul>
  * 
@@ -44,10 +44,10 @@ public final class Samplepatterns extends BaseGeneratedPatternGroup {
   private static Samplepatterns INSTANCE;
   
   private Samplepatterns() throws IncQueryException {
+    querySpecifications.add(ComponentBMatcher.querySpecification());
     querySpecifications.add(CompoundEventMatcher.querySpecification());
-    querySpecifications.add(ComponentB_AppearedMatcher.querySpecification());
-    querySpecifications.add(ComponentA_AppearedMatcher.querySpecification());
-    querySpecifications.add(ComponentC_AppearedMatcher.querySpecification());
+    querySpecifications.add(ComponentAMatcher.querySpecification());
+    querySpecifications.add(ComponentCMatcher.querySpecification());
     
   }
 }

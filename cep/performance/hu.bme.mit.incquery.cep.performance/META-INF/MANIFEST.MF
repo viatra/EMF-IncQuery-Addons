@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Performance
-Bundle-SymbolicName: hu.bme.mit.incquery.cep.performance
+Bundle-SymbolicName: hu.bme.mit.incquery.cep.performance; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: hu.bme.mit.incquery.cep.performance.internal.Activator
 Require-Bundle: org.eclipse.core.runtime,
@@ -13,6 +13,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.incquery.runtime;bundle-version="0.8.0",
  hu.bme.mit.incquery.cep.casestudy.base;bundle-version="1.0.0",
  hu.bme.mit.incquery.cep;bundle-version="1.0.0",
- org.junit
+ org.junit,
+ hu.bme.mit.incquery.cep.instrumentation;bundle-version="1.0.0",
+ hu.bme.mit.incquery.cep.instrumentation
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

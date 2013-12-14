@@ -1,26 +1,26 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.util;
 
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentAMatcher;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 
 /**
- * A pattern-specific query specification that can instantiate ComponentA_AppearedMatcher in a type-safe way.
+ * A pattern-specific query specification that can instantiate ComponentAMatcher in a type-safe way.
  * 
- * @see ComponentA_AppearedMatcher
- * @see ComponentA_AppearedMatch
+ * @see ComponentAMatcher
+ * @see ComponentAMatch
  * 
  */
 @SuppressWarnings("all")
-public final class ComponentA_AppearedQuerySpecification extends BaseGeneratedQuerySpecification<ComponentA_AppearedMatcher> {
+public final class ComponentAQuerySpecification extends BaseGeneratedQuerySpecification<ComponentAMatcher> {
   /**
    * @return the singleton instance of the query specification
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static ComponentA_AppearedQuerySpecification instance() throws IncQueryException {
+  public static ComponentAQuerySpecification instance() throws IncQueryException {
     try {
     	return LazyHolder.INSTANCE;
     } catch (ExceptionInInitializerError err) {
@@ -31,8 +31,8 @@ public final class ComponentA_AppearedQuerySpecification extends BaseGeneratedQu
   }
   
   @Override
-  protected ComponentA_AppearedMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
-    return ComponentA_AppearedMatcher.on(engine);
+  protected ComponentAMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
+    return ComponentAMatcher.on(engine);
     
   }
   
@@ -44,18 +44,18 @@ public final class ComponentA_AppearedQuerySpecification extends BaseGeneratedQu
   
   @Override
   protected String patternName() {
-    return "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentA_Appeared";
+    return "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentA";
     
   }
   
-  private ComponentA_AppearedQuerySpecification() throws IncQueryException {
+  private ComponentAQuerySpecification() throws IncQueryException {
     super();
   }
   
   @SuppressWarnings("all")
-  public static class Provider implements IQuerySpecificationProvider<ComponentA_AppearedQuerySpecification> {
+  public static class Provider implements IQuerySpecificationProvider<ComponentAQuerySpecification> {
     @Override
-    public ComponentA_AppearedQuerySpecification get() throws IncQueryException {
+    public ComponentAQuerySpecification get() throws IncQueryException {
       return instance();
     }
   }
@@ -63,11 +63,11 @@ public final class ComponentA_AppearedQuerySpecification extends BaseGeneratedQu
   
   @SuppressWarnings("all")
   private static class LazyHolder {
-    private final static ComponentA_AppearedQuerySpecification INSTANCE = make();
+    private final static ComponentAQuerySpecification INSTANCE = make();
     
-    public static ComponentA_AppearedQuerySpecification make() {
+    public static ComponentAQuerySpecification make() {
       try {
-      	return new ComponentA_AppearedQuerySpecification();
+      	return new ComponentAQuerySpecification();
       } catch (IncQueryException ex) {
       	throw new RuntimeException	(ex);
       }

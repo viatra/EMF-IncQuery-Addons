@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Premain-Class: ObjectSizeFetcher
+Bundle-ManifestVersion: 2
+Bundle-Name: Instrumentation
+Bundle-SymbolicName: hu.bme.mit.incquery.cep.instrumentation
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: hu.bme.mit.incquery.cep.instrumentation.internal.Activator
+Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: hu.bme.mit.incquery.cep.instrumentation

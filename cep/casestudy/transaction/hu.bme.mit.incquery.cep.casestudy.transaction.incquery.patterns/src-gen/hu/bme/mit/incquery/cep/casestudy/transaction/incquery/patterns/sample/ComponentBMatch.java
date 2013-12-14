@@ -9,27 +9,27 @@ import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentB_Appeared pattern, 
- * to be used in conjunction with {@link ComponentB_AppearedMatcher}.
+ * Pattern-specific match representation of the hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentB pattern, 
+ * to be used in conjunction with {@link ComponentBMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
  * usable to represent a match of the pattern in the result of a query, 
  * or to specify the bound (fixed) input parameters when issuing a query.
  * 
- * @see ComponentB_AppearedMatcher
- * @see ComponentB_AppearedProcessor
+ * @see ComponentBMatcher
+ * @see ComponentBProcessor
  * 
  */
 @SuppressWarnings("all")
-public abstract class ComponentB_AppearedMatch extends BasePatternMatch {
+public abstract class ComponentBMatch extends BasePatternMatch {
   private TransactionComponentB fTe;
   
   private String fTId;
   
   private static List<String> parameterNames = makeImmutableList("te", "tId");
   
-  private ComponentB_AppearedMatch(final TransactionComponentB pTe, final String pTId) {
+  private ComponentBMatch(final TransactionComponentB pTe, final String pTId) {
     this.fTe = pTe;
     this.fTId = pTId;
     
@@ -82,13 +82,13 @@ public abstract class ComponentB_AppearedMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentB_Appeared";
+    return "hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.componentB";
     
   }
   
   @Override
   public List<String> parameterNames() {
-    return ComponentB_AppearedMatch.parameterNames;
+    return ComponentBMatch.parameterNames;
     
   }
   
@@ -121,7 +121,7 @@ public abstract class ComponentB_AppearedMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (!(obj instanceof ComponentB_AppearedMatch)) { // this should be infrequent				
+    if (!(obj instanceof ComponentBMatch)) { // this should be infrequent				
     	if (obj == null)
     		return false;
     	if (!(obj instanceof IPatternMatch))
@@ -131,7 +131,7 @@ public abstract class ComponentB_AppearedMatch extends BasePatternMatch {
     		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
     }
-    ComponentB_AppearedMatch other = (ComponentB_AppearedMatch) obj;
+    ComponentBMatch other = (ComponentBMatch) obj;
     if (fTe == null) {if (other.fTe != null) return false;}
     else if (!fTe.equals(other.fTe)) return false;
     if (fTId == null) {if (other.fTId != null) return false;}
@@ -142,7 +142,7 @@ public abstract class ComponentB_AppearedMatch extends BasePatternMatch {
   @Override
   public Pattern pattern() {
     try {
-    	return ComponentB_AppearedMatcher.querySpecification().getPattern();
+    	return ComponentBMatcher.querySpecification().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);
@@ -151,7 +151,7 @@ public abstract class ComponentB_AppearedMatch extends BasePatternMatch {
   }
   
   @SuppressWarnings("all")
-  static final class Mutable extends ComponentB_AppearedMatch {
+  static final class Mutable extends ComponentBMatch {
     Mutable(final TransactionComponentB pTe, final String pTId) {
       super(pTe, pTId);
       
@@ -165,7 +165,7 @@ public abstract class ComponentB_AppearedMatch extends BasePatternMatch {
   
   
   @SuppressWarnings("all")
-  static final class Immutable extends ComponentB_AppearedMatch {
+  static final class Immutable extends ComponentBMatch {
     Immutable(final TransactionComponentB pTe, final String pTId) {
       super(pTe, pTId);
       

@@ -5,23 +5,26 @@ uses-patterns hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sa
 uses hu.bme.mit.incquery.cep.dsl.examples.actionhandlers.*
 uses hu.bme.mit.incquery.cep.api.evm.*
 
-IQPatternEvent componentA(transactionId : String, customerId : String){
-	iqPatternRef : componentA_Appeared(_, transactionId, customerId)
+IQPatternEvent componentA_Appeared(transactionId : String, customerId : String){
+	iqPatternRef : componentA(_, transactionId, customerId)
 	iqChangeType : NEW_MATCH_FOUND
 }
 
-IQPatternEvent componentB(transactionId : String){
-	iqPatternRef : componentB_Appeared(_, transactionId)
+IQPatternEvent componentB_Appeared(transactionId : String){
+	iqPatternRef : componentB(_, transactionId)
 	iqChangeType : NEW_MATCH_FOUND
 }
 
-IQPatternEvent componentC(transactionId : String, supplierId : String){
-	iqPatternRef : componentC_Appeared(_, transactionId, supplierId)
+IQPatternEvent componentC_Appeared(transactionId : String, supplierId : String){
+	iqPatternRef : componentC(_, transactionId, supplierId)
 	iqChangeType : NEW_MATCH_FOUND
 }
 
 ComplexEvent compoundTransactionEvent(tId:String, cId:String, sId:String){
-	definition : (componentA(tId, cId) -> componentB(tId) -> componentC(tId, sId))[5000]
+	definition : (componentA_Appeared(tId, cId)
+					-> componentB_Appeared(tId)
+					-> componentC_Appeared(tId, sId)
+				 )[5000]
 }
 
 Rule r1 {

@@ -1,8 +1,8 @@
-Compilation started: 1386456233670
-Compilation ended: 1386456236570
+Compilation started: 1386857504459
+Compilation ended: 1386857506513
 
-Simulation started: 1386456236570
-Simulation ended: 1386456333489
+Simulation started: 1386857506513
+Simulation ended: 1386857532986
 
-Input events: 600
-Observed complex patterns: 70200
+Input events: 100000
+Observed complex patterns: 0

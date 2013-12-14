@@ -18,7 +18,7 @@ AtomicEvent componentM(){}
 AtomicEvent componentN(){}
 
 ComplexEvent compoundTransactionEvent1(){
-	definition : componentA -> componentB -> componentC -> componentD -> componentE -> componentF
+	definition : componentA -> componentB
 }
 
 Rule r1 {

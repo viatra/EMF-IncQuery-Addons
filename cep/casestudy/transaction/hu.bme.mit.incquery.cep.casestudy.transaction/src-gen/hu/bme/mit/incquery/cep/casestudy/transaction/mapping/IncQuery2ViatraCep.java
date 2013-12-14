@@ -1,12 +1,12 @@
 package hu.bme.mit.incquery.cep.casestudy.transaction.mapping;
 
 import hu.bme.mit.incquery.cep.api.ICepAdapter;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatch;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatcher;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentB_AppearedMatch;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentB_AppearedMatcher;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentC_AppearedMatch;
-import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentC_AppearedMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentAMatch;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentAMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentBMatch;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentBMatcher;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentCMatch;
+import hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentCMatcher;
 import java.util.Collection;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
@@ -34,9 +34,9 @@ public class IncQuery2ViatraCep {
   
   public EventDrivenTransformationRuleGroup getRules() {
     EventDrivenTransformationRuleGroup ruleGroup = new EventDrivenTransformationRuleGroup(
-    	createcomponentA_MappingRule(), 
-    	createcomponentB_MappingRule(), 
-    	createcomponentC_MappingRule()
+    	createcomponentA_Appeared_MappingRule(), 
+    	createcomponentB_Appeared_MappingRule(), 
+    	createcomponentC_Appeared_MappingRule()
     );
     return ruleGroup;
     
@@ -46,16 +46,16 @@ public class IncQuery2ViatraCep {
     transformation = EventDrivenTransformation.forResource(resourceSet).addRules(getRules()).create();
   }
   
-  public EventDrivenTransformationRule<ComponentA_AppearedMatch,ComponentA_AppearedMatcher> createcomponentA_MappingRule() {
+  public EventDrivenTransformationRule<ComponentAMatch,ComponentAMatcher> createcomponentA_Appeared_MappingRule() {
     try{
-    EventDrivenTransformationBuilder<ComponentA_AppearedMatch,ComponentA_AppearedMatcher>builder = new EventDrivenTransformationRuleFactory().createRule();
-    		builder.precondition(hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatcher.querySpecification());
-    IMatchProcessor<ComponentA_AppearedMatch>		 action = new IMatchProcessor<ComponentA_AppearedMatch>() {
-    		public void process(final hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatch matchedPattern) {
+    EventDrivenTransformationBuilder<ComponentAMatch,ComponentAMatcher>builder = new EventDrivenTransformationRuleFactory().createRule();
+    		builder.precondition(hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentAMatcher.querySpecification());
+    IMatchProcessor<ComponentAMatch>		 action = new IMatchProcessor<ComponentAMatch>() {
+    		public void process(final hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentAMatch matchedPattern) {
     			try {
-    Collection<ComponentA_AppearedMatch>				allMatches = hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatcher.on(transformation.getIqEngine()).getAllMatches();
-    				for (hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatch match : allMatches) {
-    					hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_IQEvent event = new hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_IQEvent(null);
+    Collection<ComponentAMatch>				allMatches = hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentAMatcher.on(transformation.getIqEngine()).getAllMatches();
+    				for (hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentAMatch match : allMatches) {
+    					hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_Appeared_IQEvent event = new hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentA_Appeared_IQEvent(null);
     event.setTransactionId((java.lang.String)matchedPattern.get(1));
     event.setCustomerId((java.lang.String)matchedPattern.get(2));
     					event.setIncQueryPattern(match);
@@ -77,16 +77,16 @@ public class IncQuery2ViatraCep {
     
   }
   
-  public EventDrivenTransformationRule<ComponentB_AppearedMatch,ComponentB_AppearedMatcher> createcomponentB_MappingRule() {
+  public EventDrivenTransformationRule<ComponentBMatch,ComponentBMatcher> createcomponentB_Appeared_MappingRule() {
     try{
-    EventDrivenTransformationBuilder<ComponentB_AppearedMatch,ComponentB_AppearedMatcher>builder = new EventDrivenTransformationRuleFactory().createRule();
-    		builder.precondition(hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentB_AppearedMatcher.querySpecification());
-    IMatchProcessor<ComponentB_AppearedMatch>		 action = new IMatchProcessor<ComponentB_AppearedMatch>() {
-    		public void process(final hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentB_AppearedMatch matchedPattern) {
+    EventDrivenTransformationBuilder<ComponentBMatch,ComponentBMatcher>builder = new EventDrivenTransformationRuleFactory().createRule();
+    		builder.precondition(hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentBMatcher.querySpecification());
+    IMatchProcessor<ComponentBMatch>		 action = new IMatchProcessor<ComponentBMatch>() {
+    		public void process(final hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentBMatch matchedPattern) {
     			try {
-    Collection<ComponentB_AppearedMatch>				allMatches = hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentB_AppearedMatcher.on(transformation.getIqEngine()).getAllMatches();
-    				for (hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentB_AppearedMatch match : allMatches) {
-    					hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentB_IQEvent event = new hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentB_IQEvent(null);
+    Collection<ComponentBMatch>				allMatches = hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentBMatcher.on(transformation.getIqEngine()).getAllMatches();
+    				for (hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentBMatch match : allMatches) {
+    					hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentB_Appeared_IQEvent event = new hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentB_Appeared_IQEvent(null);
     event.setTransactionId((java.lang.String)matchedPattern.get(1));
     					event.setIncQueryPattern(match);
     					adapter.push(event);
@@ -107,16 +107,16 @@ public class IncQuery2ViatraCep {
     
   }
   
-  public EventDrivenTransformationRule<ComponentC_AppearedMatch,ComponentC_AppearedMatcher> createcomponentC_MappingRule() {
+  public EventDrivenTransformationRule<ComponentCMatch,ComponentCMatcher> createcomponentC_Appeared_MappingRule() {
     try{
-    EventDrivenTransformationBuilder<ComponentC_AppearedMatch,ComponentC_AppearedMatcher>builder = new EventDrivenTransformationRuleFactory().createRule();
-    		builder.precondition(hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentC_AppearedMatcher.querySpecification());
-    IMatchProcessor<ComponentC_AppearedMatch>		 action = new IMatchProcessor<ComponentC_AppearedMatch>() {
-    		public void process(final hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentC_AppearedMatch matchedPattern) {
+    EventDrivenTransformationBuilder<ComponentCMatch,ComponentCMatcher>builder = new EventDrivenTransformationRuleFactory().createRule();
+    		builder.precondition(hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentCMatcher.querySpecification());
+    IMatchProcessor<ComponentCMatch>		 action = new IMatchProcessor<ComponentCMatch>() {
+    		public void process(final hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentCMatch matchedPattern) {
     			try {
-    Collection<ComponentC_AppearedMatch>				allMatches = hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentC_AppearedMatcher.on(transformation.getIqEngine()).getAllMatches();
-    				for (hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentC_AppearedMatch match : allMatches) {
-    					hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_IQEvent event = new hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_IQEvent(null);
+    Collection<ComponentCMatch>				allMatches = hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentCMatcher.on(transformation.getIqEngine()).getAllMatches();
+    				for (hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentCMatch match : allMatches) {
+    					hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_Appeared_IQEvent event = new hu.bme.mit.incquery.cep.casestudy.transaction.events.incquery.ComponentC_Appeared_IQEvent(null);
     event.setTransactionId((java.lang.String)matchedPattern.get(1));
     event.setSupplierId((java.lang.String)matchedPattern.get(2));
     					event.setIncQueryPattern(match);
