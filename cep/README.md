@@ -35,42 +35,6 @@ Setting up the environment
  * Case study Ecore metamodell [hu.bme.mit.incquery.cep.casestudy.transaction.metamodel](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/casestudy/transaction/hu.bme.mit.incquery.cep.casestudy.transaction.metamodel)
  * Case study implementation [hu.bme.mit.incquery.cep.casestudy.transaction](https://github.com/istvanrath/EMF-IncQuery-Addons/tree/master/cep/casestudy/transaction/hu.bme.mit.incquery.cep.casestudy.transaction)
 
-Roadmap/TODO
-------------
-
-**Latest enhancements:**
-* 10.23. Generation of patterns, event types, rules, jobs from the DSL
-* 10.18. DSL improvements: fixed package handling, referrable EMF-IncQuery patterns, minimal codegen
-* 10.17. Added case study projects
-* 10.12. DSL improvements: branched expressions, rules for associating patterns with actions, removed annotations
-
-**In progress:**
-* define the language for modeling event patterns over EMF models
- * reuse the concepts of event-driven model transformations and the pattern language of IncQuery
-
-**Future work:**
-* [d] replace the bare Java code in the process at the following points:
- * time constraint checks
- * state machines without enabled transitions (see: wasEnabled map in the Manager)
-* [r/d] enable defining more compound events, i.e. using measurments (as of CEDL)
- * e.g. instead of having an IQPattern_Found and an IQPattern_Lost event, define one event containing the Found/Lost parameter
- * this would require more advanced guard handling on the transitions
- * make it possible to define own measurement types (percentage, scalar and literal won't be satisfactory in the practice)
- * also: find a proper name for this feature
-* [r/d] extend the DFA formalism to a PDA by utilizing the built-in memory of EventTokens
-* [d] refactor the examples plugin in a more lucid way
- * package/class naming, comments, etc
- * make sure every use case is properly presented
-* [d] implement the common event processing strategies: chronicle, recent, unrestricted
-* [d] make the EventQueue thread-safe in order to enable higher performance via threading
-* [r/d] enable definition of custom execution strategies
- * define semantics for that
- * implement the required API (the extension point mechanism could work here perfectly)
-* [r] examine the opportunities in enabling DTW-based pattern recognition
-* [r] examine the possibility to introduce grouping of atomic events (~"noise groups" or stg like that) which grouping would enable more intelligent noise filtering
- * e.g. in Strict mode FS_FE is not recognized if an arbitrary event is inserted between these two
- * however, that arbitrary event might have nothing to do with the targeted area of the skeleton
-  * e.g. moving a leg whilst forward slide
 
 License
 -------
