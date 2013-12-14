@@ -1,0 +1,78 @@
+package hu.bme.mit.incquery.cep.performance.md.patterns.util;
+
+import hu.bme.mit.incquery.cep.performance.md.patterns.ComponentFMatcher;
+import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
+import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
+
+/**
+ * A pattern-specific query specification that can instantiate ComponentFMatcher in a type-safe way.
+ * 
+ * @see ComponentFMatcher
+ * @see ComponentFMatch
+ * 
+ */
+@SuppressWarnings("all")
+public final class ComponentFQuerySpecification extends BaseGeneratedQuerySpecification<ComponentFMatcher> {
+  /**
+   * @return the singleton instance of the query specification
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static ComponentFQuerySpecification instance() throws IncQueryException {
+    try {
+    	return LazyHolder.INSTANCE;
+    } catch (ExceptionInInitializerError err) {
+    	processInitializerError(err);
+    	throw err;
+    }
+    
+  }
+  
+  @Override
+  protected ComponentFMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
+    return ComponentFMatcher.on(engine);
+    
+  }
+  
+  @Override
+  protected String getBundleName() {
+    return "hu.bme.mit.incquery.cep.performance";
+    
+  }
+  
+  @Override
+  protected String patternName() {
+    return "hu.bme.mit.incquery.cep.performance.md.patterns.componentF";
+    
+  }
+  
+  private ComponentFQuerySpecification() throws IncQueryException {
+    super();
+  }
+  
+  @SuppressWarnings("all")
+  public static class Provider implements IQuerySpecificationProvider<ComponentFQuerySpecification> {
+    @Override
+    public ComponentFQuerySpecification get() throws IncQueryException {
+      return instance();
+    }
+  }
+  
+  
+  @SuppressWarnings("all")
+  private static class LazyHolder {
+    private final static ComponentFQuerySpecification INSTANCE = make();
+    
+    public static ComponentFQuerySpecification make() {
+      try {
+      	return new ComponentFQuerySpecification();
+      } catch (IncQueryException ex) {
+      	throw new RuntimeException	(ex);
+      }
+      
+    }
+  }
+  
+}

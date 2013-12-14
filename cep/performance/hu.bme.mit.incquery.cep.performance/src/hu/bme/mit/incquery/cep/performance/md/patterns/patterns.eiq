@@ -1,0 +1,54 @@
+package hu.bme.mit.incquery.cep.performance.md.patterns
+
+import "performance.transaction.meta"
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+pattern componentA(te){
+	TransactionModel.latestComponentEvent(_, te);
+	TransactionComponentA(te);
+}
+
+pattern componentB(te){
+	TransactionModel.latestComponentEvent(_, te);
+	TransactionComponentB(te);
+}
+
+pattern componentC(te){
+	TransactionModel.latestComponentEvent(_, te);
+	TransactionComponentC(te);
+}
+
+pattern componentD(te){
+	TransactionModel.latestComponentEvent(_, te);
+	TransactionComponentD(te);
+}
+
+pattern componentE(te){
+	TransactionModel.latestComponentEvent(_, te);
+	TransactionComponentE(te);
+}
+
+pattern componentF(te){
+	TransactionModel.latestComponentEvent(_, te);
+	TransactionComponentF(te);
+}
+
+pattern componentG(te){
+	TransactionModel.latestComponentEvent(_, te);
+	TransactionComponentG(te);
+}
+
+pattern componentH(te){
+	TransactionModel.latestComponentEvent(_, te);
+	TransactionComponentH(te);
+}
+
+pattern componentI(te){
+	TransactionModel.latestComponentEvent(_, te);
+	TransactionComponentI(te);
+}
+
+pattern componentJ(te){
+	TransactionModel.latestComponentEvent(_, te);
+	TransactionComponentJ(te);
+}

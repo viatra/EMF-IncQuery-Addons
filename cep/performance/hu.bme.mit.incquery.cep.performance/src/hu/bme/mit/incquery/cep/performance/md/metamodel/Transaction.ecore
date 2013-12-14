@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="performancetransaction" nsURI="performance.transaction.meta"
+    nsPrefix="hu.bme.mit.incquery.cep.performance.md.transaction">
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="latestComponentEvent" eType="#//Component"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="latestCompoundEvent" eType="#//CompoundTransactionEvent"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transactionId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ModelElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionComponentA" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionComponentB" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionComponentC" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionComponentD" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionComponentE" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionComponentF" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionComponentG" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionComponentH" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionComponentI" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransactionComponentJ" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompoundTransactionEvent" eSuperTypes="#//ModelElement"/>
+</ecore:EPackage>

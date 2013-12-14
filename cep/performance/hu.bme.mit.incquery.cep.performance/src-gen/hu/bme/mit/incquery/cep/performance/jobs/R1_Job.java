@@ -15,7 +15,7 @@ public class R1_Job extends Job<IObservableComplexEventPattern> {
   
   @Override
   public void execute(final Activation<? extends IObservableComplexEventPattern> activation, final Context context) {
-    IActionHandler actionHandler = new hu.bme.mit.incquery.cep.performance.actionhandlers.SimpleActionHandler2();
+    IActionHandler actionHandler = new hu.bme.mit.incquery.cep.performance.actionhandlers.SimpleActionHandler2MD();
     actionHandler.handle(activation);
   }
   

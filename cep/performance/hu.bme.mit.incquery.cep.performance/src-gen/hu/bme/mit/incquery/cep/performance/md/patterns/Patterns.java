@@ -1,0 +1,71 @@
+package hu.bme.mit.incquery.cep.performance.md.patterns;
+
+import hu.bme.mit.incquery.cep.performance.md.patterns.ComponentAMatcher;
+import hu.bme.mit.incquery.cep.performance.md.patterns.ComponentBMatcher;
+import hu.bme.mit.incquery.cep.performance.md.patterns.ComponentCMatcher;
+import hu.bme.mit.incquery.cep.performance.md.patterns.ComponentDMatcher;
+import hu.bme.mit.incquery.cep.performance.md.patterns.ComponentEMatcher;
+import hu.bme.mit.incquery.cep.performance.md.patterns.ComponentFMatcher;
+import hu.bme.mit.incquery.cep.performance.md.patterns.ComponentGMatcher;
+import hu.bme.mit.incquery.cep.performance.md.patterns.ComponentHMatcher;
+import hu.bme.mit.incquery.cep.performance.md.patterns.ComponentIMatcher;
+import hu.bme.mit.incquery.cep.performance.md.patterns.ComponentJMatcher;
+import org.eclipse.incquery.runtime.api.impl.BaseGeneratedPatternGroup;
+import org.eclipse.incquery.runtime.exception.IncQueryException;
+
+/**
+ * A pattern group formed of all patterns defined in patterns.eiq.
+ * 
+ * <p>Use the static instance as any {@link org.eclipse.incquery.runtime.api.IPatternGroup}, to conveniently prepare 
+ * an EMF-IncQuery engine for matching all patterns originally defined in file patterns.eiq,
+ * in order to achieve better performance than one-by-one on-demand matcher initialization.
+ * 
+ * <p> From package hu.bme.mit.incquery.cep.performance.md.patterns, the group contains the definition of the following patterns: <ul>
+ * <li>componentA</li>
+ * <li>componentB</li>
+ * <li>componentC</li>
+ * <li>componentD</li>
+ * <li>componentE</li>
+ * <li>componentF</li>
+ * <li>componentG</li>
+ * <li>componentH</li>
+ * <li>componentI</li>
+ * <li>componentJ</li>
+ * </ul>
+ * 
+ * @see IPatternGroup
+ * 
+ */
+@SuppressWarnings("all")
+public final class Patterns extends BaseGeneratedPatternGroup {
+  /**
+   * Access the pattern group.
+   * 
+   * @return the singleton instance of the group
+   * @throws IncQueryException if there was an error loading the generated code of pattern specifications
+   * 
+   */
+  public static Patterns instance() throws IncQueryException {
+    if (INSTANCE == null) {
+    	INSTANCE = new Patterns();
+    }
+    return INSTANCE;
+    
+  }
+  
+  private static Patterns INSTANCE;
+  
+  private Patterns() throws IncQueryException {
+    querySpecifications.add(ComponentAMatcher.querySpecification());
+    querySpecifications.add(ComponentBMatcher.querySpecification());
+    querySpecifications.add(ComponentIMatcher.querySpecification());
+    querySpecifications.add(ComponentHMatcher.querySpecification());
+    querySpecifications.add(ComponentFMatcher.querySpecification());
+    querySpecifications.add(ComponentCMatcher.querySpecification());
+    querySpecifications.add(ComponentDMatcher.querySpecification());
+    querySpecifications.add(ComponentGMatcher.querySpecification());
+    querySpecifications.add(ComponentJMatcher.querySpecification());
+    querySpecifications.add(ComponentEMatcher.querySpecification());
+    
+  }
+}

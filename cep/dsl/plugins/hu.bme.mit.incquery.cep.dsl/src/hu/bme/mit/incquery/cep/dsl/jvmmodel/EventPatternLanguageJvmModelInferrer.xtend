@@ -238,7 +238,11 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 	}
 	
 	def private getParameterMapping(ITreeAppendable appendable, EObject ctx){
-		var eventPatternParams = (ctx as IQPatternEventPattern).parameters.parameters
+		var params = (ctx as IQPatternEventPattern).parameters
+		if(params == null){
+			return
+		}
+		var eventPatternParams = params.parameters
 		var iqPatternParams = (ctx as IQPatternEventPattern).iqPatternRef.parameterList.parameters
 		
 		var i = -1;

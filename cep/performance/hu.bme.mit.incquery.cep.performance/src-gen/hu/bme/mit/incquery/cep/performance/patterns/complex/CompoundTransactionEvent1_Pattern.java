@@ -16,8 +16,13 @@ public class CompoundTransactionEvent1_Pattern extends ParameterizableComplexEve
     
     // composition events
     List<EventPattern> compositionEventPatternsForCP = Lists.newArrayList();
-    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.performance.patterns.atomic.ComponentA_Pattern());
-    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.performance.patterns.atomic.ComponentB_Pattern());
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.performance.patterns.atomic.incquery.ComponentA_IQPattern());
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.performance.patterns.atomic.incquery.ComponentB_IQPattern());
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.performance.patterns.atomic.incquery.ComponentC_IQPattern());
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.performance.patterns.atomic.incquery.ComponentD_IQPattern());
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.performance.patterns.atomic.incquery.ComponentE_IQPattern());
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.performance.patterns.atomic.incquery.ComponentF_IQPattern());
+    compositionEventPatternsForCP.add(new hu.bme.mit.incquery.cep.performance.patterns.atomic.incquery.ComponentG_IQPattern());
     getCompositionEvents().addAll(compositionEventPatternsForCP);
     setId("CompoundTransactionEvent1_Pattern");
   }

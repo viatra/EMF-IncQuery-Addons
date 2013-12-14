@@ -1,10 +1,19 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Performance
-Bundle-SymbolicName: hu.bme.mit.incquery.cep.performance; singleton:=true
+Bundle-Name: %pluginName
+Bundle-SymbolicName: hu.bme.mit.incquery.cep.performance;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
 Bundle-Activator: hu.bme.mit.incquery.cep.performance.internal.Activator
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Export-Package: hu.bme.mit.incquery.cep.performance.md.metamodels.performancetransaction,
+ hu.bme.mit.incquery.cep.performance.md.metamodels.performancetransaction.impl,
+ hu.bme.mit.incquery.cep.performance.md.metamodels.performancetransaction.util,
+ hu.bme.mit.incquery.cep.performance.md.patterns,
+ hu.bme.mit.incquery.cep.performance.md.patterns.util
 Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
  com.google.guava,
  org.eclipse.xtend.lib,
  org.eclipse.xtext.xbase.lib,
@@ -14,7 +23,6 @@ Require-Bundle: org.eclipse.core.runtime,
  hu.bme.mit.incquery.cep.casestudy.base;bundle-version="1.0.0",
  hu.bme.mit.incquery.cep;bundle-version="1.0.0",
  org.junit,
- hu.bme.mit.incquery.cep.instrumentation;bundle-version="1.0.0",
- hu.bme.mit.incquery.cep.instrumentation
-Bundle-ActivationPolicy: lazy
+ org.eclipse.viatra2.emf.runtime;bundle-version="0.7.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.incquery.cep.performance/src" modelPluginID="hu.bme.mit.incquery.cep.performance"
+    modelName="Transaction" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>Transaction.ecore</foreignModel>
+  <genPackages prefix="Transaction" basePackage="hu.bme.mit.incquery.cep.performance.md.metamodels"
+      disposableProviderFactory="true" ecorePackage="Transaction.ecore#/">
+    <genClasses ecoreClass="Transaction.ecore#//TransactionModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Transaction.ecore#//TransactionModel/latestComponentEvent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Transaction.ecore#//TransactionModel/latestCompoundEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="Transaction.ecore#//ModelElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Transaction.ecore#//ModelElement/transactionId"/>
+    </genClasses>
+    <genClasses ecoreClass="Transaction.ecore#//Component"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionComponentA"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionComponentB"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionComponentC"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionComponentD"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionComponentE"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionComponentF"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionComponentG"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionComponentH"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionComponentI"/>
+    <genClasses ecoreClass="Transaction.ecore#//TransactionComponentJ"/>
+    <genClasses ecoreClass="Transaction.ecore#//CompoundTransactionEvent"/>
+  </genPackages>
+</genmodel:GenModel>
