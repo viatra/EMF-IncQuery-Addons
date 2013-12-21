@@ -183,7 +183,7 @@ InnerBranchExpression:
 
 BranchExpression:
 	{BranchExpression}
-	eventPatterns+=EventTypedParameterWithMultiplicity ('OR' eventPatterns+=EventTypedParameterWithMultiplicity)+
+	eventPatterns+=EventTypedParameterWithMultiplicity (',' eventPatterns+=EventTypedParameterWithMultiplicity)+
 ;
 
 FollowsOperator:

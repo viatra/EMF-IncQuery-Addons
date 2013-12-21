@@ -16,19 +16,19 @@ public final class SamplepatternsMatchers {
     
   }
   
-  public ComponentCMatcher getComponentCMatcher() throws IncQueryException {
-    return ComponentCMatcher.on(engine);
+  public CompoundEventMatcher getCompoundEventMatcher() throws IncQueryException {
+    return CompoundEventMatcher.on(engine);
   }
   
   public ComponentAMatcher getComponentAMatcher() throws IncQueryException {
     return ComponentAMatcher.on(engine);
   }
   
-  public CompoundEventMatcher getCompoundEventMatcher() throws IncQueryException {
-    return CompoundEventMatcher.on(engine);
-  }
-  
   public ComponentBMatcher getComponentBMatcher() throws IncQueryException {
     return ComponentBMatcher.on(engine);
+  }
+  
+  public ComponentCMatcher getComponentCMatcher() throws IncQueryException {
+    return ComponentCMatcher.on(engine);
   }
 }

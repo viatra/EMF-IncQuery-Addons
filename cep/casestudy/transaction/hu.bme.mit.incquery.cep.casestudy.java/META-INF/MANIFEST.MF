@@ -4,6 +4,7 @@ Bundle-Name: Java
 Bundle-SymbolicName: hu.bme.mit.incquery.cep.casestudy.java;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: hu.bme.mit.incquery.cep.casestudy.java.internal.Activator
+Export-Package: hu.bme.mit.incquery.cep.casestudy.transaction.events
 Require-Bundle: org.eclipse.core.runtime,
  hu.bme.mit.incquery.cep.casestudy.base;bundle-version="1.0.0",
  com.google.guava;bundle-version="11.0.2",
@@ -11,6 +12,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.incquery.runtime.evm;bundle-version="0.8.0",
  org.eclipse.core.databinding.observable;bundle-version="1.4.1",
  org.junit;bundle-version="4.11.0"
-Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: hu.bme.mit.incquery.cep.casestudy.transaction.events
+Bundle-ActivationPolicy: lazy

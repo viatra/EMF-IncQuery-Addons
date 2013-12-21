@@ -8970,11 +8970,11 @@ rule__BranchExpression__Group_2__0__Impl
     }
 :
 (
-{ before(grammarAccess.getBranchExpressionAccess().getORKeyword_2_0()); }
+{ before(grammarAccess.getBranchExpressionAccess().getCommaKeyword_2_0()); }
 
-	'OR' 
+	',' 
 
-{ after(grammarAccess.getBranchExpressionAccess().getORKeyword_2_0()); }
+{ after(grammarAccess.getBranchExpressionAccess().getCommaKeyword_2_0()); }
 )
 
 ;

@@ -1335,18 +1335,18 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		private final Assignment cEventPatternsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cEventPatternsEventTypedParameterWithMultiplicityParserRuleCall_1_0 = (RuleCall)cEventPatternsAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cORKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cEventPatternsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cEventPatternsEventTypedParameterWithMultiplicityParserRuleCall_2_1_0 = (RuleCall)cEventPatternsAssignment_2_1.eContents().get(0);
 		
 		//BranchExpression:
 		//
-		//	{BranchExpression} eventPatterns+=EventTypedParameterWithMultiplicity ("OR"
+		//	{BranchExpression} eventPatterns+=EventTypedParameterWithMultiplicity (","
 		//
 		//	eventPatterns+=EventTypedParameterWithMultiplicity)+;
 		public ParserRule getRule() { return rule; }
 
-		//{BranchExpression} eventPatterns+=EventTypedParameterWithMultiplicity ("OR"
+		//{BranchExpression} eventPatterns+=EventTypedParameterWithMultiplicity (","
 		//
 		//eventPatterns+=EventTypedParameterWithMultiplicity)+
 		public Group getGroup() { return cGroup; }
@@ -1360,11 +1360,11 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 		//EventTypedParameterWithMultiplicity
 		public RuleCall getEventPatternsEventTypedParameterWithMultiplicityParserRuleCall_1_0() { return cEventPatternsEventTypedParameterWithMultiplicityParserRuleCall_1_0; }
 
-		//("OR" eventPatterns+=EventTypedParameterWithMultiplicity)+
+		//("," eventPatterns+=EventTypedParameterWithMultiplicity)+
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"OR"
-		public Keyword getORKeyword_2_0() { return cORKeyword_2_0; }
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 
 		//eventPatterns+=EventTypedParameterWithMultiplicity
 		public Assignment getEventPatternsAssignment_2_1() { return cEventPatternsAssignment_2_1; }
@@ -2447,7 +2447,7 @@ public class EventPatternLanguageGrammarAccess extends AbstractGrammarElementFin
 
 	//BranchExpression:
 	//
-	//	{BranchExpression} eventPatterns+=EventTypedParameterWithMultiplicity ("OR"
+	//	{BranchExpression} eventPatterns+=EventTypedParameterWithMultiplicity (","
 	//
 	//	eventPatterns+=EventTypedParameterWithMultiplicity)+;
 	public BranchExpressionElements getBranchExpressionAccess() {

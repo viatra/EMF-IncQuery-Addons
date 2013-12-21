@@ -12,9 +12,9 @@ public class MainGeneratorMD {
 		List<String> atomicEvents = Lists.newArrayList("componentA", "componentB", "componentC", "componentD",
 				"componentE", "componentF", "componentG");
 		PermutationHelper<String> permutation = new PermutationHelper<String>();
-		List<List<String>> perm = permutation.generatePerm2(atomicEvents, 1000);
+		List<List<String>> perm = permutation.generatePerm2(atomicEvents, 10);
 
 		TemplateMD template = new TemplateMD();
-		template.generate("src/testdata.vepl", perm, ComplexOperator.ORDERED);
+		template.generate("src/testdata.vepl", perm, ComplexOperator.UNORDERED);
 	}
 }

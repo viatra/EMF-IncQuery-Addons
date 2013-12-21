@@ -12,7 +12,7 @@ import java.util.List;
 public class CompoundTransactionEvent3_Pattern extends ParameterizableComplexEventPattern {
   public CompoundTransactionEvent3_Pattern() {
     super();
-    setOperator(ComplexOperator.ORDERED);
+    setOperator(ComplexOperator.UNORDERED);
     
     // composition events
     List<EventPattern> compositionEventPatternsForCP = Lists.newArrayList();

@@ -2075,9 +2075,9 @@ ruleBranchExpression returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_2='OR' 
+)(	otherlv_2=',' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getBranchExpressionAccess().getORKeyword_2_0());
+    	newLeafNode(otherlv_2, grammarAccess.getBranchExpressionAccess().getCommaKeyword_2_0());
     }
 (
 (

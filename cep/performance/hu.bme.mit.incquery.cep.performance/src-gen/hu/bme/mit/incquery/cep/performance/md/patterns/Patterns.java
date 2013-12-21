@@ -56,16 +56,16 @@ public final class Patterns extends BaseGeneratedPatternGroup {
   private static Patterns INSTANCE;
   
   private Patterns() throws IncQueryException {
-    querySpecifications.add(ComponentAMatcher.querySpecification());
     querySpecifications.add(ComponentBMatcher.querySpecification());
+    querySpecifications.add(ComponentJMatcher.querySpecification());
     querySpecifications.add(ComponentIMatcher.querySpecification());
+    querySpecifications.add(ComponentEMatcher.querySpecification());
+    querySpecifications.add(ComponentDMatcher.querySpecification());
     querySpecifications.add(ComponentHMatcher.querySpecification());
     querySpecifications.add(ComponentFMatcher.querySpecification());
-    querySpecifications.add(ComponentCMatcher.querySpecification());
-    querySpecifications.add(ComponentDMatcher.querySpecification());
     querySpecifications.add(ComponentGMatcher.querySpecification());
-    querySpecifications.add(ComponentJMatcher.querySpecification());
-    querySpecifications.add(ComponentEMatcher.querySpecification());
+    querySpecifications.add(ComponentCMatcher.querySpecification());
+    querySpecifications.add(ComponentAMatcher.querySpecification());
     
   }
 }

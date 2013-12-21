@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalEventPatternLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_HEX", "RULE_DECIMAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'-'", "'.'", "'uses'", "'uses-patterns'", "'AtomicEvent'", "'('", "')'", "'{'", "'source'", "':'", "'staticBindings'", "'}'", "'IQPatternEvent'", "'iqPatternRef'", "'iqChangeType'", "'ComplexEvent'", "'priority'", "'definition'", "'Rule'", "'events'", "', '", "'actionHandler'", "'action'", "'['", "']'", "'OR'", "'->'", "'in'", "'<'", "'=<'", "'=='", "'!='", "'>='", "'>'", "'contains'", "'startsWith'", "'endsWith'", "'not'", "'Source'", "'register'", "'='", "'+='", "'-='", "'||'", "'&&'", "'==='", "'!=='", "'instanceof'", "'<='", "'..<'", "'..'", "'=>'", "'<>'", "'?:'", "'<=>'", "'+'", "'*'", "'**'", "'/'", "'%'", "'!'", "'as'", "'::'", "'?.'", "','", "'#'", "'|'", "';'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "'var'", "'val'", "'extends'", "'static'", "'import'", "'extension'", "'super'", "'new'", "'false'", "'true'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'?'", "'&'", "'NEW_MATCH_FOUND'", "'EXISTING_MATCH_LOST'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_HEX", "RULE_DECIMAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'-'", "'.'", "'uses'", "'uses-patterns'", "'AtomicEvent'", "'('", "')'", "'{'", "'source'", "':'", "'staticBindings'", "'}'", "'IQPatternEvent'", "'iqPatternRef'", "'iqChangeType'", "'ComplexEvent'", "'priority'", "'definition'", "'Rule'", "'events'", "', '", "'actionHandler'", "'action'", "'['", "']'", "','", "'->'", "'in'", "'<'", "'=<'", "'=='", "'!='", "'>='", "'>'", "'contains'", "'startsWith'", "'endsWith'", "'not'", "'Source'", "'register'", "'='", "'+='", "'-='", "'||'", "'&&'", "'==='", "'!=='", "'instanceof'", "'<='", "'..<'", "'..'", "'=>'", "'<>'", "'?:'", "'<=>'", "'+'", "'*'", "'**'", "'/'", "'%'", "'!'", "'as'", "'::'", "'?.'", "'#'", "'|'", "';'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "'var'", "'val'", "'extends'", "'static'", "'import'", "'extension'", "'super'", "'new'", "'false'", "'true'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'?'", "'&'", "'NEW_MATCH_FOUND'", "'EXISTING_MATCH_LOST'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -105,7 +105,6 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final int T__104=104;
     public static final int T__105=105;
     public static final int T__106=106;
-    public static final int T__110=110;
     public static final int RULE_INT=4;
     public static final int T__50=50;
     public static final int T__42=42;
@@ -5679,7 +5678,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleBranchExpression"
-    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2050:1: ruleBranchExpression returns [EObject current=null] : ( () ( (lv_eventPatterns_1_0= ruleEventTypedParameterWithMultiplicity ) ) (otherlv_2= 'OR' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) ) )+ ) ;
+    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2050:1: ruleBranchExpression returns [EObject current=null] : ( () ( (lv_eventPatterns_1_0= ruleEventTypedParameterWithMultiplicity ) ) (otherlv_2= ',' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) ) )+ ) ;
     public final EObject ruleBranchExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5692,11 +5691,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2053:28: ( ( () ( (lv_eventPatterns_1_0= ruleEventTypedParameterWithMultiplicity ) ) (otherlv_2= 'OR' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) ) )+ ) )
-            // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2054:1: ( () ( (lv_eventPatterns_1_0= ruleEventTypedParameterWithMultiplicity ) ) (otherlv_2= 'OR' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) ) )+ )
+            // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2053:28: ( ( () ( (lv_eventPatterns_1_0= ruleEventTypedParameterWithMultiplicity ) ) (otherlv_2= ',' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) ) )+ ) )
+            // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2054:1: ( () ( (lv_eventPatterns_1_0= ruleEventTypedParameterWithMultiplicity ) ) (otherlv_2= ',' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) ) )+ )
             {
-            // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2054:1: ( () ( (lv_eventPatterns_1_0= ruleEventTypedParameterWithMultiplicity ) ) (otherlv_2= 'OR' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) ) )+ )
-            // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2054:2: () ( (lv_eventPatterns_1_0= ruleEventTypedParameterWithMultiplicity ) ) (otherlv_2= 'OR' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) ) )+
+            // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2054:1: ( () ( (lv_eventPatterns_1_0= ruleEventTypedParameterWithMultiplicity ) ) (otherlv_2= ',' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) ) )+ )
+            // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2054:2: () ( (lv_eventPatterns_1_0= ruleEventTypedParameterWithMultiplicity ) ) (otherlv_2= ',' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) ) )+
             {
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2054:2: ()
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2055:5: 
@@ -5746,7 +5745,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2078:2: (otherlv_2= 'OR' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) ) )+
+            // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2078:2: (otherlv_2= ',' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) ) )+
             int cnt30=0;
             loop30:
             do {
@@ -5760,12 +5759,12 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
                 switch (alt30) {
             	case 1 :
-            	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2078:4: otherlv_2= 'OR' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) )
+            	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2078:4: otherlv_2= ',' ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) )
             	    {
             	    otherlv_2=(Token)match(input,39,FOLLOW_39_in_ruleBranchExpression4665); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	          	newLeafNode(otherlv_2, grammarAccess.getBranchExpressionAccess().getORKeyword_2_0());
+            	          	newLeafNode(otherlv_2, grammarAccess.getBranchExpressionAccess().getCommaKeyword_2_0());
             	          
             	    }
             	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:2082:1: ( (lv_eventPatterns_3_0= ruleEventTypedParameterWithMultiplicity ) )
@@ -8482,7 +8481,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 if ( (LA39_1==54) ) {
                     alt39=1;
                 }
-                else if ( (LA39_1==EOF||(LA39_1>=RULE_INT && LA39_1<=RULE_DECIMAL)||(LA39_1>=14 && LA39_1<=15)||(LA39_1>=19 && LA39_1<=21)||LA39_1==23||LA39_1==25||(LA39_1>=37 && LA39_1<=38)||LA39_1==40||LA39_1==42||(LA39_1>=44 && LA39_1<=47)||(LA39_1>=55 && LA39_1<=79)||(LA39_1>=81 && LA39_1<=106)) ) {
+                else if ( (LA39_1==EOF||(LA39_1>=RULE_INT && LA39_1<=RULE_DECIMAL)||(LA39_1>=14 && LA39_1<=15)||(LA39_1>=19 && LA39_1<=21)||LA39_1==23||LA39_1==25||(LA39_1>=37 && LA39_1<=40)||LA39_1==42||(LA39_1>=44 && LA39_1<=47)||(LA39_1>=55 && LA39_1<=78)||(LA39_1>=80 && LA39_1<=105)) ) {
                     alt39=2;
                 }
                 else {
@@ -8494,11 +8493,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 }
                 }
                 break;
-            case 92:
+            case 91:
                 {
                 int LA39_2 = input.LA(2);
 
-                if ( (LA39_2==EOF||(LA39_2>=RULE_INT && LA39_2<=RULE_DECIMAL)||(LA39_2>=14 && LA39_2<=15)||(LA39_2>=19 && LA39_2<=21)||LA39_2==23||LA39_2==25||(LA39_2>=37 && LA39_2<=38)||LA39_2==40||LA39_2==42||(LA39_2>=44 && LA39_2<=47)||(LA39_2>=55 && LA39_2<=79)||(LA39_2>=81 && LA39_2<=106)) ) {
+                if ( (LA39_2==EOF||(LA39_2>=RULE_INT && LA39_2<=RULE_DECIMAL)||(LA39_2>=14 && LA39_2<=15)||(LA39_2>=19 && LA39_2<=21)||LA39_2==23||LA39_2==25||(LA39_2>=37 && LA39_2<=40)||LA39_2==42||(LA39_2>=44 && LA39_2<=47)||(LA39_2>=55 && LA39_2<=78)||(LA39_2>=80 && LA39_2<=105)) ) {
                     alt39=2;
                 }
                 else if ( (LA39_2==54) ) {
@@ -8513,14 +8512,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 }
                 }
                 break;
-            case 93:
+            case 92:
                 {
                 int LA39_3 = input.LA(2);
 
                 if ( (LA39_3==54) ) {
                     alt39=1;
                 }
-                else if ( (LA39_3==EOF||(LA39_3>=RULE_INT && LA39_3<=RULE_DECIMAL)||(LA39_3>=14 && LA39_3<=15)||(LA39_3>=19 && LA39_3<=21)||LA39_3==23||LA39_3==25||(LA39_3>=37 && LA39_3<=38)||LA39_3==40||LA39_3==42||(LA39_3>=44 && LA39_3<=47)||(LA39_3>=55 && LA39_3<=79)||(LA39_3>=81 && LA39_3<=106)) ) {
+                else if ( (LA39_3==EOF||(LA39_3>=RULE_INT && LA39_3<=RULE_DECIMAL)||(LA39_3>=14 && LA39_3<=15)||(LA39_3>=19 && LA39_3<=21)||LA39_3==23||LA39_3==25||(LA39_3>=37 && LA39_3<=40)||LA39_3==42||(LA39_3>=44 && LA39_3<=47)||(LA39_3>=55 && LA39_3<=78)||(LA39_3>=80 && LA39_3<=105)) ) {
                     alt39=2;
                 }
                 else {
@@ -8532,11 +8531,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 }
                 }
                 break;
-            case 94:
+            case 93:
                 {
                 int LA39_4 = input.LA(2);
 
-                if ( (LA39_4==EOF||(LA39_4>=RULE_INT && LA39_4<=RULE_DECIMAL)||(LA39_4>=14 && LA39_4<=15)||(LA39_4>=19 && LA39_4<=21)||LA39_4==23||LA39_4==25||(LA39_4>=37 && LA39_4<=38)||LA39_4==40||LA39_4==42||(LA39_4>=44 && LA39_4<=47)||(LA39_4>=55 && LA39_4<=79)||(LA39_4>=81 && LA39_4<=106)) ) {
+                if ( (LA39_4==EOF||(LA39_4>=RULE_INT && LA39_4<=RULE_DECIMAL)||(LA39_4>=14 && LA39_4<=15)||(LA39_4>=19 && LA39_4<=21)||LA39_4==23||LA39_4==25||(LA39_4>=37 && LA39_4<=40)||LA39_4==42||(LA39_4>=44 && LA39_4<=47)||(LA39_4>=55 && LA39_4<=78)||(LA39_4>=80 && LA39_4<=105)) ) {
                     alt39=2;
                 }
                 else if ( (LA39_4==54) ) {
@@ -8551,11 +8550,11 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 }
                 }
                 break;
-            case 95:
+            case 94:
                 {
                 int LA39_5 = input.LA(2);
 
-                if ( (LA39_5==EOF||(LA39_5>=RULE_INT && LA39_5<=RULE_DECIMAL)||(LA39_5>=14 && LA39_5<=15)||(LA39_5>=19 && LA39_5<=21)||LA39_5==23||LA39_5==25||(LA39_5>=37 && LA39_5<=38)||LA39_5==40||LA39_5==42||(LA39_5>=44 && LA39_5<=47)||(LA39_5>=55 && LA39_5<=79)||(LA39_5>=81 && LA39_5<=106)) ) {
+                if ( (LA39_5==EOF||(LA39_5>=RULE_INT && LA39_5<=RULE_DECIMAL)||(LA39_5>=14 && LA39_5<=15)||(LA39_5>=19 && LA39_5<=21)||LA39_5==23||LA39_5==25||(LA39_5>=37 && LA39_5<=40)||LA39_5==42||(LA39_5>=44 && LA39_5<=47)||(LA39_5>=55 && LA39_5<=78)||(LA39_5>=80 && LA39_5<=105)) ) {
                     alt39=2;
                 }
                 else if ( (LA39_5==54) ) {
@@ -8581,12 +8580,13 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             case 42:
             case 69:
             case 74:
-            case 79:
-            case 82:
-            case 84:
+            case 78:
+            case 81:
+            case 83:
+            case 86:
             case 87:
             case 88:
-            case 89:
+            case 95:
             case 96:
             case 97:
             case 98:
@@ -8595,7 +8595,6 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             case 101:
             case 102:
             case 103:
-            case 104:
                 {
                 alt39=2;
                 }
@@ -10980,7 +10979,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     if ( (LA48_0==47) ) {
                         int LA48_1 = input.LA(2);
 
-                        if ( (LA48_1==EOF||(LA48_1>=RULE_INT && LA48_1<=RULE_DECIMAL)||LA48_1==14||LA48_1==19||LA48_1==21||LA48_1==37||LA48_1==42||LA48_1==69||LA48_1==74||LA48_1==79||LA48_1==82||LA48_1==84||(LA48_1>=87 && LA48_1<=89)||(LA48_1>=92 && LA48_1<=104)) ) {
+                        if ( (LA48_1==EOF||(LA48_1>=RULE_INT && LA48_1<=RULE_DECIMAL)||LA48_1==14||LA48_1==19||LA48_1==21||LA48_1==37||LA48_1==42||LA48_1==69||LA48_1==74||LA48_1==78||LA48_1==81||LA48_1==83||(LA48_1>=86 && LA48_1<=88)||(LA48_1>=91 && LA48_1<=103)) ) {
                             alt48=2;
                         }
                         else if ( (LA48_1==47) && (synpred8_InternalEventPatternLanguage())) {
@@ -12040,7 +12039,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             if ( (LA55_0==14||LA55_0==69||LA55_0==74) ) {
                 alt55=1;
             }
-            else if ( ((LA55_0>=RULE_INT && LA55_0<=RULE_DECIMAL)||LA55_0==19||LA55_0==21||LA55_0==37||LA55_0==42||LA55_0==79||LA55_0==82||LA55_0==84||(LA55_0>=87 && LA55_0<=89)||(LA55_0>=92 && LA55_0<=104)) ) {
+            else if ( ((LA55_0>=RULE_INT && LA55_0<=RULE_DECIMAL)||LA55_0==19||LA55_0==21||LA55_0==37||LA55_0==42||LA55_0==78||LA55_0==81||LA55_0==83||(LA55_0>=86 && LA55_0<=88)||(LA55_0>=91 && LA55_0<=103)) ) {
                 alt55=2;
             }
             else {
@@ -13051,7 +13050,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             	                int alt60=2;
             	                int LA60_0 = input.LA(1);
 
-            	                if ( (LA60_0==78) ) {
+            	                if ( (LA60_0==39) ) {
             	                    alt60=1;
             	                }
 
@@ -13060,7 +13059,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             	            	case 1 :
             	            	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:4482:4: otherlv_13= ',' ( (lv_typeArguments_14_0= ruleJvmArgumentTypeReference ) )
             	            	    {
-            	            	    otherlv_13=(Token)match(input,78,FOLLOW_78_in_ruleXMemberFeatureCall10665); if (state.failed) return current;
+            	            	    otherlv_13=(Token)match(input,39,FOLLOW_39_in_ruleXMemberFeatureCall10665); if (state.failed) return current;
             	            	    if ( state.backtracking==0 ) {
 
             	            	          	newLeafNode(otherlv_13, grammarAccess.getXMemberFeatureCallAccess().getCommaKeyword_1_1_1_2_0());
@@ -13281,7 +13280,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             	                        int alt62=2;
             	                        int LA62_0 = input.LA(1);
 
-            	                        if ( (LA62_0==78) ) {
+            	                        if ( (LA62_0==39) ) {
             	                            alt62=1;
             	                        }
 
@@ -13290,7 +13289,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             	                    	case 1 :
             	                    	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:4597:4: otherlv_20= ',' ( (lv_memberCallArguments_21_0= ruleXExpression ) )
             	                    	    {
-            	                    	    otherlv_20=(Token)match(input,78,FOLLOW_78_in_ruleXMemberFeatureCall10885); if (state.failed) return current;
+            	                    	    otherlv_20=(Token)match(input,39,FOLLOW_39_in_ruleXMemberFeatureCall10885); if (state.failed) return current;
             	                    	    if ( state.backtracking==0 ) {
 
             	                    	          	newLeafNode(otherlv_20, grammarAccess.getXMemberFeatureCallAccess().getCommaKeyword_1_1_3_1_1_1_0());
@@ -13897,25 +13896,25 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt68=7;
             int LA68_0 = input.LA(1);
 
-            if ( (LA68_0==79) ) {
+            if ( (LA68_0==78) ) {
                 alt68=1;
             }
             else if ( (LA68_0==37) && (synpred18_InternalEventPatternLanguage())) {
                 alt68=2;
             }
-            else if ( ((LA68_0>=98 && LA68_0<=99)) ) {
+            else if ( ((LA68_0>=97 && LA68_0<=98)) ) {
                 alt68=3;
             }
             else if ( (LA68_0==RULE_INT||(LA68_0>=RULE_HEX && LA68_0<=RULE_DECIMAL)) ) {
                 alt68=4;
             }
-            else if ( (LA68_0==100) ) {
+            else if ( (LA68_0==99) ) {
                 alt68=5;
             }
             else if ( (LA68_0==RULE_STRING) ) {
                 alt68=6;
             }
-            else if ( (LA68_0==101) ) {
+            else if ( (LA68_0==100) ) {
                 alt68=7;
             }
             else {
@@ -14168,7 +14167,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt69=2;
             int LA69_0 = input.LA(1);
 
-            if ( (LA69_0==79) ) {
+            if ( (LA69_0==78) ) {
                 int LA69_1 = input.LA(2);
 
                 if ( (LA69_1==37) ) {
@@ -14335,7 +14334,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,79,FOLLOW_79_in_ruleXSetLiteral11857); if (state.failed) return current;
+            otherlv_1=(Token)match(input,78,FOLLOW_78_in_ruleXSetLiteral11857); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXSetLiteralAccess().getNumberSignKeyword_1());
@@ -14351,7 +14350,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt71=2;
             int LA71_0 = input.LA(1);
 
-            if ( ((LA71_0>=RULE_INT && LA71_0<=RULE_DECIMAL)||LA71_0==14||LA71_0==19||LA71_0==21||LA71_0==37||LA71_0==42||LA71_0==69||LA71_0==74||LA71_0==79||LA71_0==82||LA71_0==84||(LA71_0>=87 && LA71_0<=89)||(LA71_0>=92 && LA71_0<=104)) ) {
+            if ( ((LA71_0>=RULE_INT && LA71_0<=RULE_DECIMAL)||LA71_0==14||LA71_0==19||LA71_0==21||LA71_0==37||LA71_0==42||LA71_0==69||LA71_0==74||LA71_0==78||LA71_0==81||LA71_0==83||(LA71_0>=86 && LA71_0<=88)||(LA71_0>=91 && LA71_0<=103)) ) {
                 alt71=1;
             }
             switch (alt71) {
@@ -14399,7 +14398,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                         int alt70=2;
                         int LA70_0 = input.LA(1);
 
-                        if ( (LA70_0==78) ) {
+                        if ( (LA70_0==39) ) {
                             alt70=1;
                         }
 
@@ -14408,7 +14407,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     	case 1 :
                     	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:4978:4: otherlv_4= ',' ( (lv_elements_5_0= ruleXExpression ) )
                     	    {
-                    	    otherlv_4=(Token)match(input,78,FOLLOW_78_in_ruleXSetLiteral11904); if (state.failed) return current;
+                    	    otherlv_4=(Token)match(input,39,FOLLOW_39_in_ruleXSetLiteral11904); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_4, grammarAccess.getXSetLiteralAccess().getCommaKeyword_3_1_0());
@@ -14568,7 +14567,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,79,FOLLOW_79_in_ruleXListLiteral12033); if (state.failed) return current;
+            otherlv_1=(Token)match(input,78,FOLLOW_78_in_ruleXListLiteral12033); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXListLiteralAccess().getNumberSignKeyword_1());
@@ -14584,7 +14583,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt73=2;
             int LA73_0 = input.LA(1);
 
-            if ( ((LA73_0>=RULE_INT && LA73_0<=RULE_DECIMAL)||LA73_0==14||LA73_0==19||LA73_0==21||LA73_0==37||LA73_0==42||LA73_0==69||LA73_0==74||LA73_0==79||LA73_0==82||LA73_0==84||(LA73_0>=87 && LA73_0<=89)||(LA73_0>=92 && LA73_0<=104)) ) {
+            if ( ((LA73_0>=RULE_INT && LA73_0<=RULE_DECIMAL)||LA73_0==14||LA73_0==19||LA73_0==21||LA73_0==37||LA73_0==42||LA73_0==69||LA73_0==74||LA73_0==78||LA73_0==81||LA73_0==83||(LA73_0>=86 && LA73_0<=88)||(LA73_0>=91 && LA73_0<=103)) ) {
                 alt73=1;
             }
             switch (alt73) {
@@ -14632,7 +14631,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                         int alt72=2;
                         int LA72_0 = input.LA(1);
 
-                        if ( (LA72_0==78) ) {
+                        if ( (LA72_0==39) ) {
                             alt72=1;
                         }
 
@@ -14641,7 +14640,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     	case 1 :
                     	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5057:4: otherlv_4= ',' ( (lv_elements_5_0= ruleXExpression ) )
                     	    {
-                    	    otherlv_4=(Token)match(input,78,FOLLOW_78_in_ruleXListLiteral12080); if (state.failed) return current;
+                    	    otherlv_4=(Token)match(input,39,FOLLOW_39_in_ruleXListLiteral12080); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_4, grammarAccess.getXListLiteralAccess().getCommaKeyword_3_1_0());
@@ -14883,7 +14882,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                                 int alt74=2;
                                 int LA74_0 = input.LA(1);
 
-                                if ( (LA74_0==78) ) {
+                                if ( (LA74_0==39) ) {
                                     alt74=1;
                                 }
 
@@ -14892,7 +14891,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                             	case 1 :
                             	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5149:4: otherlv_3= ',' ( (lv_declaredFormalParameters_4_0= ruleJvmFormalParameter ) )
                             	    {
-                            	    otherlv_3=(Token)match(input,78,FOLLOW_78_in_ruleXClosure12309); if (state.failed) return current;
+                            	    otherlv_3=(Token)match(input,39,FOLLOW_39_in_ruleXClosure12309); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_3, grammarAccess.getXClosureAccess().getCommaKeyword_1_0_0_1_0());
@@ -14954,7 +14953,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5172:1: (lv_explicitSyntax_5_0= '|' )
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5173:3: lv_explicitSyntax_5_0= '|'
                     {
-                    lv_explicitSyntax_5_0=(Token)match(input,80,FOLLOW_80_in_ruleXClosure12352); if (state.failed) return current;
+                    lv_explicitSyntax_5_0=(Token)match(input,79,FOLLOW_79_in_ruleXClosure12352); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_explicitSyntax_5_0, grammarAccess.getXClosureAccess().getExplicitSyntaxVerticalLineKeyword_1_0_1_0());
@@ -15123,7 +15122,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 int alt78=2;
                 int LA78_0 = input.LA(1);
 
-                if ( ((LA78_0>=RULE_INT && LA78_0<=RULE_DECIMAL)||LA78_0==14||LA78_0==19||LA78_0==21||LA78_0==37||LA78_0==42||LA78_0==69||LA78_0==74||LA78_0==79||LA78_0==82||LA78_0==84||(LA78_0>=87 && LA78_0<=104)) ) {
+                if ( ((LA78_0>=RULE_INT && LA78_0<=RULE_DECIMAL)||LA78_0==14||LA78_0==19||LA78_0==21||LA78_0==37||LA78_0==42||LA78_0==69||LA78_0==74||LA78_0==78||LA78_0==81||LA78_0==83||(LA78_0>=86 && LA78_0<=103)) ) {
                     alt78=1;
                 }
 
@@ -15171,14 +15170,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             	    int alt77=2;
             	    int LA77_0 = input.LA(1);
 
-            	    if ( (LA77_0==81) ) {
+            	    if ( (LA77_0==80) ) {
             	        alt77=1;
             	    }
             	    switch (alt77) {
             	        case 1 :
             	            // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5253:4: otherlv_2= ';'
             	            {
-            	            otherlv_2=(Token)match(input,81,FOLLOW_81_in_ruleXExpressionInClosure12516); if (state.failed) return current;
+            	            otherlv_2=(Token)match(input,80,FOLLOW_80_in_ruleXExpressionInClosure12516); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	                  	newLeafNode(otherlv_2, grammarAccess.getXExpressionInClosureAccess().getSemicolonKeyword_1_1());
@@ -15355,7 +15354,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                         int alt79=2;
                         int LA79_0 = input.LA(1);
 
-                        if ( (LA79_0==78) ) {
+                        if ( (LA79_0==39) ) {
                             alt79=1;
                         }
 
@@ -15364,7 +15363,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     	case 1 :
                     	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5318:4: otherlv_2= ',' ( (lv_declaredFormalParameters_3_0= ruleJvmFormalParameter ) )
                     	    {
-                    	    otherlv_2=(Token)match(input,78,FOLLOW_78_in_ruleXShortClosure12687); if (state.failed) return current;
+                    	    otherlv_2=(Token)match(input,39,FOLLOW_39_in_ruleXShortClosure12687); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_2, grammarAccess.getXShortClosureAccess().getCommaKeyword_0_0_1_1_0());
@@ -15426,7 +15425,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5341:1: (lv_explicitSyntax_4_0= '|' )
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5342:3: lv_explicitSyntax_4_0= '|'
             {
-            lv_explicitSyntax_4_0=(Token)match(input,80,FOLLOW_80_in_ruleXShortClosure12730); if (state.failed) return current;
+            lv_explicitSyntax_4_0=(Token)match(input,79,FOLLOW_79_in_ruleXShortClosure12730); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       newLeafNode(lv_explicitSyntax_4_0, grammarAccess.getXShortClosureAccess().getExplicitSyntaxVerticalLineKeyword_0_0_2_0());
@@ -15696,7 +15695,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,82,FOLLOW_82_in_ruleXIfExpression12974); if (state.failed) return current;
+            otherlv_1=(Token)match(input,81,FOLLOW_81_in_ruleXIfExpression12974); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXIfExpressionAccess().getIfKeyword_1());
@@ -15788,7 +15787,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt81=2;
             int LA81_0 = input.LA(1);
 
-            if ( (LA81_0==83) ) {
+            if ( (LA81_0==82) ) {
                 int LA81_1 = input.LA(2);
 
                 if ( (synpred22_InternalEventPatternLanguage()) ) {
@@ -15802,7 +15801,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5486:3: ( ( 'else' )=>otherlv_6= 'else' )
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5486:4: ( 'else' )=>otherlv_6= 'else'
                     {
-                    otherlv_6=(Token)match(input,83,FOLLOW_83_in_ruleXIfExpression13061); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,82,FOLLOW_82_in_ruleXIfExpression13061); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_6, grammarAccess.getXIfExpressionAccess().getElseKeyword_6_0());
@@ -15963,7 +15962,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,84,FOLLOW_84_in_ruleXSwitchExpression13177); if (state.failed) return current;
+            otherlv_1=(Token)match(input,83,FOLLOW_83_in_ruleXSwitchExpression13177); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXSwitchExpressionAccess().getSwitchKeyword_1());
@@ -15973,7 +15972,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt83=2;
             int LA83_0 = input.LA(1);
 
-            if ( ((LA83_0>=RULE_INT && LA83_0<=RULE_DECIMAL)||LA83_0==14||LA83_0==21||LA83_0==37||LA83_0==42||LA83_0==69||LA83_0==74||LA83_0==79||LA83_0==82||LA83_0==84||(LA83_0>=87 && LA83_0<=89)||(LA83_0>=92 && LA83_0<=104)) ) {
+            if ( ((LA83_0>=RULE_INT && LA83_0<=RULE_DECIMAL)||LA83_0==14||LA83_0==21||LA83_0==37||LA83_0==42||LA83_0==69||LA83_0==74||LA83_0==78||LA83_0==81||LA83_0==83||(LA83_0>=86 && LA83_0<=88)||(LA83_0>=91 && LA83_0<=103)) ) {
                 alt83=1;
             }
             else if ( (LA83_0==19) ) {
@@ -15996,7 +15995,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                         throw nvae;
                     }
                 }
-                else if ( (LA83_2==RULE_INT||(LA83_2>=RULE_STRING && LA83_2<=RULE_DECIMAL)||LA83_2==14||LA83_2==19||LA83_2==21||LA83_2==37||LA83_2==42||LA83_2==69||LA83_2==74||LA83_2==79||LA83_2==82||LA83_2==84||(LA83_2>=87 && LA83_2<=89)||(LA83_2>=92 && LA83_2<=104)) ) {
+                else if ( (LA83_2==RULE_INT||(LA83_2>=RULE_STRING && LA83_2<=RULE_DECIMAL)||LA83_2==14||LA83_2==19||LA83_2==21||LA83_2==37||LA83_2==42||LA83_2==69||LA83_2==74||LA83_2==78||LA83_2==81||LA83_2==83||(LA83_2>=86 && LA83_2<=88)||(LA83_2>=91 && LA83_2<=103)) ) {
                     alt83=1;
                 }
                 else {
@@ -16258,7 +16257,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 int alt84=2;
                 int LA84_0 = input.LA(1);
 
-                if ( (LA84_0==RULE_ID||LA84_0==19||LA84_0==23||LA84_0==65||LA84_0==86) ) {
+                if ( (LA84_0==RULE_ID||LA84_0==19||LA84_0==23||LA84_0==65||LA84_0==85) ) {
                     alt84=1;
                 }
 
@@ -16314,14 +16313,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt85=2;
             int LA85_0 = input.LA(1);
 
-            if ( (LA85_0==85) ) {
+            if ( (LA85_0==84) ) {
                 alt85=1;
             }
             switch (alt85) {
                 case 1 :
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5662:5: otherlv_12= 'default' otherlv_13= ':' ( (lv_default_14_0= ruleXExpression ) )
                     {
-                    otherlv_12=(Token)match(input,85,FOLLOW_85_in_ruleXSwitchExpression13417); if (state.failed) return current;
+                    otherlv_12=(Token)match(input,84,FOLLOW_84_in_ruleXSwitchExpression13417); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_12, grammarAccess.getXSwitchExpressionAccess().getDefaultKeyword_5_0());
@@ -16515,14 +16514,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt87=2;
             int LA87_0 = input.LA(1);
 
-            if ( (LA87_0==86) ) {
+            if ( (LA87_0==85) ) {
                 alt87=1;
             }
             switch (alt87) {
                 case 1 :
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5731:5: otherlv_1= 'case' ( (lv_case_2_0= ruleXExpression ) )
                     {
-                    otherlv_1=(Token)match(input,86,FOLLOW_86_in_ruleXCasePart13570); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,85,FOLLOW_85_in_ruleXCasePart13570); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getXCasePartAccess().getCaseKeyword_1_0());
@@ -16710,7 +16709,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,87,FOLLOW_87_in_ruleXForLoopExpression13718); if (state.failed) return current;
+            otherlv_1=(Token)match(input,86,FOLLOW_86_in_ruleXForLoopExpression13718); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXForLoopExpressionAccess().getForKeyword_1());
@@ -16936,7 +16935,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,88,FOLLOW_88_in_ruleXWhileExpression13909); if (state.failed) return current;
+            otherlv_1=(Token)match(input,87,FOLLOW_87_in_ruleXWhileExpression13909); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXWhileExpressionAccess().getWhileKeyword_1());
@@ -17122,7 +17121,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,89,FOLLOW_89_in_ruleXDoWhileExpression14067); if (state.failed) return current;
+            otherlv_1=(Token)match(input,88,FOLLOW_88_in_ruleXDoWhileExpression14067); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXDoWhileExpressionAccess().getDoKeyword_1());
@@ -17163,7 +17162,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_3=(Token)match(input,88,FOLLOW_88_in_ruleXDoWhileExpression14100); if (state.failed) return current;
+            otherlv_3=(Token)match(input,87,FOLLOW_87_in_ruleXDoWhileExpression14100); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getXDoWhileExpressionAccess().getWhileKeyword_3());
@@ -17323,7 +17322,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 int alt89=2;
                 int LA89_0 = input.LA(1);
 
-                if ( ((LA89_0>=RULE_INT && LA89_0<=RULE_DECIMAL)||LA89_0==14||LA89_0==19||LA89_0==21||LA89_0==37||LA89_0==42||LA89_0==69||LA89_0==74||LA89_0==79||LA89_0==82||LA89_0==84||(LA89_0>=87 && LA89_0<=104)) ) {
+                if ( ((LA89_0>=RULE_INT && LA89_0<=RULE_DECIMAL)||LA89_0==14||LA89_0==19||LA89_0==21||LA89_0==37||LA89_0==42||LA89_0==69||LA89_0==74||LA89_0==78||LA89_0==81||LA89_0==83||(LA89_0>=86 && LA89_0<=103)) ) {
                     alt89=1;
                 }
 
@@ -17371,14 +17370,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             	    int alt88=2;
             	    int LA88_0 = input.LA(1);
 
-            	    if ( (LA88_0==81) ) {
+            	    if ( (LA88_0==80) ) {
             	        alt88=1;
             	    }
             	    switch (alt88) {
             	        case 1 :
             	            // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6075:4: otherlv_3= ';'
             	            {
-            	            otherlv_3=(Token)match(input,81,FOLLOW_81_in_ruleXBlockExpression14272); if (state.failed) return current;
+            	            otherlv_3=(Token)match(input,80,FOLLOW_80_in_ruleXBlockExpression14272); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	                  	newLeafNode(otherlv_3, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1());
@@ -17487,10 +17486,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt90=2;
             int LA90_0 = input.LA(1);
 
-            if ( ((LA90_0>=90 && LA90_0<=91)) ) {
+            if ( ((LA90_0>=89 && LA90_0<=90)) ) {
                 alt90=1;
             }
-            else if ( ((LA90_0>=RULE_INT && LA90_0<=RULE_DECIMAL)||LA90_0==14||LA90_0==19||LA90_0==21||LA90_0==37||LA90_0==42||LA90_0==69||LA90_0==74||LA90_0==79||LA90_0==82||LA90_0==84||(LA90_0>=87 && LA90_0<=89)||(LA90_0>=92 && LA90_0<=104)) ) {
+            else if ( ((LA90_0>=RULE_INT && LA90_0<=RULE_DECIMAL)||LA90_0==14||LA90_0==19||LA90_0==21||LA90_0==37||LA90_0==42||LA90_0==69||LA90_0==74||LA90_0==78||LA90_0==81||LA90_0==83||(LA90_0>=86 && LA90_0<=88)||(LA90_0>=91 && LA90_0<=103)) ) {
                 alt90=2;
             }
             else {
@@ -17650,10 +17649,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt91=2;
             int LA91_0 = input.LA(1);
 
-            if ( (LA91_0==90) ) {
+            if ( (LA91_0==89) ) {
                 alt91=1;
             }
-            else if ( (LA91_0==91) ) {
+            else if ( (LA91_0==90) ) {
                 alt91=2;
             }
             else {
@@ -17673,7 +17672,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6151:1: (lv_writeable_1_0= 'var' )
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6152:3: lv_writeable_1_0= 'var'
                     {
-                    lv_writeable_1_0=(Token)match(input,90,FOLLOW_90_in_ruleXVariableDeclaration14506); if (state.failed) return current;
+                    lv_writeable_1_0=(Token)match(input,89,FOLLOW_89_in_ruleXVariableDeclaration14506); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_writeable_1_0, grammarAccess.getXVariableDeclarationAccess().getWriteableVarKeyword_1_0_0());
@@ -17699,7 +17698,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 case 2 :
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6166:7: otherlv_2= 'val'
                     {
-                    otherlv_2=(Token)match(input,91,FOLLOW_91_in_ruleXVariableDeclaration14537); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,90,FOLLOW_90_in_ruleXVariableDeclaration14537); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getXVariableDeclarationAccess().getValKeyword_1_1());
@@ -18422,7 +18421,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                         int alt95=2;
                         int LA95_0 = input.LA(1);
 
-                        if ( (LA95_0==78) ) {
+                        if ( (LA95_0==39) ) {
                             alt95=1;
                         }
 
@@ -18431,7 +18430,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     	case 1 :
                     	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6418:4: otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,78,FOLLOW_78_in_ruleXFeatureCall15026); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,39,FOLLOW_39_in_ruleXFeatureCall15026); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getXFeatureCallAccess().getCommaKeyword_1_2_0());
@@ -18652,7 +18651,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                                 int alt97=2;
                                 int LA97_0 = input.LA(1);
 
-                                if ( (LA97_0==78) ) {
+                                if ( (LA97_0==39) ) {
                                     alt97=1;
                                 }
 
@@ -18661,7 +18660,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                             	case 1 :
                             	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6533:4: otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) )
                             	    {
-                            	    otherlv_10=(Token)match(input,78,FOLLOW_78_in_ruleXFeatureCall15246); if (state.failed) return current;
+                            	    otherlv_10=(Token)match(input,39,FOLLOW_39_in_ruleXFeatureCall15246); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_10, grammarAccess.getXFeatureCallAccess().getCommaKeyword_3_1_1_1_0());
@@ -18859,22 +18858,22 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 alt101=1;
                 }
                 break;
-            case 92:
+            case 91:
                 {
                 alt101=2;
                 }
                 break;
-            case 93:
+            case 92:
                 {
                 alt101=3;
                 }
                 break;
-            case 94:
+            case 93:
                 {
                 alt101=4;
                 }
                 break;
-            case 95:
+            case 94:
                 {
                 alt101=5;
                 }
@@ -18917,7 +18916,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 case 2 :
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6613:2: kw= 'extends'
                     {
-                    kw=(Token)match(input,92,FOLLOW_92_in_ruleFeatureCallID15439); if (state.failed) return current;
+                    kw=(Token)match(input,91,FOLLOW_91_in_ruleFeatureCallID15439); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -18930,7 +18929,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 case 3 :
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6620:2: kw= 'static'
                     {
-                    kw=(Token)match(input,93,FOLLOW_93_in_ruleFeatureCallID15458); if (state.failed) return current;
+                    kw=(Token)match(input,92,FOLLOW_92_in_ruleFeatureCallID15458); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -18943,7 +18942,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 case 4 :
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6627:2: kw= 'import'
                     {
-                    kw=(Token)match(input,94,FOLLOW_94_in_ruleFeatureCallID15477); if (state.failed) return current;
+                    kw=(Token)match(input,93,FOLLOW_93_in_ruleFeatureCallID15477); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -18956,7 +18955,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 case 5 :
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6634:2: kw= 'extension'
                     {
-                    kw=(Token)match(input,95,FOLLOW_95_in_ruleFeatureCallID15496); if (state.failed) return current;
+                    kw=(Token)match(input,94,FOLLOW_94_in_ruleFeatureCallID15496); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -19047,10 +19046,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt102=2;
             int LA102_0 = input.LA(1);
 
-            if ( (LA102_0==RULE_ID||(LA102_0>=92 && LA102_0<=95)) ) {
+            if ( (LA102_0==RULE_ID||(LA102_0>=91 && LA102_0<=94)) ) {
                 alt102=1;
             }
-            else if ( (LA102_0==96) ) {
+            else if ( (LA102_0==95) ) {
                 alt102=2;
             }
             else {
@@ -19090,7 +19089,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 case 2 :
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6673:2: kw= 'super'
                     {
-                    kw=(Token)match(input,96,FOLLOW_96_in_ruleIdOrSuper15619); if (state.failed) return current;
+                    kw=(Token)match(input,95,FOLLOW_95_in_ruleIdOrSuper15619); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -19209,7 +19208,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,97,FOLLOW_97_in_ruleXConstructorCall15715); if (state.failed) return current;
+            otherlv_1=(Token)match(input,96,FOLLOW_96_in_ruleXConstructorCall15715); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXConstructorCallAccess().getNewKeyword_1());
@@ -19309,7 +19308,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                         int alt103=2;
                         int LA103_0 = input.LA(1);
 
-                        if ( (LA103_0==78) ) {
+                        if ( (LA103_0==39) ) {
                             alt103=1;
                         }
 
@@ -19318,7 +19317,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     	case 1 :
                     	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6747:4: otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_5=(Token)match(input,78,FOLLOW_78_in_ruleXConstructorCall15794); if (state.failed) return current;
+                    	    otherlv_5=(Token)match(input,39,FOLLOW_39_in_ruleXConstructorCall15794); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_5, grammarAccess.getXConstructorCallAccess().getCommaKeyword_3_2_0());
@@ -19491,7 +19490,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                                 int alt105=2;
                                 int LA105_0 = input.LA(1);
 
-                                if ( (LA105_0==78) ) {
+                                if ( (LA105_0==39) ) {
                                     alt105=1;
                                 }
 
@@ -19500,7 +19499,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                             	case 1 :
                             	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6831:4: otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) )
                             	    {
-                            	    otherlv_11=(Token)match(input,78,FOLLOW_78_in_ruleXConstructorCall15966); if (state.failed) return current;
+                            	    otherlv_11=(Token)match(input,39,FOLLOW_39_in_ruleXConstructorCall15966); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_11, grammarAccess.getXConstructorCallAccess().getCommaKeyword_4_1_1_1_0());
@@ -19709,10 +19708,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt109=2;
             int LA109_0 = input.LA(1);
 
-            if ( (LA109_0==98) ) {
+            if ( (LA109_0==97) ) {
                 alt109=1;
             }
-            else if ( (LA109_0==99) ) {
+            else if ( (LA109_0==98) ) {
                 alt109=2;
             }
             else {
@@ -19726,7 +19725,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 case 1 :
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6904:4: otherlv_1= 'false'
                     {
-                    otherlv_1=(Token)match(input,98,FOLLOW_98_in_ruleXBooleanLiteral16133); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,97,FOLLOW_97_in_ruleXBooleanLiteral16133); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getXBooleanLiteralAccess().getFalseKeyword_1_0());
@@ -19744,7 +19743,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6910:1: (lv_isTrue_2_0= 'true' )
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6911:3: lv_isTrue_2_0= 'true'
                     {
-                    lv_isTrue_2_0=(Token)match(input,99,FOLLOW_99_in_ruleXBooleanLiteral16157); if (state.failed) return current;
+                    lv_isTrue_2_0=(Token)match(input,98,FOLLOW_98_in_ruleXBooleanLiteral16157); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_isTrue_2_0, grammarAccess.getXBooleanLiteralAccess().getIsTrueTrueKeyword_1_1_0());
@@ -19861,7 +19860,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,100,FOLLOW_100_in_ruleXNullLiteral16263); if (state.failed) return current;
+            otherlv_1=(Token)match(input,99,FOLLOW_99_in_ruleXNullLiteral16263); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXNullLiteralAccess().getNullKeyword_1());
@@ -20210,7 +20209,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,101,FOLLOW_101_in_ruleXTypeLiteral16558); if (state.failed) return current;
+            otherlv_1=(Token)match(input,100,FOLLOW_100_in_ruleXTypeLiteral16558); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXTypeLiteralAccess().getTypeofKeyword_1());
@@ -20408,7 +20407,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,102,FOLLOW_102_in_ruleXThrowExpression16719); if (state.failed) return current;
+            otherlv_1=(Token)match(input,101,FOLLOW_101_in_ruleXThrowExpression16719); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXThrowExpressionAccess().getThrowKeyword_1());
@@ -20542,7 +20541,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,103,FOLLOW_103_in_ruleXReturnExpression16832); if (state.failed) return current;
+            otherlv_1=(Token)match(input,102,FOLLOW_102_in_ruleXReturnExpression16832); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXReturnExpressionAccess().getReturnKeyword_1());
@@ -20691,7 +20690,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,104,FOLLOW_104_in_ruleXTryCatchFinallyExpression16956); if (state.failed) return current;
+            otherlv_1=(Token)match(input,103,FOLLOW_103_in_ruleXTryCatchFinallyExpression16956); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXTryCatchFinallyExpressionAccess().getTryKeyword_1());
@@ -20736,10 +20735,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt114=2;
             int LA114_0 = input.LA(1);
 
-            if ( (LA114_0==106) ) {
+            if ( (LA114_0==105) ) {
                 alt114=1;
             }
-            else if ( (LA114_0==105) ) {
+            else if ( (LA114_0==104) ) {
                 alt114=2;
             }
             else {
@@ -20763,7 +20762,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                         int alt112=2;
                         int LA112_0 = input.LA(1);
 
-                        if ( (LA112_0==106) ) {
+                        if ( (LA112_0==105) ) {
                             int LA112_2 = input.LA(2);
 
                             if ( (synpred34_InternalEventPatternLanguage()) ) {
@@ -20825,7 +20824,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     int alt113=2;
                     int LA113_0 = input.LA(1);
 
-                    if ( (LA113_0==105) ) {
+                    if ( (LA113_0==104) ) {
                         int LA113_1 = input.LA(2);
 
                         if ( (synpred35_InternalEventPatternLanguage()) ) {
@@ -20839,7 +20838,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7287:4: ( ( 'finally' )=>otherlv_4= 'finally' )
                             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7287:5: ( 'finally' )=>otherlv_4= 'finally'
                             {
-                            otherlv_4=(Token)match(input,105,FOLLOW_105_in_ruleXTryCatchFinallyExpression17029); if (state.failed) return current;
+                            otherlv_4=(Token)match(input,104,FOLLOW_104_in_ruleXTryCatchFinallyExpression17029); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                   	newLeafNode(otherlv_4, grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyKeyword_3_0_1_0());
@@ -20901,7 +20900,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7311:6: (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) )
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7311:8: otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) )
                     {
-                    otherlv_6=(Token)match(input,105,FOLLOW_105_in_ruleXTryCatchFinallyExpression17073); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,104,FOLLOW_104_in_ruleXTryCatchFinallyExpression17073); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_6, grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyKeyword_3_1_0());
@@ -21038,7 +21037,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7354:2: ( ( 'catch' )=>otherlv_0= 'catch' )
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7354:3: ( 'catch' )=>otherlv_0= 'catch'
             {
-            otherlv_0=(Token)match(input,106,FOLLOW_106_in_ruleXCatchClause17187); if (state.failed) return current;
+            otherlv_0=(Token)match(input,105,FOLLOW_105_in_ruleXCatchClause17187); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getXCatchClauseAccess().getCatchKeyword_0());
@@ -22039,7 +22038,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                                 int alt122=2;
                                 int LA122_0 = input.LA(1);
 
-                                if ( (LA122_0==78) ) {
+                                if ( (LA122_0==39) ) {
                                     alt122=1;
                                 }
 
@@ -22048,7 +22047,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                             	case 1 :
                             	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7662:4: otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
                             	    {
-                            	    otherlv_2=(Token)match(input,78,FOLLOW_78_in_ruleXFunctionTypeRef18026); if (state.failed) return current;
+                            	    otherlv_2=(Token)match(input,39,FOLLOW_39_in_ruleXFunctionTypeRef18026); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_2, grammarAccess.getXFunctionTypeRefAccess().getCommaKeyword_0_1_1_0());
@@ -22335,7 +22334,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                         int alt125=2;
                         int LA125_0 = input.LA(1);
 
-                        if ( (LA125_0==78) ) {
+                        if ( (LA125_0==39) ) {
                             alt125=1;
                         }
 
@@ -22344,7 +22343,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     	case 1 :
                     	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7769:4: otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,78,FOLLOW_78_in_ruleJvmParameterizedTypeReference18248); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,39,FOLLOW_39_in_ruleJvmParameterizedTypeReference18248); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getJvmParameterizedTypeReferenceAccess().getCommaKeyword_1_2_0());
@@ -22491,7 +22490,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             if ( (LA127_0==RULE_ID||LA127_0==19||LA127_0==65) ) {
                 alt127=1;
             }
-            else if ( (LA127_0==107) ) {
+            else if ( (LA127_0==106) ) {
                 alt127=2;
             }
             else {
@@ -22641,7 +22640,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,107,FOLLOW_107_in_ruleJvmWildcardTypeReference18496); if (state.failed) return current;
+            otherlv_1=(Token)match(input,106,FOLLOW_106_in_ruleJvmWildcardTypeReference18496); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getJvmWildcardTypeReferenceAccess().getQuestionMarkKeyword_1());
@@ -22651,10 +22650,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt128=3;
             int LA128_0 = input.LA(1);
 
-            if ( (LA128_0==92) ) {
+            if ( (LA128_0==91) ) {
                 alt128=1;
             }
-            else if ( (LA128_0==96) ) {
+            else if ( (LA128_0==95) ) {
                 alt128=2;
             }
             switch (alt128) {
@@ -22823,7 +22822,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7924:1: (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7924:3: otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
             {
-            otherlv_0=(Token)match(input,92,FOLLOW_92_in_ruleJvmUpperBound18630); if (state.failed) return current;
+            otherlv_0=(Token)match(input,91,FOLLOW_91_in_ruleJvmUpperBound18630); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getJvmUpperBoundAccess().getExtendsKeyword_0());
@@ -22944,7 +22943,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7967:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7967:3: otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
             {
-            otherlv_0=(Token)match(input,108,FOLLOW_108_in_ruleJvmUpperBoundAnded18734); if (state.failed) return current;
+            otherlv_0=(Token)match(input,107,FOLLOW_107_in_ruleJvmUpperBoundAnded18734); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getJvmUpperBoundAndedAccess().getAmpersandKeyword_0());
@@ -23065,7 +23064,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:8010:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:8010:3: otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
             {
-            otherlv_0=(Token)match(input,96,FOLLOW_96_in_ruleJvmLowerBound18838); if (state.failed) return current;
+            otherlv_0=(Token)match(input,95,FOLLOW_95_in_ruleJvmLowerBound18838); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getJvmLowerBoundAccess().getSuperKeyword_0());
@@ -23388,7 +23387,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:8129:1: (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? )
             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:8129:3: otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedName ) ) otherlv_4= '.' otherlv_5= '*' ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )?
             {
-            otherlv_0=(Token)match(input,94,FOLLOW_94_in_ruleXImportDeclaration19171); if (state.failed) return current;
+            otherlv_0=(Token)match(input,93,FOLLOW_93_in_ruleXImportDeclaration19171); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getXImportDeclarationAccess().getImportKeyword_0());
@@ -23410,7 +23409,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:8134:1: (lv_static_1_0= 'static' )
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:8135:3: lv_static_1_0= 'static'
                     {
-                    lv_static_1_0=(Token)match(input,93,FOLLOW_93_in_ruleXImportDeclaration19191); if (state.failed) return current;
+                    lv_static_1_0=(Token)match(input,92,FOLLOW_92_in_ruleXImportDeclaration19191); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_static_1_0, grammarAccess.getXImportDeclarationAccess().getStaticStaticKeyword_1_0_0_0());
@@ -23434,7 +23433,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     int alt129=2;
                     int LA129_0 = input.LA(1);
 
-                    if ( (LA129_0==95) ) {
+                    if ( (LA129_0==94) ) {
                         alt129=1;
                     }
                     switch (alt129) {
@@ -23444,7 +23443,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:8149:1: (lv_extension_2_0= 'extension' )
                             // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:8150:3: lv_extension_2_0= 'extension'
                             {
-                            lv_extension_2_0=(Token)match(input,95,FOLLOW_95_in_ruleXImportDeclaration19222); if (state.failed) return current;
+                            lv_extension_2_0=(Token)match(input,94,FOLLOW_94_in_ruleXImportDeclaration19222); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_extension_2_0, grammarAccess.getXImportDeclarationAccess().getExtensionExtensionKeyword_1_0_1_0());
@@ -23607,14 +23606,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt131=2;
             int LA131_0 = input.LA(1);
 
-            if ( (LA131_0==81) ) {
+            if ( (LA131_0==80) ) {
                 alt131=1;
             }
             switch (alt131) {
                 case 1 :
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:8221:5: otherlv_8= ';'
                     {
-                    otherlv_8=(Token)match(input,81,FOLLOW_81_in_ruleXImportDeclaration19354); if (state.failed) return current;
+                    otherlv_8=(Token)match(input,80,FOLLOW_80_in_ruleXImportDeclaration19354); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_8, grammarAccess.getXImportDeclarationAccess().getSemicolonKeyword_2());
@@ -23665,10 +23664,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
             int alt132=2;
             int LA132_0 = input.LA(1);
 
-            if ( (LA132_0==109) ) {
+            if ( (LA132_0==108) ) {
                 alt132=1;
             }
-            else if ( (LA132_0==110) ) {
+            else if ( (LA132_0==109) ) {
                 alt132=2;
             }
             else {
@@ -23685,7 +23684,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:8236:2: (enumLiteral_0= 'NEW_MATCH_FOUND' )
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:8236:4: enumLiteral_0= 'NEW_MATCH_FOUND'
                     {
-                    enumLiteral_0=(Token)match(input,109,FOLLOW_109_in_ruleIQPatternChangeType19406); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,108,FOLLOW_108_in_ruleIQPatternChangeType19406); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getIQPatternChangeTypeAccess().getNEW_MATCH_FOUNDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -23704,7 +23703,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:8242:6: (enumLiteral_1= 'EXISTING_MATCH_LOST' )
                     // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:8242:8: enumLiteral_1= 'EXISTING_MATCH_LOST'
                     {
-                    enumLiteral_1=(Token)match(input,110,FOLLOW_110_in_ruleIQPatternChangeType19423); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,109,FOLLOW_109_in_ruleIQPatternChangeType19423); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getIQPatternChangeTypeAccess().getEXISTING_MATCH_LOSTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -24372,7 +24371,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     int alt135=2;
                     int LA135_0 = input.LA(1);
 
-                    if ( (LA135_0==78) ) {
+                    if ( (LA135_0==39) ) {
                         alt135=1;
                     }
 
@@ -24381,7 +24380,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 	case 1 :
                 	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:4549:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
-                	    match(input,78,FOLLOW_78_in_synpred16_InternalEventPatternLanguage10800); if (state.failed) return ;
+                	    match(input,39,FOLLOW_39_in_synpred16_InternalEventPatternLanguage10800); if (state.failed) return ;
                 	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:4550:1: ( ( ruleJvmFormalParameter ) )
                 	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:4551:1: ( ruleJvmFormalParameter )
                 	    {
@@ -24420,7 +24419,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:4555:1: ( '|' )
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:4556:2: '|'
         {
-        match(input,80,FOLLOW_80_in_synpred16_InternalEventPatternLanguage10821); if (state.failed) return ;
+        match(input,79,FOLLOW_79_in_synpred16_InternalEventPatternLanguage10821); if (state.failed) return ;
 
         }
 
@@ -24521,7 +24520,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     int alt137=2;
                     int LA137_0 = input.LA(1);
 
-                    if ( (LA137_0==78) ) {
+                    if ( (LA137_0==39) ) {
                         alt137=1;
                     }
 
@@ -24530,7 +24529,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 	case 1 :
                 	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5120:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
-                	    match(input,78,FOLLOW_78_in_synpred20_InternalEventPatternLanguage12249); if (state.failed) return ;
+                	    match(input,39,FOLLOW_39_in_synpred20_InternalEventPatternLanguage12249); if (state.failed) return ;
                 	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5121:1: ( ( ruleJvmFormalParameter ) )
                 	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5122:1: ( ruleJvmFormalParameter )
                 	    {
@@ -24569,7 +24568,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5126:1: ( '|' )
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5127:2: '|'
         {
-        match(input,80,FOLLOW_80_in_synpred20_InternalEventPatternLanguage12270); if (state.failed) return ;
+        match(input,79,FOLLOW_79_in_synpred20_InternalEventPatternLanguage12270); if (state.failed) return ;
 
         }
 
@@ -24589,7 +24588,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5486:4: ( 'else' )
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:5486:6: 'else'
         {
-        match(input,83,FOLLOW_83_in_synpred22_InternalEventPatternLanguage13053); if (state.failed) return ;
+        match(input,82,FOLLOW_82_in_synpred22_InternalEventPatternLanguage13053); if (state.failed) return ;
 
         }
     }
@@ -24778,7 +24777,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     int alt141=2;
                     int LA141_0 = input.LA(1);
 
-                    if ( (LA141_0==78) ) {
+                    if ( (LA141_0==39) ) {
                         alt141=1;
                     }
 
@@ -24787,7 +24786,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 	case 1 :
                 	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6485:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
-                	    match(input,78,FOLLOW_78_in_synpred27_InternalEventPatternLanguage15161); if (state.failed) return ;
+                	    match(input,39,FOLLOW_39_in_synpred27_InternalEventPatternLanguage15161); if (state.failed) return ;
                 	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6486:1: ( ( ruleJvmFormalParameter ) )
                 	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6487:1: ( ruleJvmFormalParameter )
                 	    {
@@ -24826,7 +24825,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6491:1: ( '|' )
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6492:2: '|'
         {
-        match(input,80,FOLLOW_80_in_synpred27_InternalEventPatternLanguage15182); if (state.failed) return ;
+        match(input,79,FOLLOW_79_in_synpred27_InternalEventPatternLanguage15182); if (state.failed) return ;
 
         }
 
@@ -24932,7 +24931,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                     int alt143=2;
                     int LA143_0 = input.LA(1);
 
-                    if ( (LA143_0==78) ) {
+                    if ( (LA143_0==39) ) {
                         alt143=1;
                     }
 
@@ -24941,7 +24940,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
                 	case 1 :
                 	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6783:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
-                	    match(input,78,FOLLOW_78_in_synpred31_InternalEventPatternLanguage15881); if (state.failed) return ;
+                	    match(input,39,FOLLOW_39_in_synpred31_InternalEventPatternLanguage15881); if (state.failed) return ;
                 	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6784:1: ( ( ruleJvmFormalParameter ) )
                 	    // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6785:1: ( ruleJvmFormalParameter )
                 	    {
@@ -24980,7 +24979,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6789:1: ( '|' )
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:6790:2: '|'
         {
-        match(input,80,FOLLOW_80_in_synpred31_InternalEventPatternLanguage15902); if (state.failed) return ;
+        match(input,79,FOLLOW_79_in_synpred31_InternalEventPatternLanguage15902); if (state.failed) return ;
 
         }
 
@@ -25043,7 +25042,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7268:5: ( 'catch' )
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7268:7: 'catch'
         {
-        match(input,106,FOLLOW_106_in_synpred34_InternalEventPatternLanguage16991); if (state.failed) return ;
+        match(input,105,FOLLOW_105_in_synpred34_InternalEventPatternLanguage16991); if (state.failed) return ;
 
         }
     }
@@ -25054,7 +25053,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7287:5: ( 'finally' )
         // ../hu.bme.mit.incquery.cep.dsl/src-gen/hu/bme/mit/incquery/cep/dsl/parser/antlr/internal/InternalEventPatternLanguage.g:7287:7: 'finally'
         {
-        match(input,105,FOLLOW_105_in_synpred35_InternalEventPatternLanguage17021); if (state.failed) return ;
+        match(input,104,FOLLOW_104_in_synpred35_InternalEventPatternLanguage17021); if (state.failed) return ;
 
         }
     }
@@ -25868,15 +25867,15 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA47_minS =
         "\1\4\1\uffff\11\0\1\uffff";
     static final String DFA47_maxS =
-        "\1\152\1\uffff\11\0\1\uffff";
+        "\1\151\1\uffff\11\0\1\uffff";
     static final String DFA47_acceptS =
         "\1\uffff\1\2\11\uffff\1\1";
     static final String DFA47_specialS =
         "\2\uffff\1\2\1\6\1\3\1\5\1\0\1\4\1\7\1\10\1\1\1\uffff}>";
     static final String[] DFA47_transitionS = {
             "\5\1\5\uffff\2\1\3\uffff\3\1\1\uffff\1\1\1\uffff\1\1\13\uffff"+
-            "\2\1\1\uffff\1\4\1\uffff\1\3\1\uffff\3\1\1\2\7\uffff\10\1\1"+
-            "\5\1\6\1\7\1\10\1\11\1\12\13\1\1\uffff\32\1",
+            "\3\1\1\4\1\uffff\1\3\1\uffff\3\1\1\2\7\uffff\10\1\1\5\1\6\1"+
+            "\7\1\10\1\11\1\12\12\1\1\uffff\32\1",
             "",
             "\1\uffff",
             "\1\uffff",
@@ -26137,15 +26136,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA64_minS =
         "\1\4\1\0\110\uffff";
     static final String DFA64_maxS =
-        "\1\152\1\0\110\uffff";
+        "\1\151\1\0\110\uffff";
     static final String DFA64_acceptS =
         "\2\uffff\1\2\106\uffff\1\1";
     static final String DFA64_specialS =
         "\1\uffff\1\0\110\uffff}>";
     static final String[] DFA64_transitionS = {
             "\5\2\5\uffff\2\2\3\uffff\1\1\2\2\1\uffff\1\2\1\uffff\1\2\13"+
-            "\uffff\2\2\1\uffff\1\2\1\uffff\1\2\1\uffff\4\2\7\uffff\31\2"+
-            "\1\uffff\32\2",
+            "\uffff\4\2\1\uffff\1\2\1\uffff\4\2\7\uffff\30\2\1\uffff\32\2",
             "\1\uffff",
             "",
             "",
@@ -26287,14 +26285,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA63_minS =
         "\1\4\2\0\40\uffff";
     static final String DFA63_maxS =
-        "\1\150\2\0\40\uffff";
+        "\1\147\2\0\40\uffff";
     static final String DFA63_acceptS =
         "\3\uffff\2\1\1\2\34\uffff\1\3";
     static final String DFA63_specialS =
         "\1\0\1\1\1\2\40\uffff}>";
     static final String[] DFA63_transitionS = {
             "\1\5\1\1\3\5\5\uffff\1\5\4\uffff\1\2\1\42\1\5\17\uffff\1\5"+
-            "\4\uffff\1\5\26\uffff\1\3\3\uffff\1\5\4\uffff\1\5\4\uffff\1"+
+            "\4\uffff\1\5\26\uffff\1\3\3\uffff\1\5\4\uffff\1\5\3\uffff\1"+
             "\5\1\4\1\uffff\1\5\1\uffff\1\5\2\uffff\3\5\2\uffff\15\5",
             "\1\uffff",
             "\1\uffff",
@@ -26381,9 +26379,9 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
                         else if ( (LA63_0==65) && (synpred16_InternalEventPatternLanguage())) {s = 3;}
 
-                        else if ( (LA63_0==80) && (synpred16_InternalEventPatternLanguage())) {s = 4;}
+                        else if ( (LA63_0==79) && (synpred16_InternalEventPatternLanguage())) {s = 4;}
 
-                        else if ( (LA63_0==RULE_INT||(LA63_0>=RULE_STRING && LA63_0<=RULE_DECIMAL)||LA63_0==14||LA63_0==21||LA63_0==37||LA63_0==42||LA63_0==69||LA63_0==74||LA63_0==79||LA63_0==82||LA63_0==84||(LA63_0>=87 && LA63_0<=89)||(LA63_0>=92 && LA63_0<=104)) ) {s = 5;}
+                        else if ( (LA63_0==RULE_INT||(LA63_0>=RULE_STRING && LA63_0<=RULE_DECIMAL)||LA63_0==14||LA63_0==21||LA63_0==37||LA63_0==42||LA63_0==69||LA63_0==74||LA63_0==78||LA63_0==81||LA63_0==83||(LA63_0>=86 && LA63_0<=88)||(LA63_0>=91 && LA63_0<=103)) ) {s = 5;}
 
                         else if ( (LA63_0==20) ) {s = 34;}
 
@@ -26436,15 +26434,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA65_minS =
         "\1\4\1\0\110\uffff";
     static final String DFA65_maxS =
-        "\1\152\1\0\110\uffff";
+        "\1\151\1\0\110\uffff";
     static final String DFA65_acceptS =
         "\2\uffff\1\2\106\uffff\1\1";
     static final String DFA65_specialS =
         "\1\uffff\1\0\110\uffff}>";
     static final String[] DFA65_transitionS = {
             "\5\2\5\uffff\2\2\3\uffff\3\2\1\uffff\1\2\1\uffff\1\2\13\uffff"+
-            "\1\1\1\2\1\uffff\1\2\1\uffff\1\2\1\uffff\4\2\7\uffff\31\2\1"+
-            "\uffff\32\2",
+            "\1\1\3\2\1\uffff\1\2\1\uffff\4\2\7\uffff\30\2\1\uffff\32\2",
             "\1\uffff",
             "",
             "",
@@ -26586,7 +26583,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA67_minS =
         "\1\4\15\uffff";
     static final String DFA67_maxS =
-        "\1\150\15\uffff";
+        "\1\147\15\uffff";
     static final String DFA67_acceptS =
         "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1"+
         "\15";
@@ -26594,7 +26591,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
         "\16\uffff}>";
     static final String[] DFA67_transitionS = {
             "\1\5\1\4\3\5\12\uffff\1\15\1\uffff\1\2\17\uffff\1\5\4\uffff"+
-            "\1\4\44\uffff\1\5\2\uffff\1\6\1\uffff\1\3\2\uffff\1\7\1\10\1"+
+            "\1\4\43\uffff\1\5\2\uffff\1\6\1\uffff\1\3\2\uffff\1\7\1\10\1"+
             "\11\2\uffff\5\4\1\1\4\5\1\12\1\13\1\14",
             "",
             "",
@@ -26651,14 +26648,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA76_minS =
         "\1\4\2\0\42\uffff";
     static final String DFA76_maxS =
-        "\1\150\2\0\42\uffff";
+        "\1\147\2\0\42\uffff";
     static final String DFA76_acceptS =
         "\3\uffff\2\1\1\2\37\uffff";
     static final String DFA76_specialS =
         "\1\0\1\1\1\2\42\uffff}>";
     static final String[] DFA76_transitionS = {
             "\1\5\1\1\3\5\5\uffff\1\5\4\uffff\1\2\1\uffff\1\5\17\uffff\2"+
-            "\5\3\uffff\1\5\26\uffff\1\3\3\uffff\1\5\4\uffff\1\5\4\uffff"+
+            "\5\3\uffff\1\5\26\uffff\1\3\3\uffff\1\5\4\uffff\1\5\3\uffff"+
             "\1\5\1\4\1\uffff\1\5\1\uffff\1\5\2\uffff\22\5",
             "\1\uffff",
             "\1\uffff",
@@ -26747,9 +26744,9 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
                         else if ( (LA76_0==65) && (synpred20_InternalEventPatternLanguage())) {s = 3;}
 
-                        else if ( (LA76_0==80) && (synpred20_InternalEventPatternLanguage())) {s = 4;}
+                        else if ( (LA76_0==79) && (synpred20_InternalEventPatternLanguage())) {s = 4;}
 
-                        else if ( (LA76_0==RULE_INT||(LA76_0>=RULE_STRING && LA76_0<=RULE_DECIMAL)||LA76_0==14||LA76_0==21||(LA76_0>=37 && LA76_0<=38)||LA76_0==42||LA76_0==69||LA76_0==74||LA76_0==79||LA76_0==82||LA76_0==84||(LA76_0>=87 && LA76_0<=104)) ) {s = 5;}
+                        else if ( (LA76_0==RULE_INT||(LA76_0>=RULE_STRING && LA76_0<=RULE_DECIMAL)||LA76_0==14||LA76_0==21||(LA76_0>=37 && LA76_0<=38)||LA76_0==42||LA76_0==69||LA76_0==74||LA76_0==78||LA76_0==81||LA76_0==83||(LA76_0>=86 && LA76_0<=103)) ) {s = 5;}
 
                          
                         input.seek(index76_0);
@@ -26800,15 +26797,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA99_minS =
         "\1\4\1\0\110\uffff";
     static final String DFA99_maxS =
-        "\1\152\1\0\110\uffff";
+        "\1\151\1\0\110\uffff";
     static final String DFA99_acceptS =
         "\2\uffff\1\2\106\uffff\1\1";
     static final String DFA99_specialS =
         "\1\uffff\1\0\110\uffff}>";
     static final String[] DFA99_transitionS = {
             "\5\2\5\uffff\2\2\3\uffff\1\1\2\2\1\uffff\1\2\1\uffff\1\2\13"+
-            "\uffff\2\2\1\uffff\1\2\1\uffff\1\2\1\uffff\4\2\7\uffff\31\2"+
-            "\1\uffff\32\2",
+            "\uffff\4\2\1\uffff\1\2\1\uffff\4\2\7\uffff\30\2\1\uffff\32\2",
             "\1\uffff",
             "",
             "",
@@ -26950,14 +26946,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA98_minS =
         "\1\4\2\0\40\uffff";
     static final String DFA98_maxS =
-        "\1\150\2\0\40\uffff";
+        "\1\147\2\0\40\uffff";
     static final String DFA98_acceptS =
         "\3\uffff\2\1\1\2\34\uffff\1\3";
     static final String DFA98_specialS =
         "\1\0\1\1\1\2\40\uffff}>";
     static final String[] DFA98_transitionS = {
             "\1\5\1\1\3\5\5\uffff\1\5\4\uffff\1\2\1\42\1\5\17\uffff\1\5"+
-            "\4\uffff\1\5\26\uffff\1\3\3\uffff\1\5\4\uffff\1\5\4\uffff\1"+
+            "\4\uffff\1\5\26\uffff\1\3\3\uffff\1\5\4\uffff\1\5\3\uffff\1"+
             "\5\1\4\1\uffff\1\5\1\uffff\1\5\2\uffff\3\5\2\uffff\15\5",
             "\1\uffff",
             "\1\uffff",
@@ -27044,9 +27040,9 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
                         else if ( (LA98_0==65) && (synpred27_InternalEventPatternLanguage())) {s = 3;}
 
-                        else if ( (LA98_0==80) && (synpred27_InternalEventPatternLanguage())) {s = 4;}
+                        else if ( (LA98_0==79) && (synpred27_InternalEventPatternLanguage())) {s = 4;}
 
-                        else if ( (LA98_0==RULE_INT||(LA98_0>=RULE_STRING && LA98_0<=RULE_DECIMAL)||LA98_0==14||LA98_0==21||LA98_0==37||LA98_0==42||LA98_0==69||LA98_0==74||LA98_0==79||LA98_0==82||LA98_0==84||(LA98_0>=87 && LA98_0<=89)||(LA98_0>=92 && LA98_0<=104)) ) {s = 5;}
+                        else if ( (LA98_0==RULE_INT||(LA98_0>=RULE_STRING && LA98_0<=RULE_DECIMAL)||LA98_0==14||LA98_0==21||LA98_0==37||LA98_0==42||LA98_0==69||LA98_0==74||LA98_0==78||LA98_0==81||LA98_0==83||(LA98_0>=86 && LA98_0<=88)||(LA98_0>=91 && LA98_0<=103)) ) {s = 5;}
 
                         else if ( (LA98_0==20) ) {s = 34;}
 
@@ -27099,15 +27095,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA100_minS =
         "\1\4\1\0\110\uffff";
     static final String DFA100_maxS =
-        "\1\152\1\0\110\uffff";
+        "\1\151\1\0\110\uffff";
     static final String DFA100_acceptS =
         "\2\uffff\1\2\106\uffff\1\1";
     static final String DFA100_specialS =
         "\1\uffff\1\0\110\uffff}>";
     static final String[] DFA100_transitionS = {
             "\5\2\5\uffff\2\2\3\uffff\3\2\1\uffff\1\2\1\uffff\1\2\13\uffff"+
-            "\1\1\1\2\1\uffff\1\2\1\uffff\1\2\1\uffff\4\2\7\uffff\31\2\1"+
-            "\uffff\32\2",
+            "\1\1\3\2\1\uffff\1\2\1\uffff\4\2\7\uffff\30\2\1\uffff\32\2",
             "\1\uffff",
             "",
             "",
@@ -27249,15 +27244,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA104_minS =
         "\1\4\1\0\110\uffff";
     static final String DFA104_maxS =
-        "\1\152\1\0\110\uffff";
+        "\1\151\1\0\110\uffff";
     static final String DFA104_acceptS =
         "\2\uffff\1\2\106\uffff\1\1";
     static final String DFA104_specialS =
         "\1\uffff\1\0\110\uffff}>";
     static final String[] DFA104_transitionS = {
             "\5\2\5\uffff\2\2\3\uffff\3\2\1\uffff\1\2\1\uffff\1\2\13\uffff"+
-            "\2\2\1\uffff\1\2\1\uffff\1\1\1\uffff\4\2\7\uffff\31\2\1\uffff"+
-            "\32\2",
+            "\4\2\1\uffff\1\1\1\uffff\4\2\7\uffff\30\2\1\uffff\32\2",
             "\1\uffff",
             "",
             "",
@@ -27399,15 +27393,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA107_minS =
         "\1\4\1\0\110\uffff";
     static final String DFA107_maxS =
-        "\1\152\1\0\110\uffff";
+        "\1\151\1\0\110\uffff";
     static final String DFA107_acceptS =
         "\2\uffff\1\2\106\uffff\1\1";
     static final String DFA107_specialS =
         "\1\uffff\1\0\110\uffff}>";
     static final String[] DFA107_transitionS = {
             "\5\2\5\uffff\2\2\3\uffff\1\1\2\2\1\uffff\1\2\1\uffff\1\2\13"+
-            "\uffff\2\2\1\uffff\1\2\1\uffff\1\2\1\uffff\4\2\7\uffff\31\2"+
-            "\1\uffff\32\2",
+            "\uffff\4\2\1\uffff\1\2\1\uffff\4\2\7\uffff\30\2\1\uffff\32\2",
             "\1\uffff",
             "",
             "",
@@ -27549,14 +27542,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA106_minS =
         "\1\4\2\0\40\uffff";
     static final String DFA106_maxS =
-        "\1\150\2\0\40\uffff";
+        "\1\147\2\0\40\uffff";
     static final String DFA106_acceptS =
         "\3\uffff\2\1\1\2\34\uffff\1\3";
     static final String DFA106_specialS =
         "\1\0\1\1\1\2\40\uffff}>";
     static final String[] DFA106_transitionS = {
             "\1\5\1\1\3\5\5\uffff\1\5\4\uffff\1\2\1\42\1\5\17\uffff\1\5"+
-            "\4\uffff\1\5\26\uffff\1\3\3\uffff\1\5\4\uffff\1\5\4\uffff\1"+
+            "\4\uffff\1\5\26\uffff\1\3\3\uffff\1\5\4\uffff\1\5\3\uffff\1"+
             "\5\1\4\1\uffff\1\5\1\uffff\1\5\2\uffff\3\5\2\uffff\15\5",
             "\1\uffff",
             "\1\uffff",
@@ -27643,9 +27636,9 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
 
                         else if ( (LA106_0==65) && (synpred31_InternalEventPatternLanguage())) {s = 3;}
 
-                        else if ( (LA106_0==80) && (synpred31_InternalEventPatternLanguage())) {s = 4;}
+                        else if ( (LA106_0==79) && (synpred31_InternalEventPatternLanguage())) {s = 4;}
 
-                        else if ( (LA106_0==RULE_INT||(LA106_0>=RULE_STRING && LA106_0<=RULE_DECIMAL)||LA106_0==14||LA106_0==21||LA106_0==37||LA106_0==42||LA106_0==69||LA106_0==74||LA106_0==79||LA106_0==82||LA106_0==84||(LA106_0>=87 && LA106_0<=89)||(LA106_0>=92 && LA106_0<=104)) ) {s = 5;}
+                        else if ( (LA106_0==RULE_INT||(LA106_0>=RULE_STRING && LA106_0<=RULE_DECIMAL)||LA106_0==14||LA106_0==21||LA106_0==37||LA106_0==42||LA106_0==69||LA106_0==74||LA106_0==78||LA106_0==81||LA106_0==83||(LA106_0>=86 && LA106_0<=88)||(LA106_0>=91 && LA106_0<=103)) ) {s = 5;}
 
                         else if ( (LA106_0==20) ) {s = 34;}
 
@@ -27698,15 +27691,14 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA108_minS =
         "\1\4\1\0\110\uffff";
     static final String DFA108_maxS =
-        "\1\152\1\0\110\uffff";
+        "\1\151\1\0\110\uffff";
     static final String DFA108_acceptS =
         "\2\uffff\1\2\106\uffff\1\1";
     static final String DFA108_specialS =
         "\1\uffff\1\0\110\uffff}>";
     static final String[] DFA108_transitionS = {
             "\5\2\5\uffff\2\2\3\uffff\3\2\1\uffff\1\2\1\uffff\1\2\13\uffff"+
-            "\1\1\1\2\1\uffff\1\2\1\uffff\1\2\1\uffff\4\2\7\uffff\31\2\1"+
-            "\uffff\32\2",
+            "\1\1\3\2\1\uffff\1\2\1\uffff\4\2\7\uffff\30\2\1\uffff\32\2",
             "\1\uffff",
             "",
             "",
@@ -27848,7 +27840,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA111_minS =
         "\1\4\37\0\52\uffff";
     static final String DFA111_maxS =
-        "\1\152\37\0\52\uffff";
+        "\1\151\37\0\52\uffff";
     static final String DFA111_acceptS =
         "\40\uffff\1\2\50\uffff\1\1";
     static final String DFA111_specialS =
@@ -27857,11 +27849,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
         "\1\31\1\32\1\33\1\34\1\35\1\36\52\uffff}>";
     static final String[] DFA111_transitionS = {
             "\1\23\1\1\1\26\1\22\1\24\5\uffff\1\7\1\40\3\uffff\1\37\1\40"+
-            "\1\12\1\uffff\1\40\1\uffff\1\40\13\uffff\1\17\1\40\1\uffff\1"+
-            "\40\1\uffff\1\14\1\uffff\4\40\7\uffff\16\40\1\10\4\40\1\6\4"+
-            "\40\1\16\1\uffff\1\40\1\30\1\40\1\13\2\40\1\31\1\32\1\33\2\40"+
-            "\1\2\1\3\1\4\1\5\1\15\1\11\1\20\1\21\1\25\1\27\1\34\1\35\1\36"+
-            "\2\40",
+            "\1\12\1\uffff\1\40\1\uffff\1\40\13\uffff\1\17\3\40\1\uffff\1"+
+            "\14\1\uffff\4\40\7\uffff\16\40\1\10\4\40\1\6\3\40\1\16\1\uffff"+
+            "\1\40\1\30\1\40\1\13\2\40\1\31\1\32\1\33\2\40\1\2\1\3\1\4\1"+
+            "\5\1\15\1\11\1\20\1\21\1\25\1\27\1\34\1\35\1\36\2\40",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -28453,15 +28444,15 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA126_minS =
         "\1\4\1\0\111\uffff";
     static final String DFA126_maxS =
-        "\1\152\1\0\111\uffff";
+        "\1\151\1\0\111\uffff";
     static final String DFA126_acceptS =
         "\2\uffff\1\2\107\uffff\1\1";
     static final String DFA126_specialS =
         "\1\uffff\1\0\111\uffff}>";
     static final String[] DFA126_transitionS = {
             "\5\2\5\uffff\2\2\3\uffff\3\2\1\uffff\1\2\1\uffff\1\2\10\uffff"+
-            "\1\2\2\uffff\2\2\1\uffff\1\2\1\uffff\1\1\1\uffff\4\2\7\uffff"+
-            "\31\2\1\uffff\32\2",
+            "\1\2\2\uffff\4\2\1\uffff\1\1\1\uffff\4\2\7\uffff\30\2\1\uffff"+
+            "\32\2",
             "\1\uffff",
             "",
             "",
@@ -28604,18 +28595,18 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     static final String DFA130_minS =
         "\1\5\1\uffff\1\17\1\5\1\uffff\1\17\1\uffff";
     static final String DFA130_maxS =
-        "\1\135\1\uffff\1\121\1\106\1\uffff\1\121\1\uffff";
+        "\1\134\1\uffff\1\120\1\106\1\uffff\1\120\1\uffff";
     static final String DFA130_acceptS =
         "\1\uffff\1\1\2\uffff\1\2\1\uffff\1\3";
     static final String DFA130_specialS =
         "\7\uffff}>";
     static final String[] DFA130_transitionS = {
-            "\1\2\127\uffff\1\1",
+            "\1\2\126\uffff\1\1",
             "",
-            "\1\3\101\uffff\1\4",
+            "\1\3\100\uffff\1\4",
             "\1\5\100\uffff\1\6",
             "",
-            "\1\3\101\uffff\1\4",
+            "\1\3\100\uffff\1\4",
             ""
     };
 
@@ -28720,7 +28711,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_23_in_ruleIQPatternEventPattern1582 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleParametrizedIncQueryPatternReference_in_ruleIQPatternEventPattern1603 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_28_in_ruleIQPatternEventPattern1615 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleIQPatternEventPattern1627 = new BitSet(new long[]{0x0000000000000000L,0x0000600000000000L});
+    public static final BitSet FOLLOW_23_in_ruleIQPatternEventPattern1627 = new BitSet(new long[]{0x0000000000000000L,0x0000300000000000L});
     public static final BitSet FOLLOW_ruleIQPatternChangeType_in_ruleIQPatternEventPattern1648 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_25_in_ruleIQPatternEventPattern1660 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleComplexEventPattern_in_entryRuleComplexEventPattern1696 = new BitSet(new long[]{0x0000000000000000L});
@@ -28940,10 +28931,10 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleXAssignment_in_entryRuleXAssignment6944 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXAssignment6954 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFeatureCallID_in_ruleXAssignment7012 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXAssignment7028 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXAssignment7028 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXAssignment_in_ruleXAssignment7048 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXOrExpression_in_ruleXAssignment7078 = new BitSet(new long[]{0x0180000000000002L});
-    public static final BitSet FOLLOW_ruleOpMultiAssign_in_ruleXAssignment7131 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_ruleOpMultiAssign_in_ruleXAssignment7131 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXAssignment_in_ruleXAssignment7154 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpSingleAssign_in_entryRuleOpSingleAssign7194 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpSingleAssign7205 = new BitSet(new long[]{0x0000000000000002L});
@@ -28955,7 +28946,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleXOrExpression_in_entryRuleXOrExpression7390 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXOrExpression7400 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXAndExpression_in_ruleXOrExpression7447 = new BitSet(new long[]{0x0200000000000002L});
-    public static final BitSet FOLLOW_ruleOpOr_in_ruleXOrExpression7500 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_ruleOpOr_in_ruleXOrExpression7500 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXAndExpression_in_ruleXOrExpression7523 = new BitSet(new long[]{0x0200000000000002L});
     public static final BitSet FOLLOW_ruleOpOr_in_entryRuleOpOr7562 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpOr7573 = new BitSet(new long[]{0x0000000000000002L});
@@ -28963,7 +28954,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleXAndExpression_in_entryRuleXAndExpression7649 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXAndExpression7659 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXEqualityExpression_in_ruleXAndExpression7706 = new BitSet(new long[]{0x0400000000000002L});
-    public static final BitSet FOLLOW_ruleOpAnd_in_ruleXAndExpression7759 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_ruleOpAnd_in_ruleXAndExpression7759 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXEqualityExpression_in_ruleXAndExpression7782 = new BitSet(new long[]{0x0400000000000002L});
     public static final BitSet FOLLOW_ruleOpAnd_in_entryRuleOpAnd7821 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpAnd7832 = new BitSet(new long[]{0x0000000000000002L});
@@ -28971,7 +28962,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleXEqualityExpression_in_entryRuleXEqualityExpression7908 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXEqualityExpression7918 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXRelationalExpression_in_ruleXEqualityExpression7965 = new BitSet(new long[]{0x1800300000000002L});
-    public static final BitSet FOLLOW_ruleOpEquality_in_ruleXEqualityExpression8018 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_ruleOpEquality_in_ruleXEqualityExpression8018 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXRelationalExpression_in_ruleXEqualityExpression8041 = new BitSet(new long[]{0x1800300000000002L});
     public static final BitSet FOLLOW_ruleOpEquality_in_entryRuleOpEquality8080 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpEquality8091 = new BitSet(new long[]{0x0000000000000002L});
@@ -28984,7 +28975,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleXOtherOperatorExpression_in_ruleXRelationalExpression8283 = new BitSet(new long[]{0x6000C40000000002L});
     public static final BitSet FOLLOW_61_in_ruleXRelationalExpression8319 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXRelationalExpression8342 = new BitSet(new long[]{0x6000C40000000002L});
-    public static final BitSet FOLLOW_ruleOpCompare_in_ruleXRelationalExpression8403 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_ruleOpCompare_in_ruleXRelationalExpression8403 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXOtherOperatorExpression_in_ruleXRelationalExpression8426 = new BitSet(new long[]{0x6000C40000000002L});
     public static final BitSet FOLLOW_ruleOpCompare_in_entryRuleOpCompare8466 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpCompare8477 = new BitSet(new long[]{0x0000000000000002L});
@@ -28995,7 +28986,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleXOtherOperatorExpression_in_entryRuleXOtherOperatorExpression8612 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXOtherOperatorExpression8622 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXAdditiveExpression_in_ruleXOtherOperatorExpression8669 = new BitSet(new long[]{0x8000850000000002L,0x000000000000001FL});
-    public static final BitSet FOLLOW_ruleOpOther_in_ruleXOtherOperatorExpression8722 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_ruleOpOther_in_ruleXOtherOperatorExpression8722 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXAdditiveExpression_in_ruleXOtherOperatorExpression8745 = new BitSet(new long[]{0x8000850000000002L,0x000000000000001FL});
     public static final BitSet FOLLOW_ruleOpOther_in_entryRuleOpOther8784 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpOther8795 = new BitSet(new long[]{0x0000000000000002L});
@@ -29019,7 +29010,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleXAdditiveExpression_in_entryRuleXAdditiveExpression9195 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXAdditiveExpression9205 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_ruleXAdditiveExpression9252 = new BitSet(new long[]{0x0000000000004002L,0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleOpAdd_in_ruleXAdditiveExpression9305 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_ruleOpAdd_in_ruleXAdditiveExpression9305 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_ruleXAdditiveExpression9328 = new BitSet(new long[]{0x0000000000004002L,0x0000000000000020L});
     public static final BitSet FOLLOW_ruleOpAdd_in_entryRuleOpAdd9367 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpAdd9378 = new BitSet(new long[]{0x0000000000000002L});
@@ -29028,7 +29019,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_entryRuleXMultiplicativeExpression9475 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXMultiplicativeExpression9485 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXUnaryOperation_in_ruleXMultiplicativeExpression9532 = new BitSet(new long[]{0x0000000000000002L,0x00000000000003C0L});
-    public static final BitSet FOLLOW_ruleOpMulti_in_ruleXMultiplicativeExpression9585 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_ruleOpMulti_in_ruleXMultiplicativeExpression9585 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXUnaryOperation_in_ruleXMultiplicativeExpression9608 = new BitSet(new long[]{0x0000000000000002L,0x00000000000003C0L});
     public static final BitSet FOLLOW_ruleOpMulti_in_entryRuleOpMulti9647 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpMulti9658 = new BitSet(new long[]{0x0000000000000002L});
@@ -29038,7 +29029,7 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_73_in_ruleOpMulti9753 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXUnaryOperation_in_entryRuleXUnaryOperation9793 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXUnaryOperation9803 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpUnary_in_ruleXUnaryOperation9861 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_ruleOpUnary_in_ruleXUnaryOperation9861 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXUnaryOperation_in_ruleXUnaryOperation9882 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXCastedExpression_in_ruleXUnaryOperation9911 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpUnary_in_entryRuleOpUnary9947 = new BitSet(new long[]{0x0000000000000000L});
@@ -29054,25 +29045,25 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleXMemberFeatureCall_in_entryRuleXMemberFeatureCall10227 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXMemberFeatureCall10237 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXPrimaryExpression_in_ruleXMemberFeatureCall10284 = new BitSet(new long[]{0x0000000000008002L,0x0000000000003000L});
-    public static final BitSet FOLLOW_15_in_ruleXMemberFeatureCall10356 = new BitSet(new long[]{0x0000000000000020L,0x00000000F0000000L});
-    public static final BitSet FOLLOW_76_in_ruleXMemberFeatureCall10380 = new BitSet(new long[]{0x0000000000000020L,0x00000000F0000000L});
+    public static final BitSet FOLLOW_15_in_ruleXMemberFeatureCall10356 = new BitSet(new long[]{0x0000000000000020L,0x0000000078000000L});
+    public static final BitSet FOLLOW_76_in_ruleXMemberFeatureCall10380 = new BitSet(new long[]{0x0000000000000020L,0x0000000078000000L});
     public static final BitSet FOLLOW_ruleFeatureCallID_in_ruleXMemberFeatureCall10417 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXMemberFeatureCall10433 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXMemberFeatureCall10433 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXAssignment_in_ruleXMemberFeatureCall10455 = new BitSet(new long[]{0x0000000000008002L,0x0000000000003000L});
-    public static final BitSet FOLLOW_15_in_ruleXMemberFeatureCall10541 = new BitSet(new long[]{0x0000040000000020L,0x00000000F0000000L});
-    public static final BitSet FOLLOW_77_in_ruleXMemberFeatureCall10565 = new BitSet(new long[]{0x0000040000000020L,0x00000000F0000000L});
-    public static final BitSet FOLLOW_76_in_ruleXMemberFeatureCall10602 = new BitSet(new long[]{0x0000040000000020L,0x00000000F0000000L});
-    public static final BitSet FOLLOW_42_in_ruleXMemberFeatureCall10631 = new BitSet(new long[]{0x0000000000080020L,0x0000080000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXMemberFeatureCall10652 = new BitSet(new long[]{0x0000800000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleXMemberFeatureCall10665 = new BitSet(new long[]{0x0000000000080020L,0x0000080000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXMemberFeatureCall10686 = new BitSet(new long[]{0x0000800000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_47_in_ruleXMemberFeatureCall10700 = new BitSet(new long[]{0x0000000000000020L,0x00000000F0000000L});
+    public static final BitSet FOLLOW_15_in_ruleXMemberFeatureCall10541 = new BitSet(new long[]{0x0000040000000020L,0x0000000078000000L});
+    public static final BitSet FOLLOW_77_in_ruleXMemberFeatureCall10565 = new BitSet(new long[]{0x0000040000000020L,0x0000000078000000L});
+    public static final BitSet FOLLOW_76_in_ruleXMemberFeatureCall10602 = new BitSet(new long[]{0x0000040000000020L,0x0000000078000000L});
+    public static final BitSet FOLLOW_42_in_ruleXMemberFeatureCall10631 = new BitSet(new long[]{0x0000000000080020L,0x0000040000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXMemberFeatureCall10652 = new BitSet(new long[]{0x0000808000000000L});
+    public static final BitSet FOLLOW_39_in_ruleXMemberFeatureCall10665 = new BitSet(new long[]{0x0000000000080020L,0x0000040000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXMemberFeatureCall10686 = new BitSet(new long[]{0x0000808000000000L});
+    public static final BitSet FOLLOW_47_in_ruleXMemberFeatureCall10700 = new BitSet(new long[]{0x0000000000000020L,0x0000000078000000L});
     public static final BitSet FOLLOW_ruleFeatureCallID_in_ruleXMemberFeatureCall10725 = new BitSet(new long[]{0x0000002000088002L,0x0000000000003000L});
-    public static final BitSet FOLLOW_19_in_ruleXMemberFeatureCall10759 = new BitSet(new long[]{0x00000420003841F0L,0x000001FFF3958422L});
+    public static final BitSet FOLLOW_19_in_ruleXMemberFeatureCall10759 = new BitSet(new long[]{0x00000420003841F0L,0x000000FFF9CAC422L});
     public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXMemberFeatureCall10844 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXMemberFeatureCall10872 = new BitSet(new long[]{0x0000000000100000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleXMemberFeatureCall10885 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXMemberFeatureCall10906 = new BitSet(new long[]{0x0000000000100000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXMemberFeatureCall10872 = new BitSet(new long[]{0x0000008000100000L});
+    public static final BitSet FOLLOW_39_in_ruleXMemberFeatureCall10885 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXMemberFeatureCall10906 = new BitSet(new long[]{0x0000008000100000L});
     public static final BitSet FOLLOW_20_in_ruleXMemberFeatureCall10923 = new BitSet(new long[]{0x0000002000008002L,0x0000000000003000L});
     public static final BitSet FOLLOW_ruleXClosure_in_ruleXMemberFeatureCall10958 = new BitSet(new long[]{0x0000000000008002L,0x0000000000003000L});
     public static final BitSet FOLLOW_ruleXPrimaryExpression_in_entryRuleXPrimaryExpression10998 = new BitSet(new long[]{0x0000000000000000L});
@@ -29105,107 +29096,107 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleXListLiteral_in_ruleXCollectionLiteral11766 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXSetLiteral_in_entryRuleXSetLiteral11801 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXSetLiteral11811 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_ruleXSetLiteral11857 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleXSetLiteral11869 = new BitSet(new long[]{0x00000420022841F0L,0x000001FFF3948420L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXSetLiteral11891 = new BitSet(new long[]{0x0000000002000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleXSetLiteral11904 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXSetLiteral11925 = new BitSet(new long[]{0x0000000002000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_78_in_ruleXSetLiteral11857 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleXSetLiteral11869 = new BitSet(new long[]{0x00000420022841F0L,0x000000FFF9CA4420L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXSetLiteral11891 = new BitSet(new long[]{0x0000008002000000L});
+    public static final BitSet FOLLOW_39_in_ruleXSetLiteral11904 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXSetLiteral11925 = new BitSet(new long[]{0x0000008002000000L});
     public static final BitSet FOLLOW_25_in_ruleXSetLiteral11941 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXListLiteral_in_entryRuleXListLiteral11977 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXListLiteral11987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_ruleXListLiteral12033 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_ruleXListLiteral12045 = new BitSet(new long[]{0x00000460002841F0L,0x000001FFF3948420L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXListLiteral12067 = new BitSet(new long[]{0x0000004000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleXListLiteral12080 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXListLiteral12101 = new BitSet(new long[]{0x0000004000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_78_in_ruleXListLiteral12033 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_37_in_ruleXListLiteral12045 = new BitSet(new long[]{0x00000460002841F0L,0x000000FFF9CA4420L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXListLiteral12067 = new BitSet(new long[]{0x000000C000000000L});
+    public static final BitSet FOLLOW_39_in_ruleXListLiteral12080 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXListLiteral12101 = new BitSet(new long[]{0x000000C000000000L});
     public static final BitSet FOLLOW_38_in_ruleXListLiteral12117 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXClosure_in_entryRuleXClosure12153 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXClosure12163 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleXClosure12223 = new BitSet(new long[]{0x00000460002841F0L,0x000001FFFF958422L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXClosure12296 = new BitSet(new long[]{0x0000000000000000L,0x0000000000014000L});
-    public static final BitSet FOLLOW_78_in_ruleXClosure12309 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXClosure12330 = new BitSet(new long[]{0x0000000000000000L,0x0000000000014000L});
-    public static final BitSet FOLLOW_80_in_ruleXClosure12352 = new BitSet(new long[]{0x00000460002841F0L,0x000001FFFF948420L});
+    public static final BitSet FOLLOW_37_in_ruleXClosure12223 = new BitSet(new long[]{0x00000460002841F0L,0x000000FFFFCAC422L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXClosure12296 = new BitSet(new long[]{0x0000008000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_39_in_ruleXClosure12309 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXClosure12330 = new BitSet(new long[]{0x0000008000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_79_in_ruleXClosure12352 = new BitSet(new long[]{0x00000460002841F0L,0x000000FFFFCA4420L});
     public static final BitSet FOLLOW_ruleXExpressionInClosure_in_ruleXClosure12389 = new BitSet(new long[]{0x0000004000000000L});
     public static final BitSet FOLLOW_38_in_ruleXClosure12401 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpressionInClosure_in_entryRuleXExpressionInClosure12437 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpressionInClosure12447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_ruleXExpressionInClosure12503 = new BitSet(new long[]{0x00000420002841F2L,0x000001FFFF968420L});
-    public static final BitSet FOLLOW_81_in_ruleXExpressionInClosure12516 = new BitSet(new long[]{0x00000420002841F2L,0x000001FFFF948420L});
+    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_ruleXExpressionInClosure12503 = new BitSet(new long[]{0x00000420002841F2L,0x000000FFFFCB4420L});
+    public static final BitSet FOLLOW_80_in_ruleXExpressionInClosure12516 = new BitSet(new long[]{0x00000420002841F2L,0x000000FFFFCA4420L});
     public static final BitSet FOLLOW_ruleXShortClosure_in_entryRuleXShortClosure12556 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXShortClosure12566 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXShortClosure12674 = new BitSet(new long[]{0x0000000000000000L,0x0000000000014000L});
-    public static final BitSet FOLLOW_78_in_ruleXShortClosure12687 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXShortClosure12708 = new BitSet(new long[]{0x0000000000000000L,0x0000000000014000L});
-    public static final BitSet FOLLOW_80_in_ruleXShortClosure12730 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXShortClosure12674 = new BitSet(new long[]{0x0000008000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_39_in_ruleXShortClosure12687 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXShortClosure12708 = new BitSet(new long[]{0x0000008000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_79_in_ruleXShortClosure12730 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXShortClosure12766 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXParenthesizedExpression_in_entryRuleXParenthesizedExpression12802 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXParenthesizedExpression12812 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleXParenthesizedExpression12849 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_19_in_ruleXParenthesizedExpression12849 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXParenthesizedExpression12871 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_20_in_ruleXParenthesizedExpression12882 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXIfExpression_in_entryRuleXIfExpression12918 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXIfExpression12928 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_82_in_ruleXIfExpression12974 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleXIfExpression12986 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_81_in_ruleXIfExpression12974 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleXIfExpression12986 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXIfExpression13007 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleXIfExpression13019 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXIfExpression13040 = new BitSet(new long[]{0x0000000000000002L,0x0000000000080000L});
-    public static final BitSet FOLLOW_83_in_ruleXIfExpression13061 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_20_in_ruleXIfExpression13019 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXIfExpression13040 = new BitSet(new long[]{0x0000000000000002L,0x0000000000040000L});
+    public static final BitSet FOLLOW_82_in_ruleXIfExpression13061 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXIfExpression13083 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXSwitchExpression_in_entryRuleXSwitchExpression13121 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXSwitchExpression13131 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_84_in_ruleXSwitchExpression13177 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_83_in_ruleXSwitchExpression13177 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXSwitchExpression13220 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleXSwitchExpression13232 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_23_in_ruleXSwitchExpression13232 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXSwitchExpression13256 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_19_in_ruleXSwitchExpression13300 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXSwitchExpression13321 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleXSwitchExpression13333 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_23_in_ruleXSwitchExpression13333 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXSwitchExpression13356 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_20_in_ruleXSwitchExpression13368 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleXSwitchExpression13382 = new BitSet(new long[]{0x0000000000880020L,0x0000000000400002L});
-    public static final BitSet FOLLOW_ruleXCasePart_in_ruleXSwitchExpression13403 = new BitSet(new long[]{0x0000000002880020L,0x0000000000600002L});
-    public static final BitSet FOLLOW_85_in_ruleXSwitchExpression13417 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleXSwitchExpression13429 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_21_in_ruleXSwitchExpression13382 = new BitSet(new long[]{0x0000000000880020L,0x0000000000200002L});
+    public static final BitSet FOLLOW_ruleXCasePart_in_ruleXSwitchExpression13403 = new BitSet(new long[]{0x0000000002880020L,0x0000000000300002L});
+    public static final BitSet FOLLOW_84_in_ruleXSwitchExpression13417 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleXSwitchExpression13429 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXSwitchExpression13450 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_25_in_ruleXSwitchExpression13464 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXCasePart_in_entryRuleXCasePart13500 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXCasePart13510 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXCasePart13556 = new BitSet(new long[]{0x0000000000800000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_86_in_ruleXCasePart13570 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXCasePart13556 = new BitSet(new long[]{0x0000000000800000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_85_in_ruleXCasePart13570 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXCasePart13591 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleXCasePart13605 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_23_in_ruleXCasePart13605 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXCasePart13626 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXForLoopExpression_in_entryRuleXForLoopExpression13662 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXForLoopExpression13672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_87_in_ruleXForLoopExpression13718 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_86_in_ruleXForLoopExpression13718 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_19_in_ruleXForLoopExpression13730 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXForLoopExpression13751 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleXForLoopExpression13763 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_23_in_ruleXForLoopExpression13763 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXForLoopExpression13784 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleXForLoopExpression13796 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_20_in_ruleXForLoopExpression13796 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXForLoopExpression13817 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXWhileExpression_in_entryRuleXWhileExpression13853 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXWhileExpression13863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_88_in_ruleXWhileExpression13909 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleXWhileExpression13921 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_87_in_ruleXWhileExpression13909 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleXWhileExpression13921 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXWhileExpression13942 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleXWhileExpression13954 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_20_in_ruleXWhileExpression13954 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXWhileExpression13975 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXDoWhileExpression_in_entryRuleXDoWhileExpression14011 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXDoWhileExpression14021 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_ruleXDoWhileExpression14067 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXDoWhileExpression14088 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_88_in_ruleXDoWhileExpression14100 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleXDoWhileExpression14112 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_88_in_ruleXDoWhileExpression14067 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXDoWhileExpression14088 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_87_in_ruleXDoWhileExpression14100 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleXDoWhileExpression14112 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXDoWhileExpression14133 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_20_in_ruleXDoWhileExpression14145 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXBlockExpression_in_entryRuleXBlockExpression14181 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXBlockExpression14191 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleXBlockExpression14237 = new BitSet(new long[]{0x00000420022841F0L,0x000001FFFF948420L});
-    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_ruleXBlockExpression14259 = new BitSet(new long[]{0x00000420022841F0L,0x000001FFFF968420L});
-    public static final BitSet FOLLOW_81_in_ruleXBlockExpression14272 = new BitSet(new long[]{0x00000420022841F0L,0x000001FFFF948420L});
+    public static final BitSet FOLLOW_21_in_ruleXBlockExpression14237 = new BitSet(new long[]{0x00000420022841F0L,0x000000FFFFCA4420L});
+    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_ruleXBlockExpression14259 = new BitSet(new long[]{0x00000420022841F0L,0x000000FFFFCB4420L});
+    public static final BitSet FOLLOW_80_in_ruleXBlockExpression14272 = new BitSet(new long[]{0x00000420022841F0L,0x000000FFFFCA4420L});
     public static final BitSet FOLLOW_25_in_ruleXBlockExpression14288 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_entryRuleXExpressionInsideBlock14324 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpressionInsideBlock14334 = new BitSet(new long[]{0x0000000000000002L});
@@ -29213,12 +29204,12 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXExpressionInsideBlock14408 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXVariableDeclaration_in_entryRuleXVariableDeclaration14443 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXVariableDeclaration14453 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_90_in_ruleXVariableDeclaration14506 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_ruleXVariableDeclaration14537 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_ruleXVariableDeclaration14506 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
+    public static final BitSet FOLLOW_90_in_ruleXVariableDeclaration14537 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXVariableDeclaration14585 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXVariableDeclaration14606 = new BitSet(new long[]{0x0040000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXVariableDeclaration14635 = new BitSet(new long[]{0x0040000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleXVariableDeclaration14649 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_54_in_ruleXVariableDeclaration14649 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXVariableDeclaration14670 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmFormalParameter_in_entryRuleJvmFormalParameter14708 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmFormalParameter14718 = new BitSet(new long[]{0x0000000000000002L});
@@ -29230,53 +29221,53 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleValidID_in_ruleFullJvmFormalParameter14899 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXFeatureCall_in_entryRuleXFeatureCall14935 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXFeatureCall14945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleXFeatureCall14992 = new BitSet(new long[]{0x0000000000080020L,0x0000080000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall15013 = new BitSet(new long[]{0x0000800000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleXFeatureCall15026 = new BitSet(new long[]{0x0000000000080020L,0x0000080000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall15047 = new BitSet(new long[]{0x0000800000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_47_in_ruleXFeatureCall15061 = new BitSet(new long[]{0x0000040000000020L,0x00000001F0000000L});
+    public static final BitSet FOLLOW_42_in_ruleXFeatureCall14992 = new BitSet(new long[]{0x0000000000080020L,0x0000040000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall15013 = new BitSet(new long[]{0x0000808000000000L});
+    public static final BitSet FOLLOW_39_in_ruleXFeatureCall15026 = new BitSet(new long[]{0x0000000000080020L,0x0000040000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall15047 = new BitSet(new long[]{0x0000808000000000L});
+    public static final BitSet FOLLOW_47_in_ruleXFeatureCall15061 = new BitSet(new long[]{0x0000040000000020L,0x00000000F8000000L});
     public static final BitSet FOLLOW_ruleIdOrSuper_in_ruleXFeatureCall15086 = new BitSet(new long[]{0x0000002000080002L});
-    public static final BitSet FOLLOW_19_in_ruleXFeatureCall15120 = new BitSet(new long[]{0x00000420003841F0L,0x000001FFF3958422L});
+    public static final BitSet FOLLOW_19_in_ruleXFeatureCall15120 = new BitSet(new long[]{0x00000420003841F0L,0x000000FFF9CAC422L});
     public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXFeatureCall15205 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall15233 = new BitSet(new long[]{0x0000000000100000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleXFeatureCall15246 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall15267 = new BitSet(new long[]{0x0000000000100000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall15233 = new BitSet(new long[]{0x0000008000100000L});
+    public static final BitSet FOLLOW_39_in_ruleXFeatureCall15246 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall15267 = new BitSet(new long[]{0x0000008000100000L});
     public static final BitSet FOLLOW_20_in_ruleXFeatureCall15284 = new BitSet(new long[]{0x0000002000000002L});
     public static final BitSet FOLLOW_ruleXClosure_in_ruleXFeatureCall15319 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFeatureCallID_in_entryRuleFeatureCallID15357 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFeatureCallID15368 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleFeatureCallID15415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_92_in_ruleFeatureCallID15439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_93_in_ruleFeatureCallID15458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_94_in_ruleFeatureCallID15477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_95_in_ruleFeatureCallID15496 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_91_in_ruleFeatureCallID15439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_92_in_ruleFeatureCallID15458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_93_in_ruleFeatureCallID15477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_94_in_ruleFeatureCallID15496 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIdOrSuper_in_entryRuleIdOrSuper15537 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIdOrSuper15548 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFeatureCallID_in_ruleIdOrSuper15595 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_96_in_ruleIdOrSuper15619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_95_in_ruleIdOrSuper15619 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXConstructorCall_in_entryRuleXConstructorCall15659 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXConstructorCall15669 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_97_in_ruleXConstructorCall15715 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_96_in_ruleXConstructorCall15715 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXConstructorCall15738 = new BitSet(new long[]{0x0000042000080002L});
-    public static final BitSet FOLLOW_42_in_ruleXConstructorCall15759 = new BitSet(new long[]{0x0000000000080020L,0x0000080000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall15781 = new BitSet(new long[]{0x0000800000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleXConstructorCall15794 = new BitSet(new long[]{0x0000000000080020L,0x0000080000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall15815 = new BitSet(new long[]{0x0000800000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_42_in_ruleXConstructorCall15759 = new BitSet(new long[]{0x0000000000080020L,0x0000040000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall15781 = new BitSet(new long[]{0x0000808000000000L});
+    public static final BitSet FOLLOW_39_in_ruleXConstructorCall15794 = new BitSet(new long[]{0x0000000000080020L,0x0000040000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall15815 = new BitSet(new long[]{0x0000808000000000L});
     public static final BitSet FOLLOW_47_in_ruleXConstructorCall15829 = new BitSet(new long[]{0x0000002000080002L});
-    public static final BitSet FOLLOW_19_in_ruleXConstructorCall15852 = new BitSet(new long[]{0x00000420003841F0L,0x000001FFF3958422L});
+    public static final BitSet FOLLOW_19_in_ruleXConstructorCall15852 = new BitSet(new long[]{0x00000420003841F0L,0x000000FFF9CAC422L});
     public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXConstructorCall15925 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall15953 = new BitSet(new long[]{0x0000000000100000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleXConstructorCall15966 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall15987 = new BitSet(new long[]{0x0000000000100000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall15953 = new BitSet(new long[]{0x0000008000100000L});
+    public static final BitSet FOLLOW_39_in_ruleXConstructorCall15966 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall15987 = new BitSet(new long[]{0x0000008000100000L});
     public static final BitSet FOLLOW_20_in_ruleXConstructorCall16004 = new BitSet(new long[]{0x0000002000000002L});
     public static final BitSet FOLLOW_ruleXClosure_in_ruleXConstructorCall16039 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXBooleanLiteral_in_entryRuleXBooleanLiteral16076 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXBooleanLiteral16086 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_98_in_ruleXBooleanLiteral16133 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_99_in_ruleXBooleanLiteral16157 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_97_in_ruleXBooleanLiteral16133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_98_in_ruleXBooleanLiteral16157 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXNullLiteral_in_entryRuleXNullLiteral16207 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXNullLiteral16217 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_100_in_ruleXNullLiteral16263 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_99_in_ruleXNullLiteral16263 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXNumberLiteral_in_entryRuleXNumberLiteral16299 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXNumberLiteral16309 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNumber_in_ruleXNumberLiteral16364 = new BitSet(new long[]{0x0000000000000002L});
@@ -29285,34 +29276,34 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_RULE_STRING_in_ruleXStringLiteral16461 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXTypeLiteral_in_entryRuleXTypeLiteral16502 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXTypeLiteral16512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_101_in_ruleXTypeLiteral16558 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_100_in_ruleXTypeLiteral16558 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_19_in_ruleXTypeLiteral16570 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXTypeLiteral16593 = new BitSet(new long[]{0x0000002000100000L});
     public static final BitSet FOLLOW_ruleArrayBrackets_in_ruleXTypeLiteral16614 = new BitSet(new long[]{0x0000002000100000L});
     public static final BitSet FOLLOW_20_in_ruleXTypeLiteral16627 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXThrowExpression_in_entryRuleXThrowExpression16663 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXThrowExpression16673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_102_in_ruleXThrowExpression16719 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_101_in_ruleXThrowExpression16719 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXThrowExpression16740 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXReturnExpression_in_entryRuleXReturnExpression16776 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXReturnExpression16786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_103_in_ruleXReturnExpression16832 = new BitSet(new long[]{0x00000420002841F2L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_102_in_ruleXReturnExpression16832 = new BitSet(new long[]{0x00000420002841F2L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXReturnExpression16863 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXTryCatchFinallyExpression_in_entryRuleXTryCatchFinallyExpression16900 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXTryCatchFinallyExpression16910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_104_in_ruleXTryCatchFinallyExpression16956 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression16977 = new BitSet(new long[]{0x0000000000000000L,0x0000060000000000L});
-    public static final BitSet FOLLOW_ruleXCatchClause_in_ruleXTryCatchFinallyExpression17007 = new BitSet(new long[]{0x0000000000000002L,0x0000060000000000L});
-    public static final BitSet FOLLOW_105_in_ruleXTryCatchFinallyExpression17029 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_103_in_ruleXTryCatchFinallyExpression16956 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression16977 = new BitSet(new long[]{0x0000000000000000L,0x0000030000000000L});
+    public static final BitSet FOLLOW_ruleXCatchClause_in_ruleXTryCatchFinallyExpression17007 = new BitSet(new long[]{0x0000000000000002L,0x0000030000000000L});
+    public static final BitSet FOLLOW_104_in_ruleXTryCatchFinallyExpression17029 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_105_in_ruleXTryCatchFinallyExpression17073 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_104_in_ruleXTryCatchFinallyExpression17073 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17094 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXCatchClause_in_entryRuleXCatchClause17132 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXCatchClause17142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_106_in_ruleXCatchClause17187 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_105_in_ruleXCatchClause17187 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_19_in_ruleXCatchClause17200 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_ruleXCatchClause17221 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleXCatchClause17233 = new BitSet(new long[]{0x00000420002841F0L,0x000001FFF3948420L});
+    public static final BitSet FOLLOW_20_in_ruleXCatchClause17233 = new BitSet(new long[]{0x00000420002841F0L,0x000000FFF9CA4420L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXCatchClause17254 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName17291 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName17302 = new BitSet(new long[]{0x0000000000000002L});
@@ -29339,19 +29330,19 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef17943 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXFunctionTypeRef17953 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_19_in_ruleXFunctionTypeRef17991 = new BitSet(new long[]{0x0000000000180020L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18013 = new BitSet(new long[]{0x0000000000100000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleXFunctionTypeRef18026 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18047 = new BitSet(new long[]{0x0000000000100000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18013 = new BitSet(new long[]{0x0000008000100000L});
+    public static final BitSet FOLLOW_39_in_ruleXFunctionTypeRef18026 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18047 = new BitSet(new long[]{0x0000008000100000L});
     public static final BitSet FOLLOW_20_in_ruleXFunctionTypeRef18063 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_65_in_ruleXFunctionTypeRef18077 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18098 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference18134 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference18144 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference18192 = new BitSet(new long[]{0x0000040000000002L});
-    public static final BitSet FOLLOW_42_in_ruleJvmParameterizedTypeReference18213 = new BitSet(new long[]{0x0000000000080020L,0x0000080000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18235 = new BitSet(new long[]{0x0000800000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleJvmParameterizedTypeReference18248 = new BitSet(new long[]{0x0000000000080020L,0x0000080000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18269 = new BitSet(new long[]{0x0000800000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_42_in_ruleJvmParameterizedTypeReference18213 = new BitSet(new long[]{0x0000000000080020L,0x0000040000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18235 = new BitSet(new long[]{0x0000808000000000L});
+    public static final BitSet FOLLOW_39_in_ruleJvmParameterizedTypeReference18248 = new BitSet(new long[]{0x0000000000080020L,0x0000040000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18269 = new BitSet(new long[]{0x0000808000000000L});
     public static final BitSet FOLLOW_47_in_ruleJvmParameterizedTypeReference18283 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference18321 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference18331 = new BitSet(new long[]{0x0000000000000002L});
@@ -29359,20 +29350,20 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference18405 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference18440 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference18450 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_107_in_ruleJvmWildcardTypeReference18496 = new BitSet(new long[]{0x0000000000000002L,0x0000000110000000L});
+    public static final BitSet FOLLOW_106_in_ruleJvmWildcardTypeReference18496 = new BitSet(new long[]{0x0000000000000002L,0x0000000088000000L});
     public static final BitSet FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference18518 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference18545 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound18583 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBound18593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_92_in_ruleJvmUpperBound18630 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
+    public static final BitSet FOLLOW_91_in_ruleJvmUpperBound18630 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound18651 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded18687 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded18697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_108_in_ruleJvmUpperBoundAnded18734 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
+    public static final BitSet FOLLOW_107_in_ruleJvmUpperBoundAnded18734 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded18755 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound18791 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmLowerBound18801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_96_in_ruleJvmLowerBound18838 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
+    public static final BitSet FOLLOW_95_in_ruleJvmLowerBound18838 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound18859 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_entryRuleQualifiedNameWithWildcard18898 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard18909 = new BitSet(new long[]{0x0000000000000002L});
@@ -29384,17 +29375,17 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_RULE_ID_in_ruleValidID19078 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXImportDeclaration_in_entryRuleXImportDeclaration19124 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXImportDeclaration19134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_94_in_ruleXImportDeclaration19171 = new BitSet(new long[]{0x0000000000000020L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleXImportDeclaration19191 = new BitSet(new long[]{0x0000000000000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_95_in_ruleXImportDeclaration19222 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_93_in_ruleXImportDeclaration19171 = new BitSet(new long[]{0x0000000000000020L,0x0000000010000000L});
+    public static final BitSet FOLLOW_92_in_ruleXImportDeclaration19191 = new BitSet(new long[]{0x0000000000000020L,0x0000000040000000L});
+    public static final BitSet FOLLOW_94_in_ruleXImportDeclaration19222 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration19259 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_15_in_ruleXImportDeclaration19271 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_70_in_ruleXImportDeclaration19283 = new BitSet(new long[]{0x0000000000000002L,0x0000000000020000L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration19313 = new BitSet(new long[]{0x0000000000000002L,0x0000000000020000L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration19340 = new BitSet(new long[]{0x0000000000000002L,0x0000000000020000L});
-    public static final BitSet FOLLOW_81_in_ruleXImportDeclaration19354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_109_in_ruleIQPatternChangeType19406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_110_in_ruleIQPatternChangeType19423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_70_in_ruleXImportDeclaration19283 = new BitSet(new long[]{0x0000000000000002L,0x0000000000010000L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration19313 = new BitSet(new long[]{0x0000000000000002L,0x0000000000010000L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration19340 = new BitSet(new long[]{0x0000000000000002L,0x0000000000010000L});
+    public static final BitSet FOLLOW_80_in_ruleXImportDeclaration19354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_108_in_ruleIQPatternChangeType19406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_109_in_ruleIQPatternChangeType19423 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpMultiAssign_in_synpred1_InternalEventPatternLanguage7099 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpOr_in_synpred2_InternalEventPatternLanguage7468 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpAnd_in_synpred3_InternalEventPatternLanguage7727 = new BitSet(new long[]{0x0000000000000002L});
@@ -29409,25 +29400,25 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleOpAdd_in_synpred10_InternalEventPatternLanguage9273 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpMulti_in_synpred11_InternalEventPatternLanguage9553 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_75_in_synpred12_InternalEventPatternLanguage10147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_synpred13_InternalEventPatternLanguage10302 = new BitSet(new long[]{0x0000000000000020L,0x00000000F0000000L});
-    public static final BitSet FOLLOW_76_in_synpred13_InternalEventPatternLanguage10316 = new BitSet(new long[]{0x0000000000000020L,0x00000000F0000000L});
+    public static final BitSet FOLLOW_15_in_synpred13_InternalEventPatternLanguage10302 = new BitSet(new long[]{0x0000000000000020L,0x0000000078000000L});
+    public static final BitSet FOLLOW_76_in_synpred13_InternalEventPatternLanguage10316 = new BitSet(new long[]{0x0000000000000020L,0x0000000078000000L});
     public static final BitSet FOLLOW_ruleFeatureCallID_in_synpred13_InternalEventPatternLanguage10332 = new BitSet(new long[]{0x0040000000000000L});
     public static final BitSet FOLLOW_ruleOpSingleAssign_in_synpred13_InternalEventPatternLanguage10338 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_15_in_synpred14_InternalEventPatternLanguage10480 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_77_in_synpred14_InternalEventPatternLanguage10494 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_76_in_synpred14_InternalEventPatternLanguage10514 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_19_in_synpred15_InternalEventPatternLanguage10741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred16_InternalEventPatternLanguage10793 = new BitSet(new long[]{0x0000000000000000L,0x0000000000014000L});
-    public static final BitSet FOLLOW_78_in_synpred16_InternalEventPatternLanguage10800 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred16_InternalEventPatternLanguage10807 = new BitSet(new long[]{0x0000000000000000L,0x0000000000014000L});
-    public static final BitSet FOLLOW_80_in_synpred16_InternalEventPatternLanguage10821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred16_InternalEventPatternLanguage10793 = new BitSet(new long[]{0x0000008000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_39_in_synpred16_InternalEventPatternLanguage10800 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred16_InternalEventPatternLanguage10807 = new BitSet(new long[]{0x0000008000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_79_in_synpred16_InternalEventPatternLanguage10821 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_37_in_synpred17_InternalEventPatternLanguage10941 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_37_in_synpred18_InternalEventPatternLanguage11492 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred20_InternalEventPatternLanguage12242 = new BitSet(new long[]{0x0000000000000000L,0x0000000000014000L});
-    public static final BitSet FOLLOW_78_in_synpred20_InternalEventPatternLanguage12249 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred20_InternalEventPatternLanguage12256 = new BitSet(new long[]{0x0000000000000000L,0x0000000000014000L});
-    public static final BitSet FOLLOW_80_in_synpred20_InternalEventPatternLanguage12270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_83_in_synpred22_InternalEventPatternLanguage13053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred20_InternalEventPatternLanguage12242 = new BitSet(new long[]{0x0000008000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_39_in_synpred20_InternalEventPatternLanguage12249 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred20_InternalEventPatternLanguage12256 = new BitSet(new long[]{0x0000008000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_79_in_synpred20_InternalEventPatternLanguage12270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_82_in_synpred22_InternalEventPatternLanguage13053 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_synpred23_InternalEventPatternLanguage13195 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_23_in_synpred23_InternalEventPatternLanguage13201 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_19_in_synpred24_InternalEventPatternLanguage13277 = new BitSet(new long[]{0x0000000000000020L});
@@ -29436,21 +29427,21 @@ public class InternalEventPatternLanguageParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_synpred25_InternalEventPatternLanguage14555 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleValidID_in_synpred25_InternalEventPatternLanguage14564 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_19_in_synpred26_InternalEventPatternLanguage15102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred27_InternalEventPatternLanguage15154 = new BitSet(new long[]{0x0000000000000000L,0x0000000000014000L});
-    public static final BitSet FOLLOW_78_in_synpred27_InternalEventPatternLanguage15161 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred27_InternalEventPatternLanguage15168 = new BitSet(new long[]{0x0000000000000000L,0x0000000000014000L});
-    public static final BitSet FOLLOW_80_in_synpred27_InternalEventPatternLanguage15182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred27_InternalEventPatternLanguage15154 = new BitSet(new long[]{0x0000008000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_39_in_synpred27_InternalEventPatternLanguage15161 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred27_InternalEventPatternLanguage15168 = new BitSet(new long[]{0x0000008000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_79_in_synpred27_InternalEventPatternLanguage15182 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_37_in_synpred28_InternalEventPatternLanguage15302 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_42_in_synpred29_InternalEventPatternLanguage15751 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_19_in_synpred30_InternalEventPatternLanguage15844 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred31_InternalEventPatternLanguage15874 = new BitSet(new long[]{0x0000000000000000L,0x0000000000014000L});
-    public static final BitSet FOLLOW_78_in_synpred31_InternalEventPatternLanguage15881 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred31_InternalEventPatternLanguage15888 = new BitSet(new long[]{0x0000000000000000L,0x0000000000014000L});
-    public static final BitSet FOLLOW_80_in_synpred31_InternalEventPatternLanguage15902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred31_InternalEventPatternLanguage15874 = new BitSet(new long[]{0x0000008000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_39_in_synpred31_InternalEventPatternLanguage15881 = new BitSet(new long[]{0x0000000000080020L,0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred31_InternalEventPatternLanguage15888 = new BitSet(new long[]{0x0000008000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_79_in_synpred31_InternalEventPatternLanguage15902 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_37_in_synpred32_InternalEventPatternLanguage16022 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_synpred33_InternalEventPatternLanguage16846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_106_in_synpred34_InternalEventPatternLanguage16991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_105_in_synpred35_InternalEventPatternLanguage17021 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_105_in_synpred34_InternalEventPatternLanguage16991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_104_in_synpred35_InternalEventPatternLanguage17021 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_15_in_synpred37_InternalEventPatternLanguage17368 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleArrayBrackets_in_synpred38_InternalEventPatternLanguage17753 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_42_in_synpred39_InternalEventPatternLanguage18205 = new BitSet(new long[]{0x0000000000000002L});

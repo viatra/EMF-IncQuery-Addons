@@ -80,7 +80,7 @@ class TemplateMD {
 		if (operator.equals(ComplexOperator::ORDERED)) {
 			return Joiner::on(" -> ").join(atomicEventList)
 		}else if (operator.equals(ComplexOperator::UNORDERED)) {
-			return Joiner::on(" OR ").join(atomicEventList)
+			return Joiner::on(",").join(atomicEventList)
 		}
 	}
 

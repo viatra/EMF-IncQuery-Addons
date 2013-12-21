@@ -22,40 +22,40 @@ public final class PatternsMatchers {
     
   }
   
+  public ComponentGMatcher getComponentGMatcher() throws IncQueryException {
+    return ComponentGMatcher.on(engine);
+  }
+  
   public ComponentBMatcher getComponentBMatcher() throws IncQueryException {
     return ComponentBMatcher.on(engine);
-  }
-  
-  public ComponentEMatcher getComponentEMatcher() throws IncQueryException {
-    return ComponentEMatcher.on(engine);
-  }
-  
-  public ComponentIMatcher getComponentIMatcher() throws IncQueryException {
-    return ComponentIMatcher.on(engine);
-  }
-  
-  public ComponentDMatcher getComponentDMatcher() throws IncQueryException {
-    return ComponentDMatcher.on(engine);
-  }
-  
-  public ComponentCMatcher getComponentCMatcher() throws IncQueryException {
-    return ComponentCMatcher.on(engine);
   }
   
   public ComponentJMatcher getComponentJMatcher() throws IncQueryException {
     return ComponentJMatcher.on(engine);
   }
   
-  public ComponentGMatcher getComponentGMatcher() throws IncQueryException {
-    return ComponentGMatcher.on(engine);
+  public ComponentEMatcher getComponentEMatcher() throws IncQueryException {
+    return ComponentEMatcher.on(engine);
+  }
+  
+  public ComponentCMatcher getComponentCMatcher() throws IncQueryException {
+    return ComponentCMatcher.on(engine);
+  }
+  
+  public ComponentFMatcher getComponentFMatcher() throws IncQueryException {
+    return ComponentFMatcher.on(engine);
   }
   
   public ComponentHMatcher getComponentHMatcher() throws IncQueryException {
     return ComponentHMatcher.on(engine);
   }
   
-  public ComponentFMatcher getComponentFMatcher() throws IncQueryException {
-    return ComponentFMatcher.on(engine);
+  public ComponentDMatcher getComponentDMatcher() throws IncQueryException {
+    return ComponentDMatcher.on(engine);
+  }
+  
+  public ComponentIMatcher getComponentIMatcher() throws IncQueryException {
+    return ComponentIMatcher.on(engine);
   }
   
   public ComponentAMatcher getComponentAMatcher() throws IncQueryException {
