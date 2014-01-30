@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: GEF3D Documentation
-Bundle-SymbolicName: org.eclipse.gef3d.doc;singleton:=true
-Bundle-Version: 0.8.1.qualifier
-Bundle-Vendor: Eclipse.org
