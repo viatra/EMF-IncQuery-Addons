@@ -49,6 +49,15 @@ import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternChangeType
+import org.eclipse.incquery.runtime.evm.api.ActivationLifeCycle
+import org.eclipse.incquery.runtime.evm.specific.Lifecycles
+import com.google.common.collect.Multimap
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ParametrizedIncQueryPatternReference
+import com.google.common.collect.Multimaps
+import com.google.common.collect.ArrayListMultimap
+import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern
+import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -138,6 +147,7 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 			members += model.toField("adapter", model.newTypeRef(ICepAdapter))
 			members += model.toField("resourceSet", model.newTypeRef(ResourceSet))
 			members += model.toField("transformation", model.newTypeRef(EventDrivenTransformation))
+			members += model.toField("lifecycle", model.newTypeRef(ActivationLifeCycle))
 			
 			members += model.toConstructor [
 				parameters += toParameter("resourceSet", model.newTypeRef(ResourceSet))
@@ -147,17 +157,20 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 					'''
 						this.resourceSet = resourceSet;
 						this.adapter = adapter;
+						this.lifecycle = ''').append('''«referClass(it, model, Lifecycles)»''').append('''.getDefault(false, true);
 					'''
 					)
 				]
 			]
+			
+			val groupedPatterns = groupEventPatternsByIqPatternRef(patterns)
 			
 			members += model.toMethod("getRules", model.newTypeRef("org.eclipse.viatra2.emf.runtime.rules.EventDrivenTransformationRuleGroup")) [
 				body=[
 					append(
 					'''
 						EventDrivenTransformationRuleGroup ruleGroup = new EventDrivenTransformationRuleGroup(
-							«FOR p : patterns SEPARATOR ", " AFTER ");"»
+							«FOR p : groupedPatterns.keySet SEPARATOR ", " AFTER ");"»
 								«p.mappingMethodName»()
 							«ENDFOR»
 						
@@ -179,62 +192,73 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 			
 			val patternsNamespace = model.packagedModel.usages.filter[e|(e instanceof PatternUsage)].head.importedNamespace.replace('*', '')
 		
-			for(p:patterns){
-				val matcher = patternsNamespace+(p as IQPatternEventPattern).iqPatternRef.iqpattern.name.toFirstUpper+"Matcher" //"hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatcher"
-				val match = patternsNamespace+(p as IQPatternEventPattern).iqPatternRef.iqpattern.name.toFirstUpper+"Match" //"hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatch"
-				val eventClass = p.getFqn(AtomicPatternFqnPurpose.EVENT)
-				
-				
-				members += model.toMethod(p.mappingMethodName, model.newTypeRef(EventDrivenTransformationRule, model.newTypeRef(match), model.newTypeRef(matcher))) [
-				body=[
-					append('''try{
-					''')
-					.append('''«referClass(it, p, EventDrivenTransformationBuilder, model.newTypeRef(match), model.newTypeRef(matcher))»''').append('''builder = new ''').append('''«referClass(it, p, EventDrivenTransformationRuleFactory)»''').append('''().createRule();
-					''')
-					.append('''		builder.precondition(«matcher».querySpecification());
-					''')
-					.append('''		«referClass(it, p, IMatchProcessor, model.newTypeRef(match))» action = new ''').append('''«referClass(it, p, IMatchProcessor, model.newTypeRef(match))»() {
+			
+		
+			for(p:groupedPatterns.keySet){
+				if(p!=null){
+					val matcher = patternsNamespace+p.name.toFirstUpper+"Matcher" //"hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatcher"
+					val match = patternsNamespace+p.name.toFirstUpper+"Match" //"hu.bme.mit.incquery.cep.casestudy.transaction.incquery.patterns.sample.ComponentA_AppearedMatch"
+					
+					members += model.toMethod(p.mappingMethodName, model.newTypeRef(EventDrivenTransformationRule, model.newTypeRef(match), model.newTypeRef(matcher))) [
+					body=[
+						append('''try{
 						''')
-					.append('''		public void process(final «match» matchedPattern) {
+						.append('''«referClass(it, p, EventDrivenTransformationBuilder, model.newTypeRef(match), model.newTypeRef(matcher))»''').append('''builder = new ''').append('''«referClass(it, p, EventDrivenTransformationRuleFactory)»''').append('''().createAdvancedRule();
 						''')
-					.append('''			try {
+						.append('''		builder.addLifeCycle(lifecycle);
 						''')
-					.append('''				«referClass(it, p, Collection, model.newTypeRef(match))»''').append('''allMatches = «matcher».on(transformation.getIqEngine()).getAllMatches();
-					''')
-					.append('''				for («match» match : allMatches) {
-					''')
-					.append('''					«p.getFqn(AtomicPatternFqnPurpose.EVENT)»''').append(''' event = new «p.getFqn(AtomicPatternFqnPurpose.EVENT)»(null);
-					''')
-					.append('''
-												«getParameterMapping(it, p)»
-					''')
-					.append('''					event.setIncQueryPattern(match);
-					''')
-					.append('''					adapter.push(event);
-					''')
-					.append('''				}
-					''')
-					.append('''		} catch (''').append('''«referClass(it, p, IncQueryException)»''').append(''' e) {
-					''')
-					.append('''			e.printStackTrace();
-					''')
-					.append('''		}
+						.append('''		builder.precondition(«matcher».querySpecification());
+						''')
+						for(eventPattern : groupedPatterns.get(p)){
+							append('''		«referClass(it, eventPattern, IMatchProcessor, model.newTypeRef(match))» «eventPattern.actionName»''').append(''' = new ''').append('''«referClass(it, eventPattern, IMatchProcessor, model.newTypeRef(match))»() {
+							''')
+							.append('''		public void process(final «match» matchedPattern) {
+								''')
+							.append('''				«eventPattern.getFqn(AtomicPatternFqnPurpose.EVENT)»''').append(''' event = new «eventPattern.getFqn(AtomicPatternFqnPurpose.EVENT)»(null);
+							''')
+							.append('''
+													«getParameterMapping(it, eventPattern)»
+							''')
+							.append('''				event.setIncQueryPattern(matchedPattern);
+							''')
+							.append('''				adapter.push(event);
+							''')
+							.append('''
+										}
+									};
+											builder.action(''').append('''«referClass(it, eventPattern, IncQueryActivationStateEnum)».''').append('''«eventPattern.getActivationState», «eventPattern.actionName»''').append(''');
+							''')
+							}						
+						
+							append('''		
+									return builder.build();
+								} catch (''').append('''«referClass(it, p, IncQueryException)» e) {
+									e.printStackTrace();
+								} catch (''').append('''«referClass(it, p, InconsistentEventSemanticsException)»''').append(''' e) {
+									e.printStackTrace();
 								}
-							};							
-								builder.action(action);
-								return builder.build();
-							} catch (''').append('''«referClass(it, p, IncQueryException)» e) {
-								e.printStackTrace();
-							} catch (''').append('''«referClass(it, p, InconsistentEventSemanticsException)»''').append(''' e) {
-								e.printStackTrace();
-							}
-							return null;
-					'''
-					)
+								return null;
+						'''
+						)
+					]
 				]
-			]
+				}
 			}
 		]
+	}
+	
+	def private getActivationState(IQPatternEventPattern eventPattern){
+		switch(eventPattern.iqChangeType){
+			case IQPatternChangeType.NEW_MATCH_FOUND: return IncQueryActivationStateEnum.APPEARED
+			case IQPatternChangeType.EXISTING_MATCH_LOST: return IncQueryActivationStateEnum.DISAPPEARED
+		}
+	}
+	
+	def private getActionName(IQPatternEventPattern eventPattern){
+		switch(eventPattern.iqChangeType){
+			case IQPatternChangeType.NEW_MATCH_FOUND: return "actionOnAppear"
+			case IQPatternChangeType.EXISTING_MATCH_LOST: return "actionOnDisappear"
+		}
 	}
 	
 	def private getParameterMapping(ITreeAppendable appendable, EObject ctx){
@@ -268,8 +292,26 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 		}
 	}
 	
-	def private getMappingMethodName(ModelElement pattern){
+//	def private getMappingMethodName(ModelElement pattern){
+//		return "create"+pattern.name+"_MappingRule"
+//	}
+	
+	def private getMappingMethodName(Pattern pattern){
 		return "create"+pattern.name+"_MappingRule"
+	}
+	
+	
+	def private groupEventPatternsByIqPatternRef(Iterable<ModelElement> eventPatterns){
+		var Multimap<Pattern, IQPatternEventPattern> groupedPatterns = ArrayListMultimap.create();
+		
+		for(p : eventPatterns){
+			if(p instanceof IQPatternEventPattern){
+				var iqPattern = (p as IQPatternEventPattern).iqPatternRef.iqpattern
+				groupedPatterns.put(iqPattern, (p as IQPatternEventPattern))
+			}
+		}
+		
+		return groupedPatterns
 	}
 
 	def private generateAtomicEventClasses(Iterable<ModelElement> patterns, IJvmDeclaredTypeAcceptor acceptor) {

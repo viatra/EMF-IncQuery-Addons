@@ -330,7 +330,7 @@ class Utils {
 				if (element instanceof AtomicEventPattern) {
 					return packageName.append("events").append(className.toFirstUpper + "_Event")
 				} else if (element instanceof IQPatternEventPattern) {
-					return packageName.append("events.incquery").append(className.toFirstUpper + "_IQEvent")
+					return (element as IQPatternEventPattern).getFqn(AtomicPatternFqnPurpose.EVENT)
 				}
 			}
 			case AtomicPatternFqnPurpose.PATTERN: {
@@ -339,9 +339,21 @@ class Utils {
 				} else if (element instanceof ComplexEventPattern) {
 					return packageName.append("patterns.complex").append(className.toFirstUpper + "_Pattern")
 				} else if (element instanceof IQPatternEventPattern) {
-					return packageName.append("patterns.atomic.incquery").append(
-						className.toFirstUpper + "_IQPattern")
+					return (element as IQPatternEventPattern).getFqn(AtomicPatternFqnPurpose.PATTERN)
 				}
+			}
+		}
+	}
+	
+	def getFqn(IQPatternEventPattern element, AtomicPatternFqnPurpose purpose) {
+		var className = element.fullyQualifiedName.lastSegment
+		var packageName = element.fullyQualifiedName.skipLast(1)
+		switch (purpose) {
+			case AtomicPatternFqnPurpose.EVENT: {
+					return packageName.append("events.incquery").append(className.toFirstUpper + "_IQEvent")
+			}
+			case AtomicPatternFqnPurpose.PATTERN: {
+					return packageName.append("patterns.complex").append(className.toFirstUpper + "_Pattern")
 			}
 		}
 	}
@@ -394,4 +406,13 @@ class Utils {
 	def dispatch unwrapActionHandler(Rule rule) {
 		rule.actionHandler
 	}
+	
+	def emptyAction(String match)'''
+		IMatchProcessor<«match»> emptyAction = new IMatchProcessor<«match»>() {
+			@Override
+			public void process(«match» match) {
+				// empty job - nothing to do here	
+			}
+		};
+	'''
 }

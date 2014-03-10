@@ -1,6 +1,10 @@
 package hu.bme.mit.incquery.cep.runtime.evaluation
 
+import hu.bme.mit.incquery.cep.api.ParameterizableComplexEventPattern
+import hu.bme.mit.incquery.cep.api.evm.InTrapComplexEventPattern
+import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern
 import hu.bme.mit.incquery.cep.api.runtime.EventModelManager
+import hu.bme.mit.incquery.cep.metamodels.internalsm.State
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState
 import hu.bme.mit.incquery.cep.runtime.evaluation.queries.EnabledTransitionMatcher
@@ -14,11 +18,6 @@ import org.eclipse.viatra2.emf.runtime.rules.EventDrivenTransformationRuleGroup
 import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory
 import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.EventDrivenTransformation
 import org.eclipse.viatra2.emf.runtime.transformation.eventdriven.RuleOrderBasedFixedPriorityResolver
-import hu.bme.mit.incquery.cep.metamodels.internalsm.State
-import hu.bme.mit.incquery.cep.api.ParameterizableComplexEventPattern
-import hu.bme.mit.incquery.cep.api.evm.InTrapComplexEventPattern
-import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern
-import hu.bme.mit.incquery.cep.api.ParameterizableIncQueryPatternEventInstance
 
 class ModelHandlingWithViatraApi2 {
 	extension EventDrivenTransformationRuleFactory ruleFactory = new EventDrivenTransformationRuleFactory
@@ -60,7 +59,7 @@ class ModelHandlingWithViatraApi2 {
 			setConflictResolver(resolver).create()
 	}
 
-	val createEnabledTransitionRule = ruleFactory.createRule().name("enabled transition rule").precondition(
+	val createEnabledTransitionRule = ruleFactory.createStatelessRule().name("enabled transition rule").precondition(
 		EnabledTransitionMatcher::querySpecification).action [
 		var eventPattern = ((t.eContainer() as State).eContainer() as StateMachine).getEventPattern();
 		if (eventPattern instanceof ParameterizableComplexEventPattern) {
@@ -71,7 +70,7 @@ class ModelHandlingWithViatraApi2 {
 		eventModelManager.strategy.fireTransition(t, et, e)
 	].build
 
-	val createFinishedStateMachineRule = ruleFactory.createRule().name("finished statemachine rule").
+	val createFinishedStateMachineRule = ruleFactory.createStatelessRule().name("finished statemachine rule").
 		precondition(FinishedStateMachineMatcher::querySpecification).action [
 			eventModelManager.finalStatesForStatemachines.get(sm).eventTokens.remove(0)
 			var observedPattern = new ObservedComplexEventPattern(sm.eventPattern)
@@ -79,7 +78,7 @@ class ModelHandlingWithViatraApi2 {
 			eventModelManager.realm.forwardObservedEventPattern(observedPattern)
 		].build
 
-	val createTokenInTrapStateRule = ruleFactory.createRule().name("trap state rule").precondition(
+	val createTokenInTrapStateRule = ruleFactory.createStatelessRule().name("trap state rule").precondition(
 		TokenInTrapStateMatcher::querySpecification).action [
 		var currentState = et.currentState
 		if (!(currentState instanceof TrapState)) {

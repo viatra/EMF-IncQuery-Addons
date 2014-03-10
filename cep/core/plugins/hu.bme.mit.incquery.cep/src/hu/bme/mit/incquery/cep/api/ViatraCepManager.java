@@ -6,6 +6,8 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 
 import java.util.List;
 
+import org.apache.log4j.Level;
+
 public class ViatraCepManager {
     private EventModelManager eventModelManager;
 
@@ -46,5 +48,9 @@ public class ViatraCepManager {
 
     public EventModelManager getEventModelManager() {
         return eventModelManager;
+    }
+    
+    public void setDebuggingLevel(Level level){
+    	eventModelManager.setDebuggingLevel(level);
     }
 }

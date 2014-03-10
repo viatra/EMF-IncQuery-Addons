@@ -31,6 +31,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Level;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
@@ -54,220 +55,235 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.Sets;
 
 public class EventModelManager {
-    private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
+	private final InternalsmFactory SM_FACTORY = InternalsmFactory.eINSTANCE;
 
-    private InternalExecutionModel model;
-    private Resource smModelResource;
-    private ResourceSet resourceSet;
-    private IEventProcessingStrategy strategy;
-    private ExecutionSchema topLevelExecutionSchema;
-    private UpdateCompleteProviderExtension updateCompleteProvider;
-    private Map<StateMachine, Boolean> wasEnabledForTheLatestEvent = new LinkedHashMap<StateMachine, Boolean>();
-    private CepRealm realm;
+	private InternalExecutionModel model;
+	private Resource smModelResource;
+	private ResourceSet resourceSet;
+	private IEventProcessingStrategy strategy;
+	private ExecutionSchema topLevelExecutionSchema;
+	private UpdateCompleteProviderExtension updateCompleteProvider;
+	private Map<StateMachine, Boolean> wasEnabledForTheLatestEvent = new LinkedHashMap<StateMachine, Boolean>();
+	private CepRealm realm;
 
-    // cache
-    private Map<StateMachine, FinalState> finalStatesForStatemachines = new LinkedHashMap<StateMachine, FinalState>();
-    private Map<StateMachine, InitState> initStatesForStatemachines = new LinkedHashMap<StateMachine, InitState>();
+	// cache
+	private Map<StateMachine, FinalState> finalStatesForStatemachines = new LinkedHashMap<StateMachine, FinalState>();
+	private Map<StateMachine, InitState> initStatesForStatemachines = new LinkedHashMap<StateMachine, InitState>();
 
-    private final class UpdateCompleteProviderExtension extends UpdateCompleteProvider {
-        protected void latestEventHandled() {
-            updateCompleted();
-        }
-    }
+	private final class UpdateCompleteProviderExtension extends
+			UpdateCompleteProvider {
+		protected void latestEventHandled() {
+			updateCompleted();
+		}
+	}
 
-    public EventModelManager() {
-        prepareModel();
+	public EventModelManager() {
+		prepareModel();
 
-        Adapter adapter = new AdapterImpl() {
-            @Override
-            public void notifyChanged(Notification notification) {
-                if (notification.getEventType() != Notification.ADD) {
-                    return;
-                }
-                Object newValue = notification.getNewValue();
-                if (newValue instanceof Event) {
-                    Event event = (Event) newValue;
-                    Logger.log("DIAG: Event " + event.getClass().getName() + " captured...");
-                    refreshModel(event);
-                }
-            }
-        };
-        EventQueue.getInstance().eAdapters().add(adapter);
+		Adapter adapter = new AdapterImpl() {
+			@Override
+			public void notifyChanged(Notification notification) {
+				if (notification.getEventType() != Notification.ADD) {
+					return;
+				}
+				Object newValue = notification.getNewValue();
+				if (newValue instanceof Event) {
+					Event event = (Event) newValue;
+					Logger.log("DIAG: Event " + event.getClass().getName()
+							+ " captured...");
+					refreshModel(event);
+				}
+			}
+		};
+		EventQueue.getInstance().eAdapters().add(adapter);
 
-        this.strategy = EventProcessingStrategyFactory.getStrategy(EventProcessingContext.CHRONICLE, this);
-        this.realm = new CepRealm();
-        initializeSchema();
-        initializeLowLevelModelHandling();
+		this.strategy = EventProcessingStrategyFactory.getStrategy(
+				EventProcessingContext.CHRONICLE, this);
+		this.realm = new CepRealm();
+		initializeSchema();
+		initializeLowLevelModelHandling();
+	}
 
-        // topLevelExecutionSchema.getLogger().setLevel(Level.DEBUG);
-    }
+	private void prepareModel() {
+		model = SM_FACTORY.createInternalExecutionModel();
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("cep", new XMIResourceFactoryImpl());
+		resourceSet = new ResourceSetImpl();
+		smModelResource = resourceSet.createResource(URI
+				.createURI("cep/sm.cep"));
+		smModelResource.getContents().add(model);
+	}
 
-    private void prepareModel() {
-        model = SM_FACTORY.createInternalExecutionModel();
-        Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-        Map<String, Object> m = reg.getExtensionToFactoryMap();
-        m.put("cep", new XMIResourceFactoryImpl());
-        resourceSet = new ResourceSetImpl();
-        smModelResource = resourceSet.createResource(URI.createURI("cep/sm.cep"));
-        smModelResource.getContents().add(model);
-    }
+	private void initializeSchema() {
+		updateCompleteProvider = new UpdateCompleteProviderExtension();
+		UpdateCompleteBasedSchedulerFactory schedulerFactory = new UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory(
+				updateCompleteProvider);
+		topLevelExecutionSchema = EventDrivenVM
+				.createExecutionSchema(realm, schedulerFactory,
+						Collections.<RuleSpecification<?>> emptySet());
+	}
 
-    private void initializeSchema() {
-        updateCompleteProvider = new UpdateCompleteProviderExtension();
-        UpdateCompleteBasedSchedulerFactory schedulerFactory = new UpdateCompleteBasedScheduler.UpdateCompleteBasedSchedulerFactory(
-                updateCompleteProvider);
-        topLevelExecutionSchema = EventDrivenVM.createExecutionSchema(realm, schedulerFactory,
-                Collections.<RuleSpecification<?>> emptySet());
-    }
+	private void initializeLowLevelModelHandling() {
+		ModelHandlingWithViatraApi2 mhrViatraApi2 = new ModelHandlingWithViatraApi2(
+				this);
+		mhrViatraApi2.registerRulesWithCustomPriorities();
+	}
 
-    private void initializeLowLevelModelHandling() {
-        ModelHandlingWithViatraApi2 mhrViatraApi2 = new ModelHandlingWithViatraApi2(this);
-        mhrViatraApi2.registerRulesWithCustomPriorities();
-    }
+	public void addRules(List<ICepRule> rules) {
+		Preconditions.checkArgument(!rules.isEmpty());
+		for (ICepRule rule : rules) {
+			addSingleRule(rule);
+		}
+		initializeStateMachines();
+	}
 
-    public void addRules(List<ICepRule> rules) {
-        Preconditions.checkArgument(!rules.isEmpty());
-        for (ICepRule rule : rules) {
-            addSingleRule(rule);
-        }
-        initializeStateMachines();
-    }
+	public void addRule(ICepRule rule) {
+		addSingleRule(rule);
+		initializeStateMachines();
+	}
 
-    public void addRule(ICepRule rule) {
-        addSingleRule(rule);
-        initializeStateMachines();
-    }
+	public void addSingleRule(ICepRule rule) {
+		Preconditions.checkArgument(!rule.getEventPatterns().isEmpty());
+		for (EventPattern eventPattern : rule.getEventPatterns()) {
+			EventPatternAutomatonOptions options = new EventPatternAutomatonOptions(
+					this.strategy.getContext(), eventPattern.getPriority());
 
-    public void addSingleRule(ICepRule rule) {
-        Preconditions.checkArgument(!rule.getEventPatterns().isEmpty());
-        for (EventPattern eventPattern : rule.getEventPatterns()) {
-            EventPatternAutomatonOptions options = new EventPatternAutomatonOptions(this.strategy.getContext(),
-                    eventPattern.getPriority());
+			StateMachine stateMachine = getStateMachine(eventPattern, options);
 
-            StateMachine stateMachine = getStateMachine(eventPattern, options);
+			wasEnabledForTheLatestEvent.put(stateMachine, true);
 
-            wasEnabledForTheLatestEvent.put(stateMachine, true);
+			CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(
+					stateMachine);
 
-            CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification(stateMachine);
+			Job<IObservableComplexEventPattern> job = rule.getJob();
+			if (job == null) {
+				job = CepJobs.getDefaultJob();
+			}
+			@SuppressWarnings("unchecked")
+			RuleSpecification<IObservableComplexEventPattern> ruleSpec = new RuleSpecification<IObservableComplexEventPattern>(
+					sourceSpec, getDefaultLifeCycle(), Sets.newHashSet(job));
+			topLevelExecutionSchema.addRule(ruleSpec);
+		}
+	}
 
-            Job<IObservableComplexEventPattern> job = rule.getJob();
-            if (job == null) {
-                job = CepJobs.getDefaultJob();
-            }
-            @SuppressWarnings("unchecked")
-            RuleSpecification<IObservableComplexEventPattern> ruleSpec = new RuleSpecification<IObservableComplexEventPattern>(
-                    sourceSpec, getDefaultLifeCycle(), Sets.newHashSet(job));
-            topLevelExecutionSchema.addRule(ruleSpec);
-        }
-    }
+	private ActivationLifeCycle getDefaultLifeCycle() {
+		ActivationLifeCycle lifeCycle = ActivationLifeCycle
+				.create(CepActivationStates.INACTIVE);
+		lifeCycle.addStateTransition(CepActivationStates.INACTIVE,
+				CepEventType.APPEARED, CepActivationStates.ACTIVE);
+		lifeCycle.addStateTransition(CepActivationStates.ACTIVE,
+				RuleEngineEventType.FIRE, CepActivationStates.INACTIVE);
+		return lifeCycle;
+	}
 
-    private ActivationLifeCycle getDefaultLifeCycle() {
-        ActivationLifeCycle lifeCycle = ActivationLifeCycle.create(CepActivationStates.INACTIVE);
-        lifeCycle.addStateTransition(CepActivationStates.INACTIVE, CepEventType.APPEARED, CepActivationStates.ACTIVE);
-        lifeCycle
-                .addStateTransition(CepActivationStates.ACTIVE, RuleEngineEventType.FIRE, CepActivationStates.INACTIVE);
-        return lifeCycle;
-    }
+	private void initializeStateMachines() {
+		for (InitState is : initStatesForStatemachines.values()) {
+			if (is.getEventTokens().isEmpty()) {
+				EventToken cv = SM_FACTORY.createEventToken();
+				cv.setCurrentState(is);
+				model.getEventTokens().add(cv);
+			}
+		}
+	}
 
-    private void initializeStateMachines() {
-        for (InitState is : initStatesForStatemachines.values()) {
-            if (is.getEventTokens().isEmpty()) {
-                EventToken cv = SM_FACTORY.createEventToken();
-                cv.setCurrentState(is);
-                model.getEventTokens().add(cv);
-            }
-        }
-    }
+	public StateMachine getStateMachine(EventPattern eventPattern,
+			EventPatternAutomatonOptions options) {
+		StateMachine stateMachine = new StateMachineBuilder(model,
+				eventPattern, options).buildStateMachine();
+		FinalState finalState = null;
+		InitState initState = null;
+		for (State state : stateMachine.getStates()) {
+			if (SMUtils.isFinal(state)) {
+				finalState = (FinalState) state;
+				break;
+			}
+		}
 
-    public StateMachine getStateMachine(EventPattern eventPattern, EventPatternAutomatonOptions options) {
-        StateMachine stateMachine = new StateMachineBuilder(model, eventPattern, options).buildStateMachine();
-        FinalState finalState = null;
-        InitState initState = null;
-        for (State state : stateMachine.getStates()) {
-            if (SMUtils.isFinal(state)) {
-                finalState = (FinalState) state;
-                break;
-            }
-        }
+		if (finalState != null) {
+			finalStatesForStatemachines.put(stateMachine, finalState);
+		}
 
-        if (finalState != null) {
-            finalStatesForStatemachines.put(stateMachine, finalState);
-        }
+		for (State state : stateMachine.getStates()) {
+			if (state instanceof InitState) {
+				initState = (InitState) state;
+				break;
+			}
+		}
 
-        for (State state : stateMachine.getStates()) {
-            if (state instanceof InitState) {
-                initState = (InitState) state;
-                break;
-            }
-        }
+		if (initState != null) {
+			initStatesForStatemachines.put(stateMachine, initState);
+		}
 
-        if (initState != null) {
-            initStatesForStatemachines.put(stateMachine, initState);
-        }
+		return stateMachine;
+	}
 
-        return stateMachine;
-    }
+	private void refreshModel(Event event) {
+		model.setLatestEvent(null);
+		wasEnabledForTheLatestEvent.clear();
+		strategy.handleInitTokenCreation(model, SM_FACTORY, null);
+		model.setLatestEvent(event);
+		updateCompleteProvider.latestEventHandled();
+		strategy.handleSmResets(model, SM_FACTORY);
+	}
 
-    private void refreshModel(Event event) {
-        model.setLatestEvent(null);
-        wasEnabledForTheLatestEvent.clear();
-        strategy.handleInitTokenCreation(model, SM_FACTORY, null);
-        model.setLatestEvent(event);
-        updateCompleteProvider.latestEventHandled();
-        strategy.handleSmResets(model, SM_FACTORY);
-    }
+	public InternalExecutionModel getModel() {
+		return model;
+	}
 
-    public InternalExecutionModel getModel() {
-        return model;
-    }
+	public Resource getSmModelResource() {
+		return smModelResource;
+	}
 
-    public Resource getSmModelResource() {
-        return smModelResource;
-    }
+	public IEventProcessingStrategy getStrategy() {
+		return strategy;
+	}
 
-    public IEventProcessingStrategy getStrategy() {
-        return strategy;
-    }
+	public CepRealm getRealm() {
+		return realm;
+	}
 
-    public CepRealm getRealm() {
-        return realm;
-    }
+	public Map<StateMachine, FinalState> getFinalStatesForStatemachines() {
+		return finalStatesForStatemachines;
+	}
 
-    public Map<StateMachine, FinalState> getFinalStatesForStatemachines() {
-        return finalStatesForStatemachines;
-    }
+	public void callbackOnFiredToken(Transition t, EventToken eventTokenToMove) {
+		EObject state = t.eContainer();
+		if (!(state instanceof State)) {
+			return;
+		}
 
-    public void callbackOnFiredToken(Transition t, EventToken eventTokenToMove) {
-        EObject state = t.eContainer();
-        if (!(state instanceof State)) {
-            return;
-        }
+		EObject sm = ((State) state).eContainer();
+		if (!(sm instanceof StateMachine)) {
+			return;
+		}
 
-        EObject sm = ((State) state).eContainer();
-        if (!(sm instanceof StateMachine)) {
-            return;
-        }
+		wasEnabledForTheLatestEvent.put(((StateMachine) sm), true);
+	}
 
-        wasEnabledForTheLatestEvent.put(((StateMachine) sm), true);
-    }
+	public void callbackOnPatternRecognition(
+			IObservableComplexEventPattern observedPattern) {
+		strategy.handleInitTokenCreation(model, SM_FACTORY, observedPattern);
+	}
 
-    public void callbackOnPatternRecognition(IObservableComplexEventPattern observedPattern) {
-        strategy.handleInitTokenCreation(model, SM_FACTORY, observedPattern);
-    }
+	public Map<StateMachine, InitState> getInitStatesForStatemachines() {
+		return initStatesForStatemachines;
+	}
 
-    public Map<StateMachine, InitState> getInitStatesForStatemachines() {
-        return initStatesForStatemachines;
-    }
+	public Map<StateMachine, Boolean> getWasEnabledForTheLatestEvent() {
+		return wasEnabledForTheLatestEvent;
+	}
 
-    public Map<StateMachine, Boolean> getWasEnabledForTheLatestEvent() {
-        return wasEnabledForTheLatestEvent;
-    }
+	public ResourceSet getResourceSet() {
+		return resourceSet;
+	}
 
-    public ResourceSet getResourceSet() {
-        return resourceSet;
-    }
+	public void setEventProcessingContext(EventProcessingContext context) {
+		this.strategy = EventProcessingStrategyFactory.getStrategy(context,
+				this);
+	}
 
-    public void setEventProcessingContext(EventProcessingContext context) {
-        this.strategy = EventProcessingStrategyFactory.getStrategy(context, this);
-    }
+	public void setDebuggingLevel(Level level) {
+		topLevelExecutionSchema.getLogger().setLevel(level);
+	}
 }
