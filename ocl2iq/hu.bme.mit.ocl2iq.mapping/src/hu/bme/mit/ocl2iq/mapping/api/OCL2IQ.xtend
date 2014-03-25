@@ -133,6 +133,7 @@ class OCL2IQ {
 		// set and type operations
 		switch(opName) {
 			case "allInstances" : return sourceQuery
+			case "asSet" : return sourceQuery /* TODO should have checked whether other operations are OK */
 			case "oclAsType" : return allArgumentQueriesReified.head
 			case "oclIsKindOf" : return makeQuery(allInputs, Collections::emptySet, '''
 					«allArgumentsCode»
