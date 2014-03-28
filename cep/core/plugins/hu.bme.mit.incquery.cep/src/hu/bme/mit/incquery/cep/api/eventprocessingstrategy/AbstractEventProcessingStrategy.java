@@ -7,7 +7,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraint;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
-import hu.bme.mit.incquery.cep.utils.SMUtils;
+import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 
 import java.util.Calendar;
 

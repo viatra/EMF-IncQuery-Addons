@@ -2,18 +2,21 @@ package hu.bme.mit.incquery.cep.api;
 
 import hu.bme.mit.incquery.cep.api.evm.CepActivationStates;
 import hu.bme.mit.incquery.cep.api.evm.IObservableComplexEventPattern;
-import hu.bme.mit.incquery.cep.utils.Logger;
+import hu.bme.mit.incquery.cep.logging.LoggerUtils;
 
+import org.apache.log4j.Logger;
 import org.eclipse.incquery.runtime.evm.api.Activation;
 import org.eclipse.incquery.runtime.evm.api.Context;
 import org.eclipse.incquery.runtime.evm.api.Job;
 
 public class CepJobs {
+    private static Logger logger = LoggerUtils.getInstance().getLogger();
+
     public static Job<IObservableComplexEventPattern> getDefaultJob() {
         return new Job<IObservableComplexEventPattern>(CepActivationStates.ACTIVE) {
 
             protected void execute(Activation<? extends IObservableComplexEventPattern> activation, Context context) {
-                Logger.log(">>>>>>>>>>>>>>>CEP: Complex event pattern appeared: "
+                logger.debug(">>>>>>>>>>>>>>>CEP: Complex event pattern appeared: "
                         + activation.getAtom().getObservableEventPattern().getId());
             }
 

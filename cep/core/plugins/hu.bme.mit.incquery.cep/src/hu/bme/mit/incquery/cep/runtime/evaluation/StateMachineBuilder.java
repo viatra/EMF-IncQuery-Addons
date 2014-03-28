@@ -18,7 +18,6 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintSpecification
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TimeConstraintType;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.TrapState;
-import hu.bme.mit.incquery.cep.utils.SMUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

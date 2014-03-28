@@ -14,8 +14,8 @@ import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalExecutionModel;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.InternalsmFactory;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.StateMachine;
+import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 import hu.bme.mit.incquery.cep.runtime.evaluation.StateMachineBuilder;
-import hu.bme.mit.incquery.cep.utils.SMUtils;
 
 import java.util.Arrays;
 import java.util.List;
