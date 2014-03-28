@@ -20,6 +20,10 @@
           "title": "Proposed by István:\nEMF notification ->\nEIQ notification ->\nCEP notification",
           "id": 37,
           "ideas": {}
+        },
+        "13": {
+          "title": "Find proper names for the engine and the dsl",
+          "id": 49
         }
       }
     },
@@ -38,6 +42,16 @@
             "3": {
               "title": "Branching expressions",
               "id": 35
+            }
+          }
+        },
+        "5": {
+          "title": "DFA->PDA as an improvement to the desrciptive power",
+          "id": 50,
+          "ideas": {
+            "1": {
+              "title": "solved in a prototype via memory-augmented tokens!",
+              "id": 51
             }
           }
         },
@@ -98,6 +112,11 @@
           "title": "Migrate into the eclipse.org repository",
           "id": 42
         }
+      },
+      "attr": {
+        "style": {
+          "background": "#E0E0E0"
+        }
       }
     },
     "-22": {
@@ -123,6 +142,11 @@
             }
           }
         }
+      },
+      "attr": {
+        "style": {
+          "background": "#E0E0E0"
+        }
       }
     },
     "-32": {
@@ -132,6 +156,11 @@
         "1": {
           "title": "Parameter bindings on rule-level",
           "id": 5
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#E0E0E0"
         }
       }
     },
