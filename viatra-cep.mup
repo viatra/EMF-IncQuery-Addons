@@ -19,11 +19,26 @@
         "12": {
           "title": "Proposed by István:\nEMF notification ->\nEIQ notification ->\nCEP notification",
           "id": 37,
-          "ideas": {}
+          "ideas": {},
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
         },
         "13": {
           "title": "Find proper names for the engine and the dsl",
-          "id": 49
+          "id": 49,
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#E0E0E0"
         }
       }
     },
@@ -37,11 +52,26 @@
           "ideas": {
             "2": {
               "title": "at least: temporal logic (like in Drools); but also investigate the EPL of Esper",
-              "id": 29
+              "id": 29,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
             },
             "3": {
               "title": "Branching expressions",
-              "id": 35
+              "id": 35,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
             }
           }
         },
@@ -51,7 +81,17 @@
           "ideas": {
             "1": {
               "title": "solved in a prototype via memory-augmented tokens!",
-              "id": 51
+              "id": 51,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
             }
           }
         },
@@ -86,7 +126,17 @@
                 }
               }
             }
+          },
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
           }
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#E0E0E0"
         }
       }
     },
@@ -100,17 +150,37 @@
           "ideas": {
             "1": {
               "title": "engine",
-              "id": 44
+              "id": 44,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
             },
             "2": {
               "title": "dsl",
-              "id": 45
+              "id": 45,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
             }
           }
         },
         "2": {
           "title": "Migrate into the eclipse.org repository",
-          "id": 42
+          "id": 42,
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
         }
       },
       "attr": {
@@ -138,7 +208,12 @@
             },
             "2": {
               "title": "Implement via Scala or Akka",
-              "id": 36
+              "id": 36,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
             }
           }
         }
@@ -155,7 +230,18 @@
       "ideas": {
         "1": {
           "title": "Parameter bindings on rule-level",
-          "id": 5
+          "id": 5,
+          "ideas": {
+            "1": {
+              "title": "Currently buggy",
+              "id": 52,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            }
+          }
         }
       },
       "attr": {
@@ -178,7 +264,12 @@
               "ideas": {
                 "1": {
                   "title": "Refactor",
-                  "id": 10
+                  "id": 10,
+                  "attr": {
+                    "style": {
+                      "background": "#E0E0E0"
+                    }
+                  }
                 }
               },
               "attr": {
@@ -194,10 +285,20 @@
           "id": 14,
           "ideas": {
             "1": {
-              "title": "Model sync",
-              "id": 16
+              "title": "Model sync?",
+              "id": 16,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
             }
           }
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#E0E0E0"
         }
       }
     },
@@ -207,7 +308,21 @@
       "ideas": {
         "1": {
           "title": "Distributed environment",
-          "id": 18
+          "id": 18,
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
+        },
+        "2": {
+          "title": "Re-measure the benchmark prepared for Models14",
+          "id": 53
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#E0E0E0"
         }
       }
     },
@@ -217,14 +332,34 @@
       "ideas": {
         "1": {
           "title": "Plugin projects with JUnit tests as example sources",
-          "id": 47
+          "id": 47,
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
         },
         "2": {
           "title": "Present the whole workflow",
-          "id": 48
+          "id": 48,
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#E0E0E0"
         }
       }
     }
   },
-  "links": []
+  "links": [],
+  "attr": {
+    "style": {
+      "background": "#22AAE0"
+    }
+  }
 }
