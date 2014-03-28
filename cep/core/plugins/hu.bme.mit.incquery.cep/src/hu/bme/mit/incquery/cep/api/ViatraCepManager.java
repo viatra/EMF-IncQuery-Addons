@@ -8,7 +8,6 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
 import java.util.List;
 
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 
 public class ViatraCepManager {
     private EventModelManager eventModelManager;
