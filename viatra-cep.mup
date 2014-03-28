@@ -1,0 +1,201 @@
+{
+  "title": "VIATRA-CEP",
+  "id": 1,
+  "formatVersion": 2,
+  "ideas": {
+    "2.75": {
+      "title": "Terminology",
+      "id": 24,
+      "ideas": {
+        "2": {
+          "title": "currently: atomic/complex events vs elementary/compound changes",
+          "id": 38,
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
+        },
+        "12": {
+          "title": "Proposed by István:\nEMF notification ->\nEIQ notification ->\nCEP notification",
+          "id": 37,
+          "ideas": {}
+        }
+      }
+    },
+    "6.875": {
+      "title": "Algebra",
+      "id": 19,
+      "ideas": {
+        "4": {
+          "title": "Operators",
+          "id": 26,
+          "ideas": {
+            "2": {
+              "title": "at least: temporal logic (like in Drools); but also investigate the EPL of Esper",
+              "id": 29
+            },
+            "3": {
+              "title": "Branching expressions",
+              "id": 35
+            }
+          }
+        },
+        "3.5": {
+          "title": "Internal representation",
+          "id": 31,
+          "ideas": {
+            "1": {
+              "title": "Canonical form for event patterns",
+              "id": 23,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            },
+            "2": {
+              "title": "Timing",
+              "id": 22,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            },
+            "1.5": {
+              "title": "Hierarchical automata",
+              "id": 21,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "1.375": {
+      "title": "Operative short-term tasks",
+      "id": 40,
+      "ideas": {
+        "1": {
+          "title": "Clean up / stabilize the code",
+          "id": 41,
+          "ideas": {
+            "1": {
+              "title": "engine",
+              "id": 44
+            },
+            "2": {
+              "title": "dsl",
+              "id": 45
+            }
+          }
+        },
+        "2": {
+          "title": "Migrate into the eclipse.org repository",
+          "id": 42
+        }
+      }
+    },
+    "-22": {
+      "title": "Engine",
+      "id": 3,
+      "ideas": {
+        "1": {
+          "title": "Parallelisation",
+          "id": 6,
+          "ideas": {
+            "1": {
+              "title": "Multiple streams",
+              "id": 7,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            },
+            "2": {
+              "title": "Implement via Scala or Akka",
+              "id": 36
+            }
+          }
+        }
+      }
+    },
+    "-32": {
+      "title": "DSL",
+      "id": 4,
+      "ideas": {
+        "1": {
+          "title": "Parameter bindings on rule-level",
+          "id": 5
+        }
+      }
+    },
+    "-42": {
+      "title": "Case studies",
+      "id": 2,
+      "ideas": {
+        "2": {
+          "title": "Cyber-physical systems, live models",
+          "id": 15,
+          "ideas": {
+            "1": {
+              "title": "Jnect",
+              "id": 8,
+              "ideas": {
+                "1": {
+                  "title": "Refactor",
+                  "id": 10
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "title": "Non-materialized models",
+          "id": 14,
+          "ideas": {
+            "1": {
+              "title": "Model sync",
+              "id": 16
+            }
+          }
+        }
+      }
+    },
+    "-52": {
+      "title": "Performance benchmark",
+      "id": 17,
+      "ideas": {
+        "1": {
+          "title": "Distributed environment",
+          "id": 18
+        }
+      }
+    },
+    "-37": {
+      "title": "Examples, tutorials, technical papers",
+      "id": 46,
+      "ideas": {
+        "1": {
+          "title": "Plugin projects with JUnit tests as example sources",
+          "id": 47
+        },
+        "2": {
+          "title": "Present the whole workflow",
+          "id": 48
+        }
+      }
+    }
+  },
+  "links": []
+}
