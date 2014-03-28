@@ -91,7 +91,7 @@ public class EventModelManager {
                 Object newValue = notification.getNewValue();
                 if (newValue instanceof Event) {
                     Event event = (Event) newValue;
-                    logger.debug("DIAG: Event " + event.getClass().getName() + " captured...");
+                    logger.debug("EventModelManager: Event " + event.getClass().getName() + " captured...");
                     refreshModel(event);
                 }
             }
@@ -275,5 +275,9 @@ public class EventModelManager {
 
     public void setDebuggingLevel(Level level) {
         topLevelExecutionSchema.getLogger().setLevel(level);
+    }
+
+    public void setCepDebugLevel(Level level) {
+        LoggerUtils.getInstance().getLogger().setLevel(level);
     }
 }

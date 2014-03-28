@@ -23,45 +23,46 @@ import org.junit.Test;
 import com.google.common.collect.Sets;
 
 public class EvmIntegration {
-	
-	@Test
-	public void testEvmIntegration2() {
-		CepRealm cepRealm = new CepRealm();
-		RuleEngine engine = EventDrivenVM.createRuleEngine(cepRealm);
-		engine.getLogger().setLevel(Level.DEBUG);
-		
-		ActivationLifeCycle lifeCycle = ActivationLifeCycle.create(CepActivationStates.IS_NOT);
-		lifeCycle.addStateTransition(CepActivationStates.IS_NOT, CepEventType.APPEARED, CepActivationStates.IS);
-		lifeCycle.addStateTransition(CepActivationStates.IS, RuleEngineEventType.FIRE, CepActivationStates.IS_NOT);
-		
-		Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(CepActivationStates.IS) {
-			@Override
-			protected void execute(Activation<? extends ObservedComplexEventPattern> activation, Context context) {
-				System.out.println("Complex event pattern observed:"
-						+ activation.getAtom().getObservedEventPattern().getId());
-			}
-			@Override
-			protected void handleError(Activation<? extends ObservedComplexEventPattern> activation,
-					Exception exception, Context context) {
-				// not gonna happen
-			}
-		};
-		
-		CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification();
-		
-		@SuppressWarnings("unchecked")
-		Set<Job<ObservedComplexEventPattern>> jobs = Sets.newHashSet(job);
-		
-		RuleSpecification<ObservedComplexEventPattern> ruleSpec = new RuleSpecification<ObservedComplexEventPattern>(
-				sourceSpec, lifeCycle, jobs);
-		
-		CepEventFilter filter = new CepEventFilter();
-		engine.addRule(ruleSpec, false, filter);
-		
-		cepRealm.generateEvent(CepEventType.APPEARED);
-		
-		engine.getNextActivation().fire(Context.create());
-		
-	}
-	
+
+    @Test
+    public void testEvmIntegration2() {
+        CepRealm cepRealm = new CepRealm();
+        RuleEngine engine = EventDrivenVM.createRuleEngine(cepRealm);
+        engine.getLogger().setLevel(Level.DEBUG);
+
+        ActivationLifeCycle lifeCycle = ActivationLifeCycle.create(CepActivationStates.IS_NOT);
+        lifeCycle.addStateTransition(CepActivationStates.IS_NOT, CepEventType.APPEARED, CepActivationStates.IS);
+        lifeCycle.addStateTransition(CepActivationStates.IS, RuleEngineEventType.FIRE, CepActivationStates.IS_NOT);
+
+        Job<ObservedComplexEventPattern> job = new Job<ObservedComplexEventPattern>(CepActivationStates.IS) {
+            @Override
+            protected void execute(Activation<? extends ObservedComplexEventPattern> activation, Context context) {
+                System.out.println("Complex event pattern observed:"
+                        + activation.getAtom().getObservableEventPattern().getId());
+            }
+
+            @Override
+            protected void handleError(Activation<? extends ObservedComplexEventPattern> activation,
+                    Exception exception, Context context) {
+                // not gonna happen
+            }
+        };
+
+        CepEventSourceSpecification sourceSpec = new CepEventSourceSpecification();
+
+        @SuppressWarnings("unchecked")
+        Set<Job<ObservedComplexEventPattern>> jobs = Sets.newHashSet(job);
+
+        RuleSpecification<ObservedComplexEventPattern> ruleSpec = new RuleSpecification<ObservedComplexEventPattern>(
+                sourceSpec, lifeCycle, jobs);
+
+        CepEventFilter filter = new CepEventFilter();
+        engine.addRule(ruleSpec, filter);
+
+        cepRealm.generateEvent(CepEventType.APPEARED);
+
+        engine.getNextActivation().fire(Context.create());
+
+    }
+
 }

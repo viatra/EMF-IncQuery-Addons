@@ -9,23 +9,23 @@ import org.eclipse.incquery.runtime.evm.api.event.EventRealm;
 import org.eclipse.incquery.runtime.evm.api.event.EventSourceSpecification;
 
 public class CepEventSourceSpecification implements EventSourceSpecification<ObservedComplexEventPattern> {
-	
-	@Override
-	public EventFilter<ObservedComplexEventPattern> createEmptyFilter() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public AbstractRuleInstanceBuilder<ObservedComplexEventPattern> getRuleInstanceBuilder(final EventRealm realm) {
-		return new AbstractRuleInstanceBuilder<ObservedComplexEventPattern>() {
-			@Override
-			public void prepareRuleInstance(RuleInstance<ObservedComplexEventPattern> ruleInstance,
-					EventFilter<ObservedComplexEventPattern> filter) {
-				CepEventSource source = new CepEventSource(CepEventSourceSpecification.this, (CepRealm) realm);
-				CepEventHandler handler = new CepEventHandler(source, (CepEventFilter) filter, ruleInstance);
-				source.addHandler(handler);
-			}
-		};
-	}
+
+    @Override
+    public EventFilter<ObservedComplexEventPattern> createEmptyFilter() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public AbstractRuleInstanceBuilder<ObservedComplexEventPattern> getRuleInstanceBuilder(final EventRealm realm) {
+        return new AbstractRuleInstanceBuilder<ObservedComplexEventPattern>() {
+            @Override
+            public void prepareRuleInstance(RuleInstance<ObservedComplexEventPattern> ruleInstance,
+                    EventFilter<? super ObservedComplexEventPattern> filter) {
+                CepEventSource source = new CepEventSource(CepEventSourceSpecification.this, (CepRealm) realm);
+                CepEventHandler handler = new CepEventHandler(source, (CepEventFilter) filter, ruleInstance);
+                source.addHandler(handler);
+            }
+        };
+    }
 }

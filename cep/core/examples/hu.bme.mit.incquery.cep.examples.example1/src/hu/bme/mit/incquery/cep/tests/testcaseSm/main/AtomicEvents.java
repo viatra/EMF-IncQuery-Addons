@@ -16,6 +16,7 @@ import hu.bme.mit.incquery.cep.tests.testcaseSm.patterns.APattern;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Level;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.junit.After;
 import org.junit.Before;
@@ -55,13 +56,15 @@ public class AtomicEvents {
 		CepRule rule = new CepRule(eventPatterns, CepJobs.getDefaultJob()); 
 		manager.addRule(rule);
 		
-		System.err.println("DIAG: Test starting.\n");
+		manager.setCepDebugLevel(Level.DEBUG);
+		
+		System.out.println("DIAG: Test starting.\n");
 		
 		eventQueue.push(new D(source));
 		eventQueue.push(new B(source));
 		eventQueue.push(new C(source));
 		eventQueue.push(new A(source));
 		
-		System.err.println("\nDIAG: Test finished.");
+		System.out.println("\nDIAG: Test finished.");
 	}
 }

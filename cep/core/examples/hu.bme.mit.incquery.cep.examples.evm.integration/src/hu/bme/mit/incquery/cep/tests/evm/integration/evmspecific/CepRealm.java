@@ -1,7 +1,6 @@
 package hu.bme.mit.incquery.cep.tests.evm.integration.evmspecific;
 
 import hu.bme.mit.incquery.cep.api.evm.ObservedComplexEventPattern;
-import hu.bme.mit.incquery.cep.api.evm.SimpleObservedComplexEventPattern;
 import hu.bme.mit.incquery.cep.tests.evm.integration.eventpatterns.APattern;
 
 import java.util.Set;
@@ -19,7 +18,7 @@ public class CepRealm implements EventRealm {
 	}
 	
 	public void generateEvent(CepEventType type) {
-		ObservedComplexEventPattern op = new SimpleObservedComplexEventPattern(new APattern());
+		ObservedComplexEventPattern op = new ObservedComplexEventPattern(new APattern());
 		
 		for (CepEventSource source : sources) {
 			source.pushEvent(type, op);

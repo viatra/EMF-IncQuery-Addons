@@ -26,7 +26,7 @@ public abstract class AbstractImmediateStrategy extends AbstractEventProcessingS
         for (StateMachine stateMachine : model.getStateMachines()) {
             if (needsReset(stateMachine)) {
                 String id = stateMachine.getEventPattern().getId();
-                logger.debug("\t\t\t>>>>>>>>>No suitable update in the SM : " + id + ". It's going to be reset.");
+                logger.debug("ImmediateStrategy: No suitable update in the SM : " + id + ". It's going to be reset.");
 
                 for (State state : stateMachine.getStates()) {
                     if ((state instanceof InitState) || (state instanceof TrapState) || (state instanceof FinalState)) {
@@ -37,7 +37,7 @@ public abstract class AbstractImmediateStrategy extends AbstractEventProcessingS
                         continue;
                     }
 
-                    logger.debug("\t\t\t>>>>>>>>>>>>>>>>>>Deleting tokens from state: " + state.getLabel());
+                    logger.debug("ImmediateStrategy: Deleting tokens from state: " + state.getLabel());
 
                     state.getEventTokens().clear();
                 }

@@ -16,7 +16,7 @@ public class CepJobs {
         return new Job<IObservableComplexEventPattern>(CepActivationStates.ACTIVE) {
 
             protected void execute(Activation<? extends IObservableComplexEventPattern> activation, Context context) {
-                logger.debug(">>>>>>>>>>>>>>>CEP: Complex event pattern appeared: "
+                logger.debug("CepJobs#DefaultJob: Complex event pattern appeared: "
                         + activation.getAtom().getObservableEventPattern().getId());
             }
 
