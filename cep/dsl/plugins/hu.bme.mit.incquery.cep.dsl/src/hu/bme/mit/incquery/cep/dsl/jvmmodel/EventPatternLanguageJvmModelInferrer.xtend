@@ -1,6 +1,8 @@
 package hu.bme.mit.incquery.cep.dsl.jvmmodel
 
+import com.google.common.collect.ArrayListMultimap
 import com.google.common.collect.Lists
+import com.google.common.collect.Multimap
 import com.google.inject.Inject
 import hu.bme.mit.incquery.cep.api.IActionHandler
 import hu.bme.mit.incquery.cep.api.ICepAdapter
@@ -14,6 +16,7 @@ import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.AtomicEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventExpression
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ComplexEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.EventModel
+import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternChangeType
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternEventPattern
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ModelElement
 import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.PatternUsage
@@ -28,15 +31,16 @@ import hu.bme.mit.incquery.cep.metamodels.cep.GlobalTimewindow
 import hu.bme.mit.incquery.cep.metamodels.cep.IEventSource
 import hu.bme.mit.incquery.cep.metamodels.cep.impl.AtomicEventPatternImpl
 import java.io.FileWriter
-import java.util.Collection
 import java.util.List
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.resource.ResourceSet
+import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern
 import org.eclipse.incquery.runtime.api.IMatchProcessor
 import org.eclipse.incquery.runtime.evm.api.Activation
 import org.eclipse.incquery.runtime.evm.api.Context
 import org.eclipse.incquery.runtime.evm.api.Job
 import org.eclipse.incquery.runtime.evm.api.event.ActivationState
+import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum
 import org.eclipse.incquery.runtime.exception.IncQueryException
 import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory
 import org.eclipse.viatra2.emf.runtime.rules.eventdriven.EventDrivenTransformationRuleFactory.EventDrivenTransformationBuilder
@@ -49,15 +53,6 @@ import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.IQPatternChangeType
-import org.eclipse.incquery.runtime.evm.api.ActivationLifeCycle
-import org.eclipse.incquery.runtime.evm.specific.Lifecycles
-import com.google.common.collect.Multimap
-import hu.bme.mit.incquery.cep.dsl.eventPatternLanguage.ParametrizedIncQueryPatternReference
-import com.google.common.collect.Multimaps
-import com.google.common.collect.ArrayListMultimap
-import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern
-import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -147,7 +142,6 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 			members += model.toField("adapter", model.newTypeRef(ICepAdapter))
 			members += model.toField("resourceSet", model.newTypeRef(ResourceSet))
 			members += model.toField("transformation", model.newTypeRef(EventDrivenTransformation))
-			members += model.toField("lifecycle", model.newTypeRef(ActivationLifeCycle))
 			
 			members += model.toConstructor [
 				parameters += toParameter("resourceSet", model.newTypeRef(ResourceSet))
@@ -157,7 +151,6 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 					'''
 						this.resourceSet = resourceSet;
 						this.adapter = adapter;
-						this.lifecycle = ''').append('''«referClass(it, model, Lifecycles)»''').append('''.getDefault(false, true);
 					'''
 					)
 				]
@@ -203,9 +196,9 @@ class EventPatternLanguageJvmModelInferrer extends AbstractModelInferrer {
 					body=[
 						append('''try{
 						''')
-						.append('''«referClass(it, p, EventDrivenTransformationBuilder, model.newTypeRef(match), model.newTypeRef(matcher))»''').append('''builder = new ''').append('''«referClass(it, p, EventDrivenTransformationRuleFactory)»''').append('''().createAdvancedRule();
+						.append('''«referClass(it, p, EventDrivenTransformationBuilder, model.newTypeRef(match), model.newTypeRef(matcher))»''').append('''builder = new ''').append('''«referClass(it, p, EventDrivenTransformationRuleFactory)»''').append('''().createRule();
 						''')
-						.append('''		builder.addLifeCycle(lifecycle);
+						.append('''		builder.addLifeCycle(EventDrivenTransformationRuleFactory.INTERVAL_SEMANTICS);
 						''')
 						.append('''		builder.precondition(«matcher».querySpecification());
 						''')
