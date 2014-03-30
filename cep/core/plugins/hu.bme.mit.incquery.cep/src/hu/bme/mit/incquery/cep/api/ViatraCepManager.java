@@ -4,6 +4,7 @@ import hu.bme.mit.incquery.cep.api.runtime.EventModelManager;
 import hu.bme.mit.incquery.cep.logging.LoggerUtils;
 import hu.bme.mit.incquery.cep.metamodels.cep.EventPattern;
 import hu.bme.mit.incquery.cep.metamodels.internalsm.EventProcessingContext;
+import hu.bme.mit.incquery.cep.streams.IStreamManager;
 
 import java.util.List;
 
@@ -45,6 +46,10 @@ public class ViatraCepManager {
 
     public void assignJob() {
         // TODO
+    }
+
+    public IStreamManager getStreamManager() {
+        return eventModelManager.getStreamManager();
     }
 
     public EventModelManager getEventModelManager() {

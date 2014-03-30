@@ -25,6 +25,9 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.evaluation.ModelHandlingWithViatraApi2;
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 import hu.bme.mit.incquery.cep.runtime.evaluation.StateMachineBuilder;
+import hu.bme.mit.incquery.cep.streams.BasicStreamManager;
+import hu.bme.mit.incquery.cep.streams.EventStream;
+import hu.bme.mit.incquery.cep.streams.IStreamManager;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -68,6 +71,8 @@ public class EventModelManager {
     private UpdateCompleteProviderExtension updateCompleteProvider;
     private Map<StateMachine, Boolean> wasEnabledForTheLatestEvent = new LinkedHashMap<StateMachine, Boolean>();
     private CepRealm realm;
+    private IStreamManager streamManager;
+    private Adapter eventAdapter;
 
     // cache
     private Map<StateMachine, FinalState> finalStatesForStatemachines = new LinkedHashMap<StateMachine, FinalState>();
@@ -82,7 +87,7 @@ public class EventModelManager {
     public EventModelManager() {
         prepareModel();
 
-        Adapter adapter = new AdapterImpl() {
+        eventAdapter = new AdapterImpl() {
             @Override
             public void notifyChanged(Notification notification) {
                 if (notification.getEventType() != Notification.ADD) {
@@ -96,7 +101,12 @@ public class EventModelManager {
                 }
             }
         };
-        EventQueue.getInstance().eAdapters().add(adapter);
+        // EventQueue.getInstance().eAdapters().add(eventAdapter);
+
+        streamManager = BasicStreamManager.getInstance(this);
+        for (EventStream eventStream : streamManager.getEventStreams()) {
+            eventStream.eAdapters().add(eventAdapter);
+        }
 
         this.strategy = EventProcessingStrategyFactory.getStrategy(EventProcessingContext.CHRONICLE, this);
         this.realm = new CepRealm();
@@ -279,5 +289,13 @@ public class EventModelManager {
 
     public void setCepDebugLevel(Level level) {
         LoggerUtils.getInstance().getLogger().setLevel(level);
+    }
+
+    public IStreamManager getStreamManager() {
+        return streamManager;
+    }
+
+    public void registerNewEventStream(EventStream newEventStream) {
+        newEventStream.eAdapters().add(eventAdapter);
     }
 }
