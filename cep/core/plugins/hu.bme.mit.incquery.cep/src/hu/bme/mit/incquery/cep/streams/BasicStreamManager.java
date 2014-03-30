@@ -10,7 +10,7 @@ public class BasicStreamManager implements IStreamManager {
     private static IStreamManager instance;
     private EventModelManager listener;
 
-    private static final int MAX_STREAMS = 1;
+    private static final int MAX_STREAMS = 2;
     private List<EventStream> eventStreams = Lists.newArrayList();
 
     public static IStreamManager getInstance(EventModelManager eventModelManager) {

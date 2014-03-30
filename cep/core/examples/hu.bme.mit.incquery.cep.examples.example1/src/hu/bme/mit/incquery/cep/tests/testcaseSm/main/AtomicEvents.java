@@ -24,7 +24,8 @@ import org.junit.Test;
 
 public class AtomicEvents {
     DefaultRealm realm;
-    EventStream eventStream;
+    EventStream eventStream1;
+    EventStream eventStream2;
     IEventSource source;
     APattern aPattern;
     EventModelManager manager;
@@ -33,14 +34,16 @@ public class AtomicEvents {
     public void setUp() {
         realm = new DefaultRealm();
         manager = new EventModelManager();
-        eventStream = manager.getStreamManager().newEventStream();
+        eventStream1 = manager.getStreamManager().newEventStream();
+        eventStream2 = manager.getStreamManager().newEventStream();
         aPattern = new APattern();
     }
 
     @After
     public void tearDown() {
         realm.dispose();
-        eventStream = null;
+        eventStream1 = null;
+        eventStream2 = null;
         aPattern = null;
         manager = null;
     }
@@ -60,10 +63,10 @@ public class AtomicEvents {
 
         System.out.println("DIAG: Test starting.\n");
 
-        eventStream.push(new D(source));
-        eventStream.push(new B(source));
-        eventStream.push(new C(source));
-        eventStream.push(new A(source));
+        eventStream2.push(new D(source));
+        eventStream1.push(new B(source));
+        eventStream2.push(new C(source));
+        eventStream1.push(new A(source));
 
         System.out.println("\nDIAG: Test finished.");
     }
