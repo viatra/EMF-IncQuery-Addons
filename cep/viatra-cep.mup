@@ -43,38 +43,9 @@
       }
     },
     "6.875": {
-      "title": "Algebra",
+      "title": "Algebra/Automata",
       "id": 19,
       "ideas": {
-        "4": {
-          "title": "Operators",
-          "id": 26,
-          "ideas": {
-            "2": {
-              "title": "at least: temporal logic (like in Drools); but also investigate the EPL of Esper",
-              "id": 29,
-              "attr": {
-                "style": {
-                  "background": "#E0E0E0"
-                }
-              }
-            },
-            "3": {
-              "title": "Branching expressions",
-              "id": 35,
-              "attr": {
-                "style": {
-                  "background": "#E0E0E0"
-                }
-              }
-            }
-          },
-          "attr": {
-            "style": {
-              "background": "#E0E0E0"
-            }
-          }
-        },
         "5": {
           "title": "DFA->PDA as an improvement to the desrciptive power",
           "id": 50,
@@ -95,19 +66,29 @@
             }
           }
         },
-        "3.5": {
-          "title": "Internal representation",
-          "id": 31,
+        "7": {
+          "title": "Event processing strategies",
+          "id": 61,
           "ideas": {
             "1": {
-              "title": "Canonical form for event patterns",
-              "id": 23,
+              "title": "Implement RECENT, UNRESTRICTED",
+              "id": 60,
               "attr": {
                 "style": {
                   "background": "#E0E0E0"
                 }
               }
             },
+            "2": {
+              "title": "Provide an interface for custom implementations",
+              "id": 62
+            }
+          }
+        },
+        "3.5": {
+          "title": "Internal representation",
+          "id": 31,
+          "ideas": {
             "2": {
               "title": "Timing",
               "id": 22,
@@ -117,19 +98,88 @@
                 }
               }
             },
-            "1.5": {
-              "title": "Hierarchical automata",
-              "id": 21,
+            "3": {
+              "title": "Operators",
+              "id": 26,
+              "ideas": {
+                "2": {
+                  "title": "at least: temporal logic (like in Drools); but also investigate the EPL of Esper",
+                  "id": 29,
+                  "attr": {
+                    "style": {
+                      "background": "#E0E0E0"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Branching expressions",
+                  "id": 35,
+                  "attr": {
+                    "style": {
+                      "background": "#E0E0E0"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Multiple accepting states instead of the unfolded structure?",
+                      "id": 54
+                    }
+                  }
+                }
+              },
               "attr": {
                 "style": {
                   "background": "#E0E0E0"
                 }
               }
+            },
+            "0.5": {
+              "title": "Investigate",
+              "id": 56,
+              "ideas": {
+                "1": {
+                  "title": "Canonical form for event patterns",
+                  "id": 23,
+                  "attr": {
+                    "style": {
+                      "background": "#E0E0E0"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Hierarchical automata",
+                  "id": 21,
+                  "attr": {
+                    "style": {
+                      "background": "#E0E0E0"
+                    }
+                  }
+                }
+              }
+            },
+            "0.25": {
+              "title": "Rename: statemachine->automaton",
+              "id": 59
             }
           },
           "attr": {
             "style": {
               "background": "#E0E0E0"
+            }
+          }
+        },
+        "4.25": {
+          "title": "Automata builder algorithm",
+          "id": 57,
+          "ideas": {
+            "1": {
+              "title": "Reiterate",
+              "id": 58,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
             }
           }
         }
@@ -216,6 +266,10 @@
               }
             }
           }
+        },
+        "2": {
+          "title": "Logging",
+          "id": 55
         }
       },
       "attr": {
@@ -356,7 +410,19 @@
       }
     }
   },
-  "links": [],
+  "links": [
+    {
+      "ideaIdFrom": 58,
+      "ideaIdTo": 31,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed",
+          "arrow": true
+        }
+      }
+    }
+  ],
   "attr": {
     "style": {
       "background": "#22AAE0"
