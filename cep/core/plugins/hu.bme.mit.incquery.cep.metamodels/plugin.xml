@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated internalmodel -->
+      <package
+            uri="automaton.meta"
+            class="hu.bme.mit.incquery.cep.metamodels.automaton.AutomatonPackage"
+            genModel="models/internalmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated internalmodel -->
+      <package
+            uri="cep.meta"
+            class="hu.bme.mit.incquery.cep.metamodels.cep.CepPackage"
+            genModel="models/internalmodel.genmodel"/>
+   </extension>
+</plugin>

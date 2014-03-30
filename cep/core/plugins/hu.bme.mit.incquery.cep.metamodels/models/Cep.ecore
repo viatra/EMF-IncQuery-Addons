@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cep" nsURI="cep.meta" nsPrefix="hu.bme.mit.incquery.cep.metamodels">
+  <eClassifiers xsi:type="ecore:EClass" name="EventPattern">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="automaton" eType="ecore:EClass Automaton.ecore#//Automaton"
+        eOpposite="Automaton.ecore#//Automaton/eventPattern"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicEventPattern" eSuperTypes="#//EventPattern">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexEventPattern" eSuperTypes="#//EventPattern">
+    <eOperations name="addCompositionEventPattern" lowerBound="1">
+      <eParameters name="compositionEventPattern" lowerBound="1" eType="#//EventPattern"/>
+    </eOperations>
+    <eOperations name="evaluateParameterBindigs" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="event" lowerBound="1" eType="#//Event"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compositionEvents" eType="#//EventPattern"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//IEventSource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IEventSource" abstract="true" interface="true">
+    <eOperations name="getId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Timewindow">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+</ecore:EPackage>
