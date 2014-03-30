@@ -1,4 +1,4 @@
-VIATRA2-CEP: complex event processing meets incremental graph pattern matching
+VIATRA2-CEP: incremental graph pattern matching meets complex event processing
 ==============================================================================
 
 This sub-project delivers a general CEP engine for the Eclipse platform and also presents a novel architecture for streaming transformations by combining CEP with incremental graph transformations.
