@@ -104,9 +104,6 @@ public class EventModelManager {
         // EventQueue.getInstance().eAdapters().add(eventAdapter);
 
         streamManager = BasicStreamManager.getInstance(this);
-        for (EventStream eventStream : streamManager.getEventStreams()) {
-            eventStream.eAdapters().add(eventAdapter);
-        }
 
         this.strategy = EventProcessingStrategyFactory.getStrategy(EventProcessingContext.CHRONICLE, this);
         this.realm = new CepRealm();
@@ -293,6 +290,10 @@ public class EventModelManager {
 
     public IStreamManager getStreamManager() {
         return streamManager;
+    }
+
+    public void setStreamManager(IStreamManager streamManager) {
+        this.streamManager = streamManager;
     }
 
     public void registerNewEventStream(EventStream newEventStream) {
