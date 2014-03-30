@@ -25,7 +25,7 @@ import hu.bme.mit.incquery.cep.metamodels.internalsm.Transition;
 import hu.bme.mit.incquery.cep.runtime.evaluation.ModelHandlingWithViatraApi2;
 import hu.bme.mit.incquery.cep.runtime.evaluation.SMUtils;
 import hu.bme.mit.incquery.cep.runtime.evaluation.StateMachineBuilder;
-import hu.bme.mit.incquery.cep.streams.BasicStreamManager;
+import hu.bme.mit.incquery.cep.streams.DefaultStreamManager;
 import hu.bme.mit.incquery.cep.streams.EventStream;
 import hu.bme.mit.incquery.cep.streams.IStreamManager;
 
@@ -103,7 +103,7 @@ public class EventModelManager {
         };
         // EventQueue.getInstance().eAdapters().add(eventAdapter);
 
-        streamManager = BasicStreamManager.getInstance(this);
+        streamManager = DefaultStreamManager.getInstance(this);
 
         this.strategy = EventProcessingStrategyFactory.getStrategy(EventProcessingContext.CHRONICLE, this);
         this.realm = new CepRealm();

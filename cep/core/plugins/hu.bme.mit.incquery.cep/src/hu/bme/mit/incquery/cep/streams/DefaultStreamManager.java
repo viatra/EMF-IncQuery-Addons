@@ -6,21 +6,21 @@ import java.util.List;
 
 import com.google.common.collect.Lists;
 
-public class BasicStreamManager implements IStreamManager {
+public class DefaultStreamManager implements IStreamManager {
     private static IStreamManager instance;
     private EventModelManager listener;
 
-    private static final int MAX_STREAMS = 2;
+    private static final int MAX_STREAMS = 1;
     private List<EventStream> eventStreams = Lists.newArrayList();
 
     public static IStreamManager getInstance(EventModelManager eventModelManager) {
         if (instance == null) {
-            instance = new BasicStreamManager(eventModelManager);
+            instance = new DefaultStreamManager(eventModelManager);
         }
         return instance;
     }
 
-    private BasicStreamManager(EventModelManager eventModelManager) {
+    private DefaultStreamManager(EventModelManager eventModelManager) {
         this.listener = eventModelManager;
     }
 
