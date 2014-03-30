@@ -10,10 +10,4 @@ Bundle-Activator: hu.bme.mit.incquery.cep.metamodels.internal.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: hu.bme.mit.incquery.cep.metamodels.automaton,
- hu.bme.mit.incquery.cep.metamodels.automaton.impl,
- hu.bme.mit.incquery.cep.metamodels.automaton.util,
- hu.bme.mit.incquery.cep.metamodels.cep,
- hu.bme.mit.incquery.cep.metamodels.cep.impl,
- hu.bme.mit.incquery.cep.metamodels.cep.util
 Bundle-ActivationPolicy: lazy
