@@ -215,6 +215,10 @@
                   "background": "#E0E0E0"
                 }
               }
+            },
+            "3": {
+              "title": "simplified operator semantics, no timewindows",
+              "id": 63
             }
           },
           "attr": {
@@ -229,6 +233,12 @@
           "attr": {
             "style": {
               "background": "#E0E0E0"
+            }
+          },
+          "ideas": {
+            "1": {
+              "title": "https://github.com/david-istvan/viatra-cep-eclipse-migration",
+              "id": 65
             }
           }
         }
