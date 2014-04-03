@@ -125,6 +125,27 @@
                       "id": 54
                     }
                   }
+                },
+                "4": {
+                  "title": "Idea",
+                  "id": 66,
+                  "ideas": {
+                    "1": {
+                      "title": "algebraic operators <=> FOL,\ntemporal operators <=> CTL",
+                      "id": 69
+                    }
+                  },
+                  "attr": {
+                    "icon": {
+                      "url": "data:image/gif;base64,R0lGODlhEAAQAMQfAOh4GZ+YlP73m9XU0uPi4PqHCfT08+/Ywv352PmoFO+1V8K5sPi6NvLx7f7SKv/4bv/vNP/JDPWVNPTSc//0S7BSC09PTv3FTe9oBfn5+NNZCP/hE+3r6Pb29vv47/j4+CH5BAEAAB8ALAAAAAAQABAAAAWr4AccXWcYTWqUB/B9bZcJE5MkU2OMXyZnCMGDAnEkGI1ST+bxBIWQTUGR7K0OwSExkgBwOh+TR/EoUxzGhIZjEAEakgekmJZoCABAJ5W4bCJcBRIAdw1hKRMSETYFGBgaEgRtHycECgUXjY8AC5IvLQQDAJmOFQuiBy8jDQMLFXYVAQscLS8vBq0WrroDhrYvHRwLFg0BugRgvy8cBMYWAQQcyrYooQMEOr8hADs=",
+                      "width": 16,
+                      "height": 16,
+                      "position": "left"
+                    },
+                    "style": {
+                      "background": "#E0E0E0"
+                    }
+                  }
                 }
               },
               "attr": {
