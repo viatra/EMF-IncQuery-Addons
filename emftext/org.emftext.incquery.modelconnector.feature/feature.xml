@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.emftext.incquery.modelconnector.feature"
+      label="EMFText Support for EMF-IncQuery"
+      version="0.8.0.qualifier"
+      provider-name="Jan Reimann, TU Dresden, Germany"
+      license-feature="org.eclipse.incquery.runtime.feature"
+      license-feature-version="0.8.0.qualifier">
+
+   <description url="http://emftext.org">
+      EMFText integration for EMF-IncQuery
+   </description>
+
+   <url>
+      <update label="EMF-IncQuery Extras" url="http://incquery.net/update/incquery-extra/"/>
+   </url>
+
+   <plugin
+         id="org.emftext.incquery.modelconnector"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

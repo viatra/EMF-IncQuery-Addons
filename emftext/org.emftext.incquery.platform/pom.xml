@@ -1,0 +1,39 @@
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>org.emftext.incquery.parent</artifactId>
+		<groupId>org.emftext.incquery</groupId>
+		<version>0.8.0-SNAPSHOT</version>
+		<relativePath>../org.emftext.incquery.parent/pom.xml</relativePath>
+	</parent>
+	<packaging>pom</packaging>
+	<artifactId>org.emftext.incquery.platform</artifactId>
+		<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.3</version>
+				<executions>
+					<execution>
+						<id>attach-artifacts</id>
+						<phase>package</phase>
+						<goals>
+							<goal>attach-artifact</goal>
+						</goals>
+						<configuration>
+							<artifacts>
+								<artifact>
+									<file>org.emftext.incquery.platform.target</file>
+									<type>target</type>
+									<classifier>org.emftext.incquery.platform</classifier>
+								</artifact>
+							</artifacts>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

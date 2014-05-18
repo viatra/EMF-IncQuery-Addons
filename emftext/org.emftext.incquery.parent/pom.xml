@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.emftext.incquery</groupId>
+	<artifactId>org.emftext.incquery.parent</artifactId>
+	<name>EMFText Integration for EMF-IncQuery</name>
+	<url>http://incquery.net</url>
+	<version>0.8.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<properties>
+		<tycho.version>0.20.0</tycho.version>
+		<tycho.extras.version>0.20.0</tycho.extras.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+		<tycho.scmUrl>scm:git:git://github.com/istvanrath/EMF-IncQuery-Addons.git</tycho.scmUrl>
+		<incquery.update.site>http://download.eclipse.org/incquery/updates/milestone</incquery.update.site>
+	</properties>
+	<modules>
+		<module>../org.emftext.incquery.modelconnector</module>
+		<module>../org.emftext.incquery.modelconnector.feature</module>
+		<module>../org.emftext.incquery.platform</module>
+		<module>../org.emftext.incquery.update</module>
+	</modules>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<resolver>p2</resolver>
+					<target>
+						<artifact>
+							<groupId>org.emftext.incquery</groupId>
+							<artifactId>org.emftext.incquery.platform</artifactId>
+							<version>${project.version}</version>
+							<classifier>org.emftext.incquery.platform</classifier>
+						</artifact>
+					</target>
+					<ignoreTychoRepositories>true</ignoreTychoRepositories>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>incquery</id>
+			<layout>p2</layout>
+			<url>${incquery.update.site}</url>
+		</repository>
+	</repositories>
+	<scm>
+		<url>${tycho.scmUrl}</url>
+	</scm>
+</project>
