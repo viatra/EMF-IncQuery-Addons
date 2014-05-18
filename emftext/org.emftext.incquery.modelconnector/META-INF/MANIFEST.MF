@@ -2,12 +2,12 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Model Connector for EMFText-generated editors
 Bundle-SymbolicName: org.emftext.incquery.modelconnector;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.8.0.qualifier
 Bundle-Vendor: Jan Reimann, TU Dresden, Germany
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime,
  org.emftext.access,
  org.eclipse.ui.workbench,
- org.eclipse.incquery.runtime,
+ org.eclipse.incquery.runtime;bundle-version="0.8.0",
  org.eclipse.ui.workbench.texteditor,
- org.eclipse.incquery.tooling.ui
+ org.eclipse.incquery.tooling.ui;bundle-version="0.8.0"
