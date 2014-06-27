@@ -551,6 +551,18 @@
               "id": 83
             }
           }
+        },
+        "1.5": {
+          "title": "make complexEventpattern ABSTRACT in the model in order to enforce overriding the paramsEval() method",
+          "id": 84,
+          "attr": {
+            "position": [
+              75,
+              -376.7906250000002,
+              4
+            ],
+            "style": {}
+          }
         }
       },
       "attr": {
