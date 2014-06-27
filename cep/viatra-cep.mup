@@ -94,7 +94,7 @@
               "id": 22,
               "attr": {
                 "style": {
-                  "background": "#E0E0E0"
+                  "background": "#99cc00"
                 }
               }
             },
@@ -107,7 +107,7 @@
                   "id": 29,
                   "attr": {
                     "style": {
-                      "background": "#E0E0E0"
+                      "background": "#ff9900"
                     }
                   }
                 },
@@ -116,13 +116,18 @@
                   "id": 35,
                   "attr": {
                     "style": {
-                      "background": "#E0E0E0"
+                      "background": "#99cc00"
                     }
                   },
                   "ideas": {
                     "1": {
                       "title": "Multiple accepting states instead of the unfolded structure?",
-                      "id": 54
+                      "id": 54,
+                      "attr": {
+                        "style": {
+                          "background": "#ff0000"
+                        }
+                      }
                     }
                   }
                 },
@@ -132,7 +137,12 @@
                   "ideas": {
                     "1": {
                       "title": "algebraic operators <=> FOL,\ntemporal operators <=> CTL",
-                      "id": 69
+                      "id": 69,
+                      "attr": {
+                        "style": {
+                          "background": "#ff0000"
+                        }
+                      }
                     }
                   },
                   "attr": {
@@ -143,7 +153,7 @@
                       "position": "left"
                     },
                     "style": {
-                      "background": "#E0E0E0"
+                      "background": "#ff0000"
                     }
                   }
                 }
@@ -180,7 +190,12 @@
             },
             "0.25": {
               "title": "Rename: statemachine->automaton",
-              "id": 59
+              "id": 59,
+              "attr": {
+                "style": {
+                  "background": "#99cc00"
+                }
+              }
             }
           },
           "attr": {
@@ -201,6 +216,11 @@
                   "background": "#E0E0E0"
                 }
               }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#99cc00"
             }
           }
         }
@@ -224,7 +244,7 @@
               "id": 44,
               "attr": {
                 "style": {
-                  "background": "#E0E0E0"
+                  "background": "#ff9900"
                 }
               }
             },
@@ -233,18 +253,23 @@
               "id": 45,
               "attr": {
                 "style": {
-                  "background": "#E0E0E0"
+                  "background": "#ff9900"
                 }
               }
             },
             "3": {
               "title": "simplified operator semantics, no timewindows",
-              "id": 63
+              "id": 63,
+              "attr": {
+                "style": {
+                  "background": "#99cc00"
+                }
+              }
             }
           },
           "attr": {
             "style": {
-              "background": "#E0E0E0"
+              "background": "#99cc00"
             }
           }
         },
@@ -253,13 +278,18 @@
           "id": 42,
           "attr": {
             "style": {
-              "background": "#E0E0E0"
+              "background": "#99cc00"
             }
           },
           "ideas": {
             "1": {
               "title": "https://github.com/david-istvan/viatra-cep-eclipse-migration",
-              "id": 65
+              "id": 65,
+              "attr": {
+                "style": {
+                  "background": "#99cc00"
+                }
+              }
             }
           }
         }
@@ -283,7 +313,7 @@
               "id": 7,
               "attr": {
                 "style": {
-                  "background": "#E0E0E0"
+                  "background": "#ff9900"
                 }
               }
             },
@@ -300,7 +330,12 @@
         },
         "2": {
           "title": "Logging",
-          "id": 55
+          "id": 55,
+          "attr": {
+            "style": {
+              "background": "#99cc00"
+            }
+          }
         }
       },
       "attr": {
