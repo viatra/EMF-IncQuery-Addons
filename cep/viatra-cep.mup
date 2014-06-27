@@ -300,76 +300,6 @@
         }
       }
     },
-    "-22": {
-      "title": "Engine",
-      "id": 3,
-      "ideas": {
-        "1": {
-          "title": "Parallelisation",
-          "id": 6,
-          "ideas": {
-            "1": {
-              "title": "Multiple streams",
-              "id": 7,
-              "attr": {
-                "style": {
-                  "background": "#ff9900"
-                }
-              }
-            },
-            "2": {
-              "title": "Implement via Scala or Akka",
-              "id": 36,
-              "attr": {
-                "style": {
-                  "background": "#E0E0E0"
-                }
-              }
-            }
-          }
-        },
-        "2": {
-          "title": "Logging",
-          "id": 55,
-          "attr": {
-            "style": {
-              "background": "#99cc00"
-            }
-          }
-        }
-      },
-      "attr": {
-        "style": {
-          "background": "#E0E0E0"
-        }
-      }
-    },
-    "-32": {
-      "title": "DSL",
-      "id": 4,
-      "ideas": {
-        "1": {
-          "title": "Parameter bindings on rule-level",
-          "id": 5,
-          "ideas": {
-            "1": {
-              "title": "Currently buggy",
-              "id": 52,
-              "attr": {
-                "style": {
-                  "background": "#E0E0E0"
-                }
-              }
-            }
-          }
-        }
-      },
-      "attr": {
-        "style": {
-          "background": "#E0E0E0"
-        }
-      }
-    },
     "-42": {
       "title": "Case studies",
       "id": 2,
@@ -474,6 +404,126 @@
           "background": "#E0E0E0"
         }
       }
+    },
+    "-27": {
+      "title": "dev",
+      "id": 70,
+      "ideas": {
+        "2": {
+          "title": "factory class for events and patterns",
+          "id": 77,
+          "ideas": {
+            "1": {
+              "title": "omit _Anonymous patterns",
+              "id": 78
+            }
+          }
+        },
+        "3": {
+          "title": "DSL",
+          "id": 4,
+          "ideas": {
+            "1": {
+              "title": "Parameter bindings on rule-level",
+              "id": 5,
+              "ideas": {
+                "1": {
+                  "title": "Currently buggy",
+                  "id": 52,
+                  "attr": {
+                    "style": {
+                      "background": "#E0E0E0"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
+        },
+        "4": {
+          "title": "Engine",
+          "id": 3,
+          "ideas": {
+            "1": {
+              "title": "Parallelisation",
+              "id": 6,
+              "ideas": {
+                "1": {
+                  "title": "Multiple streams",
+                  "id": 7,
+                  "attr": {
+                    "style": {
+                      "background": "#ff9900"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Implement via Scala or Akka",
+                  "id": 36,
+                  "attr": {
+                    "style": {
+                      "background": "#E0E0E0"
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "title": "Logging",
+              "id": 55,
+              "attr": {
+                "style": {
+                  "background": "#99cc00"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
+        },
+        "3.5": {
+          "title": "project wizard",
+          "id": 71,
+          "ideas": {
+            "1": {
+              "title": "new cep project",
+              "id": 72,
+              "ideas": {
+                "1": {
+                  "title": "option: refer IQ projects",
+                  "id": 74
+                }
+              }
+            },
+            "2": {
+              "title": "new cep project (from IQ project)",
+              "id": 73,
+              "attr": {
+                "style": {}
+              }
+            }
+          },
+          "attr": {
+            "position": [
+              48,
+              122.27499999999986,
+              1
+            ],
+            "style": {}
+          }
+        }
+      },
+      "attr": {
+        "style": {}
+      }
     }
   },
   "links": [
@@ -485,6 +535,16 @@
           "color": "#FF0000",
           "lineStyle": "dashed",
           "arrow": true
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 73,
+      "ideaIdTo": 74,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
         }
       }
     }
