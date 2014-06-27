@@ -409,6 +409,20 @@
       "title": "dev",
       "id": 70,
       "ideas": {
+        "1": {
+          "title": "Anonymous patterns for hierarchical patterns and left-associative rules",
+          "id": 80,
+          "attr": {
+            "style": {
+              "background": "#ffff00"
+            },
+            "position": [
+              44,
+              -390.76250000000016,
+              2
+            ]
+          }
+        },
         "2": {
           "title": "factory class for events and patterns",
           "id": 77,
