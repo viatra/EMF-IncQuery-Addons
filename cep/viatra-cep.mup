@@ -533,6 +533,24 @@
             ],
             "style": {}
           }
+        },
+        "2.5": {
+          "title": "implement multiplicty on automaton level",
+          "id": 82,
+          "attr": {
+            "position": [
+              13,
+              -59.76250000000016,
+              3
+            ],
+            "style": {}
+          },
+          "ideas": {
+            "1": {
+              "title": "also handle the UNTIL and REPEAT operators here since these are strongly related concepts",
+              "id": 83
+            }
+          }
         }
       },
       "attr": {
