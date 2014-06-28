@@ -414,7 +414,7 @@
           "id": 80,
           "attr": {
             "style": {
-              "background": "#ffff00"
+              "background": "#99cc00"
             },
             "position": [
               44,
@@ -429,7 +429,17 @@
           "ideas": {
             "1": {
               "title": "omit _Anonymous patterns",
-              "id": 78
+              "id": 78,
+              "attr": {
+                "style": {
+                  "background": "#99cc00"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#99cc00"
             }
           }
         },
