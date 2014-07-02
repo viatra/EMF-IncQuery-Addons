@@ -58,6 +58,27 @@
                   "background": "#E0E0E0"
                 }
               }
+            },
+            "2": {
+              "title": "examples",
+              "id": 86,
+              "attr": {
+                "style": {}
+              },
+              "ideas": {
+                "1": {
+                  "title": "ComplexEvent exampleCombinedPattern123(){\tdefinition: (componentA_Appeared(tId, cId){x} OR exampleGenericPattern{y})[1000] WITH {y = x/2; y>10}}",
+                  "id": 87,
+                  "ideas": {}
+                },
+                "0.5": {
+                  "title": "ComplexEvent exampleCombinedPattern123(x : int){\tdefinition: (componentA_Appeared(tId, cId){x} OR exampleGenericPattern{2*x})[1000]}",
+                  "id": 89,
+                  "attr": {
+                    "style": {}
+                  }
+                }
+              }
             }
           },
           "attr": {
