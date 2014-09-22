@@ -4,12 +4,16 @@
       label="EMFText Support for EMF-IncQuery"
       version="0.8.0.qualifier"
       provider-name="Jan Reimann, TU Dresden, Germany"
-      license-feature="org.eclipse.incquery.runtime.feature"
-      license-feature-version="0.8.0.qualifier">
+      license-feature="org.eclipse.license"
+      license-feature-version="0.0.0">
 
    <description url="http://emftext.org">
       EMFText integration for EMF-IncQuery
    </description>
+
+   <license url="">
+      
+   </license>
 
    <url>
       <update label="EMF-IncQuery Extras" url="http://incquery.net/update/incquery-extra/"/>
