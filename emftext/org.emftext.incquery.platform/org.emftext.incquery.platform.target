@@ -2,15 +2,7 @@
 <?pde version="3.8"?><target name="emftext" sequenceNumber="25">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="1.5.0.v20110426-2159-47D08xGD6ExNBM7CIJa3CIKK9t84"/>
-<unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="1.5.0.v20110607-1200-67N09E9QnChoWswz-3wf_rz0kQ8Y"/>
-<unit id="org.eclipse.graphiti.sdk.feature.feature.group" version="0.8.2.v20120215-0845"/>
 <repository location="http://download.eclipse.org/releases/indigo"/>
-</location>
-<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="de.itemis.xtext.antlr.feature.feature.group" version="2.0.0.v201108011202"/>
-<unit id="de.itemis.xtext.antlr.sdk.feature.group" version="2.0.0.v201108011202"/>
-<repository location="http://download.itemis.com/updates/releases"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.platform.sdk" version="3.7.2.M20120208-0800"/>
@@ -18,13 +10,8 @@
 <repository location="http://download.eclipse.org/eclipse/updates/3.7"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.gef4.zest.sdk.feature.group" version="0.1.0.201301260306"/>
-<repository location="http://download.eclipse.org/tools/gef/gef4/updates/integration"/>
-</location>
-<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.emf.sdk.feature.group" version="2.9.1.v20130902-0605"/>
-<unit id="org.eclipse.xtend.sdk.feature.group" version="2.5.3.v201402240820"/>
-<unit id="org.eclipse.xtext.sdk.feature.group" version="2.5.3.v201402240820"/>
+<unit id="org.eclipse.xtext.sdk.feature.group" version="2.6.0.v201405210727"/>
 <repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
