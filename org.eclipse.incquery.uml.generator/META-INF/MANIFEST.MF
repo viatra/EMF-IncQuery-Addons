@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.incquery.examples.uml.derivedfeatures.generator
+Bundle-SymbolicName: org.eclipse.incquery.uml.generator;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Export-Package: org.eclipse.incquery.uml.generator,
+ org.eclipse.incquery.uml.generator.util
+Require-Bundle: org.eclipse.uml2.uml,
+ org.eclipse.emf.ecore,
+ org.eclipse.incquery.runtime,
+ org.eclipse.xtext.xbase.lib,
+ org.junit;bundle-version="4.11.0",
+ hu.bme.mit.ocl2iq.mapping;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.apache.log4j

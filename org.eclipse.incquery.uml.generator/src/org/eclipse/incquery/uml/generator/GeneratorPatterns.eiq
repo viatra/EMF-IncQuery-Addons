@@ -1,0 +1,147 @@
+package org.eclipse.incquery.uml.generator
+
+import "http://www.eclipse.org/uml2/5.0.0/UML"
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+pattern union(union: EStructuralFeature, subset: EStructuralFeature) {
+	find derived(_, union);
+	EClass.eStructuralFeatures(_, subset);
+	EModelElement.eAnnotations(subset, annotation);
+	EAnnotation.source(annotation, "subsets");
+	EAnnotation.references(annotation, union);
+}
+
+pattern derivedBuggy(feature: EStructuralFeature, documentation: EString) {
+	find derivedFromOperation(class, feature, documentation);
+	find buggy(class, feature);
+}
+
+pattern derivedNotBuggy(feature: EStructuralFeature, documentation: EString) {
+	find derivedFromOperation(class, feature, documentation);
+	neg find buggy(class, feature);
+}
+
+pattern derivedFromOperation(class: EClass, feature: EStructuralFeature, documentation: EString) {
+	find derived(class, feature);
+	EClass.eOperations(class, operation);
+	ENamedElement.name(feature, featureName);
+	find hasName(operation, featureName);
+	find operationDocumentation(operation, documentation);
+}
+
+private pattern buggy(class: EClass, feature: EStructuralFeature) {
+	EClass.name(class, "Connector");
+	EStructuralFeature.name(feature, "kind");
+} or {
+	EClass.name(class, "Message");
+	EStructuralFeature.name(feature, "messageKind");
+} or {
+	EClass.name(class, "Package");
+	EStructuralFeature.name(feature, "nestedPackage");
+} or {
+	EClass.name(class, "Package");
+	EStructuralFeature.name(feature, "ownedStereotype");
+} or {
+	EClass.name(class, "Package");
+	EStructuralFeature.name(feature, "ownedType");
+} or {
+	EClass.name(class, "Property");
+	EStructuralFeature.name(feature, "isComposite");
+} or {
+	EClass.name(class, "State");
+	EStructuralFeature.name(feature, "isComposite");
+}
+
+pattern derived(class: EClass, feature: EStructuralFeature) {
+	EClass.eStructuralFeatures(class, feature);
+	EClass.ePackage(class, ePackage);
+	EPackage.name(ePackage, "uml");	
+	EStructuralFeature.derived(feature, true);
+}
+
+private pattern hasName(operation: EOperation, featureName: EString) {
+	ENamedElement.name(operation, featureName);
+} or {
+	find operationOriginalName(operation, featureName);
+}
+
+private pattern operationOriginalName(operation: EOperation, originalName: EString) {
+	find annotationValue(operation, originalName, "http://www.eclipse.org/uml2/2.0.0/UML", "originalName");
+}
+
+private pattern operationDocumentation(operation: EOperation, documentation: EString) {
+	find annotationValue(operation, documentation, "http://www.eclipse.org/emf/2002/GenModel", "documentation");
+}
+
+private pattern annotationValue(modelElement: EModelElement, value: EString, source: EString, key: EString) {
+	EOperation.eAnnotations(modelElement, annotation);
+	EAnnotation.source(annotation, source);
+	EAnnotation.details(annotation, detail);
+	EStringToStringMapEntry.key(detail, key);
+	EStringToStringMapEntry.value(detail, value);
+}
+
+pattern usedOperation(class: EClass, operation: EOperation, documentation: EString) {
+	EClass.eOperations(class, operation);
+	find used(class, operation);
+	find operationDocumentation(operation, documentation);
+}
+
+private pattern used(class: EClass, operation: EOperation) {
+	EClass.name(class, "Action");
+	EOperation.name(operation, "containingBehavior");
+} or {
+	EClass.name(class, "Classifier");
+	EOperation.name(operation, "allRealizedInterfaces");
+} or {
+	EClass.name(class, "Classifier");
+	EOperation.name(operation, "allUsedInterfaces");
+} or {
+	EClass.name(class, "Classifier");
+	EOperation.name(operation, "inherit");
+} or {
+	EClass.name(class, "Classifier");
+	EOperation.name(operation, "inheritableMembers");
+} or {
+	EClass.name(class, "Classifier");
+	EOperation.name(operation, "parents");
+} or {
+	EClass.name(class, "Extension");
+	EOperation.name(operation, "metaclassEnd");
+} or {
+	EClass.name(class, "MultiplicityElement");
+	EOperation.name(operation, "lowerBound");
+} or {
+	EClass.name(class, "MultiplicityElement");
+	EOperation.name(operation, "upperBound");
+} or {
+	EClass.name(class, "Operation");
+	EOperation.name(operation, "returnResult");
+} or {
+	EClass.name(class, "Package");
+	EOperation.name(operation, "visibleMembers");
+} or {
+	EClass.name(class, "ValueSpecification");
+	EOperation.name(operation, "stringValue");
+} or {
+	EClass.name(class, "Port");
+	EOperation.name(operation, "basicProvided");
+} or {
+	EClass.name(class, "Port");
+	EOperation.name(operation, "basicRequired");
+} or {
+	EClass.name(class, "Region");
+	EOperation.name(operation, "containingStateMachine");
+} or {
+	EClass.name(class, "State");
+	EOperation.name(operation, "isSubmachineState");
+} or {
+	EClass.name(class, "Stereotype");
+	EOperation.name(operation, "containingProfile");
+} or {
+	EClass.name(class, "Transition");
+	EOperation.name(operation, "containingStateMachine");
+} or {
+	EClass.name(class, "Vertex");
+	EOperation.name(operation, "containingStateMachine");
+}

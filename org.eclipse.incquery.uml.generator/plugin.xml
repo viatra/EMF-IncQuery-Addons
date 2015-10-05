@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="org.eclipse.incquery.uml.generator.DerivedFeatures" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.uml.generator.DerivedFeatures" id="org.eclipse.incquery.uml.generator.DerivedFeatures"/>
+  </extension>
+  <extension id="org.eclipse.incquery.uml.generator.GeneratorPatterns" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.eclipse.incquery.uml.generator.GeneratorPatterns" id="org.eclipse.incquery.uml.generator.GeneratorPatterns"/>
+  </extension>
+</plugin>
